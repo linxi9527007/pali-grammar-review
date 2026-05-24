@@ -1,35 +1,484 @@
 [
   {
     "id": 1,
-    "title": "巴利语名词的性、数、格",
-    "category": "名词基础",
-    "level": "入门",
-    "summary": "巴利语名词通常有性、数、格三个维度。性包括阳性、阴性、中性；数包括单数、复数；格表示名词在句子中的句法功能。",
+    "title": "一般现在时主动语态 vattamānā",
+    "category": "动词变位",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "一般现在时主动语态表示当前、通常或一般性的动作。初学阶段先掌握主动语态六个人称词尾。",
     "explanation": [
-      "巴利语名词不是只靠词序表达关系，而是常通过词尾变化表示句法功能。",
-      "常见的格包括主格、宾格、工具格、与格、从格、属格、处格、呼格。",
-      "学习巴利语时，不要只背词干，例如 dhamma，还要逐步熟悉 dhammo、dhammaṃ、dhammena、dhammassa 等形式。"
+      "主动语态一般现在时的基本词尾为：第三人称单数 -ti，复数 -anti；第二人称单数 -si，复数 -tha；第一人称单数 -mi，复数 -ma。",
+      "学习时可以先用 gaccha- 这类现在时词基练习：gacchati、gacchanti、gacchasi、gacchatha、gacchāmi、gacchāma。",
+      "不同动词的词基形成可能不同，本语法点只训练现在时主动词尾识别。"
     ],
     "table": [
       [
-        "概念",
-        "说明",
-        "例子"
+        "人称",
+        "单数",
+        "复数"
       ],
       [
-        "性",
-        "名词所属类别",
-        "buddha 阳性，citta 中性"
+        "第三人称",
+        "-ti",
+        "-anti"
       ],
       [
-        "数",
-        "单数或复数",
-        "dhammo 单数，dhammā 复数"
+        "第二人称",
+        "-si",
+        "-tha"
       ],
+      [
+        "第一人称",
+        "-mi",
+        "-ma"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "So gacchati.",
+        "cn": "他去。",
+        "note": "gacchati 是一般现在时主动语态第三人称单数。"
+      },
+      {
+        "pali": "Mayaṃ gacchāma.",
+        "cn": "我们去。",
+        "note": "gacchāma 是一般现在时主动语态第一人称复数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "一般现在时主动语态第三人称单数词尾是什么？",
+        "a": "-ti。"
+      },
+      {
+        "q": "一般现在时主动语态第一人称复数词尾是什么？",
+        "a": "-ma。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "gacchanti 是什么形式？",
+        "options": [
+          "第三人称单数",
+          "第三人称复数",
+          "第一人称单数",
+          "第二人称复数"
+        ],
+        "answer": "第三人称复数",
+        "explanation": "-anti 是一般现在时主动语态第三人称复数词尾。",
+        "id": "l1-e1",
+        "lesson_id": 1,
+        "lesson_title": "一般现在时主动语态 vattamānā",
+        "module": "动词系统",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "动词系统",
+    "lesson_number": 1,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 2,
+    "title": "命令语气主动语态 pañcamī",
+    "category": "动词变位",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "命令语气用于表达命令、请求、劝请、愿望等。初学阶段先掌握主动语态词尾。",
+    "explanation": [
+      "命令语气主动语态词尾为：第三人称单数 -tu，复数 -ntu；第二人称单数 -hi，复数 -tha；第一人称单数 -mi，复数 -ma。",
+      "实际文本中第二人称单数命令式可能出现简化或变体形式；本表先列你笔记中的标准词尾。",
+      "命令语气不只表示强制命令，也可表示劝请、愿望或允许。"
+    ],
+    "table": [
+      [
+        "人称",
+        "单数",
+        "复数"
+      ],
+      [
+        "第三人称",
+        "-tu",
+        "-ntu"
+      ],
+      [
+        "第二人称",
+        "-hi",
+        "-tha"
+      ],
+      [
+        "第一人称",
+        "-mi",
+        "-ma"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Gacchatu.",
+        "cn": "愿他去 / 让他去。",
+        "note": "-tu 是命令语气主动第三人称单数词尾。"
+      },
+      {
+        "pali": "Gacchantu.",
+        "cn": "愿他们去 / 让他们去。",
+        "note": "-ntu 是命令语气主动第三人称复数词尾。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "命令语气主动第三人称单数词尾是什么？",
+        "a": "-tu。"
+      },
+      {
+        "q": "命令语气主动第三人称复数词尾是什么？",
+        "a": "-ntu。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "gacchatu 中的 -tu 表示什么？",
+        "options": [
+          "一般现在时",
+          "命令语气第三人称单数",
+          "一般将来时",
+          "不定式"
+        ],
+        "answer": "命令语气第三人称单数",
+        "explanation": "-tu 是命令语气主动第三人称单数词尾。",
+        "id": "l2-e1",
+        "lesson_id": 2,
+        "lesson_title": "命令语气主动语态 pañcamī",
+        "module": "动词系统",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "动词系统",
+    "lesson_number": 2,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 3,
+    "title": "一般将来时主动语态 anāgata",
+    "category": "动词变位",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "一般将来时主动语态常用 -ssa- 系列词尾，表示将来发生的动作。",
+    "explanation": [
+      "一般将来时主动语态词尾为：第三人称单数 -ssati，复数 -ssanti；第二人称单数 -ssasi，复数 -ssatha；第一人称单数 -ssāmi，复数 -ssāma。",
+      "学习时要注意第一人称单数和复数常有长 ā：-ssāmi、-ssāma。",
+      "不同动词的将来时词基可能有音变，本语法点先训练主动将来时词尾。"
+    ],
+    "table": [
+      [
+        "人称",
+        "单数",
+        "复数"
+      ],
+      [
+        "第三人称",
+        "-ssati",
+        "-ssanti"
+      ],
+      [
+        "第二人称",
+        "-ssasi",
+        "-ssatha"
+      ],
+      [
+        "第一人称",
+        "-ssāmi",
+        "-ssāma"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "So bhavissati.",
+        "cn": "他将会是 / 将会有。",
+        "note": "bhavissati 是一般将来时主动第三人称单数。"
+      },
+      {
+        "pali": "Mayaṃ bhavissāma.",
+        "cn": "我们将会是 / 将会有。",
+        "note": "bhavissāma 是一般将来时主动第一人称复数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "一般将来时主动第三人称单数词尾是什么？",
+        "a": "-ssati。"
+      },
+      {
+        "q": "一般将来时主动第一人称单数词尾是什么？",
+        "a": "-ssāmi。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "bhavissāma 是什么形式？",
+        "options": [
+          "现在时第一人称复数",
+          "将来时第一人称复数",
+          "命令语气第三人称单数",
+          "不定式"
+        ],
+        "answer": "将来时第一人称复数",
+        "explanation": "-ssāma 是一般将来时主动第一人称复数词尾。",
+        "id": "l3-e1",
+        "lesson_id": 3,
+        "lesson_title": "一般将来时主动语态 anāgata",
+        "module": "动词系统",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "动词系统",
+    "lesson_number": 3,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 4,
+    "title": "可能祈愿语气主动语态 sattamī",
+    "category": "动词变位",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "可能祈愿语气可表示可能、愿望、假设、委婉表达等。其主动语态有 -eyya/-e 等并行形式。",
+    "explanation": [
+      "主动第三人称单数可见 -eyya、-e；复数为 -eyyuṃ。",
+      "第二人称单数可见 -eyyāsi、-esi；复数可见 -eyyātha、-etha。",
+      "第一人称单数可见 -eyyāmi、-emi；复数可见 -eyyāma、-ema。",
+      "这些并行形式需要识别；初学时可先掌握 -eyya 系列。"
+    ],
+    "table": [
+      [
+        "人称",
+        "单数",
+        "复数"
+      ],
+      [
+        "第三人称",
+        "-eyya / -e",
+        "-eyyuṃ"
+      ],
+      [
+        "第二人称",
+        "-eyyāsi / -esi",
+        "-eyyātha / -etha"
+      ],
+      [
+        "第一人称",
+        "-eyyāmi / -emi",
+        "-eyyāma / -ema"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "So gaccheyya.",
+        "cn": "他可以去 / 他应会去。",
+        "note": "gaccheyya 是可能祈愿语气第三人称单数。"
+      },
+      {
+        "pali": "Mayaṃ gaccheyyāma.",
+        "cn": "我们可以去 / 我们应会去。",
+        "note": "gaccheyyāma 是可能祈愿语气第一人称复数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "可能祈愿语气主动第三人称单数常见词尾有哪些？",
+        "a": "-eyya / -e。"
+      },
+      {
+        "q": "可能祈愿语气主动第三人称复数词尾是什么？",
+        "a": "-eyyuṃ。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "gaccheyya 更可能是什么语气？",
+        "options": [
+          "命令语气",
+          "可能祈愿语气",
+          "一般将来时",
+          "过去分词"
+        ],
+        "answer": "可能祈愿语气",
+        "explanation": "-eyya 是可能祈愿语气主动第三人称单数常见词尾。",
+        "id": "l4-e1",
+        "lesson_id": 4,
+        "lesson_title": "可能祈愿语气主动语态 sattamī",
+        "module": "动词系统",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "动词系统",
+    "lesson_number": 4,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 5,
+    "title": "一般过去时主动语态 ajjatanī",
+    "category": "动词变位",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "一般过去时主动语态用于表示过去发生的动作。形式较多，初学阶段先训练识别常见词尾。",
+    "explanation": [
+      "主动第三人称单数可见 -ī、-i；复数可见 -uṃ、-iṃsu。",
+      "第二人称单数可见 -o、-i；复数为 -ttha。",
+      "第一人称单数为 -im；复数可见 -mhā、-mha。",
+      "过去时具体形式常受词根和词基影响，不能只机械套词尾；本表用于识别词尾。"
+    ],
+    "table": [
+      [
+        "人称",
+        "单数",
+        "复数"
+      ],
+      [
+        "第三人称",
+        "-ī / -i",
+        "-uṃ / -iṃsu"
+      ],
+      [
+        "第二人称",
+        "-o / -i",
+        "-ttha"
+      ],
+      [
+        "第一人称",
+        "-im",
+        "-mhā / -mha"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "So agacchi.",
+        "cn": "他去了。",
+        "note": "agacchi 是常见过去形式，可按过去动作理解。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "一般过去时主动第三人称复数常见词尾有哪些？",
+        "a": "-uṃ / -iṃsu。"
+      },
+      {
+        "q": "一般过去时主动第一人称单数词尾是什么？",
+        "a": "-im。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "-iṃsu 常见于什么形式？",
+        "options": [
+          "现在时第三人称单数",
+          "过去时第三人称复数",
+          "将来时第一人称单数",
+          "命令语气第二人称复数"
+        ],
+        "answer": "过去时第三人称复数",
+        "explanation": "-iṃsu 是一般过去时主动第三人称复数常见词尾。",
+        "id": "l5-e1",
+        "lesson_id": 5,
+        "lesson_title": "一般过去时主动语态 ajjatanī",
+        "module": "动词系统",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "动词系统",
+    "lesson_number": 5,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 6,
+    "title": "-a 尾阳性名词变格",
+    "category": "名词变格",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "-a 尾阳性名词是巴利语最基础、最常见的名词类型之一。代表词可以用 buddha、dhamma、purisa。",
+    "explanation": [
+      "主格单数常为 -o，宾格单数常为 -aṃ，工具格单数为 -ena。",
+      "工具格/从格复数有 -ehi / -ebhi 两种常见并行形式。",
+      "处格单数有 -e / -asmiṃ / -amhi 等常见形式。",
+      "与格和属格在单数中有重叠形式，-assa 可表示属格，也可作与格。"
+    ],
+    "table": [
       [
         "格",
-        "句法功能",
-        "dhammaṃ 常作宾语"
+        "单数",
+        "复数"
+      ],
+      [
+        "主格",
+        "-o",
+        "-ā"
+      ],
+      [
+        "呼格",
+        "-a",
+        "-ā"
+      ],
+      [
+        "宾格",
+        "-aṃ",
+        "-e"
+      ],
+      [
+        "工具格",
+        "-ena",
+        "-ehi / -ebhi"
+      ],
+      [
+        "从格",
+        "-ā / -asmā / -amhā",
+        "-ehi / -ebhi"
+      ],
+      [
+        "与格",
+        "-āya / -assa",
+        "-ānaṃ"
+      ],
+      [
+        "属格",
+        "-assa",
+        "-ānaṃ"
+      ],
+      [
+        "处格",
+        "-e / -asmiṃ / -amhi",
+        "-esu"
       ]
     ],
     "examples": [
@@ -37,173 +486,178 @@
         "pali": "Buddho dhammaṃ deseti.",
         "cn": "佛说法。",
         "note": "Buddho 是主格单数，dhammaṃ 是宾格单数。"
+      },
+      {
+        "pali": "Buddhena dhammo desito.",
+        "cn": "法由佛所说。",
+        "note": "Buddhena 是工具格单数。"
       }
     ],
     "cards": [
       {
-        "q": "巴利语名词主要需要关注哪三个维度？",
-        "a": "性、数、格。"
+        "q": "-a 尾阳性名词主格单数词尾是什么？",
+        "a": "-o。"
       },
       {
-        "q": "格的主要作用是什么？",
-        "a": "表示名词在句子中的句法功能，例如主语、宾语、处所等。"
+        "q": "-a 尾阳性名词处格单数常见形式有哪些？",
+        "a": "-e / -asmiṃ / -amhi。"
       }
     ],
     "exercises": [
       {
         "type": "choice",
-        "question": "dhammaṃ 在句中通常可能是什么格？",
-        "options": [
-          "主格",
-          "宾格",
-          "处格",
-          "呼格"
-        ],
-        "answer": "宾格",
-        "explanation": "在 -a 词干阳性名词中，-aṃ 常见为宾格单数词尾。"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "title": "-a 词干阳性名词",
-    "category": "名词变格",
-    "level": "基础",
-    "summary": "-a 词干阳性名词是巴利语中非常常见的名词类型，如 buddha、dhamma、saṅgha。",
-    "explanation": [
-      "-a 词干阳性名词的词干通常以 -a 结尾。",
-      "学习时可以先掌握几个高频格：主格单数 -o，宾格单数 -aṃ，工具格单数 -ena，属格/与格单数 -assa。",
-      "buddha、dhamma、saṅgha 都可以作为这一类的代表词。"
-    ],
-    "table": [
-      [
-        "格",
-        "单数 buddha",
-        "复数 buddha"
-      ],
-      [
-        "主格",
-        "buddho",
-        "buddhā"
-      ],
-      [
-        "宾格",
-        "buddhaṃ",
-        "buddhe"
-      ],
-      [
-        "工具格",
-        "buddhena",
-        "buddhehi / buddhebhi"
-      ],
-      [
-        "属格/与格",
-        "buddhassa",
-        "buddhānaṃ"
-      ],
-      [
-        "处格",
-        "buddhasmiṃ / buddhamhi",
-        "buddhesu"
-      ]
-    ],
-    "examples": [
-      {
-        "pali": "Buddhaṃ saraṇaṃ gacchāmi.",
-        "cn": "我皈依佛。",
-        "note": "Buddhaṃ 是 buddha 的宾格单数。"
-      },
-      {
-        "pali": "Buddho dhammaṃ deseti.",
-        "cn": "佛说法。",
-        "note": "Buddho 是主格单数。"
-      }
-    ],
-    "cards": [
-      {
-        "q": "-a 词干阳性名词主格单数常见词尾是什么？",
-        "a": "-o，例如 buddha → buddho。"
-      },
-      {
-        "q": "buddha 的宾格单数是什么？",
-        "a": "buddhaṃ。"
-      }
-    ],
-    "exercises": [
-      {
-        "type": "choice",
-        "question": "buddho 是什么形式？",
+        "question": "buddhena 是 buddha 的什么形式？",
         "options": [
           "主格单数",
           "宾格单数",
           "工具格单数",
           "处格复数"
         ],
-        "answer": "主格单数",
-        "explanation": "-a 词干阳性名词主格单数常见词尾是 -o。"
+        "answer": "工具格单数",
+        "explanation": "-ena 是 -a 尾阳性名词工具格单数词尾。",
+        "id": "l6-e1",
+        "lesson_id": 6,
+        "lesson_title": "-a 尾阳性名词变格",
+        "module": "名词变格",
+        "difficulty": "基础"
       },
       {
-        "type": "input",
-        "question": "请写出 dhamma 的宾格单数。",
-        "answer": "dhammaṃ",
-        "explanation": "dhamma + aṃ → dhammaṃ。"
+        "type": "choice",
+        "question": "buddhaṃ 是 buddha 的什么形式？",
+        "options": [
+          "主格单数",
+          "宾格单数",
+          "工具格单数",
+          "处格复数"
+        ],
+        "answer": "宾格单数",
+        "explanation": "-a 尾阳性名词宾格单数为 -aṃ。",
+        "id": "l6-e2",
+        "lesson_id": 6,
+        "lesson_title": "-a 尾阳性名词变格",
+        "module": "名词变格",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "buddhehi / buddhebhi 是什么格数？",
+        "options": [
+          "工具格/从格复数",
+          "主格单数",
+          "宾格单数",
+          "处格单数"
+        ],
+        "answer": "工具格/从格复数",
+        "explanation": "-ehi / -ebhi 可作 -a 尾阳性工具格或从格复数。",
+        "id": "l6-e3",
+        "lesson_id": 6,
+        "lesson_title": "-a 尾阳性名词变格",
+        "module": "名词变格",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "buddhasmiṃ / buddhamhi 属于什么形式？",
+        "options": [
+          "处格单数",
+          "主格复数",
+          "宾格复数",
+          "工具格单数"
+        ],
+        "answer": "处格单数",
+        "explanation": "-asmiṃ / -amhi 是 -a 尾阳性处格单数常见形式。",
+        "id": "l6-e4",
+        "lesson_id": 6,
+        "lesson_title": "-a 尾阳性名词变格",
+        "module": "名词变格",
+        "difficulty": "基础"
       }
-    ]
+    ],
+    "module": "名词变格",
+    "lesson_number": 6,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "基础"
   },
   {
-    "id": 3,
-    "title": "-a 词干中性名词",
+    "id": 7,
+    "title": "-a 尾中性名词变格",
     "category": "名词变格",
     "level": "基础",
-    "summary": "-a 词干中性名词也很常见，如 citta、phala、rūpa。中性名词的重要特点是主格和宾格形式相同。",
+    "status": "已核准",
+    "summary": "-a 尾中性名词的核心特点是主格和宾格常同形。代表词可以用 citta、phala、rūpa。",
     "explanation": [
-      "中性名词最重要的识别点：主格和宾格通常同形。",
-      "例如 citta 的主格单数和宾格单数都是 cittaṃ。",
-      "复数中，主格和宾格也常同形，例如 cittāni。"
+      "主格单数和宾格单数同为 -aṃ。",
+      "复数主格/宾格常见 -āni；你的笔记中也列出 -ā、-e 等可见形式，网站中作为识别变体保留。",
+      "其他格的许多词尾与 -a 尾阳性名词相同，如工具格单数 -ena、处格复数 -esu。"
     ],
     "table": [
       [
         "格",
-        "单数 citta",
-        "复数 citta"
+        "单数",
+        "复数"
       ],
       [
         "主格",
-        "cittaṃ",
-        "cittāni"
+        "-aṃ",
+        "-ā / -āni"
+      ],
+      [
+        "呼格",
+        "-a",
+        "-ā / -āni"
       ],
       [
         "宾格",
-        "cittaṃ",
-        "cittāni"
+        "-aṃ",
+        "-e / -āni"
       ],
       [
         "工具格",
-        "cittena",
-        "cittehi / cittebhi"
+        "-ena",
+        "-ehi / -ebhi"
       ],
       [
-        "属格/与格",
-        "cittassa",
-        "cittānaṃ"
+        "从格",
+        "-ā / -asmā / -amhā",
+        "-ehi / -ebhi"
+      ],
+      [
+        "与格",
+        "-āya / -assa",
+        "-ānaṃ"
+      ],
+      [
+        "属格",
+        "-assa",
+        "-ānaṃ"
       ],
       [
         "处格",
-        "cittasmiṃ / cittamhi",
-        "cittesu"
+        "-e / -asmiṃ / -amhi",
+        "-esu"
       ]
     ],
     "examples": [
       {
         "pali": "Cittaṃ passati.",
         "cn": "他/她看见心。",
-        "note": "cittaṃ 可作宾格单数。"
+        "note": "cittaṃ 可作宾格单数，也可作主格单数。"
+      },
+      {
+        "pali": "Rūpāni passati.",
+        "cn": "他/她看见诸色。",
+        "note": "rūpāni 是中性主格/宾格复数常见形式。"
       }
     ],
     "cards": [
       {
-        "q": "中性名词最重要的特点之一是什么？",
-        "a": "主格和宾格通常同形。"
+        "q": "-a 尾中性名词最重要的特点是什么？",
+        "a": "主格和宾格常同形。"
       },
       {
         "q": "citta 的主格/宾格单数是什么？",
@@ -213,167 +667,7840 @@
     "exercises": [
       {
         "type": "choice",
-        "question": "cittāni 可能是什么形式？",
+        "question": "rūpāni 是什么形式？",
         "options": [
-          "主格/宾格复数",
-          "工具格单数",
-          "属格单数",
-          "处格单数"
+          "阳性主格单数",
+          "中性主格/宾格复数",
+          "阴性工具格单数",
+          "动词过去时"
         ],
-        "answer": "主格/宾格复数",
-        "explanation": "-a 词干中性名词主格和宾格复数常同形。"
+        "answer": "中性主格/宾格复数",
+        "explanation": "-āni 是 -a 尾中性名词主格/宾格复数常见词尾。",
+        "id": "l7-e1",
+        "lesson_id": 7,
+        "lesson_title": "-a 尾中性名词变格",
+        "module": "名词变格",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "cittaṃ 可能是什么格数？",
+        "options": [
+          "中性主格/宾格单数",
+          "阳性主格单数",
+          "阴性工具格单数",
+          "处格复数"
+        ],
+        "answer": "中性主格/宾格单数",
+        "explanation": "-a 尾中性名词主格和宾格单数同为 -aṃ。",
+        "id": "l7-e2",
+        "lesson_id": 7,
+        "lesson_title": "-a 尾中性名词变格",
+        "module": "名词变格",
+        "difficulty": "基础"
       }
-    ]
+    ],
+    "module": "名词变格",
+    "lesson_number": 7,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "基础"
   },
   {
-    "id": 4,
-    "title": "-ā 词干阴性名词",
+    "id": 8,
+    "title": "-ā 尾阴性名词变格",
     "category": "名词变格",
     "level": "基础",
-    "summary": "-ā 词干阴性名词常见于以长 ā 结尾的名词，如 taṇhā、paññā、saddhā。",
+    "status": "已核准",
+    "summary": "-ā 尾阴性名词常见于 taṇhā、paññā、saddhā 等词。主格单数通常保持 -ā。",
     "explanation": [
-      "-ā 词干阴性名词的主格单数通常保持 -ā。",
-      "宾格单数常为 -aṃ，例如 taṇhaṃ。",
-      "工具格、从格、属格、处格等形式需要逐步熟悉，不建议一开始全部硬背。"
+      "主格单数为 -ā，宾格单数为 -aṃ。",
+      "工具格、从格、与格、属格单数多见 -āya。",
+      "复数中 -āyo、-āhi / -ābhi、-āsu 等形式需要识别。",
+      "你的笔记中 -ā 阴性表后面混入了 -u 词干残行，正式版已剔除。"
     ],
     "table": [
       [
         "格",
-        "单数 taṇhā",
-        "复数 taṇhā"
+        "单数",
+        "复数"
       ],
       [
         "主格",
-        "taṇhā",
-        "taṇhā / taṇhāyo"
+        "-ā",
+        "-ā / -āyo"
+      ],
+      [
+        "呼格",
+        "-e",
+        "-ā / -āyo"
       ],
       [
         "宾格",
-        "taṇhaṃ",
-        "taṇhā / taṇhāyo"
+        "-aṃ",
+        "-ā / -āyo"
       ],
       [
         "工具格",
-        "taṇhāya",
-        "taṇhāhi / taṇhābhi"
+        "-āya",
+        "-āhi / -ābhi"
       ],
       [
-        "属格/与格",
-        "taṇhāya",
-        "taṇhānaṃ"
+        "从格",
+        "-āya",
+        "-āhi / -ābhi"
+      ],
+      [
+        "与格",
+        "-āya",
+        "-ānaṃ"
+      ],
+      [
+        "属格",
+        "-āya",
+        "-ānaṃ"
       ],
       [
         "处格",
-        "taṇhāya / taṇhāyaṃ",
-        "taṇhāsu"
+        "-āyaṃ / -āya",
+        "-āsu"
       ]
     ],
     "examples": [
       {
         "pali": "Taṇhā dukkhasamudayo.",
         "cn": "渴爱是苦的集起。",
-        "note": "Taṇhā 是主格单数。"
+        "note": "Taṇhā 是 -ā 尾阴性名词主格单数。"
+      },
+      {
+        "pali": "Paññaṃ bhāveti.",
+        "cn": "他/她修习智慧。",
+        "note": "paññaṃ 是 paññā 的宾格单数。"
       }
     ],
     "cards": [
       {
-        "q": "taṇhā 属于什么词干类型？",
-        "a": "-ā 词干阴性名词。"
+        "q": "-ā 尾阴性名词主格单数通常是什么？",
+        "a": "-ā。"
       },
       {
-        "q": "-ā 词干阴性名词主格单数通常是什么形式？",
-        "a": "通常保持 -ā。"
+        "q": "taṇhā 的宾格单数是什么？",
+        "a": "taṇhaṃ。"
       }
     ],
     "exercises": [
       {
         "type": "choice",
-        "question": "paññā 通常是什么性？",
+        "question": "paññā 是什么词干类型？",
         "options": [
-          "阳性",
-          "阴性",
-          "中性",
-          "不变词"
+          "-a 尾阳性",
+          "-a 尾中性",
+          "-ā 尾阴性",
+          "-u 尾阳性"
         ],
-        "answer": "阴性",
-        "explanation": "paññā 是常见的 -ā 词干阴性名词。"
+        "answer": "-ā 尾阴性",
+        "explanation": "paññā 是常见 -ā 尾阴性名词。",
+        "id": "l8-e1",
+        "lesson_id": 8,
+        "lesson_title": "-ā 尾阴性名词变格",
+        "module": "名词变格",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "paññaṃ 是 paññā 的什么形式？",
+        "options": [
+          "宾格单数",
+          "主格单数",
+          "工具格复数",
+          "处格复数"
+        ],
+        "answer": "宾格单数",
+        "explanation": "-ā 尾阴性名词宾格单数为 -aṃ。",
+        "id": "l8-e2",
+        "lesson_id": 8,
+        "lesson_title": "-ā 尾阴性名词变格",
+        "module": "名词变格",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "taṇhāya 可以是什么形式？",
+        "options": [
+          "工具格/从格/与格/属格单数",
+          "主格复数",
+          "宾格复数",
+          "动词现在时"
+        ],
+        "answer": "工具格/从格/与格/属格单数",
+        "explanation": "-āya 可用于 -ā 尾阴性名词多个斜格单数。",
+        "id": "l8-e3",
+        "lesson_id": 8,
+        "lesson_title": "-ā 尾阴性名词变格",
+        "module": "名词变格",
+        "difficulty": "基础"
       }
-    ]
+    ],
+    "module": "名词变格",
+    "lesson_number": 8,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "基础"
   },
   {
-    "id": 5,
-    "title": "动词现在时基础",
-    "category": "动词",
+    "id": 9,
+    "title": "amha：第一人称代词",
+    "category": "代词",
     "level": "基础",
-    "summary": "巴利语动词现在时需要关注人称和数。初学时可先掌握第一人称单数、第二人称单数、第三人称单数。",
+    "status": "已核准",
+    "summary": "amha 是第一人称代词系统，表示“我 / 我们”。其变格形式不完全按普通名词变化，需单独识别。",
     "explanation": [
-      "动词词尾会随人称和数变化。",
-      "例如 gacchati 表示“他/她/它去”，gacchāmi 表示“我去”，gacchasi 表示“你去”。",
-      "学习动词时，要把词根、词干和词尾分开看。"
+      "主格单数为 ahaṃ，复数为 mayaṃ / amhe。",
+      "宾格单数可见 maṃ / mamaṃ，复数可见 amhe / amhākaṃ / no。",
+      "属格和与格有多种形式，如 mama、mayhaṃ、me；复数可见 amhākaṃ、asmākaṃ、no。",
+      "me、no 等短形式在经典中非常常见，阅读时必须能识别。"
     ],
     "table": [
       [
-        "人称",
+        "格",
         "单数",
-        "例子"
+        "复数"
       ],
       [
-        "第三人称",
-        "-ti",
-        "gacchati 他/她/它去"
+        "主格",
+        "ahaṃ",
+        "mayaṃ / amhe"
       ],
       [
-        "第二人称",
-        "-si",
-        "gacchasi 你去"
+        "宾格",
+        "maṃ / mamaṃ",
+        "amhe / amhākaṃ / no"
       ],
       [
-        "第一人称",
-        "-mi / -āmi",
-        "gacchāmi 我去"
+        "工具格",
+        "mayā / me",
+        "amhehi / amhebhi / no"
+      ],
+      [
+        "从格",
+        "mayā",
+        "amhehi / amhebhi"
+      ],
+      [
+        "与格",
+        "mama / mayhaṃ / mamaṃ / me",
+        "amhaṃ / amhākaṃ / asmākaṃ / no"
+      ],
+      [
+        "属格",
+        "mama / mayhaṃ / mamaṃ / me",
+        "amhaṃ / amhākaṃ / asmākaṃ / no"
+      ],
+      [
+        "处格",
+        "mayi",
+        "amhesu"
       ]
     ],
     "examples": [
       {
         "pali": "Ahaṃ gacchāmi.",
         "cn": "我去。",
-        "note": "gacchāmi 是第一人称单数。"
+        "note": "ahaṃ 是第一人称主格单数。"
       },
       {
-        "pali": "So gacchati.",
-        "cn": "他去。",
-        "note": "gacchati 是第三人称单数。"
+        "pali": "Dhammo me piyo.",
+        "cn": "法为我所喜 / 法是我喜爱的。",
+        "note": "me 可作第一人称属格/与格短形式。"
       }
     ],
     "cards": [
       {
-        "q": "gacchati 是第几人称单数？",
-        "a": "第三人称单数。"
+        "q": "ahaṃ 是什么意思？",
+        "a": "我。"
       },
       {
-        "q": "gacchāmi 是什么意思？",
-        "a": "我去。"
+        "q": "me 在第一人称代词中常可表示什么？",
+        "a": "可作“我的/给我”等属格或与格短形式。"
       }
     ],
     "exercises": [
       {
         "type": "choice",
-        "question": "gacchāmi 对应哪个主语？",
+        "question": "mayhaṃ 属于哪个代词系统？",
         "options": [
-          "ahaṃ",
-          "tvaṃ",
-          "so",
-          "te"
+          "第一人称 amha",
+          "第二人称 tumha",
+          "第三人称 tat",
+          "指示代词 eta"
         ],
-        "answer": "ahaṃ",
-        "explanation": "gacchāmi 是第一人称单数，常对应 ahaṃ。"
+        "answer": "第一人称 amha",
+        "explanation": "mayhaṃ 是第一人称单数属格/与格常见形式。",
+        "id": "l9-e1",
+        "lesson_id": 9,
+        "lesson_title": "amha：第一人称代词",
+        "module": "代词与形容词",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "代词与形容词",
+    "lesson_number": 9,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 10,
+    "title": "tumha：第二人称代词",
+    "category": "代词",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "tumha 是第二人称代词系统，表示“你 / 你们”。其变格形式也需要单独识别。",
+    "explanation": [
+      "主格单数为 tvaṃ / tuvaṃ，复数为 tumhe。",
+      "宾格单数可见 taṃ / tavaṃ / tuvaṃ，复数可见 tumhe / tumhākaṃ / vo。",
+      "工具格单数可见 tvayā / tayā / te，复数可见 tumhehi / tumhebhi / vo。",
+      "te、vo 等短形式在阅读中常见，不能只按完整形式查找。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数",
+        "复数"
+      ],
+      [
+        "主格",
+        "tvaṃ / tuvaṃ",
+        "tumhe"
+      ],
+      [
+        "宾格",
+        "taṃ / tavaṃ / tuvaṃ",
+        "tumhe / tumhākaṃ / vo"
+      ],
+      [
+        "工具格",
+        "tvayā / tayā / te",
+        "tumhehi / tumhebhi / vo"
+      ],
+      [
+        "从格",
+        "tvayā / tayā",
+        "tumhehi / tumhebhi"
+      ],
+      [
+        "与格",
+        "tava / tuyhaṃ / te",
+        "tumhaṃ / tumhākaṃ / vo"
+      ],
+      [
+        "属格",
+        "tava / tuyhaṃ / te",
+        "tumhaṃ / tumhākaṃ / vo"
+      ],
+      [
+        "处格",
+        "tvayi / tayi",
+        "tumhesu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Tvaṃ gacchasi.",
+        "cn": "你去。",
+        "note": "tvaṃ 是第二人称主格单数。"
+      },
+      {
+        "pali": "Dhammo te piyo.",
+        "cn": "法为你所喜 / 法是你喜爱的。",
+        "note": "te 可作第二人称属格/与格短形式。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "tvaṃ 是什么意思？",
+        "a": "你。"
+      },
+      {
+        "q": "vo 在第二人称代词中常可表示什么？",
+        "a": "可作复数宾格、工具格、与格或属格短形式，需按上下文判断。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "tuyhaṃ 属于哪个代词系统？",
+        "options": [
+          "第一人称 amha",
+          "第二人称 tumha",
+          "第三人称 tat",
+          "不变词"
+        ],
+        "answer": "第二人称 tumha",
+        "explanation": "tuyhaṃ 是第二人称单数属格/与格常见形式。",
+        "id": "l10-e1",
+        "lesson_id": 10,
+        "lesson_title": "tumha：第二人称代词",
+        "module": "代词与形容词",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "代词与形容词",
+    "lesson_number": 10,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 11,
+    "title": "不定过去时主动语态 hīyattanī",
+    "category": "动词变位",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "不定过去时 hīyattanī 是传统巴利语动词变位体系中的过去类词尾之一。本条先列主动语态词尾，用于识别。",
+    "explanation": [
+      "主动第三人称单数为 -ā，复数为 -ū。",
+      "主动第二人称单数为 -o，复数为 -ttha。",
+      "主动第一人称单数为 -aṃ，复数为 -mhā。",
+      "这是传统语法表中的词尾系统；具体文本中的过去形式还可能受到词根、增音和音变影响。"
+    ],
+    "table": [
+      [
+        "人称",
+        "单数",
+        "复数"
+      ],
+      [
+        "第三人称",
+        "-ā",
+        "-ū"
+      ],
+      [
+        "第二人称",
+        "-o",
+        "-ttha"
+      ],
+      [
+        "第一人称",
+        "-aṃ",
+        "-mhā"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "agamā",
+        "cn": "他/她去了。",
+        "note": "agamā 可作过去类第三人称单数形式来识别。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "hīyattanī 主动第三人称单数词尾是什么？",
+        "a": "-ā。"
+      },
+      {
+        "q": "hīyattanī 主动第二人称复数词尾是什么？",
+        "a": "-ttha。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "hīyattanī 主动第一人称复数词尾是什么？",
+        "options": [
+          "-mi",
+          "-mhā",
+          "-ssāma",
+          "-eyyāma"
+        ],
+        "answer": "-mhā",
+        "explanation": "不定过去时 hīyattanī 主动第一人称复数词尾为 -mhā。",
+        "id": "l11-e1",
+        "lesson_id": 11,
+        "lesson_title": "不定过去时主动语态 hīyattanī",
+        "module": "动词系统",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "动词系统",
+    "lesson_number": 11,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 12,
+    "title": "-i / -ī 尾阳性名词变格",
+    "category": "名词变格",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "-i / -ī 尾阳性名词和 -a 尾名词不同，斜格中常出现 -inā、-issa、-ino、-ismiṃ 等形式。",
+    "explanation": [
+      "主格单数可见 -i / -ī，宾格单数为 -iṃ。",
+      "工具格单数为 -inā；从格单数可见 -inā / -ismā / -imhā / -ito。",
+      "与格、属格单数可见 -issa / -ino。",
+      "复数中主格、呼格、宾格可见 -ī / -ayo / -ino 等并行形式。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数",
+        "复数"
+      ],
+      [
+        "主格",
+        "-i / -ī",
+        "-ī / -ayo / -ino"
+      ],
+      [
+        "呼格",
+        "-i",
+        "-ī / -ayo / -ino"
+      ],
+      [
+        "宾格",
+        "-iṃ",
+        "-ī / -ayo / -ino"
+      ],
+      [
+        "工具格",
+        "-inā",
+        "-īhi / -ībhi"
+      ],
+      [
+        "从格",
+        "-inā / -ismā / -imhā / -ito",
+        "-īhi / -ībhi"
+      ],
+      [
+        "与格",
+        "-issa / -ino",
+        "-īnaṃ"
+      ],
+      [
+        "属格",
+        "-issa / -ino",
+        "-īnaṃ"
+      ],
+      [
+        "处格",
+        "-ismiṃ / -imhi",
+        "-isu / -īsu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Aggi jalati.",
+        "cn": "火燃烧。",
+        "note": "aggi 是 -i 尾阳性名词，可作为此类词的入门例词。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "-i / -ī 尾阳性名词工具格单数常见词尾是什么？",
+        "a": "-inā。"
+      },
+      {
+        "q": "-i / -ī 尾阳性名词宾格单数是什么？",
+        "a": "-iṃ。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "-issa / -ino 在 -i / -ī 尾阳性名词中常可表示什么？",
+        "options": [
+          "主格单数",
+          "宾格复数",
+          "与格/属格单数",
+          "处格复数"
+        ],
+        "answer": "与格/属格单数",
+        "explanation": "-issa / -ino 是 -i / -ī 尾阳性名词与格、属格单数常见形式。",
+        "id": "l12-e1",
+        "lesson_id": 12,
+        "lesson_title": "-i / -ī 尾阳性名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "kapinā 是 kapi 的什么形式？",
+        "options": [
+          "工具格单数",
+          "主格单数",
+          "宾格复数",
+          "处格复数"
+        ],
+        "answer": "工具格单数",
+        "explanation": "-i 尾阳性名词工具格单数为 -inā。",
+        "id": "l12-e2",
+        "lesson_id": 12,
+        "lesson_title": "-i / -ī 尾阳性名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "kapissa / kapino 常可表示什么？",
+        "options": [
+          "与格/属格单数",
+          "主格复数",
+          "宾格单数",
+          "呼格复数"
+        ],
+        "answer": "与格/属格单数",
+        "explanation": "-issa / -ino 是 -i 尾阳性与格/属格单数常见形式。",
+        "id": "l12-e3",
+        "lesson_id": 12,
+        "lesson_title": "-i / -ī 尾阳性名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "名词变格",
+    "lesson_number": 12,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 13,
+    "title": "-u / -ū 尾阳性名词变格",
+    "category": "名词变格",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "-u / -ū 尾阳性名词常见例词有 bhikkhu、garu 等。斜格中常出现 -unā、-ussa、-uno、-usmiṃ 等形式。",
+    "explanation": [
+      "主格单数可见 -u / -ū，宾格单数为 -uṃ。",
+      "工具格单数为 -unā；从格单数可见 -unā / -usmā / -umhā / -uto。",
+      "与格、属格单数可见 -ussa / -uno。",
+      "复数中主格、呼格、宾格可见 -ū / -avo / -uno 等并行形式。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数",
+        "复数"
+      ],
+      [
+        "主格",
+        "-u / -ū",
+        "-ū / -avo / -uno"
+      ],
+      [
+        "呼格",
+        "-u",
+        "-ū / -avo / -uno"
+      ],
+      [
+        "宾格",
+        "-uṃ",
+        "-ū / -avo / -uno"
+      ],
+      [
+        "工具格",
+        "-unā",
+        "-ūhi / -ūbhi"
+      ],
+      [
+        "从格",
+        "-unā / -usmā / -umhā / -uto",
+        "-ūhi / -ūbhi"
+      ],
+      [
+        "与格",
+        "-ussa / -uno",
+        "-ūnaṃ"
+      ],
+      [
+        "属格",
+        "-ussa / -uno",
+        "-ūnaṃ"
+      ],
+      [
+        "处格",
+        "-usmiṃ / -umhi",
+        "-usu / -ūsu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Bhikkhu dhammaṃ suṇāti.",
+        "cn": "比丘听法。",
+        "note": "bhikkhu 是 -u 尾阳性名词。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "bhikkhu 属于哪类名词？",
+        "a": "-u 尾阳性名词。"
+      },
+      {
+        "q": "-u / -ū 尾阳性名词宾格单数是什么？",
+        "a": "-uṃ。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "bhikkhunā 是什么形式？",
+        "options": [
+          "主格单数",
+          "宾格单数",
+          "工具格单数",
+          "处格复数"
+        ],
+        "answer": "工具格单数",
+        "explanation": "-unā 是 -u / -ū 尾阳性名词工具格单数词尾。",
+        "id": "l13-e1",
+        "lesson_id": 13,
+        "lesson_title": "-u / -ū 尾阳性名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "bhikkhunā 是 bhikkhu 的什么形式？",
+        "options": [
+          "工具格单数",
+          "主格单数",
+          "宾格复数",
+          "处格单数"
+        ],
+        "answer": "工具格单数",
+        "explanation": "-u 尾阳性名词工具格单数为 -unā。",
+        "id": "l13-e2",
+        "lesson_id": 13,
+        "lesson_title": "-u / -ū 尾阳性名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "bhikkhussa / bhikkhuno 常可表示什么？",
+        "options": [
+          "与格/属格单数",
+          "宾格复数",
+          "主格复数",
+          "工具格复数"
+        ],
+        "answer": "与格/属格单数",
+        "explanation": "-ussa / -uno 可作 -u 尾阳性与格/属格单数。",
+        "id": "l13-e3",
+        "lesson_id": 13,
+        "lesson_title": "-u / -ū 尾阳性名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "名词变格",
+    "lesson_number": 13,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 14,
+    "title": "-i 尾中性名词变格",
+    "category": "名词变格",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "-i 尾中性名词如 aṭṭhi，主格、宾格、呼格在单数和复数中有中性名词同形倾向。",
+    "explanation": [
+      "单数主格为 -i，宾格为 -iṃ，呼格为 -i。",
+      "复数主格、宾格、呼格常见 -ī / -īni。",
+      "从工具格到处格，许多词尾与 -i 尾阳性名词相近。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数",
+        "复数"
+      ],
+      [
+        "主格",
+        "-i",
+        "-ī / -īni"
+      ],
+      [
+        "呼格",
+        "-i",
+        "-ī / -īni"
+      ],
+      [
+        "宾格",
+        "-iṃ",
+        "-ī / -īni"
+      ],
+      [
+        "工具格",
+        "-inā",
+        "-īhi / -ībhi"
+      ],
+      [
+        "从格",
+        "-inā / -ismā / -imhā / -ito",
+        "-īhi / -ībhi"
+      ],
+      [
+        "与格",
+        "-issa / -ino",
+        "-īnaṃ"
+      ],
+      [
+        "属格",
+        "-issa / -ino",
+        "-īnaṃ"
+      ],
+      [
+        "处格",
+        "-ismiṃ / -imhi",
+        "-isu / -īsu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Aṭṭhiṃ passati.",
+        "cn": "他/她看见骨。",
+        "note": "aṭṭhiṃ 是 aṭṭhi 的宾格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "-i 尾中性名词复数主格/宾格常见词尾是什么？",
+        "a": "-ī / -īni。"
+      },
+      {
+        "q": "aṭṭhi 属于什么性？",
+        "a": "中性。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "aṭṭhīni 是什么形式？",
+        "options": [
+          "阳性主格单数",
+          "中性主格/宾格复数",
+          "阴性工具格单数",
+          "动词现在时"
+        ],
+        "answer": "中性主格/宾格复数",
+        "explanation": "-īni 是 -i 尾中性名词复数主格/宾格常见词尾。",
+        "id": "l14-e1",
+        "lesson_id": 14,
+        "lesson_title": "-i 尾中性名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "aṭṭhiṃ 是 aṭṭhi 的什么形式？",
+        "options": [
+          "宾格单数",
+          "主格复数",
+          "处格单数",
+          "工具格复数"
+        ],
+        "answer": "宾格单数",
+        "explanation": "-i 尾中性名词宾格单数为 -iṃ。",
+        "id": "l14-e2",
+        "lesson_id": 14,
+        "lesson_title": "-i 尾中性名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "名词变格",
+    "lesson_number": 14,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 15,
+    "title": "-u / -ū 尾中性名词变格",
+    "category": "名词变格",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "-u / -ū 尾中性名词如 cakkhu。复数主格、宾格、呼格常见 -ū / -ūni。",
+    "explanation": [
+      "单数主格可见 -u / -ū，宾格为 -uṃ，呼格为 -u。",
+      "复数主格、宾格、呼格常见 -ū / -ūni。",
+      "斜格形式与 -u / -ū 尾阳性名词相近。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数",
+        "复数"
+      ],
+      [
+        "主格",
+        "-u / -ū",
+        "-ū / -ūni"
+      ],
+      [
+        "呼格",
+        "-u",
+        "-ū / -ūni"
+      ],
+      [
+        "宾格",
+        "-uṃ",
+        "-ū / -ūni"
+      ],
+      [
+        "工具格",
+        "-unā",
+        "-ūhi / -ūbhi"
+      ],
+      [
+        "从格",
+        "-unā / -usmā / -umhā / -uto",
+        "-ūhi / -ūbhi"
+      ],
+      [
+        "与格",
+        "-ussa / -uno",
+        "-ūnaṃ"
+      ],
+      [
+        "属格",
+        "-ussa / -uno",
+        "-ūnaṃ"
+      ],
+      [
+        "处格",
+        "-usmiṃ / -umhi",
+        "-usu / -ūsu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Cakkhu rūpaṃ passati.",
+        "cn": "眼见色。",
+        "note": "cakkhu 是 -u 尾中性名词。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "cakkhu 属于什么性？",
+        "a": "中性。"
+      },
+      {
+        "q": "-u / -ū 尾中性名词复数主格/宾格常见词尾是什么？",
+        "a": "-ū / -ūni。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "cakkhūni 是什么形式？",
+        "options": [
+          "中性主格/宾格复数",
+          "阳性工具格单数",
+          "阴性主格单数",
+          "动词过去时"
+        ],
+        "answer": "中性主格/宾格复数",
+        "explanation": "-ūni 是 -u / -ū 尾中性名词复数主格/宾格常见形式。",
+        "id": "l15-e1",
+        "lesson_id": 15,
+        "lesson_title": "-u / -ū 尾中性名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "cakkhuṃ 是 cakkhu 的什么形式？",
+        "options": [
+          "宾格单数",
+          "主格复数",
+          "处格复数",
+          "工具格单数"
+        ],
+        "answer": "宾格单数",
+        "explanation": "-u 尾中性名词宾格单数为 -uṃ。",
+        "id": "l15-e2",
+        "lesson_id": 15,
+        "lesson_title": "-u / -ū 尾中性名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "名词变格",
+    "lesson_number": 15,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 16,
+    "title": "-i / -ī 尾阴性名词变格",
+    "category": "名词变格",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "-i / -ī 尾阴性名词如 bhūmi、nadī。阴性斜格常见 -iyā、-īhi、-īnaṃ、-īsu 等形式。",
+    "explanation": [
+      "主格单数可见 -i / -ī，宾格单数为 -iṃ。",
+      "工具格、从格、与格、属格单数常见 -iyā。",
+      "处格单数可见 -iyaṃ / -iyā。",
+      "复数主格、呼格、宾格可见 -ī / -iyo。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数",
+        "复数"
+      ],
+      [
+        "主格",
+        "-i / -ī",
+        "-ī / -iyo"
+      ],
+      [
+        "呼格",
+        "-i",
+        "-ī / -iyo"
+      ],
+      [
+        "宾格",
+        "-iṃ",
+        "-ī / -iyo"
+      ],
+      [
+        "工具格",
+        "-iyā",
+        "-īhi / -ībhi"
+      ],
+      [
+        "从格",
+        "-iyā",
+        "-īhi / -ībhi"
+      ],
+      [
+        "与格",
+        "-iyā",
+        "-īnaṃ"
+      ],
+      [
+        "属格",
+        "-iyā",
+        "-īnaṃ"
+      ],
+      [
+        "处格",
+        "-iyaṃ / -iyā",
+        "-isu / -īsu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Bhūmi kampati.",
+        "cn": "大地震动。",
+        "note": "bhūmi 是 -i 尾阴性名词。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "-i / -ī 尾阴性名词工具格单数常见词尾是什么？",
+        "a": "-iyā。"
+      },
+      {
+        "q": "-i / -ī 尾阴性名词复数主格常见词尾有哪些？",
+        "a": "-ī / -iyo。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "bhūmiyā 可能是什么形式？",
+        "options": [
+          "主格单数",
+          "宾格复数",
+          "工具格/属格等单数",
+          "处格复数"
+        ],
+        "answer": "工具格/属格等单数",
+        "explanation": "-iyā 可用于 -i / -ī 尾阴性名词工具格、从格、与格或属格单数。",
+        "id": "l16-e1",
+        "lesson_id": 16,
+        "lesson_title": "-i / -ī 尾阴性名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "名词变格",
+    "lesson_number": 16,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 17,
+    "title": "-u / -ū 尾阴性名词变格",
+    "category": "名词变格",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "-u / -ū 尾阴性名词如 dhenu。阴性斜格常见 -uyā、-ūhi、-ūnaṃ、-ūsu 等形式。",
+    "explanation": [
+      "主格单数可见 -u / -ū，宾格单数为 -uṃ。",
+      "工具格、从格、与格、属格单数常见 -uyā。",
+      "处格单数可见 -uyaṃ / -uyā。",
+      "复数主格、呼格、宾格可见 -ū / -uyo。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数",
+        "复数"
+      ],
+      [
+        "主格",
+        "-u / -ū",
+        "-ū / -uyo"
+      ],
+      [
+        "呼格",
+        "-u",
+        "-ū / -uyo"
+      ],
+      [
+        "宾格",
+        "-uṃ",
+        "-ū / -uyo"
+      ],
+      [
+        "工具格",
+        "-uyā",
+        "-ūhi / -ūbhi"
+      ],
+      [
+        "从格",
+        "-uyā",
+        "-ūhi / -ūbhi"
+      ],
+      [
+        "与格",
+        "-uyā",
+        "-ūnaṃ"
+      ],
+      [
+        "属格",
+        "-uyā",
+        "-ūnaṃ"
+      ],
+      [
+        "处格",
+        "-uyaṃ / -uyā",
+        "-usu / -ūsu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Dhenu tiṭṭhati.",
+        "cn": "母牛站着。",
+        "note": "dhenu 是 -u 尾阴性名词。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "-u / -ū 尾阴性名词宾格单数是什么？",
+        "a": "-uṃ。"
+      },
+      {
+        "q": "-u / -ū 尾阴性名词处格复数常见词尾是什么？",
+        "a": "-usu / -ūsu。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "dhenuyā 可能是什么形式？",
+        "options": [
+          "主格单数",
+          "宾格单数",
+          "工具格/属格等单数",
+          "主格复数"
+        ],
+        "answer": "工具格/属格等单数",
+        "explanation": "-uyā 可用于 -u / -ū 尾阴性名词多个斜格单数。",
+        "id": "l17-e1",
+        "lesson_id": 17,
+        "lesson_title": "-u / -ū 尾阴性名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "名词变格",
+    "lesson_number": 17,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 18,
+    "title": "tat 指示代词：阳性与中性",
+    "category": "代词",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "tat 可作第三人称/指示代词使用。阳性常见 so、te；中性常见 taṃ、tāni。",
+    "explanation": [
+      "阳性主格单数为 so，复数为 te；宾格单数为 taṃ，复数为 te。",
+      "中性主格/宾格单数为 taṃ，复数可见 tāni / te。",
+      "阳性和中性的工具格到处格多用相同形式，如 tena、tasmā、tassa、tasmiṃ。"
+    ],
+    "table": [
+      [
+        "格",
+        "阳性单数",
+        "阳性复数",
+        "中性单数",
+        "中性复数"
+      ],
+      [
+        "主格",
+        "so",
+        "te",
+        "taṃ",
+        "tāni / te"
+      ],
+      [
+        "宾格",
+        "taṃ",
+        "te",
+        "taṃ",
+        "tāni / te"
+      ],
+      [
+        "工具格",
+        "tena",
+        "tehi / tebhi",
+        "tena",
+        "tehi / tebhi"
+      ],
+      [
+        "从格",
+        "tasmā / tamhā",
+        "tehi / tebhi",
+        "tasmā / tamhā",
+        "tehi / tebhi"
+      ],
+      [
+        "与格",
+        "tassa",
+        "tesānaṃ / tesaṃ",
+        "tassa",
+        "tesānaṃ / tesaṃ"
+      ],
+      [
+        "属格",
+        "tassa",
+        "tesānaṃ / tesaṃ",
+        "tassa",
+        "tesānaṃ / tesaṃ"
+      ],
+      [
+        "处格",
+        "tasmiṃ / tamhi",
+        "tesu",
+        "tasmiṃ / tamhi",
+        "tesu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "So puriso gacchati.",
+        "cn": "那个人去 / 他去。",
+        "note": "so 是 tat 的阳性主格单数。"
+      },
+      {
+        "pali": "Taṃ cittaṃ passati.",
+        "cn": "他/她看见那个心。",
+        "note": "taṃ 可作中性主格/宾格单数，也可作阳性/阴性宾格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "tat 阳性主格单数是什么？",
+        "a": "so。"
+      },
+      {
+        "q": "tat 中性主格/宾格复数常见形式是什么？",
+        "a": "tāni / te。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "so puriso 中 so 是什么形式？",
+        "options": [
+          "阳性主格单数",
+          "中性宾格复数",
+          "阴性工具格单数",
+          "动词过去式"
+        ],
+        "answer": "阳性主格单数",
+        "explanation": "so 是 tat 指示代词阳性主格单数。",
+        "id": "l18-e1",
+        "lesson_id": 18,
+        "lesson_title": "tat 指示代词：阳性与中性",
+        "module": "代词与形容词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "so puriso 中 so 是什么？",
+        "options": [
+          "tat 的阳性主格单数",
+          "tat 的中性宾格复数",
+          "疑问代词",
+          "不变词"
+        ],
+        "answer": "tat 的阳性主格单数",
+        "explanation": "so 是 tat 指示代词阳性主格单数。",
+        "id": "l18-e2",
+        "lesson_id": 18,
+        "lesson_title": "tat 指示代词：阳性与中性",
+        "module": "代词与形容词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "tassa 可作什么？",
+        "options": [
+          "阳性/中性与格或属格单数",
+          "阴性主格单数",
+          "动词现在时",
+          "不定式"
+        ],
+        "answer": "阳性/中性与格或属格单数",
+        "explanation": "tassa 是 tat 阳性/中性与格或属格单数。",
+        "id": "l18-e3",
+        "lesson_id": 18,
+        "lesson_title": "tat 指示代词：阳性与中性",
+        "module": "代词与形容词",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "代词与形容词",
+    "lesson_number": 18,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 19,
+    "title": "tat 指示代词：阴性",
+    "category": "代词",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "tat 的阴性形式包括 sā、tā、tāyo、tāya、tassā、tāsu 等。需要和阳性、中性分开识别。",
+    "explanation": [
+      "阴性主格单数为 sā，复数为 tā / tāyo。",
+      "阴性宾格单数为 taṃ，复数为 tā / tāyo。",
+      "工具格、从格单数为 tāya；与格、属格单数可见 tāya / tassā。",
+      "处格单数可见 tāya / tāyaṃ / tassaṃ；复数处格为 tāsu。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数",
+        "复数"
+      ],
+      [
+        "主格",
+        "sā",
+        "tā / tāyo"
+      ],
+      [
+        "宾格",
+        "taṃ",
+        "tā / tāyo"
+      ],
+      [
+        "工具格",
+        "tāya",
+        "tāhi / tābhi"
+      ],
+      [
+        "从格",
+        "tāya",
+        "tāhi / tābhi"
+      ],
+      [
+        "与格",
+        "tāya / tassā",
+        "tāsānaṃ / tāsaṃ"
+      ],
+      [
+        "属格",
+        "tāya / tassā",
+        "tāsānaṃ / tāsaṃ"
+      ],
+      [
+        "处格",
+        "tāya / tāyaṃ / tassaṃ",
+        "tāsu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Sā itthī gacchati.",
+        "cn": "那个女人去 / 她去。",
+        "note": "sā 是 tat 的阴性主格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "tat 阴性主格单数是什么？",
+        "a": "sā。"
+      },
+      {
+        "q": "tat 阴性工具格单数是什么？",
+        "a": "tāya。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "tāsu 是什么形式？",
+        "options": [
+          "阴性处格复数",
+          "阳性主格单数",
+          "中性宾格单数",
+          "动词将来时"
+        ],
+        "answer": "阴性处格复数",
+        "explanation": "tāsu 是 tat 阴性处格复数形式。",
+        "id": "l19-e1",
+        "lesson_id": 19,
+        "lesson_title": "tat 指示代词：阴性",
+        "module": "代词与形容词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "sā itthī 中 sā 是什么？",
+        "options": [
+          "tat 阴性主格单数",
+          "tat 阳性宾格单数",
+          "普通否定",
+          "动词词尾"
+        ],
+        "answer": "tat 阴性主格单数",
+        "explanation": "sā 是 tat 的阴性主格单数。",
+        "id": "l19-e2",
+        "lesson_id": 19,
+        "lesson_title": "tat 指示代词：阴性",
+        "module": "代词与形容词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "tāya 可以是什么形式？",
+        "options": [
+          "tat 阴性工具格/从格/与格/属格单数",
+          "阳性主格复数",
+          "中性宾格复数",
+          "不定式"
+        ],
+        "answer": "tat 阴性工具格/从格/与格/属格单数",
+        "explanation": "tāya 是 tat 阴性多个斜格单数形式。",
+        "id": "l19-e3",
+        "lesson_id": 19,
+        "lesson_title": "tat 指示代词：阴性",
+        "module": "代词与形容词",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "代词与形容词",
+    "lesson_number": 19,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 20,
+    "title": "sabba 代词性形容词",
+    "category": "代词 / 形容词",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "sabba 表示“一切、所有、全部”，可作代词性形容词，随性、数、格变化。",
+    "explanation": [
+      "sabba 的阳性和中性许多形式类似 -a 类，但有代词性变化特点。",
+      "阳性主格单数为 sabbo，宾格单数为 sabbaṃ；复数主格/宾格为 sabbe。",
+      "中性主格/宾格单数为 sabbaṃ，复数可见 sabbe / sabbāni。",
+      "阴性主格单数为 sabbā，宾格单数为 sabbaṃ，复数主格/宾格可见 sabbā / sabbāyo。",
+      "你的笔记中个别位置写作 sabbssa，正式版按标准形式校为 sabbassa / sabbassā。"
+    ],
+    "table": [
+      [
+        "性",
+        "主格单数",
+        "宾格单数",
+        "工具格单数",
+        "属格/与格单数",
+        "处格单数",
+        "主格/宾格复数"
+      ],
+      [
+        "阳性",
+        "sabbo",
+        "sabbaṃ",
+        "sabbena",
+        "sabbassa",
+        "sabbasmiṃ / sabbamhi",
+        "sabbe"
+      ],
+      [
+        "中性",
+        "sabbaṃ",
+        "sabbaṃ",
+        "sabbena",
+        "sabbassa",
+        "sabbasmiṃ / sabbamhi",
+        "sabbe / sabbāni"
+      ],
+      [
+        "阴性",
+        "sabbā",
+        "sabbaṃ",
+        "sabbāya",
+        "sabbāya / sabbassā",
+        "sabbāya / sabbāyaṃ",
+        "sabbā / sabbāyo"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Sabbe sattā bhavantu sukhitattā.",
+        "cn": "愿一切众生安乐。",
+        "note": "sabbe 是 sabba 的阳性复数主格形式。"
+      },
+      {
+        "pali": "Sabbaṃ aniccaṃ.",
+        "cn": "一切无常。",
+        "note": "sabbaṃ 可作中性主格/宾格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "sabba 的基本意思是什么？",
+        "a": "一切、所有、全部。"
+      },
+      {
+        "q": "sabba 阳性主格复数是什么？",
+        "a": "sabbe。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "sabbe sattā 中 sabbe 是什么形式？",
+        "options": [
+          "阳性复数主格",
+          "阴性单数宾格",
+          "中性单数工具格",
+          "动词现在时"
+        ],
+        "answer": "阳性复数主格",
+        "explanation": "sabbe 可作 sabba 的阳性复数主格，修饰 sattā。",
+        "id": "l20-e1",
+        "lesson_id": 20,
+        "lesson_title": "sabba 代词性形容词",
+        "module": "代词与形容词",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "Sabbe sattā bhavantu sukhitattā. 中 sabbe 是什么形式？",
+        "options": [
+          "阳性复数主格",
+          "中性单数宾格",
+          "阴性单数主格",
+          "工具格单数"
+        ],
+        "answer": "阳性复数主格",
+        "explanation": "sabbe 可作 sabba 的阳性复数主格，修饰 sattā。",
+        "id": "l20-e2",
+        "lesson_id": 20,
+        "lesson_title": "sabba 代词性形容词",
+        "module": "代词与形容词",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "sabbaṃ aniccaṃ 中 sabbaṃ 更适合理解为什么？",
+        "options": [
+          "中性主格/宾格单数",
+          "阳性主格复数",
+          "阴性工具格单数",
+          "动词过去时"
+        ],
+        "answer": "中性主格/宾格单数",
+        "explanation": "sabbaṃ 可作中性主格或宾格单数。",
+        "id": "l20-e3",
+        "lesson_id": 20,
+        "lesson_title": "sabba 代词性形容词",
+        "module": "代词与形容词",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "代词与形容词",
+    "lesson_number": 20,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 21,
+    "title": "不定式 infinitive：-tuṃ / -ituṃ / -etuṃ",
+    "category": "非限定动词",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "巴利语不定式常表示“去做某事、为了做某事、能够做某事”等意义，常见词尾为 -tuṃ，也可见 -ituṃ、-etuṃ 等形式。",
+    "explanation": [
+      "最常见的不定式词尾是 -tuṃ，例如 gantuṃ“去”、kātuṃ“做”。",
+      "在一些词基后可见 -ituṃ 或 -etuṃ，例如 bhavituṃ“成为/存在”、desetuṃ“说示/开示”。",
+      "不定式不是限定动词，不直接表示人称和数；它常与 icchati、labhati、sakkoti 等动词搭配。",
+      "生成不定式时常涉及词根或词基变化，不能只机械地把 -tuṃ 接到词典形后面。"
+    ],
+    "table": [
+      [
+        "形式",
+        "例子",
+        "基本意义"
+      ],
+      [
+        "-tuṃ",
+        "gantuṃ",
+        "去"
+      ],
+      [
+        "-tuṃ",
+        "kātuṃ",
+        "做"
+      ],
+      [
+        "-ituṃ",
+        "bhavituṃ",
+        "成为；存在"
+      ],
+      [
+        "-etuṃ",
+        "desetuṃ",
+        "说示；开示"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "So gantuṃ icchati.",
+        "cn": "他想去。",
+        "note": "gantuṃ 是不定式，和 icchati 搭配。"
+      },
+      {
+        "pali": "Dhammaṃ desetuṃ āgacchati.",
+        "cn": "他来开示法。",
+        "note": "desetuṃ 是不定式，可表示目的。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "巴利语不定式最常见的词尾是什么？",
+        "a": "-tuṃ。"
+      },
+      {
+        "q": "gantuṃ 是什么形式？",
+        "a": "不定式，意思是“去”。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "下列哪一个是不定式？",
+        "options": [
+          "gacchati",
+          "gacchanti",
+          "gantuṃ",
+          "gacchāmi"
+        ],
+        "answer": "gantuṃ",
+        "explanation": "gantuṃ 是不定式，常可理解为“去 / 为了去”。",
+        "id": "l21-e1",
+        "lesson_id": 21,
+        "lesson_title": "不定式 infinitive：-tuṃ / -ituṃ / -etuṃ",
+        "module": "分词与非限定动词",
+        "difficulty": "基础"
       },
       {
         "type": "input",
-        "question": "请写出“他去”的动词形式：so ______。",
-        "answer": "gacchati",
-        "explanation": "第三人称单数现在时常见词尾是 -ti。"
+        "question": "请写出“做”的常见不定式形式。",
+        "answer": "kātuṃ",
+        "explanation": "kātuṃ 是 karoti“做”的常见不定式。",
+        "id": "l21-e2",
+        "lesson_id": 21,
+        "lesson_title": "不定式 infinitive：-tuṃ / -ituṃ / -etuṃ",
+        "module": "分词与非限定动词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "So gantuṃ icchati. 中 gantuṃ 是什么形式？",
+        "options": [
+          "不定式",
+          "现在分词",
+          "过去分词",
+          "工具格单数"
+        ],
+        "answer": "不定式",
+        "explanation": "gantuṃ 是 gam/gacchati 的不定式，可理解为“去 / 为了去”。",
+        "id": "l21-e3",
+        "lesson_id": 21,
+        "lesson_title": "不定式 infinitive：-tuṃ / -ituṃ / -etuṃ",
+        "module": "分词与非限定动词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "input",
+        "question": "请写出 karoti“做”的常见不定式。",
+        "answer": "kātuṃ",
+        "explanation": "karoti 的常见不定式是 kātuṃ，不能机械写成 karotuṃ。",
+        "id": "l21-e4",
+        "lesson_id": 21,
+        "lesson_title": "不定式 infinitive：-tuṃ / -ituṃ / -etuṃ",
+        "module": "分词与非限定动词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "input",
+        "question": "请写出 bhavati“成为；存在”的常见不定式。",
+        "answer": "bhavituṃ",
+        "explanation": "bhavati 的常见不定式是 bhavituṃ。",
+        "id": "l21-e5",
+        "lesson_id": 21,
+        "lesson_title": "不定式 infinitive：-tuṃ / -ituṃ / -etuṃ",
+        "module": "分词与非限定动词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "input",
+        "question": "请写出 deseti“开示；说示”的常见不定式。",
+        "answer": "desetuṃ",
+        "explanation": "deseti 的常见不定式是 desetuṃ。",
+        "id": "l21-e6",
+        "lesson_id": 21,
+        "lesson_title": "不定式 infinitive：-tuṃ / -ituṃ / -etuṃ",
+        "module": "分词与非限定动词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Dhammaṃ desetuṃ āgacchati. 中 desetuṃ 表示什么？",
+        "options": [
+          "为了开示",
+          "已经开示",
+          "正在开示的",
+          "应被开示"
+        ],
+        "answer": "为了开示",
+        "explanation": "不定式可表示目的，desetuṃ 可理解为“为了开示”。",
+        "id": "l21-e7",
+        "lesson_id": 21,
+        "lesson_title": "不定式 infinitive：-tuṃ / -ituṃ / -etuṃ",
+        "module": "分词与非限定动词",
+        "difficulty": "基础"
       }
-    ]
+    ],
+    "module": "分词与非限定动词",
+    "lesson_number": 21,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 22,
+    "title": "连续体 gerund / absolutive：-tvā / -tvāna / -ya",
+    "category": "非限定动词",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "连续体表示一个动作先于另一个动作完成，常可译为“……之后”。常见词尾包括 -tvā、-tvāna，也可见 -ya 等形式。",
+    "explanation": [
+      "连续体常表示动作先后关系，例如 gantvā 可理解为“去了之后”。",
+      "-tvā 是最常见形式之一，例如 katvā“做了之后”、sutvā“听闻之后”。",
+      "-tvāna 是 -tvā 的扩展形式，也可表示完成后动作。",
+      "带前缀的动词中常可见 -ya 类形式；具体形成方式需结合词根和前缀，不宜机械套用。"
+    ],
+    "table": [
+      [
+        "形式",
+        "例子",
+        "基本理解"
+      ],
+      [
+        "-tvā",
+        "gantvā",
+        "去了之后"
+      ],
+      [
+        "-tvā",
+        "katvā",
+        "做了之后"
+      ],
+      [
+        "-tvā",
+        "sutvā",
+        "听了之后"
+      ],
+      [
+        "-tvāna",
+        "katvāna",
+        "做了之后"
+      ],
+      [
+        "-ya",
+        "ādāya",
+        "拿取之后；带着"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "So nagaraṃ gantvā nisīdi.",
+        "cn": "他到城里后坐下。",
+        "note": "gantvā 是连续体，表示先行动作。"
+      },
+      {
+        "pali": "Dhammaṃ sutvā pasīdati.",
+        "cn": "听闻法之后，他/她生起信心。",
+        "note": "sutvā 是连续体。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "gantvā 常可怎样理解？",
+        "a": "去了之后。"
+      },
+      {
+        "q": "连续体通常表示什么关系？",
+        "a": "动作先后关系，即先做某事之后再做另一事。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "katvā 更接近哪种意思？",
+        "options": [
+          "正在做",
+          "做了之后",
+          "将要做",
+          "应该被做"
+        ],
+        "answer": "做了之后",
+        "explanation": "katvā 是连续体，常可理解为“做了之后”。",
+        "id": "l22-e1",
+        "lesson_id": 22,
+        "lesson_title": "连续体 gerund / absolutive：-tvā / -tvāna / -ya",
+        "module": "分词与非限定动词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "So nagaraṃ gantvā nisīdi. 中 gantvā 的作用是什么？",
+        "options": [
+          "表示先行动作：去了之后",
+          "表示将来动作",
+          "表示禁止",
+          "表示属格"
+        ],
+        "answer": "表示先行动作：去了之后",
+        "explanation": "gantvā 是连续体/独立式，常表示“去了之后”。",
+        "id": "l22-e2",
+        "lesson_id": 22,
+        "lesson_title": "连续体 gerund / absolutive：-tvā / -tvāna / -ya",
+        "module": "分词与非限定动词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "katvā 最合适的理解是？",
+        "options": [
+          "做了之后",
+          "将要做",
+          "正在做",
+          "应做的"
+        ],
+        "answer": "做了之后",
+        "explanation": "katvā 是连续体，可理解为“做了之后”。",
+        "id": "l22-e3",
+        "lesson_id": 22,
+        "lesson_title": "连续体 gerund / absolutive：-tvā / -tvāna / -ya",
+        "module": "分词与非限定动词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Dhammaṃ sutvā pasīdati. 中 sutvā 是什么形式？",
+        "options": [
+          "连续体",
+          "不定式",
+          "现在时",
+          "与格"
+        ],
+        "answer": "连续体",
+        "explanation": "sutvā 是连续体，表示“听闻之后”。",
+        "id": "l22-e4",
+        "lesson_id": 22,
+        "lesson_title": "连续体 gerund / absolutive：-tvā / -tvāna / -ya",
+        "module": "分词与非限定动词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "ādāya 在连续体中常可理解为？",
+        "options": [
+          "拿取之后；带着",
+          "将拿",
+          "被拿",
+          "不拿"
+        ],
+        "answer": "拿取之后；带着",
+        "explanation": "ādāya 是常见 -ya 类连续体，可理解为“拿取之后、带着”。",
+        "id": "l22-e5",
+        "lesson_id": 22,
+        "lesson_title": "连续体 gerund / absolutive：-tvā / -tvāna / -ya",
+        "module": "分词与非限定动词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "连续体 gerund / absolutive 通常不直接表示什么？",
+        "options": [
+          "人称和数",
+          "动作先后",
+          "先行动作",
+          "完成后再进行另一动作"
+        ],
+        "answer": "人称和数",
+        "explanation": "连续体是非限定动词形式，不像限定动词那样直接表示人称和数。",
+        "id": "l22-e6",
+        "lesson_id": 22,
+        "lesson_title": "连续体 gerund / absolutive：-tvā / -tvāna / -ya",
+        "module": "分词与非限定动词",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "分词与非限定动词",
+    "lesson_number": 22,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 23,
+    "title": "现在分词 present participle：-nta / -māna / -āna",
+    "category": "分词",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "现在分词表示正在进行或伴随的动作，具有形容词性质，会随性、数、格变化。常见构成有 -nta，也可见 -māna、-āna。",
+    "explanation": [
+      "现在分词可理解为“正在……的”。例如 gacchanta- 可理解为“正在去的”。",
+      "主动现在分词常见 -nta；中间语态或相应形式可见 -māna、-āna。",
+      "现在分词具有形容词性质，需按所修饰名词的性、数、格变化。",
+      "你的笔记中列出 -nta 阳性、中性及 -ntī 阴性变格。本网站初级表先列最常见识别形式，完整变格后续可单列。"
+    ],
+    "table": [
+      [
+        "类型",
+        "形式",
+        "例子",
+        "基本理解"
+      ],
+      [
+        "主动现在分词词干",
+        "-nta",
+        "gacchanta-",
+        "正在去的"
+      ],
+      [
+        "阳性主格单数常见",
+        "-nto",
+        "gacchanto",
+        "正在去的男子 / 他正在去"
+      ],
+      [
+        "中性主格/宾格单数",
+        "-ntaṃ",
+        "gacchantaṃ",
+        "正在去的事物 / 对象"
+      ],
+      [
+        "阴性主格单数",
+        "-ntī",
+        "gacchantī",
+        "正在去的女子 / 她正在去"
+      ],
+      [
+        "中间形式",
+        "-māna / -āna",
+        "bhavamāna-",
+        "正在成为/存在的"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Gacchanto puriso passati.",
+        "cn": "正在走的人看见。",
+        "note": "gacchanto 是现在分词阳性主格单数。"
+      },
+      {
+        "pali": "Gacchantī itthī āgacchati.",
+        "cn": "正在走来的女人到来。",
+        "note": "gacchantī 是现在分词阴性主格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "现在分词常表示什么？",
+        "a": "正在进行或伴随的动作，可理解为“正在……的”。"
+      },
+      {
+        "q": "gacchanto 是什么形式？",
+        "a": "现在分词阳性主格单数，意为“正在去的”。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "gacchantī 更可能是什么形式？",
+        "options": [
+          "现在分词阴性主格单数",
+          "不定式",
+          "过去分词中性单数",
+          "将来时动词"
+        ],
+        "answer": "现在分词阴性主格单数",
+        "explanation": "-ntī 是现在分词阴性主格单数常见形式。",
+        "id": "l23-e1",
+        "lesson_id": 23,
+        "lesson_title": "现在分词 present participle：-nta / -māna / -āna",
+        "module": "分词与非限定动词",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "分词与非限定动词",
+    "lesson_number": 23,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 24,
+    "title": "过去分词 past participle：-ta / -na",
+    "category": "分词",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "过去分词常表示完成或被动意义，常见后缀有 -ta 和 -na。过去分词通常像 -a 尾形容词一样变格。",
+    "explanation": [
+      "过去分词可理解为“已经……的 / 被……的”。",
+      "常见后缀有 -ta，例如 kata“已做的”、gata“已去的”、suta“已听闻的”。",
+      "也可见 -na，例如 dinna“已给的 / 被给的”、hīna“已舍弃的 / 劣的”。",
+      "过去分词形成常涉及音变或同化，不能只机械地把 -ta 或 -na 接在词根后。",
+      "你的笔记列出多类形成规则，例如元音变化、鼻音脱落、辅音同化等；网站先列常见代表形式。"
+    ],
+    "table": [
+      [
+        "类型",
+        "例子",
+        "基本理解"
+      ],
+      [
+        "-ta",
+        "kata",
+        "已做的 / 被做的"
+      ],
+      [
+        "-ta",
+        "gata",
+        "已去的"
+      ],
+      [
+        "-ta",
+        "suta",
+        "已听闻的"
+      ],
+      [
+        "-ta 同化",
+        "buddha",
+        "已觉悟的"
+      ],
+      [
+        "-na",
+        "dinna",
+        "已给的 / 被给的"
+      ],
+      [
+        "-na",
+        "hīna",
+        "已舍弃的；低劣的"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Kataṃ kammaṃ.",
+        "cn": "已作之业。",
+        "note": "kataṃ 是过去分词 kata 的中性主格/宾格单数形式。"
+      },
+      {
+        "pali": "Dinnaṃ dānaṃ.",
+        "cn": "已施之布施。",
+        "note": "dinnaṃ 是过去分词 dinna 的中性单数形式。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "过去分词常表示什么意义？",
+        "a": "完成或被动意义，如“已……的 / 被……的”。"
+      },
+      {
+        "q": "kata 是什么形式？",
+        "a": "过去分词，意思是“已做的 / 被做的”。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "dinna 更接近哪种意义？",
+        "options": [
+          "正在给",
+          "已给的 / 被给的",
+          "将要给",
+          "为了给"
+        ],
+        "answer": "已给的 / 被给的",
+        "explanation": "dinna 是以 -na 形成的过去分词。",
+        "id": "l24-e1",
+        "lesson_id": 24,
+        "lesson_title": "过去分词 past participle：-ta / -na",
+        "module": "分词与非限定动词",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "分词与非限定动词",
+    "lesson_number": 24,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 25,
+    "title": "将来被动分词 potential passive participle：-tabba / -anīya / -ya",
+    "category": "分词",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "将来被动分词常表示“应当被……、值得被……、可以被……”。常见形式包括 -tabba、-anīya、-ya。",
+    "explanation": [
+      "将来被动分词也常称 gerundive 或 potential passive participle。",
+      "-tabba 很常见，例如 daṭṭhabba“应见的”、kātabba“应做的”。",
+      "-anīya 也常见，例如 karaṇīya“应作的”。",
+      "-ya 也可构成此类意义，但具体形成需结合词根，初学时先识别常见成词。",
+      "这类词具有形容词性质，通常按性、数、格变化。"
+    ],
+    "table": [
+      [
+        "后缀",
+        "例子",
+        "基本理解"
+      ],
+      [
+        "-tabba",
+        "kātabba",
+        "应做的"
+      ],
+      [
+        "-tabba",
+        "daṭṭhabba",
+        "应见的 / 应被看见的"
+      ],
+      [
+        "-tabba",
+        "bhāvetabba",
+        "应修习的"
+      ],
+      [
+        "-anīya",
+        "karaṇīya",
+        "应作的"
+      ],
+      [
+        "-ya",
+        "kicca",
+        "应作之事；义务"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Karaṇīyaṃ kusalaṃ.",
+        "cn": "应作善。",
+        "note": "karaṇīyaṃ 是将来被动分词中性单数形式。"
+      },
+      {
+        "pali": "Dhammo daṭṭhabbo.",
+        "cn": "法应被见 / 法应被体证。",
+        "note": "daṭṭhabbo 是将来被动分词阳性主格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "将来被动分词常表示什么意义？",
+        "a": "应当被……、值得被……、可以被……。"
+      },
+      {
+        "q": "karaṇīya 是什么意思？",
+        "a": "应作的。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "bhāvetabba 更接近哪种意思？",
+        "options": [
+          "已经修习",
+          "正在修习",
+          "应修习的",
+          "为了修习"
+        ],
+        "answer": "应修习的",
+        "explanation": "-tabba 常构成将来被动分词，表示应当被……。",
+        "id": "l25-e1",
+        "lesson_id": 25,
+        "lesson_title": "将来被动分词 potential passive participle：-tabba / -anīya / -ya",
+        "module": "分词与非限定动词",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "分词与非限定动词",
+    "lesson_number": 25,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 26,
+    "title": "主格 nominative：主语与表语",
+    "category": "格的用法",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "主格通常表示句子的主语，也可用于名词性表语。名词变格表中的第1格即主格。",
+    "explanation": [
+      "主格最常见功能是表示动作或状态的主体，即“谁做动作”或“谁处于某状态”。",
+      "在名词性判断句中，主格也可作表语，例如“某物是某物”。",
+      "学习时可先把主格理解为句子的核心名词形式。"
+    ],
+    "table": [
+      [
+        "功能",
+        "说明",
+        "例子"
+      ],
+      [
+        "主语",
+        "动作或状态的主体",
+        "Buddho āgacchati."
+      ],
+      [
+        "表语",
+        "判断句中说明主语是什么",
+        "Dhammo maggo."
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Buddho āgacchati.",
+        "cn": "佛来了。",
+        "note": "Buddho 是 -a 尾阳性名词主格单数。"
+      },
+      {
+        "pali": "Dhammo maggo.",
+        "cn": "法是道路。",
+        "note": "Dhammo 和 maggo 都是主格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "主格最常见的句法功能是什么？",
+        "a": "表示主语。"
+      },
+      {
+        "q": "-a 尾阳性名词主格单数常见词尾是什么？",
+        "a": "-o。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "Buddho āgacchati. 中 Buddho 是什么格？",
+        "options": [
+          "主格",
+          "宾格",
+          "工具格",
+          "处格"
+        ],
+        "answer": "主格",
+        "explanation": "Buddho 是主语，形式为 -a 尾阳性名词主格单数。",
+        "id": "l26-e1",
+        "lesson_id": 26,
+        "lesson_title": "主格 nominative：主语与表语",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "句法与阅读",
+    "lesson_number": 26,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 27,
+    "title": "宾格 accusative：宾语、方向与范围",
+    "category": "格的用法",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "宾格通常表示动作的直接对象，也可表示运动方向、时间或空间范围等。",
+    "explanation": [
+      "宾格最常见功能是表示动词直接作用的对象。",
+      "在运动动词后，宾格也可表示趋向目标，例如“去城市”。",
+      "宾格还可表示时间或空间的延续范围；初学阶段先掌握“宾语”和“方向”两种用法即可。"
+    ],
+    "table": [
+      [
+        "功能",
+        "说明",
+        "例子"
+      ],
+      [
+        "直接宾语",
+        "动作涉及的对象",
+        "Buddhaṃ vandati."
+      ],
+      [
+        "方向",
+        "运动趋向的目标",
+        "Nagaraṃ gacchati."
+      ],
+      [
+        "范围",
+        "时间或空间延续",
+        "divasaṃ vasati"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Buddhaṃ vandati.",
+        "cn": "他/她礼敬佛。",
+        "note": "Buddhaṃ 是宾格单数，作 vandati 的直接宾语。"
+      },
+      {
+        "pali": "Nagaraṃ gacchati.",
+        "cn": "他/她去城里。",
+        "note": "Nagaraṃ 是宾格，可表示运动方向。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "宾格最常见的功能是什么？",
+        "a": "表示直接宾语。"
+      },
+      {
+        "q": "Buddhaṃ vandati. 中 Buddhaṃ 是什么格？",
+        "a": "宾格。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "Nagaraṃ gacchati. 中 nagaraṃ 的作用是什么？",
+        "options": [
+          "主语",
+          "方向目标",
+          "工具",
+          "呼语"
+        ],
+        "answer": "方向目标",
+        "explanation": "宾格可在运动动词后表示趋向目标。",
+        "id": "l27-e1",
+        "lesson_id": 27,
+        "lesson_title": "宾格 accusative：宾语、方向与范围",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "句法与阅读",
+    "lesson_number": 27,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 28,
+    "title": "工具格 instrumental：用、由、与",
+    "category": "格的用法",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "工具格常表示工具、方式、手段，也可表示被动结构中的施事，或伴随关系。",
+    "explanation": [
+      "工具格可表示“用什么、通过什么方式”。",
+      "在被动或过去分词结构中，工具格常可表示动作施事，相当于“由……”。",
+      "工具格也可表示伴随关系，相当于“与……一起”。"
+    ],
+    "table": [
+      [
+        "功能",
+        "说明",
+        "例子"
+      ],
+      [
+        "工具/手段",
+        "用什么、凭什么",
+        "satthena chindati"
+      ],
+      [
+        "施事",
+        "由谁完成",
+        "Buddhena desito dhammo"
+      ],
+      [
+        "伴随",
+        "与谁一起",
+        "mittena saddhiṃ gacchati"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Buddhena desito dhammo.",
+        "cn": "由佛所说的法。",
+        "note": "Buddhena 是工具格单数，可表示施事。"
+      },
+      {
+        "pali": "Mittena saddhiṃ gacchati.",
+        "cn": "他/她与朋友一起去。",
+        "note": "Mittena 是工具格，saddhiṃ 常与工具格搭配表示伴随。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "工具格常表示哪些意义？",
+        "a": "工具、方式、手段，也可表示施事或伴随。"
+      },
+      {
+        "q": "-a 尾阳性名词工具格单数词尾是什么？",
+        "a": "-ena。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "Buddhena desito dhammo. 中 Buddhena 是什么格？",
+        "options": [
+          "主格",
+          "宾格",
+          "工具格",
+          "处格"
+        ],
+        "answer": "工具格",
+        "explanation": "Buddhena 是工具格单数，在此可表示施事。",
+        "id": "l28-e1",
+        "lesson_id": 28,
+        "lesson_title": "工具格 instrumental：用、由、与",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "句法与阅读",
+    "lesson_number": 28,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 29,
+    "title": "与格 dative：给、为了、对于",
+    "category": "格的用法",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "与格常表示接受者、目的、利益对象或关系对象。许多名词的与格形式和属格形式重叠。",
+    "explanation": [
+      "与格可表示“给谁”。",
+      "与格也可表示“为了谁、对于谁”。",
+      "在很多词类中，与格和属格形式相同，需要根据上下文判断。"
+    ],
+    "table": [
+      [
+        "功能",
+        "说明",
+        "例子"
+      ],
+      [
+        "接受者",
+        "给谁",
+        "Buddhassa pupphaṃ deti"
+      ],
+      [
+        "目的/利益",
+        "为了谁或为了什么",
+        "sukhāya paṭipajjati"
+      ],
+      [
+        "关系对象",
+        "对于谁",
+        "mayhaṃ ruccati"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Buddhassa pupphaṃ deti.",
+        "cn": "他/她把花献给佛。",
+        "note": "Buddhassa 可作与格单数，表示接受者。"
+      },
+      {
+        "pali": "Sukhāya paṭipajjati.",
+        "cn": "他/她为了安乐而修行。",
+        "note": "Sukhāya 可表示目的。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "与格常表示什么？",
+        "a": "接受者、目的、利益对象或关系对象。"
+      },
+      {
+        "q": "-a 尾阳性名词与格单数常见形式有哪些？",
+        "a": "-āya / -assa。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "Buddhassa pupphaṃ deti. 中 Buddhassa 可理解为什么格？",
+        "options": [
+          "与格",
+          "工具格",
+          "处格",
+          "呼格"
+        ],
+        "answer": "与格",
+        "explanation": "此处 Buddhassa 表示接受者，“给佛”。",
+        "id": "l29-e1",
+        "lesson_id": 29,
+        "lesson_title": "与格 dative：给、为了、对于",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "句法与阅读",
+    "lesson_number": 29,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 30,
+    "title": "从格 ablative：从、离、由于",
+    "category": "格的用法",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "从格常表示来源、离开、原因、比较基准等。名词变格表中的第5格即从格。",
+    "explanation": [
+      "从格最基本的意义是“从……来、从……离开”。",
+      "从格也可表示原因，相当于“由于……”。",
+      "在比较结构中，从格可表示比较基准。"
+    ],
+    "table": [
+      [
+        "功能",
+        "说明",
+        "例子"
+      ],
+      [
+        "来源",
+        "从哪里来",
+        "gāmā āgacchati"
+      ],
+      [
+        "离开",
+        "离开什么",
+        "gehā nikkhamati"
+      ],
+      [
+        "原因",
+        "由于什么",
+        "bhayā palāyati"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Gāmā āgacchati.",
+        "cn": "他/她从村庄来。",
+        "note": "Gāmā 是从格单数。"
+      },
+      {
+        "pali": "Bhayā palāyati.",
+        "cn": "他/她由于恐惧而逃走。",
+        "note": "Bhayā 可作从格，表示原因。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "从格最基本的意义是什么？",
+        "a": "从……、离……。"
+      },
+      {
+        "q": "-a 尾阳性/中性名词从格单数常见形式有哪些？",
+        "a": "-ā / -asmā / -amhā。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "Gāmā āgacchati. 中 gāmā 表示什么？",
+        "options": [
+          "从村庄",
+          "在村庄",
+          "给村庄",
+          "用村庄"
+        ],
+        "answer": "从村庄",
+        "explanation": "从格可表示来源。",
+        "id": "l30-e1",
+        "lesson_id": 30,
+        "lesson_title": "从格 ablative：从、离、由于",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "句法与阅读",
+    "lesson_number": 30,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 31,
+    "title": "属格 genitive：所属与关系",
+    "category": "格的用法",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "属格常表示所属、来源、部分整体、关系等。很多形式与与格相同，要靠上下文判断。",
+    "explanation": [
+      "属格最常见功能是表示“谁的”。",
+      "属格也可表示关系、类别、部分整体等。",
+      "在巴利语中，与格和属格常有同形形式，例如 -assa、-ānaṃ。"
+    ],
+    "table": [
+      [
+        "功能",
+        "说明",
+        "例子"
+      ],
+      [
+        "所属",
+        "谁的",
+        "Buddhassa dhammo"
+      ],
+      [
+        "关系",
+        "与谁相关",
+        "sattānaṃ hitaṃ"
+      ],
+      [
+        "部分整体",
+        "某整体中的一部分",
+        "bhikkhūnaṃ aññataro"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Buddhassa dhammo.",
+        "cn": "佛的法。",
+        "note": "Buddhassa 可作属格单数，表示所属关系。"
+      },
+      {
+        "pali": "Sattānaṃ hitaṃ.",
+        "cn": "众生的利益。",
+        "note": "Sattānaṃ 是属格复数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "属格最常见的意义是什么？",
+        "a": "表示所属关系，即“谁的”。"
+      },
+      {
+        "q": "-a 尾阳性名词属格单数词尾是什么？",
+        "a": "-assa。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "Buddhassa dhammo. 中 Buddhassa 更适合理解为什么格？",
+        "options": [
+          "属格",
+          "工具格",
+          "宾格",
+          "呼格"
+        ],
+        "answer": "属格",
+        "explanation": "Buddhassa 在此表示“佛的”。",
+        "id": "l31-e1",
+        "lesson_id": 31,
+        "lesson_title": "属格 genitive：所属与关系",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "句法与阅读",
+    "lesson_number": 31,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 32,
+    "title": "处格 locative：在、于、之中",
+    "category": "格的用法",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "处格常表示地点、时间、范围或状态所在。名词变格表中的第7格即处格。",
+    "explanation": [
+      "处格最基本的意义是“在……中、在……处”。",
+      "处格也可表示时间，如“在某时”。",
+      "处格还可表示抽象范围或状态。"
+    ],
+    "table": [
+      [
+        "功能",
+        "说明",
+        "例子"
+      ],
+      [
+        "地点",
+        "在何处",
+        "vihāre vasati"
+      ],
+      [
+        "时间",
+        "在何时",
+        "pubbaṇhasamaye"
+      ],
+      [
+        "范围",
+        "在某范围中",
+        "dhamme pasīdati"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Vihāre vasati.",
+        "cn": "他/她住在寺院中。",
+        "note": "Vihāre 是处格单数。"
+      },
+      {
+        "pali": "Dhamme pasīdati.",
+        "cn": "他/她对法生信。",
+        "note": "Dhamme 可作处格，表示关系范围。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "处格最基本的意义是什么？",
+        "a": "在……中、在……处。"
+      },
+      {
+        "q": "-a 尾阳性名词处格复数词尾是什么？",
+        "a": "-esu。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "Vihāre vasati. 中 vihāre 是什么格？",
+        "options": [
+          "处格",
+          "宾格",
+          "工具格",
+          "主格"
+        ],
+        "answer": "处格",
+        "explanation": "Vihāre 表示“在寺院中”。",
+        "id": "l32-e1",
+        "lesson_id": 32,
+        "lesson_title": "处格 locative：在、于、之中",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "句法与阅读",
+    "lesson_number": 32,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 33,
+    "title": "呼格 vocative：称呼对象",
+    "category": "格的用法",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "呼格用于直接称呼某人或某物。它不一定承担句子核心成分，而是标记呼唤对象。",
+    "explanation": [
+      "呼格用于称呼、呼唤、直接对话。",
+      "-a 尾阳性名词呼格单数常为 -a，例如 purisa。",
+      "某些常见称呼有固定形式，如 bhante，学习时可作为实际表达记忆。"
+    ],
+    "table": [
+      [
+        "功能",
+        "说明",
+        "例子"
+      ],
+      [
+        "称呼",
+        "直接呼唤对象",
+        "Purisa, suṇāhi."
+      ],
+      [
+        "敬称",
+        "对尊者称呼",
+        "Bhante"
+      ],
+      [
+        "对话开头",
+        "提示说话对象",
+        "Āvuso, idha āgaccha."
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Purisa, suṇāhi.",
+        "cn": "人啊，请听。",
+        "note": "Purisa 是 -a 尾阳性名词呼格单数。"
+      },
+      {
+        "pali": "Bhante, dhammaṃ desetha.",
+        "cn": "尊者，请开示法。",
+        "note": "Bhante 是常见敬称呼格。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "呼格的主要作用是什么？",
+        "a": "直接称呼或呼唤对象。"
+      },
+      {
+        "q": "-a 尾阳性名词呼格单数常见词尾是什么？",
+        "a": "-a。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "Purisa, suṇāhi. 中 Purisa 是什么格？",
+        "options": [
+          "呼格",
+          "主格",
+          "宾格",
+          "属格"
+        ],
+        "answer": "呼格",
+        "explanation": "Purisa 在这里是直接称呼对象。",
+        "id": "l33-e1",
+        "lesson_id": 33,
+        "lesson_title": "呼格 vocative：称呼对象",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "句法与阅读",
+    "lesson_number": 33,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 34,
+    "title": "主动语态与中间语态：parassapada / attanopada",
+    "category": "动词系统",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "传统巴利语动词词尾常分主动语态与中间语态两组。初学者先掌握主动语态；阅读时也需要能识别中间语态词尾。",
+    "explanation": [
+      "主动语态词尾在教材中通常先学，如 -ti、-anti、-mi、-ma。",
+      "中间语态词尾也见于传统变位表，如 -te、-ante、-e、-mhe。",
+      "中间语态不应简单等同于现代汉语的“被动”；在学习阶段先作为一组需要识别的动词词尾处理。",
+      "本网站后续将中间语态按时态/语气分别列出，避免和主动语态混淆。"
+    ],
+    "table": [
+      [
+        "类别",
+        "第三人称单数",
+        "第三人称复数",
+        "第一人称单数",
+        "第一人称复数"
+      ],
+      [
+        "主动语态现在时",
+        "-ti",
+        "-anti",
+        "-mi",
+        "-ma"
+      ],
+      [
+        "中间语态现在时",
+        "-te",
+        "-ante",
+        "-e",
+        "-mhe"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "labhate",
+        "cn": "他/她获得；他/她得到。",
+        "note": "labhate 可作为中间语态现在时第三人称单数形式识别。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "巴利语传统动词词尾常分哪两组？",
+        "a": "主动语态 parassapada 与中间语态 attanopada。"
+      },
+      {
+        "q": "中间语态现在时第三人称单数词尾是什么？",
+        "a": "-te。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "-te 在现在时中通常属于哪组词尾？",
+        "options": [
+          "主动语态第三人称单数",
+          "中间语态第三人称单数",
+          "主动语态第一人称单数",
+          "不定式"
+        ],
+        "answer": "中间语态第三人称单数",
+        "explanation": "一般现在时中间语态第三人称单数词尾是 -te。",
+        "id": "l34-e1",
+        "lesson_id": 34,
+        "lesson_title": "主动语态与中间语态：parassapada / attanopada",
+        "module": "动词系统",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "动词系统",
+    "lesson_number": 34,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 35,
+    "title": "一般现在时中间语态 vattamānā attanopada",
+    "category": "动词变位",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "一般现在时中间语态有独立词尾系统，常见词尾为 -te、-ante、-se、-vhe、-e、-mhe。",
+    "explanation": [
+      "第三人称单数为 -te，复数为 -ante。",
+      "第二人称单数为 -se，复数为 -vhe。",
+      "第一人称单数为 -e，复数为 -mhe。",
+      "学习时先把它作为识别表掌握，不要和主动语态 -ti、-anti、-mi、-ma 混淆。"
+    ],
+    "table": [
+      [
+        "人称",
+        "单数",
+        "复数"
+      ],
+      [
+        "第三人称",
+        "-te",
+        "-ante"
+      ],
+      [
+        "第二人称",
+        "-se",
+        "-vhe"
+      ],
+      [
+        "第一人称",
+        "-e",
+        "-mhe"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "labhate",
+        "cn": "他/她获得；他/她得到。",
+        "note": "labhate 是现在时中间语态第三人称单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "一般现在时中间语态第三人称复数词尾是什么？",
+        "a": "-ante。"
+      },
+      {
+        "q": "一般现在时中间语态第一人称复数词尾是什么？",
+        "a": "-mhe。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "-mhe 是一般现在时中间语态的什么形式？",
+        "options": [
+          "第一人称复数",
+          "第二人称单数",
+          "第三人称单数",
+          "不定过去时复数"
+        ],
+        "answer": "第一人称复数",
+        "explanation": "一般现在时中间语态第一人称复数词尾为 -mhe。",
+        "id": "l35-e1",
+        "lesson_id": 35,
+        "lesson_title": "一般现在时中间语态 vattamānā attanopada",
+        "module": "动词系统",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "动词系统",
+    "lesson_number": 35,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 36,
+    "title": "命令语气中间语态 pañcamī attanopada",
+    "category": "动词变位",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "命令语气中间语态词尾包括 -taṃ、-ntaṃ、-ssu、-vho、-e、-āmse。",
+    "explanation": [
+      "第三人称单数为 -taṃ，复数为 -ntaṃ。",
+      "第二人称单数为 -ssu，复数为 -vho。",
+      "第一人称单数为 -e，复数为 -āmse。",
+      "这组词尾属于传统变位表中的中间语态命令语气。"
+    ],
+    "table": [
+      [
+        "人称",
+        "单数",
+        "复数"
+      ],
+      [
+        "第三人称",
+        "-taṃ",
+        "-ntaṃ"
+      ],
+      [
+        "第二人称",
+        "-ssu",
+        "-vho"
+      ],
+      [
+        "第一人称",
+        "-e",
+        "-āmse"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "labhataṃ",
+        "cn": "愿他/她获得。",
+        "note": "labhataṃ 可按命令语气中间语态第三人称单数识别。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "命令语气中间语态第三人称单数词尾是什么？",
+        "a": "-taṃ。"
+      },
+      {
+        "q": "命令语气中间语态第一人称复数词尾是什么？",
+        "a": "-āmse。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "-ntaṃ 是命令语气中间语态的什么形式？",
+        "options": [
+          "第三人称复数",
+          "第一人称单数",
+          "第二人称单数",
+          "一般现在时第三人称复数"
+        ],
+        "answer": "第三人称复数",
+        "explanation": "命令语气中间语态第三人称复数词尾为 -ntaṃ。",
+        "id": "l36-e1",
+        "lesson_id": 36,
+        "lesson_title": "命令语气中间语态 pañcamī attanopada",
+        "module": "动词系统",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "动词系统",
+    "lesson_number": 36,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 37,
+    "title": "一般将来时中间语态 anāgata attanopada",
+    "category": "动词变位",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "一般将来时中间语态使用 -ssa- 系列中间词尾，如 -ssate、-ssante、-ssaṃ、-ssāmhe。",
+    "explanation": [
+      "第三人称单数为 -ssate，复数为 -ssante。",
+      "第二人称单数为 -ssase，复数为 -ssavhe。",
+      "第一人称单数为 -ssaṃ，复数为 -ssāmhe。",
+      "注意主动语态第一人称单数是 -ssāmi，而中间语态第一人称单数是 -ssaṃ。"
+    ],
+    "table": [
+      [
+        "人称",
+        "单数",
+        "复数"
+      ],
+      [
+        "第三人称",
+        "-ssate",
+        "-ssante"
+      ],
+      [
+        "第二人称",
+        "-ssase",
+        "-ssavhe"
+      ],
+      [
+        "第一人称",
+        "-ssaṃ",
+        "-ssāmhe"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "labhissate",
+        "cn": "他/她将获得。",
+        "note": "labhissate 可按将来时中间语态第三人称单数识别。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "一般将来时中间语态第三人称单数词尾是什么？",
+        "a": "-ssate。"
+      },
+      {
+        "q": "一般将来时中间语态第一人称单数词尾是什么？",
+        "a": "-ssaṃ。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "-ssāmhe 是什么词尾？",
+        "options": [
+          "将来时中间语态第一人称复数",
+          "将来时主动第一人称复数",
+          "现在时主动第三人称复数",
+          "命令语气第二人称复数"
+        ],
+        "answer": "将来时中间语态第一人称复数",
+        "explanation": "一般将来时中间语态第一人称复数词尾为 -ssāmhe。",
+        "id": "l37-e1",
+        "lesson_id": 37,
+        "lesson_title": "一般将来时中间语态 anāgata attanopada",
+        "module": "动词系统",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "动词系统",
+    "lesson_number": 37,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 38,
+    "title": "可能祈愿语气中间语态 sattamī attanopada",
+    "category": "动词变位",
+    "level": "进阶",
+    "status": "已核准",
+    "summary": "可能祈愿语气中间语态包括 -etha、-eraṃ、-etho、-eyyāvho、-eyyaṃ、-eyyāmhe 等词尾。",
+    "explanation": [
+      "第三人称单数为 -etha，复数为 -eraṃ。",
+      "第二人称单数为 -etho，复数为 -eyyāvho。",
+      "第一人称单数为 -eyyaṃ，复数为 -eyyāmhe。",
+      "这组词尾较进阶，初学时主要用于阅读识别。"
+    ],
+    "table": [
+      [
+        "人称",
+        "单数",
+        "复数"
+      ],
+      [
+        "第三人称",
+        "-etha",
+        "-eraṃ"
+      ],
+      [
+        "第二人称",
+        "-etho",
+        "-eyyāvho"
+      ],
+      [
+        "第一人称",
+        "-eyyaṃ",
+        "-eyyāmhe"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "labhetha",
+        "cn": "他/她可以获得；他/她应会获得。",
+        "note": "labhetha 可按可能祈愿语气中间语态第三人称单数识别。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "可能祈愿语气中间语态第三人称单数词尾是什么？",
+        "a": "-etha。"
+      },
+      {
+        "q": "可能祈愿语气中间语态第一人称复数词尾是什么？",
+        "a": "-eyyāmhe。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "-eraṃ 是可能祈愿语气中间语态的什么形式？",
+        "options": [
+          "第三人称复数",
+          "第一人称单数",
+          "第二人称复数",
+          "现在时第三人称复数"
+        ],
+        "answer": "第三人称复数",
+        "explanation": "可能祈愿语气中间语态第三人称复数词尾为 -eraṃ。",
+        "id": "l38-e1",
+        "lesson_id": 38,
+        "lesson_title": "可能祈愿语气中间语态 sattamī attanopada",
+        "module": "动词系统",
+        "difficulty": "进阶"
+      }
+    ],
+    "module": "动词系统",
+    "lesson_number": 38,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶"
+  },
+  {
+    "id": 39,
+    "title": "过去类中间语态：ajjatanī 与 hīyattanī",
+    "category": "动词变位",
+    "level": "进阶",
+    "status": "已核准",
+    "summary": "过去类变位中，中间语态也有独立词尾。本条合并列出一般过去时 ajjatanī 和不定过去时 hīyattanī 的中间语态识别表。",
+    "explanation": [
+      "一般过去时 ajjatanī 中间语态：第三人称单数 -ā，复数 -ū；第二人称单数 -se，复数 -vhaṃ；第一人称单数 -aṃ，复数 -mhe。",
+      "不定过去时 hīyattanī 中间语态：第三人称单数 -ttha，复数 -tthuṃ；第二人称单数 -se，复数 -vhaṃ；第一人称单数 -iṃ，复数 -mhase。",
+      "这些形式在初级阅读中不如现在时和主动语态高频，先作为识别内容。"
+    ],
+    "table": [
+      [
+        "时类",
+        "人称",
+        "单数",
+        "复数"
+      ],
+      [
+        "ajjatanī",
+        "第三人称",
+        "-ā",
+        "-ū"
+      ],
+      [
+        "ajjatanī",
+        "第二人称",
+        "-se",
+        "-vhaṃ"
+      ],
+      [
+        "ajjatanī",
+        "第一人称",
+        "-aṃ",
+        "-mhe"
+      ],
+      [
+        "hīyattanī",
+        "第三人称",
+        "-ttha",
+        "-tthuṃ"
+      ],
+      [
+        "hīyattanī",
+        "第二人称",
+        "-se",
+        "-vhaṃ"
+      ],
+      [
+        "hīyattanī",
+        "第一人称",
+        "-iṃ",
+        "-mhase"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "alabhattha",
+        "cn": "他/她曾获得。",
+        "note": "此类形式可按 hīyattanī 中间语态第三人称单数识别。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "ajjatanī 中间语态第三人称复数词尾是什么？",
+        "a": "-ū。"
+      },
+      {
+        "q": "hīyattanī 中间语态第一人称复数词尾是什么？",
+        "a": "-mhase。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "hīyattanī 中间语态第三人称单数词尾是什么？",
+        "options": [
+          "-ā",
+          "-ttha",
+          "-te",
+          "-ssate"
+        ],
+        "answer": "-ttha",
+        "explanation": "不定过去时 hīyattanī 中间语态第三人称单数词尾为 -ttha。",
+        "id": "l39-e1",
+        "lesson_id": 39,
+        "lesson_title": "过去类中间语态：ajjatanī 与 hīyattanī",
+        "module": "动词系统",
+        "difficulty": "进阶"
+      }
+    ],
+    "module": "动词系统",
+    "lesson_number": 39,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶"
+  },
+  {
+    "id": 40,
+    "title": "现在分词 -nta：阳性与中性核心变格",
+    "category": "分词变格",
+    "level": "进阶",
+    "status": "已核准",
+    "summary": "-nta 尾现在分词具有形容词性质。阳性和中性在主格、宾格等位置有不同形式，需单独识别。",
+    "explanation": [
+      "阳性主格单数常见 -nto，也可见 -ṃ；复数主格可见 -nto / -ntā。",
+      "阳性宾格单数为 -ntaṃ，复数为 -nte。",
+      "中性主格单数为 -ṃ，复数可见 -ntā / -ntāni；中性宾格单数为 -ntaṃ，复数可见 -nte / -ntāni。",
+      "工具格、从格、属格、处格等斜格有 -ntena、-tā、-ntassa、-to、-nte、-ntasmiṃ、-ntamhi 等并行形式。"
+    ],
+    "table": [
+      [
+        "格",
+        "阳性单数",
+        "阳性复数",
+        "中性单数",
+        "中性复数"
+      ],
+      [
+        "主格",
+        "-nto / -ṃ",
+        "-nto / -ntā",
+        "-ṃ",
+        "-ntā / -ntāni"
+      ],
+      [
+        "宾格",
+        "-ntaṃ",
+        "-nte",
+        "-ntaṃ",
+        "-nte / -ntāni"
+      ],
+      [
+        "工具格",
+        "-ntena / -tā",
+        "-ntehi / -ntebhi",
+        "-ntena / -tā",
+        "-ntehi / -ntebhi"
+      ],
+      [
+        "从格",
+        "-ntasmā / -ntamhā / -tā",
+        "-ntehi / -ntebhi",
+        "-ntasmā / -ntamhā / -tā",
+        "-ntehi / -ntebhi"
+      ],
+      [
+        "属格/与格",
+        "-ntassa / -to",
+        "-ntānaṃ / -taṃ",
+        "-ntassa / -to",
+        "-ntānaṃ / -taṃ"
+      ],
+      [
+        "处格",
+        "-nte / -ntasmiṃ / -ntamhi / -ti",
+        "-ntesu",
+        "-nte / -ntasmiṃ / -ntamhi",
+        "-ntesu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Gacchanto puriso passati.",
+        "cn": "正在走的人看见。",
+        "note": "gacchanto 是 -nta 现在分词阳性主格单数。"
+      },
+      {
+        "pali": "Gacchantaṃ purisaṃ passati.",
+        "cn": "他/她看见正在走的人。",
+        "note": "gacchantaṃ 是阳性宾格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "-nta 现在分词阳性宾格单数是什么？",
+        "a": "-ntaṃ。"
+      },
+      {
+        "q": "-nta 现在分词阳性工具格单数常见形式有哪些？",
+        "a": "-ntena / -tā。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "gacchantaṃ purisaṃ 中 gacchantaṃ 是什么形式？",
+        "options": [
+          "阳性宾格单数",
+          "阳性主格复数",
+          "阴性主格单数",
+          "不定式"
+        ],
+        "answer": "阳性宾格单数",
+        "explanation": "-ntaṃ 是 -nta 现在分词阳性宾格单数。",
+        "id": "l40-e1",
+        "lesson_id": 40,
+        "lesson_title": "现在分词 -nta：阳性与中性核心变格",
+        "module": "分词与非限定动词",
+        "difficulty": "进阶"
+      }
+    ],
+    "module": "分词与非限定动词",
+    "lesson_number": 40,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶"
+  },
+  {
+    "id": 41,
+    "title": "现在分词 -ntī：阴性变格",
+    "category": "分词变格",
+    "level": "进阶",
+    "status": "已核准",
+    "summary": "-ntī 是现在分词阴性形式，常见变格包括 -ntī、-ntiṃ、-ntiyā、-ntīhi、-ntīnaṃ、-ntīsu 等。",
+    "explanation": [
+      "阴性主格单数为 -ntī，复数可见 -ntī / -ntiyo。",
+      "阴性宾格单数为 -ntiṃ，复数可见 -ntī / -ntiyo。",
+      "工具格、从格、与格、属格单数可见 -ntiyā。",
+      "处格单数可见 -ntiyā / -ntiyaṃ，复数处格为 -ntīsu。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数",
+        "复数"
+      ],
+      [
+        "主格",
+        "-ntī",
+        "-ntī / -ntiyo"
+      ],
+      [
+        "呼格",
+        "-ntī",
+        "-ntī / -ntiyo"
+      ],
+      [
+        "宾格",
+        "-ntiṃ",
+        "-ntī / -ntiyo"
+      ],
+      [
+        "工具格",
+        "-ntiyā",
+        "-ntīhi / -ntībhi"
+      ],
+      [
+        "从格",
+        "-ntiyā",
+        "-ntīhi / -ntībhi"
+      ],
+      [
+        "属格/与格",
+        "-ntiyā",
+        "-ntīnaṃ"
+      ],
+      [
+        "处格",
+        "-ntiyā / -ntiyaṃ",
+        "-ntīsu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Gacchantī itthī āgacchati.",
+        "cn": "正在走来的女人到来。",
+        "note": "gacchantī 是现在分词阴性主格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "-ntī 现在分词阴性宾格单数是什么？",
+        "a": "-ntiṃ。"
+      },
+      {
+        "q": "-ntī 现在分词阴性处格复数是什么？",
+        "a": "-ntīsu。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "gacchantiyā 可能是什么形式？",
+        "options": [
+          "阴性工具格/属格等单数",
+          "阳性主格单数",
+          "中性宾格复数",
+          "动词现在时"
+        ],
+        "answer": "阴性工具格/属格等单数",
+        "explanation": "-ntiyā 可用于 -ntī 阴性现在分词的多个斜格单数。",
+        "id": "l41-e1",
+        "lesson_id": 41,
+        "lesson_title": "现在分词 -ntī：阴性变格",
+        "module": "分词与非限定动词",
+        "difficulty": "进阶"
+      }
+    ],
+    "module": "分词与非限定动词",
+    "lesson_number": 41,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶"
+  },
+  {
+    "id": 42,
+    "title": "过去分词 -ta：常见构成规则",
+    "category": "分词构成",
+    "level": "进阶",
+    "status": "已核准",
+    "summary": "过去分词常用 -ta 构成，但实际形成时会发生元音变化、插入 i、辅音同化等。",
+    "explanation": [
+      "-ta 加在元音结尾词根后，若以 -ā 结尾，元音有时变为 -i 或 -ī，如 ṭhā + ta → ṭhita，gā + ta → gīta。",
+      "-ta 加在以 -n 或 -m 结尾的词根后，可去掉 -n 或 -m，如 man + ta → mata，ram + ta → rata。",
+      "-ta 加在以 -a、-ā、-e、-o 结尾的词基后，常去掉此元音并插入 -i，如 paca + ta → pacita，dese + ta → desita。",
+      "-ta 加在辅音结尾词根后，常发生同化，如 muc + ta → mutta，bhuj + ta → bhutta，budh + ta → buddha。"
+    ],
+    "table": [
+      [
+        "规则",
+        "例子",
+        "结果"
+      ],
+      [
+        "ā 变 i/ī",
+        "ṭhā + ta",
+        "ṭhita"
+      ],
+      [
+        "ā 变 i/ī",
+        "gā + ta",
+        "gīta"
+      ],
+      [
+        "去 n/m",
+        "man + ta",
+        "mata"
+      ],
+      [
+        "去元音并插入 i",
+        "paca + ta",
+        "pacita"
+      ],
+      [
+        "去元音并插入 i",
+        "dese + ta",
+        "desita"
+      ],
+      [
+        "辅音同化",
+        "muc + ta",
+        "mutta"
+      ],
+      [
+        "辅音同化",
+        "bhuj + ta",
+        "bhutta"
+      ],
+      [
+        "辅音同化",
+        "budh + ta",
+        "buddha"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Pacitaṃ odanaṃ.",
+        "cn": "煮熟的饭。",
+        "note": "pacita 是由 paca + ta 形成的过去分词。"
+      },
+      {
+        "pali": "Buddho.",
+        "cn": "觉者；佛。",
+        "note": "buddha 与 budh + ta 的同化形成有关。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "paca + ta 通常形成什么？",
+        "a": "pacita。"
+      },
+      {
+        "q": "muc + ta 通常形成什么？",
+        "a": "mutta。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "dese + ta 形成的过去分词是？",
+        "options": [
+          "desita",
+          "dinna",
+          "diṭṭha",
+          "danta"
+        ],
+        "answer": "desita",
+        "explanation": "以 -e 结尾的词基加 -ta 时，常去掉元音并插入 -i，形成 desita。",
+        "id": "l42-e1",
+        "lesson_id": 42,
+        "lesson_title": "过去分词 -ta：常见构成规则",
+        "module": "分词与非限定动词",
+        "difficulty": "进阶"
+      }
+    ],
+    "module": "分词与非限定动词",
+    "lesson_number": 42,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶"
+  },
+  {
+    "id": 43,
+    "title": "过去分词 -na：常见构成规则",
+    "category": "分词构成",
+    "level": "进阶",
+    "status": "已核准",
+    "summary": "过去分词也可由 -na 构成，常见例子包括 hīna、dinna、kiṇṇa、puṇṇa、chinna 等。",
+    "explanation": [
+      "-na 加在元音结尾词根后，若以 -ā 结尾，元音有时变为 -i 或 -ī，如 hā + na → hīna，dā + na → dinna。",
+      "-na 加在以 -īr、-ūr 结尾的词根后，-r 与 -n 可变为 -ṇṇ，并且前元音变短，如 kīr + na → kiṇṇa，pūr + na → puṇṇa。",
+      "-na 加在以 -d、-m 结尾的词根后可同化为 -nn，如 chid + na → chinna。",
+      "这些形式常见且重要，但实际构成仍需结合词根学习。"
+    ],
+    "table": [
+      [
+        "规则",
+        "例子",
+        "结果"
+      ],
+      [
+        "ā 变 i/ī",
+        "hā + na",
+        "hīna"
+      ],
+      [
+        "ā 变 i/ī",
+        "dā + na",
+        "dinna"
+      ],
+      [
+        "r+n → ṇṇ",
+        "kīr + na",
+        "kiṇṇa"
+      ],
+      [
+        "r+n → ṇṇ",
+        "pūr + na",
+        "puṇṇa"
+      ],
+      [
+        "d/m + n 同化",
+        "chid + na",
+        "chinna"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Dinnaṃ dānaṃ.",
+        "cn": "已施之布施。",
+        "note": "dinna 是 dā + na 形成的过去分词。"
+      },
+      {
+        "pali": "Chinnaṃ rukkhaṃ.",
+        "cn": "被砍断的树。",
+        "note": "chinna 是 chid + na 形成的过去分词。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "dā + na 通常形成什么？",
+        "a": "dinna。"
+      },
+      {
+        "q": "pūr + na 通常形成什么？",
+        "a": "puṇṇa。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "chid + na 形成的过去分词是？",
+        "options": [
+          "chinna",
+          "citta",
+          "kata",
+          "bhutta"
+        ],
+        "answer": "chinna",
+        "explanation": "chid + na 中 d/n 发生同化，形成 chinna。",
+        "id": "l43-e1",
+        "lesson_id": 43,
+        "lesson_title": "过去分词 -na：常见构成规则",
+        "module": "分词与非限定动词",
+        "difficulty": "进阶"
+      }
+    ],
+    "module": "分词与非限定动词",
+    "lesson_number": 43,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "語尾變化笔记",
+      "Duroiselle / Pali Primer 等参考书核查"
+    ],
+    "difficulty": "进阶"
+  },
+  {
+    "id": 44,
+    "title": "连读音变 sandhi：元音省略与结合",
+    "category": "连读音变",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "巴利语连读音变中，两个元音相邻时可能发生省略、合并、变长，或 i/u 类音变为 y/v。",
+    "explanation": [
+      "一个元音在另一个元音之前有时会被省略。",
+      "a 或 ā 与后续 i 或 ī 结合时可成 e；与后续 u 或 ū 结合时可成 o。",
+      "当第一个元音被省略时，第二个元音有时会变长。",
+      "i、ī 或 e 在不同元音前有时会变成 y；u 或 o 在不同元音前有时会变成 v。",
+      "连读音变不是任意变化，需结合传统规则和具体文本判断。"
+    ],
+    "table": [
+      [
+        "类型",
+        "规则概述"
+      ],
+      [
+        "元音省略",
+        "相邻元音中一个元音有时省略"
+      ],
+      [
+        "元音结合",
+        "a/ā + i/ī → e"
+      ],
+      [
+        "元音结合",
+        "a/ā + u/ū → o"
+      ],
+      [
+        "半元音化",
+        "i/ī/e 在异类元音前可变 y"
+      ],
+      [
+        "半元音化",
+        "u/o 在异类元音前可变 v"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "iti + eva → itveva / icceva 等需按具体规则判断",
+        "cn": "连读后形式可能变化。",
+        "note": "此处只提示连读现象，不作为单一固定公式死记。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "a 或 ā 与后续 i/ī 结合时常可形成什么？",
+        "a": "e。"
+      },
+      {
+        "q": "u 或 o 在不同元音前有时会变成什么半元音？",
+        "a": "v。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "a/ā + u/ū 在连读中常可结合为什么？",
+        "options": [
+          "e",
+          "o",
+          "y",
+          "ṃ"
+        ],
+        "answer": "o",
+        "explanation": "a 或 ā 与后续 u 或 ū 结合时可成 o。",
+        "id": "l44-e1",
+        "lesson_id": 44,
+        "lesson_title": "连读音变 sandhi：元音省略与结合",
+        "module": "入门与发音",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "入门与发音",
+    "lesson_number": 44,
+    "source_status": "已核准",
+    "verified_sources": [
+      "待补充来源说明"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 45,
+    "title": "连读音变 sandhi：ṃ 的同化与变化",
+    "category": "连读音变",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "ṃ 在连读中可随后的音发生同化、变化或省略。它是巴利语音变中非常重要的一类现象。",
+    "explanation": [
+      "在辅音组前，ṃ 有时会变为该辅音所属组的鼻音。",
+      "在 l 之前，ṃ 有时会转变为 l。",
+      "在 e 或 h 之前，ṃ 有时会变成 ñ；在 y 之后，ṃ 与 y 可结合形成 ññ。",
+      "ṃ 有时也可能变为 m 或 d，或在特定情况下省略。",
+      "初学时先掌握“ṃ 会受后音影响而变化”这一核心原则，不要把每个表面形式都当成新词。"
+    ],
+    "table": [
+      [
+        "环境",
+        "变化概述",
+        "提示"
+      ],
+      [
+        "辅音组前",
+        "ṃ 可变为同组鼻音",
+        "如 saṃkhāra 可见 saṅkhāra"
+      ],
+      [
+        "l 前",
+        "ṃ 可变为 l",
+        "按具体词判断"
+      ],
+      [
+        "e / h 前",
+        "ṃ 可变为 ñ",
+        "按具体词判断"
+      ],
+      [
+        "y 后",
+        "ṃ + y 可成 ññ",
+        "如相关 saññ- 类形式"
+      ],
+      [
+        "其他环境",
+        "ṃ 可变为 m/d 或省略",
+        "需结合文本规则"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "saṃkhāra / saṅkhāra",
+        "cn": "行；有为法。",
+        "note": "ṃ 在 k 类音前可表现为 ṅ。"
+      },
+      {
+        "pali": "saṃyoga → saññoga 类变化需按规则识别",
+        "cn": "结合、系缚等相关形式。",
+        "note": "ṃ 与 y 的结合可产生 ññ 类形式。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "ṃ 在辅音组前可能发生什么？",
+        "a": "变为该辅音所属组的鼻音。"
+      },
+      {
+        "q": "saṃkhāra 中 ṃ 在 k 类音前可表现为什么？",
+        "a": "ṅ，即 saṅkhāra。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "saṃkhāra / saṅkhāra 的变化主要涉及什么？",
+        "options": [
+          "动词变位",
+          "ṃ 的同化",
+          "名词属格",
+          "不定式"
+        ],
+        "answer": "ṃ 的同化",
+        "explanation": "ṃ 在 k 类音前可表现为该组鼻音 ṅ。",
+        "id": "l45-e1",
+        "lesson_id": 45,
+        "lesson_title": "连读音变 sandhi：ṃ 的同化与变化",
+        "module": "入门与发音",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "入门与发音",
+    "lesson_number": 45,
+    "source_status": "已核准",
+    "verified_sources": [
+      "待补充来源说明"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 46,
+    "title": "-vant / -mant 形容词：阳性与中性核心变格",
+    "category": "特殊变格",
+    "level": "进阶",
+    "status": "已核准",
+    "summary": "-vant / -mant 常构成“具有……的”一类形容词，如 guṇavant“有德的”、bhagavant“有福德的”。其阳性和中性变格有强弱词干交替，需要单独识别。",
+    "explanation": [
+      "-vant 与 -mant 变格类型相同，区别只是 v / m 的替换。",
+      "阳性主格单数常见 -vanto / -vā；复数主格可见 -vantā / -vanto。",
+      "中性主格单数可见 -vaṃ；中性复数主格可见 -vantā / -vantāni。",
+      "斜格中常见 -vantena / -vatā、-vantassa / -vato、-vante / -vantasmiṃ / -vantamhi / -vati 等并行形式。",
+      "本表用 -vant 表示词尾，-mant 类可按同型替换理解。"
+    ],
+    "table": [
+      [
+        "格",
+        "阳性单数",
+        "阳性复数",
+        "中性单数",
+        "中性复数"
+      ],
+      [
+        "主格",
+        "-vanto / -vā",
+        "-vantā / -vanto",
+        "-vaṃ",
+        "-vantā / -vantāni"
+      ],
+      [
+        "呼格",
+        "-vaṃ / -va / -vā",
+        "-vantā / -vanto",
+        "-vaṃ / -va / -vā",
+        "-vantā / -vantāni"
+      ],
+      [
+        "宾格",
+        "-vantaṃ",
+        "-vante / -vanto",
+        "-vantaṃ",
+        "-vante / -vantāni"
+      ],
+      [
+        "工具格",
+        "-vantena / -vatā",
+        "-vantehi / -vantebhi",
+        "-vantena / -vatā",
+        "-vantehi / -vantebhi"
+      ],
+      [
+        "从格",
+        "-vantasmā / -vantamhā / -vatā",
+        "-vantehi / -vantebhi",
+        "-vantasmā / -vantamhā / -vatā",
+        "-vantehi / -vantebhi"
+      ],
+      [
+        "与格/属格",
+        "-vantassa / -vato",
+        "-vantānaṃ / -vataṃ",
+        "-vantassa / -vato",
+        "-vantānaṃ / -vataṃ"
+      ],
+      [
+        "处格",
+        "-vante / -vantasmiṃ / -vantamhi / -vati",
+        "-vantesu",
+        "-vante / -vantasmiṃ / -vantamhi / -vati",
+        "-vantesu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Bhagavā dhammaṃ deseti.",
+        "cn": "世尊说法。",
+        "note": "Bhagavā 是 bhagavant 的阳性主格单数常见形式。"
+      },
+      {
+        "pali": "Guṇavantaṃ purisaṃ passati.",
+        "cn": "他/她看见有德的人。",
+        "note": "guṇavantaṃ 是 -vant 形容词阳性宾格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "-vant 与 -mant 类形容词大致表示什么？",
+        "a": "具有……的。"
+      },
+      {
+        "q": "bhagavant 的阳性主格单数常见形式是什么？",
+        "a": "bhagavā，也可见 -vanto 型。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "guṇavantaṃ purisaṃ 中 guṇavantaṃ 是什么形式？",
+        "options": [
+          "阳性宾格单数",
+          "阴性主格单数",
+          "中性处格复数",
+          "动词过去式"
+        ],
+        "answer": "阳性宾格单数",
+        "explanation": "-vantaṃ 是 -vant 形容词阳性宾格单数。",
+        "id": "l46-e1",
+        "lesson_id": 46,
+        "lesson_title": "-vant / -mant 形容词：阳性与中性核心变格",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      },
+      {
+        "type": "choice",
+        "question": "Bhagavā 是 bhagavant 的什么形式？",
+        "options": [
+          "阳性主格单数",
+          "阳性宾格单数",
+          "阴性主格单数",
+          "处格复数"
+        ],
+        "answer": "阳性主格单数",
+        "explanation": "bhagavā 是 bhagavant 的阳性主格单数常见形式。",
+        "id": "l46-e2",
+        "lesson_id": 46,
+        "lesson_title": "-vant / -mant 形容词：阳性与中性核心变格",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      },
+      {
+        "type": "choice",
+        "question": "guṇavatā 可以是什么形式？",
+        "options": [
+          "工具格/从格单数",
+          "主格复数",
+          "宾格复数",
+          "处格复数"
+        ],
+        "answer": "工具格/从格单数",
+        "explanation": "-vatā 是 -vant 类斜格单数常见形式。",
+        "id": "l46-e3",
+        "lesson_id": 46,
+        "lesson_title": "-vant / -mant 形容词：阳性与中性核心变格",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      }
+    ],
+    "module": "名词变格",
+    "lesson_number": 46,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "进阶"
+  },
+  {
+    "id": 47,
+    "title": "-vatī / -matī 形容词：阴性变格",
+    "category": "特殊变格",
+    "level": "进阶",
+    "status": "已核准",
+    "summary": "-vant / -mant 类形容词的阴性常见形式为 -vatī / -matī，按 ī 类阴性形式变化。",
+    "explanation": [
+      "-vant 的阴性对应 -vatī，-mant 的阴性对应 -matī。",
+      "主格单数为 -vatī，宾格单数为 -vatiṃ。",
+      "工具格、从格、与格、属格单数常见 -vatiyā。",
+      "复数中主格、呼格、宾格可见 -vatī / -vatiyo；处格复数为 -vatīsu。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数",
+        "复数"
+      ],
+      [
+        "主格",
+        "-vatī",
+        "-vatī / -vatiyo"
+      ],
+      [
+        "呼格",
+        "-vati",
+        "-vatī / -vatiyo"
+      ],
+      [
+        "宾格",
+        "-vatiṃ",
+        "-vatī / -vatiyo"
+      ],
+      [
+        "工具格",
+        "-vatiyā",
+        "-vatīhi / -vatībhi"
+      ],
+      [
+        "从格",
+        "-vatiyā",
+        "-vatīhi / -vatībhi"
+      ],
+      [
+        "与格/属格",
+        "-vatiyā",
+        "-vatīnaṃ"
+      ],
+      [
+        "处格",
+        "-vatiyā / -vatiyaṃ",
+        "-vatīsu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Guṇavatī itthī.",
+        "cn": "有德的女人。",
+        "note": "guṇavatī 是 -vatī 阴性主格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "-vant 类形容词的阴性通常是什么？",
+        "a": "-vatī。"
+      },
+      {
+        "q": "-vatī 阴性宾格单数是什么？",
+        "a": "-vatiṃ。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "guṇavatiyā 可能是什么形式？",
+        "options": [
+          "阴性工具格/属格等单数",
+          "阳性主格单数",
+          "中性宾格复数",
+          "动词现在时"
+        ],
+        "answer": "阴性工具格/属格等单数",
+        "explanation": "-vatiyā 可用于 -vatī 阴性形式的多个斜格单数。",
+        "id": "l47-e1",
+        "lesson_id": 47,
+        "lesson_title": "-vatī / -matī 形容词：阴性变格",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      },
+      {
+        "type": "choice",
+        "question": "guṇavatī itthī 中 guṇavatī 是什么形式？",
+        "options": [
+          "阴性主格单数",
+          "阳性主格单数",
+          "中性宾格复数",
+          "处格单数"
+        ],
+        "answer": "阴性主格单数",
+        "explanation": "-vant 的阴性对应 -vatī。",
+        "id": "l47-e2",
+        "lesson_id": 47,
+        "lesson_title": "-vatī / -matī 形容词：阴性变格",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      },
+      {
+        "type": "choice",
+        "question": "guṇavatiyā 可以是什么形式？",
+        "options": [
+          "阴性工具格/属格等单数",
+          "阳性宾格单数",
+          "中性主格复数",
+          "动词将来时"
+        ],
+        "answer": "阴性工具格/属格等单数",
+        "explanation": "-vatiyā 可用于 -vatī 阴性多个斜格单数。",
+        "id": "l47-e3",
+        "lesson_id": 47,
+        "lesson_title": "-vatī / -matī 形容词：阴性变格",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      }
+    ],
+    "module": "名词变格",
+    "lesson_number": 47,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "进阶"
+  },
+  {
+    "id": 48,
+    "title": "-in 尾阳性名词 / 形容词变格",
+    "category": "特殊变格",
+    "level": "进阶",
+    "status": "已核准",
+    "summary": "-in 尾阳性词常见主格单数为 -ī，斜格中出现 -inā、-issa / -ino、-ismiṃ / -imhi 等形式。",
+    "explanation": [
+      "-in 尾阳性词主格单数为 -ī，呼格单数为 -i。",
+      "宾格单数可见 -iṃ / -inaṃ。",
+      "工具格单数为 -inā；从格单数可见 -ismā / -imhā / -inā。",
+      "与格、属格单数可见 -issa / -ino。",
+      "处格单数可见 -ismiṃ / -imhi / -ini。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数",
+        "复数"
+      ],
+      [
+        "主格",
+        "-ī",
+        "-ī / -ino"
+      ],
+      [
+        "呼格",
+        "-i",
+        "-ī / -ino"
+      ],
+      [
+        "宾格",
+        "-iṃ / -inaṃ",
+        "-ī / -ino"
+      ],
+      [
+        "工具格",
+        "-inā",
+        "-īhi / -ībhi"
+      ],
+      [
+        "从格",
+        "-ismā / -imhā / -inā",
+        "-īhi / -ībhi"
+      ],
+      [
+        "与格/属格",
+        "-issa / -ino",
+        "-īnaṃ"
+      ],
+      [
+        "处格",
+        "-ismiṃ / -imhi / -ini",
+        "-isu / -īsu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Hatthī gacchati.",
+        "cn": "象走了 / 象正在走。",
+        "note": "hatthī 是 -in 尾阳性名词主格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "-in 尾阳性名词主格单数常见词尾是什么？",
+        "a": "-ī。"
+      },
+      {
+        "q": "-in 尾阳性名词工具格单数是什么？",
+        "a": "-inā。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "hatthinā 是什么形式？",
+        "options": [
+          "工具格单数",
+          "主格复数",
+          "宾格复数",
+          "处格复数"
+        ],
+        "answer": "工具格单数",
+        "explanation": "-inā 是 -in 尾阳性名词工具格单数词尾。",
+        "id": "l48-e1",
+        "lesson_id": 48,
+        "lesson_title": "-in 尾阳性名词 / 形容词变格",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      },
+      {
+        "type": "choice",
+        "question": "hatthī 是 hatthin 的什么形式？",
+        "options": [
+          "阳性主格单数",
+          "阳性宾格单数",
+          "处格复数",
+          "阴性主格单数"
+        ],
+        "answer": "阳性主格单数",
+        "explanation": "-in 尾阳性词主格单数常见 -ī。",
+        "id": "l48-e2",
+        "lesson_id": 48,
+        "lesson_title": "-in 尾阳性名词 / 形容词变格",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      }
+    ],
+    "module": "名词变格",
+    "lesson_number": 48,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "进阶"
+  },
+  {
+    "id": 49,
+    "title": "-inī 尾阴性名词 / 形容词变格",
+    "category": "特殊变格",
+    "level": "进阶",
+    "status": "已核准",
+    "summary": "-inī 尾阴性形式常与 -in 阳性对应，变格类似 ī 类阴性词。",
+    "explanation": [
+      "主格单数为 -inī，呼格单数为 -ini。",
+      "宾格单数可见 -iniṃ / -iniyaṃ。",
+      "工具格、从格、与格、属格单数常见 -iniyā。",
+      "复数主格、呼格、宾格可见 -inī / -iniyo。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数",
+        "复数"
+      ],
+      [
+        "主格",
+        "-inī",
+        "-inī / -iniyo"
+      ],
+      [
+        "呼格",
+        "-ini",
+        "-inī / -iniyo"
+      ],
+      [
+        "宾格",
+        "-iniṃ / -iniyaṃ",
+        "-inī / -iniyo"
+      ],
+      [
+        "工具格",
+        "-iniyā",
+        "-inīhi / -inībhi"
+      ],
+      [
+        "从格",
+        "-iniyā",
+        "-inīhi / -inībhi"
+      ],
+      [
+        "与格/属格",
+        "-iniyā",
+        "-inīnaṃ"
+      ],
+      [
+        "处格",
+        "-iniyā / -iniyaṃ",
+        "-inīsu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Hatthinī tiṭṭhati.",
+        "cn": "母象站着。",
+        "note": "hatthinī 是 -inī 尾阴性主格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "-inī 尾阴性名词宾格单数常见形式有哪些？",
+        "a": "-iniṃ / -iniyaṃ。"
+      },
+      {
+        "q": "-inī 尾阴性名词处格复数是什么？",
+        "a": "-inīsu。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "hatthiniyā 可能是什么形式？",
+        "options": [
+          "阴性工具格/属格等单数",
+          "阳性主格单数",
+          "中性宾格复数",
+          "动词过去时"
+        ],
+        "answer": "阴性工具格/属格等单数",
+        "explanation": "-iniyā 可用于 -inī 尾阴性名词的多个斜格单数。",
+        "id": "l49-e1",
+        "lesson_id": 49,
+        "lesson_title": "-inī 尾阴性名词 / 形容词变格",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      },
+      {
+        "type": "choice",
+        "question": "hatthinī 是什么形式？",
+        "options": [
+          "-inī 阴性主格单数",
+          "-in 阳性主格单数",
+          "中性宾格单数",
+          "动词现在时"
+        ],
+        "answer": "-inī 阴性主格单数",
+        "explanation": "hatthinī 是 -inī 尾阴性主格单数。",
+        "id": "l49-e2",
+        "lesson_id": 49,
+        "lesson_title": "-inī 尾阴性名词 / 形容词变格",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      }
+    ],
+    "module": "名词变格",
+    "lesson_number": 49,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "进阶"
+  },
+  {
+    "id": 50,
+    "title": "-tar 亲属名词：pitar 与 mātar",
+    "category": "特殊变格",
+    "level": "进阶",
+    "status": "已核准",
+    "summary": "pitar“父亲”和 mātar“母亲”属于特殊亲属名词，变格不按普通 -a 词干处理，需要单独识别。",
+    "explanation": [
+      "pitar 的主格单数为 pitā，复数为 pitaro；宾格单数为 pitaraṃ。",
+      "mātar 的主格单数为 mātā，复数为 mātaro；宾格单数为 mātaraṃ。",
+      "工具格、从格单数可见 pitarā；mātarā / mātuyā。",
+      "属格、与格中可见 pitu / pituno / pitussa；mātu / mātuyā 等形式。",
+      "这类词在经典中常见，不能机械套普通名词变格。"
+    ],
+    "table": [
+      [
+        "格",
+        "pitar 单数",
+        "pitar 复数",
+        "mātar 单数",
+        "mātar 复数"
+      ],
+      [
+        "主格",
+        "pitā",
+        "pitaro",
+        "mātā",
+        "mātaro"
+      ],
+      [
+        "呼格",
+        "pita / pitā",
+        "pitaro",
+        "māta / mātā",
+        "mātaro"
+      ],
+      [
+        "宾格",
+        "pitaraṃ",
+        "pitaro / pitare",
+        "mātaraṃ",
+        "mātaro"
+      ],
+      [
+        "工具格/从格",
+        "pitarā",
+        "pitarehi / pitarebhi / pitūhi / pitūbhi",
+        "mātarā / mātuyā",
+        "mātārehi / mātārebhi / mātūhi / mātūbhi"
+      ],
+      [
+        "与格/属格",
+        "pitu / pituno / pitussa",
+        "pitarānaṃ / pitūnaṃ / pitunnaṃ",
+        "mātu / mātuyā",
+        "mātarānaṃ / mātūnaṃ"
+      ],
+      [
+        "处格",
+        "pitari",
+        "pitaresu / pitūsu / pitusu",
+        "mātari",
+        "mātaresu / mātūsu / mātusu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Pitā puttaṃ passati.",
+        "cn": "父亲看见儿子。",
+        "note": "pitā 是 pitar 的主格单数。"
+      },
+      {
+        "pali": "Mātuyā vacanaṃ suṇāti.",
+        "cn": "他/她听母亲的话。",
+        "note": "mātuyā 可作 mātar 的属格/工具格等形式，需看上下文。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "pitar 的主格单数是什么？",
+        "a": "pitā。"
+      },
+      {
+        "q": "mātar 的宾格单数是什么？",
+        "a": "mātaraṃ。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "pituno 可能是什么形式？",
+        "options": [
+          "pitar 的与格/属格单数",
+          "mātar 的主格复数",
+          "普通 -a 名词宾格",
+          "动词现在时"
+        ],
+        "answer": "pitar 的与格/属格单数",
+        "explanation": "pitu / pituno / pitussa 可作 pitar 的与格或属格单数。",
+        "id": "l50-e1",
+        "lesson_id": 50,
+        "lesson_title": "-tar 亲属名词：pitar 与 mātar",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      },
+      {
+        "type": "choice",
+        "question": "pitā 是 pitar 的什么形式？",
+        "options": [
+          "主格单数",
+          "宾格单数",
+          "工具格复数",
+          "处格复数"
+        ],
+        "answer": "主格单数",
+        "explanation": "pitar 的主格单数是 pitā。",
+        "id": "l50-e2",
+        "lesson_id": 50,
+        "lesson_title": "-tar 亲属名词：pitar 与 mātar",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      },
+      {
+        "type": "choice",
+        "question": "pitaraṃ 是 pitar 的什么形式？",
+        "options": [
+          "宾格单数",
+          "主格单数",
+          "属格复数",
+          "处格单数"
+        ],
+        "answer": "宾格单数",
+        "explanation": "pitar 的宾格单数是 pitaraṃ。",
+        "id": "l50-e3",
+        "lesson_id": 50,
+        "lesson_title": "-tar 亲属名词：pitar 与 mātar",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      },
+      {
+        "type": "choice",
+        "question": "mātuyā 可能是什么形式？",
+        "options": [
+          "mātar 的属格/工具格等形式",
+          "pitar 的主格复数",
+          "普通 -a 名词宾格",
+          "动词现在时"
+        ],
+        "answer": "mātar 的属格/工具格等形式",
+        "explanation": "mātuyā 是 mātar 的常见斜格形式之一，需按上下文判断。",
+        "id": "l50-e4",
+        "lesson_id": 50,
+        "lesson_title": "-tar 亲属名词：pitar 与 mātar",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      }
+    ],
+    "module": "名词变格",
+    "lesson_number": 50,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "进阶"
+  },
+  {
+    "id": 51,
+    "title": "-as 尾名词变格",
+    "category": "特殊变格",
+    "level": "进阶",
+    "status": "已核准",
+    "summary": "-as 尾名词有特殊变格形式，如主格/宾格单数可见 -o / -aṃ，工具格可见 -ena / -asā。",
+    "explanation": [
+      "-as 尾名词主格单数可见 -o / -aṃ，宾格单数也可见 -o / -aṃ。",
+      "工具格单数可见 -ena / -asā。",
+      "从格单数可见 -asmā / -asā / -amhā / -ā。",
+      "与格、属格单数可见 -assa / -aso。",
+      "处格单数可见 -asmiṃ / -asi / -amhi / -e。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数",
+        "复数"
+      ],
+      [
+        "主格",
+        "-o / -aṃ",
+        "-ā / -āni"
+      ],
+      [
+        "呼格",
+        "-a / -ā",
+        "-ā / -āni"
+      ],
+      [
+        "宾格",
+        "-o / -aṃ",
+        "-e / -āni"
+      ],
+      [
+        "工具格",
+        "-ena / -asā",
+        "-ehi / -ebhi"
+      ],
+      [
+        "从格",
+        "-asmā / -asā / -amhā / -ā",
+        "-ehi / -ebhi"
+      ],
+      [
+        "与格/属格",
+        "-assa / -aso",
+        "-ānaṃ"
+      ],
+      [
+        "处格",
+        "-asmiṃ / -asi / -amhi / -e",
+        "-esu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Mano pubbaṅgamā dhammā.",
+        "cn": "意为诸法先导。",
+        "note": "mano 可作为 -as 尾名词 manas 的主格单数形式识别。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "-as 尾名词工具格单数常见形式有哪些？",
+        "a": "-ena / -asā。"
+      },
+      {
+        "q": "manas 的主格单数常见形式是什么？",
+        "a": "mano。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "manasā 是什么形式？",
+        "options": [
+          "工具格单数",
+          "主格复数",
+          "处格复数",
+          "动词过去时"
+        ],
+        "answer": "工具格单数",
+        "explanation": "-asā 是 -as 尾名词工具格单数常见形式。",
+        "id": "l51-e1",
+        "lesson_id": 51,
+        "lesson_title": "-as 尾名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      },
+      {
+        "type": "choice",
+        "question": "mano 可作为 manas 的什么形式？",
+        "options": [
+          "主格单数",
+          "工具格单数",
+          "属格复数",
+          "处格复数"
+        ],
+        "answer": "主格单数",
+        "explanation": "manas 的主格单数可见 mano。",
+        "id": "l51-e2",
+        "lesson_id": 51,
+        "lesson_title": "-as 尾名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      },
+      {
+        "type": "choice",
+        "question": "manasā 是 manas 的什么形式？",
+        "options": [
+          "工具格单数",
+          "主格复数",
+          "宾格复数",
+          "呼格复数"
+        ],
+        "answer": "工具格单数",
+        "explanation": "-asā 是 -as 尾名词工具格单数常见形式。",
+        "id": "l51-e3",
+        "lesson_id": 51,
+        "lesson_title": "-as 尾名词变格",
+        "module": "名词变格",
+        "difficulty": "进阶"
+      }
+    ],
+    "module": "名词变格",
+    "lesson_number": 51,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "进阶"
+  },
+  {
+    "id": 52,
+    "title": "na：普通否定词",
+    "category": "不变词",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "na 是巴利语最常见的普通否定词之一，通常否定动词、形容词或整个判断，相当于“不、非、没有”。",
+    "explanation": [
+      "na 是不变词，形式本身不随性、数、格变化。",
+      "na 通常放在被否定成分前面，常见于动词前。",
+      "na 与后接元音开头词相邻时，可能发生连读收缩，例如 na + atthi 可见 natthi。",
+      "na 表示普通否定；禁止性否定通常用 mā。"
+    ],
+    "table": [
+      [
+        "形式",
+        "词类",
+        "基本意义",
+        "提示"
+      ],
+      [
+        "na",
+        "不变词",
+        "不、非、没有",
+        "普通否定"
+      ],
+      [
+        "natthi",
+        "连读/合成形式",
+        "没有；不存在",
+        "na + atthi"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Na gacchati.",
+        "cn": "他/她不去。",
+        "note": "na 否定动词 gacchati。"
+      },
+      {
+        "pali": "Natthi me saraṇaṃ aññaṃ.",
+        "cn": "我没有其他归依处。",
+        "note": "natthi 可理解为 na + atthi。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "na 的基本作用是什么？",
+        "a": "普通否定，相当于“不、非、没有”。"
+      },
+      {
+        "q": "na + atthi 常见合成形式是什么？",
+        "a": "natthi。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "Na gacchati. 中 na 的作用是什么？",
+        "options": [
+          "普通否定",
+          "并列",
+          "疑问",
+          "处所"
+        ],
+        "answer": "普通否定",
+        "explanation": "na 是否定词，否定后面的动词 gacchati。",
+        "id": "l52-e1",
+        "lesson_id": 52,
+        "lesson_title": "na：普通否定词",
+        "module": "不变词与常用句式",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "na 与 mā 的核心区别是什么？",
+        "options": [
+          "na 普通否定，mā 禁止否定",
+          "na 表示或者，mā 表示和",
+          "na 是代词，mā 是名词",
+          "没有区别"
+        ],
+        "answer": "na 普通否定，mā 禁止否定",
+        "explanation": "na 是普通否定，mā 常用于禁止、劝止。",
+        "id": "l52-e2",
+        "lesson_id": 52,
+        "lesson_title": "na：普通否定词",
+        "module": "不变词与常用句式",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "不变词与常用句式",
+    "lesson_number": 52,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 53,
+    "title": "mā：禁止否定词",
+    "category": "不变词",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "mā 常用于禁止、劝止，相当于“不要、勿”。它不同于普通否定 na。",
+    "explanation": [
+      "mā 是不变词，用于表达禁止、劝止、不要做某事。",
+      "mā 常和命令、祈愿或过去形式搭配表达禁止。",
+      "初学时可先把 mā 理解为“不要”。",
+      "na 是普通否定；mā 是禁止性否定，二者功能不同。"
+    ],
+    "table": [
+      [
+        "形式",
+        "词类",
+        "基本意义",
+        "提示"
+      ],
+      [
+        "mā",
+        "不变词",
+        "不要、勿",
+        "禁止否定"
+      ],
+      [
+        "mā + 动词",
+        "结构",
+        "不要做某事",
+        "常见于劝止语境"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Mā gaccha.",
+        "cn": "不要去。",
+        "note": "mā 表示禁止。"
+      },
+      {
+        "pali": "Mā bhāyi.",
+        "cn": "不要害怕。",
+        "note": "mā 用于劝止。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "mā 的基本意义是什么？",
+        "a": "不要、勿。"
+      },
+      {
+        "q": "na 和 mā 的区别是什么？",
+        "a": "na 是普通否定；mā 是禁止否定。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "表示“不要去”更适合用哪个词？",
+        "options": [
+          "ca",
+          "vā",
+          "mā",
+          "iti"
+        ],
+        "answer": "mā",
+        "explanation": "mā 常用于禁止或劝止，相当于“不要”。",
+        "id": "l53-e1",
+        "lesson_id": 53,
+        "lesson_title": "mā：禁止否定词",
+        "module": "不变词与常用句式",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Mā āgacchi. 最合适的理解是？",
+        "options": [
+          "不要来",
+          "已经来了",
+          "将要来",
+          "正在来的"
+        ],
+        "answer": "不要来",
+        "explanation": "mā 表示禁止或劝止。",
+        "id": "l53-e2",
+        "lesson_id": 53,
+        "lesson_title": "mā：禁止否定词",
+        "module": "不变词与常用句式",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "不变词与常用句式",
+    "lesson_number": 53,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 54,
+    "title": "ca：并列连接词",
+    "category": "不变词",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "ca 是非常常见的并列连接词，相当于“和、并且、又”。它通常放在被连接成分之后。",
+    "explanation": [
+      "ca 是不变词，不随性、数、格变化。",
+      "ca 往往后置，即放在所连接的词或短语之后。",
+      "A ca B ca 可表示“A 和 B”。",
+      "多个 ca 可连接多个并列成分。"
+    ],
+    "table": [
+      [
+        "结构",
+        "意义",
+        "说明"
+      ],
+      [
+        "A ca B ca",
+        "A 和 B",
+        "ca 后置"
+      ],
+      [
+        "buddho ca dhammo ca",
+        "佛和法",
+        "两个并列名词"
+      ],
+      [
+        "Buddho ca dhammo ca saṅgho ca",
+        "佛、法、僧",
+        "三项并列"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Buddho ca dhammo ca saṅgho ca.",
+        "cn": "佛、法、僧。",
+        "note": "ca 后置，连接并列成分。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "ca 的基本意义是什么？",
+        "a": "和、并且、又。"
+      },
+      {
+        "q": "ca 通常放在连接成分前还是后？",
+        "a": "通常后置，放在连接成分后。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "Buddho ca dhammo ca 中 ca 表示什么？",
+        "options": [
+          "否定",
+          "并列",
+          "疑问",
+          "禁止"
+        ],
+        "answer": "并列",
+        "explanation": "ca 是并列连接词，相当于“和”。",
+        "id": "l54-e1",
+        "lesson_id": 54,
+        "lesson_title": "ca：并列连接词",
+        "module": "不变词与常用句式",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Buddho ca dhammo ca saṅgho ca 中 ca 的位置特点是什么？",
+        "options": [
+          "后置",
+          "前置",
+          "只放句首",
+          "只放句末一次"
+        ],
+        "answer": "后置",
+        "explanation": "ca 通常后置，放在被连接成分之后。",
+        "id": "l54-e2",
+        "lesson_id": 54,
+        "lesson_title": "ca：并列连接词",
+        "module": "不变词与常用句式",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "不变词与常用句式",
+    "lesson_number": 54,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 55,
+    "title": "vā：选择连接词",
+    "category": "不变词",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "vā 是选择连接词，相当于“或、或者”。和 ca 一样，vā 也常后置。",
+    "explanation": [
+      "vā 是不变词，表示选择或不确定。",
+      "A vā B vā 可表示“A 或 B”。",
+      "vā 常放在被连接成分之后。",
+      "在枚举或选择语境中非常常见。"
+    ],
+    "table": [
+      [
+        "结构",
+        "意义",
+        "说明"
+      ],
+      [
+        "A vā B vā",
+        "A 或 B",
+        "vā 后置"
+      ],
+      [
+        "gāme vā araññe vā",
+        "在村中或在林中",
+        "处所选择"
+      ],
+      [
+        "divā vā rattiṃ vā",
+        "白天或夜晚",
+        "时间选择"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Gāme vā araññe vā vasati.",
+        "cn": "他/她住在村中或林中。",
+        "note": "vā 表示选择。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "vā 的基本意义是什么？",
+        "a": "或、或者。"
+      },
+      {
+        "q": "A vā B vā 表示什么？",
+        "a": "A 或 B。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "gāme vā araññe vā 中 vā 表示什么？",
+        "options": [
+          "并列",
+          "选择",
+          "否定",
+          "处格词尾"
+        ],
+        "answer": "选择",
+        "explanation": "vā 是选择连接词，表示“或”。",
+        "id": "l55-e1",
+        "lesson_id": 55,
+        "lesson_title": "vā：选择连接词",
+        "module": "不变词与常用句式",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "不变词与常用句式",
+    "lesson_number": 55,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 56,
+    "title": "eva / yeva：强调与限定",
+    "category": "不变词",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "eva 是常见强调词，可表示“正是、恰恰、仅仅、确实”。yeva 是 eva 的连读相关形式之一。",
+    "explanation": [
+      "eva 是不变词，用于强调或限定前面的词。",
+      "常可译为“正是、恰恰、仅仅、确实”，具体译法需看上下文。",
+      "yeva 常是 eva 在连读环境下的形式，特别是在某些元音之后出现。",
+      "不要把 eva 机械译成一个固定汉字；它的语气需按句子判断。"
+    ],
+    "table": [
+      [
+        "形式",
+        "基本作用",
+        "提示"
+      ],
+      [
+        "eva",
+        "强调、限定",
+        "正是、仅仅、确实"
+      ],
+      [
+        "yeva",
+        "eva 的连读相关形式",
+        "按上下文识别"
+      ],
+      [
+        "tasseva",
+        "tassa + eva",
+        "正是他的 / 仅他的"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "So eva āgacchati.",
+        "cn": "正是他来了。",
+        "note": "eva 强调 so。"
+      },
+      {
+        "pali": "Tasseva dhammo.",
+        "cn": "正是他的法 / 仅是他的法。",
+        "note": "tasseva 可分析为 tassa + eva。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "eva 的常见作用是什么？",
+        "a": "强调或限定。"
+      },
+      {
+        "q": "tasseva 可以怎样分析？",
+        "a": "tassa + eva。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "tasseva 中 eva 的作用更接近什么？",
+        "options": [
+          "否定",
+          "强调/限定",
+          "处所",
+          "禁止"
+        ],
+        "answer": "强调/限定",
+        "explanation": "eva 常表示强调或限定，tasseva 可理解为 tassa + eva。",
+        "id": "l56-e1",
+        "lesson_id": 56,
+        "lesson_title": "eva / yeva：强调与限定",
+        "module": "不变词与常用句式",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "tasseva 可分析为？",
+        "options": [
+          "tassa + eva",
+          "taṃ + eva",
+          "te + ca",
+          "tassa + vā"
+        ],
+        "answer": "tassa + eva",
+        "explanation": "tasseva 可分析为 tassa + eva，表示强调或限定。",
+        "id": "l56-e2",
+        "lesson_id": 56,
+        "lesson_title": "eva / yeva：强调与限定",
+        "module": "不变词与常用句式",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "eva 的语义更接近哪一类？",
+        "options": [
+          "强调/限定",
+          "普通否定",
+          "禁止",
+          "选择连接"
+        ],
+        "answer": "强调/限定",
+        "explanation": "eva 常表示“正是、仅仅、确实”等强调或限定意义。",
+        "id": "l56-e3",
+        "lesson_id": 56,
+        "lesson_title": "eva / yeva：强调与限定",
+        "module": "不变词与常用句式",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "不变词与常用句式",
+    "lesson_number": 56,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 57,
+    "title": "iti / ti：引语标记",
+    "category": "不变词",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "iti 是常见引语标记，可表示“如此、这样说、……曰”。ti 是其缩略或连读形式。",
+    "explanation": [
+      "iti 常用于标记直接引语或思想内容的结束。",
+      "ti 可视作 iti 的缩略/连读形式，在文本中非常常见。",
+      "阅读时看到 iti / ti，要注意它前面的内容可能是一段引语、想法或被标记的表达。",
+      "iti 不应机械译为一个固定词，常可按“如此、这样说、……曰”处理。"
+    ],
+    "table": [
+      [
+        "形式",
+        "功能",
+        "说明"
+      ],
+      [
+        "iti",
+        "引语标记",
+        "标记前文为所说、所想或所引内容"
+      ],
+      [
+        "ti",
+        "缩略/连读形式",
+        "常见于句末或引语后"
+      ],
+      [
+        "iti vuttaṃ",
+        "如此被说",
+        "固定表达之一"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "So āha: \"Gacchāmi\" ti.",
+        "cn": "他说：“我去。”",
+        "note": "ti 标记引语结束。"
+      },
+      {
+        "pali": "Iti vuttaṃ.",
+        "cn": "如是说。",
+        "note": "iti 标记所说内容。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "iti / ti 的主要作用是什么？",
+        "a": "标记引语、想法或所引内容。"
+      },
+      {
+        "q": "ti 和 iti 的关系是什么？",
+        "a": "ti 常是 iti 的缩略或连读形式。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "“Gacchāmi” ti 中 ti 的作用是什么？",
+        "options": [
+          "引语标记",
+          "否定词",
+          "名词词尾",
+          "工具格"
+        ],
+        "answer": "引语标记",
+        "explanation": "ti 标记前面的内容是引语。",
+        "id": "l57-e1",
+        "lesson_id": 57,
+        "lesson_title": "iti / ti：引语标记",
+        "module": "不变词与常用句式",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "不变词与常用句式",
+    "lesson_number": 57,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 58,
+    "title": "kho / pana / hi：常见语气与衔接词",
+    "category": "不变词",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "kho、pana、hi 都是常见不变词，用于语气强调、话题推进、解释说明等。它们常不宜硬译。",
+    "explanation": [
+      "kho 常带有提示、强调或承接语气，很多时候可不直译。",
+      "pana 常用于转折、推进或转换话题，可根据上下文译为“而、又、那么、再者”等。",
+      "hi 常表示解释、理由或强调，可译为“因为、确实、盖”等，也可根据语境弱化处理。",
+      "这些词的功能偏语气和篇章衔接，不能简单固定成一个中文词。"
+    ],
+    "table": [
+      [
+        "词",
+        "常见功能",
+        "翻译提示"
+      ],
+      [
+        "kho",
+        "提示、强调、承接",
+        "常可弱化或不译"
+      ],
+      [
+        "pana",
+        "转折、推进、换题",
+        "而、又、那么、再者"
+      ],
+      [
+        "hi",
+        "解释、理由、强调",
+        "因为、确实、盖"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Atha kho Bhagavā...",
+        "cn": "于是，世尊……",
+        "note": "kho 在此有承接语气。"
+      },
+      {
+        "pali": "Idaṃ pana dukkhaṃ.",
+        "cn": "而这是苦。",
+        "note": "pana 可用于转折或推进。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "kho、pana、hi 都属于什么词类？",
+        "a": "不变词。"
+      },
+      {
+        "q": "hi 常见功能是什么？",
+        "a": "解释、理由或强调。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "pana 通常更接近哪类功能？",
+        "options": [
+          "转折/推进",
+          "名词变格",
+          "动词过去时",
+          "禁止否定"
+        ],
+        "answer": "转折/推进",
+        "explanation": "pana 常用于转折、推进或转换话题。",
+        "id": "l58-e1",
+        "lesson_id": 58,
+        "lesson_title": "kho / pana / hi：常见语气与衔接词",
+        "module": "不变词与常用句式",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "Atha kho Bhagavā... 中 kho 通常怎样处理？",
+        "options": [
+          "承接/强调，可弱化处理",
+          "表示不要",
+          "表示或者",
+          "表示宾格"
+        ],
+        "answer": "承接/强调，可弱化处理",
+        "explanation": "kho 常有提示、承接或强调语气，翻译时可按上下文弱化。",
+        "id": "l58-e2",
+        "lesson_id": 58,
+        "lesson_title": "kho / pana / hi：常见语气与衔接词",
+        "module": "不变词与常用句式",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "hi 常见功能是什么？",
+        "options": [
+          "解释、理由或强调",
+          "选择",
+          "禁止",
+          "处所"
+        ],
+        "answer": "解释、理由或强调",
+        "explanation": "hi 常用于解释、理由或强调。",
+        "id": "l58-e3",
+        "lesson_id": 58,
+        "lesson_title": "kho / pana / hi：常见语气与衔接词",
+        "module": "不变词与常用句式",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "不变词与常用句式",
+    "lesson_number": 58,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 59,
+    "title": "ka / kiṃ：疑问代词基础",
+    "category": "代词",
+    "level": "基础",
+    "status": "已核准",
+    "summary": "ka 是疑问代词词干，kiṃ 常见为中性主格/宾格单数，也可作疑问副词使用，表示“什么、为什么、是否”等。",
+    "explanation": [
+      "ka 是疑问代词词干，按性、数、格变化。",
+      "阳性主格单数常见 ko，阴性主格单数常见 kā，中性主格/宾格单数常见 kiṃ。",
+      "kiṃ 可表示“什么”，也可在句中引出疑问，具体功能依上下文判断。",
+      "疑问代词的完整变格较复杂，本条先掌握核心识别形式。"
+    ],
+    "table": [
+      [
+        "性/形式",
+        "常见形式",
+        "基本意义"
+      ],
+      [
+        "阳性主格单数",
+        "ko",
+        "谁？哪一个？"
+      ],
+      [
+        "阴性主格单数",
+        "kā",
+        "谁？哪一个？"
+      ],
+      [
+        "中性主格/宾格单数",
+        "kiṃ",
+        "什么？"
+      ],
+      [
+        "副词性用法",
+        "kiṃ",
+        "为什么？是否？"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Ko āgacchati?",
+        "cn": "谁来了？",
+        "note": "ko 是 ka 的阳性主格单数。"
+      },
+      {
+        "pali": "Kiṃ passasi?",
+        "cn": "你看见什么？",
+        "note": "kiṃ 可作中性宾格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "kiṃ 的基本意义是什么？",
+        "a": "什么？"
+      },
+      {
+        "q": "ka 的阳性主格单数是什么？",
+        "a": "ko。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "Ko āgacchati? 中 ko 是什么？",
+        "options": [
+          "疑问代词阳性主格单数",
+          "否定词",
+          "处格复数",
+          "动词词尾"
+        ],
+        "answer": "疑问代词阳性主格单数",
+        "explanation": "ko 是 ka 的阳性主格单数，表示“谁”。",
+        "id": "l59-e1",
+        "lesson_id": 59,
+        "lesson_title": "ka / kiṃ：疑问代词基础",
+        "module": "代词与形容词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Ko āgacchati? 中 ko 表示什么？",
+        "options": [
+          "谁",
+          "什么",
+          "不要",
+          "正是"
+        ],
+        "answer": "谁",
+        "explanation": "ko 是 ka 的阳性主格单数，表示“谁”。",
+        "id": "l59-e2",
+        "lesson_id": 59,
+        "lesson_title": "ka / kiṃ：疑问代词基础",
+        "module": "代词与形容词",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Kiṃ passasi? 中 kiṃ 是什么功能？",
+        "options": [
+          "疑问代词，作宾语",
+          "普通否定",
+          "并列连接",
+          "工具格复数"
+        ],
+        "answer": "疑问代词，作宾语",
+        "explanation": "kiṃ 可作中性宾格单数，表示“什么”。",
+        "id": "l59-e3",
+        "lesson_id": 59,
+        "lesson_title": "ka / kiṃ：疑问代词基础",
+        "module": "代词与形容词",
+        "difficulty": "基础"
+      }
+    ],
+    "module": "代词与形容词",
+    "lesson_number": 59,
+    "source_status": "已核准",
+    "verified_sources": [
+      "語尾變化笔记",
+      "老师讲义相关课程",
+      "Duroiselle 等系统语法核查"
+    ],
+    "difficulty": "基础"
+  },
+  {
+    "id": 60,
+    "title": "yo...so...：关系—指示结构",
+    "category": "复合句",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "yo...so... 是常见关系—指示结构，可理解为“凡……者，他/那……”。关系代词 yo 与指示代词 so 相互呼应。",
+    "explanation": [
+      "yo 是关系代词，so 是对应的指示代词。",
+      "yo...so... 结构常可译为“凡……者，他/那……”。",
+      "关系代词和指示代词会按性、数、格变化，不一定总是 yo 与 so 的表面形式。",
+      "初学时先识别这种前后呼应结构。"
+    ],
+    "table": [
+      [
+        "结构",
+        "基本理解",
+        "提示"
+      ],
+      [
+        "yo ... so ...",
+        "凡……者，他/那……",
+        "阳性单数常见"
+      ],
+      [
+        "yaṃ ... taṃ ...",
+        "凡……物，那……",
+        "中性或宾格等形式"
+      ],
+      [
+        "ye ... te ...",
+        "凡……者，他们……",
+        "复数形式"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Yo dhammaṃ passati, so maṃ passati.",
+        "cn": "见法者，即见我。",
+        "note": "yo 与 so 形成关系—指示呼应。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "yo...so... 大致表示什么结构？",
+        "a": "关系—指示结构，“凡……者，他/那……”。"
+      },
+      {
+        "q": "yo 的对应指示形式常是什么？",
+        "a": "so。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "Yo dhammaṃ passati, so maṃ passati. 中 yo 与 so 是什么关系？",
+        "options": [
+          "关系—指示呼应",
+          "否定结构",
+          "动词变位",
+          "连读音变"
+        ],
+        "answer": "关系—指示呼应",
+        "explanation": "yo 引出关系从句，so 是对应指示代词。",
+        "id": "l60-e1",
+        "lesson_id": 60,
+        "lesson_title": "yo...so...：关系—指示结构",
+        "module": "不变词与常用句式",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "Yo dhammaṃ passati, so maṃ passati. 中 yo...so... 是什么结构？",
+        "options": [
+          "关系—指示结构",
+          "普通否定结构",
+          "选择结构",
+          "命令结构"
+        ],
+        "answer": "关系—指示结构",
+        "explanation": "yo 引出关系从句，so 是对应指示代词。",
+        "id": "l60-e2",
+        "lesson_id": 60,
+        "lesson_title": "yo...so...：关系—指示结构",
+        "module": "不变词与常用句式",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "ye...te... 通常对应什么？",
+        "options": [
+          "复数关系—指示结构",
+          "单数否定结构",
+          "使役动词",
+          "不定式"
+        ],
+        "answer": "复数关系—指示结构",
+        "explanation": "ye...te... 是复数形式的关系—指示呼应。",
+        "id": "l60-e3",
+        "lesson_id": 60,
+        "lesson_title": "yo...so...：关系—指示结构",
+        "module": "不变词与常用句式",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "不变词与常用句式",
+    "lesson_number": 60,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 61,
+    "title": "yadā...tadā...：时间关联结构",
+    "category": "复合句",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "yadā...tadā... 表示时间关联，可理解为“当……时，那时……”。",
+    "explanation": [
+      "yadā 表示“当……时”。",
+      "tadā 表示“那时”。",
+      "二者常成对出现，构成时间从句和主句的呼应。",
+      "即使 tadā 不明示，也可根据上下文理解时间关系。"
+    ],
+    "table": [
+      [
+        "结构",
+        "意义",
+        "说明"
+      ],
+      [
+        "yadā ... tadā ...",
+        "当……时，那时……",
+        "时间关联"
+      ],
+      [
+        "yadā",
+        "当……时",
+        "引出时间从句"
+      ],
+      [
+        "tadā",
+        "那时",
+        "主句时间呼应"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Yadā paññā uppajjati, tadā moho pahīyati.",
+        "cn": "当智慧生起时，那时愚痴被舍断。",
+        "note": "yadā 与 tadā 表示时间呼应。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "yadā...tadā... 表示什么关系？",
+        "a": "时间关系：当……时，那时……。"
+      },
+      {
+        "q": "yadā 的基本意义是什么？",
+        "a": "当……时。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "yadā...tadā... 属于什么结构？",
+        "options": [
+          "时间关联结构",
+          "并列结构",
+          "普通否定",
+          "不定式结构"
+        ],
+        "answer": "时间关联结构",
+        "explanation": "yadā 与 tadā 呼应，表示“当……时，那时……”。",
+        "id": "l61-e1",
+        "lesson_id": 61,
+        "lesson_title": "yadā...tadā...：时间关联结构",
+        "module": "不变词与常用句式",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "Yadā paññā uppajjati, tadā moho pahīyati. 中 yadā...tadā... 表示什么？",
+        "options": [
+          "时间关联",
+          "地点关联",
+          "方式关联",
+          "选择关联"
+        ],
+        "answer": "时间关联",
+        "explanation": "yadā...tadā... 表示“当……时，那时……”。",
+        "id": "l61-e2",
+        "lesson_id": 61,
+        "lesson_title": "yadā...tadā...：时间关联结构",
+        "module": "不变词与常用句式",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "不变词与常用句式",
+    "lesson_number": 61,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 62,
+    "title": "yattha...tattha...：地点关联结构",
+    "category": "复合句",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "yattha...tattha... 表示地点关联，可理解为“在何处……，在那里……”。",
+    "explanation": [
+      "yattha 表示“在何处、凡在何处”。",
+      "tattha 表示“在那里”。",
+      "二者常形成地点从句和主句的呼应。",
+      "这种结构和 yadā...tadā... 类似，只是关联的是地点。"
+    ],
+    "table": [
+      [
+        "结构",
+        "意义",
+        "说明"
+      ],
+      [
+        "yattha ... tattha ...",
+        "在何处……，在那里……",
+        "地点关联"
+      ],
+      [
+        "yattha",
+        "在何处",
+        "引出地点从句"
+      ],
+      [
+        "tattha",
+        "在那里",
+        "主句地点呼应"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Yattha dhammo, tattha sukhaṃ.",
+        "cn": "法在何处，安乐即在那里。",
+        "note": "yattha 与 tattha 表示地点呼应。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "yattha...tattha... 表示什么关系？",
+        "a": "地点关系：在何处……，在那里……。"
+      },
+      {
+        "q": "tattha 的基本意义是什么？",
+        "a": "在那里。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "yattha...tattha... 中 tattha 的作用是什么？",
+        "options": [
+          "地点呼应",
+          "否定",
+          "并列",
+          "动词词尾"
+        ],
+        "answer": "地点呼应",
+        "explanation": "tattha 表示“在那里”，和 yattha 呼应。",
+        "id": "l62-e1",
+        "lesson_id": 62,
+        "lesson_title": "yattha...tattha...：地点关联结构",
+        "module": "不变词与常用句式",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "Yattha dhammo, tattha sukhaṃ. 中 yattha...tattha... 表示什么？",
+        "options": [
+          "地点关联",
+          "时间关联",
+          "禁止",
+          "使役"
+        ],
+        "answer": "地点关联",
+        "explanation": "yattha...tattha... 表示“在何处……，在那里……”。",
+        "id": "l62-e2",
+        "lesson_id": 62,
+        "lesson_title": "yattha...tattha...：地点关联结构",
+        "module": "不变词与常用句式",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "不变词与常用句式",
+    "lesson_number": 62,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 63,
+    "title": "yathā...tathā...：方式关联结构",
+    "category": "复合句",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "yathā...tathā... 表示方式或相似关系，可理解为“如……那样”。",
+    "explanation": [
+      "yathā 表示“如、按照……方式”。",
+      "tathā 表示“那样、如此”。",
+      "二者常形成方式关联结构。",
+      "在翻译时可根据上下文处理为“如……那样、按照……”。"
+    ],
+    "table": [
+      [
+        "结构",
+        "意义",
+        "说明"
+      ],
+      [
+        "yathā ... tathā ...",
+        "如……那样",
+        "方式关联"
+      ],
+      [
+        "yathā",
+        "如、按照",
+        "引出方式"
+      ],
+      [
+        "tathā",
+        "那样、如此",
+        "主句方式呼应"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Yathā vuttaṃ, tathā karoti.",
+        "cn": "他/她如所说那样去做。",
+        "note": "yathā 与 tathā 表示方式呼应。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "yathā...tathā... 表示什么关系？",
+        "a": "方式关系：如……那样。"
+      },
+      {
+        "q": "tathā 的基本意义是什么？",
+        "a": "那样、如此。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "Yathā vuttaṃ, tathā karoti. 中 yathā...tathā... 表示什么？",
+        "options": [
+          "方式关联",
+          "否定结构",
+          "选择结构",
+          "名词变格"
+        ],
+        "answer": "方式关联",
+        "explanation": "yathā...tathā... 表示“如……那样”。",
+        "id": "l63-e1",
+        "lesson_id": 63,
+        "lesson_title": "yathā...tathā...：方式关联结构",
+        "module": "不变词与常用句式",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "不变词与常用句式",
+    "lesson_number": 63,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 64,
+    "title": "yāva...tāva...：直到、只要、范围关联",
+    "category": "复合句",
+    "level": "进阶基础",
+    "status": "已核准",
+    "summary": "yāva...tāva... 可表示时间、程度或范围的关联，常理解为“直到……时、只要……就、至于……”。",
+    "explanation": [
+      "yāva 可表示“直到、只要、尽……范围”。",
+      "tāva 可表示“那么久、那么多、在此范围内”等呼应意义。",
+      "yāva...tāva... 的具体译法依上下文而定。",
+      "初学时先把它识别为范围或时间关联结构。"
+    ],
+    "table": [
+      [
+        "结构",
+        "意义",
+        "说明"
+      ],
+      [
+        "yāva ... tāva ...",
+        "直到……；只要……就……",
+        "时间/范围关联"
+      ],
+      [
+        "yāva",
+        "直到；只要；尽……",
+        "引出范围"
+      ],
+      [
+        "tāva",
+        "那么久；那么多；在此范围",
+        "主句呼应"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Yāva jīvati, tāva sikkhati.",
+        "cn": "只要活着，就学习。",
+        "note": "yāva 与 tāva 表示时间或范围呼应。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "yāva...tāva... 常表示什么？",
+        "a": "时间、程度或范围的关联。"
+      },
+      {
+        "q": "yāva 的常见意义有哪些？",
+        "a": "直到、只要、尽……范围。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "yāva...tāva... 最适合归入哪类结构？",
+        "options": [
+          "范围/时间关联",
+          "普通否定",
+          "动词使役",
+          "呼格结构"
+        ],
+        "answer": "范围/时间关联",
+        "explanation": "yāva...tāva... 常表示直到、只要、范围等关联。",
+        "id": "l64-e1",
+        "lesson_id": 64,
+        "lesson_title": "yāva...tāva...：直到、只要、范围关联",
+        "module": "不变词与常用句式",
+        "difficulty": "进阶基础"
+      },
+      {
+        "type": "choice",
+        "question": "Yāva jīvati, tāva sikkhati. 中 yāva...tāva... 表示什么？",
+        "options": [
+          "时间/范围关联",
+          "普通否定",
+          "并列",
+          "疑问"
+        ],
+        "answer": "时间/范围关联",
+        "explanation": "yāva...tāva... 可表示“只要……就……、直到……”。",
+        "id": "l64-e2",
+        "lesson_id": 64,
+        "lesson_title": "yāva...tāva...：直到、只要、范围关联",
+        "module": "不变词与常用句式",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "module": "不变词与常用句式",
+    "lesson_number": 64,
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义相关课程",
+      "Pali Primer / 入门语法参考",
+      "通行巴利语语法核查"
+    ],
+    "difficulty": "进阶基础"
+  },
+  {
+    "id": 65,
+    "title": "巴利语音系：8 个元音与 33 个辅音",
+    "category": "语音与拼写",
+    "module": "入门与发音",
+    "level": "基础",
+    "difficulty": "基础",
+    "status": "已核准",
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义 Lesson 1 音系表",
+      "通行巴利语入门语法核查"
+    ],
+    "summary": "传统巴利语字母体系通常列 41 个音：8 个元音和 33 个辅音；其中 e、o 在传统分类中列为长元音。",
+    "explanation": [
+      "巴利语元音通常列为 8 个：a, ā, i, ī, u, ū, e, o。",
+      "短元音为 a, i, u；长元音为 ā, ī, ū, e, o。",
+      "辅音按发音部位可分为喉音、颚音、舌音、齿音、唇音，并另有半元音、嘶音、送气音、舌音 ḷ 与鼻音 ṃ。",
+      "学习时要特别重视长短元音、送气/不送气、卷舌音和 ṃ，因为它们常常区分不同词形。"
+    ],
+    "table": [
+      [
+        "类别",
+        "符号",
+        "说明"
+      ],
+      [
+        "短元音",
+        "a, i, u",
+        "发音较短"
+      ],
+      [
+        "长元音",
+        "ā, ī, ū, e, o",
+        "传统上列为长元音"
+      ],
+      [
+        "半元音",
+        "y, v, r, l",
+        "介于元音和辅音之间"
+      ],
+      [
+        "嘶音",
+        "s",
+        "齿擦音"
+      ],
+      [
+        "送气音",
+        "h",
+        "送气音"
+      ],
+      [
+        "舌音",
+        "ḷ",
+        "卷舌边音"
+      ],
+      [
+        "鼻音",
+        "ṃ / ṁ",
+        "niggahīta"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Buddhaṃ saraṇaṃ gacchāmi.",
+        "cn": "我皈依佛。",
+        "note": "Buddhaṃ、saraṇaṃ 中的 ṃ 是 niggahīta。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "传统巴利语通常列多少个元音？",
+        "a": "8 个：a, ā, i, ī, u, ū, e, o。"
+      },
+      {
+        "q": "niggahīta 通常写作什么符号？",
+        "a": "ṃ 或 ṁ。"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l65-e1",
+        "lesson_id": 65,
+        "lesson_title": "巴利语音系：8 个元音与 33 个辅音",
+        "module": "入门与发音",
+        "type": "choice",
+        "question": "下列哪一组是巴利语短元音？",
+        "options": [
+          "a, i, u",
+          "ā, ī, ū",
+          "e, o, ṃ",
+          "y, v, r"
+        ],
+        "answer": "a, i, u",
+        "explanation": "巴利语短元音通常列为 a, i, u。",
+        "difficulty": "基础"
+      }
+    ],
+    "lesson_number": 65
+  },
+  {
+    "id": 66,
+    "title": "动词系统总览：时、式、语态",
+    "category": "动词系统",
+    "module": "动词系统",
+    "level": "基础",
+    "difficulty": "基础",
+    "status": "已核准",
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义 Lesson 1 动词总览",
+      "通行巴利语语法核查"
+    ],
+    "summary": "巴利语动词要看词根/词干、时态或语气、语态、人称和数。初学时不要只背一个词形，要能拆出这些信息。",
+    "explanation": [
+      "巴利语动词会表现人称和数，例如第三人称单数、第二人称复数、第一人称单数等。",
+      "常见时态/语气包括一般现在时、一般将来时、过去类、命令语气、可能/祈愿语气、条件式/假定时等。",
+      "传统词尾还区分主动语态和中间语态；被动常通过 -(ī)ya 等方式形成词干。",
+      "学习动词时，先看词干，再看词尾，再判断人称、数、时态/语气和语态。"
+    ],
+    "table": [
+      [
+        "维度",
+        "说明",
+        "例子"
+      ],
+      [
+        "词根/词干",
+        "动作意义基础",
+        "√gam → gaccha-"
+      ],
+      [
+        "时态/语气",
+        "现在、将来、过去、命令、祈愿等",
+        "gacchati / gacchissati / gaccheyya"
+      ],
+      [
+        "语态",
+        "主动、中间、被动等",
+        "gacchati / labhate / karīyati"
+      ],
+      [
+        "人称",
+        "第一、第二、第三人称",
+        "-mi / -si / -ti"
+      ],
+      [
+        "数",
+        "单数、复数",
+        "-ti / -anti"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Ahaṃ gacchāmi.",
+        "cn": "我去。",
+        "note": "gacchāmi 可分析为一般现在时主动第一人称单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "分析巴利语动词时至少要看哪些信息？",
+        "a": "词干、词尾、时态/语气、语态、人称和数。"
+      },
+      {
+        "q": "gacchāmi 是什么人称数？",
+        "a": "第一人称单数。"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l66-e1",
+        "lesson_id": 66,
+        "lesson_title": "动词系统总览：时、式、语态",
+        "module": "动词系统",
+        "type": "choice",
+        "question": "gacchati 中 -ti 通常表示什么？",
+        "options": [
+          "第三人称单数",
+          "第一人称复数",
+          "不定式",
+          "阴性主格"
+        ],
+        "answer": "第三人称单数",
+        "explanation": "-ti 是一般现在时主动第三人称单数词尾。",
+        "difficulty": "基础"
+      }
+    ],
+    "lesson_number": 66
+  },
+  {
+    "id": 67,
+    "title": "现在时词干的七组传统分类",
+    "category": "动词系统",
+    "module": "动词系统",
+    "level": "进阶基础",
+    "difficulty": "进阶基础",
+    "status": "已核准（传统语法框架）",
+    "source_status": "已核准（传统语法框架）",
+    "verified_sources": [
+      "老师讲义 Lesson 1 七组动词词干",
+      "Kaccāyana / Rūpasiddhi 传统语法框架核查"
+    ],
+    "summary": "传统巴利语法常按构成现在时词干的标志把动词分组，如 bhūvādi、rudhādi、divādi、svādi、kiyādi、tanādi、curādi。",
+    "explanation": [
+      "这是一套传统语法分类，用来说明现在时词干如何从词根构成。",
+      "现代入门教材有时会用更简化的方式讲动词词干；本网站把七组作为识别框架，不要求初学者立即背熟。",
+      "常见标志包括 -a、插入鼻音后加 -a、-ya、-ṇu/-ṇā/-uṇā、-nā、-o/-(y)ira、-(ṇ)e/-(ṇ)aya 等。",
+      "实际学习时，应结合具体常用动词记忆，如 bhavati、pacati、chindati、bujjhati、suṇāti、karoti、deseti。"
+    ],
+    "table": [
+      [
+        "传统组名",
+        "构成标志",
+        "例子"
+      ],
+      [
+        "bhūvādi",
+        "-a",
+        "√bhū → bhavati；√pac → pacati"
+      ],
+      [
+        "rudhādi",
+        "插入鼻音 + -a",
+        "√chid → chindati"
+      ],
+      [
+        "divādi",
+        "-ya",
+        "√budh + ya → bujjhati"
+      ],
+      [
+        "svādi",
+        "-ṇu / -ṇā / -uṇā",
+        "√su → suṇāti / suṇoti"
+      ],
+      [
+        "kiyādi",
+        "-nā",
+        "√mu → munāti"
+      ],
+      [
+        "tanādi",
+        "-o / -(y)ira",
+        "√tan → tanoti；√kar → karoti"
+      ],
+      [
+        "curādi",
+        "-(ṇ)e / -(ṇ)aya",
+        "√dis → deseti；√cur → corayati"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Bujjhati.",
+        "cn": "他/她觉知。",
+        "note": "可按 divādi 组：√budh + ya，发生音变形成 bujjhati。"
+      },
+      {
+        "pali": "Deseti.",
+        "cn": "他/她开示。",
+        "note": "可按 curādi 类词干识别。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "curādi 组常见词干标志是什么？",
+        "a": "-(ṇ)e / -(ṇ)aya，如 deseti、corayati。"
+      },
+      {
+        "q": "divādi 组常见标志是什么？",
+        "a": "-ya，如 √budh + ya → bujjhati。"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l67-e1",
+        "lesson_id": 67,
+        "lesson_title": "现在时词干的七组传统分类",
+        "module": "动词系统",
+        "type": "choice",
+        "question": "deseti 更适合归入哪一类传统动词组？",
+        "options": [
+          "bhūvādi",
+          "rudhādi",
+          "curādi",
+          "svādi"
+        ],
+        "answer": "curādi",
+        "explanation": "deseti 可按 curādi 类词干识别，常见标志为 -e。",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "lesson_number": 67
+  },
+  {
+    "id": 68,
+    "title": "现在时第一人称主动：a → ā",
+    "category": "动词变位",
+    "module": "动词系统",
+    "level": "基础",
+    "difficulty": "基础",
+    "status": "已核准",
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义 Lesson 1 一般现在时",
+      "通行巴利语现在时变位表核查"
+    ],
+    "summary": "以短 a 结尾的现在时词干，在主动语态第一人称单数和复数中，词干末尾 a 通常变长为 ā。",
+    "explanation": [
+      "例如 gaccha- + -mi → gacchāmi，gaccha- + -ma → gacchāma。",
+      "vasati 的词干 vasa- 在第一人称主动中形成 vasāmi、vasāma。",
+      "如果词干本身以长 ā、e、o 等结尾，处理方式不同，不能机械套用 a → ā。",
+      "这个规则能帮助学生理解为什么不是 gacchami，而是 gacchāmi。"
+    ],
+    "table": [
+      [
+        "词干",
+        "第三人称单数",
+        "第一人称单数",
+        "第一人称复数"
+      ],
+      [
+        "gaccha-",
+        "gacchati",
+        "gacchāmi",
+        "gacchāma"
+      ],
+      [
+        "vasa-",
+        "vasati",
+        "vasāmi",
+        "vasāma"
+      ],
+      [
+        "paca-",
+        "pacati",
+        "pacāmi",
+        "pacāma"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Ahaṃ vasāmi.",
+        "cn": "我住。",
+        "note": "vasa- 的 a 在第一人称主动中变为 ā。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "为什么是 gacchāmi 而不是 gacchami？",
+        "a": "因为以短 a 结尾的词干在第一人称主动中 a 通常变为 ā。"
+      },
+      {
+        "q": "vasati 的第一人称复数是什么？",
+        "a": "vasāma。"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l68-e1",
+        "lesson_id": 68,
+        "lesson_title": "现在时第一人称主动：a → ā",
+        "module": "动词系统",
+        "type": "input",
+        "question": "请写出 pacati 的第一人称单数。",
+        "answer": "pacāmi",
+        "explanation": "paca- + -mi 时，词干末尾 a 变为 ā，形成 pacāmi。",
+        "difficulty": "基础"
+      }
+    ],
+    "lesson_number": 68
+  },
+  {
+    "id": 69,
+    "title": "√as：atthi 的不规则现在时",
+    "category": "动词变位",
+    "module": "动词系统",
+    "level": "基础",
+    "difficulty": "基础",
+    "status": "已核准",
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义 Lesson 1 atthi 不规则变化",
+      "Pariyatti PLC / 入门语法核查"
+    ],
+    "summary": "√as 表示“有、存在、是”，其现在时变化不规则，常见形式包括 atthi、santi、asi、attha、asmi/amhi、asma/amha。",
+    "explanation": [
+      "atthi 是第三人称单数，表示“他/她/它是、有、存在”。",
+      "santi 是第三人称复数。",
+      "第二人称单数为 asi，复数为 attha。",
+      "第一人称单数可见 asmi / amhi，复数可见 asma / amha。",
+      "atthi 没有自己的普通将来时，通常用 bhavati 的将来时 bhavissati 来表达。"
+    ],
+    "table": [
+      [
+        "人称",
+        "单数",
+        "复数"
+      ],
+      [
+        "第三人称",
+        "atthi",
+        "santi"
+      ],
+      [
+        "第二人称",
+        "asi",
+        "attha"
+      ],
+      [
+        "第一人称",
+        "asmi / amhi",
+        "asma / amha"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "So atthi.",
+        "cn": "他存在 / 他是。",
+        "note": "atthi 是第三人称单数。"
+      },
+      {
+        "pali": "Ahaṃ asmi.",
+        "cn": "我是。",
+        "note": "asmi 是第一人称单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "atthi 的第三人称复数是什么？",
+        "a": "santi。"
+      },
+      {
+        "q": "√as 的第一人称单数常见形式有哪些？",
+        "a": "asmi / amhi。"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l69-e1",
+        "lesson_id": 69,
+        "lesson_title": "√as：atthi 的不规则现在时",
+        "module": "动词系统",
+        "type": "choice",
+        "question": "下列哪个是 √as 的第三人称复数？",
+        "options": [
+          "atthi",
+          "santi",
+          "asi",
+          "asmi"
+        ],
+        "answer": "santi",
+        "explanation": "√as 的第三人称复数是 santi。",
+        "difficulty": "基础"
+      }
+    ],
+    "lesson_number": 69
+  },
+  {
+    "id": 70,
+    "title": "被动式入门：-(ī)ya",
+    "category": "动词系统",
+    "module": "动词系统",
+    "level": "进阶基础",
+    "difficulty": "进阶基础",
+    "status": "已核准",
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义 Lesson 1 被动式",
+      "Duroiselle / 通行巴利语语法核查"
+    ],
+    "summary": "巴利语被动式常通过在词根或词干后加 -(ī)ya 构成，再接动词词尾，如 karīyati / karīyate。",
+    "explanation": [
+      "被动式常表示“被……、受……”。",
+      "常见构成为词根或词干 + -(ī)ya + 动词词尾。",
+      "例如 √kar + (ī)ya + ti / te → karīyati / karīyate，可理解为“被做”。",
+      "实际文本中被动还可能用过去分词加 hoti 等结构表达；本条只介绍 synthetic passive 的基本形式。"
+    ],
+    "table": [
+      [
+        "构成",
+        "例子",
+        "基本意义"
+      ],
+      [
+        "√kar + (ī)ya + ti",
+        "karīyati",
+        "被做"
+      ],
+      [
+        "√kar + (ī)ya + te",
+        "karīyate",
+        "被做"
+      ],
+      [
+        "√pac + ya/īya + ti",
+        "paccati / pacīyati 类",
+        "被煮，需按具体形式核查"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Kammaṃ karīyati.",
+        "cn": "事情被做。",
+        "note": "karīyati 是被动形式。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "巴利语被动式常见后缀是什么？",
+        "a": "-(ī)ya。"
+      },
+      {
+        "q": "karīyati 大致是什么意思？",
+        "a": "被做。"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l70-e1",
+        "lesson_id": 70,
+        "lesson_title": "被动式入门：-(ī)ya",
+        "module": "动词系统",
+        "type": "choice",
+        "question": "karīyati 更接近哪种意义？",
+        "options": [
+          "他做",
+          "被做",
+          "将做",
+          "做了之后"
+        ],
+        "answer": "被做",
+        "explanation": "karīyati 是由 √kar + (ī)ya + ti 构成的被动形式。",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "lesson_number": 70
+  },
+  {
+    "id": 71,
+    "title": "使役动词入门：-e / -aya / -āpe / -āpaya",
+    "category": "动词系统",
+    "module": "动词系统",
+    "level": "进阶基础",
+    "difficulty": "进阶基础",
+    "status": "已核准",
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义 Lesson 1 使役动词",
+      "Pali Primer / Pariyatti PLC / 通行语法核查"
+    ],
+    "summary": "使役动词表示“使、令、让某人做某事”，常见后缀有 -e、-aya、-āpe、-āpaya。",
+    "explanation": [
+      "使役可表示让别人做、使某事发生。",
+      "常见后缀包括 -e、-aya、-āpe、-āpaya。",
+      "例如 √kar 可形成 kāreti、kārayati、kārāpeti、kārāpayati，意思是“使做、让做”。",
+      "具体词根形成使役时可能有元音增强或其他变化，不能机械套用。"
+    ],
+    "table": [
+      [
+        "词根/基础",
+        "使役形式",
+        "基本意义"
+      ],
+      [
+        "√kar",
+        "kāreti",
+        "使做"
+      ],
+      [
+        "√kar",
+        "kārayati",
+        "使做"
+      ],
+      [
+        "√kar",
+        "kārāpeti",
+        "使人做 / 让做"
+      ],
+      [
+        "√kar",
+        "kārāpayati",
+        "使人做 / 让做"
+      ],
+      [
+        "√dā",
+        "dāpeti / dāpayati",
+        "使给；通过他人给予"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "So kammaṃ kāreti.",
+        "cn": "他让人做工作。",
+        "note": "kāreti 是 √kar 的使役形式。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "使役动词常表示什么？",
+        "a": "使、令、让某人做某事。"
+      },
+      {
+        "q": "√kar 的使役形式可以有哪些？",
+        "a": "kāreti、kārayati、kārāpeti、kārāpayati。"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l71-e1",
+        "lesson_id": 71,
+        "lesson_title": "使役动词入门：-e / -aya / -āpe / -āpaya",
+        "module": "动词系统",
+        "type": "choice",
+        "question": "kāreti 更接近哪种意义？",
+        "options": [
+          "自己做",
+          "使做 / 让做",
+          "做了之后",
+          "应做的"
+        ],
+        "answer": "使做 / 让做",
+        "explanation": "kāreti 是 √kar 的使役形式，表示使做、让做。",
+        "difficulty": "进阶基础"
+      }
+    ],
+    "lesson_number": 71
+  },
+  {
+    "id": 72,
+    "title": "一般将来时构成：-(i)ssa / -(e)ssa",
+    "category": "动词变位",
+    "module": "动词系统",
+    "level": "基础",
+    "difficulty": "基础",
+    "status": "已核准",
+    "source_status": "已核准",
+    "verified_sources": [
+      "老师讲义 Lesson 2 一般将来时",
+      "Duroiselle / 通行巴利语语法核查"
+    ],
+    "summary": "一般将来时通常通过词根或词干加 -(i)ssa- 再接人称词尾构成；以 -e 结尾的词干常见 -(e)ssa-。",
+    "explanation": [
+      "一般将来时表示将来发生的动作，有时也可表示推测或必然。",
+      "普通形式常见 -(i)ssa-，如 pacissati。",
+      "以 -e 结尾的词干常见 -(e)ssa-，如 deseti → desessati。",
+      "除长元音 e 以外，词干若以其他元音结尾，常去掉该元音再接将来时后缀。",
+      "atthi 没有自己的普通将来时，通常由 bhavati 的 bhavissati 代替。"
+    ],
+    "table": [
+      [
+        "基础形式",
+        "将来时",
+        "说明"
+      ],
+      [
+        "pacati",
+        "pacissati",
+        "pac + issa + ti"
+      ],
+      [
+        "deseti",
+        "desessati",
+        "dese + ssa + ti"
+      ],
+      [
+        "bhavati",
+        "bhavissati",
+        "也可代替 atthi 的将来意义"
+      ],
+      [
+        "suṇāti",
+        "suṇissati",
+        "去掉或调整词干元音后形成"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "So pacissati.",
+        "cn": "他将煮。",
+        "note": "pacissati 是 pacati 的将来时第三人称单数。"
+      },
+      {
+        "pali": "So desessati.",
+        "cn": "他将开示。",
+        "note": "desessati 是 deseti 的将来时第三人称单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "pacati 的将来时第三人称单数是什么？",
+        "a": "pacissati。"
+      },
+      {
+        "q": "deseti 的将来时第三人称单数是什么？",
+        "a": "desessati。"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l72-e1",
+        "lesson_id": 72,
+        "lesson_title": "一般将来时构成：-(i)ssa / -(e)ssa",
+        "module": "动词系统",
+        "type": "input",
+        "question": "请写出 deseti 的将来时第三人称单数。",
+        "answer": "desessati",
+        "explanation": "以 -e 结尾的词干可形成 -(e)ssa-，deseti → desessati。",
+        "difficulty": "基础"
+      }
+    ],
+    "lesson_number": 72
+  },
+  {
+    "id": 73,
+    "title": "完成式过去时 parokkhā：识别表",
+    "category": "动词变位",
+    "module": "动词系统",
+    "level": "进阶",
+    "difficulty": "进阶",
+    "status": "已核准（传统语法框架）",
+    "source_status": "已核准（传统语法框架）",
+    "verified_sources": [
+      "老师讲义 Lesson 3 完成式过去时 parokkhā",
+      "Padarūpasiddhi 传统表核查"
+    ],
+    "summary": "parokkhā 是传统语法中的完成式过去时。讲义说明它原可表示说话人未亲见的过去事件，但后期用法区别逐渐弱化。",
+    "explanation": [
+      "主动语态：第三人称单数 -a，复数 -u；第二人称单数 -e，复数 -(i)ttha；第一人称单数 -aṃ，复数 -(i)mha。",
+      "中间语态：第三人称单数 -(i)ttha，复数 -(i)re；第二人称单数 -(i)ttho，复数 -(i)vho；第一人称单数 -iṃ，复数 -(i)mhe。",
+      "该系统比一般现在时、将来时更进阶，初学阶段主要用于识别。",
+      "讲义例子 √gam → jagama、jagamu 等，显示重叠词根类形式。"
+    ],
+    "table": [
+      [
+        "语态",
+        "人称",
+        "单数",
+        "复数"
+      ],
+      [
+        "主动",
+        "第三人称",
+        "-a",
+        "-u"
+      ],
+      [
+        "主动",
+        "第二人称",
+        "-e",
+        "-(i)ttha"
+      ],
+      [
+        "主动",
+        "第一人称",
+        "-aṃ",
+        "-(i)mha"
+      ],
+      [
+        "中间",
+        "第三人称",
+        "-(i)ttha",
+        "-(i)re"
+      ],
+      [
+        "中间",
+        "第二人称",
+        "-(i)ttho",
+        "-(i)vho"
+      ],
+      [
+        "中间",
+        "第一人称",
+        "-iṃ",
+        "-(i)mhe"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Jagama.",
+        "cn": "他去了。",
+        "note": "jagama 是 √gam 的 parokkhā 第三人称单数例形。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "parokkhā 主动第三人称单数词尾是什么？",
+        "a": "-a。"
+      },
+      {
+        "q": "parokkhā 主动第三人称复数词尾是什么？",
+        "a": "-u。"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l73-e1",
+        "lesson_id": 73,
+        "lesson_title": "完成式过去时 parokkhā：识别表",
+        "module": "动词系统",
+        "type": "choice",
+        "question": "jagama 在讲义中作为哪一类过去时例形？",
+        "options": [
+          "parokkhā 完成式过去时",
+          "现在时",
+          "将来时",
+          "命令语气"
+        ],
+        "answer": "parokkhā 完成式过去时",
+        "explanation": "讲义用 √gam → jagama 说明完成式过去时 parokkhā。",
+        "difficulty": "进阶"
+      }
+    ],
+    "lesson_number": 73
+  },
+  {
+    "id": 74,
+    "title": "条件式 / 假定时 kālātipatti：识别表",
+    "category": "动词变位",
+    "module": "动词系统",
+    "level": "进阶",
+    "difficulty": "进阶",
+    "status": "已核准（传统语法框架）",
+    "source_status": "已核准（传统语法框架）",
+    "verified_sources": [
+      "老师讲义 Lesson 6 条件式/假定时",
+      "传统巴利语法 kālātipatti 表核查"
+    ],
+    "summary": "kālātipatti 用于条件式句中，可表示假设、可能条件及其结果。形式中常有 -(i)ssa- 系列。",
+    "explanation": [
+      "主动第三人称单数可见 (a)-(i)ssā / ssa，复数为 (a)-(i)ssaṃsu。",
+      "主动第二人称单数为 (a)-(i)sse，复数为 (a)-(i)ssatha。",
+      "主动第一人称单数为 (a)-(i)ssaṃ，复数为 (a)-(i)ssāmhā。",
+      "中间语态也有对应词尾，如第三人称单数 (a)-(i)ssatha，复数 (a)-(i)ssisu。",
+      "条件句中常见 sace / yadi 等引导条件，但结果句动词不一定总是条件式，也可用祈愿或将来等。"
+    ],
+    "table": [
+      [
+        "语态",
+        "人称",
+        "单数",
+        "复数"
+      ],
+      [
+        "主动",
+        "第三人称",
+        "(a)-(i)ssā / ssa",
+        "(a)-(i)ssaṃsu"
+      ],
+      [
+        "主动",
+        "第二人称",
+        "(a)-(i)sse",
+        "(a)-(i)ssatha"
+      ],
+      [
+        "主动",
+        "第一人称",
+        "(a)-(i)ssaṃ",
+        "(a)-(i)ssāmhā"
+      ],
+      [
+        "中间",
+        "第三人称",
+        "(a)-(i)ssatha",
+        "(a)-(i)ssisu"
+      ],
+      [
+        "中间",
+        "第二人称",
+        "(a)-(i)ssase",
+        "(a)-(i)ssavhe"
+      ],
+      [
+        "中间",
+        "第一人称",
+        "(a)-(i)ssiṃ",
+        "(a)-(i)ssāmhase"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Sace so gacchissā, ahampi gacchissaṃ.",
+        "cn": "如果他去，我也去。",
+        "note": "gacchissā / gacchissaṃ 可按条件式识别。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "条件式句中常见的条件引导词有哪些？",
+        "a": "sace / yadi。"
+      },
+      {
+        "q": "kālātipatti 主动第一人称单数常见词尾是什么？",
+        "a": "(a)-(i)ssaṃ。"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l74-e1",
+        "lesson_id": 74,
+        "lesson_title": "条件式 / 假定时 kālātipatti：识别表",
+        "module": "动词系统",
+        "type": "choice",
+        "question": "sace / yadi 在条件句中常表示什么？",
+        "options": [
+          "如果",
+          "因为",
+          "和",
+          "不要"
+        ],
+        "answer": "如果",
+        "explanation": "sace / yadi 常用于引出条件，可译为“如果”。",
+        "difficulty": "进阶"
+      }
+    ],
+    "lesson_number": 74
+  },
+  {
+    "id": 75,
+    "title": "阅读训练：基础句法分析",
+    "category": "阅读训练",
+    "module": "句法与阅读",
+    "level": "基础",
+    "difficulty": "基础",
+    "status": "已核准",
+    "source_status": "已核准",
+    "verified_sources": [
+      "基于已入库格位、动词、不定式、连续体、不变词语法点组合生成",
+      "用于训练句子成分识别，不新增有争议语法规则"
+    ],
+    "summary": "把已学过的格位、动词、不定式、连续体和不变词放进短句中，训练学生识别主语、宾语、动词、处所、工具和关联结构。",
+    "explanation": [
+      "阅读巴利语短句时，先找限定动词，再找主格主语和宾格宾语。",
+      "看到处格形式，可优先判断是否表示地点、时间或范围。",
+      "看到不定式，要判断是否表示目的或补足动词意义。",
+      "看到连续体，要判断它是否表示先行动作。",
+      "看到 ca、vā、na、mā、iti、yo...so... 等，要先识别它们的句法功能。"
+    ],
+    "table": [
+      [
+        "阅读步骤",
+        "要问的问题",
+        "例子"
+      ],
+      [
+        "第一步：找动词",
+        "句子核心动作是什么？",
+        "deseti, gacchati, suṇāti"
+      ],
+      [
+        "第二步：找主语",
+        "谁在做动作？",
+        "Buddho, bhikkhu, so"
+      ],
+      [
+        "第三步：找宾语",
+        "动作作用到什么？",
+        "dhammaṃ, rūpaṃ"
+      ],
+      [
+        "第四步：看格位",
+        "处格、工具格、属格等说明什么？",
+        "vihāre, mittena, buddhassa"
+      ],
+      [
+        "第五步：看不变词",
+        "是否有否定、并列、引语或关联结构？",
+        "na, ca, iti, yo...so..."
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Buddho dhammaṃ deseti.",
+        "cn": "佛说法。",
+        "note": "Buddho 为主格主语，dhammaṃ 为宾格宾语，deseti 为动词。"
+      },
+      {
+        "pali": "Ahaṃ cetiyaṃ vandituṃ gacchāmi.",
+        "cn": "我去礼拜塔庙。",
+        "note": "vandituṃ 是不定式，表示目的。"
+      },
+      {
+        "pali": "So nagaraṃ gantvā nisīdi.",
+        "cn": "他到城里后坐下。",
+        "note": "gantvā 是连续体，表示先行动作。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "阅读短句时，通常先找什么？",
+        "a": "先找限定动词，再找主语和宾语。"
+      },
+      {
+        "q": "Buddho dhammaṃ deseti. 中 dhammaṃ 是什么成分？",
+        "a": "宾格宾语。"
+      },
+      {
+        "q": "Ahaṃ cetiyaṃ vandituṃ gacchāmi. 中 vandituṃ 表示什么？",
+        "a": "不定式，表示目的。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "Buddho dhammaṃ deseti. 中 Buddho 是什么？",
+        "options": [
+          "主格主语",
+          "宾格宾语",
+          "工具格",
+          "处格"
+        ],
+        "answer": "主格主语",
+        "explanation": "Buddho 是 -a 尾阳性名词主格单数，作句子主语。",
+        "id": "l75-e1",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Buddho dhammaṃ deseti. 中 dhammaṃ 是什么？",
+        "options": [
+          "宾格宾语",
+          "主格主语",
+          "处格地点",
+          "与格接受者"
+        ],
+        "answer": "宾格宾语",
+        "explanation": "dhammaṃ 是 -a 尾阳性名词宾格单数，作 deseti 的宾语。",
+        "id": "l75-e2",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Bhikkhu dhammaṃ suṇāti. 中 suṇāti 是什么？",
+        "options": [
+          "限定动词",
+          "不定式",
+          "过去分词",
+          "名词属格"
+        ],
+        "answer": "限定动词",
+        "explanation": "suṇāti 是一般现在时主动第三人称单数。",
+        "id": "l75-e3",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Vihāre bhikkhu vasati. 中 vihāre 是什么格？",
+        "options": [
+          "处格",
+          "宾格",
+          "工具格",
+          "呼格"
+        ],
+        "answer": "处格",
+        "explanation": "vihāre 表示“在寺院中”，是处格单数。",
+        "id": "l75-e4",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Mittena saddhiṃ gacchati. 中 mittena 表示什么？",
+        "options": [
+          "伴随对象",
+          "主语",
+          "宾语",
+          "否定词"
+        ],
+        "answer": "伴随对象",
+        "explanation": "saddhiṃ 常与工具格搭配，表示“与……一起”。",
+        "id": "l75-e5",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Ahaṃ cetiyaṃ vandituṃ gacchāmi. 中 vandituṃ 是什么形式？",
+        "options": [
+          "不定式",
+          "连续体",
+          "现在分词",
+          "处格"
+        ],
+        "answer": "不定式",
+        "explanation": "vandituṃ 是不定式，在句中表示目的。",
+        "id": "l75-e6",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "So nagaraṃ gantvā nisīdi. 中 gantvā 的作用是什么？",
+        "options": [
+          "表示先行动作",
+          "表示将来",
+          "表示禁止",
+          "表示所属"
+        ],
+        "answer": "表示先行动作",
+        "explanation": "gantvā 是连续体，表示“去了之后”。",
+        "id": "l75-e7",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Yo dhammaṃ passati, so maṃ passati. 中 yo...so... 是什么结构？",
+        "options": [
+          "关系—指示结构",
+          "普通否定",
+          "选择连接",
+          "呼格结构"
+        ],
+        "answer": "关系—指示结构",
+        "explanation": "yo 引出关系从句，so 是对应的指示代词。",
+        "id": "l75-e8",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Na gacchati. 中 na 的作用是什么？",
+        "options": [
+          "普通否定",
+          "禁止否定",
+          "并列",
+          "引语标记"
+        ],
+        "answer": "普通否定",
+        "explanation": "na 是否定词，否定后面的动词。",
+        "id": "l75-e9",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "“Gacchāmi” ti 中 ti 的作用是什么？",
+        "options": [
+          "引语标记",
+          "宾格词尾",
+          "工具格词尾",
+          "选择词"
+        ],
+        "answer": "引语标记",
+        "explanation": "ti 常标记前面的内容是引语或所想内容。",
+        "id": "l75-e10",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Bhikkhu vihāre vasati. 中 vihāre 表示什么？",
+        "options": [
+          "在寺院中",
+          "去寺院",
+          "寺院的",
+          "用寺院"
+        ],
+        "answer": "在寺院中",
+        "explanation": "vihāre 是处格单数，可表示地点“在寺院中”。",
+        "id": "l75-e11",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Bhikkhu vihāre vasati. 中 vasati 是什么形式？",
+        "options": [
+          "一般现在时主动第三人称单数",
+          "不定式",
+          "连续体",
+          "宾格单数"
+        ],
+        "answer": "一般现在时主动第三人称单数",
+        "explanation": "vasati 是一般现在时主动第三人称单数。",
+        "id": "l75-e12",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Buddhena dhammo desito. 中 Buddhena 是什么格？",
+        "options": [
+          "工具格单数",
+          "主格单数",
+          "宾格单数",
+          "处格复数"
+        ],
+        "answer": "工具格单数",
+        "explanation": "Buddhena 是工具格单数，在过去分词结构中可表示施事“由佛”。",
+        "id": "l75-e13",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Buddhena dhammo desito. 中 desito 是什么？",
+        "options": [
+          "过去分词",
+          "不定式",
+          "现在时动词",
+          "处格单数"
+        ],
+        "answer": "过去分词",
+        "explanation": "desito 是过去分词，可理解为“被开示的 / 已开示的”。",
+        "id": "l75-e14",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "So bhikkhuṃ passati. 中 bhikkhuṃ 是什么？",
+        "options": [
+          "宾格单数",
+          "主格单数",
+          "工具格单数",
+          "属格复数"
+        ],
+        "answer": "宾格单数",
+        "explanation": "bhikkhuṃ 是 -u 尾阳性名词宾格单数，作 passati 的宾语。",
+        "id": "l75-e15",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Bhikkhunā dhammo suto. 中 bhikkhunā 是什么？",
+        "options": [
+          "工具格单数",
+          "主格单数",
+          "宾格单数",
+          "处格单数"
+        ],
+        "answer": "工具格单数",
+        "explanation": "bhikkhunā 是 bhikkhu 的工具格单数，可表示“由比丘”。",
+        "id": "l75-e16",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Sā itthī dhammaṃ suṇāti. 中 sā 是什么？",
+        "options": [
+          "指示代词阴性主格单数",
+          "疑问代词",
+          "否定词",
+          "与格单数"
+        ],
+        "answer": "指示代词阴性主格单数",
+        "explanation": "sā 是 tat 指示代词阴性主格单数。",
+        "id": "l75-e17",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Te bhikkhū dhammaṃ suṇanti. 中 suṇanti 是什么？",
+        "options": [
+          "一般现在时主动第三人称复数",
+          "第三人称单数",
+          "不定式",
+          "过去分词"
+        ],
+        "answer": "一般现在时主动第三人称复数",
+        "explanation": "-anti 是一般现在时主动第三人称复数词尾。",
+        "id": "l75-e18",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Gāme vā araññe vā vasati. 中 vā 的功能是什么？",
+        "options": [
+          "选择：或、或者",
+          "并列：和",
+          "普通否定",
+          "引语标记"
+        ],
+        "answer": "选择：或、或者",
+        "explanation": "vā 是选择连接词，常后置。",
+        "id": "l75-e19",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Buddho ca dhammo ca saṅgho ca. 中 ca 的功能是什么？",
+        "options": [
+          "并列连接",
+          "选择连接",
+          "禁止否定",
+          "不定式标记"
+        ],
+        "answer": "并列连接",
+        "explanation": "ca 是并列连接词，表示“和、并且”，通常后置。",
+        "id": "l75-e20",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Tasseva dhammo. 中 tasseva 可怎样分析？",
+        "options": [
+          "tassa + eva",
+          "taṃ + eva",
+          "te + vā",
+          "tassa + ca"
+        ],
+        "answer": "tassa + eva",
+        "explanation": "tasseva 可分析为 tassa + eva，eva 表示强调或限定。",
+        "id": "l75-e21",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Mā gaccha. 的意思最接近什么？",
+        "options": [
+          "不要去",
+          "他去",
+          "我去",
+          "已经去了"
+        ],
+        "answer": "不要去",
+        "explanation": "mā 是禁止否定词，表示“不要、勿”。",
+        "id": "l75-e22",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Natthi me saraṇaṃ aññaṃ. 中 natthi 可分析为什么？",
+        "options": [
+          "na + atthi",
+          "na + iti",
+          "nagara + atthi",
+          "nāma + atthi"
+        ],
+        "answer": "na + atthi",
+        "explanation": "natthi 常可理解为 na + atthi，表示“没有、不存在”。",
+        "id": "l75-e23",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Dhammaṃ sutvā bhikkhu pasīdati. 中 sutvā 是什么？",
+        "options": [
+          "连续体",
+          "不定式",
+          "现在分词",
+          "主格单数"
+        ],
+        "answer": "连续体",
+        "explanation": "sutvā 是连续体，表示“听闻之后”。",
+        "id": "l75-e24",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Dhammaṃ sutvā bhikkhu pasīdati. 中 pasīdati 是什么？",
+        "options": [
+          "限定动词",
+          "不定式",
+          "属格",
+          "过去分词"
+        ],
+        "answer": "限定动词",
+        "explanation": "pasīdati 是一般现在时主动第三人称单数，是句子的限定动词。",
+        "id": "l75-e25",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Paññaṃ bhāveti. 中 paññaṃ 是什么？",
+        "options": [
+          "宾格单数",
+          "主格单数",
+          "工具格复数",
+          "处格单数"
+        ],
+        "answer": "宾格单数",
+        "explanation": "paññaṃ 是 -ā 尾阴性名词 paññā 的宾格单数。",
+        "id": "l75-e26",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Sabbe sattā sukhitā hontu. 中 sabbe 是什么？",
+        "options": [
+          "阳性复数主格",
+          "中性单数宾格",
+          "阴性单数主格",
+          "工具格单数"
+        ],
+        "answer": "阳性复数主格",
+        "explanation": "sabbe 可作 sabba 的阳性复数主格，修饰 sattā。",
+        "id": "l75-e27",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Sabbe sattā sukhitā hontu. 中 hontu 是什么语气？",
+        "options": [
+          "命令/愿望语气第三人称复数",
+          "现在时第一人称单数",
+          "不定式",
+          "过去分词"
+        ],
+        "answer": "命令/愿望语气第三人称复数",
+        "explanation": "hontu 可作命令/愿望语气第三人称复数，常译为“愿……”。",
+        "id": "l75-e28",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Karaṇīyaṃ kusalaṃ. 中 karaṇīyaṃ 是什么？",
+        "options": [
+          "将来被动分词中性单数",
+          "现在时动词",
+          "连续体",
+          "工具格复数"
+        ],
+        "answer": "将来被动分词中性单数",
+        "explanation": "karaṇīya 表示“应作的”，karaṇīyaṃ 为中性单数形式。",
+        "id": "l75-e29",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Gacchanto puriso passati. 中 gacchanto 是什么？",
+        "options": [
+          "现在分词阳性主格单数",
+          "不定式",
+          "过去分词",
+          "宾格复数"
+        ],
+        "answer": "现在分词阳性主格单数",
+        "explanation": "gacchanto 是 -nta 现在分词阳性主格单数。",
+        "id": "l75-e30",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Gacchantī itthī āgacchati. 中 gacchantī 是什么？",
+        "options": [
+          "现在分词阴性主格单数",
+          "中性主格复数",
+          "不定式",
+          "属格单数"
+        ],
+        "answer": "现在分词阴性主格单数",
+        "explanation": "gacchantī 是现在分词阴性主格单数。",
+        "id": "l75-e31",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Kataṃ kammaṃ. 中 kataṃ 是什么？",
+        "options": [
+          "过去分词中性单数",
+          "不定式",
+          "现在分词",
+          "将来时"
+        ],
+        "answer": "过去分词中性单数",
+        "explanation": "kata 是过去分词，kataṃ 可作中性主格/宾格单数。",
+        "id": "l75-e32",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Sukhāya paṭipajjati. 中 sukhāya 表示什么？",
+        "options": [
+          "目的：为了安乐",
+          "地点：在安乐中",
+          "宾语",
+          "引语标记"
+        ],
+        "answer": "目的：为了安乐",
+        "explanation": "与格可表示目的，sukhāya 可理解为“为了安乐”。",
+        "id": "l75-e33",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Gāmā āgacchati. 中 gāmā 是什么格？",
+        "options": [
+          "从格单数",
+          "主格复数",
+          "宾格单数",
+          "处格单数"
+        ],
+        "answer": "从格单数",
+        "explanation": "gāmā 可作从格单数，表示“从村庄”。",
+        "id": "l75-e34",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      },
+      {
+        "type": "choice",
+        "question": "Buddhassa dhammo. 中 Buddhassa 是什么格？",
+        "options": [
+          "属格单数",
+          "工具格单数",
+          "宾格单数",
+          "处格复数"
+        ],
+        "answer": "属格单数",
+        "explanation": "Buddhassa 表示“佛的”，是属格单数。",
+        "id": "l75-e35",
+        "lesson_id": 75,
+        "lesson_title": "阅读训练：基础句法分析",
+        "module": "句法与阅读",
+        "difficulty": "基础"
+      }
+    ],
+    "lesson_number": 75
   }
 ]
