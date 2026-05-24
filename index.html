@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>巴利语语法复习</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>📘 巴利语语法复习</h1>
+      <p class="subtitle">语法知识展示 + 语法卡片 + 练习题</p>
+    </header>
+
+    <section class="card">
+      <h2>语法点</h2>
+      <div id="lessonList" class="lesson-list"></div>
+    </section>
+
+    <section class="card hidden" id="lessonPanel">
+      <button id="backBtn" class="secondary small-btn">返回列表</button>
+      <h2 id="lessonTitle"></h2>
+      <p class="tag" id="lessonMeta"></p>
+      <p id="lessonSummary"></p>
+
+      <h3>说明</h3>
+      <ul id="lessonExplanation"></ul>
+
+      <h3>变化表</h3>
+      <div class="table-wrap">
+        <table id="lessonTable"></table>
+      </div>
+
+      <h3>例句</h3>
+      <div id="lessonExamples"></div>
+
+      <div class="button-row">
+        <button id="cardModeBtn" class="primary">复习语法卡片</button>
+        <button id="exerciseModeBtn" class="primary">做练习题</button>
+      </div>
+    </section>
+
+    <section class="card hidden" id="cardPanel">
+      <button id="backToLessonFromCard" class="secondary small-btn">返回语法点</button>
+      <h2>语法卡片</h2>
+      <p class="progress" id="cardProgress"></p>
+      <div class="question-box" id="cardQuestion"></div>
+      <div class="answer-box hidden" id="cardAnswer"></div>
+
+      <div id="cardBeforeButtons" class="button-row">
+        <button id="showCardAnswerBtn" class="primary">显示答案</button>
+      </div>
+
+      <div id="cardAfterButtons" class="button-row hidden">
+        <button id="cardKnowBtn" class="success">认识 ✅</button>
+        <button id="cardWrongBtn" class="danger">不认识 ❌</button>
+      </div>
+    </section>
+
+    <section class="card hidden" id="exercisePanel">
+      <button id="backToLessonFromExercise" class="secondary small-btn">返回语法点</button>
+      <h2>练习题</h2>
+      <p class="progress" id="exerciseProgress"></p>
+      <div class="question-box" id="exerciseQuestion"></div>
+      <div id="exerciseOptions"></div>
+      <input id="exerciseInput" class="hidden" placeholder="请输入答案" />
+      <button id="submitExerciseBtn" class="primary">提交答案</button>
+      <div id="exerciseFeedback" class="answer-box hidden"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

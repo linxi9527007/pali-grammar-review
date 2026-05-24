@@ -1,0 +1,379 @@
+[
+  {
+    "id": 1,
+    "title": "巴利语名词的性、数、格",
+    "category": "名词基础",
+    "level": "入门",
+    "summary": "巴利语名词通常有性、数、格三个维度。性包括阳性、阴性、中性；数包括单数、复数；格表示名词在句子中的句法功能。",
+    "explanation": [
+      "巴利语名词不是只靠词序表达关系，而是常通过词尾变化表示句法功能。",
+      "常见的格包括主格、宾格、工具格、与格、从格、属格、处格、呼格。",
+      "学习巴利语时，不要只背词干，例如 dhamma，还要逐步熟悉 dhammo、dhammaṃ、dhammena、dhammassa 等形式。"
+    ],
+    "table": [
+      [
+        "概念",
+        "说明",
+        "例子"
+      ],
+      [
+        "性",
+        "名词所属类别",
+        "buddha 阳性，citta 中性"
+      ],
+      [
+        "数",
+        "单数或复数",
+        "dhammo 单数，dhammā 复数"
+      ],
+      [
+        "格",
+        "句法功能",
+        "dhammaṃ 常作宾语"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Buddho dhammaṃ deseti.",
+        "cn": "佛说法。",
+        "note": "Buddho 是主格单数，dhammaṃ 是宾格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "巴利语名词主要需要关注哪三个维度？",
+        "a": "性、数、格。"
+      },
+      {
+        "q": "格的主要作用是什么？",
+        "a": "表示名词在句子中的句法功能，例如主语、宾语、处所等。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "dhammaṃ 在句中通常可能是什么格？",
+        "options": [
+          "主格",
+          "宾格",
+          "处格",
+          "呼格"
+        ],
+        "answer": "宾格",
+        "explanation": "在 -a 词干阳性名词中，-aṃ 常见为宾格单数词尾。"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "-a 词干阳性名词",
+    "category": "名词变格",
+    "level": "基础",
+    "summary": "-a 词干阳性名词是巴利语中非常常见的名词类型，如 buddha、dhamma、saṅgha。",
+    "explanation": [
+      "-a 词干阳性名词的词干通常以 -a 结尾。",
+      "学习时可以先掌握几个高频格：主格单数 -o，宾格单数 -aṃ，工具格单数 -ena，属格/与格单数 -assa。",
+      "buddha、dhamma、saṅgha 都可以作为这一类的代表词。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数 buddha",
+        "复数 buddha"
+      ],
+      [
+        "主格",
+        "buddho",
+        "buddhā"
+      ],
+      [
+        "宾格",
+        "buddhaṃ",
+        "buddhe"
+      ],
+      [
+        "工具格",
+        "buddhena",
+        "buddhehi / buddhebhi"
+      ],
+      [
+        "属格/与格",
+        "buddhassa",
+        "buddhānaṃ"
+      ],
+      [
+        "处格",
+        "buddhasmiṃ / buddhamhi",
+        "buddhesu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Buddhaṃ saraṇaṃ gacchāmi.",
+        "cn": "我皈依佛。",
+        "note": "Buddhaṃ 是 buddha 的宾格单数。"
+      },
+      {
+        "pali": "Buddho dhammaṃ deseti.",
+        "cn": "佛说法。",
+        "note": "Buddho 是主格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "-a 词干阳性名词主格单数常见词尾是什么？",
+        "a": "-o，例如 buddha → buddho。"
+      },
+      {
+        "q": "buddha 的宾格单数是什么？",
+        "a": "buddhaṃ。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "buddho 是什么形式？",
+        "options": [
+          "主格单数",
+          "宾格单数",
+          "工具格单数",
+          "处格复数"
+        ],
+        "answer": "主格单数",
+        "explanation": "-a 词干阳性名词主格单数常见词尾是 -o。"
+      },
+      {
+        "type": "input",
+        "question": "请写出 dhamma 的宾格单数。",
+        "answer": "dhammaṃ",
+        "explanation": "dhamma + aṃ → dhammaṃ。"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "-a 词干中性名词",
+    "category": "名词变格",
+    "level": "基础",
+    "summary": "-a 词干中性名词也很常见，如 citta、phala、rūpa。中性名词的重要特点是主格和宾格形式相同。",
+    "explanation": [
+      "中性名词最重要的识别点：主格和宾格通常同形。",
+      "例如 citta 的主格单数和宾格单数都是 cittaṃ。",
+      "复数中，主格和宾格也常同形，例如 cittāni。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数 citta",
+        "复数 citta"
+      ],
+      [
+        "主格",
+        "cittaṃ",
+        "cittāni"
+      ],
+      [
+        "宾格",
+        "cittaṃ",
+        "cittāni"
+      ],
+      [
+        "工具格",
+        "cittena",
+        "cittehi / cittebhi"
+      ],
+      [
+        "属格/与格",
+        "cittassa",
+        "cittānaṃ"
+      ],
+      [
+        "处格",
+        "cittasmiṃ / cittamhi",
+        "cittesu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Cittaṃ passati.",
+        "cn": "他/她看见心。",
+        "note": "cittaṃ 可作宾格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "中性名词最重要的特点之一是什么？",
+        "a": "主格和宾格通常同形。"
+      },
+      {
+        "q": "citta 的主格/宾格单数是什么？",
+        "a": "cittaṃ。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "cittāni 可能是什么形式？",
+        "options": [
+          "主格/宾格复数",
+          "工具格单数",
+          "属格单数",
+          "处格单数"
+        ],
+        "answer": "主格/宾格复数",
+        "explanation": "-a 词干中性名词主格和宾格复数常同形。"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "-ā 词干阴性名词",
+    "category": "名词变格",
+    "level": "基础",
+    "summary": "-ā 词干阴性名词常见于以长 ā 结尾的名词，如 taṇhā、paññā、saddhā。",
+    "explanation": [
+      "-ā 词干阴性名词的主格单数通常保持 -ā。",
+      "宾格单数常为 -aṃ，例如 taṇhaṃ。",
+      "工具格、从格、属格、处格等形式需要逐步熟悉，不建议一开始全部硬背。"
+    ],
+    "table": [
+      [
+        "格",
+        "单数 taṇhā",
+        "复数 taṇhā"
+      ],
+      [
+        "主格",
+        "taṇhā",
+        "taṇhā / taṇhāyo"
+      ],
+      [
+        "宾格",
+        "taṇhaṃ",
+        "taṇhā / taṇhāyo"
+      ],
+      [
+        "工具格",
+        "taṇhāya",
+        "taṇhāhi / taṇhābhi"
+      ],
+      [
+        "属格/与格",
+        "taṇhāya",
+        "taṇhānaṃ"
+      ],
+      [
+        "处格",
+        "taṇhāya / taṇhāyaṃ",
+        "taṇhāsu"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Taṇhā dukkhasamudayo.",
+        "cn": "渴爱是苦的集起。",
+        "note": "Taṇhā 是主格单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "taṇhā 属于什么词干类型？",
+        "a": "-ā 词干阴性名词。"
+      },
+      {
+        "q": "-ā 词干阴性名词主格单数通常是什么形式？",
+        "a": "通常保持 -ā。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "paññā 通常是什么性？",
+        "options": [
+          "阳性",
+          "阴性",
+          "中性",
+          "不变词"
+        ],
+        "answer": "阴性",
+        "explanation": "paññā 是常见的 -ā 词干阴性名词。"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "动词现在时基础",
+    "category": "动词",
+    "level": "基础",
+    "summary": "巴利语动词现在时需要关注人称和数。初学时可先掌握第一人称单数、第二人称单数、第三人称单数。",
+    "explanation": [
+      "动词词尾会随人称和数变化。",
+      "例如 gacchati 表示“他/她/它去”，gacchāmi 表示“我去”，gacchasi 表示“你去”。",
+      "学习动词时，要把词根、词干和词尾分开看。"
+    ],
+    "table": [
+      [
+        "人称",
+        "单数",
+        "例子"
+      ],
+      [
+        "第三人称",
+        "-ti",
+        "gacchati 他/她/它去"
+      ],
+      [
+        "第二人称",
+        "-si",
+        "gacchasi 你去"
+      ],
+      [
+        "第一人称",
+        "-mi / -āmi",
+        "gacchāmi 我去"
+      ]
+    ],
+    "examples": [
+      {
+        "pali": "Ahaṃ gacchāmi.",
+        "cn": "我去。",
+        "note": "gacchāmi 是第一人称单数。"
+      },
+      {
+        "pali": "So gacchati.",
+        "cn": "他去。",
+        "note": "gacchati 是第三人称单数。"
+      }
+    ],
+    "cards": [
+      {
+        "q": "gacchati 是第几人称单数？",
+        "a": "第三人称单数。"
+      },
+      {
+        "q": "gacchāmi 是什么意思？",
+        "a": "我去。"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "question": "gacchāmi 对应哪个主语？",
+        "options": [
+          "ahaṃ",
+          "tvaṃ",
+          "so",
+          "te"
+        ],
+        "answer": "ahaṃ",
+        "explanation": "gacchāmi 是第一人称单数，常对应 ahaṃ。"
+      },
+      {
+        "type": "input",
+        "question": "请写出“他去”的动词形式：so ______。",
+        "answer": "gacchati",
+        "explanation": "第三人称单数现在时常见词尾是 -ti。"
+      }
+    ]
+  }
+]
