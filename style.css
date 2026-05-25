@@ -2742,3 +2742,139 @@ td, th {
 .dictionary-analysis-action .primary{
   letter-spacing:.02em;
 }
+
+
+/* 14.8 one button per dictionary */
+.one-button-dict-grid{
+  gap:12px;
+}
+.dict-direct-item{
+  padding:12px;
+  border:1px solid rgba(59,130,246,.22);
+  border-radius:16px;
+  background:#f8fbff;
+}
+.dict-one-button{
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:11px 14px!important;
+  border-radius:999px!important;
+  background:linear-gradient(135deg,#2563eb,#4f46e5)!important;
+  color:#fff!important;
+  font-size:17px;
+  font-weight:900;
+  text-decoration:none!important;
+  box-shadow:0 8px 18px rgba(37,99,235,.20);
+}
+.dict-one-button:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 22px rgba(37,99,235,.24);
+}
+.dict-direct-item p{
+  margin:8px 2px 0;
+  color:#475569;
+  font-size:13px;
+  line-height:1.55;
+}
+.one-button-dict-grid a span,
+.one-button-dict-grid a strong{
+  display:inline;
+}
+
+
+/* 14.9 mobile IPA popup and responsive terminology table */
+.ipa-hover{
+  border-bottom:1px dotted rgba(37,99,235,.55);
+  cursor:help;
+  text-decoration:none;
+}
+.ipa-hover:hover{
+  background:#eff6ff;
+  color:#1d4ed8;
+  border-radius:4px;
+}
+.ipa-touch-popover{
+  position:fixed;
+  z-index:5000;
+  max-width:min(86vw,360px);
+  padding:10px 12px;
+  border-radius:14px;
+  background:#111827;
+  color:#fff;
+  box-shadow:0 14px 34px rgba(15,23,42,.32);
+  font-size:14px;
+  line-height:1.55;
+}
+.ipa-touch-popover strong{
+  display:block;
+  margin-bottom:3px;
+  color:#bfdbfe;
+}
+.ipa-touch-popover .ipa-pop-note{
+  color:#d1d5db;
+  font-size:12px;
+  margin-top:4px;
+}
+@media(max-width:760px){
+  .term-table-wrap{
+    overflow-x:visible!important;
+  }
+  .term-table{
+    display:block!important;
+    width:100%!important;
+    min-width:0!important;
+    border-collapse:separate!important;
+    border-spacing:0!important;
+  }
+  .term-table thead{
+    display:none!important;
+  }
+  .term-table tbody,
+  .term-table tr,
+  .term-table td{
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+  .term-table tr{
+    margin:12px 0;
+    padding:12px;
+    border:1px solid rgba(148,163,184,.28);
+    border-radius:18px;
+    background:#fff;
+    box-shadow:0 6px 16px rgba(15,23,42,.05);
+  }
+  .term-table td{
+    border:0!important;
+    padding:7px 0!important;
+    line-height:1.65!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere!important;
+  }
+  .term-table td::before{
+    display:block;
+    margin-bottom:2px;
+    font-size:12px;
+    font-weight:900;
+    color:#64748b;
+  }
+  .term-table td:nth-child(1)::before{content:"英文术语";}
+  .term-table td:nth-child(2)::before{content:"中文";}
+  .term-table td:nth-child(3)::before{content:"巴利 / 传统术语";}
+  .term-table td:nth-child(4)::before{content:"类别";}
+  .term-table td:nth-child(5)::before{content:"说明";}
+  .term-en-cell,
+  .term-en-hover{
+    display:inline!important;
+    max-width:none!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere!important;
+  }
+  .qa-table.term-table{
+    min-width:0!important;
+  }
+}
