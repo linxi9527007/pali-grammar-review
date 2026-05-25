@@ -2690,3 +2690,55 @@ td, th {
     grid-column:auto;
   }
 }
+
+
+/* 14.4 bottom lesson nav click fix */
+.lesson-bottom-nav button.nav-disabled{
+  opacity:.55;
+  cursor:not-allowed;
+}
+.lesson-bottom-nav button:not(.nav-disabled){
+  cursor:pointer;
+}
+
+
+/* 14.5 English IPA hover */
+.ipa-hover{
+  border-bottom:1px dotted rgba(37,99,235,.55);
+  cursor:help;
+  text-decoration:none;
+}
+.ipa-hover:hover{
+  background:#eff6ff;
+  color:#1d4ed8;
+  border-radius:4px;
+}
+.ipa-hover.phrase{
+  border-bottom-color:rgba(124,58,237,.55);
+}
+
+
+/* 14.6 dictionary layout simplification */
+.dictionary-analysis-action{
+  margin:14px 0 10px;
+}
+.dictionary-analysis-action .primary{
+  width:100%;
+  min-height:54px;
+  font-size:18px;
+}
+.direct-dict-links{
+  margin-top:14px;
+}
+.dictionary-direct-card .direct-letter-helper{
+  margin:8px 0 14px;
+}
+
+
+/* 14.7 dictionary detail refinement */
+.dictionary-direct-card .fuzzy-lookup-suggestions{
+  margin:10px 0 12px;
+}
+.dictionary-analysis-action .primary{
+  letter-spacing:.02em;
+}

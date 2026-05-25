@@ -1,12 +1,12 @@
 {
-  "name": "Pali Grammar Review 14.3",
+  "name": "Pali Grammar Review 14.7",
   "short_name": "巴利语语法",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f3f4f6",
   "theme_color": "#111827",
-  "description": "巴利语语法学习术语跳转与返回增强版；术语可点击查看概念，返回前一页与返回模块页分离。",
+  "description": "巴利语语法学习查词页细节优化版；将“分析这个词”改为“词形分析”，并把模糊查词建议移动到词典直达链接上方。",
   "icons": [
     {
       "src": "icon-192.png",

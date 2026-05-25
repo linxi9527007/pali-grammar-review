@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0"><title>巴利语语法复习</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#111827"><link rel="stylesheet" href="style.css?v=14.3"></head><body><main class="app"><header class="hero"><p class="eyebrow">Pali Grammar Review</p><h1>📘 巴利语语法复习</h1><div class="hero-subnav" aria-label="常用入口导航">
+  <meta http-equiv="Expires" content="0"><title>巴利语语法复习</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#111827"><link rel="stylesheet" href="style.css?v=14.7"></head><body><main class="app"><header class="hero"><p class="eyebrow">Pali Grammar Review</p><h1>📘 巴利语语法复习</h1><div class="hero-subnav" aria-label="常用入口导航">
           <button type="button" data-home-jump="homeTopLayer">首页</button>
           <span>｜</span>
           <button type="button" data-action="learningRoute">零基础路线</button>
@@ -14,7 +14,7 @@
           <span>｜</span>
           <button type="button" data-action="academicTraining">学术训练</button>
         </div>
-        <div class="visual-version-badge">Pāli Learning Lab · 14.3 术语跳转与返回增强版</div><div class="hero-stats"><div><strong id="totalLessons">0</strong><span>语法点</span></div><div><strong id="totalExercises">0</strong><span>练习题</span></div><div><strong id="masteredCount">0</strong><span>已掌握</span></div><div><strong id="wrongCount">0</strong><span>错题</span></div></div></header><section id="homeView" class="view"><span id="homeTopLayer"></span><section class="card"><h2>开始学习</h2><p class="muted">网站按“开始学习—语言能力—佛典与研究”三层组织。零基础学生先从第一层开始，有研究目标的学生再进入第三层。</p><h2 class="home-section-title">推荐学习入口</h2>
+        <div class="visual-version-badge">Pāli Learning Lab · 14.7 查词页细节优化版</div><div class="hero-stats"><div><strong id="totalLessons">0</strong><span>语法点</span></div><div><strong id="totalExercises">0</strong><span>练习题</span></div><div><strong id="masteredCount">0</strong><span>已掌握</span></div><div><strong id="wrongCount">0</strong><span>错题</span></div></div></header><section id="homeView" class="view"><span id="homeTopLayer"></span><section class="card"><h2>开始学习</h2><p class="muted">网站按“开始学习—语言能力—佛典与研究”三层组织。零基础学生先从第一层开始，有研究目标的学生再进入第三层。</p><h2 class="home-section-title">推荐学习入口</h2>
         <p class="muted home-tip">第一次使用建议从“零基础路线”开始；学习稳定后进入“语言能力”，最后再进入“佛典与研究”。</p>
         <div id="todayStudyAdvice" class="today-advice">
           <strong>今日学习建议：</strong>
@@ -100,7 +100,7 @@
 <section id="dictionaryLookupView" class="view hidden"><section class="card dictionary-ux-card dictionary-direct-card">
   <button class="small secondary back-home">返回首页</button>
   <h2>查巴利语单词</h2>
-  <p class="muted">输入词形后，先看本站学习线索，再用下方三个词典链接核查。</p>
+  <p class="muted">输入词形后，先看可能词形建议，再进入词典直达链接；需要语法线索时点击“词形分析”。</p>
 
   <label>输入要查的巴利语词</label>
   <div class="lookup-input-line">
@@ -112,16 +112,13 @@
     <h3>巴利特殊字母</h3>
     <p class="muted">点击即可复制，便于输入带变音符号的巴利语词。</p>
     <div class="letter-copy-row" id="paliLetterButtons"></div>
-
-
-  <div class="button-row two-buttons dictionary-main-actions only-core-actions">
-    <button id="analyzeLookupWordBtn" class="primary">分析这个词</button>
-    <button id="openPrimaryDictBtn" class="primary">打开巴利字典</button>
   </div>
 
+  <div id="fuzzyLookupSuggestions" class="fuzzy-lookup-suggestions"></div>
+
   <div class="direct-dict-links">
-    <h3>三个词典直达链接</h3>
-    <p class="muted">输入词后，下面链接会自动带上搜索词；同时会，便于词典未自动检索时粘贴。</p>
+    <h3>词典直达链接</h3>
+    <p class="muted">下方三个链接会尽量带入搜索词；点击链接时也会复制输入词，便于词典未自动检索时粘贴。</p>
     <div class="external-dict-grid three-external-dicts">
       <a id="directSuttaDictLink" href="https://dictionary.sutta.org/" target="_blank" rel="noopener">
         <strong>巴利字典</strong>
@@ -136,14 +133,14 @@
         <span>PTS Pali-English Dictionary</span>
       </a>
     </div>
-    <button id="openAllDictsBtn" class="secondary direct-open-all-btn">打开三个词典</button>
-    <p class="dict-browser-note">浏览器可能拦截多个窗口；如未全部打开，请点击上方三个直达链接。</p>
   </div>
 
-  <div id="fuzzyLookupSuggestions" class="fuzzy-lookup-suggestions"></div>
+  <div class="dictionary-analysis-action">
+    <button id="analyzeLookupWordBtn" class="primary">词形分析</button>
+  </div>
 
   <div id="tokenAnalysisGuide" class="analysis-guide compact-analysis-guide">
-    本站只提供学习线索，不替代词典；音变后词形会尝试提示可能的音变前形式。
+    词形分析只提供学习线索，不替代词典；音变后词形会尝试提示可能的音变前形式。
   </div>
 
   <div id="tokenAnalysisPanel" class="token-analysis-panel"></div>
@@ -182,18 +179,18 @@
         <div id="tipModalBody"></div>
       </div>
     </section>
-</main><script src="sentence-analysis-data.js?v=14.3"></script>
-  <script src="linguistics-tips-data.js?v=14.3"></script>
-  <script src="learning-routes-data.js?v=14.3"></script>
-  <script src="dictionary-sites-data.js?v=14.3"></script>
-  <script src="token-analysis-data.js?v=14.3"></script>
-  <script src="module-guides-data.js?v=14.3"></script>
-  <script src="confusion-pairs-data.js?v=14.3"></script>
-  <script src="sentence-patterns-data.js?v=14.3"></script>
-  <script src="buddhist-reading-data.js?v=14.3"></script>
-  <script src="buddhist-background-data.js?v=14.3"></script>
-  <script src="academic-training-data.js?v=14.3"></script>
-  <script src="terminology-glossary-data.js?v=14.3"></script>
-  <script src="app.js?v=14.3"></script>
+</main><script src="sentence-analysis-data.js?v=14.7"></script>
+  <script src="linguistics-tips-data.js?v=14.7"></script>
+  <script src="learning-routes-data.js?v=14.7"></script>
+  <script src="dictionary-sites-data.js?v=14.7"></script>
+  <script src="token-analysis-data.js?v=14.7"></script>
+  <script src="module-guides-data.js?v=14.7"></script>
+  <script src="confusion-pairs-data.js?v=14.7"></script>
+  <script src="sentence-patterns-data.js?v=14.7"></script>
+  <script src="buddhist-reading-data.js?v=14.7"></script>
+  <script src="buddhist-background-data.js?v=14.7"></script>
+  <script src="academic-training-data.js?v=14.7"></script>
+  <script src="terminology-glossary-data.js?v=14.7"></script>
+  <script src="app.js?v=14.7"></script>
 <button id="globalBackToTopBtn" class="global-back-top-btn" aria-label="回到顶部" title="回到顶部">↑ 顶部</button>
 </body></html>
