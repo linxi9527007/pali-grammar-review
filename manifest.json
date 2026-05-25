@@ -1,12 +1,12 @@
 {
-  "name": "Pali Grammar Review 13.4",
+  "name": "Pali Grammar Review 13.7",
   "short_name": "巴利语语法",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f3f4f6",
   "theme_color": "#111827",
-  "description": "巴利语语法学习查词页体验优化版；重排查词流程、压缩说明、折叠转写表，并添加四个常用外部词典超链接。",
+  "description": "巴利语语法学习查词页减法优化版；删除重复和低效功能，保留分析、三词典核查、模糊建议、音变还原、辅助输入。",
   "icons": [
     {
       "src": "icon-192.png",
