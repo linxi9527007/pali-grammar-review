@@ -3110,3 +3110,311 @@ code{
   overflow-wrap:anywhere!important;
   word-break:break-word!important;
 }
+
+
+/* 15.5 completed term explanation links */
+.concept-extra-link{
+  display:inline;
+  width:auto;
+  min-height:0;
+  padding:0 2px;
+  border:0;
+  border-radius:5px;
+  background:#eef6ff;
+  color:#1d4ed8;
+  font:inherit;
+  font-weight:800;
+  box-shadow:none;
+  cursor:pointer;
+  vertical-align:baseline;
+}
+.concept-extra-link:hover{
+  background:#dbeafe;
+  text-decoration:underline;
+  transform:none;
+  box-shadow:none;
+}
+
+
+.term-direct-link{display:inline;width:auto;min-height:0;padding:0 2px;border:0;border-radius:5px;background:#eef6ff;color:#1d4ed8;font:inherit;font-weight:800;box-shadow:none;cursor:pointer;vertical-align:baseline;}
+.term-direct-link:hover{background:#dbeafe;text-decoration:underline;transform:none;box-shadow:none;}
+
+
+/* 15.8 comprehensive example coverage and glossary links */
+.term-direct-link{
+  display:inline;
+  width:auto;
+  min-height:0;
+  padding:0 2px;
+  border:0;
+  border-radius:5px;
+  background:#eef6ff;
+  color:#1d4ed8;
+  font:inherit;
+  font-weight:800;
+  box-shadow:none;
+  cursor:pointer;
+  vertical-align:baseline;
+}
+.term-direct-link:hover{
+  background:#dbeafe;
+  text-decoration:underline;
+  transform:none;
+  box-shadow:none;
+}
+
+
+/* 16.1 layered practice and scoped confusion */
+.layered-practice-box,
+.scoped-confusion-box{
+  margin-top:22px;
+  padding:18px;
+  border:1px solid rgba(148,163,184,.26);
+  border-radius:22px;
+  background:#ffffff;
+  box-shadow:0 8px 22px rgba(15,23,42,.05);
+}
+.layered-practice-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));
+  gap:12px;
+  margin-top:12px;
+}
+.layered-practice-card{
+  border:1px solid rgba(59,130,246,.20);
+  border-radius:18px;
+  background:#f8fbff;
+  padding:14px;
+}
+.layered-practice-card h4{
+  margin:0 0 8px;
+}
+.layered-practice-card p{
+  margin:6px 0;
+}
+.scoped-confusion-box table{
+  width:100%;
+  table-layout:fixed;
+}
+.scoped-confusion-box th,
+.scoped-confusion-box td{
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+@media(max-width:760px){
+  .layered-practice-box,
+  .scoped-confusion-box{
+    padding:14px;
+  }
+  .scoped-confusion-box table,
+  .scoped-confusion-box tbody,
+  .scoped-confusion-box tr,
+  .scoped-confusion-box td,
+  .scoped-confusion-box th{
+    display:block;
+    width:100%;
+  }
+  .scoped-confusion-box tr{
+    margin:10px 0;
+    padding:10px;
+    border:1px solid rgba(148,163,184,.22);
+    border-radius:14px;
+  }
+  .scoped-confusion-box th{
+    display:none;
+  }
+  .scoped-confusion-box td{
+    border:0!important;
+    padding:5px 0!important;
+  }
+}
+
+
+/* 16.2 lecture explanation and table supplement */
+.lecture-brief-box,
+.lecture-table-box{
+  margin:18px 0;
+  padding:16px;
+  border:1px solid rgba(59,130,246,.22);
+  border-radius:22px;
+  background:#f8fbff;
+  box-shadow:0 8px 22px rgba(15,23,42,.04);
+}
+.lecture-brief-box h3,
+.lecture-table-box h3{
+  margin-top:0;
+}
+.lecture-table-supplement{
+  width:100%;
+  table-layout:fixed;
+  border-collapse:collapse;
+  background:#fff;
+}
+.lecture-table-supplement th,
+.lecture-table-supplement td{
+  border:1px solid rgba(148,163,184,.30);
+  padding:9px;
+  text-align:left;
+  vertical-align:top;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.lecture-table-supplement th{
+  background:#eef6ff;
+}
+@media(max-width:760px){
+  .lecture-table-supplement,
+  .lecture-table-supplement tbody,
+  .lecture-table-supplement tr,
+  .lecture-table-supplement th,
+  .lecture-table-supplement td{
+    display:block;
+    width:100%;
+  }
+  .lecture-table-supplement tr{
+    margin:10px 0;
+    border:1px solid rgba(148,163,184,.22);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .lecture-table-supplement th,
+  .lecture-table-supplement td{
+    border:0!important;
+    border-bottom:1px solid rgba(148,163,184,.18)!important;
+  }
+}
+
+
+/* 16.3 enhanced linguistic terminology */
+.term-detail p{
+  line-height:1.75;
+}
+.term-contrast-box{
+  margin-top:12px;
+  padding:12px;
+  border:1px solid rgba(59,130,246,.20);
+  border-radius:16px;
+  background:#f8fbff;
+}
+.term-contrast-table{
+  width:100%;
+  table-layout:fixed;
+  border-collapse:collapse;
+  background:#fff;
+  margin-top:8px;
+}
+.term-contrast-table th,
+.term-contrast-table td{
+  border:1px solid rgba(148,163,184,.28);
+  padding:8px;
+  text-align:left;
+  vertical-align:top;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.term-contrast-table th{
+  background:#eef6ff;
+}
+@media(max-width:760px){
+  .term-contrast-table,
+  .term-contrast-table tbody,
+  .term-contrast-table tr,
+  .term-contrast-table th,
+  .term-contrast-table td{
+    display:block;
+    width:100%;
+  }
+  .term-contrast-table th{
+    display:none;
+  }
+  .term-contrast-table tr{
+    margin:8px 0;
+    border:1px solid rgba(148,163,184,.22);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .term-contrast-table td{
+    border:0!important;
+    border-bottom:1px solid rgba(148,163,184,.18)!important;
+  }
+  .term-contrast-table td:nth-child(1)::before{content:"语言/项目：";font-weight:800;color:#64748b;}
+  .term-contrast-table td:nth-child(2)::before{content:"形式：";font-weight:800;color:#64748b;}
+  .term-contrast-table td:nth-child(3)::before{content:"说明：";font-weight:800;color:#64748b;}
+}
+
+
+/* 16.4 example granularity grouping */
+.example-kind-section{
+  margin:16px 0 20px;
+  padding:14px;
+  border:1px solid rgba(148,163,184,.24);
+  border-radius:20px;
+  background:#ffffff;
+}
+.example-kind-section h4{
+  margin:0 0 4px;
+  color:#0f172a;
+}
+.example-kind-section > .muted{
+  margin:0 0 10px;
+  font-size:13px;
+}
+.example-kind-section .example{
+  margin:10px 0;
+}
+
+
+/* 16.5 example refinement and priority */
+.example-priority-section{
+  margin:18px 0 24px;
+  padding:16px;
+  border:1px solid rgba(148,163,184,.24);
+  border-radius:22px;
+  background:#ffffff;
+  box-shadow:0 8px 22px rgba(15,23,42,.04);
+}
+.example-priority-section h4{
+  margin:0 0 4px;
+}
+.example-priority-section.priority-必看{
+  border-color:rgba(37,99,235,.30);
+  background:#f8fbff;
+}
+.example-priority-section.priority-辅助{
+  border-color:rgba(16,185,129,.24);
+  background:#fbfffd;
+}
+.example-priority-section.priority-扩展{
+  border-color:rgba(148,163,184,.28);
+  background:#ffffff;
+}
+.example-kind-subsection{
+  margin:12px 0;
+}
+.example-kind-title{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:baseline;
+  margin:8px 0;
+  font-weight:900;
+  color:#0f172a;
+}
+.example-kind-title span{
+  font-size:13px;
+  font-weight:500;
+  color:#64748b;
+}
+.example-priority-tag{
+  display:inline-block;
+  margin-bottom:6px;
+  padding:2px 8px;
+  border-radius:999px;
+  background:#eef6ff;
+  color:#1d4ed8;
+  font-size:12px;
+  font-weight:800;
+}
+.example-priority-section .example{
+  margin:10px 0;
+}

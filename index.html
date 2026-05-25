@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0"><title>巴利语语法复习</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#111827"><link rel="stylesheet" href="style.css?v=15.4"></head><body><main class="app"><header class="hero"><p class="eyebrow">Pali Grammar Review</p><h1>📘 巴利语语法复习</h1><div class="hero-subnav" aria-label="常用入口导航">
+  <meta http-equiv="Expires" content="0"><title>巴利语语法复习</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#111827"><link rel="stylesheet" href="style.css?v=16.5"></head><body><main class="app"><header class="hero"><p class="eyebrow">Pali Grammar Review</p><h1>📘 巴利语语法复习</h1><div class="hero-subnav" aria-label="常用入口导航">
           <button type="button" data-home-jump="homeTopLayer">首页</button>
           <span>｜</span>
           <button type="button" data-action="learningRoute">零基础路线</button>
@@ -14,7 +14,7 @@
           <span>｜</span>
           <button type="button" data-action="academicTraining">学术训练</button>
         </div>
-        <div class="visual-version-badge">Pāli Learning Lab · 15.4 全站自适应换行版</div><div class="hero-stats"><div><strong id="totalLessons">0</strong><span>语法点</span></div><div><strong id="totalExercises">0</strong><span>练习题</span></div><div><strong id="masteredCount">0</strong><span>已掌握</span></div><div><strong id="wrongCount">0</strong><span>错题</span></div></div></header><section id="homeView" class="view"><span id="homeTopLayer"></span><section class="card"><h2>开始学习</h2><p class="muted">网站按“开始学习—语言能力—佛典与研究”三层组织。零基础学生先从第一层开始，有研究目标的学生再进入第三层。</p><h2 class="home-section-title">推荐学习入口</h2>
+        <div class="visual-version-badge">Pāli Learning Lab · 16.5 例子精修与优先级版</div><div class="hero-stats"><div><strong id="totalLessons">0</strong><span>语法点</span></div><div><strong id="totalExercises">0</strong><span>练习题</span></div><div><strong id="masteredCount">0</strong><span>已掌握</span></div><div><strong id="wrongCount">0</strong><span>错题</span></div></div></header><section id="homeView" class="view"><span id="homeTopLayer"></span><section class="card"><h2>开始学习</h2><p class="muted">网站按“开始学习—语言能力—佛典与研究”三层组织。零基础学生先从第一层开始，有研究目标的学生再进入第三层。</p><h2 class="home-section-title">推荐学习入口</h2>
         <p class="muted home-tip">第一次使用建议从“零基础路线”开始；学习稳定后进入“语言能力”，最后再进入“佛典与研究”。</p>
         <div id="todayStudyAdvice" class="today-advice">
           <strong>今日学习建议：</strong>
@@ -73,7 +73,7 @@
           <button class="home-btn" data-action="confusionPairs">易混概念对照</button>
           <button class="home-btn" data-action="dictionaryLookup">查巴利语单词</button>
           <button class="home-btn" data-action="linguisticsTips">语言学小贴士</button>
-          <button class="home-btn" data-action="terminologyGlossary">术语对照表</button>
+          <button class="home-btn" data-action="terminologyGlossary">术语库</button>
         </div>
 
         <h2 class="home-section-title" id="homeResearchLayer">第三层：佛典与研究</h2>
@@ -148,7 +148,7 @@
   <div id="lookupHistoryBox" class="lookup-history"></div>
 </section></section>
 <section id="linguisticsTipsView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>语言学小贴士</h2><p class="muted">帮助理解巴利语语法分析的简明说明。</p><label>搜索概念</label><input id="linguisticsSearchInput" placeholder="输入主格、宾格、限定动词、不定式、sandhi 等" /><label>选择类别</label><select id="linguisticsCategorySelect"></select><div id="linguisticsTipsList" class="tips-grid"></div></section></section>
-<section id="terminologyGlossaryView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>常见术语英汉巴对照表</h2><p class="muted">术语内容较少，默认以全表显示；可用搜索框和类别筛选快速定位。</p><label>搜索术语</label><input id="termSearchInput" placeholder="例如 case, nominative, participle, sandhi, philology" /><label>选择类别</label><select id="termCategorySelect"></select><div id="termGlossaryList" class="term-glossary-list"></div></section></section>
+<section id="terminologyGlossaryView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>术语库（英汉巴对照）</h2><p class="muted">默认显示全表；可按中文、英文、巴利术语或说明搜索，并按类别筛选。</p><label>搜索术语</label><input id="termSearchInput" placeholder="例如 case, nominative, participle, sandhi, philology" /><label>选择类别</label><select id="termCategorySelect"></select><div id="termGlossaryList" class="term-glossary-list"></div></section></section>
 <section id="buddhistReadingView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>佛典阅读常用句式</h2><p class="muted">按类别列出佛典阅读常用句式全文，可搜索公式、译文、关键词和提醒。</p><label>搜索佛典句式</label><input id="buddhistReadingSearchInput" placeholder="例如 evaṃ、ekaṃ samayaṃ、atha kho、ti、yo...so" /><label>选择类别</label><select id="buddhistReadingCategorySelect"></select><label>选择层级</label><select id="buddhistReadingLevelSelect"><option value="全部">全部</option><option value="必学">必学</option><option value="选学">选学</option><option value="进阶">进阶</option></select><div id="buddhistReadingList" class="buddhist-reading-list"></div></section></section>
 <section id="buddhistBackgroundView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>佛典阅读背景知识</h2><p class="muted">按类别列出佛典背景知识全文，可搜索概念、三藏结构、章节术语、引用格式和篇章结构。</p><label>搜索佛典背景知识</label><input id="backgroundSearchInput" placeholder="例如 Dhamma、Saṅgha、DN、vagga、Evaṃ me sutaṃ" /><label>选择类别</label><select id="backgroundCategorySelect"></select><div id="buddhistBackgroundContent" class="background-full-list"></div></section></section>
 <section id="academicTrainingView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>学术阅读训练</h2><p class="muted">按类别列出学术阅读训练全文，可搜索阅读方法、引用规范、词汇研究、分析模板、研究任务和学术误区。</p><label>搜索学术训练内容</label><input id="academicSearchInput" placeholder="例如 dhamma、引用、词汇研究、分析模板、误区" /><label>选择类别</label><select id="academicCategorySelect"></select><div id="academicTrainingContent" class="academic-full-list"></div></section></section>
@@ -179,18 +179,18 @@
         <div id="tipModalBody"></div>
       </div>
     </section>
-</main><script src="sentence-analysis-data.js?v=15.4"></script>
-  <script src="linguistics-tips-data.js?v=15.4"></script>
-  <script src="learning-routes-data.js?v=15.4"></script>
-  <script src="dictionary-sites-data.js?v=15.4"></script>
-  <script src="token-analysis-data.js?v=15.4"></script>
-  <script src="module-guides-data.js?v=15.4"></script>
-  <script src="confusion-pairs-data.js?v=15.4"></script>
-  <script src="sentence-patterns-data.js?v=15.4"></script>
-  <script src="buddhist-reading-data.js?v=15.4"></script>
-  <script src="buddhist-background-data.js?v=15.4"></script>
-  <script src="academic-training-data.js?v=15.4"></script>
-  <script src="terminology-glossary-data.js?v=15.4"></script>
-  <script src="app.js?v=15.4"></script>
+</main><script src="sentence-analysis-data.js?v=16.5"></script>
+  <script src="linguistics-tips-data.js?v=16.5"></script>
+  <script src="learning-routes-data.js?v=16.5"></script>
+  <script src="dictionary-sites-data.js?v=16.5"></script>
+  <script src="token-analysis-data.js?v=16.5"></script>
+  <script src="module-guides-data.js?v=16.5"></script>
+  <script src="confusion-pairs-data.js?v=16.5"></script>
+  <script src="sentence-patterns-data.js?v=16.5"></script>
+  <script src="buddhist-reading-data.js?v=16.5"></script>
+  <script src="buddhist-background-data.js?v=16.5"></script>
+  <script src="academic-training-data.js?v=16.5"></script>
+  <script src="terminology-glossary-data.js?v=16.5"></script>
+  <script src="app.js?v=16.5"></script>
 <button id="globalBackToTopBtn" class="global-back-top-btn" aria-label="回到顶部" title="回到顶部">↑ 顶部</button>
 </body></html>

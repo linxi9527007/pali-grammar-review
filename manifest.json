@@ -1,12 +1,12 @@
 {
-  "name": "Pali Grammar Review 15.4",
+  "name": "Pali Grammar Review 16.5",
   "short_name": "巴利语语法",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f3f4f6",
   "theme_color": "#111827",
-  "description": "巴利语语法学习全站自适应换行版；术语表、表格、卡片和正文在电脑端与手机端均尽量自动换行，减少横向拖动。",
+  "description": "例子精修与优先级版：每章例子分为必看、辅助、扩展；去重、压缩说明，并让分层练习优先围绕必看与辅助例子。",
   "icons": [
     {
       "src": "icon-192.png",

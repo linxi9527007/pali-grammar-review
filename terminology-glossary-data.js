@@ -3,9 +3,28 @@ const TERMINOLOGY_GLOSSARY = [
     "cat": "格与名词系统",
     "en": "case",
     "ipa": "/keɪs/",
-    "cn": "格",
+    "cn": "格；格位",
     "pali": "vibhatti",
-    "note": "名词、代词、形容词通过词尾表达句法功能。"
+    "note": "名词、代词、形容词等通过形式变化或位置关系表达句法功能。",
+    "simple_explanation": "格回答“这个名词在句子里起什么作用”。如主格常作主语，宾格常作动作对象，工具格常表示手段或工具。",
+    "contrast_examples": [
+      {
+        "label": "巴利语",
+        "form": "Buddho dhammaṃ deseti.",
+        "meaning": "Buddho 主格；dhammaṃ 宾格"
+      },
+      {
+        "label": "英语",
+        "form": "I see him / he sees me",
+        "meaning": "代词仍保留主格/宾格差别"
+      },
+      {
+        "label": "汉语",
+        "form": "佛说法。",
+        "meaning": "主要靠词序和语义判断，不靠名词词尾变化"
+      }
+    ],
+    "needs_contrast": true
   },
   {
     "cat": "格与名词系统",
@@ -13,7 +32,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈnɑːmɪnətɪv/",
     "cn": "主格",
     "pali": "paṭhamā vibhatti",
-    "note": "常作主语或表语。"
+    "note": "常作主语或表语。",
+    "simple_explanation": "常作主语或表语。",
+    "needs_contrast": false
   },
   {
     "cat": "格与名词系统",
@@ -21,7 +42,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/əˈkjuːzətɪv/",
     "cn": "宾格",
     "pali": "dutiyā vibhatti",
-    "note": "常作动作对象，也可表示方向或时间范围。"
+    "note": "常作动作对象，也可表示方向或时间范围。",
+    "simple_explanation": "常作动作对象，也可表示方向或时间范围。",
+    "needs_contrast": false
   },
   {
     "cat": "格与名词系统",
@@ -29,7 +52,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˌɪnstrəˈmentəl/",
     "cn": "工具格",
     "pali": "tatiyā vibhatti",
-    "note": "可表示工具、方式、伴随或施事。"
+    "note": "可表示工具、方式、伴随或施事。",
+    "simple_explanation": "可表示工具、方式、伴随或施事。",
+    "needs_contrast": false
   },
   {
     "cat": "格与名词系统",
@@ -37,7 +62,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈdeɪtɪv/",
     "cn": "与格",
     "pali": "catutthī vibhatti",
-    "note": "常表示给予对象、目的、利益对象。"
+    "note": "常表示给予对象、目的、利益对象。",
+    "simple_explanation": "常表示给予对象、目的、利益对象。",
+    "needs_contrast": false
   },
   {
     "cat": "格与名词系统",
@@ -45,7 +72,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈæblətɪv/",
     "cn": "离格；从格",
     "pali": "pañcamī vibhatti",
-    "note": "常表示来源、分离、原因等。"
+    "note": "常表示来源、分离、原因等。",
+    "simple_explanation": "常表示来源、分离、原因等。",
+    "needs_contrast": false
   },
   {
     "cat": "格与名词系统",
@@ -53,7 +82,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈdʒenətɪv/",
     "cn": "属格",
     "pali": "chaṭṭhī vibhatti",
-    "note": "常表示所属、关联、限定。"
+    "note": "常表示所属、关联、限定。",
+    "simple_explanation": "常表示所属、关联、限定。",
+    "needs_contrast": false
   },
   {
     "cat": "格与名词系统",
@@ -61,7 +92,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈlɑːkətɪv/",
     "cn": "处格",
     "pali": "sattamī vibhatti",
-    "note": "常表示地点、时间、范围。"
+    "note": "常表示地点、时间、范围。",
+    "simple_explanation": "常表示地点、时间、范围。",
+    "needs_contrast": false
   },
   {
     "cat": "格与名词系统",
@@ -69,7 +102,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈvɑːkətɪv/",
     "cn": "呼格",
     "pali": "ālapana",
-    "note": "用于称呼对象，通常不作主谓宾核心成分。"
+    "note": "用于称呼对象，通常不作主谓宾核心成分。",
+    "simple_explanation": "用于称呼对象，通常不作主谓宾核心成分。",
+    "needs_contrast": false
   },
   {
     "cat": "格与名词系统",
@@ -77,7 +112,26 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈdʒendər/",
     "cn": "性",
     "pali": "liṅga",
-    "note": "巴利语名词有阳性、阴性、中性。"
+    "note": "名词分类范畴。巴利语常分阳性、阴性、中性。",
+    "simple_explanation": "语法性不一定等于自然性别。比如某些无生命名词也可能有阳性、阴性或中性。",
+    "contrast_examples": [
+      {
+        "label": "阳性",
+        "form": "Buddho",
+        "meaning": "佛，阳性主格单数"
+      },
+      {
+        "label": "阴性",
+        "form": "paññā",
+        "meaning": "智慧，阴性主格单数"
+      },
+      {
+        "label": "中性",
+        "form": "phalaṃ",
+        "meaning": "果，中性主/宾格单数"
+      }
+    ],
+    "needs_contrast": true
   },
   {
     "cat": "格与名词系统",
@@ -85,7 +139,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈmæskjəlɪn/",
     "cn": "阳性",
     "pali": "pulliṅga",
-    "note": "名词性别之一。"
+    "note": "名词性别之一。",
+    "simple_explanation": "名词性别之一。",
+    "needs_contrast": false
   },
   {
     "cat": "格与名词系统",
@@ -93,7 +149,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈfemənɪn/",
     "cn": "阴性",
     "pali": "itthiliṅga",
-    "note": "名词性别之一。"
+    "note": "名词性别之一。",
+    "simple_explanation": "名词性别之一。",
+    "needs_contrast": false
   },
   {
     "cat": "格与名词系统",
@@ -101,7 +159,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈnuːtər/",
     "cn": "中性",
     "pali": "napuṃsakaliṅga",
-    "note": "中性名词主格、宾格常有同形现象。"
+    "note": "中性名词主格、宾格常有同形现象。",
+    "simple_explanation": "中性名词主格、宾格常有同形现象。",
+    "needs_contrast": false
   },
   {
     "cat": "格与名词系统",
@@ -109,7 +169,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈsɪŋɡjələr/",
     "cn": "单数",
     "pali": "ekavacana",
-    "note": "表示一个或单一对象。"
+    "note": "表示一个或单一对象。",
+    "simple_explanation": "表示一个或单一对象。",
+    "needs_contrast": false
   },
   {
     "cat": "格与名词系统",
@@ -117,31 +179,83 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈplʊrəl/",
     "cn": "复数",
     "pali": "bahuvacana",
-    "note": "表示多个对象。"
+    "note": "表示多个对象。",
+    "simple_explanation": "表示多个对象。",
+    "needs_contrast": false
   },
   {
     "cat": "格与名词系统",
     "en": "declension",
     "ipa": "/dɪˈklenʃən/",
-    "cn": "变格",
-    "pali": "nāma-rūpa-parivattana",
-    "note": "名词、代词、形容词等按格、数、性变化。"
+    "cn": "变格；格变化",
+    "pali": "nāma-vibhatti",
+    "note": "名词、代词、形容词等按照性、数、格发生的形式变化。",
+    "simple_explanation": "变格就是把一个名词放进不同语法位置时，它的形式怎样变化。学习巴利语名词时，核心就是看词干类型、性、数、格。",
+    "contrast_examples": [
+      {
+        "label": "巴利语主格",
+        "form": "Buddho",
+        "meaning": "佛，作主语"
+      },
+      {
+        "label": "巴利语宾格",
+        "form": "Buddhaṃ",
+        "meaning": "佛，作宾语"
+      },
+      {
+        "label": "巴利语工具格",
+        "form": "Buddhena",
+        "meaning": "由佛；以佛"
+      },
+      {
+        "label": "英语对照",
+        "form": "he / him / his",
+        "meaning": "英语代词也有格变化残留"
+      },
+      {
+        "label": "汉语对照",
+        "form": "佛 / 佛的",
+        "meaning": "汉语通常用词序或“的”等虚词表达关系"
+      }
+    ],
+    "needs_contrast": true
   },
   {
-    "cat": "格与名词系统",
+    "cat": "形态学",
     "en": "stem",
     "ipa": "/stem/",
     "cn": "词干",
-    "pali": "aṅga / dhātu（依语境）",
-    "note": "加词尾之前的基础形式。"
+    "pali": "aṅga",
+    "note": "加词尾以前的形式基础。",
+    "simple_explanation": "词干是“拿来加词尾的基础”。例如 Buddha- 加 -o 成 Buddho，加 -ṃ 成 Buddhaṃ。",
+    "contrast_examples": [
+      {
+        "label": "名词词干",
+        "form": "Buddha-",
+        "meaning": "可加不同格词尾"
+      },
+      {
+        "label": "动词词干",
+        "form": "gaccha-",
+        "meaning": "可加 -ti、-anti、-mi 等词尾"
+      },
+      {
+        "label": "汉语对照",
+        "form": "佛 / 去",
+        "meaning": "汉语通常不靠词干加词尾表达这些语法关系"
+      }
+    ],
+    "needs_contrast": true
   },
   {
-    "cat": "格与名词系统",
-    "en": "ending",
-    "ipa": "/ˈendɪŋ/",
-    "cn": "词尾",
+    "cat": "形态学",
+    "en": "suffix",
+    "ipa": "/ˈsʌfɪks/",
+    "cn": "后缀；词尾",
     "pali": "paccaya / vibhatti",
-    "note": "表达格、数、人称、时态等语法信息。"
+    "note": "加在词干后的成分，可表达词形、派生或语法功能。",
+    "simple_explanation": "巴利语里很多语法信息藏在后缀或词尾中，如 -ti、-anti、-ṃ、-ena。",
+    "needs_contrast": false
   },
   {
     "cat": "动词与词形",
@@ -149,7 +263,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/vɝːb/",
     "cn": "动词",
     "pali": "ākhyāta / kriyāpada",
-    "note": "表达动作、状态或存在。"
+    "note": "表达动作、状态或存在。",
+    "simple_explanation": "表达动作、状态或存在。",
+    "needs_contrast": false
   },
   {
     "cat": "动词与词形",
@@ -157,39 +273,110 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈfaɪnaɪt vɝːb/",
     "cn": "限定动词",
     "pali": "ākhyāta",
-    "note": "带人称、数、时态或语气信息，可作句子谓语核心。"
+    "note": "带人称、数、时态或语气信息，可作句子谓语核心。",
+    "simple_explanation": "带人称、数、时态或语气信息，可作句子谓语核心。",
+    "needs_contrast": false
   },
   {
-    "cat": "动词与词形",
+    "cat": "形态学",
     "en": "root",
     "ipa": "/ruːt/",
     "cn": "词根",
     "pali": "dhātu",
-    "note": "动词或词形派生的基础单位。"
+    "note": "词义和构词的基础成分，动词学习中尤其重要。",
+    "simple_explanation": "词根像“意义核心”。例如 √gam 表“去”，可形成 gacchati、gantuṃ、gantvā 等不同形式。",
+    "contrast_examples": [
+      {
+        "label": "词根",
+        "form": "√gam",
+        "meaning": "去、行走"
+      },
+      {
+        "label": "词干",
+        "form": "gaccha-",
+        "meaning": "由词根进入某类动词变化的基础"
+      },
+      {
+        "label": "词形",
+        "form": "gacchāmi",
+        "meaning": "词干 + 第一人称单数词尾"
+      }
+    ],
+    "needs_contrast": true
   },
   {
-    "cat": "动词与词形",
+    "cat": "动词系统",
     "en": "conjugation",
     "ipa": "/ˌkɑːndʒəˈɡeɪʃən/",
-    "cn": "变位",
-    "pali": "ākhyāta-rūpa-parivattana",
-    "note": "动词随人称、数、时态、语态等变化。"
+    "cn": "变位；动词变化",
+    "pali": "ākhyāta-vibhatti",
+    "note": "动词按照人称、数、时态、语气、语态等发生的形式变化。",
+    "simple_explanation": "变位就是动词为了表达“谁做、几个人做、何时做、以什么语气说”而改变形式。",
+    "contrast_examples": [
+      {
+        "label": "巴利语第三单",
+        "form": "gacchati",
+        "meaning": "他/她/它去"
+      },
+      {
+        "label": "巴利语第三复",
+        "form": "gacchanti",
+        "meaning": "他们去"
+      },
+      {
+        "label": "巴利语第一单",
+        "form": "gacchāmi",
+        "meaning": "我去"
+      },
+      {
+        "label": "英语对照",
+        "form": "go / goes / went",
+        "meaning": "英语也有动词变化，但较少"
+      },
+      {
+        "label": "汉语对照",
+        "form": "我去 / 他去 / 他们去",
+        "meaning": "动词“去”本身通常不随人称数变化"
+      }
+    ],
+    "needs_contrast": true
   },
   {
-    "cat": "动词与词形",
+    "cat": "动词系统",
     "en": "tense",
     "ipa": "/tens/",
     "cn": "时态",
     "pali": "kāla",
-    "note": "表示动作时间关系的语法范畴。"
+    "note": "表示动作发生时间或叙述时间关系的语法范畴。",
+    "simple_explanation": "时态回答“动作在什么时候”。巴利语有现在、将来、过去类等形式；但具体翻译仍要看上下文。",
+    "contrast_examples": [
+      {
+        "label": "现在类",
+        "form": "gacchati",
+        "meaning": "他去；他正在去；他常去"
+      },
+      {
+        "label": "将来类",
+        "form": "gacchissati",
+        "meaning": "他将去"
+      },
+      {
+        "label": "过去类",
+        "form": "agamāsi",
+        "meaning": "他去了"
+      }
+    ],
+    "needs_contrast": true
   },
   {
-    "cat": "动词与词形",
+    "cat": "动词系统",
     "en": "present tense",
     "ipa": "/ˈprezənt tens/",
     "cn": "现在时",
-    "pali": "vattamāna",
-    "note": "常用于当前、习惯或一般事实。"
+    "pali": "vattamānā",
+    "note": "常用于现在、一般事实或习惯性动作。",
+    "simple_explanation": "常用于现在、一般事实或习惯性动作。",
+    "needs_contrast": false
   },
   {
     "cat": "动词与词形",
@@ -197,15 +384,19 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈeɪərɪst/",
     "cn": "过去时；不定过去时",
     "pali": "ajjatanī / hiyyattanī（传统体系需细分）",
-    "note": "巴利语过去时系统较复杂，不同教材术语可能不同。"
+    "note": "巴利语过去时系统较复杂，不同教材术语可能不同。",
+    "simple_explanation": "巴利语过去时系统较复杂，不同教材术语可能不同。",
+    "needs_contrast": false
   },
   {
-    "cat": "动词与词形",
+    "cat": "动词系统",
     "en": "future tense",
     "ipa": "/ˈfjuːtʃər tens/",
     "cn": "将来时",
-    "pali": "bhavissanti",
-    "note": "表示未来动作或将然意义。"
+    "pali": "anāgata",
+    "note": "常见标志有 -(i)ssa / -(e)ssa 等。",
+    "simple_explanation": "常见标志有 -(i)ssa / -(e)ssa 等。",
+    "needs_contrast": false
   },
   {
     "cat": "动词与词形",
@@ -213,7 +404,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ɪmˈperətɪv/",
     "cn": "命令式",
     "pali": "pañcamī",
-    "note": "表达命令、请求、劝告等。"
+    "note": "表达命令、请求、劝告等。",
+    "simple_explanation": "表达命令、请求、劝告等。",
+    "needs_contrast": false
   },
   {
     "cat": "动词与词形",
@@ -221,39 +414,66 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈɑːptətɪv/",
     "cn": "愿望式；可能式",
     "pali": "sattamī",
-    "note": "表达愿望、可能、劝告等语气。"
+    "note": "表达愿望、可能、劝告等语气。",
+    "simple_explanation": "表达愿望、可能、劝告等语气。",
+    "needs_contrast": false
   },
   {
-    "cat": "动词与词形",
+    "cat": "动词系统",
     "en": "voice",
     "ipa": "/vɔɪs/",
     "cn": "语态",
-    "pali": "pada / vācaka（依体系）",
-    "note": "涉及主动、中间、被动等表达。"
+    "pali": "pada",
+    "note": "表示主语与动作之间关系的语法范畴。",
+    "simple_explanation": "语态帮助判断主语是在发出动作、与自身相关，还是承受动作。入门阶段可先区分主动、中间、被动。",
+    "contrast_examples": [
+      {
+        "label": "主动",
+        "form": "So gacchati.",
+        "meaning": "他去"
+      },
+      {
+        "label": "中间语态",
+        "form": "So labhate.",
+        "meaning": "他得到"
+      },
+      {
+        "label": "被动",
+        "form": "Kammaṃ karīyati.",
+        "meaning": "工作被做"
+      }
+    ],
+    "needs_contrast": true
   },
   {
-    "cat": "动词与词形",
+    "cat": "动词系统",
     "en": "active voice",
     "ipa": "/ˈæktɪv vɔɪs/",
     "cn": "主动语态",
     "pali": "parassapada",
-    "note": "常表示主语发出动作。"
+    "note": "动作由主语发出或承担。",
+    "simple_explanation": "动作由主语发出或承担。",
+    "needs_contrast": false
   },
   {
-    "cat": "动词与词形",
+    "cat": "动词系统",
     "en": "middle voice",
     "ipa": "/ˈmɪdəl vɔɪs/",
     "cn": "中间语态",
     "pali": "attanopada",
-    "note": "进阶内容，教材处理可能不同。"
+    "note": "传统动词词尾系统中的一类语态形式。",
+    "simple_explanation": "传统动词词尾系统中的一类语态形式。",
+    "needs_contrast": false
   },
   {
-    "cat": "动词与词形",
+    "cat": "动词系统",
     "en": "passive voice",
     "ipa": "/ˈpæsɪv vɔɪs/",
     "cn": "被动语态",
-    "pali": "kammavācaka",
-    "note": "表示主语承受动作。"
+    "pali": "passive",
+    "note": "表示主语承受动作，常见 -(ī)ya 被动词干。",
+    "simple_explanation": "表示主语承受动作，常见 -(ī)ya 被动词干。",
+    "needs_contrast": false
   },
   {
     "cat": "动词与词形",
@@ -261,7 +481,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈkɔːzətɪv/",
     "cn": "使役",
     "pali": "ṇijanta",
-    "note": "表示使令、令某人做某事。"
+    "note": "表示使令、令某人做某事。",
+    "simple_explanation": "表示使令、令某人做某事。",
+    "needs_contrast": false
   },
   {
     "cat": "动词与词形",
@@ -269,7 +491,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈpɑːrtɪsɪpəl/",
     "cn": "分词",
     "pali": "kicca / kita（相关）",
-    "note": "具有动词和形容词性质。"
+    "note": "具有动词和形容词性质。",
+    "simple_explanation": "具有动词和形容词性质。",
+    "needs_contrast": false
   },
   {
     "cat": "动词与词形",
@@ -277,7 +501,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈprezənt ˈpɑːrtɪsɪpəl/",
     "cn": "现在分词",
     "pali": "vattamāna-kāla-kita",
-    "note": "常表示正在……的或伴随状态。"
+    "note": "常表示正在……的或伴随状态。",
+    "simple_explanation": "常表示正在……的或伴随状态。",
+    "needs_contrast": false
   },
   {
     "cat": "动词与词形",
@@ -285,7 +511,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/pæst ˈpɑːrtɪsɪpəl/",
     "cn": "过去分词",
     "pali": "atīta-kāla-kita",
-    "note": "常表示完成、结果状态或被动。"
+    "note": "常表示完成、结果状态或被动。",
+    "simple_explanation": "常表示完成、结果状态或被动。",
+    "needs_contrast": false
   },
   {
     "cat": "动词与词形",
@@ -293,7 +521,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈfjuːtʃər ˈpæsɪv ˈpɑːrtɪsɪpəl/",
     "cn": "将来被动分词",
     "pali": "kicca",
-    "note": "常表示应当、必须、可被。"
+    "note": "常表示应当、必须、可被。",
+    "simple_explanation": "常表示应当、必须、可被。",
+    "needs_contrast": false
   },
   {
     "cat": "动词与词形",
@@ -301,7 +531,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈdʒerənd/",
     "cn": "连续体；动名词式",
     "pali": "tvānta 等",
-    "note": "在巴利学习中常指 -tvā、-tvāna、-ya 等先行动作形式。"
+    "note": "在巴利学习中常指 -tvā、-tvāna、-ya 等先行动作形式。",
+    "simple_explanation": "在巴利学习中常指 -tvā、-tvāna、-ya 等先行动作形式。",
+    "needs_contrast": false
   },
   {
     "cat": "动词与词形",
@@ -309,7 +541,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈæbsəluːtɪv/",
     "cn": "独立式；连续体",
     "pali": "tvānta",
-    "note": "常表示“做完……之后”。"
+    "note": "常表示“做完……之后”。",
+    "simple_explanation": "常表示“做完……之后”。",
+    "needs_contrast": false
   },
   {
     "cat": "动词与词形",
@@ -317,15 +551,36 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ɪnˈfɪnətɪv/",
     "cn": "不定式",
     "pali": "tumanta",
-    "note": "常表示目的或动作内容。"
+    "note": "常表示目的或动作内容。",
+    "simple_explanation": "常表示目的或动作内容。",
+    "needs_contrast": false
   },
   {
-    "cat": "句法与结构",
+    "cat": "语言学基础概念",
     "en": "syntax",
     "ipa": "/ˈsɪntæks/",
-    "cn": "句法",
-    "pali": "vākyaracanā（现代说明用语）",
-    "note": "研究词语如何组合成句子。"
+    "cn": "句法学",
+    "pali": "vākya-vibhāga",
+    "note": "研究词如何组合成短语、分句和句子。",
+    "simple_explanation": "句法学看“词进入句子后怎样组合”。例如 Buddho dhammaṃ deseti 要看 Buddho、dhammaṃ、deseti 三者的结构关系。",
+    "contrast_examples": [
+      {
+        "label": "巴利语",
+        "form": "Buddho dhammaṃ deseti.",
+        "meaning": "主格 Buddho + 宾格 dhammaṃ + 动词 deseti"
+      },
+      {
+        "label": "英语",
+        "form": "The Buddha teaches the Dhamma.",
+        "meaning": "主要靠词序表达主语和宾语"
+      },
+      {
+        "label": "汉语",
+        "form": "佛说法。",
+        "meaning": "主要靠词序和语义理解结构"
+      }
+    ],
+    "needs_contrast": true
   },
   {
     "cat": "句法与结构",
@@ -333,7 +588,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈsʌbdʒekt/",
     "cn": "主语",
     "pali": "kattā（语义上常为施事）",
-    "note": "句中被陈述或发出动作的核心成分。"
+    "note": "句中被陈述或发出动作的核心成分。",
+    "simple_explanation": "句中被陈述或发出动作的核心成分。",
+    "needs_contrast": false
   },
   {
     "cat": "句法与结构",
@@ -341,7 +598,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈɑːbdʒekt/",
     "cn": "宾语",
     "pali": "kamma",
-    "note": "动作作用对象；注意 kamma 也可表示“业”。"
+    "note": "动作作用对象；注意 kamma 也可表示“业”。",
+    "simple_explanation": "动作作用对象；注意 kamma 也可表示“业”。",
+    "needs_contrast": false
   },
   {
     "cat": "句法与结构",
@@ -349,7 +608,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈpredɪkət/",
     "cn": "谓语",
     "pali": "ākhyāta / kiriya",
-    "note": "说明主语的动作、状态或性质。"
+    "note": "说明主语的动作、状态或性质。",
+    "simple_explanation": "说明主语的动作、状态或性质。",
+    "needs_contrast": false
   },
   {
     "cat": "句法与结构",
@@ -357,7 +618,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈeɪdʒənt/",
     "cn": "施事",
     "pali": "kattā",
-    "note": "语义角色，表示动作发出者。"
+    "note": "语义角色，表示动作发出者。",
+    "simple_explanation": "语义角色，表示动作发出者。",
+    "needs_contrast": false
   },
   {
     "cat": "句法与结构",
@@ -365,7 +628,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈpeɪʃənt/",
     "cn": "受事",
     "pali": "kamma",
-    "note": "语义角色，表示承受动作影响者。"
+    "note": "语义角色，表示承受动作影响者。",
+    "simple_explanation": "语义角色，表示承受动作影响者。",
+    "needs_contrast": false
   },
   {
     "cat": "句法与结构",
@@ -373,7 +638,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/klɔːz/",
     "cn": "分句；小句",
     "pali": "vākyabhāga（现代说明用语）",
-    "note": "包含谓语核心的句法单位。"
+    "note": "包含谓语核心的句法单位。",
+    "simple_explanation": "包含谓语核心的句法单位。",
+    "needs_contrast": false
   },
   {
     "cat": "句法与结构",
@@ -381,7 +648,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈrelətɪv klɔːz/",
     "cn": "关系从句",
     "pali": "ya- ta- 相关结构",
-    "note": "如 yo...so... 关系—指示结构。"
+    "note": "如 yo...so... 关系—指示结构。",
+    "simple_explanation": "如 yo...so... 关系—指示结构。",
+    "needs_contrast": false
   },
   {
     "cat": "句法与结构",
@@ -389,7 +658,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/kwoʊˈteɪʃən ˈmɑːrkər/",
     "cn": "引语标记",
     "pali": "iti / ti",
-    "note": "标记前面的内容是引语或想法。"
+    "note": "标记前面的内容是引语或想法。",
+    "simple_explanation": "标记前面的内容是引语或想法。",
+    "needs_contrast": false
   },
   {
     "cat": "句法与结构",
@@ -397,7 +668,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˌɪndɪˈklaɪnəbəl/",
     "cn": "不变词",
     "pali": "avyaya",
-    "note": "不随格、数、性等变化的词。"
+    "note": "不随格、数、性等变化的词。",
+    "simple_explanation": "不随格、数、性等变化的词。",
+    "needs_contrast": false
   },
   {
     "cat": "句法与结构",
@@ -405,7 +678,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈpɑːrtɪkəl/",
     "cn": "小品词；语气词",
     "pali": "nipāta",
-    "note": "如 kho、pana、ca、vā 等。"
+    "note": "如 kho、pana、ca、vā 等。",
+    "simple_explanation": "如 kho、pana、ca、vā 等。",
+    "needs_contrast": false
   },
   {
     "cat": "句法与结构",
@@ -413,7 +688,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈkɑːmpaʊnd/",
     "cn": "复合词",
     "pali": "samāsa",
-    "note": "两个或多个词组合成一个词。"
+    "note": "两个或多个词组合成一个词。",
+    "simple_explanation": "两个或多个词组合成一个词。",
+    "needs_contrast": false
   },
   {
     "cat": "句法与结构",
@@ -421,7 +698,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈsʌndɪ/",
     "cn": "连音；连读",
     "pali": "sandhi",
-    "note": "词与词或音与音相接时发生的音变。"
+    "note": "词与词或音与音相接时发生的音变。",
+    "simple_explanation": "词与词或音与音相接时发生的音变。",
+    "needs_contrast": false
   },
   {
     "cat": "句法与结构",
@@ -429,7 +708,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˌfɔːrmjəˈleɪɪk ɪkˈspreʃən/",
     "cn": "公式化表达",
     "pali": "固定表达；佛典公式句",
-    "note": "佛典中反复出现并承担固定篇章功能的表达。"
+    "note": "佛典中反复出现并承担固定篇章功能的表达。",
+    "simple_explanation": "佛典中反复出现并承担固定篇章功能的表达。",
+    "needs_contrast": false
   },
   {
     "cat": "文本与研究",
@@ -437,7 +718,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/kəˈnɑːnɪkəl tekst/",
     "cn": "经典文本；正典文本",
     "pali": "piṭaka / tipiṭaka 相关",
-    "note": "在巴利佛典语境中常指三藏等正典材料。"
+    "note": "在巴利佛典语境中常指三藏等正典材料。",
+    "simple_explanation": "在巴利佛典语境中常指三藏等正典材料。",
+    "needs_contrast": false
   },
   {
     "cat": "文本与研究",
@@ -445,7 +728,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈkɑːmənteri/",
     "cn": "注释书",
     "pali": "aṭṭhakathā",
-    "note": "解释经典文本的传统注释。"
+    "note": "解释经典文本的传统注释。",
+    "simple_explanation": "解释经典文本的传统注释。",
+    "needs_contrast": false
   },
   {
     "cat": "文本与研究",
@@ -453,7 +738,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/sʌbˈkɑːmənteri/",
     "cn": "复注；疏",
     "pali": "ṭīkā",
-    "note": "对注释书的进一步注释。"
+    "note": "对注释书的进一步注释。",
+    "simple_explanation": "对注释书的进一步注释。",
+    "needs_contrast": false
   },
   {
     "cat": "文本与研究",
@@ -461,7 +748,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/trænzˈleɪʃən/",
     "cn": "翻译",
     "pali": "anuvāda（现代说明用语）",
-    "note": "译文不是原文，研究中应明确区分。"
+    "note": "译文不是原文，研究中应明确区分。",
+    "simple_explanation": "译文不是原文，研究中应明确区分。",
+    "needs_contrast": false
   },
   {
     "cat": "文本与研究",
@@ -469,7 +758,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈlɪtərəl trænzˈleɪʃən/",
     "cn": "直译",
     "pali": "逐词译；结构译",
-    "note": "尽量保留词序和语法结构。"
+    "note": "尽量保留词序和语法结构。",
+    "simple_explanation": "尽量保留词序和语法结构。",
+    "needs_contrast": false
   },
   {
     "cat": "文本与研究",
@@ -477,7 +768,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/friː trænzˈleɪʃən/",
     "cn": "意译；顺译",
     "pali": "义译",
-    "note": "使目标语表达自然，但可能弱化原文结构。"
+    "note": "使目标语表达自然，但可能弱化原文结构。",
+    "simple_explanation": "使目标语表达自然，但可能弱化原文结构。",
+    "needs_contrast": false
   },
   {
     "cat": "文本与研究",
@@ -485,7 +778,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/fɪˈlɑːlədʒi/",
     "cn": "文献学；语文学",
     "pali": "—",
-    "note": "通过文本、语言、版本、注释等研究文献。"
+    "note": "通过文本、语言、版本、注释等研究文献。",
+    "simple_explanation": "通过文本、语言、版本、注释等研究文献。",
+    "needs_contrast": false
   },
   {
     "cat": "文本与研究",
@@ -493,7 +788,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˌetɪˈmɑːlədʒi/",
     "cn": "词源学",
     "pali": "nirutti / vyākaraṇa 相关",
-    "note": "研究词的来源和历史演变。"
+    "note": "研究词的来源和历史演变。",
+    "simple_explanation": "研究词的来源和历史演变。",
+    "needs_contrast": false
   },
   {
     "cat": "文本与研究",
@@ -501,7 +798,9 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈveriənt ˈriːdɪŋ/",
     "cn": "异读；异文",
     "pali": "pāṭhabheda",
-    "note": "不同版本中同一位置的不同读法。"
+    "note": "不同版本中同一位置的不同读法。",
+    "simple_explanation": "不同版本中同一位置的不同读法。",
+    "needs_contrast": false
   },
   {
     "cat": "文本与研究",
@@ -509,6 +808,312 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/saɪˈteɪʃən/",
     "cn": "引用；引文",
     "pali": "—",
-    "note": "学术写作中需准确标注来源、版本和位置。"
+    "note": "学术写作中需准确标注来源、版本和位置。",
+    "simple_explanation": "学术写作中需准确标注来源、版本和位置。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "动词系统",
+    "en": "person",
+    "ipa": "/ˈpɜːrsən/",
+    "cn": "人称",
+    "pali": "purisa",
+    "note": "表示动作与说话者、听话者、第三方之间的关系。",
+    "simple_explanation": "第一人称是“我/我们”，第二人称是“你/你们”，第三人称是“他/他们”。巴利语动词词尾会体现人称。",
+    "contrast_examples": [
+      {
+        "label": "第一人称",
+        "form": "gacchāmi / gacchāma",
+        "meaning": "我去 / 我们去"
+      },
+      {
+        "label": "第二人称",
+        "form": "gacchasi / gacchatha",
+        "meaning": "你去 / 你们去"
+      },
+      {
+        "label": "第三人称",
+        "form": "gacchati / gacchanti",
+        "meaning": "他去 / 他们去"
+      }
+    ],
+    "needs_contrast": true
+  },
+  {
+    "cat": "动词系统",
+    "en": "mood",
+    "ipa": "/muːd/",
+    "cn": "语气",
+    "pali": "ākāra / vibhatti-bheda",
+    "note": "表示说话者对动作的态度或句子功能，如陈述、命令、愿望、可能等。",
+    "simple_explanation": "语气回答“这句话是陈述、命令，还是愿望/可能”。如 gaccha 是命令，gaccheyya 可表示可能或祈愿。",
+    "contrast_examples": [
+      {
+        "label": "陈述",
+        "form": "gacchati",
+        "meaning": "他去"
+      },
+      {
+        "label": "命令",
+        "form": "gaccha",
+        "meaning": "你去吧"
+      },
+      {
+        "label": "祈愿/可能",
+        "form": "gaccheyya",
+        "meaning": "他可能去；愿他去"
+      }
+    ],
+    "needs_contrast": true
+  },
+  {
+    "cat": "动词系统",
+    "en": "number",
+    "ipa": "/ˈnʌmbər/",
+    "cn": "数",
+    "pali": "vacana",
+    "note": "表示单数或复数。",
+    "simple_explanation": "数回答“一个还是多个”。巴利语名词和动词通常都要看数。",
+    "contrast_examples": [
+      {
+        "label": "动词单数",
+        "form": "gacchati",
+        "meaning": "他去"
+      },
+      {
+        "label": "动词复数",
+        "form": "gacchanti",
+        "meaning": "他们去"
+      },
+      {
+        "label": "名词单复数",
+        "form": "phalaṃ / phalāni",
+        "meaning": "一个果 / 多个果"
+      }
+    ],
+    "needs_contrast": true
+  },
+  {
+    "cat": "动词系统",
+    "en": "first person",
+    "ipa": "/ˌfɜːrst ˈpɜːrsən/",
+    "cn": "第一人称",
+    "pali": "uttama-purisa",
+    "note": "说话者一方，例如 ahaṃ、mayaṃ 以及 -mi、-ma 等词尾。",
+    "simple_explanation": "说话者一方，例如 ahaṃ、mayaṃ 以及 -mi、-ma 等词尾。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "动词系统",
+    "en": "second person",
+    "ipa": "/ˌsekənd ˈpɜːrsən/",
+    "cn": "第二人称",
+    "pali": "majjhima-purisa",
+    "note": "听话者一方，例如 tvaṃ、tumhe 以及 -si、-tha 等词尾。",
+    "simple_explanation": "听话者一方，例如 tvaṃ、tumhe 以及 -si、-tha 等词尾。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "动词系统",
+    "en": "third person",
+    "ipa": "/ˌθɜːrd ˈpɜːrsən/",
+    "cn": "第三人称",
+    "pali": "paṭhama-purisa",
+    "note": "说话者、听话者之外的对象，例如 so、te 以及 -ti、-anti 等词尾。",
+    "simple_explanation": "说话者、听话者之外的对象，例如 so、te 以及 -ti、-anti 等词尾。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "动词系统",
+    "en": "past tense",
+    "ipa": "/pæst tens/",
+    "cn": "过去类",
+    "pali": "atīta-kāla",
+    "note": "用于表示过去动作，具体形式可分 ajjatanī、hīyattanī、parokkhā 等。",
+    "simple_explanation": "用于表示过去动作，具体形式可分 ajjatanī、hīyattanī、parokkhā 等。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "动词系统",
+    "en": "imperative mood",
+    "ipa": "/ɪmˈperətɪv muːd/",
+    "cn": "命令语气",
+    "pali": "pañcamī",
+    "note": "表示命令、请求、劝请等。",
+    "simple_explanation": "表示命令、请求、劝请等。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "动词系统",
+    "en": "optative mood",
+    "ipa": "/ˈɑːptətɪv muːd/",
+    "cn": "祈愿语气",
+    "pali": "sattamī",
+    "note": "可表示可能、愿望、建议或较委婉的语气。",
+    "simple_explanation": "可表示可能、愿望、建议或较委婉的语气。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "语言学基础概念",
+    "en": "linguistics",
+    "ipa": "/lɪŋˈɡwɪstɪks/",
+    "cn": "语言学",
+    "pali": "—",
+    "note": "研究语言的科学。对巴利语学习来说，语言学能帮助我们区分声音、词形、句法和意义。",
+    "simple_explanation": "不要把语言学理解成“背术语”。这里的作用是给学生一个工具箱：音系看声音，形态学看词形，句法学看句子结构，语义学看意义。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "语言学基础概念",
+    "en": "grammar",
+    "ipa": "/ˈɡræmər/",
+    "cn": "语法",
+    "pali": "vyākaraṇa",
+    "note": "语言中词形、句子结构和组合规则的总称。",
+    "simple_explanation": "在本站中，语法不是抽象定义，而是帮助学生回答：这个词是什么形式？在句子中起什么作用？应该怎样翻译？",
+    "needs_contrast": false
+  },
+  {
+    "cat": "语言学基础概念",
+    "en": "morphology",
+    "ipa": "/mɔːrˈfɑːlədʒi/",
+    "cn": "形态学",
+    "pali": "rūpa-vibhāga",
+    "note": "研究词的内部结构、构词和词形变化。",
+    "simple_explanation": "形态学看“词里面发生了什么”。例如 Buddhaṃ 不是另一个新词，而是 Buddha- 加上宾格单数词尾形成的词形。",
+    "contrast_examples": [
+      {
+        "label": "巴利语",
+        "form": "Buddha- + -ṃ → Buddhaṃ",
+        "meaning": "佛 + 宾格单数 → 佛（作宾语）"
+      },
+      {
+        "label": "英语",
+        "form": "walk + -ed → walked",
+        "meaning": "走 + 过去标记 → 走了"
+      },
+      {
+        "label": "汉语",
+        "form": "我 / 我的",
+        "meaning": "汉语较少靠词尾变化，更多靠词序、虚词表达关系"
+      }
+    ],
+    "needs_contrast": true
+  },
+  {
+    "cat": "语言学基础概念",
+    "en": "semantics",
+    "ipa": "/sɪˈmæntɪks/",
+    "cn": "语义学",
+    "pali": "attha-vibhāga",
+    "note": "研究语言形式的意义。",
+    "simple_explanation": "语义学关注“这个形式表达什么意义”。比如 dhamma 可译为法、教法、现象等，具体意义要看语境。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "语言学基础概念",
+    "en": "phonology",
+    "ipa": "/fəˈnɑːlədʒi/",
+    "cn": "音系学",
+    "pali": "sadda-vibhāga",
+    "note": "研究一种语言中声音如何组成系统。",
+    "simple_explanation": "音系学看声音系统。学习巴利语时，长短元音、鼻音、送气音、sandhi 都属于这一范围。",
+    "contrast_examples": [
+      {
+        "label": "巴利语",
+        "form": "a / ā；i / ī；u / ū",
+        "meaning": "长短元音要区分"
+      },
+      {
+        "label": "巴利语",
+        "form": "ṅ / ñ / ṇ / n / m / ṃ",
+        "meaning": "不同鼻音或鼻音标记"
+      },
+      {
+        "label": "汉语",
+        "form": "m / n / ng",
+        "meaning": "汉语也有鼻音差别，但系统和巴利语不同"
+      }
+    ],
+    "needs_contrast": true
+  },
+  {
+    "cat": "语言学基础概念",
+    "en": "phonetics",
+    "ipa": "/fəˈnetɪks/",
+    "cn": "语音学",
+    "pali": "sadda-sikkhā",
+    "note": "研究具体语音如何发出、传播和被听见。",
+    "simple_explanation": "简单说，语音学偏“怎么发音”，音系学偏“这些音在一种语言里怎样构成系统”。初学巴利语时，不必过细区分，只要知道二者关注角度不同。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "语言学基础概念",
+    "en": "morpheme",
+    "ipa": "/ˈmɔːrfiːm/",
+    "cn": "语素",
+    "pali": "pada-bīja / aṃsa",
+    "note": "具有意义或语法功能的最小语言单位。",
+    "simple_explanation": "例如 Buddhaṃ 可以粗略分析为 Buddha- 加 -ṃ。Buddha- 承载词义，-ṃ 提示格和数。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "形态学",
+    "en": "prefix",
+    "ipa": "/ˈpriːfɪks/",
+    "cn": "前缀",
+    "pali": "upasagga",
+    "note": "加在词根或词前面的成分，常改变或限定意义。",
+    "simple_explanation": "如 ā-、ni-、pa- 等可和词根结合，形成新的意义方向。初学阶段只需知道它是“前面加的成分”。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "形态学",
+    "en": "inflection",
+    "ipa": "/ɪnˈflekʃən/",
+    "cn": "屈折",
+    "pali": "vibhatti-parivattana",
+    "note": "词为表达语法功能而发生的形式变化。",
+    "simple_explanation": "屈折不是另造新词，而是在同一词的基础上变化形式。名词变格、动词变位都属于屈折。",
+    "contrast_examples": [
+      {
+        "label": "名词屈折",
+        "form": "Buddho / Buddhaṃ / Buddhena",
+        "meaning": "同一名词不同格"
+      },
+      {
+        "label": "动词屈折",
+        "form": "gacchati / gacchanti / gacchāmi",
+        "meaning": "同一动词不同时人称数"
+      },
+      {
+        "label": "英语对照",
+        "form": "go / goes / went",
+        "meaning": "英语动词也有屈折和不规则变化"
+      }
+    ],
+    "needs_contrast": true
+  },
+  {
+    "cat": "语言学基础概念",
+    "en": "grammatical category",
+    "ipa": "/ɡrəˈmætɪkəl ˈkætəɡɔːri/",
+    "cn": "语法范畴",
+    "pali": "vyākaraṇa-bheda",
+    "note": "语法系统中的一类属性，如格、数、性、时态、语气、语态等。",
+    "simple_explanation": "语法范畴就是语法里反复出现的“分类维度”。例如名词看性、数、格；动词看人称、数、时态、语气、语态。",
+    "contrast_examples": [
+      {
+        "label": "名词范畴",
+        "form": "性 / 数 / 格",
+        "meaning": "如阳性、单数、主格"
+      },
+      {
+        "label": "动词范畴",
+        "form": "人称 / 数 / 时态 / 语气 / 语态",
+        "meaning": "如第三人称、复数、将来、命令、被动"
+      }
+    ],
+    "needs_contrast": true
   }
 ];
