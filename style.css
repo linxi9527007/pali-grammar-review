@@ -1469,3 +1469,18 @@ td, th {
   display:inline-block;
   white-space:nowrap;
 }
+
+
+.lesson-nav-row{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-bottom:10px;
+}
+.lesson-nav-row button:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+  transform:none!important;
+  box-shadow:none!important;
+}
