@@ -1412,3 +1412,60 @@ td, th {
   display:inline-block;padding:7px 12px;border-radius:999px;
   background:#ea580c;color:#fff;text-decoration:none;font-weight:800
 }
+
+
+/* 12.1 terminology full table */
+.term-glossary-list{
+  display:block;
+  margin-top:16px;
+}
+.term-count{
+  margin:10px 0 12px;
+  color:#4b5563;
+}
+.term-table-wrap{
+  overflow-x:auto;
+  border:1px solid rgba(148,163,184,.28);
+  border-radius:18px;
+  background:#fff;
+  box-shadow:var(--shadow-sm);
+}
+.term-table{
+  width:100%;
+  min-width:980px;
+  border-collapse:collapse !important;
+  background:#fff;
+}
+.term-table th{
+  position:sticky;
+  top:0;
+  background:#f8fafc;
+  color:#111827;
+  font-weight:900;
+  text-align:left;
+  padding:12px;
+  border-bottom:1px solid rgba(148,163,184,.28);
+  white-space:nowrap;
+}
+.term-table td{
+  padding:12px;
+  border-bottom:1px solid rgba(148,163,184,.22);
+  vertical-align:top;
+  line-height:1.65;
+}
+.term-table tr:hover td{
+  background:#f8fbff;
+}
+.term-en-cell{
+  font-weight:900;
+  color:#172554;
+  white-space:nowrap;
+}
+.term-cn-cell{
+  font-weight:800;
+  color:#374151;
+}
+.term-table .term-cat{
+  display:inline-block;
+  white-space:nowrap;
+}

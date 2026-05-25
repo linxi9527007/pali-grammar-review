@@ -26847,21 +26847,21 @@
     "difficulty": "入门",
     "content_level": "辅助理解",
     "study_tier": "选学",
-    "summary": "11.2版新增常见术语英汉巴对照表。英文术语附 IPA，默认折叠，点击后查看中文、巴利/传统术语和说明。",
+    "summary": "12.1版将常见术语英汉巴对照表改为全表显示。英文术语、IPA、中文、巴利/传统术语、类别和说明都直接显示，并保留搜索和分类筛选。",
     "minimal_mastery": [
-      "知道英文术语可以在“术语对照表”中查询。",
-      "知道 IPA 需要点开术语卡片后查看。",
-      "知道巴利/传统术语与现代语法术语不一定一一对应。"
+      "知道术语对照表默认以全表显示。",
+      "知道可以用搜索框查英文、中文、IPA、巴利/传统术语和说明。",
+      "知道可以按类别筛选术语。"
     ],
     "prerequisites": [
       "已经开始学习基础语法点。"
     ],
     "self_check_questions": [
-      "我能查到 nominative / accusative / participle 等术语吗？",
-      "我能区分中文术语和巴利传统术语吗？",
-      "我知道 IPA 是帮助读英文术语的吗？"
+      "我能在术语表中快速查到 nominative / accusative / participle 等术语吗？",
+      "我能通过搜索中文或英文找到对应术语吗？",
+      "我能用类别筛选格与名词系统、动词与词形、句法与结构、文本与研究吗？"
     ],
-    "next_step_advice": "读英文语法书或词典时，遇到不熟悉的术语，可先查术语对照表。",
+    "next_step_advice": "读英文语法书或词典时，遇到不熟悉的术语，可先在术语全表中搜索。",
     "common_misjudgments": [
       {
         "wrong": "把现代英文语法术语和巴利传统术语看成完全一一对应。",
@@ -26877,12 +26877,12 @@
     "common_mistakes": [
       "不要把术语表当作完整语法理论表。",
       "不要用中文术语反推所有巴利传统分类。",
-      "不要忽略教材之间的术语差异。"
+      "不要忽略不同教材之间的术语差异。"
     ],
     "explanation": [
       "术语表按类别整理：格与名词系统、动词与词形、句法与结构、文本与研究。",
-      "为了不占空间，每条术语默认折叠。",
-      "点击术语后可查看英文 IPA、中文、巴利/传统术语和说明。",
+      "12.1版改为全表显示，不需要逐条点开。",
+      "搜索框支持英文、中文、IPA、巴利/传统术语和说明。",
       "术语表特别适合配合英文教材、DPD、PTS 词典和学术阅读训练使用。"
     ],
     "table": [
@@ -26928,8 +26928,12 @@
     ],
     "cards": [
       {
-        "q": "术语对照表为什么默认折叠？",
-        "a": "为了不占页面空间，点击后再看 IPA 和详细说明。"
+        "q": "术语表现在是折叠显示还是全表显示？",
+        "a": "全表显示。"
+      },
+      {
+        "q": "术语表可以搜索哪些内容？",
+        "a": "英文、中文、IPA、巴利/传统术语和说明。"
       },
       {
         "q": "nominative 对应什么中文术语？",
@@ -26953,209 +26957,27 @@
         "lesson_title": "常见术语英汉巴对照表使用说明",
         "module": "句法与阅读",
         "difficulty": "入门"
-      }
-    ],
-    "quality_status": "11.2术语对照表新增",
-    "lesson_number": 114
-  },
-  {
-    "id": 115,
-    "title": "网站缓存与页面跳转修复说明",
-    "category": "学习说明",
-    "module": "句法与阅读",
-    "level": "入门",
-    "difficulty": "入门",
-    "content_level": "辅助理解",
-    "study_tier": "选学",
-    "summary": "11.4版修复旧缓存导致的加载失败提示、页面入口跳转和 Service Worker 缓存策略。",
-    "minimal_mastery": [
-      "如果页面仍提示旧版本，可打开 cache-reset.html 清理缓存。",
-      "新版网站文件为 21 个，其中 cache-reset.html 也建议上传。",
-      "不要再使用旧版 11.1/11.2 文件。"
-    ],
-    "prerequisites": [
-      "已经上传网站文件到 GitHub Pages。"
-    ],
-    "self_check_questions": [
-      "首页是否显示 11.4 稳定修复版？",
-      "是否还能看到“13 个网站文件”的提示？",
-      "术语对照表等入口能否正常打开？"
-    ],
-    "next_step_advice": "上传 11.4 全部文件后，先访问 cache-reset.html，再返回首页检查版本号。",
-    "common_misjudgments": [
-      {
-        "wrong": "看到提示“13 个网站文件”就以为新文件没有上传。",
-        "right": "这通常说明浏览器还在运行旧版 app.js 缓存。",
-        "note": "11.4 已提供 cache-reset.html 专门清理旧缓存。"
-      }
-    ],
-    "learning_goals": [
-      "理解旧缓存可能导致网页显示旧版本。",
-      "知道如何用 cache-reset.html 清理缓存。"
-    ],
-    "common_mistakes": [
-      "不要只上传部分文件。",
-      "不要上传压缩包本身。",
-      "不要混用不同版本的 app.js、index.html 和数据文件。"
-    ],
-    "explanation": [
-      "GitHub Pages 加 Service Worker 后，旧文件可能被浏览器缓存。",
-      "11.4 改为 network-first 缓存策略，减少旧文件残留。",
-      "新增 cache-reset.html，可注销旧 Service Worker 并清理缓存。",
-      "新版报错提示已改为正确文件数量和具体错误信息。"
-    ],
-    "table": [
-      [
-        "文件",
-        "作用"
-      ],
-      [
-        "cache-reset.html",
-        "清理旧缓存并跳转新版"
-      ],
-      [
-        "sw.js",
-        "新版 network-first 缓存策略"
-      ],
-      [
-        "app.js",
-        "修复跳转与错误提示"
-      ]
-    ],
-    "examples": [
-      {
-        "pali": "cache-reset.html",
-        "cn": "清理旧缓存页面。",
-        "literal_cn": "访问 https://用户名.github.io/cache-reset.html",
-        "natural_cn": "清理缓存后再进入新版首页。",
-        "grammar_note": "这不是语法内容，是网站维护说明。"
-      }
-    ],
-    "cards": [
-      {
-        "q": "如果还显示“13 个网站文件”，通常说明什么？",
-        "a": "浏览器还在运行旧版缓存。"
-      }
-    ],
-    "exercises": [
+      },
       {
         "type": "choice",
-        "question": "旧版缓存导致页面一直报错时，优先访问哪个文件？",
+        "question": "如果想快速找到 participle，应优先使用什么功能？",
         "options": [
-          "cache-reset.html",
-          "grammar.json",
-          "icon-192.png",
+          "搜索框",
+          "随机练习",
+          "清缓存",
           "报告文件"
         ],
-        "answer": "cache-reset.html",
-        "explanation": "cache-reset.html 用于注销旧 Service Worker 并清理缓存。",
-        "id": "l115-e1",
-        "lesson_id": 115,
-        "lesson_title": "网站缓存与页面跳转修复说明",
+        "answer": "搜索框",
+        "explanation": "术语表内容较少但仍保留搜索框，方便快速定位。",
+        "id": "l114-e2",
+        "lesson_id": 114,
+        "lesson_title": "常见术语英汉巴对照表使用说明",
         "module": "句法与阅读",
         "difficulty": "入门"
       }
     ],
-    "quality_status": "11.4缓存与跳转修复新增",
-    "lesson_number": 115
-  },
-  {
-    "id": 116,
-    "title": "网站点击与返回修复说明",
-    "category": "学习说明",
-    "module": "句法与阅读",
-    "level": "入门",
-    "difficulty": "入门",
-    "content_level": "辅助理解",
-    "study_tier": "选学",
-    "summary": "11.5版使用全局捕获式点击导航修复首页按钮、返回首页和部分入口无反应问题。",
-    "minimal_mastery": [
-      "上传 11.5 全部文件后，先访问 cache-reset.html。",
-      "首页应显示 11.5 点击修复版。",
-      "返回首页按钮应能正常返回。"
-    ],
-    "prerequisites": [
-      "已经上传 11.5 全部文件。"
-    ],
-    "self_check_questions": [
-      "首页是否显示 11.5 点击修复版？",
-      "零基础路线能否打开？",
-      "返回首页按钮是否有效？"
-    ],
-    "next_step_advice": "上传后先打开 cache-reset.html，再测试所有首页按钮。",
-    "common_misjudgments": [
-      {
-        "wrong": "只更新 app.js 就能修复所有点击问题。",
-        "right": "需要同时上传 index.html、app.js、sw.js、cache-reset.html 和全部数据文件。",
-        "note": "版本混用会导致点击无反应。"
-      }
-    ],
-    "learning_goals": [
-      "知道点击异常通常来自旧缓存或版本混用。"
-    ],
-    "common_mistakes": [
-      "不要混用 11.1、11.2、11.4 和 11.5 文件。",
-      "不要忘记上传 cache-reset.html。"
-    ],
-    "explanation": [
-      "11.5 增加全局点击监听，在捕获阶段处理 data-action 和 back-home。",
-      "即使某些旧 onclick 绑定未完成，也能进入页面。",
-      "cache-reset.html 用于清理旧缓存。"
-    ],
-    "table": [
-      [
-        "修复项",
-        "说明"
-      ],
-      [
-        "data-action",
-        "全局捕获式路由"
-      ],
-      [
-        "back-home",
-        "全局返回首页"
-      ],
-      [
-        "cache-reset.html",
-        "清理旧缓存"
-      ]
-    ],
-    "examples": [
-      {
-        "pali": "Pāli Learning Lab · 11.5 点击修复版",
-        "cn": "首页应显示这个版本。",
-        "literal_cn": "显示 11.5 表示新版 index.html 和 app.js 已生效。",
-        "natural_cn": "若仍显示旧版，先清缓存。",
-        "grammar_note": "这是网站维护说明。"
-      }
-    ],
-    "cards": [
-      {
-        "q": "11.5 修复了什么？",
-        "a": "按钮点击、返回首页和旧缓存导致的无反应问题。"
-      }
-    ],
-    "exercises": [
-      {
-        "type": "choice",
-        "question": "上传 11.5 后应先访问哪个页面？",
-        "options": [
-          "cache-reset.html",
-          "旧版首页",
-          "报告文件",
-          "图片文件"
-        ],
-        "answer": "cache-reset.html",
-        "explanation": "cache-reset.html 用于清理旧 Service Worker 和缓存。",
-        "id": "l116-e1",
-        "lesson_id": 116,
-        "lesson_title": "网站点击与返回修复说明",
-        "module": "句法与阅读",
-        "difficulty": "入门"
-      }
-    ],
-    "quality_status": "11.5点击与返回修复新增",
-    "lesson_number": 116
+    "quality_status": "12.1术语全表显示优化",
+    "lesson_number": 114
   },
   {
     "id": 117,
@@ -27277,6 +27099,6 @@
       }
     ],
     "quality_status": "11.7阶段要求优化新增",
-    "lesson_number": 117
+    "lesson_number": 115
   }
 ]
