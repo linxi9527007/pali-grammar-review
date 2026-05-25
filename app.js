@@ -1,1524 +1,1414 @@
-let GRAMMAR = [];
-let currentModule = "";
-let currentLesson = null;
-let currentFilter = "全部";
-
-let cardItems = [];
-let cardIndex = 0;
-
-let exerciseItems = [];
-let exerciseIndex = 0;
-let selectedChoice = "";
-let exerciseStats = { total: 0, right: 0, wrong: 0 };
-
-const WRONG_KEY = "pali_grammar_wrong_exercises_v1";
-const STATUS_KEY = "pali_grammar_lesson_status_v2";
-const FEEDBACK_KEY = "pali_grammar_feedback_drafts_v1";
-const VERSION = "7.5";
-
-const MODULE_ORDER = [
-  "入门与发音",
-  "动词系统",
-  "名词变格",
-  "代词与形容词",
-  "分词与非限定动词",
-  "不变词与常用句式",
-  "句法与阅读",
-  "其他"
-];
-
-const PATHS = [
-  {
-    title: "第一阶段：先能读懂词形",
-    modules: ["入门与发音", "动词系统", "名词变格"],
-    note: "重点：发音、现在时、-a 名词、基础格位。"
-  },
-  {
-    title: "第二阶段：进入动词系统",
-    modules: ["动词系统", "分词与非限定动词"],
-    note: "重点：将来时、过去时、命令/祈愿、不定式、连续体。"
-  },
-  {
-    title: "第三阶段：读句子",
-    modules: ["代词与形容词", "不变词与常用句式", "句法与阅读"],
-    note: "重点：代词、ca/vā/eva/iti、关联结构、八格用法。"
-  },
-  {
-    title: "第四阶段：综合复习",
-    modules: ["全部模块"],
-    note: "混合练习、错题复习、卡片复习。"
-  }
-];
+let GRAMMAR=[],currentModule='',currentLesson=null,currentFilter='全部',lastView='homeView',cardItems=[],cardIndex=0,exerciseItems=[],exerciseIndex=0,selectedChoice='',exerciseStats={total:0,right:0,wrong:0};const WRONG_KEY='pali_grammar_wrong_exercises_v1',STATUS_KEY='pali_grammar_lesson_status_v2';const MODULE_ORDER=['入门与发音','动词系统','名词变格','代词与形容词','分词与非限定动词','不变词与常用句式','句法与阅读','其他'];const TRAINING_PRESETS=[['case','格位识别专项','集中练习主格、宾格、工具格、处格、属格等。'],['verb','动词变位专项','集中练习现在时、将来时、过去时、命令语气等。'],['nonfinite','非限定动词专项','集中练习不定式、连续体、分词。'],['particles','不变词与句型专项','集中练习 na、mā、ca、vā、eva、iti 等。'],['reading','阅读分析专项','集中练习短句中的主语、宾语、动词和格位。'],['input','输入生成专项','只练需要手动输入答案的题目。']];function $(id){return document.getElementById(id)}function show(id){const el=$(id); if(el) el.classList.remove('hidden')}function hide(id){const el=$(id); if(el) el.classList.add('hidden')}function switchView(id){document.querySelectorAll('.view').forEach(v=>v.classList.add('hidden'));show(id);window.scrollTo({top:0,behavior:'smooth'})}function norm(t){return String(t||'').trim().replace(/s+/g,' ').toLowerCase()}function strip(t){const m={ā:'a',ī:'i',ū:'u',ṅ:'n',ñ:'n',ṭ:'t',ḍ:'d',ṇ:'n',ḷ:'l',ṃ:'m',ṁ:'m'};return String(t||'').replace(/[āīūṅñṭḍṇḷṃṁ]/g,ch=>m[ch]||ch)}function ok(u,e){u=norm(u);e=norm(e);if(u===e)return true;let lu=strip(u),le=strip(e);if(lu===le)return true;return e.split(/s*\/s*|；|;|，|,|、/).some(x=>u===norm(x)||lu===strip(norm(x)))}function getW(){try{return JSON.parse(localStorage.getItem(WRONG_KEY))||{}}catch{return {}}}function saveW(r){localStorage.setItem(WRONG_KEY,JSON.stringify(r));stats()}function getS(){try{return JSON.parse(localStorage.getItem(STATUS_KEY))||{}}catch{return {}}}function saveS(s){localStorage.setItem(STATUS_KEY,JSON.stringify(s));stats()}function lstat(id){return getS()[id]||'未学'}function setLStat(id,s){let x=getS();x[id]=s;saveS(x);statusBtns();renderModules();if(currentModule)renderLessonList(currentModule)}function scls(s){return s==='已掌握'?'mastered':s==='学习中'?'learning':s==='需复习'?'review':''}function lessons(m){return m==='全部模块'?GRAMMAR:GRAMMAR.filter(x=>x.module===m)}function stats(){let total=GRAMMAR.reduce((a,l)=>a+(l.exercises||[]).length,0),s=getS(),master=GRAMMAR.filter(l=>s[l.id]==='已掌握').length;$('totalLessons').textContent=GRAMMAR.length;$('totalExercises').textContent=total;$('masteredCount').textContent=master;$('wrongCount').textContent=Object.keys(getW()).length}function progress(ls){let m=ls.filter(l=>lstat(l.id)==='已掌握').length,p=ls.length?Math.round(m/ls.length*100):0;return `<div class="progress-wrap"><div class="progress-bar" style="width:${p}%"></div></div><p class="muted">掌握进度：${m}/${ls.length}（${p}%）</p>`}function cardHTML(l){let s=lstat(l.id),n=(l.exercises||[]).length;return `<h3>${l.lesson_number||l.id}. ${l.title}</h3><div class="lesson-badges"><span class="badge ${scls(s)}">${s}</span><span class="badge">${l.category||''}</span><span class="badge">${n}题</span></div><p>${l.summary||''}</p>`}function renderModules(){let grid=$('moduleGrid');grid.innerHTML='';MODULE_ORDER.forEach(m=>{let ls=lessons(m);if(!ls.length)return;let d=document.createElement('div');d.className='module-card';d.innerHTML=`<h3>${m}</h3><p class="muted">${ls.length} 个语法点</p>${progress(ls)}`;d.onclick=()=>openModule(m);grid.appendChild(d)})}function renderLessonList(m){currentModule=m;let all=lessons(m),ls=all.filter(l=>currentFilter==='全部'||lstat(l.id)===currentFilter);$('moduleTitle').textContent=m;$('moduleSubtitle').textContent=`${all.length} 个语法点`;$('lessonList').innerHTML=ls.length?'':'<p class="muted">当前筛选下没有语法点。</p>';ls.forEach(l=>{let d=document.createElement('div');d.className='lesson-item';d.innerHTML=cardHTML(l);d.onclick=()=>openLesson(l.id);$('lessonList').appendChild(d)})}function openModule(m){lastView='lessonListView';currentFilter='全部';document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter==='全部'));renderLessonList(m);switchView('lessonListView')}function statusBtns(){if(!currentLesson)return;let s=lstat(currentLesson.id);document.querySelectorAll('.status-btn').forEach(b=>b.classList.toggle('active',b.dataset.status===s))}function openLesson(id){currentLesson=GRAMMAR.find(x=>x.id===id);if(!currentLesson)return;$('lessonModule').textContent=currentLesson.module||'';$('lessonTitle').textContent=currentLesson.title;$('lessonMeta').textContent=`${currentLesson.category||''}｜${currentLesson.difficulty||currentLesson.level||''}`;$('lessonSummary').textContent=currentLesson.summary||'';document.querySelectorAll('.high-risk-box,.content-tier-box,.minimal-mastery-box,.misjudge-box').forEach(x=>x.remove());let polish=contentPolishHTML(currentLesson)+linkedConfusionHTML(currentLesson)+linkedPatternHTML(currentLesson)+linkedBuddhistReadingHTML(currentLesson)+linkedBuddhistBackgroundHTML(currentLesson)+linkedAcademicTrainingHTML(currentLesson)+linkedTerminologyHTML(currentLesson)+lessonStudyGuideHTML(currentLesson);if(currentLesson.high_risk_note){polish+=`<div class="high-risk-box"><strong>进阶/需复核提示：</strong>${currentLesson.high_risk_note}<br><button class="feedback-mini-btn" onclick="copyCurrentLessonFeedback()">反馈本课问题</button></div>`}$('lessonSummary').insertAdjacentHTML('afterend',polish);let e=$('lessonExplanation');e.innerHTML='';(currentLesson.explanation||[]).forEach(x=>{let li=document.createElement('li');li.textContent=x;e.appendChild(li)});let mb=$('mistakeBlock'),ml=$('lessonMistakes');if(ml){ml.innerHTML='';if(currentLesson.common_mistakes&&currentLesson.common_mistakes.length){currentLesson.common_mistakes.forEach(x=>{let li=document.createElement('li');li.textContent=x;ml.appendChild(li)});show('mistakeBlock')}else hide('mistakeBlock')}let t=$('lessonTable');t.innerHTML='';(currentLesson.table||[]).forEach(r=>{let tr=document.createElement('tr');r.forEach(c=>{let td=document.createElement('td');td.textContent=c;tr.appendChild(td)});t.appendChild(tr)});let ex=$('lessonExamples');ex.innerHTML='';(currentLesson.examples||[]).forEach(a=>{let d=document.createElement('div');d.className='example';d.innerHTML=exampleHTML(a);ex.appendChild(d)});statusBtns();switchView('lessonView')}function allEx(m){return lessons(m).flatMap(l=>(l.exercises||[]).map(ex=>({...ex,lesson_id:l.id,lesson_title:l.title,module:l.module,category:l.category})))}function shuffle(a){return [...a].sort(()=>Math.random()-.5)}function startCards(cs){cardItems=cs||[];cardIndex=0;if(!cardItems.length)return alert('当前没有卡片。');show('cardPanel');hide('exercisePanel');renderCard()}function renderCard(){let c=cardItems[cardIndex];$('cardProgress').textContent=`卡片 ${cardIndex+1}/${cardItems.length}`;$('cardQuestion').textContent=c.q;$('cardAnswer').textContent=c.a;hide('cardAnswer');show('cardBeforeButtons');hide('cardAfterButtons')}function nextCard(){if(++cardIndex>=cardItems.length){alert('卡片复习完成。');hide('cardPanel')}else renderCard()}function startExercises(items,title='练习'){exerciseItems=items||[];exerciseIndex=0;selectedChoice='';exerciseStats={total:0,right:0,wrong:0};if(!exerciseItems.length)return alert('当前没有练习题。');show('exercisePanel');hide('cardPanel');$('exerciseModeTitle').textContent=title;renderExercise()}function renderExercise(){let ex=exerciseItems[exerciseIndex];selectedChoice='';$('exerciseProgress').textContent=`题目 ${exerciseIndex+1}/${exerciseItems.length}｜正确 ${exerciseStats.right}｜错误 ${exerciseStats.wrong}`;$('exerciseLessonLabel').textContent=`${ex.module||''}｜${ex.lesson_title||''}`;$('exerciseQuestion').textContent=ex.question;$('exerciseFeedback').innerHTML='';$('exerciseFeedback').className='answer-box hidden';hide('nextExerciseBtn');show('submitExerciseBtn');let opts=$('exerciseOptions'),inp=$('exerciseInput');opts.innerHTML='';inp.value='';if(ex.type==='choice'){hide('exerciseInput');hide('paliKeyboard');(ex.options||[]).forEach(o=>{let b=document.createElement('button');b.className='option-btn';b.textContent=o;b.onclick=()=>{selectedChoice=o;document.querySelectorAll('.option-btn').forEach(x=>x.classList.remove('selected'));b.classList.add('selected')};opts.appendChild(b)})}else{show('exerciseInput');show('paliKeyboard')}}function submitExercise(){let ex=exerciseItems[exerciseIndex],ua='';if(ex.type==='choice'){ua=selectedChoice;if(!ua)return alert('请先选择一个答案。')}else{ua=$('exerciseInput').value;if(!ua.trim())return alert('请先输入答案。')}let good=ok(ua,ex.answer);exerciseStats.total++;let w=getW();if(good){exerciseStats.right++;delete w[ex.id]}else{exerciseStats.wrong++;w[ex.id]={...ex,wrong_at:new Date().toISOString()}}saveW(w);$('exerciseFeedback').innerHTML=`<strong>${good?'回答正确 ✅':'回答错误 ❌'}</strong><p>你的答案：${ua}</p><p>标准答案：${ex.answer}</p><p>${ex.explanation||''}</p>`;$('exerciseFeedback').classList.remove('hidden');if(!good)$('exerciseFeedback').classList.add('incorrect');show('nextExerciseBtn');hide('submitExerciseBtn')}function nextEx(){if(++exerciseIndex>=exerciseItems.length){alert(`本轮练习完成：正确 ${exerciseStats.right}，错误 ${exerciseStats.wrong}`);hide('exercisePanel');renderWrong();stats()}else renderExercise()}function renderSelect(){let s=$('exerciseModuleSelect');s.innerHTML='<option value="全部模块">全部模块</option>';MODULE_ORDER.forEach(m=>{if(GRAMMAR.some(x=>x.module===m)){let o=document.createElement('option');o.value=m;o.textContent=m;s.appendChild(o)}})}function renderWrong(){let items=Object.values(getW()),box=$('wrongList');box.innerHTML=items.length?'':'<p class="muted">目前没有错题。</p>';items.forEach(it=>{let d=document.createElement('div');d.className='wrong-item';d.innerHTML=`<strong>${it.question}</strong><p class="muted">${it.module||''}｜${it.lesson_title||''}</p><p>答案：${it.answer}</p>`;box.appendChild(d)})}function search(q){let box=$('searchResults');q=String(q||'').trim().toLowerCase();box.innerHTML=q?'':'<p class="muted">输入关键词后显示搜索结果。</p>';if(!q)return;let res=GRAMMAR.filter(l=>[l.title,l.category,l.module,l.summary,...(l.explanation||[]),...(l.examples||[]).flatMap(e=>[e.pali,e.cn,e.note]),...(l.cards||[]).flatMap(c=>[c.q,c.a])].join(' ').toLowerCase().includes(q));if(!res.length){box.innerHTML='<p class="muted">没有找到相关语法点。</p>';return}res.forEach(l=>{let d=document.createElement('div');d.className='lesson-item';d.innerHTML=cardHTML(l);d.onclick=()=>{lastView='searchView';openLesson(l.id)};box.appendChild(d)})}function train(key){let all=GRAMMAR.flatMap(l=>(l.exercises||[]).map(ex=>({...ex,lesson_id:l.id,lesson_title:l.title,module:l.module,category:l.category})));let f=all;if(key==='input')f=all.filter(e=>e.type==='input');else if(key==='reading')f=all.filter(e=>e.lesson_id===75||e.category==='阅读训练');else if(key==='case')f=all.filter(e=>/格|主格|宾格|工具格|处格|属格|与格|从格|呼格/.test(e.question+e.explanation));else if(key==='verb')f=all.filter(e=>/动词|现在时|将来时|过去|命令|祈愿|条件式|使役|被动|人称|词尾/.test(e.question+e.explanation));else if(key==='nonfinite')f=all.filter(e=>/不定式|连续体|分词|gantvā|gantuṃ|katvā|kātuṃ|sutvā/.test(e.question+e.explanation));else if(key==='particles')f=all.filter(e=>/不变词|na|mā|ca|vā|eva|iti|ti|关联|引语|否定|并列|选择/.test(e.question+e.explanation));return f}function renderTraining(){let grid=$('trainingGrid');grid.innerHTML='';TRAINING_PRESETS.forEach(p=>{let count=train(p[0]).length,d=document.createElement('div');d.className='training-card';d.innerHTML=`<h3>${p[1]}</h3><p class="muted">${p[2]}</p><p class="muted">${count} 道题</p><button class="primary">开始专项训练</button>`;d.onclick=()=>startExercises(shuffle(train(p[0])).slice(0,20),p[1]);grid.appendChild(d)})}
 
 
-const TRAINING_PRESETS = [
-  {
-    key: "case",
-    title: "格位识别专项",
-    desc: "集中练习主格、宾格、工具格、处格、属格等。",
-  },
-  {
-    key: "verb",
-    title: "动词变位专项",
-    desc: "集中练习现在时、将来时、过去时、命令语气、祈愿语气等。",
-  },
-  {
-    key: "nonfinite",
-    title: "非限定动词专项",
-    desc: "集中练习不定式、连续体、现在分词、过去分词。",
-  },
-  {
-    key: "particles",
-    title: "不变词与句型专项",
-    desc: "集中练习 na、mā、ca、vā、eva、iti、yo...so... 等。",
-  },
-  {
-    key: "reading",
-    title: "阅读分析专项",
-    desc: "集中练习短句中的主语、宾语、动词、格位和结构。",
-  },
-  {
-    key: "input",
-    title: "输入生成专项",
-    desc: "只练需要手动输入答案的题目，适合背词形。",
-  }
-];
 
-function exercisesForTraining(key) {
-  const all = GRAMMAR.flatMap(lesson => (lesson.exercises || []).map(ex => ({
-    ...ex,
-    lesson_id: lesson.id,
-    lesson_title: lesson.title,
-    module: lesson.module,
-    category: lesson.category,
-    difficulty: lesson.difficulty || lesson.level
-  })));
+const SENTENCE_STATUS_KEY="pali_sentence_analysis_status_v1";
 
-  if (key === "input") {
-    return all.filter(ex => ex.type === "input");
-  }
-
-  if (key === "case") {
-    return all.filter(ex => {
-      const text = `${ex.question} ${ex.explanation || ""} ${ex.lesson_title || ""} ${ex.category || ""}`;
-      return /格|主格|宾格|工具格|处格|属格|与格|从格|呼格|形式/.test(text)
-        && !/动词|不定式|连续体/.test(text);
-    });
-  }
-
-  if (key === "verb") {
-    return all.filter(ex => {
-      const text = `${ex.question} ${ex.explanation || ""} ${ex.lesson_title || ""} ${ex.category || ""}`;
-      return /动词|现在时|将来时|过去|命令|祈愿|条件式|使役|被动|人称|词尾/.test(text);
-    });
-  }
-
-  if (key === "nonfinite") {
-    return all.filter(ex => {
-      const text = `${ex.question} ${ex.explanation || ""} ${ex.lesson_title || ""} ${ex.category || ""}`;
-      return /不定式|连续体|分词|gantvā|gantuṃ|katvā|kātuṃ|sutvā|desetuṃ|bhavituṃ/.test(text);
-    });
-  }
-
-  if (key === "particles") {
-    return all.filter(ex => {
-      const text = `${ex.question} ${ex.explanation || ""} ${ex.lesson_title || ""} ${ex.category || ""}`;
-      return /不变词|na|mā|ca|vā|eva|yeva|iti|ti|kho|pana|hi|yo|so|yadā|tadā|yattha|tattha|yathā|tathā|yāva|tāva|关联|引语|否定|并列|选择/.test(text);
-    });
-  }
-
-  if (key === "reading") {
-    return all.filter(ex => ex.lesson_id === 75 || ex.category === "阅读训练");
-  }
-
-  return all;
+function getSentenceStatuses(){
+  try{return JSON.parse(localStorage.getItem(SENTENCE_STATUS_KEY))||{}}catch{return {}}
 }
-
-function renderTrainingPresets() {
-  const grid = $("trainingGrid");
-  if (!grid) return;
-  grid.innerHTML = "";
-
-  TRAINING_PRESETS.forEach(preset => {
-    const count = exercisesForTraining(preset.key).length;
-    const div = document.createElement("div");
-    div.className = "training-card";
-    div.innerHTML = `
-      <h3>${preset.title}</h3>
-      <p class="muted">${preset.desc}</p>
-      <p class="muted">${count} 道可练习题</p>
-      <button class="primary">开始专项训练</button>
-    `;
-    div.addEventListener("click", () => {
-      const items = shuffle(exercisesForTraining(preset.key)).slice(0, 20);
-      startExercises(items, preset.title);
-    });
-    grid.appendChild(div);
-  });
+function saveSentenceStatuses(statuses){
+  localStorage.setItem(SENTENCE_STATUS_KEY, JSON.stringify(statuses));
 }
-
-function $(id) {
-  return document.getElementById(id);
+function sentenceStatus(id){
+  return getSentenceStatuses()[id] || "未练";
 }
-
-function show(id) {
-  $(id).classList.remove("hidden");
+function setSentenceStatus(id,status){
+  const statuses=getSentenceStatuses();
+  statuses[id]=status;
+  saveSentenceStatuses(statuses);
+  renderSentenceSelect(true);
+  renderSentenceDashboard();
+  renderSentenceCard("question");
 }
-
-function hide(id) {
-  $(id).classList.add("hidden");
+function sentenceLevels(){
+  return [...new Set((window.SENTENCE_ANALYSIS_DATA||[]).map(x=>x.level))];
 }
-
-function normalizeAnswer(text) {
-  return String(text || "")
-    .trim()
-    .replace(/\s+/g, " ")
-    .toLowerCase();
+function sentenceTags(){
+  const tags=new Set(["全部"]);
+  (window.SENTENCE_ANALYSIS_DATA||[]).forEach(x=>(x.tags||[]).forEach(t=>tags.add(t)));
+  return [...tags];
 }
-
-function stripPaliDiacritics(text) {
-  const map = {
-    "ā": "a", "ī": "i", "ū": "u",
-    "ṅ": "n", "ñ": "n", "ṭ": "t", "ḍ": "d",
-    "ṇ": "n", "ḷ": "l", "ṃ": "m", "ṁ": "m",
-    "Ā": "a", "Ī": "i", "Ū": "u",
-    "Ṅ": "n", "Ñ": "n", "Ṭ": "t", "Ḍ": "d",
-    "Ṇ": "n", "Ḷ": "l", "Ṃ": "m", "Ṁ": "m"
-  };
-  return String(text || "").replace(/[āīūṅñṭḍṇḷṃṁĀĪŪṄÑṬḌṆḶṂṀ]/g, ch => map[ch] || ch);
+function sentenceSources(){
+  return ["全部", ...new Set((window.SENTENCE_ANALYSIS_DATA||[]).map(x=>x.source_type||"教学句"))];
 }
-
-function answerAccepted(userAnswer, expectedAnswer) {
-  const user = normalizeAnswer(userAnswer);
-  const expected = normalizeAnswer(expectedAnswer);
-
-  if (user === expected) return true;
-
-  const looseUser = stripPaliDiacritics(user);
-  const looseExpected = stripPaliDiacritics(expected);
-
-  if (looseUser === looseExpected) return true;
-
-  const alternatives = expected
-    .split(/\s*\/\s*|；|;|，|,|、/)
-    .map(item => item.trim())
-    .filter(Boolean);
-
-  return alternatives.some(item => {
-    const normalized = normalizeAnswer(item);
-    return user === normalized || looseUser === stripPaliDiacritics(normalized);
-  });
+function sentencePriorities(){
+  return ["全部", ...new Set((window.SENTENCE_ANALYSIS_DATA||[]).map(x=>x.practice_priority||"综合挑战"))];
 }
-
-function getWrongRecords() {
-  try {
-    return JSON.parse(localStorage.getItem(WRONG_KEY)) || {};
-  } catch {
-    return {};
-  }
+function sentenceStats(){
+  const all=window.SENTENCE_ANALYSIS_DATA||[];
+  const statuses=getSentenceStatuses();
+  const mastered=all.filter(x=>statuses[x.id]==="已掌握").length;
+  const review=all.filter(x=>statuses[x.id]==="需复习").length;
+  const unpracticed=all.length-mastered-review;
+  const current=filteredSentences(false).length;
+  return {total:all.length, mastered, review, unpracticed, current};
 }
-
-function saveWrongRecords(records) {
-  localStorage.setItem(WRONG_KEY, JSON.stringify(records));
-  updateStats();
-}
-
-function addWrong(exercise) {
-  const records = getWrongRecords();
-  records[exercise.id] = {
-    ...exercise,
-    wrong_at: new Date().toISOString()
-  };
-  saveWrongRecords(records);
-}
-
-function removeWrong(exerciseId) {
-  const records = getWrongRecords();
-  delete records[exerciseId];
-  saveWrongRecords(records);
-}
-
-function getStatuses() {
-  try {
-    return JSON.parse(localStorage.getItem(STATUS_KEY)) || {};
-  } catch {
-    return {};
-  }
-}
-
-function saveStatuses(statuses) {
-  localStorage.setItem(STATUS_KEY, JSON.stringify(statuses));
-  updateStats();
-}
-
-function getLessonStatus(id) {
-  return getStatuses()[id] || "未学";
-}
-
-function setLessonStatus(id, status) {
-  const statuses = getStatuses();
-  statuses[id] = status;
-  saveStatuses(statuses);
-  updateStatusButtons();
-  renderModules();
-  renderPath();
-  renderDailyBox();
-  if (currentModule) renderLessonList(currentModule);
-  renderSearchResults($("searchInput")?.value || "");
-}
-
-function statusClass(status) {
-  if (status === "已掌握") return "mastered";
-  if (status === "学习中") return "learning";
-  if (status === "需复习") return "review";
-  return "new";
-}
-
-function updateStats() {
-  const totalExercises = GRAMMAR.reduce((sum, lesson) => sum + (lesson.exercises || []).length, 0);
-  const statuses = getStatuses();
-  const mastered = GRAMMAR.filter(lesson => statuses[lesson.id] === "已掌握").length;
-
-  $("totalLessons").textContent = GRAMMAR.length;
-  $("totalExercises").textContent = totalExercises;
-  $("masteredCount").textContent = mastered;
-  $("wrongCount").textContent = Object.keys(getWrongRecords()).length;
-}
-
-function lessonsForModule(moduleName) {
-  if (moduleName === "全部模块") return GRAMMAR;
-  return GRAMMAR.filter(item => item.module === moduleName);
-}
-
-function groupByModule() {
-  const grouped = {};
-  for (const moduleName of MODULE_ORDER) grouped[moduleName] = [];
-  GRAMMAR.forEach(lesson => {
-    const moduleName = lesson.module || "其他";
-    if (!grouped[moduleName]) grouped[moduleName] = [];
-    grouped[moduleName].push(lesson);
-  });
-  return grouped;
-}
-
-function progressHTML(lessons) {
-  const mastered = lessons.filter(lesson => getLessonStatus(lesson.id) === "已掌握").length;
-  const percent = lessons.length ? Math.round((mastered / lessons.length) * 100) : 0;
-  return `
-    <div class="progress-wrap">
-      <div class="progress-bar" style="width:${percent}%"></div>
-    </div>
-    <p class="muted">掌握进度：${mastered}/${lessons.length}（${percent}%）</p>
+function renderSentenceDashboard(){
+  const box=$("sentenceDashboard");
+  if(!box)return;
+  const s=sentenceStats();
+  box.innerHTML=`
+    <div class="sentence-stat-card"><strong>${s.total}</strong><span>句子总数</span></div>
+    <div class="sentence-stat-card"><strong>${s.mastered}</strong><span>已掌握</span></div>
+    <div class="sentence-stat-card"><strong>${s.review}</strong><span>需复习</span></div>
+    <div class="sentence-stat-card"><strong>${s.current}</strong><span>当前筛选</span></div>
   `;
 }
-
-function lessonCardHTML(lesson) {
-  const status = getLessonStatus(lesson.id);
-  const exercises = (lesson.exercises || []).length;
-  return `
-    <h3>${lesson.lesson_number || lesson.id}. ${lesson.title}</h3>
-    <div class="lesson-badges">
-      <span class="badge ${statusClass(status)}">${status}</span>
-      <span class="badge">${lesson.category || ""}</span>
-      <span class="badge">${lesson.difficulty || lesson.level || ""}</span>
-      <span class="badge">${exercises} 题</span>
-    </div>
-    <p>${lesson.summary || ""}</p>
-  `;
-}
-
-function renderPath() {
-  const grid = $("pathGrid");
-  grid.innerHTML = "";
-
-  PATHS.forEach(path => {
-    const lessons = path.modules.includes("全部模块")
-      ? GRAMMAR
-      : path.modules.flatMap(m => lessonsForModule(m));
-    const div = document.createElement("div");
-    div.className = "path-card";
-    div.innerHTML = `
-      <h3>${path.title}</h3>
-      <p class="muted">${path.note}</p>
-      ${progressHTML(lessons)}
-    `;
-    div.addEventListener("click", () => {
-      if (path.modules.length === 1 && path.modules[0] !== "全部模块") {
-        switchView("modulesView");
-        openModule(path.modules[0]);
-      } else {
-        switchView("exerciseCenterView");
-        $("exerciseModuleSelect").value = path.modules[0] || "全部模块";
-      }
-    });
-    grid.appendChild(div);
-  });
-}
-
-function renderDailyBox() {
-  const statuses = getStatuses();
-  const reviewLessons = GRAMMAR.filter(l => statuses[l.id] === "需复习");
-  const learningLessons = GRAMMAR.filter(l => statuses[l.id] === "学习中");
-  const wrongCount = Object.keys(getWrongRecords()).length;
-
-  $("dailyBox").innerHTML = `
-    <div class="daily-item"><strong>${reviewLessons.length}</strong><span>需复习语法点</span></div>
-    <div class="daily-item"><strong>${learningLessons.length}</strong><span>学习中语法点</span></div>
-    <div class="daily-item"><strong>${wrongCount}</strong><span>待复习错题</span></div>
-  `;
-}
-
-function renderModules() {
-  const grid = $("moduleGrid");
-  grid.innerHTML = "";
-
-  const grouped = groupByModule();
-
-  MODULE_ORDER.forEach(moduleName => {
-    const lessons = grouped[moduleName] || [];
-    if (!lessons.length) return;
-
-    const exercises = lessons.reduce((sum, lesson) => sum + (lesson.exercises || []).length, 0);
-    const div = document.createElement("div");
-    div.className = "module-card";
-    div.innerHTML = `
-      <h3>${moduleName}</h3>
-      <p class="muted">${lessons.length} 个语法点｜${exercises} 道练习</p>
-      ${progressHTML(lessons)}
-    `;
-    div.addEventListener("click", () => openModule(moduleName));
-    grid.appendChild(div);
-  });
-}
-
-function renderLessonList(moduleName) {
-  currentModule = moduleName;
-  const lessons = lessonsForModule(moduleName).filter(lesson => {
-    if (currentFilter === "全部") return true;
-    return getLessonStatus(lesson.id) === currentFilter;
-  });
-
-  $("moduleTitle").textContent = moduleName;
-  $("moduleSubtitle").textContent = `${lessonsForModule(moduleName).length} 个语法点`;
-  $("lessonList").innerHTML = "";
-
-  if (!lessons.length) {
-    $("lessonList").innerHTML = `<p class="muted">当前筛选下没有语法点。</p>`;
-    return;
+function renderSentenceLevels(){
+  const levelSel=$("sentenceLevelSelect"), tagSel=$("sentenceTagSelect"), sourceSel=$("sentenceSourceSelect"), prioritySel=$("sentencePrioritySelect");
+  if(!levelSel)return;
+  levelSel.innerHTML="";
+  sentenceLevels().forEach(level=>{let o=document.createElement("option");o.value=level;o.textContent=level;levelSel.appendChild(o)});
+  if(tagSel){
+    tagSel.innerHTML="";
+    sentenceTags().forEach(tag=>{let o=document.createElement("option");o.value=tag;o.textContent=tag;tagSel.appendChild(o)});
   }
-
-  lessons.forEach(lesson => {
-    const div = document.createElement("div");
-    div.className = "lesson-item";
-    div.innerHTML = lessonCardHTML(lesson);
-    div.addEventListener("click", () => openLesson(lesson.id));
-    $("lessonList").appendChild(div);
-  });
-}
-
-function openModule(moduleName) {
-  currentFilter = "全部";
-  document.querySelectorAll(".filter-btn").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.filter === "全部");
-  });
-  renderLessonList(moduleName);
-  show("lessonListPanel");
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-function updateStatusButtons() {
-  if (!currentLesson) return;
-  const status = getLessonStatus(currentLesson.id);
-  document.querySelectorAll(".status-btn").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.status === status);
-  });
-}
-
-function openLesson(id) {
-  currentLesson = GRAMMAR.find(item => item.id === id);
-  if (!currentLesson) return;
-
-  $("lessonModule").textContent = currentLesson.module || "";
-  $("lessonTitle").textContent = currentLesson.title;
-  $("lessonMeta").textContent = `${currentLesson.category || ""}｜${currentLesson.difficulty || currentLesson.level || ""}`;
-
-  $("sourceStatus").textContent = currentLesson.source_status || currentLesson.status || "";
-  const sources = currentLesson.verified_sources || [];
-  $("sourceList").innerHTML = sources.length
-    ? `<ul>${sources.map(s => `<li>${s}</li>`).join("")}</ul>`
-    : "";
-
-  $("lessonSummary").textContent = currentLesson.summary || "";
-
-  const exp = $("lessonExplanation");
-  exp.innerHTML = "";
-  (currentLesson.explanation || []).forEach(item => {
-    const li = document.createElement("li");
-    li.textContent = item;
-    exp.appendChild(li);
-  });
-
-  const table = $("lessonTable");
-  table.innerHTML = "";
-  (currentLesson.table || []).forEach(row => {
-    const tr = document.createElement("tr");
-    row.forEach(cell => {
-      const td = document.createElement("td");
-      td.textContent = cell;
-      tr.appendChild(td);
-    });
-    table.appendChild(tr);
-  });
-
-  const examples = $("lessonExamples");
-  examples.innerHTML = "";
-  (currentLesson.examples || []).forEach(ex => {
-    const div = document.createElement("div");
-    div.className = "example";
-    div.innerHTML = `
-      <div class="pali">${ex.pali || ""}</div>
-      <div>${ex.cn || ""}</div>
-      <div class="muted">${ex.note || ""}</div>
-    `;
-    examples.appendChild(div);
-  });
-
-  updateStatusButtons();
-  show("lessonPanel");
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-function closeLesson() {
-  hide("lessonPanel");
-}
-
-function startCards(cards) {
-  cardItems = cards || [];
-  cardIndex = 0;
-  if (!cardItems.length) {
-    alert("当前没有卡片。");
-    return;
+  if(sourceSel){
+    sourceSel.innerHTML="";
+    sentenceSources().forEach(source=>{let o=document.createElement("option");o.value=source;o.textContent=source;sourceSel.appendChild(o)});
   }
-  show("cardPanel");
-  hide("exercisePanel");
-  renderCard();
-}
-
-function renderCard() {
-  const card = cardItems[cardIndex];
-  $("cardProgress").textContent = `卡片 ${cardIndex + 1}/${cardItems.length}`;
-  $("cardQuestion").textContent = card.q;
-  $("cardAnswer").textContent = card.a;
-  hide("cardAnswer");
-  show("cardBeforeButtons");
-  hide("cardAfterButtons");
-}
-
-function nextCard() {
-  cardIndex += 1;
-  if (cardIndex >= cardItems.length) {
-    alert("卡片复习完成。");
-    hide("cardPanel");
-    return;
+  if(prioritySel){
+    prioritySel.innerHTML="";
+    sentencePriorities().forEach(p=>{let o=document.createElement("option");o.value=p;o.textContent=p;prioritySel.appendChild(o)});
   }
-  renderCard();
+  renderSentenceSelect();
+  renderSentenceDashboard();
 }
-
-function allExercisesForModule(moduleName) {
-  return lessonsForModule(moduleName).flatMap(lesson => (lesson.exercises || []).map(ex => ({
-    ...ex,
-    lesson_id: lesson.id,
-    lesson_title: lesson.title,
-    module: lesson.module,
-    difficulty: lesson.difficulty || lesson.level
-  })));
-}
-
-function shuffle(items) {
-  return [...items].sort(() => Math.random() - 0.5);
-}
-
-function startExercises(items, title = "练习") {
-  exerciseItems = items || [];
-  exerciseIndex = 0;
-  selectedChoice = "";
-  exerciseStats = { total: 0, right: 0, wrong: 0 };
-
-  if (!exerciseItems.length) {
-    alert("当前没有练习题。");
-    return;
+function filteredSentences(applySort=true){
+  const level=$("sentenceLevelSelect")?.value;
+  const tag=$("sentenceTagSelect")?.value||"全部";
+  const source=$("sentenceSourceSelect")?.value||"全部";
+  const priority=$("sentencePrioritySelect")?.value||"全部";
+  const status=$("sentenceStatusSelect")?.value||"全部";
+  let items=(window.SENTENCE_ANALYSIS_DATA||[]).filter(x=>{
+    const okLevel=!level||x.level===level;
+    const okTag=tag==="全部"||(x.tags||[]).includes(tag);
+    const okSource=source==="全部"||(x.source_type||"教学句")===source;
+    const okPriority=priority==="全部"||(x.practice_priority||"综合挑战")===priority;
+    const okStatus=status==="全部"||sentenceStatus(x.id)===status;
+    return okLevel&&okTag&&okSource&&okPriority&&okStatus;
+  });
+  if(applySort){
+    items=items.sort((a,b)=>(a.priority_rank||99)-(b.priority_rank||99)||(a.recommended_order||999)-(b.recommended_order||999));
   }
-
-  $("exerciseModeTitle").textContent = title;
-  show("exercisePanel");
-  hide("cardPanel");
-  renderExercise();
+  return items;
 }
-
-function renderExercise() {
-  const ex = exerciseItems[exerciseIndex];
-  selectedChoice = "";
-
-  $("exerciseProgress").textContent = `题目 ${exerciseIndex + 1}/${exerciseItems.length}｜正确 ${exerciseStats.right}｜错误 ${exerciseStats.wrong}`;
-  $("exerciseLessonLabel").textContent = `${ex.module || ""}｜${ex.lesson_title || ""}`;
-  $("exerciseQuestion").textContent = ex.question;
-  $("exerciseFeedback").innerHTML = "";
-  $("exerciseFeedback").className = "answer-box hidden";
-  hide("exerciseFeedback");
-  hide("nextExerciseBtn");
-  show("submitExerciseBtn");
-  $("submitExerciseBtn").disabled = false;
-
-  const optionsDiv = $("exerciseOptions");
-  const input = $("exerciseInput");
-  optionsDiv.innerHTML = "";
-  input.value = "";
-
-  if (ex.type === "choice") {
-    hide("exerciseInput");
-    hide("paliKeyboard");
-    (ex.options || []).forEach(option => {
-      const btn = document.createElement("button");
-      btn.className = "option-btn";
-      btn.textContent = option;
-      btn.addEventListener("click", () => {
-        selectedChoice = option;
-        document.querySelectorAll(".option-btn").forEach(b => b.classList.remove("selected"));
-        btn.classList.add("selected");
-      });
-      optionsDiv.appendChild(btn);
-    });
-  } else {
-    show("exerciseInput");
-    show("paliKeyboard");
-  }
-}
-
-function submitExercise() {
-  const ex = exerciseItems[exerciseIndex];
-  let userAnswer = "";
-
-  if (ex.type === "choice") {
-    userAnswer = selectedChoice;
-    if (!userAnswer) {
-      alert("请先选择一个答案。");
-      return;
-    }
-  } else {
-    userAnswer = $("exerciseInput").value;
-    if (!userAnswer.trim()) {
-      alert("请先输入答案。");
-      return;
+function renderSentenceSelect(keepCurrent=false){
+  const sentSel=$("sentenceSelect"); if(!sentSel)return;
+  const oldValue=sentSel.value;
+  const items=filteredSentences(); sentSel.innerHTML="";
+  items.forEach(item=>{let o=document.createElement("option");o.value=item.id;o.textContent=`${item.sentence}（${sentenceStatus(item.id)}）`;sentSel.appendChild(o)});
+  if(keepCurrent && oldValue){
+    for(let i=0;i<sentSel.options.length;i++){
+      if(sentSel.options[i].value===oldValue){sentSel.selectedIndex=i;break;}
     }
   }
-
-  const correct = answerAccepted(userAnswer, ex.answer);
-  exerciseStats.total += 1;
-
-  if (correct) {
-    exerciseStats.right += 1;
-    removeWrong(ex.id);
-  } else {
-    exerciseStats.wrong += 1;
-    addWrong(ex);
-  }
-
-  $("exerciseFeedback").innerHTML = `
-    <strong>${correct ? "回答正确 ✅" : "回答错误 ❌"}</strong>
-    <p>你的答案：${userAnswer}</p>
-    <p>标准答案：${ex.answer}</p>
-    <p>${ex.explanation || ""}</p>
-    <p class="muted">提示：输入题支持无变音符号的宽松判定，但标准答案仍以这里显示的巴利语拼写为准。</p>
-  `;
-  $("exerciseFeedback").classList.remove("hidden", "correct", "incorrect");
-  $("exerciseFeedback").classList.add(correct ? "correct" : "incorrect");
-  show("nextExerciseBtn");
-  hide("submitExerciseBtn");
+  renderSentenceDashboard();
+  renderSentenceCard("question");
 }
-
-function goNextExercise() {
-  exerciseIndex += 1;
-  if (exerciseIndex >= exerciseItems.length) {
-    alert(`本轮练习完成：正确 ${exerciseStats.right}，错误 ${exerciseStats.wrong}`);
-    hide("exercisePanel");
-    renderWrongList();
-    updateStats();
-    renderDailyBox();
-  } else {
-    renderExercise();
-  }
+function currentSentence(){
+  const id=$("sentenceSelect")?.value;
+  return (window.SENTENCE_ANALYSIS_DATA||[]).find(x=>x.id===id);
 }
-
-function renderExerciseModuleSelect() {
-  const select = $("exerciseModuleSelect");
-  select.innerHTML = "";
-
-  const optAll = document.createElement("option");
-  optAll.value = "全部模块";
-  optAll.textContent = "全部模块";
-  select.appendChild(optAll);
-
-  MODULE_ORDER.forEach(moduleName => {
-    if (GRAMMAR.some(item => item.module === moduleName)) {
-      const opt = document.createElement("option");
-      opt.value = moduleName;
-      opt.textContent = moduleName;
-      select.appendChild(opt);
+function relatedLessonButtonHTML(name){
+  return `<button class="related-link-btn" data-related="${String(name).replace(/"/g,'&quot;')}">${name}</button>`;
+}
+function bindRelatedButtons(){
+  document.querySelectorAll("[data-token-lookup]").forEach(btn=>{btn.onclick=()=>lookupToken(btn.dataset.tokenLookup)});
+  document.querySelectorAll("[data-token-analyze]").forEach(btn=>{btn.onclick=()=>{switchView("dictionaryLookupView");renderDictionarySites();analyzePaliToken(btn.dataset.tokenAnalyze);}});
+  document.querySelectorAll("[data-related]").forEach(btn=>{btn.onclick=()=>{
+    const name=btn.dataset.related;
+    const lesson=GRAMMAR.find(l=>l.title===name || (l.title||"").includes(name) || name.includes(l.title));
+    if(lesson){openLesson(lesson.id)}
+    else{switchView("searchView");$("searchInput").value=name;renderSearchResults(name)}
+  }});
+}
+function sentenceStatusChipHTML(item){
+  const s=sentenceStatus(item.id);
+  const cls=s==="已掌握"?"mastered":(s==="需复习"?"review":"");
+  return `<span class="sentence-status-chip ${cls}">状态：${s}</span>`;
+}
+function sentenceRouteAdvice(item){
+  if(!item)return "";
+  const p=item.practice_priority||"综合挑战";
+  let advice="建议按顺序分析：先找限定动词，再找主语、宾语和结构信号。";
+  if(p==="基础必练") advice="这是基础必练句，建议反复练到能不看提示完成分析。";
+  if(p==="重点提高") advice="这是重点提高句，适合在掌握主宾动后练习格位、连续体或分词。";
+  if(p==="结构专项") advice="这是结构专项句，重点观察不变词、否定、并列、选择或关联结构。";
+  if(p==="综合挑战") advice="这是综合挑战句，需要综合判断格位、动词、分词和句间结构。";
+  if(p==="进阶选练") advice="这是进阶选练句，涉及佛典公式、sandhi 或特殊词形，可先识别大意。";
+  return `<div class="route-box"><strong>学习路线建议：</strong>${advice}</div>`;
+}
+function renderSentenceCard(mode="question"){
+  const box=$("sentenceAnalysisCard"); if(!box)return;
+  const item=currentSentence();
+  if(!item){box.innerHTML='<p class="muted">当前筛选下没有句子，请更换筛选条件。</p>';return}
+  const tagHTML=(item.tags||[]).map(t=>`<span class="tag-chip">${t}</span>`).join("");
+  let html=`<p class="pill">${item.level}</p><p class="sentence-main">${item.sentence}</p>${sentenceStatusChipHTML(item)}<span class="source-chip">${item.source_type||"教学句"}</span><span class="source-chip">${item.practice_priority||"综合挑战"}</span><div>${tagHTML}</div><div class="training-goal-box"><strong>训练目标：</strong>${item.training_goal||"训练句子分析能力。"}</div>${sentenceRouteAdvice(item)}`;
+  if(mode==="question"){
+    html+=`<p class="sentence-translation">先自己分析，不要急着看答案。</p><ol class="self-check-list">${(item.self_check||[]).map(q=>`<li>${q}</li>`).join("")}</ol><div class="analysis-tip"><strong>练习提示：</strong>按“找动词—找主语—找宾语—看格位—看结构信号”的顺序分析。</div>`;
+  }
+  if(mode==="hint"){
+    html+=`<p class="sentence-translation">提示：${item.translation}</p><h3>句法结构提示</h3><p>${item.structure}</p><ol class="self-check-list">${(item.self_check||[]).map(q=>`<li>${q}</li>`).join("")}</ol><div class="analysis-tip"><strong>易错提醒：</strong>${item.tip}</div>`;
+  }
+  if(mode==="analysis"){
+    html+=`<p class="sentence-translation">${item.translation}</p><h3>句法结构</h3><p>${item.structure}</p><h3>逐词分析</h3><table class="token-table"><tr><td>词形</td><td>语法说明</td><td>句中功能</td><td>意义</td><td>查词</td></tr>`;
+    item.tokens.forEach(t=>{html+=`<tr><td><strong>${t.form}</strong></td><td>${t.grammar}</td><td>${t.role}</td><td>${t.meaning}</td><td><button class="token-lookup-btn" data-token-lookup="${t.form}">查词</button><button class="token-analyze-btn" data-token-analyze="${t.form}">分析</button></td></tr>`});
+    html+=`</table><div class="analysis-tip"><strong>易错提醒：</strong>${item.tip}</div><div class="confidence-box"><strong>解析级别：</strong>${item.analysis_level||"教学解析"}</div><div class="analysis-related"><strong>相关语法点：</strong><br>${(item.related||[]).map(relatedLessonButtonHTML).join("")}</div>`;
+  }
+  box.innerHTML=html; bindRelatedButtons();
+}
+function nextSentence(){
+  const sentSel=$("sentenceSelect");
+  if(!sentSel||sentSel.options.length===0)return;
+  sentSel.selectedIndex=(sentSel.selectedIndex+1)%sentSel.options.length;
+  renderSentenceCard("question");
+}
+function randomSentence(){
+  const items=filteredSentences();
+  if(!items.length)return;
+  const item=items[Math.floor(Math.random()*items.length)];
+  const sentSel=$("sentenceSelect");
+  if(sentSel){
+    for(let i=0;i<sentSel.options.length;i++){
+      if(sentSel.options[i].value===item.id){sentSel.selectedIndex=i;break;}
     }
+  }
+  renderSentenceCard("question");
+}
+function startBasicSentenceRoute(){
+  if($("sentencePrioritySelect"))$("sentencePrioritySelect").value="基础必练";
+  if($("sentenceStatusSelect"))$("sentenceStatusSelect").value="未练";
+  renderSentenceSelect();
+}
+function showReviewSentenceRoute(){
+  if($("sentenceStatusSelect"))$("sentenceStatusSelect").value="需复习";
+  renderSentenceSelect();
+}
+function resetSentenceFilters(){
+  if($("sentenceTagSelect"))$("sentenceTagSelect").value="全部";
+  if($("sentenceSourceSelect"))$("sentenceSourceSelect").value="全部";
+  if($("sentencePrioritySelect"))$("sentencePrioritySelect").value="全部";
+  if($("sentenceStatusSelect"))$("sentenceStatusSelect").value="全部";
+  renderSentenceSelect();
+}
+function sentenceAnalysisText(item){
+  if(!item)return "";
+  const lines=[
+    `【巴利语句子分析】`,
+    `原句：${item.sentence}`,
+    `翻译：${item.translation}`,
+    `来源类型：${item.source_type||""}`,
+    `训练层级：${item.practice_priority||""}`,
+    `难点标签：${(item.tags||[]).join("；")}`,
+    `句法结构：${item.structure}`,
+    "",
+    "逐词分析："
+  ];
+  (item.tokens||[]).forEach(t=>lines.push(`${t.form}\t${t.grammar}\t${t.role}\t${t.meaning}`));
+  lines.push("", `易错提醒：${item.tip||""}`, `解析级别：${item.analysis_level||""}`, `相关语法点：${(item.related||[]).join("；")}`);
+  return lines.join("\n");
+}
+async function copyCurrentSentenceAnalysis(){
+  const item=currentSentence();
+  const text=sentenceAnalysisText(item);
+  try{
+    await navigator.clipboard.writeText(text);
+    alert("本句解析已复制。");
+  }catch{
+    alert("复制失败，可以手动选择页面内容复制。");
+  }
+}
+
+
+function linguisticsCategories(){
+  return ["全部", ...new Set((window.LINGUISTICS_TIPS||[]).map(x=>x.category))];
+}
+function renderLinguisticsCategories(){
+  const sel=$("linguisticsCategorySelect");
+  if(!sel)return;
+  sel.innerHTML="";
+  linguisticsCategories().forEach(c=>{let o=document.createElement("option");o.value=c;o.textContent=c;sel.appendChild(o)});
+}
+function renderLinguisticsTips(){
+  const box=$("linguisticsTipsList");
+  if(!box)return;
+  const q=($("linguisticsSearchInput")?.value||"").trim().toLowerCase();
+  const cat=$("linguisticsCategorySelect")?.value||"全部";
+  const items=(window.LINGUISTICS_TIPS||[]).filter(t=>{
+    const text=[t.title,t.category,t.summary,t.example,...(t.keywords||[]),...(t.related||[])].join(" ").toLowerCase();
+    return (cat==="全部"||t.category===cat) && (!q||text.includes(q));
+  });
+  box.innerHTML=items.length?"":"<p class='muted'>没有找到相关概念。</p>";
+  items.forEach(t=>{
+    let div=document.createElement("div");
+    div.className="tip-card";
+    div.innerHTML=`<span class="tip-category">${t.category}</span><h3>${t.title}</h3><p>${t.summary}</p>`;
+    div.onclick=()=>openTipModal(t.id);
+    box.appendChild(div);
+  });
+}
+function findTipByTitleOrKeyword(name){
+  const n=String(name||"").toLowerCase();
+  return (window.LINGUISTICS_TIPS||[]).find(t=>t.title===name || (t.keywords||[]).some(k=>String(k).toLowerCase()===n) || String(t.title).toLowerCase().includes(n));
+}
+function openTipModal(idOrName){
+  const tip=(window.LINGUISTICS_TIPS||[]).find(t=>t.id===idOrName) || findTipByTitleOrKeyword(idOrName);
+  if(!tip)return;
+  const body=$("tipModalBody");
+  body.innerHTML=`
+    <span class="tip-category">${tip.category}</span>
+    <h2>${tip.title}</h2>
+    <p>${tip.summary}</p>
+    <div class="tip-example"><strong>例子：</strong>${tip.example}</div>
+    <p><strong>相关概念：</strong>${(tip.related||[]).map(x=>`<button class="tip-button" data-tip="${x}">${x}</button>`).join("")}</p>
+  `;
+  show("tipModal");
+  document.querySelectorAll("[data-tip]").forEach(btn=>btn.onclick=()=>openTipModal(btn.dataset.tip));
+}
+function closeTipModal(){
+  hide("tipModal");
+}
+function tipButtonsHTML(names){
+  const buttons=[];
+  names.forEach(name=>{
+    const tip=findTipByTitleOrKeyword(name);
+    if(tip && !buttons.some(b=>b.id===tip.id)){
+      buttons.push(tip);
+    }
+  });
+  if(!buttons.length)return "";
+  return `<div class="tip-inline-box"><strong>相关语言学知识：</strong><br>${buttons.map(t=>`<button class="tip-button" data-tip="${t.id}">${t.title}</button>`).join("")}</div>`;
+}
+function inferTipNamesFromLesson(lesson){
+  const text=[lesson.title,lesson.module,lesson.category,lesson.summary,...(lesson.explanation||[])].join(" ");
+  const names=[];
+  const rules=[
+    ["主格","主格"],["宾格","宾格"],["工具格","工具格"],["与格","与格"],["从格","从格"],["属格","属格"],["处格","处格"],["呼格","呼格"],
+    ["变格","格"],["格位","格"],["动词","限定动词"],["不定式","不定式"],["连续体","连续体"],["gerund","连续体"],
+    ["现在分词","现在分词"],["过去分词","过去分词"],["将来被动分词","将来被动分词"],["分词","分词"],
+    ["sandhi","sandhi 连读音变"],["连读","sandhi 连读音变"],["复合词","复合词"],["不变词","不变词"],["否定","否定"],["ca","并列"],["vā","选择"],["yo","关系—指示结构"]
+  ];
+  rules.forEach(([key,val])=>{if(text.includes(key))names.push(val)});
+  if(lesson.module==="名词变格")names.push("格","词干","词尾");
+  if(lesson.module==="动词系统")names.push("限定动词","变位","词尾");
+  if(lesson.module==="句法与阅读")names.push("句法学","主语","宾语","限定动词");
+  return names;
+}
+function inferTipNamesFromSentence(item){
+  const names=[];
+  (item.tags||[]).forEach(tag=>{
+    const map={
+      "主宾动":["主语","宾语","限定动词"],
+      "格位":["格"],
+      "处格":["处格"],
+      "工具格":["工具格"],
+      "属格":["属格"],
+      "与格/目的":["与格"],
+      "不定式":["不定式"],
+      "连续体":["连续体"],
+      "现在分词":["现在分词"],
+      "过去分词":["过去分词"],
+      "将来被动分词":["将来被动分词"],
+      "不变词/关联句":["不变词"],
+      "na/mā":["否定"],
+      "ca/vā":["并列","选择"],
+      "yo...so":["关系—指示结构"],
+      "sandhi/复合词":["sandhi 连读音变","复合词"]
+    };
+    (map[tag]||[]).forEach(x=>names.push(x));
+  });
+  return names;
+}
+function bindTipButtons(){
+  document.querySelectorAll("[data-tip]").forEach(btn=>btn.onclick=()=>openTipModal(btn.dataset.tip));
+}
+
+
+let currentRouteId = "zero";
+function renderLearningRoutes(){
+  const tabs=$("routeTabs"), content=$("routeContent");
+  if(!tabs || !content)return;
+  tabs.innerHTML="";
+  (window.LEARNING_ROUTES||[]).forEach(route=>{
+    const btn=document.createElement("button");
+    btn.className="route-tab" + (route.id===currentRouteId ? " active" : "");
+    btn.textContent=route.title;
+    btn.onclick=()=>{currentRouteId=route.id;renderLearningRoutes();};
+    tabs.appendChild(btn);
+  });
+  const route=(window.LEARNING_ROUTES||[]).find(r=>r.id===currentRouteId) || (window.LEARNING_ROUTES||[])[0];
+  if(!route){content.innerHTML="<p class='muted'>暂无学习路线。</p>";return;}
+  let html=`<h3>${route.title}</h3><p>${route.desc}</p>`;
+  if(route.id==="zero"){
+    html += `<div class="student-note"><strong>建议：</strong>零基础学生先按这一条路线走，不必一开始打开所有语法点。每一步学完后，做几道练习，再进入下一步。</div>`;
+  }
+  (route.steps||[]).forEach((step,idx)=>{
+    html += `<div class="route-step"><h3>${idx+1}. ${step.title}</h3><p>${step.desc}</p><div class="route-lesson-list">`;
+    (step.lesson_ids||[]).forEach(id=>{
+      const lesson=GRAMMAR.find(l=>l.id===id);
+      if(lesson){html += `<button class="route-lesson-btn" data-route-lesson="${id}">${lesson.lesson_number||""}. ${lesson.title}</button>`;}
+    });
+    if(step.sentence_priority){
+      html += `<button class="route-sentence-btn" data-sentence-priority="${step.sentence_priority}">进入句子分析：${step.sentence_priority}</button>`;
+    }
+    html += `</div></div>`;
+  });
+  content.innerHTML=html;
+  document.querySelectorAll("[data-route-lesson]").forEach(btn=>{btn.onclick=()=>openLesson(Number(btn.dataset.routeLesson));});
+  document.querySelectorAll("[data-sentence-priority]").forEach(btn=>{
+    btn.onclick=()=>{
+      const p=btn.dataset.sentencePriority;
+      switchView("sentenceAnalysisView");
+      renderSentenceLevels();
+      if($("sentencePrioritySelect"))$("sentencePrioritySelect").value=p;
+      if($("sentenceStatusSelect"))$("sentenceStatusSelect").value="全部";
+      renderSentenceSelect();
+    };
   });
 }
 
-function renderWrongList() {
-  const records = getWrongRecords();
-  const list = $("wrongList");
-  const items = Object.values(records);
-  list.innerHTML = "";
 
-  if (!items.length) {
-    list.innerHTML = `<p class="muted">目前没有错题。</p>`;
+
+function renderSiteHealth(){
+  const box=$("siteHealthPanel");
+  if(!box)return;
+  const checks=[
+    ["grammar.json", typeof GRAMMAR!=="undefined" && Array.isArray(GRAMMAR)],
+    ["sentence-analysis-data.js", !!window.SENTENCE_ANALYSIS_DATA],
+    ["linguistics-tips-data.js", !!window.LINGUISTICS_TIPS],
+    ["learning-routes-data.js", !!window.LEARNING_ROUTES],
+    ["dictionary-sites-data.js", !!window.PALI_DICTIONARY_SITES],
+    ["token-analysis-data.js",
+    "module-guides-data.js",
+    "confusion-pairs-data.js",
+    "sentence-patterns-data.js",
+    "buddhist-reading-data.js",
+    "buddhist-background-data.js",
+    "academic-training-data.js",
+    "terminology-glossary-data.js", !!window.TOKEN_ANALYSIS_DATA]
+  ];
+  const bad=checks.filter(x=>!x[1]).map(x=>x[0]);
+  box.innerHTML=bad.length?`<span class="site-health-bad">有文件未加载：</span>${bad.join("、")}`:`<span class="site-health-ok">网站文件加载正常。</span>`;
+}
+
+function renderVersionStatus(){
+  const box=$("versionStatus");
+  if(!box)return;
+  box.textContent=`当前版本：Pali Grammar ${VERSION}｜如果页面显示旧内容，请点击下方刷新缓存。`;
+}
+
+async function refreshSiteCache(){
+  try{
+    if("serviceWorker" in navigator){
+      const regs=await navigator.serviceWorker.getRegistrations();
+      for(const reg of regs){await reg.update();}
+    }
+    if(window.caches){
+      const keys=await caches.keys();
+      await Promise.all(keys.filter(k=>k.includes("pali")).map(k=>caches.delete(k)));
+    }
+    location.reload(true);
+  }catch(e){
+    location.reload(true);
+  }
+}
+
+function checkRequiredFiles(){
+  renderSiteHealth();
+  const required=[
+    "grammar.json",
+    "sentence-analysis-data.js",
+    "linguistics-tips-data.js",
+    "learning-routes-data.js",
+    "dictionary-sites-data.js",
+    "token-analysis-data.js"
+  ];
+  const missing=[];
+  if(!window.GRAMMAR && typeof GRAMMAR==="undefined") missing.push("grammar.json");
+  if(!window.SENTENCE_ANALYSIS_DATA) missing.push("sentence-analysis-data.js");
+  if(!window.LINGUISTICS_TIPS) missing.push("linguistics-tips-data.js");
+  if(!window.LEARNING_ROUTES) missing.push("learning-routes-data.js");
+  if(missing.length){
+    alert("有文件没有加载成功：" + missing.join("、") + "。请确认 GitHub 已上传全部网站文件。");
+  }
+}
+
+
+function renderDictionarySites(){
+  const box=$("dictionarySiteList");
+  if(!box)return;
+  box.innerHTML="";
+  (window.PALI_DICTIONARY_SITES||[]).forEach(site=>{
+    const div=document.createElement("div");
+    div.className="dictionary-card";
+    div.innerHTML=`
+      <span class="dict-level">${site.level}</span>
+      <h3>${site.name}</h3>
+      <p><strong>语言：</strong>${site.langs}</p>
+      <p><strong>适合：</strong>${site.best_for}</p>
+      <p class="muted">${site.note}</p>
+      <button class="dict-open-btn" data-dict-url="${site.url}">打开网站</button>
+    `;
+    box.appendChild(div);
+  });
+  document.querySelectorAll("[data-dict-url]").forEach(btn=>{
+    btn.onclick=()=>window.open(btn.dataset.dictUrl, "_blank", "noopener");
+  });
+}
+async function copyLookupWord(){
+  const word=($("paliLookupInput")?.value||"").trim();
+  if(!word){
+    alert("请先输入要查的巴利语词。");
     return;
   }
+  try{
+    await navigator.clipboard.writeText(word);
+    alert("已复制：" + word);
+  }catch{
+    alert("复制失败，可以手动选中输入框内容复制。");
+  }
+}
+function openPrimaryDictionary(){
+  const word=($("paliLookupInput")?.value||"").trim();
+  if(word){
+    try{navigator.clipboard.writeText(word)}catch(e){}
+  }
+  const primary=(window.PALI_DICTIONARY_SITES||[]).find(x=>x.id==="sutta") || (window.PALI_DICTIONARY_SITES||[])[0];
+  if(primary) window.open(primary.url, "_blank", "noopener");
+}
+function clearLookupWord(){
+  if($("paliLookupInput"))$("paliLookupInput").value="";
+}
 
-  items.forEach(item => {
-    const div = document.createElement("div");
-    div.className = "wrong-item";
-    div.innerHTML = `
-      <strong>${item.question}</strong>
-      <p class="muted">${item.module || ""}｜${item.lesson_title || ""}</p>
-      <p>答案：${item.answer}</p>
-    `;
+
+const LOOKUP_HISTORY_KEY="pali_lookup_history_v1";
+
+function cleanPaliLookupWord(word){
+  return String(word||"").replace(/[“”"'.。,，;；:：!?？()（）]/g,"").trim();
+}
+function getLookupHistory(){
+  try{return JSON.parse(localStorage.getItem(LOOKUP_HISTORY_KEY))||[]}catch{return []}
+}
+function saveLookupHistory(items){
+  localStorage.setItem(LOOKUP_HISTORY_KEY, JSON.stringify(items.slice(0,20)));
+}
+function addLookupHistory(word){
+  word=cleanPaliLookupWord(word);
+  if(!word)return;
+  const items=getLookupHistory().filter(x=>x!==word);
+  items.unshift(word);
+  saveLookupHistory(items);
+  renderLookupHistory();
+}
+function renderLookupHistory(){
+  const box=$("lookupHistoryBox");
+  if(!box)return;
+  const items=getLookupHistory();
+  if(!items.length){
+    box.innerHTML="<p class='muted'>最近查询词会显示在这里。</p>";
+    return;
+  }
+  box.innerHTML="<strong>最近查询：</strong><br>" + items.map(w=>`<button class="lookup-chip" data-lookup-history="${w}">${w}</button>`).join("");
+  document.querySelectorAll("[data-lookup-history]").forEach(btn=>{
+    btn.onclick=()=>{
+      if($("paliLookupInput"))$("paliLookupInput").value=btn.dataset.lookupHistory;
+    };
+  });
+}
+async function copyTextSilent(text){
+  try{await navigator.clipboard.writeText(text);return true}catch{return false}
+}
+async function lookupToken(word){
+  word=cleanPaliLookupWord(word);
+  if(!word)return;
+  addLookupHistory(word);
+  await copyTextSilent(word);
+  const primary=(window.PALI_DICTIONARY_SITES||[]).find(x=>x.id==="sutta") || (window.PALI_DICTIONARY_SITES||[])[0];
+  if(primary){
+    window.open(primary.url, "_blank", "noopener");
+  }
+}
+async function copyExampleText(text){
+  const ok=await copyTextSilent(text);
+  alert(ok ? "已复制例句。" : "复制失败，可以手动选择复制。");
+}
+
+
+
+function normalizeTokenForAnalysis(word){
+  return String(word||"").replace(/[“”"'.。,，;；:：!?？()（）]/g,"").trim();
+}
+function lemmaSuggestions(word){
+  const w=normalizeTokenForAnalysis(word);
+  const suggestions=[];
+  function add(x,why){ if(x && x!==w && !suggestions.some(s=>s.form===x)) suggestions.push({form:x,why}); }
+  if(!w)return suggestions;
+  if(w.endsWith("ṃ")){
+    add(w.slice(0,-1), "去掉词尾 -ṃ，可能还原为词干/词典形。");
+    if(w.endsWith("aṃ")) add(w.slice(0,-2)+"a", "中性或阳性 -a 词干宾格/主宾同形，可尝试 -a 词典形。");
+  }
+  if(w.endsWith("ssa")) add(w.slice(0,-3), "去掉 -ssa，可能还原属格/与格单数的基础词形。");
+  if(w.endsWith("ena")) add(w.slice(0,-3)+"a", "工具格 -ena 常对应 -a 词干。");
+  if(w.endsWith("e")) add(w.slice(0,-1)+"a", "处格 -e 常对应 -a 词干。");
+  if(w.endsWith("āya")) add(w.slice(0,-3)+"ā", "阴性 -ā 词干的工具格/与格/属格可能出现 -āya。");
+  if(w.endsWith("āya")) add(w.slice(0,-3)+"a", "也可尝试相关 -a 词干，需结合词典确认。");
+  if(w.endsWith("tuṃ")||w.endsWith("ituṃ")||w.endsWith("etuṃ")){
+    add(w.replace(/ituṃ$|etuṃ$|tuṃ$/,"ti"), "不定式可尝试查询对应现在时形式。");
+  }
+  if(w.endsWith("tvā")||w.endsWith("itvā")){
+    add(w.replace(/itvā$|tvā$/,"ti"), "连续体可尝试查询对应动词形式，但常需词典辅助。");
+  }
+  if(w.endsWith("nto")) add(w.slice(0,-3)+"ti", "现在分词阳性主格单数可尝试查询对应动词形式。");
+  if(w.endsWith("ntī")) add(w.slice(0,-3)+"ti", "现在分词阴性形式可尝试查询对应动词形式。");
+  if(w.endsWith("tabbo")) add(w.slice(0,-5)+"ti", "将来被动分词可尝试查询相关动词形式。");
+  if(w.endsWith("tabbaṃ")) add(w.slice(0,-6)+"ti", "将来被动分词可尝试查询相关动词形式。");
+  if(w==="Buddhassa") add("Buddha", "Buddhassa 常是 Buddha 的属格/与格单数。");
+  if(w==="dhammaṃ") add("dhamma", "dhammaṃ 常是 dhamma 的宾格单数。");
+  if(w==="vihāre") add("vihāra", "vihāre 常是 vihāra 的处格单数。");
+  if(w==="gacchanto") add("gacchati", "gacchanto 是现在分词，可查 gacchati。");
+  if(w==="sutvā") add("suṇāti", "sutvā 与“听”相关，可查 suṇāti / suta 等。");
+  return suggestions.slice(0,6);
+}
+function simpleTokenGuesses(word){
+  const w=normalizeTokenForAnalysis(word);
+  const guesses=[];
+  if(!w)return guesses;
+  if(w.endsWith("ṃ")) guesses.push({grammar:"可能是宾格单数，或 -a 尾中性主格/宾格单数",role:"需结合句子判断",meaning:"可尝试还原词干后查词"});
+  if(w.endsWith("ssa")) guesses.push({grammar:"可能是属格/与格单数",role:"所属、关联、给予对象或持有者",meaning:"可尝试还原词典形"});
+  if(w.endsWith("ena")) guesses.push({grammar:"可能是工具格单数",role:"工具、方式、施事",meaning:"可表示“用……、由……”"});
+  if(w.endsWith("e")) guesses.push({grammar:"可能是处格单数，或某些复数/动词形式",role:"地点、时间或范围；需结合句子判断",meaning:"不要只按一个词尾机械判断"});
+  if(w.endsWith("āya")) guesses.push({grammar:"可能是 -ā 尾阴性工具格/与格/属格单数",role:"工具、目的、所属等",meaning:"需结合句子判断"});
+  if(w.endsWith("tuṃ")||w.endsWith("ituṃ")||w.endsWith("etuṃ")) guesses.push({grammar:"不定式可能性高",role:"目的或动作内容",meaning:"常译为“为了……”或补足动词意义"});
+  if(w.endsWith("tvā")||w.endsWith("itvā")) guesses.push({grammar:"连续体/独立式可能性高",role:"先行动作",meaning:"常译为“……之后”"});
+  if(w.endsWith("nto")||w.endsWith("ntī")||w.endsWith("ntā")) guesses.push({grammar:"现在分词可能性高",role:"修饰名词或表示伴随状态",meaning:"正在……的"});
+  if(w.endsWith("tabbo")||w.endsWith("tabbaṃ")||w.endsWith("tabbā")||w.endsWith("eyyaṃ")) guesses.push({grammar:"可能是将来被动分词或相关应作形式",role:"谓语性成分或修饰语",meaning:"应被……、应当……"});
+  if(w.endsWith("anti")) guesses.push({grammar:"可能是现在时第三人称复数动词",role:"限定动词",meaning:"他们……"});
+  else if(w.endsWith("ti")) guesses.push({grammar:"可能是现在时第三人称单数动词",role:"限定动词",meaning:"他/她/它……"});
+  if(w.endsWith("mi")) guesses.push({grammar:"可能是第一人称单数动词",role:"限定动词",meaning:"我……"});
+  if(w.endsWith("si")) guesses.push({grammar:"可能是第二人称单数动词",role:"限定动词",meaning:"你……"});
+  return guesses;
+}
+function renderLemmaSuggestions(raw){
+  const suggestions=lemmaSuggestions(raw);
+  if(!suggestions.length)return "";
+  return `<div class="lemma-suggestion-box"><strong>建议尝试还原词典形：</strong><br>`+
+    suggestions.map(s=>`<button class="lemma-chip" data-lemma="${s.form}">${s.form}</button><span class="muted">${s.why}</span><br>`).join("")+
+    `</div>`;
+}
+function bindLemmaButtons(){
+  document.querySelectorAll("[data-lemma]").forEach(btn=>{
+    btn.onclick=()=>{
+      if($("paliLookupInput"))$("paliLookupInput").value=btn.dataset.lemma;
+      analyzePaliToken(btn.dataset.lemma);
+    };
+  });
+}
+function analyzePaliToken(word, targetId="tokenAnalysisPanel"){
+  const panel=$(targetId);
+  if(!panel)return;
+  const selected=(window.getSelection?window.getSelection().toString():"");
+  const raw=normalizeTokenForAnalysis(word || $("paliLookupInput")?.value || selected || "");
+  if(!raw){panel.innerHTML='<div class="analysis-warning">请先输入或选中一个巴利语词。</div>';return;}
+  if($("paliLookupInput"))$("paliLookupInput").value=raw;
+  addLookupHistory(raw);
+  const data=window.TOKEN_ANALYSIS_DATA||{};
+  const item=data[raw]||data[raw.toLowerCase()];
+  const guesses=simpleTokenGuesses(raw);
+  let html=`<h3>词形分析：${raw}</h3>`;
+  html+=renderLemmaSuggestions(raw);
+  if(item){
+    html+=`<div class="analysis-result-card"><h3>一、本站例句库已收录</h3>`;
+    (item.analyses||[]).forEach(a=>{html+=`<p><strong>语法：</strong>${a.grammar}<br><strong>功能：</strong>${a.role}<br><strong>意义：</strong>${a.meaning}</p>`});
+    if(item.examples&&item.examples.length){
+      html+=`<strong>相关例句：</strong>`;
+      item.examples.forEach(ex=>{html+=`<div class="analysis-example">${ex.sentence}<br>${ex.translation}<br><span class="muted">${ex.tip||""}</span></div>`});
+    }
+    html+=`</div>`;
+  }else{
+    html+=`<div class="analysis-warning"><h3>一、本站例句库未收录</h3>没有找到这个词形的已核校例句记录。请继续看规则提示，并建议查外部词典。</div>`;
+  }
+  if(guesses.length){
+    html+=`<div class="analysis-warning"><h3>二、词尾规则提示</h3><strong>以下只是可能性，不是最终结论。</strong>`;
+    guesses.forEach(g=>{html+=`<p><strong>可能语法：</strong>${g.grammar}<br><strong>可能功能：</strong>${g.role}<br><strong>提示：</strong>${g.meaning}</p>`});
+    html+=`</div>`;
+  }
+  html+=`<div class="analysis-warning"><h3>三、下一步建议</h3><ol><li>先看本站例句库是否有同形解析。</li><li>再看词尾规则提示。</li><li>尝试还原词典形。</li><li>最后到外部词典交叉查询。</li></ol></div>`;
+  html+=`<div class="button-row three-buttons"><button class="secondary" onclick="copyLookupWord()">复制该词</button><button class="primary" onclick="openPrimaryDictionary()">打开首选词典</button><button class="secondary" onclick="renderDictionarySites()">查看全部词典</button></div>`;
+  panel.innerHTML=html;
+  bindLemmaButtons();
+}
+function analyzeSelectedText(){analyzePaliToken(window.getSelection?window.getSelection().toString():"");}
+function analyzeAndLookup(){
+  const word=normalizeTokenForAnalysis($("paliLookupInput")?.value || (window.getSelection?window.getSelection().toString():""));
+  analyzePaliToken(word);
+  if(word)lookupToken(word);
+}
+
+
+function getAllPaliLocalStorage(){
+  const data={};
+  for(let i=0;i<localStorage.length;i++){
+    const k=localStorage.key(i);
+    if(k&&k.startsWith("pali")) data[k]=localStorage.getItem(k);
+  }
+  return data;
+}
+function countObj(o){return o&&typeof o==="object"?Object.keys(o).length:0}
+function renderProgressSummary(){
+  const box=$("progressSummaryBox");
+  if(!box)return;
+  let lessons={}, wrong={}, sent={}, lookup=[];
+  try{lessons=JSON.parse(localStorage.getItem(STATUS_KEY)||"{}")}catch{}
+  try{wrong=JSON.parse(localStorage.getItem(WRONG_KEY)||"{}")}catch{}
+  try{sent=JSON.parse(localStorage.getItem("pali_sentence_analysis_status_v1")||"{}")}catch{}
+  try{lookup=JSON.parse(localStorage.getItem("pali_lookup_history_v1")||"[]")}catch{}
+  const mastered=Object.values(lessons).filter(x=>x==="已掌握").length;
+  const reviewLessons=Object.values(lessons).filter(x=>x==="需复习").length;
+  const sentMastered=Object.values(sent).filter(x=>x==="已掌握").length;
+  const sentReview=Object.values(sent).filter(x=>x==="需复习").length;
+  box.innerHTML=`<strong>当前学习进度</strong><br>
+    语法点已标记：${countObj(lessons)}｜已掌握：${mastered}｜需复习：${reviewLessons}<br>
+    错题：${countObj(wrong)}<br>
+    句子分析已标记：${countObj(sent)}｜已掌握：${sentMastered}｜需复习：${sentReview}<br>
+    最近查词：${lookup.length}`;
+  const fb=$("feedbackTemplateText");
+  if(fb&&!fb.value) fb.value=makeFeedbackTemplate();
+}
+function exportProgress(){
+  const payload={version:VERSION, exported_at:new Date().toISOString(), localStorage:getAllPaliLocalStorage()};
+  const text=JSON.stringify(payload,null,2);
+  if($("progressDataText"))$("progressDataText").value=text;
+  navigator.clipboard?.writeText(text).then(()=>alert("学习进度已导出并复制。")).catch(()=>alert("学习进度已导出到文本框。"));
+}
+function importProgress(){
+  const text=($("progressDataText")?.value||"").trim();
+  if(!text)return alert("请先粘贴导出的学习进度 JSON。");
+  try{
+    const payload=JSON.parse(text);
+    const data=payload.localStorage||payload;
+    Object.keys(data).forEach(k=>{if(k.startsWith("pali"))localStorage.setItem(k,data[k])});
+    alert("学习进度已导入。页面将重新加载。");
+    location.reload();
+  }catch(e){alert("导入失败：JSON 格式不正确。")}
+}
+function clearProgress(){
+  if(!confirm("确定清空本浏览器中的学习状态、错题、句子标记和查词历史吗？"))return;
+  Object.keys(localStorage).forEach(k=>{if(k.startsWith("pali"))localStorage.removeItem(k)});
+  renderProgressSummary();stats();renderWrong();
+  alert("已清空本地学习进度。");
+}
+function makeFeedbackTemplate(){
+  const title=currentLesson?currentLesson.title:"";
+  const selected=window.getSelection?window.getSelection().toString():"";
+  return `【巴利语学习网站错误反馈】
+版本：Pali Grammar ${VERSION}
+问题位置：${title||"请填写语法点/句子/查词页面"}
+涉及内容：${selected||"请粘贴有问题的原文或截图说明"}
+问题类型：语法错误 / 翻译问题 / 例句不自然 / 词形分析不准 / 页面功能问题
+具体说明：
+建议修改：`;
+}
+async function copyFeedbackTemplate(){
+  const text=makeFeedbackTemplate();
+  if($("feedbackTemplateText"))$("feedbackTemplateText").value=text;
+  try{await navigator.clipboard.writeText(text);alert("反馈模板已复制。")}catch{alert("反馈模板已生成，请手动复制。")}
+}
+function copyCurrentLessonFeedback(){copyFeedbackTemplate();}
+
+
+
+const TRIAL_TASK_KEY="pali_trial_tasks_v1";
+const TRIAL_TASKS=[
+  ["route","完成零基础路线第1步","进入“零基础路线”，打开“认识字母与转写”。"],
+  ["lesson","学习1个语法点","打开任意一个语法点，阅读学习目标、说明、例句和易错点。"],
+  ["exercise","完成10道练习","进入“练习中心”，完成一组10题练习。"],
+  ["sentence","分析3个句子","进入“句子分析”，至少完成3个句子的“先自测—提示—完整分析”。"],
+  ["lookup","查1个巴利语单词","进入“查巴利语单词”，输入并复制一个词，再打开首选词典。"],
+  ["token","分析1个词形","在查词页输入 dhammaṃ / Buddhassa / sutvā 等，点击“分析这个词”。"],
+  ["wrong","查看错题或需复习内容","进入“错题复习”或“句子分析→只看需复习”。"],
+  ["feedback","复制1次反馈模板","进入“学习进度备份”，复制错误反馈模板。"]
+];
+function getTrialTaskState(){
+  try{return JSON.parse(localStorage.getItem(TRIAL_TASK_KEY))||{}}catch{return {}}
+}
+function saveTrialTaskState(s){
+  localStorage.setItem(TRIAL_TASK_KEY,JSON.stringify(s));
+}
+function renderTrialTasks(){
+  const list=$("trialTaskList"), summary=$("trialTaskSummary");
+  if(!list||!summary)return;
+  const state=getTrialTaskState();
+  const done=TRIAL_TASKS.filter(t=>state[t[0]]).length;
+  summary.innerHTML=`<strong>试用进度：</strong>${done}/${TRIAL_TASKS.length} 项已完成。`;
+  list.innerHTML="";
+  TRIAL_TASKS.forEach(([id,title,desc])=>{
+    const div=document.createElement("div");
+    div.className="trial-task";
+    div.innerHTML=`<label><input type="checkbox" data-trial-task="${id}" ${state[id]?"checked":""}>${title}</label><small>${desc}</small>`;
     list.appendChild(div);
   });
-}
-
-function renderSearchResults(keyword) {
-  const resultBox = $("searchResults");
-  if (!resultBox) return;
-
-  const q = String(keyword || "").trim().toLowerCase();
-  resultBox.innerHTML = "";
-
-  if (!q) {
-    resultBox.innerHTML = `<p class="muted">输入关键词后显示搜索结果。</p>`;
-    return;
-  }
-
-  const results = GRAMMAR.filter(lesson => {
-    const text = [
-      lesson.title,
-      lesson.category,
-      lesson.module,
-      lesson.summary,
-      ...(lesson.explanation || []),
-      ...(lesson.examples || []).flatMap(ex => [ex.pali, ex.cn, ex.note]),
-      ...(lesson.cards || []).flatMap(card => [card.q, card.a])
-    ].join(" ").toLowerCase();
-    return text.includes(q);
+  document.querySelectorAll("[data-trial-task]").forEach(ch=>{
+    ch.onchange=()=>{
+      const s=getTrialTaskState();
+      s[ch.dataset.trialTask]=ch.checked;
+      saveTrialTaskState(s);
+      renderTrialTasks();
+    };
   });
+  const fb=$("trialFeedbackText");
+  if(fb&&!fb.value)fb.value=makeTrialFeedback();
+}
+function resetTrialTasks(){
+  localStorage.removeItem(TRIAL_TASK_KEY);
+  if($("trialFeedbackText"))$("trialFeedbackText").value="";
+  renderTrialTasks();
+}
+function makeTrialFeedback(){
+  const state=getTrialTaskState();
+  const done=TRIAL_TASKS.filter(t=>state[t[0]]).map(t=>t[1]);
+  const undone=TRIAL_TASKS.filter(t=>!state[t[0]]).map(t=>t[1]);
+  return `【巴利语学习网站试用反馈】
+版本：Pali Grammar ${VERSION}
+已完成任务：${done.length?done.join("；"):"无"}
+未完成任务：${undone.length?undone.join("；"):"无"}
+使用设备：手机 / 电脑 / 平板
+最容易使用的功能：
+最不清楚的地方：
+发现的错误或问题：
+建议修改：`;
+}
+async function copyTrialFeedback(){
+  const text=makeTrialFeedback();
+  if($("trialFeedbackText"))$("trialFeedbackText").value=text;
+  try{await navigator.clipboard.writeText(text);alert("试用反馈模板已复制。")}catch{alert("模板已生成，请手动复制。")}
+}
 
-  if (!results.length) {
-    resultBox.innerHTML = `<p class="muted">没有找到相关语法点。</p>`;
-    return;
+
+function contentPolishHTML(lesson){
+  if(!lesson)return "";
+  let html="";
+  if(lesson.study_tier){
+    const cls=lesson.study_tier==="必学"?"tier-required":(lesson.study_tier==="进阶"?"tier-advanced":"tier-optional");
+    html+=`<div class="content-tier-box ${cls}"><strong>学习层级：</strong>${lesson.study_tier}</div>`;
   }
+  if(lesson.minimal_mastery&&lesson.minimal_mastery.length){
+    html+=`<div class="minimal-mastery-box"><strong>本课最小掌握：</strong><ol>${lesson.minimal_mastery.map(x=>`<li>${x}</li>`).join("")}</ol></div>`;
+  }
+  if(lesson.common_misjudgments&&lesson.common_misjudgments.length){
+    html+=`<div class="misjudge-box"><strong>常见误判对照：</strong><table><tr><td>容易误判</td><td>较稳妥判断</td><td>说明</td></tr>${lesson.common_misjudgments.map(r=>`<tr><td>${r.wrong}</td><td>${r.right}</td><td>${r.note}</td></tr>`).join("")}</table></div>`;
+  }
+  if(lesson.content_review_note){
+    html+=`<div class="high-risk-box"><strong>内容复核提示：</strong>${lesson.content_review_note}</div>`;
+  }
+  return html;
+}
+function exampleHTML(a){
+  let html=`<div class="pali">${a.pali||""}</div>`;
+  if(a.literal_cn||a.natural_cn||a.grammar_note){
+    html+=`<div class="translation-layer">`;
+    if(a.literal_cn)html+=`<p><strong>直译：</strong>${a.literal_cn}</p>`;
+    if(a.natural_cn)html+=`<p><strong>顺译：</strong>${a.natural_cn}</p>`;
+    if(a.grammar_note)html+=`<p><strong>语法说明：</strong>${a.grammar_note}</p>`;
+    html+=`</div>`;
+  }else{
+    html+=`<div>${a.cn||""}</div><div class="muted">${a.note||""}</div>`;
+  }
+  return html;
+}
 
-  results.forEach(lesson => {
-    const div = document.createElement("div");
-    div.className = "lesson-item";
-    div.innerHTML = lessonCardHTML(lesson);
-    div.addEventListener("click", () => openLesson(lesson.id));
-    resultBox.appendChild(div);
+
+function renderModuleGuides(){
+  const box=$("moduleGuideList");
+  if(!box)return;
+  box.innerHTML="";
+  (window.MODULE_GUIDES||[]).forEach(g=>{
+    const div=document.createElement("div");
+    div.className="module-guide-card";
+    div.innerHTML=`
+      <h3>${g.module}</h3>
+      <p><strong>学习目标：</strong>${g.goal}</p>
+      <p><strong>必会内容：</strong>${(g.must_know||[]).join("、")}</p>
+      <p><strong>学习方法：</strong></p>
+      <ol>${(g.how_to_learn||[]).map(x=>`<li>${x}</li>`).join("")}</ol>
+      <div class="module-warning"><strong>提醒：</strong>${g.warning}</div>
+      <button class="route-lesson-btn" data-module-guide-open="${g.module}">进入这个模块</button>
+    `;
+    box.appendChild(div);
+  });
+  document.querySelectorAll("[data-module-guide-open]").forEach(btn=>{
+    btn.onclick=()=>{openModule(btn.dataset.moduleGuideOpen);};
   });
 }
+function lessonStudyGuideHTML(lesson){
+  if(!lesson)return "";
+  let html="";
+  if(lesson.prerequisites&&lesson.prerequisites.length){
+    html+=`<div class="lesson-guide-box"><strong>课前预备：</strong><ol>${lesson.prerequisites.map(x=>`<li>${x}</li>`).join("")}</ol></div>`;
+  }
+  if(lesson.self_check_questions&&lesson.self_check_questions.length){
+    html+=`<div class="lesson-guide-box"><strong>课后自检：</strong><ol>${lesson.self_check_questions.map(x=>`<li>${x}</li>`).join("")}</ol></div>`;
+  }
+  if(lesson.next_step_advice){
+    html+=`<div class="lesson-guide-box next-step"><strong>下一步建议：</strong>${lesson.next_step_advice}</div>`;
+  }
+  return html;
+}
 
-function switchView(viewId) {
-  document.querySelectorAll(".view").forEach(v => v.classList.add("hidden"));
-  show(viewId);
-  document.querySelectorAll(".tab").forEach(tab => {
-    tab.classList.toggle("active", tab.dataset.view === viewId);
+
+function renderConfusionPairs(){
+  const box=$("confusionPairsList");
+  if(!box)return;
+  const q=($("confusionSearchInput")?.value||"").trim().toLowerCase();
+  const items=(window.CONFUSION_PAIRS||[]).filter(p=>{
+    const text=[p.title,p.a,p.b,p.core,p.a_cue,p.b_cue,p.tip,...(p.examples||[]).map(e=>e.pali+" "+e.cn+" "+e.note)].join(" ").toLowerCase();
+    return !q||text.includes(q);
   });
-  if (viewId === "wrongView") renderWrongList();
-  if (viewId === "reportView") renderReportView();
-  if (viewId === "feedbackView") {
-    renderFeedbackLessonSelect();
-    renderFeedbackDrafts();
-  }
-  if (viewId === "trainingView") renderTrainingPresets();
-  if (viewId === "teacherView") renderTeacherView();
-  if (viewId === "preflightView") renderReleaseInfo();
-  if (viewId === "pathView") {
-    renderPath();
-    renderDailyBox();
-  }
-}
-
-function startTodayReview() {
-  const statuses = getStatuses();
-  const wrongItems = Object.values(getWrongRecords());
-  const reviewLessons = GRAMMAR.filter(l => statuses[l.id] === "需复习");
-  const learningLessons = GRAMMAR.filter(l => statuses[l.id] === "学习中");
-  const newLessons = GRAMMAR.filter(l => !statuses[l.id] || statuses[l.id] === "未学");
-
-  if (wrongItems.length) {
-    startExercises(shuffle(wrongItems).slice(0, 10), "今日错题复习");
-    return;
-  }
-
-  const candidates = [...reviewLessons, ...learningLessons, ...newLessons].filter(l => (l.cards || []).length);
-  if (!candidates.length) {
-    alert("暂无可复习内容。");
-    return;
-  }
-
-  const cards = shuffle(candidates).slice(0, 5).flatMap(l => l.cards || []);
-  startCards(shuffle(cards).slice(0, 10));
-}
-
-function getFeedbackDrafts() {
-  try {
-    return JSON.parse(localStorage.getItem(FEEDBACK_KEY)) || [];
-  } catch {
-    return [];
-  }
-}
-
-function saveFeedbackDrafts(drafts) {
-  localStorage.setItem(FEEDBACK_KEY, JSON.stringify(drafts));
-}
-
-function renderFeedbackLessonSelect() {
-  const select = $("feedbackLessonSelect");
-  const currentValue = select.value;
-  select.innerHTML = "";
-  const optGeneral = document.createElement("option");
-  optGeneral.value = "";
-  optGeneral.textContent = "通用反馈 / 不确定是哪一课";
-  select.appendChild(optGeneral);
-
-  GRAMMAR.forEach(lesson => {
-    const opt = document.createElement("option");
-    opt.value = String(lesson.id);
-    opt.textContent = `${lesson.lesson_number || lesson.id}. ${lesson.title}`;
-    select.appendChild(opt);
-  });
-
-  if (currentValue) select.value = currentValue;
-}
-
-function getFeedbackText() {
-  const lessonId = $("feedbackLessonSelect").value;
-  const lesson = GRAMMAR.find(item => String(item.id) === String(lessonId));
-  const type = $("feedbackType").value;
-  const desc = $("feedbackDesc").value.trim();
-  const suggest = $("feedbackSuggest").value.trim();
-  const source = $("feedbackSource").value.trim();
-  const contact = $("feedbackContact").value.trim();
-
-  return [
-    "【巴利语语法网站反馈】",
-    `反馈时间：${new Date().toLocaleString()}`,
-    `问题类型：${type}`,
-    `相关语法点：${lesson ? `${lesson.lesson_number || lesson.id}. ${lesson.title}` : "通用反馈 / 不确定"}`,
-    `模块：${lesson ? lesson.module : "无"}`,
-    "",
-    "【问题描述】",
-    desc || "未填写",
-    "",
-    "【建议修改】",
-    suggest || "未填写",
-    "",
-    "【参考依据】",
-    source || "未填写",
-    "",
-    "【反馈人联系方式】",
-    contact || "未填写"
-  ].join("\\n");
-}
-
-async function copyFeedback() {
-  const text = getFeedbackText();
-  try {
-    await navigator.clipboard.writeText(text);
-    alert("反馈文本已复制，可以粘贴发给老师。");
-  } catch {
-    alert("复制失败。请手动选择文本或下载反馈文件。");
-  }
-}
-
-function downloadTextFile(filename, text) {
-  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
-function downloadFeedback() {
-  const filename = `pali-feedback-${new Date().toISOString().slice(0, 10)}.txt`;
-  downloadTextFile(filename, getFeedbackText());
-}
-
-function saveFeedbackDraft() {
-  const drafts = getFeedbackDrafts();
-  drafts.unshift({
-    id: `fb-${Date.now()}`,
-    created_at: new Date().toISOString(),
-    text: getFeedbackText()
-  });
-  saveFeedbackDrafts(drafts);
-  renderFeedbackDrafts();
-  alert("已保存到本机反馈草稿。");
-}
-
-function renderFeedbackDrafts() {
-  const box = $("feedbackDraftList");
-  if (!box) return;
-  const drafts = getFeedbackDrafts();
-  box.innerHTML = "";
-  if (!drafts.length) {
-    box.innerHTML = `<p class="muted">暂无反馈草稿。</p>`;
-    return;
-  }
-  drafts.forEach(draft => {
-    const div = document.createElement("div");
-    div.className = "feedback-draft";
-    div.innerHTML = `
-      <p class="muted">${new Date(draft.created_at).toLocaleString()}</p>
-      <pre>${draft.text.replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]))}</pre>
+  box.innerHTML=items.length?"":"<p class='muted'>没有找到相关对照。</p>";
+  items.forEach(p=>{
+    const div=document.createElement("div");
+    div.className="confusion-card";
+    div.innerHTML=`
+      <h3>${p.title}</h3>
+      <p><strong>核心区别：</strong>${p.core}</p>
+      <div class="confusion-two-col">
+        <div><strong>${p.a}</strong><br><span>${p.a_cue}</span></div>
+        <div><strong>${p.b}</strong><br><span>${p.b_cue}</span></div>
+      </div>
+      <div class="confusion-examples">
+        ${(p.examples||[]).map(e=>`<div class="analysis-example"><strong>${e.pali}</strong><br>${e.cn}<br><span class="muted">${e.note}</span></div>`).join("")}
+      </div>
+      <div class="module-warning"><strong>学习提示：</strong>${p.tip}</div>
     `;
     box.appendChild(div);
   });
 }
-
-function exportFeedbackDrafts() {
-  const drafts = getFeedbackDrafts();
-  if (!drafts.length) {
-    alert("没有反馈草稿可导出。");
-    return;
-  }
-  const text = JSON.stringify({
-    app: "pali-grammar-review-feedback",
-    version: VERSION,
-    exported_at: new Date().toISOString(),
-    drafts
-  }, null, 2);
-  const blob = new Blob([text], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `pali-feedback-drafts-${new Date().toISOString().slice(0, 10)}.json`;
-  a.click();
-  URL.revokeObjectURL(url);
+function linkedConfusionHTML(lesson){
+  if(!lesson||!lesson.linked_confusions||!lesson.linked_confusions.length)return "";
+  const pairs=(window.CONFUSION_PAIRS||[]).filter(p=>lesson.linked_confusions.includes(p.id));
+  if(!pairs.length)return "";
+  return `<div class="linked-confusion-box"><strong>相关易混概念：</strong><br>${pairs.map(p=>`<button class="confusion-link-btn" data-confusion-id="${p.id}">${p.title}</button>`).join("")}</div>`;
 }
-
-function exportData() {
-  const data = {
-    app: "pali-grammar-review",
-    version: VERSION,
-    exported_at: new Date().toISOString(),
-    statuses: getStatuses(),
-    wrong_records: getWrongRecords()
-  };
-
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `pali-grammar-progress-${new Date().toISOString().slice(0, 10)}.json`;
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
-function importData(file) {
-  const reader = new FileReader();
-  reader.onload = event => {
-    try {
-      const data = JSON.parse(event.target.result);
-      if (data.statuses && typeof data.statuses === "object") {
-        localStorage.setItem(STATUS_KEY, JSON.stringify(data.statuses));
-      }
-      if (data.wrong_records && typeof data.wrong_records === "object") {
-        localStorage.setItem(WRONG_KEY, JSON.stringify(data.wrong_records));
-      }
-      alert("导入成功。");
-      renderPath();
-      renderDailyBox();
-      renderModules();
-      renderWrongList();
-      updateStats();
-    } catch (error) {
-      alert("导入失败：文件格式不正确。");
-    }
-  };
-  reader.readAsText(file);
-}
-
-async function registerServiceWorker() {
-  if ("serviceWorker" in navigator) {
-    try {
-      await navigator.serviceWorker.register("./sw.js");
-    } catch (error) {
-      console.log("Service worker registration failed", error);
-    }
-  }
-}
-
-
-function moduleReportRows() {
-  const statuses = getStatuses();
-  return MODULE_ORDER
-    .map(moduleName => {
-      const lessons = lessonsForModule(moduleName);
-      if (!lessons.length) return null;
-      const total = lessons.length;
-      const mastered = lessons.filter(l => statuses[l.id] === "已掌握").length;
-      const learning = lessons.filter(l => statuses[l.id] === "学习中").length;
-      const review = lessons.filter(l => statuses[l.id] === "需复习").length;
-      const unlearned = total - mastered - learning - review;
-      const percent = total ? Math.round((mastered / total) * 100) : 0;
-      return { moduleName, total, mastered, learning, review, unlearned, percent };
-    })
-    .filter(Boolean);
-}
-
-function renderReportView() {
-  const statuses = getStatuses();
-  const wrongCount = Object.keys(getWrongRecords()).length;
-  const mastered = GRAMMAR.filter(l => statuses[l.id] === "已掌握").length;
-  const learning = GRAMMAR.filter(l => statuses[l.id] === "学习中").length;
-  const review = GRAMMAR.filter(l => statuses[l.id] === "需复习").length;
-  const unlearned = GRAMMAR.length - mastered - learning - review;
-
-  $("reportSummary").innerHTML = `
-    <div class="report-item"><strong>${mastered}</strong><span>已掌握</span></div>
-    <div class="report-item"><strong>${learning}</strong><span>学习中</span></div>
-    <div class="report-item"><strong>${review}</strong><span>需复习</span></div>
-    <div class="report-item"><strong>${wrongCount}</strong><span>错题</span></div>
-  `;
-
-  const table = $("moduleReportTable");
-  table.innerHTML = "";
-  const head = document.createElement("tr");
-  ["模块", "总数", "已掌握", "学习中", "需复习", "未学", "掌握率"].forEach(text => {
-    const td = document.createElement("td");
-    td.textContent = text;
-    head.appendChild(td);
+function bindConfusionButtons(){
+  document.querySelectorAll("[data-confusion-id]").forEach(btn=>{
+    btn.onclick=()=>{
+      switchView("confusionPairsView");
+      if($("confusionSearchInput"))$("confusionSearchInput").value=btn.textContent;
+      renderConfusionPairs();
+    };
   });
-  table.appendChild(head);
+}
 
-  moduleReportRows().forEach(row => {
-    const tr = document.createElement("tr");
-    [row.moduleName, row.total, row.mastered, row.learning, row.review, row.unlearned, `${row.percent}%`].forEach(text => {
-      const td = document.createElement("td");
-      td.textContent = text;
-      tr.appendChild(td);
-    });
-    table.appendChild(tr);
+
+function renderSentencePatterns(){
+  const box=$("sentencePatternList");
+  if(!box)return;
+  const q=($("patternSearchInput")?.value||"").trim().toLowerCase();
+  const level=$("patternLevelSelect")?.value||"全部";
+  const items=(window.SENTENCE_PATTERNS||[]).filter(p=>{
+    const text=[p.title,p.level,p.formula,p.function,p.trap,...(p.signals||[]),...(p.examples||[]).map(e=>e.pali+" "+e.natural+" "+e.note)].join(" ").toLowerCase();
+    return (level==="全部"||p.level===level)&&(!q||text.includes(q));
   });
-
-  const reviewBox = $("reviewLessonList");
-  const reviewLessons = GRAMMAR.filter(l => statuses[l.id] === "需复习" || statuses[l.id] === "学习中");
-  reviewBox.innerHTML = "";
-  if (!reviewLessons.length) {
-    reviewBox.innerHTML = `<p class="muted">暂无“学习中”或“需复习”的语法点。</p>`;
-  } else {
-    reviewLessons.forEach(lesson => {
-      const div = document.createElement("div");
-      div.className = "lesson-item";
-      div.innerHTML = lessonCardHTML(lesson);
-      div.addEventListener("click", () => openLesson(lesson.id));
-      reviewBox.appendChild(div);
-    });
-  }
-}
-
-function buildProgressReportText() {
-  const statuses = getStatuses();
-  const wrongCount = Object.keys(getWrongRecords()).length;
-  const mastered = GRAMMAR.filter(l => statuses[l.id] === "已掌握").length;
-  const learning = GRAMMAR.filter(l => statuses[l.id] === "学习中").length;
-  const review = GRAMMAR.filter(l => statuses[l.id] === "需复习").length;
-  const unlearned = GRAMMAR.length - mastered - learning - review;
-
-  const lines = [
-    "【巴利语语法学习报告】",
-    `生成时间：${new Date().toLocaleString()}`,
-    `语法点总数：${GRAMMAR.length}`,
-    `练习题总数：${GRAMMAR.reduce((sum, lesson) => sum + (lesson.exercises || []).length, 0)}`,
-    `已掌握：${mastered}`,
-    `学习中：${learning}`,
-    `需复习：${review}`,
-    `未学：${unlearned}`,
-    `错题数：${wrongCount}`,
-    "",
-    "【模块掌握情况】"
-  ];
-
-  moduleReportRows().forEach(row => {
-    lines.push(`${row.moduleName}：${row.mastered}/${row.total}，掌握率 ${row.percent}%；学习中 ${row.learning}，需复习 ${row.review}，未学 ${row.unlearned}`);
+  box.innerHTML=items.length?"":"<p class='muted'>没有找到相关句型。</p>";
+  items.forEach(p=>{
+    const div=document.createElement("div");
+    div.className="pattern-card";
+    div.innerHTML=`
+      <span class="pattern-level ${p.level==='必学'?'tier-required':(p.level==='进阶'?'tier-advanced':'tier-optional')}">${p.level}</span>
+      <h3>${p.title}</h3>
+      <p><strong>句型公式：</strong>${p.formula}</p>
+      <p><strong>功能：</strong>${p.function}</p>
+      <p><strong>识别线索：</strong>${(p.signals||[]).join("；")}</p>
+      <div class="pattern-steps"><strong>分析步骤：</strong><ol>${(p.steps||[]).map(x=>`<li>${x}</li>`).join("")}</ol></div>
+      <div class="pattern-examples">${(p.examples||[]).map(e=>`
+        <div class="analysis-example">
+          <strong>${e.pali}</strong><br>
+          <span><strong>直译：</strong>${e.literal}</span><br>
+          <span><strong>顺译：</strong>${e.natural}</span><br>
+          <span class="muted">${e.note}</span>
+        </div>`).join("")}</div>
+      <div class="module-warning"><strong>易错提醒：</strong>${p.trap}</div>
+    `;
+    box.appendChild(div);
   });
-
-  lines.push("", "【学习中 / 需复习清单】");
-  GRAMMAR
-    .filter(l => statuses[l.id] === "学习中" || statuses[l.id] === "需复习")
-    .forEach(l => lines.push(`${l.lesson_number || l.id}. ${l.title}｜${l.module}｜${statuses[l.id]}`));
-
-  return lines.join("\n");
 }
-
-async function copyReport() {
-  const text = buildProgressReportText();
-  try {
-    await navigator.clipboard.writeText(text);
-    alert("学习报告已复制。");
-  } catch {
-    alert("复制失败，可以尝试下载学习报告。");
-  }
+function linkedPatternHTML(lesson){
+  if(!lesson||!lesson.linked_patterns||!lesson.linked_patterns.length)return "";
+  const patterns=(window.SENTENCE_PATTERNS||[]).filter(p=>lesson.linked_patterns.includes(p.id));
+  if(!patterns.length)return "";
+  return `<div class="linked-pattern-box"><strong>相关句型模板：</strong><br>${patterns.map(p=>`<button class="pattern-link-btn" data-pattern-id="${p.id}">${p.title}</button>`).join("")}</div>`;
 }
-
-function exportReport() {
-  const filename = `pali-progress-report-${new Date().toISOString().slice(0, 10)}.txt`;
-  downloadTextFile(filename, buildProgressReportText());
-}
-
-function exportReportTsv() {
-  const rows = [
-    ["模块", "总数", "已掌握", "学习中", "需复习", "未学", "掌握率"],
-    ...moduleReportRows().map(row => [
-      row.moduleName,
-      row.total,
-      row.mastered,
-      row.learning,
-      row.review,
-      row.unlearned,
-      `${row.percent}%`
-    ])
-  ];
-  const text = rows.map(row => row.join("\t")).join("\n");
-  downloadTextFile(`pali-progress-report-${new Date().toISOString().slice(0, 10)}.tsv`, text);
-}
-
-function exportFeedbackTsv() {
-  const drafts = getFeedbackDrafts();
-  if (!drafts.length) {
-    alert("没有反馈草稿可导出。");
-    return;
-  }
-
-  const rows = [["序号", "创建时间", "反馈文本"]];
-  drafts.forEach((draft, index) => {
-    rows.push([index + 1, new Date(draft.created_at).toLocaleString(), String(draft.text || "").replace(/\n/g, " / ")]);
+function bindPatternButtons(){
+  document.querySelectorAll("[data-pattern-id]").forEach(btn=>{
+    btn.onclick=()=>{
+      const p=(window.SENTENCE_PATTERNS||[]).find(x=>x.id===btn.dataset.patternId);
+      switchView("sentencePatternsView");
+      if($("patternSearchInput"))$("patternSearchInput").value=p?p.title:btn.textContent;
+      if($("patternLevelSelect"))$("patternLevelSelect").value="全部";
+      renderSentencePatterns();
+    };
   });
-  const text = rows.map(row => row.join("\t")).join("\n");
-  downloadTextFile(`pali-feedback-drafts-${new Date().toISOString().slice(0, 10)}.tsv`, text);
 }
 
-async function copyAllFeedbackDrafts() {
-  const drafts = getFeedbackDrafts();
-  if (!drafts.length) {
-    alert("没有反馈草稿可复制。");
-    return;
+
+function buddhistReadingCategories(){
+  return ["全部", ...new Set((window.BUDDHIST_READING_PATTERNS||[]).map(x=>x.category))];
+}
+function renderBuddhistReadingCategories(){
+  const sel=$("buddhistReadingCategorySelect");
+  if(!sel)return;
+  sel.innerHTML="";
+  buddhistReadingCategories().forEach(c=>{
+    const o=document.createElement("option");
+    o.value=c;o.textContent=c;sel.appendChild(o);
+  });
+}
+function renderBuddhistReading(){
+  const box=$("buddhistReadingList");
+  if(!box)return;
+  const q=($("buddhistReadingSearchInput")?.value||"").trim().toLowerCase();
+  const cat=$("buddhistReadingCategorySelect")?.value||"全部";
+  const level=$("buddhistReadingLevelSelect")?.value||"全部";
+  const items=(window.BUDDHIST_READING_PATTERNS||[]).filter(p=>{
+    const text=[p.title,p.category,p.level,p.formula,p.literal,p.natural,p.structure,p.warning,...(p.keywords||[]).map(k=>k.word+" "+k.note),...(p.related_grammar||[])].join(" ").toLowerCase();
+    return (cat==="全部"||p.category===cat)&&(level==="全部"||p.level===level)&&(!q||text.includes(q));
+  });
+  box.innerHTML=items.length?"":"<p class='muted'>没有找到相关佛典句式。</p>";
+  items.forEach(p=>{
+    const div=document.createElement("div");
+    div.className="buddhist-reading-card";
+    div.innerHTML=`
+      <span class="pattern-level ${p.level==='必学'?'tier-required':(p.level==='进阶'?'tier-advanced':'tier-optional')}">${p.level}</span>
+      <span class="reading-category">${p.category}</span>
+      <h3>${p.title}</h3>
+      <p><strong>结构公式：</strong>${p.formula}</p>
+      <div class="translation-layer">
+        <p><strong>直译：</strong>${p.literal}</p>
+        <p><strong>顺译：</strong>${p.natural}</p>
+        <p><strong>结构说明：</strong>${p.structure}</p>
+      </div>
+      <div class="keyword-list"><strong>关键词：</strong><br>${(p.keywords||[]).map(k=>`<span class="keyword-chip">${k.word}：${k.note}</span>`).join("")}</div>
+      <div class="module-warning"><strong>易错提醒：</strong>${p.warning}</div>
+      <p><strong>相关语法点：</strong>${(p.related_grammar||[]).join("、")}</p>
+    `;
+    box.appendChild(div);
+  });
+}
+function linkedBuddhistReadingHTML(lesson){
+  if(!lesson||!lesson.linked_buddhist_reading||!lesson.linked_buddhist_reading.length)return "";
+  const items=(window.BUDDHIST_READING_PATTERNS||[]).filter(p=>lesson.linked_buddhist_reading.includes(p.id));
+  if(!items.length)return "";
+  return `<div class="linked-buddhist-box"><strong>相关佛典阅读句式：</strong><br>${items.map(p=>`<button class="buddhist-link-btn" data-buddhist-id="${p.id}">${p.title}</button>`).join("")}</div>`;
+}
+function bindBuddhistButtons(){
+  document.querySelectorAll("[data-buddhist-id]").forEach(btn=>{
+    btn.onclick=()=>{
+      const p=(window.BUDDHIST_READING_PATTERNS||[]).find(x=>x.id===btn.dataset.buddhistId);
+      switchView("buddhistReadingView");
+      renderBuddhistReadingCategories();
+      if($("buddhistReadingSearchInput"))$("buddhistReadingSearchInput").value=p?p.title:btn.textContent;
+      if($("buddhistReadingCategorySelect"))$("buddhistReadingCategorySelect").value="全部";
+      if($("buddhistReadingLevelSelect"))$("buddhistReadingLevelSelect").value="全部";
+      renderBuddhistReading();
+    };
+  });
+}
+
+
+let buddhistBackgroundTab="concepts";
+function renderBuddhistBackground(tab){
+  if(tab)buddhistBackgroundTab=tab;
+  const box=$("buddhistBackgroundContent");
+  if(!box)return;
+  const data=window.BUDDHIST_BACKGROUND_DATA||{};
+  const tabNow=buddhistBackgroundTab;
+  document.querySelectorAll(".bg-tab").forEach(btn=>btn.classList.toggle("primary", btn.dataset.bgTab===tabNow));
+  if(tabNow==="concepts"){
+    box.innerHTML=`
+      <h3>佛学概念小词典</h3>
+      <p class="muted">只提供阅读入门所需的最小解释，避免展开复杂义理争论。</p>
+      <label>搜索概念</label>
+      <input id="conceptSearchInput" placeholder="例如 dhamma, dukkha, kamma, nibbāna, sati" />
+      <label>选择类别</label>
+      <select id="conceptCategorySelect"></select>
+      <div id="conceptList" class="concept-list"></div>
+    `;
+    renderConceptCategories();
+    renderConceptList();
+    $("conceptSearchInput").oninput=renderConceptList;
+    $("conceptCategorySelect").onchange=renderConceptList;
   }
-  const text = drafts.map((draft, index) => `【反馈 ${index + 1}】\n${draft.text}`).join("\n\n");
-  try {
-    await navigator.clipboard.writeText(text);
-    alert("全部反馈草稿已复制。");
-  } catch {
-    alert("复制失败，可以尝试导出反馈文件。");
+  if(tabNow==="canon"){
+    box.innerHTML=`<h3>巴利三藏结构与常见略号</h3><div class="canon-list">${(data.canon_structure||[]).map(sec=>`
+      <div class="canon-card">
+        <h3>${sec.title}</h3>
+        <p>${sec.explanation}</p>
+        <table><tr><td>略号/术语</td><td>名称</td><td>说明</td></tr>${(sec.items||[]).map(i=>`<tr><td><strong>${i.abbr}</strong></td><td>${i.name}</td><td>${i.note}</td></tr>`).join("")}</table>
+      </div>`).join("")}</div>`;
+  }
+  if(tabNow==="refs"){
+    box.innerHTML=`
+      <h3>章节术语与引用格式</h3>
+      <div class="canon-card">
+        <h3>章节术语</h3>
+        <table><tr><td>术语</td><td>常见汉译</td><td>说明</td></tr>${(data.reference_terms||[]).map(t=>`<tr><td><strong>${t.term}</strong></td><td>${t.cn}</td><td>${t.note}</td></tr>`).join("")}</table>
+      </div>
+      <div class="canon-card">
+        <h3>引用格式怎么看</h3>
+        <table><tr><td>格式</td><td>含义</td></tr>${(data.citation_examples||[]).map(r=>`<tr><td><strong>${r.ref}</strong></td><td>${r.meaning}</td></tr>`).join("")}</table>
+      </div>`;
+  }
+  if(tabNow==="flow"){
+    box.innerHTML=`<h3>佛经常见篇章结构</h3><p class="muted">并非每篇经都完整包含这些部分，但很多散文经会呈现类似推进方式。</p><div class="flow-list">${(data.sutta_flow||[]).map((s,idx)=>`
+      <div class="flow-card">
+        <span class="pattern-level tier-optional">${idx+1}</span>
+        <h3>${s.stage}</h3>
+        <p><strong>常见表达：</strong>${(s.patterns||[]).join("；")}</p>
+        <p>${s.purpose}</p>
+      </div>`).join("")}</div>`;
   }
 }
+function conceptCategories(){
+  const data=window.BUDDHIST_BACKGROUND_DATA||{};
+  return ["全部", ...new Set((data.concepts||[]).map(x=>x.category))];
+}
+function renderConceptCategories(){
+  const sel=$("conceptCategorySelect");
+  if(!sel)return;
+  sel.innerHTML="";
+  conceptCategories().forEach(c=>{
+    const o=document.createElement("option");
+    o.value=c;o.textContent=c;sel.appendChild(o);
+  });
+}
+function renderConceptList(){
+  const box=$("conceptList");
+  if(!box)return;
+  const data=window.BUDDHIST_BACKGROUND_DATA||{};
+  const q=($("conceptSearchInput")?.value||"").trim().toLowerCase();
+  const cat=$("conceptCategorySelect")?.value||"全部";
+  const items=(data.concepts||[]).filter(c=>{
+    const text=[c.pali,c.cn,c.en,c.category,c.basic,c.reading_tip,c.example,...(c.related||[])].join(" ").toLowerCase();
+    return (cat==="全部"||c.category===cat)&&(!q||text.includes(q));
+  });
+  box.innerHTML=items.length?"":"<p class='muted'>没有找到相关概念。</p>";
+  items.forEach(c=>{
+    const div=document.createElement("div");
+    div.className="concept-card";
+    div.innerHTML=`
+      <span class="pattern-level ${c.level==='必学'?'tier-required':(c.level==='进阶'?'tier-advanced':'tier-optional')}">${c.level}</span>
+      <span class="reading-category">${c.category}</span>
+      <h3>${c.pali} ｜ ${c.cn}</h3>
+      <p><strong>英文参考：</strong>${c.en}</p>
+      <p><strong>基础解释：</strong>${c.basic}</p>
+      <p><strong>阅读提醒：</strong>${c.reading_tip}</p>
+      <div class="analysis-example"><strong>例句：</strong>${c.example}</div>
+      <p><strong>相关：</strong>${(c.related||[]).join("、")}</p>
+    `;
+    box.appendChild(div);
+  });
+}
+function linkedBuddhistBackgroundHTML(lesson){
+  if(!lesson||!lesson.linked_buddhist_background||!lesson.linked_buddhist_background.length)return "";
+  const labels={concepts:"佛学概念小词典",canon:"三藏结构与略号",refs:"章节术语与引用格式",flow:"佛经篇章结构"};
+  return `<div class="linked-background-box"><strong>相关佛典背景知识：</strong><br>${lesson.linked_buddhist_background.map(k=>`<button class="background-link-btn" data-bg-open="${k}">${labels[k]||k}</button>`).join("")}</div>`;
+}
+function bindBackgroundButtons(){
+  document.querySelectorAll("[data-bg-open]").forEach(btn=>{
+    btn.onclick=()=>{switchView("buddhistBackgroundView");renderBuddhistBackground(btn.dataset.bgOpen);};
+  });
+}
 
 
-const VERSION_LOG = [
-  { version: "7.4", note: "增加教师维护页、反馈处理模板、版本记录，并扩充阅读分析题。" },
-  { version: "7.3", note: "增加学习报告、模块掌握率、学习报告导出、反馈TSV导出。" },
-  { version: "7.2", note: "增加专项训练页面和阅读训练语法点。" },
-  { version: "7.1", note: "优化练习体验：手动下一题、巴利语字符小键盘、输入题宽松判定。" },
-  { version: "7.0", note: "扩充三类重点练习题：不定式/连续体、名词变格、不变词与句型。" },
-  { version: "6.4", note: "增加反馈功能：复制反馈、下载反馈、保存本地反馈草稿。" },
-  { version: "6.3", note: "增加PWA支持、学习记录导入导出、模块进度条。" },
-  { version: "6.2", note: "增加学习路径、搜索、学习状态、今日复习。" },
-  { version: "6.1", note: "根据老师讲义 Lesson 1—6 逐课核查扩充部分内容。" },
-  { version: "6.0", note: "从条目列表升级为模块课程版。" }
-];
+let academicTrainingTab="method";
+function renderAcademicTraining(tab){
+  if(tab)academicTrainingTab=tab;
+  const box=$("academicTrainingContent");
+  if(!box)return;
+  const data=window.ACADEMIC_TRAINING_DATA||{};
+  const tabNow=academicTrainingTab;
+  document.querySelectorAll(".academic-tab").forEach(btn=>btn.classList.toggle("primary", btn.dataset.academicTab===tabNow));
 
-function renderTeacherView() {
-  const table = $("feedbackTemplateTable");
-  if (table) {
-    table.innerHTML = "";
-    const rows = [
-      ["反馈编号", "提交时间", "反馈人", "相关语法点", "问题类型", "问题描述", "建议修改", "参考依据", "处理状态", "教师备注"],
-      ["FB-001", "", "", "", "", "", "", "", "未处理 / 已采纳 / 不采纳 / 待核查", ""]
-    ];
-    rows.forEach(row => {
-      const tr = document.createElement("tr");
-      row.forEach(cell => {
-        const td = document.createElement("td");
-        td.textContent = cell;
-        tr.appendChild(td);
-      });
-      table.appendChild(tr);
-    });
+  if(tabNow==="method"){
+    box.innerHTML=`<h3>文献阅读方法</h3><p class="muted">重点不是“看懂大意”，而是把原文处理成可研究材料。</p>
+    <div class="academic-list">${(data.method||[]).map(m=>`
+      <div class="academic-card">
+        <span class="pattern-level ${m.level==='必学'?'tier-required':'tier-optional'}">${m.level}</span>
+        <h3>${m.title}</h3>
+        <p><strong>训练目标：</strong>${m.goal}</p>
+        <ol>${(m.steps||[]).map(s=>`<li>${s}</li>`).join("")}</ol>
+        <div class="academic-example">
+          <strong>示例记录</strong>
+          <p><strong>原文：</strong>${m.example.source}</p>
+          <p><strong>直译：</strong>${m.example.literal}</p>
+          <p><strong>顺译：</strong>${m.example.natural}</p>
+          <p><strong>语法点：</strong>${m.example.grammar}</p>
+          <p><strong>阅读类型：</strong>${m.example.type}</p>
+          <p><strong>研究提醒：</strong>${m.example.research_note}</p>
+        </div>
+      </div>`).join("")}</div>`;
   }
 
-  const box = $("versionLogBox");
-  if (box) {
-    box.innerHTML = "";
-    VERSION_LOG.forEach(item => {
-      const div = document.createElement("div");
-      div.className = "version-item";
-      div.innerHTML = `<h4>${item.version}</h4><p class="muted">${item.note}</p>`;
-      box.appendChild(div);
-    });
-  }
-}
-
-function studentGuideText() {
-  return [
-    "【巴利语语法复习网站使用说明】",
-    "1. 先从“学习路径”进入，按阶段学习，不建议直接跳到高级语法。",
-    "2. 每学完一个语法点，请标记学习状态：未学 / 学习中 / 已掌握 / 需复习。",
-    "3. 每个语法点包含学习说明、表格、例句、卡片和练习题。",
-    "4. 做错的题会进入“错题复习”。建议每次学习前先清理错题。",
-    "5. 如果发现语法变化、例句、翻译或答案有疑问，请进入“反馈”页填写并复制反馈文本发给老师。",
-    "6. 换手机或清缓存前，请在“数据管理”中导出学习记录。"
-  ].join("\\n");
-}
-
-function feedbackTemplateText() {
-  return [
-    ["反馈编号", "提交时间", "反馈人", "相关语法点", "问题类型", "问题描述", "建议修改", "参考依据", "处理状态", "教师备注"].join("\\t")
-  ].join("\\n");
-}
-
-function versionLogText() {
-  return VERSION_LOG.map(item => `${item.version}\\t${item.note}`).join("\\n");
-}
-
-async function copyStudentGuide() {
-  try {
-    await navigator.clipboard.writeText(studentGuideText());
-    alert("学生使用说明已复制。");
-  } catch {
-    downloadTextFile("student-guide.txt", studentGuideText());
-  }
-}
-
-async function copyFeedbackTemplate() {
-  try {
-    await navigator.clipboard.writeText(feedbackTemplateText());
-    alert("反馈处理表头已复制，可直接粘贴到 Excel。");
-  } catch {
-    downloadTextFile("feedback-template.tsv", feedbackTemplateText());
-  }
-}
-
-async function copyVersionLog() {
-  try {
-    await navigator.clipboard.writeText(versionLogText());
-    alert("版本记录已复制。");
-  } catch {
-    downloadTextFile("version-log.tsv", versionLogText());
-  }
-}
-
-function downloadVersionLog() {
-  downloadTextFile(`pali-version-log-${new Date().toISOString().slice(0, 10)}.tsv`, versionLogText());
-}
-
-
-const RELEASE_FILES = [
-  "index.html",
-  "style.css",
-  "app.js",
-  "grammar.json",
-  "manifest.json",
-  "sw.js",
-  "icon-192.png",
-  "icon-512.png"
-];
-
-function publishChecklistText() {
-  return [
-    "【Pali Grammar 发布前检查清单】",
-    `版本：${VERSION}`,
-    `生成时间：${new Date().toLocaleString()}`,
-    "",
-    "一、必须上传的 8 个文件：",
-    "1. index.html",
-    "2. style.css",
-    "3. app.js",
-    "4. grammar.json",
-    "5. manifest.json",
-    "6. sw.js",
-    "7. icon-192.png",
-    "8. icon-512.png",
-    "",
-    "二、电脑端检查：",
-    "□ 首页能打开",
-    "□ 学习路径能打开",
-    "□ 模块学习能打开",
-    "□ 搜索能搜索到语法点",
-    "□ 练习题能提交",
-    "□ 错题能保存",
-    "□ 反馈能复制或下载",
-    "□ 学习报告能导出",
-    "",
-    "三、手机端检查：",
-    "□ 手机浏览器能打开网站",
-    "□ 练习题按钮能点击",
-    "□ 输入题能弹出巴利语字符小键盘",
-    "□ 学习状态能保存",
-    "□ 可以添加到主屏幕",
-    "",
-    "四、缓存处理：",
-    "□ 如果页面仍是旧版本，刷新几次",
-    "□ 如果仍不更新，清除该网站的浏览器缓存/网站数据",
-    "□ PWA 桌面图标如仍旧，删除后重新添加到主屏幕"
-  ].join("\\n");
-}
-
-function renderReleaseInfo() {
-  const el = $("releaseInfo");
-  if (!el) return;
-  const totalExercises = GRAMMAR.reduce((sum, lesson) => sum + (lesson.exercises || []).length, 0);
-  el.innerHTML = `
-    <p><strong>当前版本：</strong>${VERSION}</p>
-    <p><strong>语法点：</strong>${GRAMMAR.length} 个</p>
-    <p><strong>练习题：</strong>${totalExercises} 道</p>
-    <p><strong>必需文件：</strong>${RELEASE_FILES.length} 个</p>
-  `;
-}
-
-function addCheckResult(title, okLevel, detail) {
-  const box = $("preflightResults");
-  const div = document.createElement("div");
-  div.className = `check-item ${okLevel}`;
-  const icon = okLevel === "ok" ? "✅" : okLevel === "warn" ? "⚠️" : "❌";
-  div.innerHTML = `<strong>${icon} ${title}</strong><p class="muted">${detail}</p>`;
-  box.appendChild(div);
-}
-
-async function runPreflightChecks() {
-  const box = $("preflightResults");
-  box.innerHTML = "";
-
-  addCheckResult("版本检查", "ok", `当前 app.js 版本为 ${VERSION}。`);
-
-  const totalExercises = GRAMMAR.reduce((sum, lesson) => sum + (lesson.exercises || []).length, 0);
-  if (GRAMMAR.length >= 70 && totalExercises >= 150) {
-    addCheckResult("内容数量检查", "ok", `语法点 ${GRAMMAR.length} 个，练习题 ${totalExercises} 道。`);
-  } else {
-    addCheckResult("内容数量检查", "warn", `语法点 ${GRAMMAR.length} 个，练习题 ${totalExercises} 道。数量偏少时建议继续补题。`);
+  if(tabNow==="citation"){
+    const c=data.citation||{};
+    box.innerHTML=`<h3>原典引用与学术规范</h3>
+    <div class="academic-list">${(c.principles||[]).map(p=>`
+      <div class="academic-card"><h3>${p.title}</h3><p>${p.content}</p></div>`).join("")}</div>
+    <div class="academic-card">
+      <h3>常见引用格式</h3>
+      <table><tr><td>格式</td><td>含义</td></tr>${(c.citation_examples||[]).map(e=>`<tr><td><strong>${e.format}</strong></td><td>${e.meaning}</td></tr>`).join("")}</table>
+    </div>
+    <div class="academic-card">
+      <h3>材料记录模板</h3>
+      <pre>${(c.record_template||[]).join("\\n")}</pre>
+      <button class="secondary" onclick="copyAcademicTemplate('citation')">复制模板</button>
+    </div>`;
   }
 
-  try {
-    localStorage.setItem("__pali_test__", "ok");
-    localStorage.removeItem("__pali_test__");
-    addCheckResult("本地存储检查", "ok", "localStorage 可用，学习状态、错题和反馈草稿可以保存在当前浏览器。");
-  } catch {
-    addCheckResult("本地存储检查", "bad", "localStorage 不可用，学习状态和错题可能无法保存。");
+  if(tabNow==="vocabulary"){
+    box.innerHTML=`<h3>巴利词汇研究入门</h3><p class="muted">一个词的研究不能只靠词典义，要看词形、搭配和上下文。</p>
+    <div class="academic-list">${(data.vocabulary||[]).map(v=>`
+      <div class="academic-card">
+        <h3>${v.title}</h3>
+        <div class="module-warning"><strong>核心提醒：</strong>${v.core_warning}</div>
+        <ol>${(v.steps||[]).map(s=>`<li>${s}</li>`).join("")}</ol>
+        <table><tr><td>例句</td><td>用法判断</td></tr>${(v.sample_records||[]).map(r=>`<tr><td>${r.pali}</td><td>${r.use}</td></tr>`).join("")}</table>
+      </div>`).join("")}</div>`;
   }
 
-  if ("serviceWorker" in navigator) {
-    addCheckResult("PWA 支持检查", "ok", "当前浏览器支持 Service Worker，可使用 PWA 缓存。");
-  } else {
-    addCheckResult("PWA 支持检查", "warn", "当前浏览器不支持 Service Worker，手机添加桌面或离线缓存可能受限。");
+  if(tabNow==="analysis"){
+    const t=data.analysis_template||{};
+    box.innerHTML=`<h3>${t.title}</h3>
+    <div class="academic-card">
+      <table><tr><td>项目</td><td>说明</td></tr>${(t.fields||[]).map(f=>`<tr><td><strong>${f.name}</strong></td><td>${f.tip}</td></tr>`).join("")}</table>
+      <button class="secondary" onclick="copyAcademicTemplate('analysis')">复制分析模板</button>
+    </div>
+    <div class="academic-card">
+      <h3>示例分析</h3>
+      <p><strong>原文：</strong>${t.example.source}</p>
+      <p><strong>词形分析：</strong>${t.example.word_form}</p>
+      <p><strong>句法功能：</strong>${t.example.syntax}</p>
+      <p><strong>语义结构：</strong>${t.example.semantic}</p>
+      <p><strong>结构类型：</strong>${t.example.type}</p>
+      <p><strong>翻译选择：</strong>${t.example.translation}</p>
+      <p><strong>可能误判：</strong>${t.example.pitfall}</p>
+      <p><strong>研究价值：</strong>${t.example.research_value}</p>
+    </div>`;
   }
 
-  for (const file of RELEASE_FILES) {
-    try {
-      const res = await fetch(`./${file}`, { cache: "no-store" });
-      if (res.ok) {
-        addCheckResult(`文件检查：${file}`, "ok", "文件可访问。");
-      } else {
-        addCheckResult(`文件检查：${file}`, "bad", `服务器返回状态 ${res.status}，可能未上传或路径错误。`);
-      }
-    } catch (error) {
-      addCheckResult(`文件检查：${file}`, "bad", "文件无法访问，可能未上传、路径错误，或本地没有通过 http.server 打开。");
-    }
+  if(tabNow==="tasks"){
+    box.innerHTML=`<h3>小型研究任务</h3><p class="muted">任务型训练用于把语言学习推进到研究能力训练。</p>
+    <div class="academic-list">${(data.research_tasks||[]).map(t=>`
+      <div class="academic-card">
+        <span class="pattern-level ${t.level==='入门'?'tier-required':'tier-advanced'}">${t.level}</span>
+        <h3>${t.title}</h3>
+        <p><strong>任务目标：</strong>${t.goal}</p>
+        <ol>${(t.steps||[]).map(s=>`<li>${s}</li>`).join("")}</ol>
+        <div class="academic-output"><strong>提交形式：</strong>${t.output}</div>
+      </div>`).join("")}</div>`;
   }
 
-  try {
-    const res = await fetch("./grammar.json", { cache: "no-store" });
-    const data = await res.json();
-    const exercises = data.reduce((sum, lesson) => sum + (lesson.exercises || []).length, 0);
-    addCheckResult("grammar.json 数据检查", "ok", `成功读取 ${data.length} 个语法点、${exercises} 道练习题。`);
-  } catch {
-    addCheckResult("grammar.json 数据检查", "bad", "grammar.json 无法解析。请检查文件是否完整。");
+  if(tabNow==="pitfalls"){
+    box.innerHTML=`<h3>学术研究常见误区</h3>
+    <div class="academic-list">${(data.pitfalls||[]).map((p,i)=>`
+      <div class="academic-card">
+        <h3>${i+1}. ${p.title}</h3>
+        <p><strong>修正方法：</strong>${p.fix}</p>
+      </div>`).join("")}</div>`;
   }
 }
-
-async function copyPublishChecklist() {
-  try {
-    await navigator.clipboard.writeText(publishChecklistText());
-    alert("发布清单已复制。");
-  } catch {
-    downloadTextFile("publish-checklist.txt", publishChecklistText());
+function academicTemplateText(kind){
+  const data=window.ACADEMIC_TRAINING_DATA||{};
+  if(kind==="citation"){
+    return (data.citation?.record_template||[]).join("\\n");
   }
+  if(kind==="analysis"){
+    const fields=data.analysis_template?.fields||[];
+    return fields.map(f=>`${f.name}：`).join("\\n");
+  }
+  return "";
+}
+async function copyAcademicTemplate(kind){
+  const text=academicTemplateText(kind);
+  try{await navigator.clipboard.writeText(text);alert("模板已复制。")}catch{alert(text)}
+}
+function linkedAcademicTrainingHTML(lesson){
+  if(!lesson||!lesson.linked_academic_training||!lesson.linked_academic_training.length)return "";
+  const labels={method:"文献阅读方法",citation:"原典引用规范",vocabulary:"巴利词汇研究",analysis:"学术分析模板",tasks:"小型研究任务",pitfalls:"学术误区"};
+  return `<div class="linked-academic-box"><strong>相关学术阅读训练：</strong><br>${lesson.linked_academic_training.map(k=>`<button class="academic-link-btn" data-academic-open="${k}">${labels[k]||k}</button>`).join("")}</div>`;
+}
+function bindAcademicButtons(){
+  document.querySelectorAll("[data-academic-open]").forEach(btn=>{
+    btn.onclick=()=>{switchView("academicTrainingView");renderAcademicTraining(btn.dataset.academicOpen);};
+  });
 }
 
-function downloadPublishChecklist() {
-  downloadTextFile(`pali-publish-checklist-${new Date().toISOString().slice(0, 10)}.txt`, publishChecklistText());
+
+function termCategories(){
+  return ["全部", ...new Set((window.TERMINOLOGY_GLOSSARY||[]).map(x=>x.cat))];
+}
+function renderTermCategories(){
+  const sel=$("termCategorySelect");
+  if(!sel)return;
+  const old=sel.value||"全部";
+  sel.innerHTML="";
+  termCategories().forEach(c=>{
+    const o=document.createElement("option");
+    o.value=c;o.textContent=c;sel.appendChild(o);
+  });
+  if([...sel.options].some(o=>o.value===old))sel.value=old;
+}
+function renderTerminologyGlossary(){
+  const box=$("termGlossaryList");
+  if(!box)return;
+  const q=($("termSearchInput")?.value||"").trim().toLowerCase();
+  const cat=$("termCategorySelect")?.value||"全部";
+  const items=(window.TERMINOLOGY_GLOSSARY||[]).filter(t=>{
+    const text=[t.cat,t.en,t.ipa,t.cn,t.pali,t.note].join(" ").toLowerCase();
+    return (cat==="全部"||t.cat===cat)&&(!q||text.includes(q));
+  });
+  box.innerHTML=items.length?"":"<p class='muted'>没有找到相关术语。</p>";
+  items.forEach(t=>{
+    const details=document.createElement("details");
+    details.className="term-card";
+    details.innerHTML=`
+      <summary>
+        <span class="term-en">${t.en}</span>
+        <span class="term-cn">${t.cn}</span>
+        <span class="term-cat">${t.cat}</span>
+      </summary>
+      <div class="term-detail">
+        <p><strong>英文：</strong>${t.en} <span class="ipa">${t.ipa}</span></p>
+        <p><strong>中文：</strong>${t.cn}</p>
+        <p><strong>巴利/传统术语：</strong>${t.pali}</p>
+        <p><strong>说明：</strong>${t.note}</p>
+      </div>
+    `;
+    box.appendChild(details);
+  });
+}
+function linkedTerminologyHTML(lesson){
+  if(!lesson)return "";
+  const text=[lesson.title,lesson.summary,lesson.module,lesson.category,...(lesson.explanation||[])].join(" ").toLowerCase();
+  const terms=(window.TERMINOLOGY_GLOSSARY||[]).filter(t=>{
+    const keys=[t.en.toLowerCase(),t.cn.toLowerCase(),String(t.pali||"").toLowerCase()];
+    return keys.some(k=>k&&k.length>2&&text.includes(k));
+  }).slice(0,6);
+  if(!terms.length)return "";
+  return `<div class="linked-term-box"><strong>相关术语：</strong><br>${terms.map(t=>`<button class="term-link-btn" data-term-open="${t.en}">${t.en} / ${t.cn}</button>`).join("")}</div>`;
+}
+function bindTermButtons(){
+  document.querySelectorAll("[data-term-open]").forEach(btn=>{
+    btn.onclick=()=>{
+      switchView("terminologyGlossaryView");
+      renderTermCategories();
+      if($("termSearchInput"))$("termSearchInput").value=btn.dataset.termOpen;
+      if($("termCategorySelect"))$("termCategorySelect").value="全部";
+      renderTerminologyGlossary();
+    };
+  });
 }
 
-async function init() {
-  const response = await fetch("grammar.json");
-  GRAMMAR = await response.json();
+async function init(){
+  GRAMMAR=await (await fetch('grammar.json')).json();
+  renderModules();renderSelect();renderWrong();search('');renderTraining();stats();
 
-  renderPath();
-  renderDailyBox();
-  renderModules();
-  renderExerciseModuleSelect();
-  renderWrongList();
-  renderSearchResults("");
-  renderFeedbackLessonSelect();
-  renderFeedbackDrafts();
-  renderTrainingPresets();
-  renderReportView();
-  renderTeacherView();
-  renderReleaseInfo();
-  updateStats();
+  if(typeof renderSentenceLevels==="function")renderSentenceLevels();
+  if(typeof renderLinguisticsCategories==="function")renderLinguisticsCategories();
+  if(typeof renderLinguisticsTips==="function")renderLinguisticsTips();
+  if(typeof renderLearningRoutes==="function")renderLearningRoutes();
+  if(typeof renderDictionarySites==="function")renderDictionarySites();
+  if(typeof renderLookupHistory==="function")renderLookupHistory();
+  if(typeof renderSiteHealth==="function")renderSiteHealth();
+  if(typeof renderVersionStatus==="function")renderVersionStatus();
+  if(typeof renderProgressSummary==="function")renderProgressSummary();
+  if(typeof renderModuleGuides==="function")renderModuleGuides();
 
-  document.querySelectorAll(".tab").forEach(tab => {
-    tab.addEventListener("click", () => switchView(tab.dataset.view));
+  document.querySelectorAll('[data-action]').forEach(b=>b.onclick=()=>{
+    let a=b.dataset.action;
+    if(a==='modules'){switchView('homeView');setTimeout(()=>document.getElementById('moduleGridCard')?.scrollIntoView({behavior:'smooth'}),50)}
+    else if(a==='search')switchView('searchView');
+    else if(a==='exercise')switchView('exerciseCenterView');
+    else if(a==='training'){renderTraining();switchView('trainingView')}
+    else if(a==='wrong'){renderWrong();switchView('wrongView')}
+    else if(a==='learningRoute'){renderLearningRoutes();switchView('learningRouteView')}
+    else if(a==='studentGuide')switchView('studentGuideView');
+    else if(a==='dictionaryLookup'){renderDictionarySites();renderLookupHistory();switchView('dictionaryLookupView')}
+    else if(a==='sentenceAnalysis'){renderSentenceLevels();switchView('sentenceAnalysisView')}
+    else if(a==='sentencePatterns'){renderSentencePatterns();switchView('sentencePatternsView')}
+    else if(a==='buddhistReading'){renderBuddhistReadingCategories();renderBuddhistReading();switchView('buddhistReadingView')}
+    else if(a==='buddhistBackground'){renderBuddhistBackground('concepts');switchView('buddhistBackgroundView')}
+    else if(a==='academicTraining'){renderAcademicTraining('method');switchView('academicTrainingView')}
+    else if(a==='linguisticsTips'){renderLinguisticsCategories();renderLinguisticsTips();switchView('linguisticsTipsView')}
+    else if(a==='terminologyGlossary'){renderTermCategories();renderTerminologyGlossary();switchView('terminologyGlossaryView')}
+    else if(a==='learningProgress'){renderProgressSummary();switchView('learningProgressView')}
+    else if(a==='moduleGuide'){renderModuleGuides();switchView('moduleGuideView')}
+    else if(a==='confusionPairs'){renderConfusionPairs();switchView('confusionPairsView')}
+    else if(a==='trialTasks'){renderTrialTasks();switchView('trialTasksView')}
+    else switchView('homeView');
   });
 
-  document.querySelectorAll(".status-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      if (currentLesson) setLessonStatus(currentLesson.id, btn.dataset.status);
-    });
-  });
+  document.querySelectorAll('.back-home').forEach(b=>b.onclick=()=>switchView('homeView'));
+  if($('backHomeFromListBtn'))$('backHomeFromListBtn').onclick=()=>switchView('homeView');
+  if($('backToListBtn'))$('backToListBtn').onclick=()=>switchView(lastView==='searchView'?'searchView':'lessonListView');
 
-  document.querySelectorAll(".filter-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      currentFilter = btn.dataset.filter;
-      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      if (currentModule) renderLessonList(currentModule);
-    });
-  });
+  document.querySelectorAll('.status-btn').forEach(b=>b.onclick=()=>currentLesson&&setLStat(currentLesson.id,b.dataset.status));
+  document.querySelectorAll('.filter-btn').forEach(b=>b.onclick=()=>{currentFilter=b.dataset.filter;document.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderLessonList(currentModule)});
+  if($('startCardsBtn'))$('startCardsBtn').onclick=()=>startCards(currentLesson.cards||[]);
+  if($('showCardAnswerBtn'))$('showCardAnswerBtn').onclick=()=>{show('cardAnswer');hide('cardBeforeButtons');show('cardAfterButtons')};
+  if($('cardKnowBtn'))$('cardKnowBtn').onclick=nextCard;
+  if($('cardWrongBtn'))$('cardWrongBtn').onclick=nextCard;
+  if($('exitCardsBtn'))$('exitCardsBtn').onclick=()=>hide('cardPanel');
+  if($('startLessonExercisesBtn'))$('startLessonExercisesBtn').onclick=()=>startExercises((currentLesson.exercises||[]).map(ex=>({...ex,lesson_id:currentLesson.id,lesson_title:currentLesson.title,module:currentLesson.module})),'本课练习');
+  if($('startMixedExercisesBtn'))$('startMixedExercisesBtn').onclick=()=>startExercises(shuffle(allEx($('exerciseModuleSelect').value)).slice(0,parseInt($('exerciseCountInput').value||'10')),'练习');
+  if($('submitExerciseBtn'))$('submitExerciseBtn').onclick=submitExercise;
+  if($('nextExerciseBtn'))$('nextExerciseBtn').onclick=nextEx;
+  if($('exitExerciseBtn'))$('exitExerciseBtn').onclick=()=>hide('exercisePanel');
+  document.querySelectorAll('#paliKeyboard button').forEach(b=>b.onclick=()=>{let i=$('exerciseInput'),ch=b.dataset.char,s=i.selectionStart||i.value.length,e=i.selectionEnd||i.value.length;i.value=i.value.slice(0,s)+ch+i.value.slice(e);i.focus();i.selectionStart=i.selectionEnd=s+ch.length});
+  if($('startWrongBtn'))$('startWrongBtn').onclick=()=>startExercises(shuffle(Object.values(getW())),'错题复习');
+  if($('clearWrongBtn'))$('clearWrongBtn').onclick=()=>{if(confirm('确定清空所有错题记录吗？')){saveW({});renderWrong()}};
+  if($('searchInput'))$('searchInput').oninput=e=>search(e.target.value);
 
-  $("backToModulesBtn").addEventListener("click", () => {
-    hide("lessonListPanel");
-  });
+  if($('sentenceLevelSelect'))$('sentenceLevelSelect').onchange=renderSentenceSelect;
+  if($('sentenceTagSelect'))$('sentenceTagSelect').onchange=renderSentenceSelect;
+  if($('sentenceSourceSelect'))$('sentenceSourceSelect').onchange=renderSentenceSelect;
+  if($('sentencePrioritySelect'))$('sentencePrioritySelect').onchange=renderSentenceSelect;
+  if($('sentenceStatusSelect'))$('sentenceStatusSelect').onchange=renderSentenceSelect;
+  if($('sentenceSelect'))$('sentenceSelect').onchange=()=>renderSentenceCard('question');
+  if($('showSentenceHintBtn'))$('showSentenceHintBtn').onclick=()=>renderSentenceCard('hint');
+  if($('showSentenceAnalysisBtn'))$('showSentenceAnalysisBtn').onclick=()=>renderSentenceCard('analysis');
+  if($('nextSentenceBtn'))$('nextSentenceBtn').onclick=nextSentence;
+  if($('randomSentenceBtn'))$('randomSentenceBtn').onclick=randomSentence;
+  if($('markSentenceMasteredBtn'))$('markSentenceMasteredBtn').onclick=()=>{const item=currentSentence();if(item){setSentenceStatus(item.id,'已掌握');renderSentenceSelect(true)}};
+  if($('markSentenceReviewBtn'))$('markSentenceReviewBtn').onclick=()=>{const item=currentSentence();if(item){setSentenceStatus(item.id,'需复习');renderSentenceSelect(true)}};
+  if($('copySentenceAnalysisBtn'))$('copySentenceAnalysisBtn').onclick=copyCurrentSentenceAnalysis;
+  if($('startBasicSentenceBtn'))$('startBasicSentenceBtn').onclick=startBasicSentenceRoute;
+  if($('showReviewSentenceBtn'))$('showReviewSentenceBtn').onclick=showReviewSentenceRoute;
+  if($('resetSentenceFiltersBtn'))$('resetSentenceFiltersBtn').onclick=resetSentenceFilters;
 
-  $("closeLessonBtn").addEventListener("click", closeLesson);
-  $("startTodayBtn").addEventListener("click", startTodayReview);
-  $("copyReportBtn").addEventListener("click", copyReport);
-  $("exportReportBtn").addEventListener("click", exportReport);
-  $("exportReportTsvBtn").addEventListener("click", exportReportTsv);
-  $("copyStudentGuideBtn").addEventListener("click", copyStudentGuide);
-  $("copyFeedbackTemplateBtn").addEventListener("click", copyFeedbackTemplate);
-  $("copyVersionLogBtn").addEventListener("click", copyVersionLog);
-  $("downloadVersionLogBtn").addEventListener("click", downloadVersionLog);
-  $("runPreflightBtn").addEventListener("click", runPreflightChecks);
-  $("copyPublishChecklistBtn").addEventListener("click", copyPublishChecklist);
-  $("downloadPublishChecklistBtn").addEventListener("click", downloadPublishChecklist);
+  if($('linguisticsSearchInput'))$('linguisticsSearchInput').oninput=renderLinguisticsTips;
+  if($('linguisticsCategorySelect'))$('linguisticsCategorySelect').onchange=renderLinguisticsTips;
+  if($('closeTipModalBtn'))$('closeTipModalBtn').onclick=closeTipModal;
 
-  $("startCardsBtn").addEventListener("click", () => startCards(currentLesson.cards || []));
-  $("showCardAnswerBtn").addEventListener("click", () => {
-    show("cardAnswer");
-    hide("cardBeforeButtons");
-    show("cardAfterButtons");
-  });
-  $("cardKnowBtn").addEventListener("click", nextCard);
-  $("cardWrongBtn").addEventListener("click", nextCard);
-  $("exitCardsBtn").addEventListener("click", () => hide("cardPanel"));
+  if($('copyLookupWordBtn'))$('copyLookupWordBtn').onclick=copyLookupWord;
+  if($('openPrimaryDictBtn'))$('openPrimaryDictBtn').onclick=openPrimaryDictionary;
+  if($('clearLookupWordBtn'))$('clearLookupWordBtn').onclick=clearLookupWord;
+  if($('analyzeLookupWordBtn'))$('analyzeLookupWordBtn').onclick=()=>analyzePaliToken();
+  if($('selectedWordAnalyzeBtn'))$('selectedWordAnalyzeBtn').onclick=analyzeSelectedText;
+  if($('openDictAfterAnalyzeBtn'))$('openDictAfterAnalyzeBtn').onclick=analyzeAndLookup;
 
-  $("startLessonExercisesBtn").addEventListener("click", () => {
-    const items = (currentLesson.exercises || []).map(ex => ({
-      ...ex,
-      lesson_id: currentLesson.id,
-      lesson_title: currentLesson.title,
-      module: currentLesson.module
-    }));
-    startExercises(items, "本课练习");
-  });
+  if($('refreshCacheBtn'))$('refreshCacheBtn').onclick=refreshSiteCache;
+  if($('runSiteCheckBtn'))$('runSiteCheckBtn').onclick=()=>{renderSiteHealth();checkRequiredFiles();};
 
-  $("feedbackThisLessonBtn").addEventListener("click", () => {
-    if (currentLesson) {
-      switchView("feedbackView");
-      $("feedbackLessonSelect").value = String(currentLesson.id);
-      $("feedbackDesc").focus();
-    }
-  });
+  if($('exportProgressBtn'))$('exportProgressBtn').onclick=exportProgress;
+  if($('importProgressBtn'))$('importProgressBtn').onclick=importProgress;
+  if($('clearProgressBtn'))$('clearProgressBtn').onclick=clearProgress;
+  if($('copyFeedbackBtn'))$('copyFeedbackBtn').onclick=copyFeedbackTemplate;
+  if($('resetTrialTasksBtn'))$('resetTrialTasksBtn').onclick=resetTrialTasks;
+  if($('copyTrialFeedbackBtn'))$('copyTrialFeedbackBtn').onclick=copyTrialFeedback;
+  if($('goTrialRouteBtn'))$('goTrialRouteBtn').onclick=()=>{renderLearningRoutes();switchView('learningRouteView')};
 
-  $("startMixedExercisesBtn").addEventListener("click", () => {
-    const moduleName = $("exerciseModuleSelect").value;
-    const count = parseInt($("exerciseCountInput").value || "10", 10);
-    const items = shuffle(allExercisesForModule(moduleName)).slice(0, count);
-    startExercises(items, moduleName === "全部模块" ? "混合练习" : `${moduleName}练习`);
-  });
-
-  $("submitExerciseBtn").addEventListener("click", submitExercise);
-  $("nextExerciseBtn").addEventListener("click", goNextExercise);
-  $("exitExerciseBtn").addEventListener("click", () => hide("exercisePanel"));
-
-  document.querySelectorAll("#paliKeyboard button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const input = $("exerciseInput");
-      const char = btn.dataset.char;
-      const start = input.selectionStart || input.value.length;
-      const end = input.selectionEnd || input.value.length;
-      input.value = input.value.slice(0, start) + char + input.value.slice(end);
-      input.focus();
-      input.selectionStart = input.selectionEnd = start + char.length;
-    });
-  });
-
-  $("startWrongBtn").addEventListener("click", () => {
-    const items = Object.values(getWrongRecords());
-    startExercises(shuffle(items), "错题复习");
-  });
-
-  $("clearWrongBtn").addEventListener("click", () => {
-    if (confirm("确定清空所有错题记录吗？")) {
-      saveWrongRecords({});
-      renderWrongList();
-      renderDailyBox();
-    }
-  });
-
-  $("clearStatusBtn").addEventListener("click", () => {
-    if (confirm("确定清空所有学习状态吗？错题不会被清空。")) {
-      saveStatuses({});
-      renderPath();
-      renderDailyBox();
-      renderModules();
-      if (currentModule) renderLessonList(currentModule);
-      updateStatusButtons();
-    }
-  });
-
-  $("exportDataBtn").addEventListener("click", exportData);
-  $("importDataInput").addEventListener("change", event => {
-    const file = event.target.files[0];
-    if (file) importData(file);
-  });
-
-  $("searchInput").addEventListener("input", event => {
-    renderSearchResults(event.target.value);
-  });
-
-  $("copyFeedbackBtn").addEventListener("click", copyFeedback);
-  $("downloadFeedbackBtn").addEventListener("click", downloadFeedback);
-  $("saveFeedbackDraftBtn").addEventListener("click", saveFeedbackDraft);
-  $("exportFeedbackDraftsBtn").addEventListener("click", exportFeedbackDrafts);
-  $("exportFeedbackTsvBtn").addEventListener("click", exportFeedbackTsv);
-  $("copyAllFeedbackBtn").addEventListener("click", copyAllFeedbackDrafts);
-  $("clearFeedbackDraftsBtn").addEventListener("click", () => {
-    if (confirm("确定清空本机反馈草稿吗？")) {
-      saveFeedbackDrafts([]);
-      renderFeedbackDrafts();
-    }
-  });
-
-  registerServiceWorker();
+  if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
 }
-
-init().catch(error => {
-  console.error(error);
-  alert("加载失败：请确认 grammar.json、app.js、style.css、index.html 在同一文件夹。");
-});
+init().catch(e=>alert('加载失败：请确认 13 个网站文件都已上传。'));

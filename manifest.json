@@ -6,7 +6,7 @@
   "display": "standalone",
   "background_color": "#f3f4f6",
   "theme_color": "#111827",
-  "description": "巴利语语法学习、专项训练、阅读分析、学习报告、教师维护、反馈纠错和发布前检查工具",
+  "description": "巴利语语法学习跳转修复版；补齐所有页面容器，修复首页各入口跳转。",
   "icons": [
     {
       "src": "icon-192.png",

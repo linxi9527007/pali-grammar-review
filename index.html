@@ -1,375 +1,108 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>巴利语语法复习</title>
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#111827" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main class="app">
-    <header class="hero">
-      <div>
-        <p class="eyebrow">Pali Grammar Review</p>
-        <h1>📘 巴利语语法复习</h1>
-        <p class="subtitle">学习路径｜模块学习｜搜索｜练习中心｜错题复习｜反馈纠错</p>
-      </div>
-      <div class="hero-stats">
-        <div><strong id="totalLessons">0</strong><span>语法点</span></div>
-        <div><strong id="totalExercises">0</strong><span>练习题</span></div>
-        <div><strong id="masteredCount">0</strong><span>已掌握</span></div>
-        <div><strong id="wrongCount">0</strong><span>错题</span></div>
-      </div>
-    </header>
-
-    <nav class="tabs">
-      <button class="tab active" data-view="pathView">学习路径</button>
-      <button class="tab" data-view="reportView">学习报告</button>
-      <button class="tab" data-view="modulesView">模块学习</button>
-      <button class="tab" data-view="searchView">搜索</button>
-      <button class="tab" data-view="exerciseCenterView">练习中心</button>
-      <button class="tab" data-view="trainingView">专项训练</button>
-      <button class="tab" data-view="wrongView">错题复习</button>
-      <button class="tab" data-view="feedbackView">反馈</button>
-      <button class="tab" data-view="teacherView">教师维护</button>
-      <button class="tab" data-view="preflightView">发布检查</button>
-      <button class="tab" data-view="dataView">数据管理</button>
-    </nav>
-
-    <section id="pathView" class="view">
-      <section class="card">
-        <div class="section-title">
-          <div>
-            <h2>推荐学习路径</h2>
-            <p class="muted">按阶段推进，比直接看长列表更适合长期学习。</p>
-          </div>
-          <button id="startTodayBtn" class="small primary">开始今日复习</button>
-        </div>
-        <div id="dailyBox" class="daily-box"></div>
-        <div id="pathGrid" class="path-grid"></div>
-      </section>
-    </section>
-
-
-    <section id="reportView" class="view hidden">
-      <section class="card">
-        <h2>学习报告</h2>
-        <p class="muted">这里汇总当前浏览器里的学习状态和错题情况。适合学生自查，也可以导出给老师查看。</p>
-
-        <div id="reportSummary" class="report-summary"></div>
-
-        <h3>模块掌握情况</h3>
-        <div class="table-wrap">
-          <table id="moduleReportTable"></table>
-        </div>
-
-        <h3>需复习清单</h3>
-        <div id="reviewLessonList" class="lesson-list"></div>
-
-        <div class="button-row">
-          <button id="copyReportBtn" class="primary">复制学习报告</button>
-          <button id="exportReportBtn" class="secondary">下载学习报告</button>
-        </div>
-        <button id="exportReportTsvBtn" class="secondary">导出 Excel 表格格式</button>
-      </section>
-    </section>
-
-    <section id="modulesView" class="view hidden">
-      <section class="card">
-        <h2>选择学习模块</h2>
-        <p class="muted">每个模块下面都有语法讲解、表格、例句、卡片和练习。</p>
-        <div id="moduleGrid" class="module-grid"></div>
-      </section>
-
-      <section id="lessonListPanel" class="card hidden">
-        <div class="section-title">
-          <div>
-            <h2 id="moduleTitle">模块</h2>
-            <p id="moduleSubtitle" class="muted"></p>
-          </div>
-          <button id="backToModulesBtn" class="small secondary">返回模块</button>
-        </div>
-
-        <div class="filter-row">
-          <button class="filter-btn active" data-filter="全部">全部</button>
-          <button class="filter-btn" data-filter="未学">未学</button>
-          <button class="filter-btn" data-filter="学习中">学习中</button>
-          <button class="filter-btn" data-filter="需复习">需复习</button>
-          <button class="filter-btn" data-filter="已掌握">已掌握</button>
-        </div>
-
-        <div id="lessonList" class="lesson-list"></div>
-      </section>
-    </section>
-
-    <section id="searchView" class="view hidden">
-      <section class="card">
-        <h2>搜索语法点</h2>
-        <p class="muted">可以搜：gacchati、不定式、宾格、ca、yo...so...、过去分词等。</p>
-        <input id="searchInput" placeholder="输入关键词搜索" />
-        <div id="searchResults" class="lesson-list"></div>
-      </section>
-    </section>
-
-    <section id="exerciseCenterView" class="view hidden">
-      <section class="card">
-        <h2>练习中心</h2>
-        <p class="muted">可以按模块抽题，也可以全部混合练习。</p>
-        <label>选择模块</label>
-        <select id="exerciseModuleSelect"></select>
-        <label>练习数量</label>
-        <input id="exerciseCountInput" type="number" min="1" value="10" />
-        <button id="startMixedExercisesBtn" class="primary">开始练习</button>
-      </section>
-    </section>
-
-
-    <section id="trainingView" class="view hidden">
-      <section class="card">
-        <h2>专项训练</h2>
-        <p class="muted">按能力点集中练习，比随机练习更适合查漏补缺。</p>
-        <div id="trainingGrid" class="training-grid"></div>
-      </section>
-    </section>
-
-    <section id="wrongView" class="view hidden">
-      <section class="card">
-        <h2>错题复习</h2>
-        <p class="muted">错题记录保存在当前浏览器本地。答对后会自动移出错题库。</p>
-        <div id="wrongList"></div>
-        <button id="startWrongBtn" class="primary">开始错题复习</button>
-        <button id="clearWrongBtn" class="danger-outline">清空错题记录</button>
-      </section>
-    </section>
-
-    <section id="feedbackView" class="view hidden">
-      <section class="card">
-        <h2>反馈纠错</h2>
-        <p class="muted">静态网站不能自动收集提交。这个反馈功能会生成规范反馈文本，学生可以复制后发给老师；也可以下载反馈文件。</p>
-
-        <label>相关语法点</label>
-        <select id="feedbackLessonSelect"></select>
-
-        <label>问题类型</label>
-        <select id="feedbackType">
-          <option value="语法变化疑似错误">语法变化疑似错误</option>
-          <option value="例句或翻译疑似错误">例句或翻译疑似错误</option>
-          <option value="练习题答案疑似错误">练习题答案疑似错误</option>
-          <option value="错别字/排版问题">错别字/排版问题</option>
-          <option value="内容建议">内容建议</option>
-        </select>
-
-        <label>问题描述</label>
-        <textarea id="feedbackDesc" placeholder="请说明你发现的问题，例如：第几行、哪个词形、为什么觉得有问题。"></textarea>
-
-        <label>建议修改</label>
-        <textarea id="feedbackSuggest" placeholder="可以写你建议改成什么；不确定也可以空着。"></textarea>
-
-        <label>参考依据</label>
-        <textarea id="feedbackSource" placeholder="例如：老师讲义第几课、某本语法书、DPD 查询结果、课堂笔记等。"></textarea>
-
-        <label>反馈人联系方式（可选）</label>
-        <input id="feedbackContact" placeholder="姓名、邮箱或微信，非必填" />
-
-        <div class="button-row">
-          <button id="copyFeedbackBtn" class="primary">复制反馈文本</button>
-          <button id="downloadFeedbackBtn" class="secondary">下载反馈文件</button>
-        </div>
-        <button id="saveFeedbackDraftBtn" class="primary">保存到本机反馈草稿</button>
-
-        <h3>本机反馈草稿</h3>
-        <p class="muted">草稿只保存在当前浏览器本地，不会自动发送给老师。</p>
-        <div id="feedbackDraftList"></div>
-        <button id="exportFeedbackDraftsBtn" class="secondary">导出全部反馈草稿 JSON</button>
-        <button id="exportFeedbackTsvBtn" class="secondary">导出反馈 Excel 表格格式</button>
-        <button id="copyAllFeedbackBtn" class="secondary">复制全部反馈文本</button>
-        <button id="clearFeedbackDraftsBtn" class="danger-outline">清空反馈草稿</button>
-      </section>
-    </section>
-
-
-    <section id="teacherView" class="view hidden">
-      <section class="card">
-        <h2>教师维护</h2>
-        <p class="muted">用于教学管理、反馈处理和版本说明。学生也可以查看版本更新，但主要面向教师。</p>
-
-        <h3>学生使用说明</h3>
-        <div class="source-box">
-          <p>建议学生按“学习路径”逐步学习；每学完一个语法点，把状态标为“学习中”或“已掌握”；做错的题会进入错题复习；发现错误请在“反馈”页生成反馈文本后发给老师。</p>
-        </div>
-        <button id="copyStudentGuideBtn" class="primary">复制学生使用说明</button>
-
-        <h3>反馈处理模板</h3>
-        <p class="muted">复制后可直接粘贴到 Excel；每列用制表符分隔。</p>
-        <div class="table-wrap">
-          <table id="feedbackTemplateTable"></table>
-        </div>
-        <button id="copyFeedbackTemplateBtn" class="secondary">复制反馈处理表头</button>
-
-        <h3>版本更新记录</h3>
-        <div id="versionLogBox" class="version-log"></div>
-        <div class="button-row">
-          <button id="copyVersionLogBtn" class="secondary">复制版本记录</button>
-          <button id="downloadVersionLogBtn" class="secondary">下载版本记录</button>
-        </div>
-
-        <h3>后续内容维护建议</h3>
-        <div class="source-box">
-          <p>下一步优先扩充阅读训练、翻译题、句法分析题和易错题；语法点数量暂时够用，不建议未经核查继续堆叠高级语法。</p>
-        </div>
-      </section>
-    </section>
-
-
-    <section id="preflightView" class="view hidden">
-      <section class="card">
-        <h2>发布前检查</h2>
-        <p class="muted">上传 GitHub Pages 或发给学生前，先跑一遍检查，减少“文件漏传、缓存没更新、手机打不开”等问题。</p>
-
-        <div class="button-row">
-          <button id="runPreflightBtn" class="primary">运行自动检查</button>
-          <button id="copyPublishChecklistBtn" class="secondary">复制发布清单</button>
-        </div>
-        <button id="downloadPublishChecklistBtn" class="secondary">下载发布清单</button>
-
-        <h3>自动检查结果</h3>
-        <div id="preflightResults" class="preflight-results"></div>
-
-        <h3>人工发布清单</h3>
-        <div class="source-box">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>巴利语语法复习</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#111827"><link rel="stylesheet" href="style.css"></head><body><main class="app"><header class="hero"><p class="eyebrow">Pali Grammar Review</p><h1>📘 巴利语语法复习</h1><p class="subtitle">零基础入门｜语言能力训练｜佛典阅读｜学术研究训练</p>
+        <div class="visual-version-badge">Pāli Learning Lab · 11.1 美化版</div><div class="hero-stats"><div><strong id="totalLessons">0</strong><span>语法点</span></div><div><strong id="totalExercises">0</strong><span>练习题</span></div><div><strong id="masteredCount">0</strong><span>已掌握</span></div><div><strong id="wrongCount">0</strong><span>错题</span></div></div></header><section id="homeView" class="view"><section class="card"><h2>开始学习</h2><p class="muted">网站按“开始学习—语言能力—佛典与研究”三层组织。零基础学生先从第一层开始，有研究目标的学生再进入第三层。</p><h2 class="home-section-title">推荐学习入口</h2>
+        <p class="muted home-tip">第一次使用建议从“零基础路线”开始；学习稳定后进入“语言能力”，最后再进入“佛典与研究”。</p>
+        <div id="todayStudyAdvice" class="today-advice">
+          <strong>今日学习建议：</strong>
           <ol>
-            <li>确认 8 个文件都已上传：index.html、style.css、app.js、grammar.json、manifest.json、sw.js、icon-192.png、icon-512.png。</li>
-            <li>确认 GitHub Pages 打开的不是旧版本。</li>
-            <li>电脑浏览器测试：首页、模块、搜索、练习、反馈、学习报告都能打开。</li>
-            <li>手机浏览器测试：页面能打开、练习能提交、巴利语键盘能输入。</li>
-            <li>测试一次“添加到主屏幕”。</li>
-            <li>如果页面不更新，清理浏览器缓存或网站数据后再打开。</li>
+            <li>学 1 个语法点。</li>
+            <li>做 10 道练习。</li>
+            <li>分析 3 个句子。</li>
+            <li>复习错题或“需复习”句子。</li>
           </ol>
         </div>
-
-        <h3>当前版本信息</h3>
-        <div id="releaseInfo" class="source-box"></div>
-      </section>
-    </section>
-
-    <section id="dataView" class="view hidden">
-      <section class="card">
-        <h2>数据管理</h2>
-        <p class="muted">学习状态和错题都保存在当前浏览器本地。换手机、清缓存或换浏览器前，建议先导出备份。</p>
-
-        <div class="data-grid">
-          <div class="data-card">
-            <h3>导出学习记录</h3>
-            <p class="muted">导出后会得到一个 JSON 文件，可保存到手机或电脑。</p>
-            <button id="exportDataBtn" class="primary">导出学习记录</button>
+        <div id="versionStatus" class="version-status"></div>
+        <div id="siteHealthPanel" class="site-health-panel"></div>
+        <button id="runSiteCheckBtn" class="small secondary">检查网站文件</button>
+        <button id="refreshCacheBtn" class="small secondary">刷新缓存 / 重新加载</button>
+        
+        <div class="home-path-overview">
+          <div class="home-path-card">
+            <span class="path-number">1</span>
+            <h3>开始学习</h3>
+            <p>适合第一次使用网站的学生。先建立学习顺序和基本操作。</p>
           </div>
-
-          <div class="data-card">
-            <h3>导入学习记录</h3>
-            <p class="muted">选择之前导出的 JSON 文件，即可恢复状态和错题。</p>
-            <input id="importDataInput" type="file" accept="application/json" />
+          <div class="home-path-card">
+            <span class="path-number">2</span>
+            <h3>语言能力</h3>
+            <p>集中训练语法、词形、句型、查词、练习和句子分析。</p>
           </div>
-
-          <div class="data-card">
-            <h3>安装到手机桌面</h3>
-            <p class="muted">新版加入 PWA 支持。手机浏览器打开网站后，可选择“添加到主屏幕”。部分浏览器还能离线打开已缓存页面。</p>
-          </div>
-
-          <div class="data-card">
-            <h3>清空学习状态</h3>
-            <p class="muted">只清空学习进度，不清空语法内容。</p>
-            <button id="clearStatusBtn" class="danger-outline">清空学习状态</button>
+          <div class="home-path-card">
+            <span class="path-number">3</span>
+            <h3>佛典与研究</h3>
+            <p>进入佛典常用句式、背景知识和学术阅读训练。</p>
           </div>
         </div>
-      </section>
-    </section>
 
-    <section id="lessonPanel" class="card hidden">
-      <button id="closeLessonBtn" class="small secondary">返回</button>
-      <div class="lesson-head">
-        <p id="lessonModule" class="pill"></p>
-        <h2 id="lessonTitle"></h2>
-        <p id="lessonMeta" class="muted"></p>
-      </div>
-
-      <div class="status-box">
-        <strong>学习状态：</strong>
-        <div class="status-buttons">
-          <button data-status="未学" class="status-btn">未学</button>
-          <button data-status="学习中" class="status-btn">学习中</button>
-          <button data-status="已掌握" class="status-btn">已掌握</button>
-          <button data-status="需复习" class="status-btn">需复习</button>
+        <h2 class="home-section-title">第一层：开始学习</h2>
+        <p class="muted home-tip">不知道从哪里开始时，只点这一层就够了。</p>
+        <div class="home-grid recommended-grid layer-grid">
+          <button class="home-btn primary" data-action="learningRoute">零基础路线</button>
+          <button class="home-btn" data-action="studentGuide">学生使用说明</button>
+          <button class="home-btn" data-action="trialTasks">试用任务</button>
         </div>
+
+        <h2 class="home-section-title">第二层：语言能力</h2>
+        <p class="muted home-tip">这一层负责把“看懂语法点”变成“能分析句子”。</p>
+        <div class="home-grid practice-grid layer-grid">
+          <button class="home-btn" data-action="moduleGuide">模块导学</button>
+          <button class="home-btn" data-action="modules">模块学习</button>
+          <button class="home-btn" data-action="search">搜索语法点</button>
+          <button class="home-btn" data-action="exercise">练习中心</button>
+          <button class="home-btn" data-action="training">专项训练</button>
+          <button class="home-btn" data-action="sentenceAnalysis">句子分析</button>
+          <button class="home-btn" data-action="sentencePatterns">句型模板</button>
+          <button class="home-btn" data-action="confusionPairs">易混概念对照</button>
+          <button class="home-btn" data-action="dictionaryLookup">查巴利语单词</button>
+          <button class="home-btn" data-action="linguisticsTips">语言学小贴士</button>
+          <button class="home-btn" data-action="terminologyGlossary">术语对照表</button>
+        </div>
+
+        <h2 class="home-section-title">第三层：佛典与研究</h2>
+        <p class="muted home-tip">这一层面向佛典阅读和学术研究训练，不建议零基础阶段一开始深挖。</p>
+        <div class="home-grid research-grid layer-grid">
+          <button class="home-btn" data-action="buddhistReading">佛典阅读</button>
+          <button class="home-btn" data-action="buddhistBackground">佛典背景知识</button>
+          <button class="home-btn" data-action="academicTraining">学术阅读训练</button>
+        </div>
+
+        <h2 class="home-section-title">复习与管理</h2>
+        <p class="muted home-tip">用于保存进度、回看错题和维护学习记录。</p>
+        <div class="home-grid helper-grid layer-grid">
+          <button class="home-btn" data-action="wrong">错题复习</button>
+          <button class="home-btn" data-action="learningProgress">学习进度备份</button>
+        </div></div></section><section class="card" id="moduleGridCard"><h2>模块学习</h2><div id="moduleGrid" class="module-grid"></div></section></section>
+<section id="studentGuideView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>学生使用说明</h2><div class="student-guide"><h3>第一次怎么学</h3><p>先进入“零基础路线”，按步骤学习。不要一开始打开全部语法点，也不要先学进阶内容。</p><h3>每天怎么复习</h3><p>建议每天完成：1 个语法点 + 10 道练习 + 3 条句子分析。学完一组内容后做阶段测验。</p><h3>句子分析怎么用</h3><p>先停留在“先自己分析”阶段，回答提示问题；再点“显示提示”；最后看“完整分析”。</p><h3>错题怎么处理</h3><p>做错的题会进入错题复习。复习时先看题目，自己重新判断，再看解释。</p></div></section></section>
+<section id="trialTasksView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>学生试用任务</h2><p class="muted">这组任务用于第一次试用网站。</p><div id="trialTaskSummary" class="progress-summary"></div><div id="trialTaskList" class="trial-task-list"></div><div class="button-row three-buttons"><button id="resetTrialTasksBtn" class="secondary">重置任务</button><button id="copyTrialFeedbackBtn" class="primary">复制试用反馈</button><button id="goTrialRouteBtn" class="secondary">进入零基础路线</button></div><textarea id="trialFeedbackText" class="progress-textarea" readonly></textarea></section></section>
+<section id="learningRouteView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>学生学习路线</h2><p class="muted">不用一开始看完所有语法点。建议先按“零基础路线”学习，再根据需要进入动词、格位或句子分析专项。</p><div id="routeTabs" class="route-tabs"></div><div id="routeContent" class="route-content"></div></section></section>
+<section id="moduleGuideView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>模块导学</h2><p class="muted">先看每个模块的学习目标、必会内容和容易误判的地方，再进入具体语法点。</p><div id="moduleGuideList" class="module-guide-list"></div></section></section>
+<section id="sentenceAnalysisView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>句子分析训练</h2><p class="muted">先选择一句经过核校的短句，自己尝试分析，再点击“显示分析”。</p><div id="sentenceDashboard" class="sentence-dashboard"></div><div class="button-row three-buttons"><button id="startBasicSentenceBtn" class="secondary">从基础必练开始</button><button id="showReviewSentenceBtn" class="secondary">只看需复习</button><button id="resetSentenceFiltersBtn" class="secondary">重置筛选</button></div><label>选择难度</label><select id="sentenceLevelSelect"></select><label>选择训练层级</label><select id="sentencePrioritySelect"></select><details id="sentenceAdvancedFilters" class="advanced-filters"><summary>更多筛选</summary><label>选择难点标签</label><select id="sentenceTagSelect"></select><label>选择来源类型</label><select id="sentenceSourceSelect"></select><label>学习状态</label><select id="sentenceStatusSelect"><option value="全部">全部</option><option value="未练">未练</option><option value="已掌握">已掌握</option><option value="需复习">需复习</option></select></details><label>选择句子</label><select id="sentenceSelect"></select><div id="sentenceAnalysisCard" class="sentence-card"></div><div class="button-row three-buttons"><button id="showSentenceHintBtn" class="secondary">显示提示</button><button id="showSentenceAnalysisBtn" class="primary">显示完整分析</button><button id="nextSentenceBtn" class="secondary">下一句</button></div><div class="button-row three-buttons"><button id="randomSentenceBtn" class="secondary">随机一句</button><button id="markSentenceMasteredBtn" class="success">标记已掌握</button><button id="markSentenceReviewBtn" class="danger">标记需复习</button></div><button id="copySentenceAnalysisBtn" class="secondary">复制本句解析</button></section></section>
+<section id="sentencePatternsView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>核心句型模板</h2><p class="muted">句型模板用于把零散语法点变成可操作的阅读步骤。</p><label>搜索句型</label><input id="patternSearchInput" placeholder="例如 不定式、连续体、主格、宾格、atthi、ca、yo" /><label>选择层级</label><select id="patternLevelSelect"><option value="全部">全部</option><option value="必学">必学</option><option value="选学">选学</option><option value="进阶">进阶</option></select><div id="sentencePatternList" class="sentence-pattern-list"></div></section></section>
+<section id="confusionPairsView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>易混概念对照</h2><p class="muted">集中整理初学者最容易混淆的语法概念。</p><label>搜索易混概念</label><input id="confusionSearchInput" placeholder="例如 不定式、连续体、主格、宾格、na、mā" /><div id="confusionPairsList" class="confusion-pairs-list"></div></section></section>
+<section id="dictionaryLookupView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>查巴利语单词</h2><p class="muted">这里提供外部权威词典入口。</p><div class="student-note"><strong>推荐查词顺序：</strong><ol><li>先查“巴利字典”。</li><li>再查 DPD。</li><li>还不确定时，用巴汉词典、PTS 词典交叉参考。</li></ol></div><label>输入要查的巴利语词</label><input id="paliLookupInput" placeholder="例如 dhamma, saṅgha, gacchati, paññā" /><div class="button-row three-buttons"><button id="copyLookupWordBtn" class="secondary">复制单词</button><button id="openPrimaryDictBtn" class="primary">打开首选词典</button><button id="clearLookupWordBtn" class="secondary">清空</button></div><div class="button-row three-buttons"><button id="analyzeLookupWordBtn" class="primary">分析这个词</button><button id="selectedWordAnalyzeBtn" class="secondary">分析选中文本</button><button id="openDictAfterAnalyzeBtn" class="secondary">分析后查词</button></div><div id="tokenAnalysisGuide" class="analysis-guide"><strong>词形分析说明：</strong>本站词形分析不是自动语法解析器，只提供学习线索。</div><div id="tokenAnalysisPanel" class="token-analysis-panel"></div><div id="lookupHistoryBox" class="lookup-history"></div><div id="dictionarySiteList" class="dictionary-grid"></div></section></section>
+<section id="linguisticsTipsView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>语言学小贴士</h2><p class="muted">帮助理解巴利语语法分析的简明说明。</p><label>搜索概念</label><input id="linguisticsSearchInput" placeholder="输入主格、宾格、限定动词、不定式、sandhi 等" /><label>选择类别</label><select id="linguisticsCategorySelect"></select><div id="linguisticsTipsList" class="tips-grid"></div></section></section>
+<section id="terminologyGlossaryView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>常见术语英汉巴对照表</h2><p class="muted">默认只显示术语卡片，点击后再查看 IPA、中文、巴利术语和说明。</p><label>搜索术语</label><input id="termSearchInput" placeholder="例如 case, nominative, participle, sandhi, philology" /><label>选择类别</label><select id="termCategorySelect"></select><div id="termGlossaryList" class="term-glossary-list"></div></section></section>
+<section id="buddhistReadingView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>佛典阅读常用句式</h2><p class="muted">帮助学生识别佛典中反复出现的阅读结构。</p><label>搜索佛典句式</label><input id="buddhistReadingSearchInput" placeholder="例如 evaṃ、ekaṃ samayaṃ、atha kho、ti、yo...so" /><label>选择类别</label><select id="buddhistReadingCategorySelect"></select><label>选择层级</label><select id="buddhistReadingLevelSelect"><option value="全部">全部</option><option value="必学">必学</option><option value="选学">选学</option><option value="进阶">进阶</option></select><div id="buddhistReadingList" class="buddhist-reading-list"></div></section></section>
+<section id="buddhistBackgroundView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>佛典阅读背景知识</h2><p class="muted">帮助看懂概念词、三藏结构、常见略号和引用格式。</p><div class="button-row three-buttons"><button class="secondary bg-tab" data-bg-tab="concepts">佛学概念小词典</button><button class="secondary bg-tab" data-bg-tab="canon">三藏结构与略号</button><button class="secondary bg-tab" data-bg-tab="refs">章节术语与引用格式</button></div><button class="secondary bg-tab" data-bg-tab="flow">佛经篇章结构</button><div id="buddhistBackgroundContent"></div></section></section>
+<section id="academicTrainingView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>学术阅读训练</h2><p class="muted">训练如何把巴利原文变成可记录、可引用、可分析的研究材料。</p><div class="button-row three-buttons"><button class="secondary academic-tab" data-academic-tab="method">阅读方法</button><button class="secondary academic-tab" data-academic-tab="citation">引用规范</button><button class="secondary academic-tab" data-academic-tab="vocabulary">词汇研究</button></div><div class="button-row three-buttons"><button class="secondary academic-tab" data-academic-tab="analysis">分析模板</button><button class="secondary academic-tab" data-academic-tab="tasks">研究任务</button><button class="secondary academic-tab" data-academic-tab="pitfalls">学术误区</button></div><div id="academicTrainingContent"></div></section></section>
+<section id="learningProgressView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>学习进度备份与反馈</h2><p class="muted">学习状态、错题、句子分析标记、查词历史都保存在当前浏览器。</p><div id="progressSummaryBox" class="progress-summary"></div><div class="button-row three-buttons"><button id="exportProgressBtn" class="primary">导出学习进度</button><button id="importProgressBtn" class="secondary">导入学习进度</button><button id="clearProgressBtn" class="danger">清空学习进度</button></div><label>学习进度数据</label><textarea id="progressDataText" class="progress-textarea"></textarea><h3>反馈错误</h3><p class="muted">如果发现语法点、例句、词形分析有问题，可以复制反馈模板发给老师。</p><button id="copyFeedbackBtn" class="secondary">复制反馈模板</button><textarea id="feedbackTemplateText" class="progress-textarea" readonly></textarea></section></section>
+<section id="lessonListView" class="view hidden"><section class="card"><button id="backHomeFromListBtn" class="small secondary">返回首页</button><h2 id="moduleTitle"></h2><p id="moduleSubtitle" class="muted"></p><div class="filter-row"><button class="filter-btn active" data-filter="全部">全部</button><button class="filter-btn" data-filter="未学">未学</button><button class="filter-btn" data-filter="学习中">学习中</button><button class="filter-btn" data-filter="需复习">需复习</button><button class="filter-btn" data-filter="已掌握">已掌握</button></div><div id="lessonList" class="lesson-list"></div></section></section><section id="lessonView" class="view hidden"><section class="card"><button id="backToListBtn" class="small secondary">返回上一页</button><p id="lessonModule" class="pill"></p><h2 id="lessonTitle"></h2><p id="lessonMeta" class="muted"></p><div class="status-box"><strong>学习状态：</strong><div class="status-buttons"><button data-status="未学" class="status-btn">未学</button><button data-status="学习中" class="status-btn">学习中</button><button data-status="已掌握" class="status-btn">已掌握</button><button data-status="需复习" class="status-btn">需复习</button></div></div><p id="lessonSummary" class="summary"></p><h3>学习说明</h3><ul id="lessonExplanation"></ul><div id="mistakeBlock" class="hidden"><h3>常见易错点</h3><ul id="lessonMistakes"></ul></div>
+
+        <h3>变化表 / 结构表</h3><div class="table-wrap"><table id="lessonTable"></table></div><h3>例句</h3><div id="lessonExamples"></div><div class="button-row"><button id="startCardsBtn" class="primary">复习本课卡片</button><button id="startLessonExercisesBtn" class="primary">练习本课题目</button></div></section></section><section id="searchView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>搜索语法点</h2><input id="searchInput" placeholder="输入关键词，如 gacchati、不定式、宾格、ca"><div id="searchResults" class="lesson-list"></div></section></section><section id="exerciseCenterView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>练习中心</h2><label>选择模块</label><select id="exerciseModuleSelect"></select><label>练习数量</label><input id="exerciseCountInput" type="number" min="1" value="10"><button id="startMixedExercisesBtn" class="primary">开始练习</button></section></section><section id="trainingView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>专项训练</h2><div id="trainingGrid" class="training-grid"></div></section></section><section id="wrongView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>错题复习</h2><div id="wrongList"></div><button id="startWrongBtn" class="primary">开始错题复习</button><button id="clearWrongBtn" class="danger-outline">清空错题记录</button></section></section><section id="cardPanel" class="card overlay-panel hidden"><button id="exitCardsBtn" class="small secondary">退出卡片</button><h2>语法卡片</h2><p id="cardProgress" class="muted"></p><div id="cardQuestion" class="question-box"></div><div id="cardAnswer" class="answer-box hidden"></div><div id="cardBeforeButtons"><button id="showCardAnswerBtn" class="primary">显示答案</button></div><div id="cardAfterButtons" class="button-row hidden"><button id="cardKnowBtn" class="success">认识 ✅</button><button id="cardWrongBtn" class="danger">不认识 ❌</button></div></section><section id="exercisePanel" class="card overlay-panel hidden"><button id="exitExerciseBtn" class="small secondary">退出练习</button><h2 id="exerciseModeTitle">练习</h2><p id="exerciseProgress" class="muted"></p><p id="exerciseLessonLabel" class="pill"></p><div id="exerciseQuestion" class="question-box"></div><div id="exerciseOptions"></div><input id="exerciseInput" class="hidden" placeholder="请输入答案"><div id="paliKeyboard" class="pali-keyboard hidden"><button data-char="ā">ā</button><button data-char="ī">ī</button><button data-char="ū">ū</button><button data-char="ṅ">ṅ</button><button data-char="ñ">ñ</button><button data-char="ṭ">ṭ</button><button data-char="ḍ">ḍ</button><button data-char="ṇ">ṇ</button><button data-char="ḷ">ḷ</button><button data-char="ṃ">ṃ</button></div><button id="submitExerciseBtn" class="primary">提交答案</button><button id="nextExerciseBtn" class="primary hidden">下一题</button><div id="exerciseFeedback" class="answer-box hidden"></div></section><section id="tipModal" class="tip-modal hidden">
+      <div class="tip-modal-content">
+        <button id="closeTipModalBtn" class="small secondary">关闭</button>
+        <div id="tipModalBody"></div>
       </div>
-
-      <div class="source-box">
-        <strong>校准状态：</strong><span id="sourceStatus"></span>
-        <div id="sourceList"></div>
-      </div>
-
-      <p id="lessonSummary" class="summary"></p>
-
-      <h3>学习说明</h3>
-      <ul id="lessonExplanation"></ul>
-
-      <h3>变化表 / 结构表</h3>
-      <div class="table-wrap">
-        <table id="lessonTable"></table>
-      </div>
-
-      <h3>例句</h3>
-      <div id="lessonExamples"></div>
-
-      <div class="button-row">
-        <button id="startCardsBtn" class="primary">复习本课卡片</button>
-        <button id="startLessonExercisesBtn" class="primary">练习本课题目</button>
-      </div>
-      <button id="feedbackThisLessonBtn" class="secondary">反馈本课问题</button>
     </section>
-
-    <section id="cardPanel" class="card overlay-panel hidden">
-      <button id="exitCardsBtn" class="small secondary">退出卡片</button>
-      <h2>语法卡片</h2>
-      <p id="cardProgress" class="muted"></p>
-      <div id="cardQuestion" class="question-box"></div>
-      <div id="cardAnswer" class="answer-box hidden"></div>
-      <div id="cardBeforeButtons">
-        <button id="showCardAnswerBtn" class="primary">显示答案</button>
-      </div>
-      <div id="cardAfterButtons" class="button-row hidden">
-        <button id="cardKnowBtn" class="success">认识 ✅</button>
-        <button id="cardWrongBtn" class="danger">不认识 ❌</button>
-      </div>
-    </section>
-
-    <section id="exercisePanel" class="card overlay-panel hidden">
-      <button id="exitExerciseBtn" class="small secondary">退出练习</button>
-      <h2 id="exerciseModeTitle">练习</h2>
-      <p id="exerciseProgress" class="muted"></p>
-      <p id="exerciseLessonLabel" class="pill"></p>
-      <div id="exerciseQuestion" class="question-box"></div>
-      <div id="exerciseOptions"></div>
-      <input id="exerciseInput" class="hidden" placeholder="请输入答案，支持输入 kātuṃ，也可输入 katum 后对照标准答案" />
-      <div id="paliKeyboard" class="pali-keyboard hidden">
-        <button data-char="ā">ā</button>
-        <button data-char="ī">ī</button>
-        <button data-char="ū">ū</button>
-        <button data-char="ṅ">ṅ</button>
-        <button data-char="ñ">ñ</button>
-        <button data-char="ṭ">ṭ</button>
-        <button data-char="ḍ">ḍ</button>
-        <button data-char="ṇ">ṇ</button>
-        <button data-char="ḷ">ḷ</button>
-        <button data-char="ṃ">ṃ</button>
-      </div>
-      <button id="submitExerciseBtn" class="primary">提交答案</button>
-      <button id="nextExerciseBtn" class="primary hidden">下一题</button>
-      <div id="exerciseFeedback" class="answer-box hidden"></div>
-    </section>
-  </main>
-
-  <script src="app.js"></script>
-</body>
-</html>
+</main><script src="sentence-analysis-data.js"></script>
+  <script src="linguistics-tips-data.js"></script>
+  <script src="learning-routes-data.js"></script>
+  <script src="dictionary-sites-data.js"></script>
+  <script src="token-analysis-data.js"></script>
+  <script src="module-guides-data.js"></script>
+  <script src="confusion-pairs-data.js"></script>
+  <script src="sentence-patterns-data.js"></script>
+  <script src="buddhist-reading-data.js"></script>
+  <script src="buddhist-background-data.js"></script>
+  <script src="academic-training-data.js"></script>
+  <script src="terminology-glossary-data.js"></script>
+  <script src="app.js"></script></body></html>
