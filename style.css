@@ -3644,3 +3644,45 @@ code{
 .calibrated-feedback{
   border-left:4px solid #2563eb;
 }
+
+
+/* 17.5 merged error points */
+.misjudge-box{
+  display:none!important;
+}
+#mistakeBlock .concept-mistake-list li{
+  line-height:1.7;
+}
+
+
+/* 17.6 clickable Pali words */
+.pali-word-lookup{
+  display:inline;
+  border:0;
+  padding:0 .08em;
+  margin:0;
+  background:transparent;
+  color:#1d4ed8;
+  border-bottom:1px dotted rgba(29,78,216,.65);
+  font:inherit;
+  cursor:pointer;
+}
+.pali-word-lookup:hover,
+.pali-word-lookup:focus{
+  background:#eff6ff;
+  border-radius:4px;
+  outline:none;
+}
+.lookup-return-btn{
+  margin-left:8px;
+  margin-bottom:10px;
+}
+@media(max-width:760px){
+  .pali-word-lookup{
+    padding:.02em .12em;
+  }
+  .lookup-return-btn{
+    margin-left:0;
+    margin-right:8px;
+  }
+}

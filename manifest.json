@@ -1,12 +1,12 @@
 {
-  "name": "Pali Grammar Review 17.4",
+  "name": "Pali Grammar Review 17.6",
   "short_name": "巴利语语法",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f3f4f6",
   "theme_color": "#111827",
-  "description": "课程闭环与反馈优化版：加入极简小结，优化练习干扰项和答题反馈，并标记每课目标—表格—例子—练习闭环。",
+  "description": "巴利词点击查词版：课程中的巴利语词可点击进入本站查词页并自动填入；查词页可返回原课。",
   "icons": [
     {
       "src": "icon-192.png",
