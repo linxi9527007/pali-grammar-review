@@ -2878,3 +2878,235 @@ td, th {
     min-width:0!important;
   }
 }
+
+/* 15.1 dictionary button label color fix */
+.dict-one-button,
+.dict-one-button:visited,
+.dict-one-button:hover,
+.dict-one-button:active{
+  color:#fff!important;
+}
+.dict-one-button .ipa-hover,
+.dict-one-button .ipa-hover:visited,
+.dict-one-button .ipa-hover:hover,
+.dict-one-button .ipa-hover:active,
+.dict-one-button strong,
+.dict-one-button span{
+  color:#fff!important;
+  border-bottom-color:rgba(255,255,255,.62)!important;
+}
+.dict-one-button .ipa-hover:hover{
+  background:transparent!important;
+  color:#fff!important;
+}
+
+
+/* 15.2 dictionary description one-line fix */
+.dict-direct-item p{
+  white-space:nowrap!important;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.dict-direct-item p .ipa-hover,
+.dict-direct-item p .ipa-hover.phrase{
+  display:inline!important;
+  white-space:nowrap!important;
+  vertical-align:baseline;
+}
+@media(max-width:760px){
+  .dict-direct-item p{
+    white-space:normal!important;
+    overflow:visible;
+    text-overflow:clip;
+  }
+}
+
+
+/* 15.3 dictionary description responsive wrap */
+.dict-direct-item,
+.dict-direct-item p{
+  min-width:0!important;
+  max-width:100%!important;
+}
+.dict-direct-item p{
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+}
+.dict-direct-item p .ipa-hover,
+.dict-direct-item p .ipa-hover.phrase{
+  display:inline!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  vertical-align:baseline;
+}
+.one-button-dict-grid,
+.three-external-dicts,
+.external-dict-grid{
+  min-width:0!important;
+}
+
+
+/* 15.4 full-site responsive wrapping and no horizontal drag */
+html,
+body{
+  max-width:100%;
+  overflow-x:hidden!important;
+}
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+.view,
+.card,
+.mini-card,
+.route-full-card,
+.qa-full-card,
+.dictionary-ux-card,
+.concept-card,
+.lesson-bottom-nav,
+.direct-dict-links,
+.external-dict-grid,
+.one-button-dict-grid,
+.three-external-dicts,
+.dict-direct-item{
+  min-width:0!important;
+  max-width:100%!important;
+}
+p,
+li,
+td,
+th,
+div,
+span,
+strong,
+em,
+small,
+label,
+button,
+a,
+input,
+textarea,
+select{
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+input,
+textarea,
+select{
+  max-width:100%!important;
+}
+
+/* Tables: desktop and mobile should wrap instead of forcing horizontal scroll */
+.table-wrap,
+.term-table-wrap,
+.velthuis-table-wrap,
+.qa-table-wrap{
+  max-width:100%!important;
+  overflow-x:visible!important;
+}
+table,
+.qa-table,
+.term-table,
+.velthuis-table,
+.concept-table{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  table-layout:fixed!important;
+}
+th,
+td,
+.qa-table th,
+.qa-table td,
+.term-table th,
+.term-table td,
+.velthuis-table th,
+.velthuis-table td,
+.concept-table th,
+.concept-table td{
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+  min-width:0!important;
+}
+
+/* Terminology table: allow desktop wrapping too */
+.term-table-wrap{
+  overflow-x:visible!important;
+}
+.term-table{
+  table-layout:fixed!important;
+}
+.term-table th:first-child,
+.term-table td:first-child,
+.term-table th:nth-child(2),
+.term-table td:nth-child(2),
+.term-table th:nth-child(3),
+.term-table td:nth-child(3),
+.term-table th:nth-child(4),
+.term-table td:nth-child(4),
+.term-table th:nth-child(5),
+.term-table td:nth-child(5){
+  width:auto!important;
+  max-width:none!important;
+}
+.term-en-cell,
+.term-en-hover{
+  display:inline!important;
+  max-width:none!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+}
+
+/* Cards and grids should shrink instead of causing page-level horizontal drag */
+.grid,
+.module-grid,
+.home-card-grid,
+.external-dict-grid,
+.one-button-dict-grid,
+.three-external-dicts,
+.lesson-grid,
+.route-lesson-list,
+.letter-copy-row,
+.fuzzy-list,
+.button-row,
+.lesson-nav-row,
+.lesson-bottom-nav-inner{
+  min-width:0!important;
+  max-width:100%!important;
+}
+.external-dict-grid,
+.one-button-dict-grid,
+.three-external-dicts{
+  grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))!important;
+}
+.button-row,
+.lesson-nav-row,
+.lesson-bottom-nav-inner{
+  overflow-x:visible!important;
+}
+.button-row button,
+.lesson-nav-row button,
+.lesson-bottom-nav-inner button,
+.route-lesson-jump,
+.qa-pill-btn,
+.fuzzy-word-btn,
+.letter-btn{
+  min-width:0!important;
+  max-width:100%!important;
+  white-space:normal!important;
+}
+
+/* Code/pre blocks: wrap instead of horizontal dragging where possible */
+pre,
+code{
+  max-width:100%!important;
+  white-space:pre-wrap!important;
+  overflow-wrap:anywhere!important;
+  word-break:break-word!important;
+}

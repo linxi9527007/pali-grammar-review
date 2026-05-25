@@ -1,12 +1,12 @@
 {
-  "name": "Pali Grammar Review 15.0",
+  "name": "Pali Grammar Review 15.4",
   "short_name": "巴利语语法",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f3f4f6",
   "theme_color": "#111827",
-  "description": "巴利语语法学习课程说明清爽版；删除课程页中类似“本课只要求…”、“权威核查补充…”、“Pali Primer Language Guide…”等内部说明和核查补充。",
+  "description": "巴利语语法学习全站自适应换行版；术语表、表格、卡片和正文在电脑端与手机端均尽量自动换行，减少横向拖动。",
   "icons": [
     {
       "src": "icon-192.png",
