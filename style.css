@@ -3686,3 +3686,184 @@ code{
     margin-right:8px;
   }
 }
+
+
+/* 17.7 lookup display and visual polish */
+/* 巴利语查词词：像普通超链接/音标提示一样内联显示，不额外占空间 */
+.pali-word-lookup,
+.inline-lookup-link{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  display:inline!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  height:auto!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:#2563eb!important;
+  font:inherit!important;
+  line-height:inherit!important;
+  letter-spacing:inherit!important;
+  text-align:inherit!important;
+  vertical-align:baseline!important;
+  cursor:pointer!important;
+  text-decoration-line:underline!important;
+  text-decoration-style:dotted!important;
+  text-decoration-thickness:1px!important;
+  text-underline-offset:3px!important;
+  text-decoration-color:rgba(37,99,235,.55)!important;
+}
+.pali-word-lookup:hover,
+.pali-word-lookup:focus,
+.inline-lookup-link:hover,
+.inline-lookup-link:focus{
+  color:#1d4ed8!important;
+  background:linear-gradient(transparent 58%, rgba(191,219,254,.55) 0)!important;
+  outline:none!important;
+}
+.pali-word-lookup:focus-visible,
+.inline-lookup-link:focus-visible{
+  outline:2px solid rgba(37,99,235,.35)!important;
+  outline-offset:2px!important;
+  border-radius:3px!important;
+}
+@media(max-width:760px){
+  .pali-word-lookup,
+  .inline-lookup-link{
+    text-underline-offset:3px!important;
+  }
+}
+
+/* 页面整体视觉：统一冷蓝灰色系和卡片层级，不改正文内容 */
+:root{
+  --pali-blue:#2563eb;
+  --pali-blue-deep:#1e40af;
+  --pali-blue-soft:#eff6ff;
+  --pali-slate:#0f172a;
+  --pali-muted:#64748b;
+  --pali-border:rgba(148,163,184,.24);
+  --pali-card:#ffffff;
+  --pali-bg:#f8fafc;
+}
+body{
+  background:
+    radial-gradient(circle at 12% 8%, rgba(219,234,254,.75), transparent 28%),
+    linear-gradient(180deg,#f8fafc 0%,#eef4ff 100%)!important;
+  color:var(--pali-slate)!important;
+}
+.card,
+.lesson-item,
+.dictionary-card,
+.term-card,
+.mini-card,
+.example,
+.more-examples-details,
+.example-priority-section,
+.layered-practice-box,
+.merged-error-section,
+.lesson-summary-box-174{
+  border-color:var(--pali-border)!important;
+  box-shadow:0 10px 28px rgba(15,23,42,.055)!important;
+}
+.card{
+  border-radius:26px!important;
+}
+h1,h2,h3,h4{
+  color:var(--pali-slate)!important;
+}
+.muted,
+.home-tip,
+.example-kind-title span{
+  color:var(--pali-muted)!important;
+}
+.pill,
+.visual-version-badge,
+.example-priority-tag,
+.tag-chip,
+.source-chip{
+  background:var(--pali-blue-soft)!important;
+  color:var(--pali-blue-deep)!important;
+  border-color:rgba(37,99,235,.18)!important;
+}
+button.primary,
+.primary{
+  background:linear-gradient(135deg,#2563eb,#1d4ed8)!important;
+  border-color:#1d4ed8!important;
+  color:#fff!important;
+}
+button.secondary,
+.secondary,
+.small.secondary{
+  background:#fff!important;
+  color:#334155!important;
+  border-color:rgba(148,163,184,.42)!important;
+}
+button.secondary:hover,
+.secondary:hover,
+.small.secondary:hover{
+  background:#f8fafc!important;
+  border-color:rgba(37,99,235,.36)!important;
+  color:#1d4ed8!important;
+}
+table{
+  border-color:var(--pali-border)!important;
+}
+th{
+  background:#f1f5f9!important;
+  color:#0f172a!important;
+}
+td{
+  background:#fff!important;
+}
+input,select,textarea{
+  border-color:rgba(148,163,184,.38)!important;
+  background:#fff!important;
+}
+input:focus,select:focus,textarea:focus{
+  outline:2px solid rgba(37,99,235,.22)!important;
+  border-color:rgba(37,99,235,.55)!important;
+}
+.lookup-return-btn{
+  display:inline-block!important;
+  margin-left:8px!important;
+  margin-bottom:10px!important;
+}
+@media(max-width:760px){
+  .card{
+    border-radius:20px!important;
+  }
+  .lookup-return-btn{
+    margin-left:0!important;
+    margin-top:6px!important;
+  }
+}
+
+
+/* 17.8 word-only lookup: alphabet lists stay plain text */
+
+
+/* 17.9 learning targets separated from explanation */
+.lesson-explanation-note-179{
+  margin:18px 0;
+  padding:16px 18px;
+  border:1px solid rgba(148,163,184,.22);
+  border-radius:22px;
+  background:#ffffff;
+}
+.lesson-explanation-note-179 h3{
+  margin-top:0!important;
+}
+.lesson-explanation-note-179 ul{
+  margin:8px 0 0;
+  padding-left:1.2rem;
+}
+.lesson-explanation-note-179 li{
+  margin:6px 0;
+  line-height:1.7;
+}

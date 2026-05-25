@@ -1,12 +1,12 @@
 {
-  "name": "Pali Grammar Review 17.6",
+  "name": "Pali Grammar Review 18.0",
   "short_name": "巴利语语法",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f3f4f6",
   "theme_color": "#111827",
-  "description": "巴利词点击查词版：课程中的巴利语词可点击进入本站查词页并自动填入；查词页可返回原课。",
+  "description": "全章节学习目标校准版：逐章重写学习目标，只保留能力目标；说明性内容与制作性语言不进入学习目标。",
   "icons": [
     {
       "src": "icon-192.png",
