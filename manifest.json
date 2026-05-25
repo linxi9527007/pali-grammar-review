@@ -1,12 +1,12 @@
 {
-  "name": "巴利语语法复习",
+  "name": "Pali Grammar Review 11.7",
   "short_name": "巴利语语法",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f3f4f6",
   "theme_color": "#111827",
-  "description": "巴利语语法学习跳转修复版；补齐所有页面容器，修复首页各入口跳转。",
+  "description": "巴利语语法学习阶段要求优化版；未学到的内容不提前要求，删除后以本阶段应掌握内容补回。",
   "icons": [
     {
       "src": "icon-192.png",

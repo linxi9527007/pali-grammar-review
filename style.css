@@ -1400,3 +1400,15 @@ td, th {
 .linked-term-box{background:#f7fee7;border:1px solid #d9f99d;border-radius:14px;padding:12px;margin:12px 0}
 .term-link-btn{width:auto;display:inline-block;margin:5px 6px 0 0;padding:7px 10px;border-radius:999px;background:#ecfccb;color:#3f6212;font-size:13px}
 @media(max-width:760px){.term-card summary{grid-template-columns:1fr}.term-card summary::after{justify-self:start}}
+
+.cache-help-box{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  margin:16px 0;padding:12px 14px;border-radius:18px;
+  background:linear-gradient(180deg,#fff7ed,#ffffff);
+  border:1px solid #fed7aa;color:#7c2d12;box-shadow:var(--shadow-sm)
+}
+.cache-help-box span{color:#9a3412}
+.cache-reset-link{
+  display:inline-block;padding:7px 12px;border-radius:999px;
+  background:#ea580c;color:#fff;text-decoration:none;font-weight:800
+}
