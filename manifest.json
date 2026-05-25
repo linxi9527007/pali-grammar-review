@@ -1,12 +1,12 @@
 {
-  "name": "Pali Grammar Review 14.0",
+  "name": "Pali Grammar Review 14.3",
   "short_name": "巴利语语法",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f3f4f6",
   "theme_color": "#111827",
-  "description": "巴利语语法学习特殊字母前置版；将巴利特殊字母放到查词输入框下方，方便检索时复制使用。",
+  "description": "巴利语语法学习术语跳转与返回增强版；术语可点击查看概念，返回前一页与返回模块页分离。",
   "icons": [
     {
       "src": "icon-192.png",

@@ -233,18 +233,7 @@
       "能区分长短元音，不把 ā / a、ī / i、ū / u 混读。",
       "能读出三皈依中的 Buddhaṃ、Dhammaṃ、Saṅghaṃ、saraṇaṃ、gacchāmi。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "在音系入门课就急着做后面课程的分析。",
-        "right": "本课只先掌握读音和转写符号。",
-        "note": "后续内容等学到相应模块时再处理。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“读音与转写”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“读音与转写”阶段，不要求使用后面才学习的分析方法。"
@@ -460,11 +449,6 @@
         "wrong": "把一个 sandhi 例子当成所有情况的公式。",
         "right": "sandhi 有多种变化，也可能不发生变化。",
         "note": "应结合词典形和上下文复核。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“读音与转写”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -485,13 +469,8 @@
     "linked_buddhist_reading": [
       "br_bhagava_etadavoca"
     ],
-    "linked_buddhist_background": [
-      "refs",
-      "flow"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 45,
@@ -705,11 +684,6 @@
         "wrong": "把一个 sandhi 例子当成所有情况的公式。",
         "right": "sandhi 有多种变化，也可能不发生变化。",
         "note": "应结合词典形和上下文复核。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“读音与转写”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -730,15 +704,8 @@
     "linked_buddhist_reading": [
       "br_bhagava_etadavoca"
     ],
-    "linked_buddhist_background": [
-      "refs",
-      "flow"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 66,
@@ -995,11 +962,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -1016,9 +978,7 @@
     "linked_patterns": [],
     "linked_buddhist_reading": [],
     "linked_buddhist_background": [],
-    "linked_academic_training": [
-      "vocabulary"
-    ]
+    "linked_academic_training": []
   },
   {
     "id": 1,
@@ -1275,11 +1235,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -1303,12 +1258,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 68,
@@ -1538,11 +1489,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -1819,11 +1765,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -1845,12 +1786,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 67,
@@ -2073,11 +2010,6 @@
         "wrong": "把进阶识别表当作初学必背内容。",
         "right": "初学阶段先识别，不要求一次背熟全部表格。",
         "note": "不同教材术语和分类可能有差异。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -2101,12 +2033,8 @@
     "linked_buddhist_reading": [
       "br_bhaddante_ti"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 72,
@@ -2355,11 +2283,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -2608,11 +2531,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -2635,12 +2553,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 2,
@@ -2890,11 +2804,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -2916,12 +2825,8 @@
     "linked_buddhist_reading": [
       "br_bhaddante_ti"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 4,
@@ -3141,11 +3046,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -3350,11 +3250,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -3375,14 +3270,8 @@
       "br_idam_avoca",
       "br_bhikkhu_amantesi"
     ],
-    "linked_buddhist_background": [
-      "refs",
-      "flow"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "tasks"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 11,
@@ -3569,11 +3458,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -3594,13 +3478,8 @@
       "br_idam_avoca",
       "br_bhikkhu_amantesi"
     ],
-    "linked_buddhist_background": [
-      "refs",
-      "flow"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 73,
@@ -3818,11 +3697,6 @@
         "wrong": "把进阶识别表当作初学必背内容。",
         "right": "初学阶段先识别，不要求一次背熟全部表格。",
         "note": "不同教材术语和分类可能有差异。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -3843,13 +3717,8 @@
       "br_idam_avoca",
       "br_bhikkhu_amantesi"
     ],
-    "linked_buddhist_background": [
-      "refs",
-      "flow"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 74,
@@ -4067,11 +3936,6 @@
         "wrong": "把进阶识别表当作初学必背内容。",
         "right": "初学阶段先识别，不要求一次背熟全部表格。",
         "note": "不同教材术语和分类可能有差异。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -4097,12 +3961,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 34,
@@ -4300,11 +4160,6 @@
         "wrong": "把进阶识别表当作初学必背内容。",
         "right": "初学阶段先识别，不要求一次背熟全部表格。",
         "note": "不同教材术语和分类可能有差异。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -4321,13 +4176,8 @@
     "linked_confusions": [],
     "linked_patterns": [],
     "linked_buddhist_reading": [],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 35,
@@ -4524,11 +4374,6 @@
         "wrong": "把进阶识别表当作初学必背内容。",
         "right": "初学阶段先识别，不要求一次背熟全部表格。",
         "note": "不同教材术语和分类可能有差异。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -4553,12 +4398,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 36,
@@ -4755,11 +4596,6 @@
         "wrong": "把进阶识别表当作初学必背内容。",
         "right": "初学阶段先识别，不要求一次背熟全部表格。",
         "note": "不同教材术语和分类可能有差异。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -4782,12 +4618,8 @@
     "linked_buddhist_reading": [
       "br_bhaddante_ti"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 37,
@@ -4984,11 +4816,6 @@
         "wrong": "把进阶识别表当作初学必背内容。",
         "right": "初学阶段先识别，不要求一次背熟全部表格。",
         "note": "不同教材术语和分类可能有差异。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -5012,12 +4839,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 38,
@@ -5214,11 +5037,6 @@
         "wrong": "把进阶识别表当作初学必背内容。",
         "right": "初学阶段先识别，不要求一次背熟全部表格。",
         "note": "不同教材术语和分类可能有差异。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -5235,12 +5053,8 @@
     "linked_confusions": [],
     "linked_patterns": [],
     "linked_buddhist_reading": [],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 39,
@@ -5458,11 +5272,6 @@
         "wrong": "把进阶识别表当作初学必背内容。",
         "right": "初学阶段先识别，不要求一次背熟全部表格。",
         "note": "不同教材术语和分类可能有差异。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -5488,13 +5297,8 @@
       "br_bhikkhu_amantesi",
       "br_bhaddante_ti"
     ],
-    "linked_buddhist_background": [
-      "refs",
-      "flow"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 70,
@@ -5691,11 +5495,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -5717,12 +5516,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 71,
@@ -5929,11 +5724,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“动词形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -6236,11 +6026,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -6256,12 +6041,8 @@
     "linked_confusions": [],
     "linked_patterns": [],
     "linked_buddhist_reading": [],
-    "linked_buddhist_background": [
-      "concepts"
-    ],
-    "linked_academic_training": [
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 7,
@@ -6535,11 +6316,6 @@
         "wrong": "看到 -ṃ 就一定判断为宾格。",
         "right": "中性名词主格和宾格常同形，必须结合句子功能判断。",
         "note": "例如 kammaṃ 可作主语，也可作宾语。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -6567,15 +6343,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 8,
@@ -6833,11 +6602,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -6863,14 +6627,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 12,
@@ -7092,11 +6850,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -7334,11 +7087,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -7360,12 +7108,8 @@
     "linked_buddhist_reading": [
       "br_bhaddante_ti"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 14,
@@ -7602,11 +7346,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -7635,13 +7374,8 @@
       "br_bhikkhu_vocative",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 13,
@@ -7862,11 +7596,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -8104,11 +7833,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -8130,12 +7854,8 @@
     "linked_buddhist_reading": [
       "br_bhaddante_ti"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 15,
@@ -8372,11 +8092,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -8406,13 +8121,8 @@
       "br_bhikkhu_vocative",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 46,
@@ -8650,11 +8360,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -8671,12 +8376,8 @@
     "linked_confusions": [],
     "linked_patterns": [],
     "linked_buddhist_reading": [],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 47,
@@ -8892,11 +8593,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -8913,12 +8609,8 @@
     "linked_confusions": [],
     "linked_patterns": [],
     "linked_buddhist_reading": [],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 48,
@@ -9150,11 +8842,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -9181,14 +8868,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 49,
@@ -9421,11 +9102,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -9691,11 +9367,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -9720,12 +9391,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 51,
@@ -9940,11 +9607,6 @@
         "wrong": "只看中文翻译，不看本课形式。",
         "right": "巴利语学习必须把词形、格位、动词形式和基本用法结合起来。",
         "note": "翻译只是结果，分析才是学习重点。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“变格表与词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "content_review_note": "本课属于进阶或需复核内容。建议先学会识别，不要把规则机械套用；正式教学前应结合教材和权威词典再核查。",
@@ -9975,13 +9637,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 9,
@@ -10190,13 +9847,7 @@
       "能用一个例句说明它的基本功能。",
       "遇到不确定用法时，结合句子和词典复核。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“代词/形容词词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“代词/形容词词形识别”阶段，不要求使用后面才学习的分析方法。"
@@ -10420,13 +10071,7 @@
       "能用一个例句说明它的基本功能。",
       "遇到不确定用法时，结合句子和词典复核。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“代词/形容词词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“代词/形容词词形识别”阶段，不要求使用后面才学习的分析方法。"
@@ -10667,13 +10312,7 @@
       "能用一个例句说明它的基本功能。",
       "遇到不确定用法时，结合句子和词典复核。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“代词/形容词词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“代词/形容词词形识别”阶段，不要求使用后面才学习的分析方法。"
@@ -10694,12 +10333,8 @@
       "br_yo_dhammam_passati",
       "br_idam_dukkham"
     ],
-    "linked_buddhist_background": [
-      "concepts"
-    ],
-    "linked_academic_training": [
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 19,
@@ -10903,13 +10538,7 @@
       "能用一个例句说明它的基本功能。",
       "遇到不确定用法时，结合句子和词典复核。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“代词/形容词词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“代词/形容词词形识别”阶段，不要求使用后面才学习的分析方法。"
@@ -10930,12 +10559,8 @@
       "br_yo_dhammam_passati",
       "br_idam_dukkham"
     ],
-    "linked_buddhist_background": [
-      "concepts"
-    ],
-    "linked_academic_training": [
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 20,
@@ -11140,13 +10765,7 @@
       "能用一个例句说明它的基本功能。",
       "遇到不确定用法时，结合句子和词典复核。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“代词/形容词词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“代词/形容词词形识别”阶段，不要求使用后面才学习的分析方法。"
@@ -11357,13 +10976,7 @@
       "能用一个例句说明它的基本功能。",
       "遇到不确定用法时，结合句子和词典复核。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“代词/形容词词形识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“代词/形容词词形识别”阶段，不要求使用后面才学习的分析方法。"
@@ -11388,15 +11001,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 21,
@@ -11756,11 +11362,6 @@
         "wrong": "把 sotuṃ / gantuṃ 当成“已经做了”。",
         "right": "不定式常表示目的或动作内容。",
         "note": "它不是连续体，也不是限定动词。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“非限定形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -11789,14 +11390,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 22,
@@ -12159,11 +11754,6 @@
         "wrong": "把 sutvā / gantvā 当成主句动词。",
         "right": "连续体表示先行动作或伴随动作，主句还需要限定动词。",
         "note": "先后关系比人称数更重要。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“非限定形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -12194,14 +11784,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 23,
@@ -12446,11 +12030,6 @@
         "wrong": "把 gacchanto 当成“他去”。",
         "right": "gacchanto 是分词，常修饰名词。",
         "note": "要看它修饰 puriso、bhikkhu 等哪个名词。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“非限定形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -12479,14 +12058,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 40,
@@ -12721,11 +12294,6 @@
         "wrong": "把 gacchanto 当成“他去”。",
         "right": "gacchanto 是分词，常修饰名词。",
         "note": "要看它修饰 puriso、bhikkhu 等哪个名词。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“非限定形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -12754,15 +12322,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 41,
@@ -12981,11 +12542,6 @@
         "wrong": "把 gacchanto 当成“他去”。",
         "right": "gacchanto 是分词，常修饰名词。",
         "note": "要看它修饰 puriso、bhikkhu 等哪个名词。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“非限定形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -13013,14 +12569,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 24,
@@ -13294,11 +12844,6 @@
         "wrong": "所有过去分词都机械译成“被……”。",
         "right": "过去分词可表示完成、结果状态或被动，需看句法。",
         "note": "工具格施事结构常提示被动解释。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“非限定形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -13328,15 +12873,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 42,
@@ -13567,11 +13105,6 @@
         "wrong": "所有过去分词都机械译成“被……”。",
         "right": "过去分词可表示完成、结果状态或被动，需看句法。",
         "note": "工具格施事结构常提示被动解释。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“非限定形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -13599,15 +13132,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 43,
@@ -13828,11 +13354,6 @@
         "wrong": "na 和 mā 可以随便互换。",
         "right": "na 是普通否定，mā 常用于禁止。",
         "note": "na gacchati 与 mā gaccha 功能不同。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“非限定形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -13862,15 +13383,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 25,
@@ -14088,11 +13602,6 @@
         "wrong": "把 -tabba 一律当普通将来时。",
         "right": "将来被动分词多表示应当、必须、可被。",
         "note": "如 bhāvetabbo = 应被修习。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“非限定形式识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -14119,14 +13628,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 52,
@@ -14348,11 +13851,6 @@
         "wrong": "na 和 mā 可以随便互换。",
         "right": "na 是普通否定，mā 常用于禁止。",
         "note": "na gacchati 与 mā gaccha 功能不同。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“不变词信号识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -14376,12 +13874,8 @@
       "br_atha_kho",
       "br_bhaddante_ti"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 53,
@@ -14600,11 +14094,6 @@
         "wrong": "mā 是普通陈述否定。",
         "right": "mā 多用于禁止、劝止。",
         "note": "常与命令或相关动词形式搭配。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“不变词信号识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -14630,12 +14119,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 54,
@@ -14853,11 +14338,6 @@
         "wrong": "按汉语连接词的位置理解 ca / vā。",
         "right": "ca / vā 常后置，应看它前面的成分。",
         "note": "A ca B ca = A 和 B；A vā B vā = A 或 B。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“不变词信号识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -14881,12 +14361,8 @@
       "br_atha_kho",
       "br_bhaddante_ti"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 55,
@@ -15086,11 +14562,6 @@
         "wrong": "按汉语连接词的位置理解 ca / vā。",
         "right": "ca / vā 常后置，应看它前面的成分。",
         "note": "A ca B ca = A 和 B；A vā B vā = A 或 B。"
-      },
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“不变词信号识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
       }
     ],
     "prerequisites": [
@@ -15115,12 +14586,8 @@
       "br_atha_kho",
       "br_bhaddante_ti"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 56,
@@ -15320,13 +14787,7 @@
       "能用一个例句说明它的基本功能。",
       "遇到不确定用法时，结合句子和词典复核。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“不变词信号识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“不变词信号识别”阶段，不要求使用后面才学习的分析方法。"
@@ -15347,15 +14808,8 @@
       "br_bhagava_etadavoca",
       "br_ye_dhamma"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs",
-      "flow"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 57,
@@ -15557,13 +15011,7 @@
       "先找它前面的引语内容。",
       "不要把 ti 当成普通实义动词。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“不变词信号识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“不变词信号识别”阶段，不要求使用后面才学习的分析方法。"
@@ -15587,13 +15035,8 @@
       "br_bhagava_etadavoca",
       "br_bhaddante_ti"
     ],
-    "linked_buddhist_background": [
-      "refs",
-      "flow"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 58,
@@ -15790,13 +15233,7 @@
       "能用一个例句说明它的基本功能。",
       "遇到不确定用法时，结合句子和词典复核。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“不变词信号识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“不变词信号识别”阶段，不要求使用后面才学习的分析方法。"
@@ -15818,12 +15255,8 @@
       "br_atha_kho",
       "br_bhaddante_ti"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 60,
@@ -16040,13 +15473,7 @@
       "先整体理解为“凡……者，他……”。",
       "不要孤立翻译 yo 或 so。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“不变词信号识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“不变词信号识别”阶段，不要求使用后面才学习的分析方法。"
@@ -16069,14 +15496,8 @@
       "br_yo_dhammam_passati",
       "br_idam_dukkham"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 61,
@@ -16284,13 +15705,7 @@
       "能用一个例句说明它的基本功能。",
       "遇到不确定用法时，结合句子和词典复核。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“不变词信号识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“不变词信号识别”阶段，不要求使用后面才学习的分析方法。"
@@ -16307,12 +15722,8 @@
       "br_tena_kho_pana_samayena",
       "br_atha_kho"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 62,
@@ -16520,13 +15931,7 @@
       "能用一个例句说明它的基本功能。",
       "遇到不确定用法时，结合句子和词典复核。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“不变词信号识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“不变词信号识别”阶段，不要求使用后面才学习的分析方法。"
@@ -16546,12 +15951,8 @@
       "br_atha_kho",
       "br_bhaddante_ti"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 63,
@@ -16742,13 +16143,7 @@
       "能用一个例句说明它的基本功能。",
       "遇到不确定用法时，结合句子和词典复核。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“不变词信号识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“不变词信号识别”阶段，不要求使用后面才学习的分析方法。"
@@ -16771,14 +16166,8 @@
       "br_atha_kho",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 64,
@@ -16986,13 +16375,7 @@
       "能用一个例句说明它的基本功能。",
       "遇到不确定用法时，结合句子和词典复核。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“不变词信号识别”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“不变词信号识别”阶段，不要求使用后面才学习的分析方法。"
@@ -17009,12 +16392,8 @@
       "br_tena_kho_pana_samayena",
       "br_atha_kho"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 26,
@@ -17228,15 +16607,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 27,
@@ -17455,15 +16827,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 28,
@@ -17686,14 +17051,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 29,
@@ -17916,15 +17275,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 30,
@@ -18139,14 +17491,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 31,
@@ -18369,15 +17715,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 32,
@@ -18597,14 +17936,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 33,
@@ -18822,14 +18155,8 @@
       "br_iti_quote",
       "br_evambhante"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 75,
@@ -19599,14 +18926,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 76,
@@ -19778,14 +19099,8 @@
     "linked_buddhist_reading": [
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts"
-    ],
-    "linked_academic_training": [
-      "method",
-      "vocabulary",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 77,
@@ -19976,14 +19291,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 78,
@@ -20166,14 +19475,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 79,
@@ -20353,14 +19656,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 80,
@@ -20544,14 +19841,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 81,
@@ -20726,14 +20017,8 @@
     "linked_buddhist_reading": [
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts"
-    ],
-    "linked_academic_training": [
-      "method",
-      "vocabulary",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 82,
@@ -20971,14 +20256,8 @@
       "br_tena_kho_pana_samayena",
       "br_atha_kho"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 83,
@@ -21177,13 +20456,7 @@
       "能用一个例句说明它的基本功能。",
       "遇到不确定用法时，结合句子和词典复核。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“读音与转写”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“读音与转写”阶段，不要求使用后面才学习的分析方法。"
@@ -21198,9 +20471,7 @@
     "linked_patterns": [],
     "linked_buddhist_reading": [],
     "linked_buddhist_background": [],
-    "linked_academic_training": [
-      "vocabulary"
-    ]
+    "linked_academic_training": []
   },
   {
     "id": 84,
@@ -21426,14 +20697,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 85,
@@ -21671,15 +20936,8 @@
       "br_bhaddante_ti",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 86,
@@ -21926,14 +21184,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 87,
@@ -22174,13 +21426,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 88,
@@ -22405,12 +21652,8 @@
     "linked_buddhist_reading": [
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts"
-    ],
-    "linked_academic_training": [
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 89,
@@ -22625,11 +21868,7 @@
     "linked_patterns": [],
     "linked_buddhist_reading": [],
     "linked_buddhist_background": [],
-    "linked_academic_training": [
-      "method",
-      "analysis",
-      "tasks"
-    ]
+    "linked_academic_training": []
   },
   {
     "id": 90,
@@ -22888,13 +22127,7 @@
       "能用一个例句说明它的基本功能。",
       "遇到不确定用法时，结合句子和词典复核。"
     ],
-    "common_misjudgments": [
-      {
-        "wrong": "还没学到后续分析方法时，就提前要求完整分析。",
-        "right": "本课只要求完成“读音与转写”层面的学习。",
-        "note": "被删除的提前要求已用本阶段应掌握内容补回。"
-      }
-    ],
+    "common_misjudgments": [],
     "prerequisites": [
       "先掌握前面已经学过的形式。",
       "本课属于“读音与转写”阶段，不要求使用后面才学习的分析方法。"
@@ -23516,13 +22749,8 @@
       "br_bhikkhu_amantesi",
       "br_bhaddante_ti"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 93,
@@ -23833,15 +23061,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "citation",
-      "vocabulary",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 94,
@@ -24153,13 +23374,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 95,
@@ -24442,11 +23658,7 @@
     "linked_patterns": [],
     "linked_buddhist_reading": [],
     "linked_buddhist_background": [],
-    "linked_academic_training": [
-      "method",
-      "vocabulary",
-      "analysis"
-    ]
+    "linked_academic_training": []
   },
   {
     "id": 96,
@@ -24611,11 +23823,7 @@
     "linked_patterns": [],
     "linked_buddhist_reading": [],
     "linked_buddhist_background": [],
-    "linked_academic_training": [
-      "method",
-      "analysis",
-      "tasks"
-    ]
+    "linked_academic_training": []
   },
   {
     "id": 97,
@@ -24750,15 +23958,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs",
-      "flow"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 98,
@@ -24896,14 +24097,8 @@
       "br_bhaddante_ti",
       "br_iti_quote"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 99,
@@ -25030,14 +24225,8 @@
     "linked_buddhist_reading": [
       "br_bhaddante_ti"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 100,
@@ -25165,10 +24354,7 @@
     "linked_patterns": [],
     "linked_buddhist_reading": [],
     "linked_buddhist_background": [],
-    "linked_academic_training": [
-      "method",
-      "analysis"
-    ]
+    "linked_academic_training": []
   },
   {
     "id": 101,
@@ -25303,11 +24489,7 @@
     "linked_patterns": [],
     "linked_buddhist_reading": [],
     "linked_buddhist_background": [],
-    "linked_academic_training": [
-      "method",
-      "vocabulary",
-      "analysis"
-    ]
+    "linked_academic_training": []
   },
   {
     "id": 102,
@@ -25423,11 +24605,7 @@
     "linked_patterns": [],
     "linked_buddhist_reading": [],
     "linked_buddhist_background": [],
-    "linked_academic_training": [
-      "method",
-      "vocabulary",
-      "analysis"
-    ]
+    "linked_academic_training": []
   },
   {
     "id": 103,
@@ -25542,11 +24720,7 @@
     "linked_patterns": [],
     "linked_buddhist_reading": [],
     "linked_buddhist_background": [],
-    "linked_academic_training": [
-      "method",
-      "vocabulary",
-      "analysis"
-    ]
+    "linked_academic_training": []
   },
   {
     "id": 104,
@@ -25673,11 +24847,7 @@
     "linked_patterns": [],
     "linked_buddhist_reading": [],
     "linked_buddhist_background": [],
-    "linked_academic_training": [
-      "method",
-      "vocabulary",
-      "analysis"
-    ]
+    "linked_academic_training": []
   },
   {
     "id": 105,
@@ -25789,11 +24959,7 @@
     "linked_patterns": [],
     "linked_buddhist_reading": [],
     "linked_buddhist_background": [],
-    "linked_academic_training": [
-      "method",
-      "analysis",
-      "pitfalls"
-    ]
+    "linked_academic_training": []
   },
   {
     "id": 106,
@@ -25916,14 +25082,8 @@
       "br_tena_kho_pana_samayena",
       "br_atha_kho"
     ],
-    "linked_buddhist_background": [
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "analysis"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 107,
@@ -26058,15 +25218,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 108,
@@ -26200,15 +25353,8 @@
       "br_iti_quote",
       "br_yo_dhammam_passati"
     ],
-    "linked_buddhist_background": [
-      "concepts",
-      "refs"
-    ],
-    "linked_academic_training": [
-      "method",
-      "citation",
-      "vocabulary"
-    ]
+    "linked_buddhist_background": [],
+    "linked_academic_training": []
   },
   {
     "id": 109,
@@ -26338,10 +25484,7 @@
       "concepts",
       "flow"
     ],
-    "linked_academic_training": [
-      "method",
-      "analysis"
-    ]
+    "linked_academic_training": []
   },
   {
     "id": 110,
