@@ -1,12 +1,12 @@
 {
-  "name": "Pali Grammar Review 13.7",
+  "name": "Pali Grammar Review 14.0",
   "short_name": "巴利语语法",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f3f4f6",
   "theme_color": "#111827",
-  "description": "巴利语语法学习查词页减法优化版；删除重复和低效功能，保留分析、三词典核查、模糊建议、音变还原、辅助输入。",
+  "description": "巴利语语法学习特殊字母前置版；将巴利特殊字母放到查词输入框下方，方便检索时复制使用。",
   "icons": [
     {
       "src": "icon-192.png",

@@ -2402,3 +2402,121 @@ td, th {
     grid-template-columns:1fr;
   }
 }
+
+
+/* 13.8 dictionary direct-search simplification */
+.dictionary-direct-card{
+  max-width:1100px;
+}
+.lookup-input-line{
+  display:grid;
+  grid-template-columns:1fr 110px;
+  gap:10px;
+  align-items:center;
+}
+.clear-inline-btn{
+  min-height:48px;
+}
+.only-core-actions{
+  margin-top:12px;
+}
+.only-core-actions button{
+  min-height:52px;
+}
+.direct-dict-links{
+  margin:16px 0;
+  padding:14px;
+  border:1px solid rgba(59,130,246,.20);
+  border-radius:20px;
+  background:linear-gradient(180deg,#ffffff,#f8fbff);
+  box-shadow:var(--shadow-sm);
+}
+.direct-dict-links h3{
+  margin:0 0 6px;
+}
+.three-external-dicts{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin:10px 0;
+}
+.three-external-dicts a{
+  display:block;
+  padding:12px;
+  border:1px solid rgba(59,130,246,.22);
+  border-radius:16px;
+  background:#eff6ff;
+  color:#1d4ed8;
+  text-decoration:none;
+}
+.three-external-dicts a:hover{
+  background:#dbeafe;
+  transform:translateY(-1px);
+}
+.three-external-dicts strong{
+  display:block;
+  font-size:16px;
+  margin-bottom:4px;
+}
+.three-external-dicts span{
+  display:block;
+  color:#475569;
+  font-size:13px;
+  line-height:1.55;
+}
+.direct-open-all-btn{
+  margin-top:4px;
+  width:100%;
+}
+.dict-browser-note{
+  margin:8px 0 0;
+  color:#92400e;
+  font-size:13px;
+  line-height:1.6;
+}
+.compact-analysis-guide{
+  margin-top:8px;
+  padding:10px 12px;
+  font-size:14px;
+  line-height:1.65;
+  background:#f8fafc;
+  border:1px solid rgba(148,163,184,.24);
+  border-radius:14px;
+  color:#475569;
+}
+.direct-letter-helper{
+  margin:16px 0 0;
+  padding:12px 14px;
+  border:1px solid rgba(148,163,184,.28);
+  border-radius:18px;
+  background:#fff;
+}
+.direct-letter-helper h3{
+  margin:0 0 4px;
+}
+@media(max-width:760px){
+  .lookup-input-line{
+    grid-template-columns:1fr;
+  }
+  .three-external-dicts{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* 14.0 place special letters under lookup input */
+.dictionary-direct-card .direct-letter-helper{
+  margin:8px 0 12px;
+  padding:10px 12px;
+  border-radius:16px;
+  background:#f8fafc;
+}
+.dictionary-direct-card .direct-letter-helper h3{
+  font-size:16px;
+}
+.dictionary-direct-card .direct-letter-helper .muted{
+  margin:4px 0 8px;
+}
+.dictionary-direct-card .letter-copy-row{
+  margin:8px 0 0;
+}
