@@ -1484,3 +1484,327 @@ td, th {
   transform:none!important;
   box-shadow:none!important;
 }
+
+
+/* 12.3 full list/table modules */
+.full-list-panel,.full-card,.sentence-full-card{
+  border:1px solid rgba(148,163,184,.28);
+  border-radius:18px;
+  background:linear-gradient(180deg,#fff,#f8fbff);
+  padding:14px;
+  margin:12px 0;
+  box-shadow:var(--shadow-sm);
+}
+.full-card h3,.sentence-full-card h3{margin:6px 0 8px;}
+.full-meta{color:#4b5563;font-weight:800;margin:4px 0 8px;}
+.full-table{
+  width:100%;
+  border-collapse:collapse!important;
+  background:#fff;
+  margin-top:8px;
+}
+.full-table th,.full-table td{
+  border:1px solid rgba(148,163,184,.28);
+  padding:8px;
+  vertical-align:top;
+  line-height:1.65;
+}
+.full-table th{background:#f8fafc;text-align:left;}
+.full-section-title{
+  margin-top:20px;
+  padding:8px 12px;
+  border-radius:14px;
+  background:#eef2ff;
+  color:#1e3a8a;
+}
+.full-example{
+  background:#f8fafc;
+  border-left:4px solid #2563eb;
+  padding:8px 10px;
+  border-radius:10px;
+  margin:8px 0;
+}
+.sentence-select-list{
+  max-height:360px;
+  overflow:auto;
+  border:1px solid rgba(148,163,184,.28);
+  border-radius:16px;
+  background:#fff;
+  margin:12px 0;
+}
+.sentence-select-item{
+  display:block;
+  width:100%;
+  text-align:left;
+  padding:11px 12px;
+  border:0;
+  border-bottom:1px solid rgba(148,163,184,.18);
+  background:#fff;
+  color:#111827;
+  border-radius:0;
+  box-shadow:none;
+}
+.sentence-select-item:hover,.sentence-select-item.active{
+  background:#eff6ff;
+  color:#1d4ed8;
+  transform:none;
+}
+.module-guide-hidden-note{display:none;}
+
+
+/* 12.4 homepage jump navigation */
+.hero-subnav{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px;
+  margin-top:10px;
+  color:rgba(255,255,255,.86);
+  font-size:17px;
+  line-height:1.65;
+}
+.hero-subnav button{
+  width:auto;
+  min-height:auto;
+  padding:3px 5px;
+  border-radius:10px;
+  background:transparent;
+  border:0;
+  color:#fff;
+  font-weight:800;
+  box-shadow:none;
+}
+.hero-subnav button:hover{
+  background:rgba(255,255,255,.16);
+  transform:translateY(-1px);
+  box-shadow:none;
+}
+.home-path-button{
+  width:100%;
+  text-align:left;
+  cursor:pointer;
+  border:1px solid rgba(148,163,184,.25);
+}
+.home-path-button:hover .path-jump-hint{
+  background:#dbeafe;
+  color:#1d4ed8;
+}
+.path-jump-hint{
+  position:relative;
+  z-index:1;
+  display:inline-block;
+  margin-top:10px;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#f3f4f6;
+  color:#4b5563;
+  font-size:12px;
+  font-weight:800;
+}
+#homeStartLayer,#homeLanguageLayer,#homeResearchLayer{
+  scroll-margin-top:18px;
+}
+
+
+/* 12.5 clickable learning routes */
+.route-full-card{
+  border:1px solid rgba(148,163,184,.28);
+  border-radius:22px;
+  background:linear-gradient(180deg,#fff,#f8fbff);
+  padding:16px;
+  margin:14px 0;
+  box-shadow:var(--shadow-sm);
+}
+.route-full-card h3{margin:0 0 8px;}
+.route-step-card{
+  display:grid;
+  grid-template-columns:36px 1fr;
+  gap:12px;
+  padding:12px;
+  margin:12px 0;
+  border:1px solid rgba(148,163,184,.22);
+  border-radius:18px;
+  background:#fff;
+}
+.route-step-number{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:32px;
+  height:32px;
+  border-radius:999px;
+  background:#dbeafe;
+  color:#1d4ed8;
+  font-weight:900;
+}
+.route-step-main h4{margin:2px 0 6px;}
+.route-step-main p{margin:0 0 8px;color:#4b5563;line-height:1.65;}
+.route-lesson-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.route-lesson-jump{
+  width:auto;
+  display:inline-block;
+  padding:7px 11px;
+  border-radius:999px;
+  background:#eff6ff;
+  color:#1d4ed8;
+  border:1px solid #bfdbfe;
+  font-size:13px;
+  font-weight:800;
+  box-shadow:none;
+}
+.route-lesson-jump:hover{
+  background:#dbeafe;
+  transform:translateY(-1px);
+}
+@media(max-width:760px){
+  .route-step-card{grid-template-columns:1fr;}
+  .route-step-number{width:30px;height:30px;}
+}
+
+
+/* 12.7 comprehensive interaction QA */
+.lesson-nav-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.lesson-nav-row button:disabled{opacity:.45;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+.qa-list-card,.qa-full-card,.qa-route-card{
+  border:1px solid rgba(148,163,184,.28);
+  border-radius:18px;
+  background:linear-gradient(180deg,#fff,#f8fbff);
+  padding:14px;
+  margin:12px 0;
+  box-shadow:var(--shadow-sm);
+}
+.qa-full-card h3,.qa-route-card h3{margin:4px 0 8px}
+.qa-meta{color:#4b5563;font-weight:800;margin:4px 0 8px}
+.qa-table{width:100%;border-collapse:collapse!important;background:#fff;margin-top:8px}
+.qa-table th,.qa-table td{border:1px solid rgba(148,163,184,.28);padding:8px;vertical-align:top;line-height:1.65}
+.qa-table th{background:#f8fafc;text-align:left}
+.qa-example{background:#f8fafc;border-left:4px solid #2563eb;padding:8px 10px;border-radius:10px;margin:8px 0}
+.qa-section-title{margin-top:20px;padding:8px 12px;border-radius:14px;background:#eef2ff;color:#1e3a8a}
+.qa-pill-btn,.route-lesson-jump{
+  width:auto;display:inline-block;padding:7px 11px;border-radius:999px;
+  background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;
+  font-size:13px;font-weight:800;box-shadow:none;margin:3px
+}
+.qa-pill-btn:hover,.route-lesson-jump:hover{background:#dbeafe;transform:translateY(-1px)}
+.sentence-select-list{max-height:360px;overflow:auto;border:1px solid rgba(148,163,184,.28);border-radius:16px;background:#fff;margin:12px 0}
+.sentence-select-item{display:block;width:100%;text-align:left;padding:11px 12px;border:0;border-bottom:1px solid rgba(148,163,184,.18);background:#fff;color:#111827;border-radius:0;box-shadow:none}
+.sentence-select-item:hover,.sentence-select-item.active{background:#eff6ff;color:#1d4ed8;transform:none}
+.route-step-card{display:grid;grid-template-columns:36px 1fr;gap:12px;padding:12px;margin:12px 0;border:1px solid rgba(148,163,184,.22);border-radius:18px;background:#fff}
+.route-step-number{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:900}
+.route-lesson-list{display:flex;flex-wrap:wrap;gap:8px}
+@media(max-width:760px){.route-step-card{grid-template-columns:1fr}.qa-table{min-width:760px}.term-table-wrap{overflow-x:auto}}
+
+
+/* 12.9 compact IPA and global search */
+.ipa{
+  font-size:11px !important;
+  line-height:1.25 !important;
+  padding:1px 4px !important;
+  border-radius:6px !important;
+  background:#f3f4f6 !important;
+  color:#6b7280 !important;
+  font-weight:600 !important;
+  white-space:nowrap;
+}
+.term-table td:nth-child(2),
+.term-table th:nth-child(2){
+  width:86px;
+  max-width:96px;
+  white-space:nowrap;
+}
+.global-search-panel{
+  margin:18px 0 22px;
+  padding:14px;
+  border:1px solid rgba(148,163,184,.28);
+  border-radius:22px;
+  background:linear-gradient(180deg,#ffffff,#f8fbff);
+  box-shadow:var(--shadow-sm);
+}
+.global-search-panel input{
+  width:100%;
+}
+.global-search-results{
+  margin-top:12px;
+  display:grid;
+  gap:10px;
+}
+.global-result-card{
+  border:1px solid rgba(148,163,184,.24);
+  border-radius:16px;
+  background:#fff;
+  padding:12px;
+  box-shadow:0 5px 14px rgba(15,23,42,.04);
+}
+.global-result-card h3{
+  margin:2px 0 6px;
+  font-size:16px;
+}
+.global-result-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:6px;
+}
+.global-result-tag{
+  display:inline-block;
+  padding:3px 8px;
+  border-radius:999px;
+  background:#eef2ff;
+  color:#1e40af;
+  font-size:12px;
+  font-weight:800;
+}
+.global-result-card p{
+  margin:4px 0;
+  color:#4b5563;
+  line-height:1.6;
+}
+.global-result-card button{
+  width:auto;
+  margin-top:8px;
+  padding:7px 11px;
+  border-radius:999px;
+  background:#eff6ff;
+  color:#1d4ed8;
+  border:1px solid #bfdbfe;
+  font-size:13px;
+  font-weight:800;
+  box-shadow:none;
+}
+.global-result-card button:hover{
+  background:#dbeafe;
+  transform:translateY(-1px);
+}
+.global-search-empty{
+  color:#6b7280;
+  padding:8px 0;
+}
+
+
+/* 13.0 nav and full content search */
+#homeTopLayer,#globalSearchLayer{
+  scroll-margin-top:18px;
+}
+.hero-subnav button{
+  letter-spacing:.01em;
+}
+.global-result-card mark{
+  background:#fef3c7;
+  color:#92400e;
+  border-radius:4px;
+  padding:0 2px;
+}
+.global-result-source{
+  font-size:12px;
+  color:#6b7280;
+  margin-top:4px;
+}
+.global-search-results .global-result-card{
+  cursor:default;
+}

@@ -1,12 +1,12 @@
 {
-  "name": "Pali Grammar Review 12.2",
+  "name": "Pali Grammar Review 13.0",
   "short_name": "巴利语语法",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f3f4f6",
   "theme_color": "#111827",
-  "description": "巴利语语法学习全功能修复版；修复关联跳转、上一节下一节、搜索、词典跳转和术语全表显示。",
+  "description": "巴利语语法学习导航与全站检索增强版；顶部导航改为常用入口，全站搜索增强为覆盖完整内容文本。",
   "icons": [
     {
       "src": "icon-192.png",
