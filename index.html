@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0"><title>巴利语语法复习</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#111827"><link rel="stylesheet" href="style.css?v=13.0"></head><body><main class="app"><header class="hero"><p class="eyebrow">Pali Grammar Review</p><h1>📘 巴利语语法复习</h1><div class="hero-subnav" aria-label="常用入口导航">
+  <meta http-equiv="Expires" content="0"><title>巴利语语法复习</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#111827"><link rel="stylesheet" href="style.css?v=13.4"></head><body><main class="app"><header class="hero"><p class="eyebrow">Pali Grammar Review</p><h1>📘 巴利语语法复习</h1><div class="hero-subnav" aria-label="常用入口导航">
           <button type="button" data-home-jump="homeTopLayer">首页</button>
           <span>｜</span>
           <button type="button" data-action="learningRoute">零基础路线</button>
@@ -14,7 +14,7 @@
           <span>｜</span>
           <button type="button" data-action="academicTraining">学术训练</button>
         </div>
-        <div class="visual-version-badge">Pāli Learning Lab · 13.0 导航与全站检索增强版</div><div class="hero-stats"><div><strong id="totalLessons">0</strong><span>语法点</span></div><div><strong id="totalExercises">0</strong><span>练习题</span></div><div><strong id="masteredCount">0</strong><span>已掌握</span></div><div><strong id="wrongCount">0</strong><span>错题</span></div></div></header><section id="homeView" class="view"><span id="homeTopLayer"></span><section class="card"><h2>开始学习</h2><p class="muted">网站按“开始学习—语言能力—佛典与研究”三层组织。零基础学生先从第一层开始，有研究目标的学生再进入第三层。</p><h2 class="home-section-title">推荐学习入口</h2>
+        <div class="visual-version-badge">Pāli Learning Lab · 13.4 查词页体验优化版</div><div class="hero-stats"><div><strong id="totalLessons">0</strong><span>语法点</span></div><div><strong id="totalExercises">0</strong><span>练习题</span></div><div><strong id="masteredCount">0</strong><span>已掌握</span></div><div><strong id="wrongCount">0</strong><span>错题</span></div></div></header><section id="homeView" class="view"><span id="homeTopLayer"></span><section class="card"><h2>开始学习</h2><p class="muted">网站按“开始学习—语言能力—佛典与研究”三层组织。零基础学生先从第一层开始，有研究目标的学生再进入第三层。</p><h2 class="home-section-title">推荐学习入口</h2>
         <p class="muted home-tip">第一次使用建议从“零基础路线”开始；学习稳定后进入“语言能力”，最后再进入“佛典与研究”。</p>
         <div id="todayStudyAdvice" class="today-advice">
           <strong>今日学习建议：</strong>
@@ -97,7 +97,93 @@
 <section id="sentenceAnalysisView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>句子分析训练</h2><p class="muted">先选择一句经过核校的短句，自己尝试分析，再点击“显示分析”。</p><div id="sentenceDashboard" class="sentence-dashboard"></div><label>搜索句子</label><input id="sentenceSearchInput" placeholder="例如 Buddho、dhammaṃ、主宾动、处格、佛典风格" /><div class="button-row three-buttons"><button id="startBasicSentenceBtn" class="secondary">从基础必练开始</button><button id="showReviewSentenceBtn" class="secondary">只看需复习</button><button id="resetSentenceFiltersBtn" class="secondary">重置筛选</button></div><label>选择难度</label><select id="sentenceLevelSelect"></select><label>选择训练层级</label><select id="sentencePrioritySelect"></select><details id="sentenceAdvancedFilters" class="advanced-filters"><summary>更多筛选</summary><label>选择难点标签</label><select id="sentenceTagSelect"></select><label>选择来源类型</label><select id="sentenceSourceSelect"></select><label>学习状态</label><select id="sentenceStatusSelect"><option value="全部">全部</option><option value="未练">未练</option><option value="已掌握">已掌握</option><option value="需复习">需复习</option></select></details><label>选择句子</label><select id="sentenceSelect"></select><div id="sentenceAnalysisCard" class="sentence-card"></div><div class="button-row three-buttons"><button id="showSentenceHintBtn" class="secondary">显示提示</button><button id="showSentenceAnalysisBtn" class="primary">显示完整分析</button><button id="nextSentenceBtn" class="secondary">下一句</button></div><div class="button-row three-buttons"><button id="randomSentenceBtn" class="secondary">随机一句</button><button id="markSentenceMasteredBtn" class="success">标记已掌握</button><button id="markSentenceReviewBtn" class="danger">标记需复习</button></div><button id="copySentenceAnalysisBtn" class="secondary">复制本句解析</button></section></section>
 <section id="sentencePatternsView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>核心句型模板</h2><p class="muted">按层级列出核心句型模板全文，可搜索公式、功能、信号、例句和误区。</p><label>搜索句型</label><input id="patternSearchInput" placeholder="例如 不定式、连续体、主格、宾格、atthi、ca、yo" /><label>选择层级</label><select id="patternLevelSelect"><option value="全部">全部</option><option value="必学">必学</option><option value="选学">选学</option><option value="进阶">进阶</option></select><div id="sentencePatternList" class="sentence-pattern-list"></div></section></section>
 <section id="confusionPairsView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>易混概念对照</h2><p class="muted">按类别列出易混概念全文，可搜索概念、判断线索、例句和提醒。</p><label>搜索易混概念</label><label>选择类别</label><select id="confusionCategorySelect"></select><input id="confusionSearchInput" placeholder="例如 不定式、连续体、主格、宾格、na、mā" /><div id="confusionPairsList" class="confusion-pairs-list"></div></section></section>
-<section id="dictionaryLookupView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>查巴利语单词</h2><p class="muted">这里提供外部权威词典入口。</p><div class="student-note"><strong>推荐查词顺序：</strong><ol><li>先查“巴利字典”。</li><li>再查 DPD。</li><li>还不确定时，用巴汉词典、PTS 词典交叉参考。</li></ol></div><label>输入要查的巴利语词</label><input id="paliLookupInput" placeholder="例如 dhamma, saṅgha, gacchati, paññā" /><div class="button-row three-buttons"><button id="copyLookupWordBtn" class="secondary">复制单词</button><button id="openPrimaryDictBtn" class="primary">打开首选词典</button><button id="clearLookupWordBtn" class="secondary">清空</button></div><div class="button-row three-buttons"><button id="analyzeLookupWordBtn" class="primary">分析这个词</button><button id="selectedWordAnalyzeBtn" class="secondary">分析选中文本</button><button id="openDictAfterAnalyzeBtn" class="secondary">分析后查词</button></div><div id="tokenAnalysisGuide" class="analysis-guide"><strong>词形分析说明：</strong>本站词形分析不是自动语法解析器，只提供学习线索。</div><div id="tokenAnalysisPanel" class="token-analysis-panel"></div><div id="lookupHistoryBox" class="lookup-history"></div><div id="dictionarySiteList" class="dictionary-grid"></div></section></section>
+<section id="dictionaryLookupView" class="view hidden"><section class="card dictionary-ux-card">
+  <button class="small secondary back-home">返回首页</button>
+  <h2>查巴利语单词</h2>
+  <p class="muted">先用本站还原词形和音变线索，再到外部权威词典核查。</p>
+
+  <div class="dictionary-mini-order">
+    <strong>建议顺序：</strong>先查
+    <a href="https://dictionary.sutta.org/" target="_blank" rel="noopener">巴利字典</a>，
+    再查 <a href="https://dpdict.net/" target="_blank" rel="noopener">DPD</a>；
+    疑难词用
+    <a href="https://dsal.uchicago.edu/dictionaries/pali/" target="_blank" rel="noopener">PTS</a> /
+    <a href="https://mbingenheimer.net/tools/paliChinDict/indexPaliChin.html" target="_blank" rel="noopener">巴汉词典</a>
+    交叉参考。
+  </div>
+
+  <div class="lookup-step-box">
+    <span>1 输入词形</span>
+    <span>2 看本站线索</span>
+    <span>3 打开词典核查</span>
+  </div>
+
+  <label>输入要查的巴利语词</label>
+  <input id="paliLookupInput" placeholder="例如 dhamma, saṅgha, gacchati, paññā；也可先输入 sangha / panna" />
+
+  <div class="button-row two-buttons dictionary-main-actions">
+    <button id="analyzeLookupWordBtn" class="primary">分析这个词</button>
+    <button id="openPrimaryDictBtn" class="primary">打开首选词典</button>
+  </div>
+
+  <div class="button-row three-buttons dictionary-secondary-actions">
+    <button id="openAllDictsBtn" class="secondary">打开全部词典</button>
+    <button id="copyLookupWordBtn" class="secondary">复制单词</button>
+    <button id="clearLookupWordBtn" class="secondary">清空</button>
+  </div>
+
+  <details class="more-lookup-actions">
+    <summary>更多操作</summary>
+    <div class="button-row two-buttons">
+      <button id="selectedWordAnalyzeBtn" class="secondary">分析选中文本</button>
+      <button id="openDictAfterAnalyzeBtn" class="secondary">分析后查词</button>
+    </div>
+  </details>
+
+  <div id="paliLetterHelper" class="pali-letter-helper compact-letter-helper">
+    <h3>辅助输入</h3>
+    <p class="muted">点击复制常用巴利转写字母；也可用 aa、ii、.t、~n 等写法后转换。</p>
+    <div class="letter-copy-row" id="paliLetterButtons"></div>
+    <div class="button-row three-buttons compact-buttons">
+      <button id="copyPaliLettersBtn" class="secondary">复制字母列表</button>
+      <button id="convertVelthuisBtn" class="secondary">把输入框转为带音标</button>
+      <button id="copyVelthuisMapBtn" class="secondary">复制转写表</button>
+    </div>
+    <details class="velthuis-details">
+      <summary>查看转写规则</summary>
+      <div class="velthuis-table-wrap">
+        <table class="velthuis-table">
+          <tr><th>Type</th><td>aa</td><td>ii</td><td>uu</td><td>"n</td><td>.m</td><td>~n</td><td>.t</td><td>.d</td><td>.n</td><td>.l</td></tr>
+          <tr><th>For</th><td>ā</td><td>ī</td><td>ū</td><td>ṅ</td><td>ṃ</td><td>ñ</td><td>ṭ</td><td>ḍ</td><td>ṇ</td><td>ḷ</td></tr>
+        </table>
+      </div>
+    </details>
+  </div>
+
+  <div id="fuzzyLookupSuggestions" class="fuzzy-lookup-suggestions"></div>
+
+  <div id="tokenAnalysisGuide" class="analysis-guide compact-analysis-guide">
+    本站分析只提供学习线索，不替代词典；音变后词形会尝试提示可能的音变前形式。
+  </div>
+
+  <div id="tokenAnalysisPanel" class="token-analysis-panel"></div>
+
+  <div class="external-dictionary-links">
+    <h3>外部词典</h3>
+    <div class="external-dict-grid">
+      <a href="https://dictionary.sutta.org/" target="_blank" rel="noopener"><strong>巴利字典</strong><span>中文 / 英文等释义，初学首选</span></a>
+      <a href="https://dpdict.net/" target="_blank" rel="noopener"><strong>DPD</strong><span>Digital Pāḷi Dictionary，词形和英文释义强</span></a>
+      <a href="https://dsal.uchicago.edu/dictionaries/pali/" target="_blank" rel="noopener"><strong>PTS</strong><span>PTS Pali-English Dictionary</span></a>
+      <a href="https://mbingenheimer.net/tools/paliChinDict/indexPaliChin.html" target="_blank" rel="noopener"><strong>巴汉词典</strong><span>Pali-Chinese Dictionary</span></a>
+    </div>
+  </div>
+
+  <div id="lookupHistoryBox" class="lookup-history"></div>
+  <details class="all-dictionary-sites">
+    <summary>查看全部词典入口</summary>
+    <div id="dictionarySiteList" class="dictionary-grid"></div>
+  </details>
+</section></section>
 <section id="linguisticsTipsView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>语言学小贴士</h2><p class="muted">帮助理解巴利语语法分析的简明说明。</p><label>搜索概念</label><input id="linguisticsSearchInput" placeholder="输入主格、宾格、限定动词、不定式、sandhi 等" /><label>选择类别</label><select id="linguisticsCategorySelect"></select><div id="linguisticsTipsList" class="tips-grid"></div></section></section>
 <section id="terminologyGlossaryView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>常见术语英汉巴对照表</h2><p class="muted">术语内容较少，默认以全表显示；可用搜索框和类别筛选快速定位。</p><label>搜索术语</label><input id="termSearchInput" placeholder="例如 case, nominative, participle, sandhi, philology" /><label>选择类别</label><select id="termCategorySelect"></select><div id="termGlossaryList" class="term-glossary-list"></div></section></section>
 <section id="buddhistReadingView" class="view hidden"><section class="card"><button class="small secondary back-home">返回首页</button><h2>佛典阅读常用句式</h2><p class="muted">按类别列出佛典阅读常用句式全文，可搜索公式、译文、关键词和提醒。</p><label>搜索佛典句式</label><input id="buddhistReadingSearchInput" placeholder="例如 evaṃ、ekaṃ samayaṃ、atha kho、ti、yo...so" /><label>选择类别</label><select id="buddhistReadingCategorySelect"></select><label>选择层级</label><select id="buddhistReadingLevelSelect"><option value="全部">全部</option><option value="必学">必学</option><option value="选学">选学</option><option value="进阶">进阶</option></select><div id="buddhistReadingList" class="buddhist-reading-list"></div></section></section>
@@ -112,16 +198,16 @@
         <div id="tipModalBody"></div>
       </div>
     </section>
-</main><script src="sentence-analysis-data.js?v=13.0"></script>
-  <script src="linguistics-tips-data.js?v=13.0"></script>
-  <script src="learning-routes-data.js?v=13.0"></script>
-  <script src="dictionary-sites-data.js?v=13.0"></script>
-  <script src="token-analysis-data.js?v=13.0"></script>
-  <script src="module-guides-data.js?v=13.0"></script>
-  <script src="confusion-pairs-data.js?v=13.0"></script>
-  <script src="sentence-patterns-data.js?v=13.0"></script>
-  <script src="buddhist-reading-data.js?v=13.0"></script>
-  <script src="buddhist-background-data.js?v=13.0"></script>
-  <script src="academic-training-data.js?v=13.0"></script>
-  <script src="terminology-glossary-data.js?v=13.0"></script>
-  <script src="app.js?v=13.0"></script></body></html>
+</main><script src="sentence-analysis-data.js?v=13.4"></script>
+  <script src="linguistics-tips-data.js?v=13.4"></script>
+  <script src="learning-routes-data.js?v=13.4"></script>
+  <script src="dictionary-sites-data.js?v=13.4"></script>
+  <script src="token-analysis-data.js?v=13.4"></script>
+  <script src="module-guides-data.js?v=13.4"></script>
+  <script src="confusion-pairs-data.js?v=13.4"></script>
+  <script src="sentence-patterns-data.js?v=13.4"></script>
+  <script src="buddhist-reading-data.js?v=13.4"></script>
+  <script src="buddhist-background-data.js?v=13.4"></script>
+  <script src="academic-training-data.js?v=13.4"></script>
+  <script src="terminology-glossary-data.js?v=13.4"></script>
+  <script src="app.js?v=13.4"></script></body></html>

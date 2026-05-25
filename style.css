@@ -1808,3 +1808,380 @@ td, th {
 .global-search-results .global-result-card{
   cursor:default;
 }
+
+
+/* 13.1 interaction + terminology optimization */
+#homeTopLayer,#globalSearchLayer,#homeStartLayer,#homeLanguageLayer,#homeResearchLayer{scroll-margin-top:18px}
+.lesson-nav-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.lesson-nav-row button.nav-disabled{opacity:.45;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+.qa-full-card,.qa-route-card{
+  border:1px solid rgba(148,163,184,.28);
+  border-radius:18px;
+  background:linear-gradient(180deg,#fff,#f8fbff);
+  padding:14px;
+  margin:12px 0;
+  box-shadow:var(--shadow-sm);
+}
+.qa-full-card h3,.qa-route-card h3{margin:4px 0 8px}
+.qa-meta{color:#4b5563;font-weight:800;margin:4px 0 8px}
+.qa-table{width:100%;border-collapse:collapse!important;background:#fff;margin-top:8px}
+.qa-table th,.qa-table td{border:1px solid rgba(148,163,184,.28);padding:8px;vertical-align:top;line-height:1.65}
+.qa-table th{background:#f8fafc;text-align:left}
+.qa-example{background:#f8fafc;border-left:4px solid #2563eb;padding:8px 10px;border-radius:10px;margin:8px 0}
+.qa-section-title{margin-top:20px;padding:8px 12px;border-radius:14px;background:#eef2ff;color:#1e3a8a}
+.route-step-card{display:grid;grid-template-columns:36px 1fr;gap:12px;padding:12px;margin:12px 0;border:1px solid rgba(148,163,184,.22);border-radius:18px;background:#fff}
+.route-step-number{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:900}
+.route-lesson-list{display:flex;flex-wrap:wrap;gap:8px}
+.route-lesson-jump,.qa-pill-btn{width:auto;display:inline-block;padding:7px 11px;border-radius:999px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;font-size:13px;font-weight:800;box-shadow:none;margin:3px}
+.route-lesson-jump:hover,.qa-pill-btn:hover{background:#dbeafe;transform:translateY(-1px)}
+.sentence-select-list{max-height:360px;overflow:auto;border:1px solid rgba(148,163,184,.28);border-radius:16px;background:#fff;margin:12px 0}
+.sentence-select-item{display:block;width:100%;text-align:left;padding:11px 12px;border:0;border-bottom:1px solid rgba(148,163,184,.18);background:#fff;color:#111827;border-radius:0;box-shadow:none}
+.sentence-select-item:hover,.sentence-select-item.active{background:#eff6ff;color:#1d4ed8;transform:none}
+
+/* IPA is hidden in tooltip to save space */
+.ipa{display:none!important}
+.term-table{table-layout:auto}
+.term-table th,.term-table td{line-height:1.55}
+.term-en-cell,.term-en-hover{
+  white-space:normal!important;
+  overflow-wrap:anywhere;
+  word-break:normal;
+  max-width:150px;
+  display:inline-block;
+}
+.term-en-hover{
+  border-bottom:1px dotted #94a3b8;
+  cursor:help;
+}
+.term-ipa-hint{
+  font-size:11px;
+  color:#6b7280;
+  margin-left:4px;
+}
+.term-table th:first-child,.term-table td:first-child{width:150px;max-width:160px}
+.term-table th:nth-child(2),.term-table td:nth-child(2){width:auto;max-width:none}
+
+/* Global search */
+.global-result-card mark{background:#fef3c7;color:#92400e;border-radius:4px;padding:0 2px}
+.global-result-source{font-size:12px;color:#6b7280;margin-top:4px}
+.global-search-panel{margin:18px 0 22px;padding:14px;border:1px solid rgba(148,163,184,.28);border-radius:22px;background:linear-gradient(180deg,#ffffff,#f8fbff);box-shadow:var(--shadow-sm)}
+.global-search-results{margin-top:12px;display:grid;gap:10px}
+.global-result-card{border:1px solid rgba(148,163,184,.24);border-radius:16px;background:#fff;padding:12px;box-shadow:0 5px 14px rgba(15,23,42,.04)}
+.global-result-card h3{margin:2px 0 6px;font-size:16px}
+.global-result-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.global-result-tag{display:inline-block;padding:3px 8px;border-radius:999px;background:#eef2ff;color:#1e40af;font-size:12px;font-weight:800}
+.global-result-card p{margin:4px 0;color:#4b5563;line-height:1.6}
+.global-result-card button{width:auto;margin-top:8px;padding:7px 11px;border-radius:999px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;font-size:13px;font-weight:800;box-shadow:none}
+.global-search-empty{color:#6b7280;padding:8px 0}
+@media(max-width:760px){.route-step-card{grid-template-columns:1fr}.qa-table{min-width:760px}.term-table-wrap{overflow-x:auto}.term-en-cell,.term-en-hover{max-width:120px}}
+
+
+/* 13.2 dictionary enhancement */
+.pali-letter-helper{
+  margin:16px 0;
+  padding:14px;
+  border:1px solid rgba(148,163,184,.28);
+  border-radius:20px;
+  background:linear-gradient(180deg,#ffffff,#f8fbff);
+  box-shadow:var(--shadow-sm);
+}
+.pali-letter-helper h3{margin:0 0 6px}
+.letter-copy-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:10px 0;
+}
+.letter-btn{
+  width:auto;
+  min-width:38px;
+  padding:7px 10px;
+  border-radius:12px;
+  background:#eff6ff;
+  color:#1d4ed8;
+  border:1px solid #bfdbfe;
+  font-weight:900;
+  font-size:18px;
+  box-shadow:none;
+}
+.letter-btn:hover{
+  background:#dbeafe;
+  transform:translateY(-1px);
+}
+.compact-buttons button{
+  min-height:42px;
+}
+.velthuis-table-wrap{
+  overflow-x:auto;
+  margin-top:8px;
+}
+.velthuis-table{
+  border-collapse:collapse!important;
+  background:#fff;
+  min-width:620px;
+}
+.velthuis-table th,
+.velthuis-table td{
+  border:1px solid rgba(148,163,184,.35);
+  padding:7px 10px;
+  text-align:center;
+  line-height:1.45;
+}
+.velthuis-table th{
+  background:#f8fafc;
+  font-weight:900;
+}
+.fuzzy-lookup-suggestions{
+  margin:10px 0 14px;
+}
+.fuzzy-box{
+  padding:12px;
+  border:1px solid rgba(59,130,246,.25);
+  border-radius:18px;
+  background:#eff6ff;
+}
+.fuzzy-box strong{
+  display:block;
+  margin-bottom:8px;
+}
+.fuzzy-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.fuzzy-word-btn{
+  width:auto;
+  padding:7px 11px;
+  border-radius:999px;
+  border:1px solid #bfdbfe;
+  background:#fff;
+  color:#1d4ed8;
+  font-weight:900;
+  box-shadow:none;
+}
+.fuzzy-word-btn:hover{
+  background:#dbeafe;
+  transform:translateY(-1px);
+}
+.open-all-warning{
+  margin-top:8px;
+  color:#92400e;
+  font-size:13px;
+  line-height:1.6;
+}
+.dictionary-grid .dictionary-card button,
+.dict-open-btn{
+  width:auto;
+  padding:8px 12px;
+  border-radius:999px;
+}
+@media(max-width:760px){
+  .letter-btn{min-width:34px;font-size:17px}
+  .velthuis-table{min-width:560px}
+}
+
+
+/* 13.3 sandhi restoration */
+.sandhi-restore-box{
+  margin:12px 0;
+  padding:14px;
+  border:1px solid rgba(14,165,233,.28);
+  border-radius:18px;
+  background:linear-gradient(180deg,#f0f9ff,#ffffff);
+  box-shadow:var(--shadow-sm);
+}
+.sandhi-restore-box h3{
+  margin:0 0 8px;
+}
+.sandhi-restore-note{
+  color:#475569;
+  line-height:1.65;
+  margin:6px 0 10px;
+}
+.sandhi-candidate{
+  border:1px solid rgba(148,163,184,.24);
+  border-radius:14px;
+  background:#fff;
+  padding:10px;
+  margin:8px 0;
+}
+.sandhi-form-line{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px;
+  margin-bottom:6px;
+}
+.sandhi-after{
+  font-weight:900;
+  color:#111827;
+}
+.sandhi-arrow{
+  color:#64748b;
+  font-weight:900;
+}
+.sandhi-before{
+  font-weight:900;
+  color:#0369a1;
+}
+.sandhi-rule{
+  font-size:13px;
+  color:#475569;
+  line-height:1.6;
+}
+.sandhi-part-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:8px;
+}
+.sandhi-part-btn{
+  width:auto;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid #bae6fd;
+  background:#f0f9ff;
+  color:#0369a1;
+  font-weight:900;
+  box-shadow:none;
+}
+.sandhi-part-btn:hover{
+  background:#e0f2fe;
+  transform:translateY(-1px);
+}
+.sandhi-grammar-mini{
+  margin-top:8px;
+  padding:8px;
+  border-radius:12px;
+  background:#f8fafc;
+  color:#334155;
+  line-height:1.55;
+  font-size:14px;
+}
+
+
+/* 13.4 dictionary UX optimization */
+.dictionary-ux-card .muted{
+  line-height:1.65;
+}
+.dictionary-mini-order{
+  margin:10px 0 14px;
+  padding:10px 12px;
+  border-radius:16px;
+  background:#fffbeb;
+  border:1px solid rgba(245,158,11,.24);
+  line-height:1.7;
+  color:#374151;
+}
+.dictionary-mini-order a{
+  font-weight:900;
+  color:#1d4ed8;
+  text-decoration:none;
+  border-bottom:1px dotted #60a5fa;
+}
+.lookup-step-box{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  margin:12px 0 16px;
+}
+.lookup-step-box span{
+  display:block;
+  padding:9px 10px;
+  border-radius:14px;
+  background:#eef2ff;
+  color:#1e40af;
+  font-weight:900;
+  text-align:center;
+}
+.dictionary-main-actions{
+  margin-top:12px;
+}
+.dictionary-main-actions .primary{
+  min-height:54px;
+  font-size:18px;
+}
+.dictionary-secondary-actions{
+  margin-top:10px;
+}
+.more-lookup-actions,
+.velthuis-details,
+.all-dictionary-sites{
+  margin:10px 0;
+}
+.more-lookup-actions summary,
+.velthuis-details summary,
+.all-dictionary-sites summary{
+  cursor:pointer;
+  font-weight:900;
+  color:#334155;
+  padding:8px 0;
+}
+.compact-letter-helper{
+  margin-top:14px;
+  padding:12px;
+}
+.compact-letter-helper h3{
+  margin-bottom:4px;
+}
+.compact-analysis-guide{
+  margin-top:8px;
+  padding:10px 12px;
+  font-size:14px;
+  line-height:1.65;
+  background:#f8fafc;
+  border:1px solid rgba(148,163,184,.24);
+  border-radius:14px;
+  color:#475569;
+}
+.external-dictionary-links{
+  margin:18px 0 12px;
+}
+.external-dictionary-links h3{
+  margin:0 0 10px;
+}
+.external-dict-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+.external-dict-grid a{
+  display:block;
+  padding:12px;
+  border:1px solid rgba(59,130,246,.22);
+  border-radius:16px;
+  background:#eff6ff;
+  color:#1d4ed8;
+  text-decoration:none;
+}
+.external-dict-grid a:hover{
+  background:#dbeafe;
+  transform:translateY(-1px);
+}
+.external-dict-grid strong{
+  display:block;
+  font-size:16px;
+  margin-bottom:4px;
+}
+.external-dict-grid span{
+  display:block;
+  color:#475569;
+  font-size:13px;
+  line-height:1.55;
+}
+.all-dictionary-sites .dictionary-grid{
+  margin-top:10px;
+}
+@media(max-width:900px){
+  .external-dict-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+@media(max-width:640px){
+  .lookup-step-box{
+    grid-template-columns:1fr;
+  }
+  .external-dict-grid{
+    grid-template-columns:1fr;
+  }
+}
