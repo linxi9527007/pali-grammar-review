@@ -4318,3 +4318,101 @@ input, select, textarea, button{
     max-width:none!important;
   }
 }
+
+
+/* 20.1 module learning standalone page */
+#moduleLearningView .module-grid{
+  margin-top:14px;
+}
+#moduleLearningView .module-card{
+  cursor:pointer;
+}
+#moduleGridCard{
+  display:none;
+}
+
+
+/* 20.3 page navigation and back-to-top */
+.page-nav-bar-202{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:0 0 14px;
+}
+.page-nav-bar-202 button{
+  min-height:36px;
+}
+.back-top-202{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:9999;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(8px);
+  transition:opacity .18s ease, transform .18s ease;
+  border:0;
+  border-radius:999px;
+  padding:10px 14px;
+  font-weight:900;
+  box-shadow:0 10px 24px rgba(15,23,42,.18);
+}
+.back-top-202.show{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+@media(max-width:760px){
+  .page-nav-bar-202{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+  .back-top-202{
+    right:12px;
+    bottom:12px;
+    padding:9px 12px;
+  }
+}
+
+
+/* 20.3 performance-clean additions */
+.hero-subnav button{white-space:nowrap}
+@media(max-width:760px){
+  .hero-subnav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+  .hero-subnav span{display:none}
+}
+
+
+/* 20.4 homepage layout refinement */
+.home-clean-card > h2:first-child{
+  margin-bottom:6px;
+}
+.home-today-compact{
+  margin-top:16px;
+  margin-bottom:18px;
+}
+.home-path-clean{
+  margin-top:12px;
+  margin-bottom:24px;
+}
+.home-search-note{
+  margin-top:18px;
+  padding:12px 14px;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  background:#f8fafc;
+  color:#334155;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  align-items:center;
+}
+@media(max-width:760px){
+  .home-search-note{
+    display:block;
+  }
+  .home-search-note strong{
+    display:block;
+    margin-bottom:4px;
+  }
+}
