@@ -1,0 +1,44 @@
+Pali Grammar 20.16 学习模块术语首链版报告
+
+一、按用户要求新增
+学习模块中，每个学习章节页面的中文术语首次出现时，自动加术语超链接。
+
+二、实现规则
+1. 只处理学习章节页 lessonView。
+2. 每个中文术语在当前页只链接第一次出现。
+3. 点击术语弹出解释卡片，不强制跳走。
+4. 弹窗内可点击“打开术语库”。
+5. 表格、例句、本节单词、本节术语盒、按钮、导航等区域保持干净，不乱加链接。
+6. 不恢复巴利语逐词查词链接，避免与本节单词重复、影响速度。
+
+三、内容不变核查
+{
+  "grammar.json": true,
+  "sentence-analysis-data.js": true,
+  "linguistics-tips-data.js": true,
+  "learning-routes-data.js": true,
+  "dictionary-sites-data.js": true,
+  "token-analysis-data.js": true,
+  "module-guides-data.js": true,
+  "confusion-pairs-data.js": true,
+  "sentence-patterns-data.js": true,
+  "buddhist-reading-data.js": true,
+  "buddhist-background-data.js": true,
+  "academic-training-data.js": true,
+  "terminology-glossary-data.js": true
+}
+
+四、功能核查
+{
+  "学习章节中文术语首链脚本存在": true,
+  "只在lessonView运行": true,
+  "表格例句保持干净": true,
+  "术语弹窗保留": true,
+  "打开术语库按钮保留": true,
+  "数据内容不变": true,
+  "顶部佛典阅读仍为专用路由": true,
+  "全站搜索标题仍保留": true
+}
+
+五、静态检查
+全部 JS / JSON 文件通过语法检查。

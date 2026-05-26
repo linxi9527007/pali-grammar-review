@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0"><title>巴利语语法复习</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#111827"><link rel="stylesheet" href="style.css?v=20.13"></head><body><main class="app"><header class="hero"><p class="eyebrow">Pali Grammar Review</p><h1>📘 巴利语语法复习</h1><div class="hero-subnav" aria-label="常用入口导航">
+  <meta http-equiv="Expires" content="0"><title>巴利语语法复习</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#111827"><link rel="stylesheet" href="style.css?v=20.16"></head><body><main class="app"><header class="hero"><p class="eyebrow">Pali Grammar Review</p><h1>📘 巴利语语法复习</h1><div class="hero-subnav" aria-label="常用入口导航">
           <button type="button" data-home-jump="homeTopLayer">首页</button>
           <span>｜</span>
           <button type="button" data-action="learningRoute">零基础</button>
@@ -10,13 +10,13 @@
           <span>｜</span>
           <button type="button" data-action="sentenceAnalysis">句子分析</button>
           <span>｜</span>
-          <button type="button" data-action="researchLayer">佛典阅读</button>
+          <button type="button" data-layer-action="researchLayer">佛典阅读</button>
           <span>｜</span>
           <button type="button" data-action="dictionaryLookup">查词</button>
           <span>｜</span>
           <button type="button" data-action="search">搜索</button>
         </div>
-        <div class="visual-version-badge">Pāli Learning Lab · 20.13 三层入口独立页面版</div><div class="hero-stats"><div><strong id="totalLessons">0</strong><span>语法点</span></div><div><strong id="totalExercises">0</strong><span>练习题</span></div><div><strong id="masteredCount">0</strong><span>已掌握</span></div><div><strong id="wrongCount">0</strong><span>错题</span></div></div></header><section id="homeView" class="view"><span id="homeTopLayer"></span><section class="card home-clean-card">
+        <div class="visual-version-badge">Pāli Learning Lab · 20.16 学习模块术语首链版</div><div class="hero-stats"><div><strong id="totalLessons">0</strong><span>语法点</span></div><div><strong id="totalExercises">0</strong><span>练习题</span></div><div><strong id="masteredCount">0</strong><span>已掌握</span></div><div><strong id="wrongCount">0</strong><span>错题</span></div></div></header><section id="homeView" class="view"><span id="homeTopLayer"></span><section class="card home-clean-card">
         <h2>学习路径</h2>
         <p class="muted">网站按“基础入门—语言能力—佛典阅读”三层组织。首页只保留总入口，不再重复铺开各层内容；点击下面三张卡片会进入对应独立页面。</p>
 
@@ -31,19 +31,19 @@
         </div>
 
         <div class="home-path-overview home-path-clean">
-          <button type="button" class="home-path-card home-path-button" data-action="startLayer">
+          <button type="button" class="home-path-card home-path-button" data-layer-action="startLayer">
             <span class="path-number">1</span>
             <h3>基础入门</h3>
             <p>零基础路线、使用说明，帮助第一次使用者建立学习顺序。</p>
             <span class="path-jump-hint">进入基础入门</span>
           </button>
-          <button type="button" class="home-path-card home-path-button" data-action="languageLayer">
+          <button type="button" class="home-path-card home-path-button" data-layer-action="languageLayer">
             <span class="path-number">2</span>
             <h3>语言能力</h3>
             <p>模块学习、课程练习、专项强化、句子分析、查词和术语库。</p>
             <span class="path-jump-hint">进入语言能力</span>
           </button>
-          <button type="button" class="home-path-card home-path-button" data-action="researchLayer">
+          <button type="button" class="home-path-card home-path-button" data-layer-action="researchLayer">
             <span class="path-number">3</span>
             <h3>佛典阅读</h3>
             <p>三藏结构、佛典句式、阅读方法、词义观察和引用规范。</p>
@@ -181,24 +181,24 @@
   <p class="pill">语法术语</p>
   <h2 id="conceptTitle"></h2>
   <div id="conceptContent" class="concept-content"></div>
-</section></section><section id="searchView" class="view hidden"><section class="card"><button class="small secondary back-home">首页</button><h2>搜索语法点</h2><input id="searchInput" placeholder="输入关键词，如 gacchati、inf.、宾格、ca"><div id="searchResults" class="lesson-list"></div></section></section><section id="exerciseCenterView" class="view hidden"><section class="card"><button class="small secondary back-home">首页</button><h2>课程练习</h2><label>选择模块</label><select id="exerciseModuleSelect"></select><label>练习数量</label><input id="exerciseCountInput" type="number" min="1" value="10"><button id="startMixedExercisesBtn" class="primary">开始练习</button></section></section><section id="trainingView" class="view hidden"><section class="card"><button class="small secondary back-home">首页</button><h2>专项强化</h2><div id="trainingGrid" class="training-grid"></div></section></section><section id="wrongView" class="view hidden"><section class="card"><button class="small secondary back-home">首页</button><h2>错题复习</h2><div id="wrongList"></div><button id="startWrongBtn" class="primary">开始错题复习</button><button id="clearWrongBtn" class="danger-outline">清空错题记录</button></section></section><section id="cardPanel" class="card overlay-panel hidden"><button id="exitCardsBtn" class="small secondary">退出卡片</button><h2>语法卡片</h2><p id="cardProgress" class="muted"></p><div id="cardQuestion" class="question-box"></div><div id="cardAnswer" class="answer-box hidden"></div><div id="cardBeforeButtons"><button id="showCardAnswerBtn" class="primary">显示答案</button></div><div id="cardAfterButtons" class="button-row hidden"><button id="cardKnowBtn" class="success">认识 ✅</button><button id="cardWrongBtn" class="danger">不认识 ❌</button></div></section><section id="exercisePanel" class="card overlay-panel hidden"><button id="exitExerciseBtn" class="small secondary">退出练习</button><h2 id="exerciseModeTitle">练习</h2><p id="exerciseProgress" class="muted"></p><p id="exerciseLessonLabel" class="pill"></p><div id="exerciseQuestion" class="question-box"></div><div id="exerciseOptions"></div><input id="exerciseInput" class="hidden" placeholder="请输入答案"><div id="paliKeyboard" class="pali-keyboard hidden"><button data-char="ā">ā</button><button data-char="ī">ī</button><button data-char="ū">ū</button><button data-char="ṅ">ṅ</button><button data-char="ñ">ñ</button><button data-char="ṭ">ṭ</button><button data-char="ḍ">ḍ</button><button data-char="ṇ">ṇ</button><button data-char="ḷ">ḷ</button><button data-char="ṃ">ṃ</button></div><button id="submitExerciseBtn" class="primary">提交答案</button><button id="nextExerciseBtn" class="primary hidden">下一题</button><div id="exerciseFeedback" class="answer-box hidden"></div></section><section id="tipModal" class="tip-modal hidden">
+</section></section><section id="searchView" class="view hidden"><section class="card"><button class="small secondary back-home">首页</button><h2>全站搜索</h2><input id="searchInput" placeholder="输入关键词，如 dhamma、主格、句子分析、佛典阅读、引用"><div id="searchResults" class="lesson-list"></div></section></section><section id="exerciseCenterView" class="view hidden"><section class="card"><button class="small secondary back-home">首页</button><h2>课程练习</h2><label>选择模块</label><select id="exerciseModuleSelect"></select><label>练习数量</label><input id="exerciseCountInput" type="number" min="1" value="10"><button id="startMixedExercisesBtn" class="primary">开始练习</button></section></section><section id="trainingView" class="view hidden"><section class="card"><button class="small secondary back-home">首页</button><h2>专项强化</h2><div id="trainingGrid" class="training-grid"></div></section></section><section id="wrongView" class="view hidden"><section class="card"><button class="small secondary back-home">首页</button><h2>错题复习</h2><div id="wrongList"></div><button id="startWrongBtn" class="primary">开始错题复习</button><button id="clearWrongBtn" class="danger-outline">清空错题记录</button></section></section><section id="cardPanel" class="card overlay-panel hidden"><button id="exitCardsBtn" class="small secondary">退出卡片</button><h2>语法卡片</h2><p id="cardProgress" class="muted"></p><div id="cardQuestion" class="question-box"></div><div id="cardAnswer" class="answer-box hidden"></div><div id="cardBeforeButtons"><button id="showCardAnswerBtn" class="primary">显示答案</button></div><div id="cardAfterButtons" class="button-row hidden"><button id="cardKnowBtn" class="success">认识 ✅</button><button id="cardWrongBtn" class="danger">不认识 ❌</button></div></section><section id="exercisePanel" class="card overlay-panel hidden"><button id="exitExerciseBtn" class="small secondary">退出练习</button><h2 id="exerciseModeTitle">练习</h2><p id="exerciseProgress" class="muted"></p><p id="exerciseLessonLabel" class="pill"></p><div id="exerciseQuestion" class="question-box"></div><div id="exerciseOptions"></div><input id="exerciseInput" class="hidden" placeholder="请输入答案"><div id="paliKeyboard" class="pali-keyboard hidden"><button data-char="ā">ā</button><button data-char="ī">ī</button><button data-char="ū">ū</button><button data-char="ṅ">ṅ</button><button data-char="ñ">ñ</button><button data-char="ṭ">ṭ</button><button data-char="ḍ">ḍ</button><button data-char="ṇ">ṇ</button><button data-char="ḷ">ḷ</button><button data-char="ṃ">ṃ</button></div><button id="submitExerciseBtn" class="primary">提交答案</button><button id="nextExerciseBtn" class="primary hidden">下一题</button><div id="exerciseFeedback" class="answer-box hidden"></div></section><section id="tipModal" class="tip-modal hidden">
       <div class="tip-modal-content">
         <button id="closeTipModalBtn" class="small secondary">关闭</button>
         <div id="tipModalBody"></div>
       </div>
     </section>
-</main><script src="sentence-analysis-data.js?v=20.13"></script>
-  <script src="linguistics-tips-data.js?v=20.13"></script>
-  <script src="learning-routes-data.js?v=20.13"></script>
-  <script src="dictionary-sites-data.js?v=20.13"></script>
-  <script src="token-analysis-data.js?v=20.13"></script>
-  <script src="module-guides-data.js?v=20.13"></script>
-  <script src="confusion-pairs-data.js?v=20.13"></script>
-  <script src="sentence-patterns-data.js?v=20.13"></script>
-  <script src="buddhist-reading-data.js?v=20.13"></script>
-  <script src="buddhist-background-data.js?v=20.13"></script>
-  <script src="academic-training-data.js?v=20.13"></script>
-  <script src="terminology-glossary-data.js?v=20.13"></script>
-  <script src="app.js?v=20.13"></script>
+</main><script src="sentence-analysis-data.js?v=20.16"></script>
+  <script src="linguistics-tips-data.js?v=20.16"></script>
+  <script src="learning-routes-data.js?v=20.16"></script>
+  <script src="dictionary-sites-data.js?v=20.16"></script>
+  <script src="token-analysis-data.js?v=20.16"></script>
+  <script src="module-guides-data.js?v=20.16"></script>
+  <script src="confusion-pairs-data.js?v=20.16"></script>
+  <script src="sentence-patterns-data.js?v=20.16"></script>
+  <script src="buddhist-reading-data.js?v=20.16"></script>
+  <script src="buddhist-background-data.js?v=20.16"></script>
+  <script src="academic-training-data.js?v=20.16"></script>
+  <script src="terminology-glossary-data.js?v=20.16"></script>
+  <script src="app.js?v=20.16"></script>
 <button id="globalBackToTopBtn" class="global-back-top-btn" aria-label="回到顶部" title="回到顶部">↑ 顶部</button>
 </body></html>
