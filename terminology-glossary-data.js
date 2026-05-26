@@ -1115,5 +1115,285 @@ const TERMINOLOGY_GLOSSARY = [
       }
     ],
     "needs_contrast": true
+  },
+  {
+    "cat": "语法缩略语：性数格",
+    "en": "masculine",
+    "ipa": "/ˈmæskjəlɪn/",
+    "cn": "m.",
+    "pali": "阳性",
+    "note": "阳性。例：Buddho < Buddha, m.sg.nom。"
+  },
+  {
+    "cat": "语法缩略语：性数格",
+    "en": "feminine",
+    "ipa": "/ˈfemənɪn/",
+    "cn": "f.",
+    "pali": "阴性",
+    "note": "阴性。"
+  },
+  {
+    "cat": "语法缩略语：性数格",
+    "en": "neuter",
+    "ipa": "/ˈnuːtər/",
+    "cn": "n.",
+    "pali": "中性",
+    "note": "中性。例：phalaṃ < phala, n.sg.nom/acc。"
+  },
+  {
+    "cat": "语法缩略语：性数格",
+    "en": "singular",
+    "ipa": "/ˈsɪŋɡjələr/",
+    "cn": "sg.",
+    "pali": "单数",
+    "note": "单数。"
+  },
+  {
+    "cat": "语法缩略语：性数格",
+    "en": "plural",
+    "ipa": "/ˈplʊrəl/",
+    "cn": "pl.",
+    "pali": "复数",
+    "note": "复数。"
+  },
+  {
+    "cat": "语法缩略语：性数格",
+    "en": "nominative",
+    "ipa": "/ˈnɑːmɪnətɪv/",
+    "cn": "nom.",
+    "pali": "主格",
+    "note": "主格。"
+  },
+  {
+    "cat": "语法缩略语：性数格",
+    "en": "accusative",
+    "ipa": "/əˈkjuːzətɪv/",
+    "cn": "acc.",
+    "pali": "宾格",
+    "note": "宾格。"
+  },
+  {
+    "cat": "语法缩略语：性数格",
+    "en": "instrumental",
+    "ipa": "/ˌɪnstrəˈmentəl/",
+    "cn": "ins.",
+    "pali": "工具格",
+    "note": "工具格。"
+  },
+  {
+    "cat": "语法缩略语：性数格",
+    "en": "dative",
+    "ipa": "/ˈdeɪtɪv/",
+    "cn": "dat.",
+    "pali": "与格",
+    "note": "与格。"
+  },
+  {
+    "cat": "语法缩略语：性数格",
+    "en": "ablative",
+    "ipa": "/ˈæblətɪv/",
+    "cn": "abl.",
+    "pali": "从格",
+    "note": "从格。"
+  },
+  {
+    "cat": "语法缩略语：性数格",
+    "en": "genitive",
+    "ipa": "/ˈdʒenətɪv/",
+    "cn": "gen.",
+    "pali": "属格",
+    "note": "属格。"
+  },
+  {
+    "cat": "语法缩略语：性数格",
+    "en": "locative",
+    "ipa": "/ˈlɑːkətɪv/",
+    "cn": "loc.",
+    "pali": "处格",
+    "note": "处格。"
+  },
+  {
+    "cat": "语法缩略语：性数格",
+    "en": "vocative",
+    "ipa": "/ˈvɑːkətɪv/",
+    "cn": "voc.",
+    "pali": "呼格",
+    "note": "呼格。"
+  },
+  {
+    "cat": "语法缩略语：动词范畴",
+    "en": "present",
+    "ipa": "/ˈprezənt/",
+    "cn": "prs.",
+    "pali": "现在时",
+    "note": "现在时。"
+  },
+  {
+    "cat": "语法缩略语：动词范畴",
+    "en": "future",
+    "ipa": "/ˈfjuːtʃər/",
+    "cn": "fut.",
+    "pali": "将来时",
+    "note": "将来时。"
+  },
+  {
+    "cat": "语法缩略语：动词范畴",
+    "en": "aorist",
+    "ipa": "/ˈeɪərɪst/",
+    "cn": "aor.",
+    "pali": "不定过去",
+    "note": "不定过去。"
+  },
+  {
+    "cat": "语法缩略语：动词范畴",
+    "en": "past",
+    "ipa": "/pæst/",
+    "cn": "pst.",
+    "pali": "过去类",
+    "note": "过去类。"
+  },
+  {
+    "cat": "语法缩略语：动词范畴",
+    "en": "perfect",
+    "ipa": "/ˈpɜːrfɪkt/",
+    "cn": "perf.",
+    "pali": "完成式",
+    "note": "完成式。"
+  },
+  {
+    "cat": "语法缩略语：动词范畴",
+    "en": "indicative",
+    "ipa": "/ɪnˈdɪkətɪv/",
+    "cn": "indic.",
+    "pali": "陈述语气",
+    "note": "陈述语气。为避免和 ind. 不变词混淆，网站写 indic.。"
+  },
+  {
+    "cat": "语法缩略语：动词范畴",
+    "en": "imperative",
+    "ipa": "/ɪmˈperətɪv/",
+    "cn": "imp.",
+    "pali": "命令语气",
+    "note": "命令语气。"
+  },
+  {
+    "cat": "语法缩略语：动词范畴",
+    "en": "optative",
+    "ipa": "/ˈɑːptətɪv/",
+    "cn": "opt.",
+    "pali": "祈愿/可能语气",
+    "note": "祈愿或可能语气。"
+  },
+  {
+    "cat": "语法缩略语：动词范畴",
+    "en": "conditional",
+    "ipa": "/kənˈdɪʃənəl/",
+    "cn": "cond.",
+    "pali": "条件式",
+    "note": "条件式。"
+  },
+  {
+    "cat": "语法缩略语：动词范畴",
+    "en": "active",
+    "ipa": "/ˈæktɪv/",
+    "cn": "act.",
+    "pali": "主动语态",
+    "note": "主动语态。"
+  },
+  {
+    "cat": "语法缩略语：动词范畴",
+    "en": "middle",
+    "ipa": "/ˈmɪdəl/",
+    "cn": "mid.",
+    "pali": "中间语态",
+    "note": "中间语态。网站统一用 mid.，不用 med.。"
+  },
+  {
+    "cat": "语法缩略语：动词范畴",
+    "en": "passive",
+    "ipa": "/ˈpæsɪv/",
+    "cn": "pass.",
+    "pali": "被动语态",
+    "note": "被动语态。"
+  },
+  {
+    "cat": "语法缩略语：词类与词形",
+    "en": "pronoun",
+    "ipa": "/ˈproʊnaʊn/",
+    "cn": "pron.",
+    "pali": "代词",
+    "note": "代词。例：so < ta, pron.m.sg.nom。"
+  },
+  {
+    "cat": "语法缩略语：词类与词形",
+    "en": "adjective",
+    "ipa": "/ˈædʒɪktɪv/",
+    "cn": "adj.",
+    "pali": "形容词",
+    "note": "形容词。例：sabbaṃ < sabba, adj.n.sg.nom/acc。"
+  },
+  {
+    "cat": "语法缩略语：词类与词形",
+    "en": "indeclinable",
+    "ipa": "/ˌɪndɪˈklaɪnəbəl/",
+    "cn": "ind.",
+    "pali": "不变词",
+    "note": "不变词。例：ca < ca, ind.。注意 indic. 才是陈述语气。"
+  },
+  {
+    "cat": "语法缩略语：非限定动词",
+    "en": "infinitive",
+    "ipa": "/ɪnˈfɪnətɪv/",
+    "cn": "inf.",
+    "pali": "不定式",
+    "note": "不定式。例：gantuṃ < √gam, inf.。"
+  },
+  {
+    "cat": "语法缩略语：非限定动词",
+    "en": "gerund",
+    "ipa": "/ˈdʒerənd/",
+    "cn": "ger.",
+    "pali": "连续体",
+    "note": "连续体。网站统一用 ger.，统一使用 ger.。例：gantvā < √gam, ger.。"
+  },
+  {
+    "cat": "语法缩略语：非限定动词",
+    "en": "present participle",
+    "ipa": "/ˈprezənt ˈpɑːrtɪsɪpəl/",
+    "cn": "pr.p.",
+    "pali": "现在分词",
+    "note": "现在分词。若需标语态，可写 pr.p.act. 或 pr.p.mid.。"
+  },
+  {
+    "cat": "语法缩略语：非限定动词",
+    "en": "present active participle",
+    "ipa": "/ˈprezənt ˈæktɪv ˈpɑːrtɪsɪpəl/",
+    "cn": "pr.p.act.",
+    "pali": "现在主动分词",
+    "note": "现在主动分词。例：gacchanto < √gam, pr.p.act., m.sg.nom。"
+  },
+  {
+    "cat": "语法缩略语：非限定动词",
+    "en": "present middle participle",
+    "ipa": "/ˈprezənt ˈmɪdəl ˈpɑːrtɪsɪpəl/",
+    "cn": "pr.p.mid.",
+    "pali": "现在中间语态分词",
+    "note": "现在中间语态分词。例：labhamāno < √labh, pr.p.mid., m.sg.nom。"
+  },
+  {
+    "cat": "语法缩略语：非限定动词",
+    "en": "past participle",
+    "ipa": "/pæst ˈpɑːrtɪsɪpəl/",
+    "cn": "p.p.",
+    "pali": "过去分词",
+    "note": "过去分词。例：gata < √gam, p.p., m.sg.nom。"
+  },
+  {
+    "cat": "语法缩略语：非限定动词",
+    "en": "future passive participle",
+    "ipa": "/ˈfjuːtʃər ˈpæsɪv ˈpɑːrtɪsɪpəl/",
+    "cn": "f.p.p.",
+    "pali": "将来被动分词",
+    "note": "将来被动分词。例：karaṇīyaṃ < √kar, f.p.p., n.sg.nom/acc。"
   }
 ];

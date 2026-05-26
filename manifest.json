@@ -1,12 +1,12 @@
 {
-  "name": "Pali Grammar Review 18.0",
+  "name": "Pali Grammar Review 17.4",
   "short_name": "巴利语语法",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f3f4f6",
   "theme_color": "#111827",
-  "description": "全章节学习目标校准版：逐章重写学习目标，只保留能力目标；说明性内容与制作性语言不进入学习目标。",
+  "description": "单词与例句分析版：取消单独要点模块，将相关内容合并进学习说明，减少重复。",
   "icons": [
     {
       "src": "icon-192.png",
