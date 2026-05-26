@@ -4373,3 +4373,54 @@ input, select, textarea, button{
     padding:9px 12px;
   }
 }
+
+
+/* 20.9 navigation deduplication */
+#lessonView .page-nav-bar-202{
+  display:none!important;
+}
+#lessonView .lesson-nav-row-expanded,
+#lessonView .lesson-bottom-nav-inner{
+  gap:10px;
+}
+@media(max-width:760px){
+  #lessonView .lesson-nav-row-expanded,
+  #lessonView .lesson-bottom-nav-inner{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+
+/* 20.12 navigation cleanup */
+.page-nav-bar-202{
+  justify-content:flex-start;
+}
+.page-nav-bar-202 .page-home-202{
+  display:none!important;
+}
+#lessonView .page-nav-bar-202{
+  display:none!important;
+}
+@media(max-width:760px){
+  .page-nav-bar-202{
+    display:block;
+  }
+}
+
+
+/* 20.13 three-layer independent pages */
+.layer-page-card .layer-grid{
+  margin-top:14px;
+}
+.home-clean-card .home-path-clean{
+  margin-top:14px;
+}
+.home-clean-card .home-search-note{
+  margin-top:18px;
+  padding:12px 14px;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  background:#f8fafc;
+  color:#334155;
+}
