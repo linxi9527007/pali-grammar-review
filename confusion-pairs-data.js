@@ -1,22 +1,22 @@
 const CONFUSION_PAIRS = [
   {
     "id": "infinitive_gerund",
-    "title": "不定式 vs 连续体",
-    "a": "不定式",
-    "b": "连续体",
-    "core": "不定式多表示目的或动作内容；连续体多表示先行动作或伴随动作。",
+    "title": "inf. vs ger.",
+    "a": "inf.",
+    "b": "ger.",
+    "core": "inf.多表示目的或动作内容；ger.多表示先行动作或伴随动作。",
     "a_cue": "-tuṃ / -ituṃ / -etuṃ；常可译为“为了……”",
     "b_cue": "-tvā / -itvā / -ya；常可译为“……之后”",
     "examples": [
       {
         "pali": "Dhammaṃ sotuṃ āgacchati.",
         "cn": "为听法而来。",
-        "note": "sotuṃ 是不定式，表示目的。"
+        "note": "sotuṃ 是inf.，表示目的。"
       },
       {
         "pali": "Dhammaṃ sutvā pasīdati.",
         "cn": "听法之后生信。",
-        "note": "sutvā 是连续体，表示先行动作。"
+        "note": "sutvā 是ger.，表示先行动作。"
       }
     ],
     "tip": "先问：这个动作是“为了做”，还是“做完之后再做”？"
@@ -36,14 +36,14 @@ const CONFUSION_PAIRS = [
         "note": "Buddho 是主格，dhammaṃ 是宾格。"
       }
     ],
-    "tip": "不要只看词序；巴利语要结合词尾和动词判断。"
+    "tip": "不要只观察词序；巴利语要结合词尾和动词判断。"
   },
   {
     "id": "accusative_neuter",
     "title": "-ṃ 宾格 vs 中性主宾同形",
     "a": "宾格 -ṃ",
     "b": "中性主格/宾格同形",
-    "core": "-ṃ 很常见，但不能机械等同于宾格；中性名词主格和宾格单数常同形。",
+    "core": "-ṃ 很常见，但不能机械等同于宾格；中性名词主格和sg.acc常同形。",
     "a_cue": "若受动词支配，常是宾语。",
     "b_cue": "若作句子主语，也可能仍是 -ṃ 形式。",
     "examples": [
@@ -102,14 +102,14 @@ const CONFUSION_PAIRS = [
         "note": "Bhikkhussa 可理解为持有者。"
       }
     ],
-    "tip": "遇到 -ssa，不要立刻固定成一种格，要看它和后面词或 atthi 的关系。"
+    "tip": "遇到 -ssa，不要立刻固定成一种格，要观察它和后面词或 atthi 的关系。"
   },
   {
     "id": "present_participle_finite",
-    "title": "现在分词 vs 限定动词",
-    "a": "现在分词",
+    "title": "pr.p. vs 限定动词",
+    "a": "pr.p.",
     "b": "限定动词",
-    "core": "现在分词像形容词一样修饰名词；限定动词承担句子谓语核心。",
+    "core": "pr.p.像形容词一样修饰名词；限定动词承担句子谓语核心。",
     "a_cue": "-nta / -anto / -antī 等；常译“正在……的”。",
     "b_cue": "-ti / -anti / -mi / -si 等；带人称数信息。",
     "examples": [
@@ -119,26 +119,26 @@ const CONFUSION_PAIRS = [
         "note": "āgacchanto 是分词，hasati 是限定动词。"
       }
     ],
-    "tip": "句子分析时先找限定动词，再看分词修饰谁。"
+    "tip": "句子分析时先找限定动词，再观察分词修饰谁。"
   },
   {
-    "id": "past_participle_fpp",
-    "title": "过去分词 vs 将来被动分词",
-    "a": "过去分词",
-    "b": "将来被动分词",
-    "core": "过去分词多表示已完成、结果状态或被动；将来被动分词多表示应当、必须、可被。",
+    "id": "past_participle_f.p.p.",
+    "title": "p.p. vs f.p.p.",
+    "a": "p.p.",
+    "b": "f.p.p.",
+    "core": "p.p.多表示已完成、结果状态或被动；f.p.p.多表示应当、必须、可被。",
     "a_cue": "-ta / -ita 等常见。",
     "b_cue": "-tabba / -anīya 等常见。",
     "examples": [
       {
         "pali": "Dhammo desito.",
         "cn": "法已被说。",
-        "note": "desito 是过去分词。"
+        "note": "desito 是p.p.。"
       },
       {
         "pali": "Maggo bhāvetabbo.",
         "cn": "道应被修习。",
-        "note": "bhāvetabbo 是将来被动分词。"
+        "note": "bhāvetabbo 是f.p.p.。"
       }
     ],
     "tip": "看到 -tabba 不要译成普通将来时。"
@@ -219,7 +219,7 @@ const CONFUSION_PAIRS = [
         "note": "yo 与 so 呼应。"
       }
     ],
-    "tip": "先看整组结构，再翻译各词。"
+    "tip": "先观察整组结构，再翻译各词。"
   },
   {
     "id": "sandhi_compound",

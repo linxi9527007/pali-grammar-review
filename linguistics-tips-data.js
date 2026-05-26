@@ -30,7 +30,7 @@ const LINGUISTICS_TIPS = [
       "谓语",
       "结构"
     ],
-    "summary": "句法学研究词语怎样组合成句子。句子分析时要看谁是主语、哪个词是动词、宾语是什么、其他词在句中起什么作用。",
+    "summary": "句法学研究词语怎样组合成句子。句子分析时要观察谁是主语、哪个词是动词、宾语是什么、其他词在句中起什么作用。",
     "example": "Buddho dhammaṃ deseti. 中 Buddho 是主语，dhammaṃ 是宾语，deseti 是谓语动词。",
     "related": [
       "主语",
@@ -63,7 +63,7 @@ const LINGUISTICS_TIPS = [
     "keywords": [
       "词干"
     ],
-    "summary": "词干是词在加词尾之前的基础部分。学习巴利语时，先判断词干类型，再看词尾，才能正确分析词形。",
+    "summary": "词干是词在加词尾之前的基础部分。学习巴利语时，先判断词干类型，再观察词尾，才能正确分析词形。",
     "example": "dhamma- 是 dhammo、dhammaṃ、dhammassa 等形式背后的词干。",
     "related": [
       "词尾",
@@ -79,7 +79,7 @@ const LINGUISTICS_TIPS = [
       "后缀"
     ],
     "summary": "词尾是加在词干后的语法标记。它常提示格、数、性，或动词的人称、数、时态、语气。",
-    "example": "gacchati 中 -ti 提示第三人称单数；dhammaṃ 中 -aṃ 常提示宾格单数或中性主宾格单数。",
+    "example": "gacchati 中 -ti 提示第三人称单数；dhammaṃ 中 -aṃ 常提示sg.acc或中性主sg.acc。",
     "related": [
       "词干",
       "变格",
@@ -94,7 +94,7 @@ const LINGUISTICS_TIPS = [
       "词根",
       "根"
     ],
-    "summary": "词根是表达核心词义的最小单位。很多动词、名词可以从同一词根派生出来，但具体词形还要看词干和词尾。",
+    "summary": "词根是表达核心词义的最小单位。很多动词、名词可以从同一词根派生出来，但具体词形还要观察词干和词尾。",
     "example": "√gam 与“去”有关，可见 gacchati、gantuṃ、gantvā 等形式。",
     "related": [
       "词干",
@@ -161,11 +161,11 @@ const LINGUISTICS_TIPS = [
       "由",
       "以"
     ],
-    "summary": "工具格常表示“用……、以……、由……、与……”。在过去分词结构中，它还可以表示施事。",
+    "summary": "工具格常表示“用……、以……、由……、与……”。在p.p.结构中，它还可以表示施事。",
     "example": "Buddhena dhammo desito. 中 Buddhena 表示“由佛”。",
     "related": [
       "施事",
-      "过去分词"
+      "p.p."
     ]
   },
   {
@@ -311,7 +311,7 @@ const LINGUISTICS_TIPS = [
       "地点状语",
       "时间状语"
     ],
-    "summary": "状语说明动作发生的时间、地点、方式、原因、目的等。巴利语中处格、工具格、与格、不变词结构都可能承担状语功能。",
+    "summary": "状语说明动作发生的时间、地点、方式、原因、目的等。巴利语中处格、工具格、与格、ind.结构都可能承担状语功能。",
     "example": "Bhikkhu vihāre vasati. 中 vihāre 可作地点状语。",
     "related": [
       "处格",
@@ -343,27 +343,27 @@ const LINGUISTICS_TIPS = [
     "category": "动词系统",
     "keywords": [
       "非限定动词",
-      "不定式",
-      "连续体",
+      "inf.",
+      "ger.",
       "分词"
     ],
-    "summary": "非限定动词通常不直接标明完整人称和数，需要依赖主句或被修饰词理解。巴利语中的不定式、连续体、分词都属于学习重点。",
+    "summary": "非限定动词通常不直接标明完整人称和数，需要依赖主句或被修饰词理解。巴利语中的inf.、ger.、分词都属于学习重点。",
     "example": "gantuṃ、gantvā、gacchanto 都和“去”有关，但语法功能不同。",
     "related": [
-      "不定式",
-      "连续体",
+      "inf.",
+      "ger.",
       "分词"
     ]
   },
   {
     "id": "infinitive",
-    "title": "不定式",
+    "title": "inf.",
     "category": "动词系统",
     "keywords": [
-      "不定式",
+      "inf.",
       "目的"
     ],
-    "summary": "不定式常表示目的，也可补足某些动词的意义。看到 -tuṃ、-ituṃ、-etuṃ 等形式时，要判断它是否表示“为了……”。",
+    "summary": "inf.常表示目的，也可补足某些动词的意义。看到 -tuṃ、-ituṃ、-etuṃ 等形式时，要判断它是否表示“为了……”。",
     "example": "So dhammaṃ sotuṃ āgacchati. 中 sotuṃ 表示“为了听”。",
     "related": [
       "非限定动词",
@@ -372,15 +372,15 @@ const LINGUISTICS_TIPS = [
   },
   {
     "id": "gerund",
-    "title": "连续体 / 独立式",
+    "title": "ger. / 独立式",
     "category": "动词系统",
     "keywords": [
-      "连续体",
+      "ger.",
       "独立式",
       "gerund",
       "absolutive"
     ],
-    "summary": "连续体常表示先于主句动作的动作，也可表示伴随动作。常见形式包括 -tvā、-itvā、-ya 等。",
+    "summary": "ger.常表示先于主句动作的动作，也可表示伴随动作。常见形式包括 -tvā、-itvā、-ya 等。",
     "example": "Dhammaṃ sutvā bhikkhu pasīdati. 中 sutvā 表示“听闻之后”。",
     "related": [
       "非限定动词"
@@ -392,10 +392,10 @@ const LINGUISTICS_TIPS = [
     "category": "动词系统",
     "keywords": [
       "分词",
-      "现在分词",
-      "过去分词"
+      "pr.p.",
+      "p.p."
     ],
-    "summary": "分词兼有动词和形容词特征，常用来修饰名词或表示状态。分析时要看它修饰谁。",
+    "summary": "分词兼有动词和形容词特征，常用来修饰名词或表示状态。分析时要观察它修饰谁。",
     "example": "Gacchanto puriso passati. 中 gacchanto 修饰 puriso。",
     "related": [
       "修饰语",
@@ -404,12 +404,12 @@ const LINGUISTICS_TIPS = [
   },
   {
     "id": "present_participle",
-    "title": "现在分词",
+    "title": "pr.p.",
     "category": "动词系统",
     "keywords": [
-      "现在分词"
+      "pr.p."
     ],
-    "summary": "现在分词常表示正在进行或伴随状态，形式上像形容词一样随被修饰名词变化。",
+    "summary": "pr.p.常表示正在进行或伴随状态，形式上像形容词一样随被修饰名词变化。",
     "example": "Gacchantī itthī 中 gacchantī 修饰阴性名词 itthī。",
     "related": [
       "分词",
@@ -418,12 +418,12 @@ const LINGUISTICS_TIPS = [
   },
   {
     "id": "past_participle",
-    "title": "过去分词",
+    "title": "p.p.",
     "category": "动词系统",
     "keywords": [
-      "过去分词"
+      "p.p."
     ],
-    "summary": "过去分词常表示已经完成、结果状态或被动意义。具体怎么理解，要看动词和句子结构。",
+    "summary": "p.p.常表示已经完成、结果状态或被动意义。具体怎么理解，要观察动词和句子结构。",
     "example": "Dhammo desito. 可理解为“法已被说”。",
     "related": [
       "分词",
@@ -431,15 +431,15 @@ const LINGUISTICS_TIPS = [
     ]
   },
   {
-    "id": "fpp",
-    "title": "将来被动分词",
+    "id": "f.p.p.",
+    "title": "f.p.p.",
     "category": "动词系统",
     "keywords": [
-      "将来被动分词",
+      "f.p.p.",
       "应当",
       "可被"
     ],
-    "summary": "将来被动分词常表示“应当……、必须……、可被……”，不要简单理解成普通将来时。",
+    "summary": "f.p.p.常表示“应当……、必须……、可被……”，不要简单理解成普通将来时。",
     "example": "Maggo bhāvetabbo. 意为“道应被修习”。",
     "related": [
       "分词",
@@ -515,23 +515,23 @@ const LINGUISTICS_TIPS = [
       "后置",
       "后置词"
     ],
-    "summary": "后置表示某些词常放在被连接或被标记的成分之后。巴利语中 ca、vā 等常见不变词就常后置。",
+    "summary": "后置表示某些词常放在被连接或被标记的成分之后。巴利语中 ca、vā 等常见ind.就常后置。",
     "example": "Buddho ca dhammo ca 中 ca 放在 Buddho、dhammo 后面。",
     "related": [
       "ca",
       "vā",
-      "不变词"
+      "ind."
     ]
   },
   {
     "id": "particle",
-    "title": "不变词",
+    "title": "ind.",
     "category": "词类",
     "keywords": [
-      "不变词",
+      "ind.",
       "小品词"
     ],
-    "summary": "不变词形式通常不随格、数、性变化，但会影响句子结构和语气。ca、vā、na、mā、iti、eva 等都很常见。",
+    "summary": "ind.形式通常不随格、数、性变化，但会影响句子结构和语气。ca、vā、na、mā、iti、eva 等都很常见。",
     "example": "Mā gaccha. 中 mā 表示禁止否定。",
     "related": [
       "后置",
@@ -550,7 +550,7 @@ const LINGUISTICS_TIPS = [
     "summary": "否定表示动作或命题不成立。巴利语中 na 是普通否定，mā 常用于禁止或劝止。",
     "example": "Na gacchati = 他不去；Mā gaccha = 不要去。",
     "related": [
-      "不变词"
+      "ind."
     ]
   },
   {
@@ -565,7 +565,7 @@ const LINGUISTICS_TIPS = [
     "example": "Dhammo ca vinayo ca = 法与律。",
     "related": [
       "后置",
-      "不变词"
+      "ind."
     ]
   },
   {
@@ -580,7 +580,7 @@ const LINGUISTICS_TIPS = [
     "example": "Gāme vā araññe vā = 在村中或林中。",
     "related": [
       "后置",
-      "不变词"
+      "ind."
     ]
   },
   {

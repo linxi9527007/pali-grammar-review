@@ -49,7 +49,7 @@ const LEARNING_ROUTES = [
         ]
       },
       {
-        "title": "第六步：不定式与连续体",
+        "title": "第六步：inf.与ger.",
         "desc": "区分 gantuṃ 和 gantvā，理解目的与先后动作。",
         "lesson_ids": [
           21,
@@ -110,7 +110,7 @@ const LEARNING_ROUTES = [
       },
       {
         "title": "非限定动词",
-        "desc": "重点区分不定式、连续体和分词。",
+        "desc": "重点区分inf.、ger.和分词。",
         "lesson_ids": [
           21,
           22,
@@ -197,7 +197,7 @@ const LEARNING_ROUTES = [
       },
       {
         "title": "结构专项",
-        "desc": "练习不定式、连续体、分词、不变词和关联结构。",
+        "desc": "练习inf.、ger.、分词、ind.和关联结构。",
         "sentence_priority": "结构专项"
       },
       {

@@ -118,17 +118,17 @@ const TERMINOLOGY_GLOSSARY = [
       {
         "label": "阳性",
         "form": "Buddho",
-        "meaning": "佛，阳性主格单数"
+        "meaning": "佛，阳性sg.nom"
       },
       {
         "label": "阴性",
         "form": "paññā",
-        "meaning": "智慧，阴性主格单数"
+        "meaning": "智慧，阴性sg.nom"
       },
       {
         "label": "中性",
         "form": "phalaṃ",
-        "meaning": "果，中性主/宾格单数"
+        "meaning": "果，中性主/sg.acc"
       }
     ],
     "needs_contrast": true
@@ -348,7 +348,7 @@ const TERMINOLOGY_GLOSSARY = [
     "cn": "时态",
     "pali": "kāla",
     "note": "表示动作发生时间或叙述时间关系的语法范畴。",
-    "simple_explanation": "时态回答“动作在什么时候”。巴利语有现在、将来、过去类等形式；但具体翻译仍要看上下文。",
+    "simple_explanation": "时态回答“动作在什么时候”。巴利语有现在、将来、过去类等形式；但具体翻译仍要观察上下文。",
     "contrast_examples": [
       {
         "label": "现在类",
@@ -496,40 +496,37 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "动词与词形",
+    "cat": "语法缩略语：非限定动词",
     "en": "present participle",
     "ipa": "/ˈprezənt ˈpɑːrtɪsɪpəl/",
-    "cn": "现在分词",
-    "pali": "vattamāna-kāla-kita",
-    "note": "常表示正在……的或伴随状态。",
-    "simple_explanation": "常表示正在……的或伴随状态。",
-    "needs_contrast": false
+    "cn": "pr.p.",
+    "pali": "现在分词",
+    "note": "现在分词。可进一步标 pr.p.act. 或 pr.p.mid.。",
+    "simple_explanation": "表示进行中的或相关的动作状态。"
   },
   {
-    "cat": "动词与词形",
+    "cat": "语法缩略语：非限定动词",
     "en": "past participle",
     "ipa": "/pæst ˈpɑːrtɪsɪpəl/",
-    "cn": "过去分词",
-    "pali": "atīta-kāla-kita",
-    "note": "常表示完成、结果状态或被动。",
-    "simple_explanation": "常表示完成、结果状态或被动。",
-    "needs_contrast": false
+    "cn": "p.p.",
+    "pali": "过去分词",
+    "note": "例：gata < √gam, p.p., m.sg.nom。",
+    "simple_explanation": "过去分词。"
   },
   {
-    "cat": "动词与词形",
+    "cat": "语法缩略语：非限定动词",
     "en": "future passive participle",
     "ipa": "/ˈfjuːtʃər ˈpæsɪv ˈpɑːrtɪsɪpəl/",
-    "cn": "将来被动分词",
-    "pali": "kicca",
-    "note": "常表示应当、必须、可被。",
-    "simple_explanation": "常表示应当、必须、可被。",
-    "needs_contrast": false
+    "cn": "f.p.p.",
+    "pali": "将来被动分词",
+    "note": "例：karaṇīyaṃ < √kar, f.p.p., n.sg.nom/acc。",
+    "simple_explanation": "表示应当被做、可被做等意义。"
   },
   {
     "cat": "动词与词形",
     "en": "gerund",
     "ipa": "/ˈdʒerənd/",
-    "cn": "连续体；动名词式",
+    "cn": "ger.；动名词式",
     "pali": "tvānta 等",
     "note": "在巴利学习中常指 -tvā、-tvāna、-ya 等先行动作形式。",
     "simple_explanation": "在巴利学习中常指 -tvā、-tvāna、-ya 等先行动作形式。",
@@ -539,21 +536,20 @@ const TERMINOLOGY_GLOSSARY = [
     "cat": "动词与词形",
     "en": "absolutive",
     "ipa": "/ˈæbsəluːtɪv/",
-    "cn": "独立式；连续体",
+    "cn": "独立式；ger.",
     "pali": "tvānta",
     "note": "常表示“做完……之后”。",
     "simple_explanation": "常表示“做完……之后”。",
     "needs_contrast": false
   },
   {
-    "cat": "动词与词形",
+    "cat": "语法缩略语：非限定动词",
     "en": "infinitive",
     "ipa": "/ɪnˈfɪnətɪv/",
-    "cn": "不定式",
-    "pali": "tumanta",
-    "note": "常表示目的或动作内容。",
-    "simple_explanation": "常表示目的或动作内容。",
-    "needs_contrast": false
+    "cn": "inf.",
+    "pali": "不定式",
+    "note": "不定式。例：gantuṃ < √gam, inf.。",
+    "simple_explanation": "常表示目的、趋向或补足意义。"
   },
   {
     "cat": "语言学基础概念",
@@ -562,7 +558,7 @@ const TERMINOLOGY_GLOSSARY = [
     "cn": "句法学",
     "pali": "vākya-vibhāga",
     "note": "研究词如何组合成短语、分句和句子。",
-    "simple_explanation": "句法学看“词进入句子后怎样组合”。例如 Buddho dhammaṃ deseti 要看 Buddho、dhammaṃ、deseti 三者的结构关系。",
+    "simple_explanation": "句法学看“词进入句子后怎样组合”。例如 Buddho dhammaṃ deseti 要观察 Buddho、dhammaṃ、deseti 三者的结构关系。",
     "contrast_examples": [
       {
         "label": "巴利语",
@@ -663,14 +659,13 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "句法与结构",
+    "cat": "语法缩略语：词类与词形",
     "en": "indeclinable",
     "ipa": "/ˌɪndɪˈklaɪnəbəl/",
-    "cn": "不变词",
-    "pali": "avyaya",
-    "note": "不随格、数、性等变化的词。",
-    "simple_explanation": "不随格、数、性等变化的词。",
-    "needs_contrast": false
+    "cn": "ind.",
+    "pali": "不变词",
+    "note": "不变词。例：ca < ca, ind.。注意 indic. 才是陈述语气。",
+    "simple_explanation": "不随性、数、格或人称变化的词。"
   },
   {
     "cat": "句法与结构",
@@ -873,7 +868,7 @@ const TERMINOLOGY_GLOSSARY = [
     "cn": "数",
     "pali": "vacana",
     "note": "表示单数或复数。",
-    "simple_explanation": "数回答“一个还是多个”。巴利语名词和动词通常都要看数。",
+    "simple_explanation": "数回答“一个还是多个”。巴利语名词和动词通常都要观察数。",
     "contrast_examples": [
       {
         "label": "动词单数",
@@ -980,12 +975,12 @@ const TERMINOLOGY_GLOSSARY = [
     "cn": "形态学",
     "pali": "rūpa-vibhāga",
     "note": "研究词的内部结构、构词和词形变化。",
-    "simple_explanation": "形态学看“词里面发生了什么”。例如 Buddhaṃ 不是另一个新词，而是 Buddha- 加上宾格单数词尾形成的词形。",
+    "simple_explanation": "形态学看“词里面发生了什么”。例如 Buddhaṃ 不是另一个新词，而是 Buddha- 加上sg.acc词尾形成的词形。",
     "contrast_examples": [
       {
         "label": "巴利语",
         "form": "Buddha- + -ṃ → Buddhaṃ",
-        "meaning": "佛 + 宾格单数 → 佛（作宾语）"
+        "meaning": "佛 + sg.acc → 佛（作宾语）"
       },
       {
         "label": "英语",
@@ -1007,7 +1002,7 @@ const TERMINOLOGY_GLOSSARY = [
     "cn": "语义学",
     "pali": "attha-vibhāga",
     "note": "研究语言形式的意义。",
-    "simple_explanation": "语义学关注“这个形式表达什么意义”。比如 dhamma 可译为法、教法、现象等，具体意义要看语境。",
+    "simple_explanation": "语义学关注“这个形式表达什么意义”。比如 dhamma 可译为法、教法、现象等，具体意义要观察语境。",
     "needs_contrast": false
   },
   {
@@ -1122,7 +1117,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈmæskjəlɪn/",
     "cn": "m.",
     "pali": "阳性",
-    "note": "阳性。例：Buddho < Buddha, m.sg.nom。"
+    "note": "阳性。例：Buddho < Buddha, m.sg.nom。",
+    "simple_explanation": "阳性标记。"
   },
   {
     "cat": "语法缩略语：性数格",
@@ -1130,7 +1126,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈfemənɪn/",
     "cn": "f.",
     "pali": "阴性",
-    "note": "阴性。"
+    "note": "阴性。",
+    "simple_explanation": "阴性标记。"
   },
   {
     "cat": "语法缩略语：性数格",
@@ -1138,7 +1135,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈnuːtər/",
     "cn": "n.",
     "pali": "中性",
-    "note": "中性。例：phalaṃ < phala, n.sg.nom/acc。"
+    "note": "中性。例：phalaṃ < phala, n.sg.nom/acc。",
+    "simple_explanation": "中性标记。"
   },
   {
     "cat": "语法缩略语：性数格",
@@ -1146,7 +1144,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈsɪŋɡjələr/",
     "cn": "sg.",
     "pali": "单数",
-    "note": "单数。"
+    "note": "单数。",
+    "simple_explanation": "单数标记。"
   },
   {
     "cat": "语法缩略语：性数格",
@@ -1154,7 +1153,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈplʊrəl/",
     "cn": "pl.",
     "pali": "复数",
-    "note": "复数。"
+    "note": "复数。",
+    "simple_explanation": "复数标记。"
   },
   {
     "cat": "语法缩略语：性数格",
@@ -1162,7 +1162,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈnɑːmɪnətɪv/",
     "cn": "nom.",
     "pali": "主格",
-    "note": "主格。"
+    "note": "主格。",
+    "simple_explanation": "常作主语或表语。"
   },
   {
     "cat": "语法缩略语：性数格",
@@ -1170,7 +1171,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/əˈkjuːzətɪv/",
     "cn": "acc.",
     "pali": "宾格",
-    "note": "宾格。"
+    "note": "宾格。",
+    "simple_explanation": "常作动作对象，也可表方向或时间范围。"
   },
   {
     "cat": "语法缩略语：性数格",
@@ -1178,7 +1180,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˌɪnstrəˈmentəl/",
     "cn": "ins.",
     "pali": "工具格",
-    "note": "工具格。"
+    "note": "工具格。",
+    "simple_explanation": "表示工具、方式、伴随等。"
   },
   {
     "cat": "语法缩略语：性数格",
@@ -1186,7 +1189,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈdeɪtɪv/",
     "cn": "dat.",
     "pali": "与格",
-    "note": "与格。"
+    "note": "与格。",
+    "simple_explanation": "表示给予对象、目的或利益对象。"
   },
   {
     "cat": "语法缩略语：性数格",
@@ -1194,7 +1198,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈæblətɪv/",
     "cn": "abl.",
     "pali": "从格",
-    "note": "从格。"
+    "note": "从格。",
+    "simple_explanation": "表示来源、分离、原因等。"
   },
   {
     "cat": "语法缩略语：性数格",
@@ -1202,7 +1207,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈdʒenətɪv/",
     "cn": "gen.",
     "pali": "属格",
-    "note": "属格。"
+    "note": "属格。",
+    "simple_explanation": "表示所属、关系等。"
   },
   {
     "cat": "语法缩略语：性数格",
@@ -1210,7 +1216,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈlɑːkətɪv/",
     "cn": "loc.",
     "pali": "处格",
-    "note": "处格。"
+    "note": "处格。",
+    "simple_explanation": "表示地点、范围或处所。"
   },
   {
     "cat": "语法缩略语：性数格",
@@ -1218,7 +1225,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈvɑːkətɪv/",
     "cn": "voc.",
     "pali": "呼格",
-    "note": "呼格。"
+    "note": "呼格。",
+    "simple_explanation": "用于称呼。"
   },
   {
     "cat": "语法缩略语：动词范畴",
@@ -1226,7 +1234,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈprezənt/",
     "cn": "prs.",
     "pali": "现在时",
-    "note": "现在时。"
+    "note": "现在时。",
+    "simple_explanation": "动词时态标记。"
   },
   {
     "cat": "语法缩略语：动词范畴",
@@ -1234,7 +1243,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈfjuːtʃər/",
     "cn": "fut.",
     "pali": "将来时",
-    "note": "将来时。"
+    "note": "将来时。",
+    "simple_explanation": "动词时态标记。"
   },
   {
     "cat": "语法缩略语：动词范畴",
@@ -1242,23 +1252,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈeɪərɪst/",
     "cn": "aor.",
     "pali": "不定过去",
-    "note": "不定过去。"
-  },
-  {
-    "cat": "语法缩略语：动词范畴",
-    "en": "past",
-    "ipa": "/pæst/",
-    "cn": "pst.",
-    "pali": "过去类",
-    "note": "过去类。"
-  },
-  {
-    "cat": "语法缩略语：动词范畴",
-    "en": "perfect",
-    "ipa": "/ˈpɜːrfɪkt/",
-    "cn": "perf.",
-    "pali": "完成式",
-    "note": "完成式。"
+    "note": "不定过去。",
+    "simple_explanation": "过去类动词形式之一。"
   },
   {
     "cat": "语法缩略语：动词范畴",
@@ -1266,7 +1261,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ɪnˈdɪkətɪv/",
     "cn": "indic.",
     "pali": "陈述语气",
-    "note": "陈述语气。为避免和 ind. 不变词混淆，网站写 indic.。"
+    "note": "陈述语气。为避免和 ind. 不变词混淆，网站写 indic.。",
+    "simple_explanation": "用于陈述事实或动作。"
   },
   {
     "cat": "语法缩略语：动词范畴",
@@ -1274,7 +1270,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ɪmˈperətɪv/",
     "cn": "imp.",
     "pali": "命令语气",
-    "note": "命令语气。"
+    "note": "命令语气。",
+    "simple_explanation": "用于命令、请求等。"
   },
   {
     "cat": "语法缩略语：动词范畴",
@@ -1282,15 +1279,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈɑːptətɪv/",
     "cn": "opt.",
     "pali": "祈愿/可能语气",
-    "note": "祈愿或可能语气。"
-  },
-  {
-    "cat": "语法缩略语：动词范畴",
-    "en": "conditional",
-    "ipa": "/kənˈdɪʃənəl/",
-    "cn": "cond.",
-    "pali": "条件式",
-    "note": "条件式。"
+    "note": "祈愿或可能语气。",
+    "simple_explanation": "用于愿望、可能、劝请等。"
   },
   {
     "cat": "语法缩略语：动词范畴",
@@ -1298,7 +1288,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈæktɪv/",
     "cn": "act.",
     "pali": "主动语态",
-    "note": "主动语态。"
+    "note": "主动语态。",
+    "simple_explanation": "动作由主语发出。"
   },
   {
     "cat": "语法缩略语：动词范畴",
@@ -1306,7 +1297,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈmɪdəl/",
     "cn": "mid.",
     "pali": "中间语态",
-    "note": "中间语态。网站统一用 mid.，不用 med.。"
+    "note": "中间语态。网站统一用 mid.，不用 med.。",
+    "simple_explanation": "中间语态形式；入门阶段先识别形式，不机械翻译。"
   },
   {
     "cat": "语法缩略语：动词范畴",
@@ -1314,7 +1306,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈpæsɪv/",
     "cn": "pass.",
     "pali": "被动语态",
-    "note": "被动语态。"
+    "note": "被动语态。",
+    "simple_explanation": "主语承受动作。"
   },
   {
     "cat": "语法缩略语：词类与词形",
@@ -1322,7 +1315,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈproʊnaʊn/",
     "cn": "pron.",
     "pali": "代词",
-    "note": "代词。例：so < ta, pron.m.sg.nom。"
+    "note": "代词。例：so < ta, pron.m.sg.nom。",
+    "simple_explanation": "代替名词或指示人事物的词。"
   },
   {
     "cat": "语法缩略语：词类与词形",
@@ -1330,23 +1324,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈædʒɪktɪv/",
     "cn": "adj.",
     "pali": "形容词",
-    "note": "形容词。例：sabbaṃ < sabba, adj.n.sg.nom/acc。"
-  },
-  {
-    "cat": "语法缩略语：词类与词形",
-    "en": "indeclinable",
-    "ipa": "/ˌɪndɪˈklaɪnəbəl/",
-    "cn": "ind.",
-    "pali": "不变词",
-    "note": "不变词。例：ca < ca, ind.。注意 indic. 才是陈述语气。"
-  },
-  {
-    "cat": "语法缩略语：非限定动词",
-    "en": "infinitive",
-    "ipa": "/ɪnˈfɪnətɪv/",
-    "cn": "inf.",
-    "pali": "不定式",
-    "note": "不定式。例：gantuṃ < √gam, inf.。"
+    "note": "形容词。例：sabbaṃ < sabba, adj.n.sg.nom/acc。",
+    "simple_explanation": "修饰名词的词。"
   },
   {
     "cat": "语法缩略语：非限定动词",
@@ -1354,15 +1333,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈdʒerənd/",
     "cn": "ger.",
     "pali": "连续体",
-    "note": "连续体。网站统一用 ger.，统一使用 ger.。例：gantvā < √gam, ger.。"
-  },
-  {
-    "cat": "语法缩略语：非限定动词",
-    "en": "present participle",
-    "ipa": "/ˈprezənt ˈpɑːrtɪsɪpəl/",
-    "cn": "pr.p.",
-    "pali": "现在分词",
-    "note": "现在分词。若需标语态，可写 pr.p.act. 或 pr.p.mid.。"
+    "note": "连续体。网站统一用 ger.。例：gantvā < √gam, ger.。",
+    "simple_explanation": "常表示先行动作或伴随动作。"
   },
   {
     "cat": "语法缩略语：非限定动词",
@@ -1370,7 +1342,8 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈprezənt ˈæktɪv ˈpɑːrtɪsɪpəl/",
     "cn": "pr.p.act.",
     "pali": "现在主动分词",
-    "note": "现在主动分词。例：gacchanto < √gam, pr.p.act., m.sg.nom。"
+    "note": "例：gacchanto < √gam, pr.p.act., m.sg.nom。",
+    "simple_explanation": "现在主动分词。"
   },
   {
     "cat": "语法缩略语：非限定动词",
@@ -1378,22 +1351,7 @@ const TERMINOLOGY_GLOSSARY = [
     "ipa": "/ˈprezənt ˈmɪdəl ˈpɑːrtɪsɪpəl/",
     "cn": "pr.p.mid.",
     "pali": "现在中间语态分词",
-    "note": "现在中间语态分词。例：labhamāno < √labh, pr.p.mid., m.sg.nom。"
-  },
-  {
-    "cat": "语法缩略语：非限定动词",
-    "en": "past participle",
-    "ipa": "/pæst ˈpɑːrtɪsɪpəl/",
-    "cn": "p.p.",
-    "pali": "过去分词",
-    "note": "过去分词。例：gata < √gam, p.p., m.sg.nom。"
-  },
-  {
-    "cat": "语法缩略语：非限定动词",
-    "en": "future passive participle",
-    "ipa": "/ˈfjuːtʃər ˈpæsɪv ˈpɑːrtɪsɪpəl/",
-    "cn": "f.p.p.",
-    "pali": "将来被动分词",
-    "note": "将来被动分词。例：karaṇīyaṃ < √kar, f.p.p., n.sg.nom/acc。"
+    "note": "例：labhamāno < √labh, pr.p.mid., m.sg.nom。",
+    "simple_explanation": "现在中间语态分词。"
   }
 ];

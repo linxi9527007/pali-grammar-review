@@ -115,7 +115,7 @@ const SENTENCE_PATTERNS = [
         "pali": "Gahapatissa gharaṃ atthi.",
         "literal": "对居士 / 房子 / 有。",
         "natural": "居士有房子。",
-        "note": "gharaṃ 是中性主格单数。"
+        "note": "gharaṃ 是中性sg.nom。"
       }
     ],
     "steps": [
@@ -127,13 +127,13 @@ const SENTENCE_PATTERNS = [
   },
   {
     "id": "pat_instrumental_pp",
-    "title": "工具格 + 过去分词结构",
+    "title": "工具格 + p.p.结构",
     "level": "选学",
-    "formula": "工具格施事 + 主格对象 + 过去分词",
+    "formula": "工具格施事 + 主格对象 + p.p.",
     "function": "表达“某物由某人所做/所说/所见”。",
     "signals": [
       "工具格 -ena 等",
-      "过去分词 -ta / -ita 等",
+      "p.p. -ta / -ita 等",
       "主格对象与分词一致"
     ],
     "examples": [
@@ -141,11 +141,11 @@ const SENTENCE_PATTERNS = [
         "pali": "Buddhena dhammo desito.",
         "literal": "由佛 / 法 / 已说。",
         "natural": "法由佛所说。",
-        "note": "Buddhena 是工具格施事，desito 是过去分词。"
+        "note": "Buddhena 是工具格施事，desito 是p.p.。"
       }
     ],
     "steps": [
-      "先识别过去分词。",
+      "先识别p.p.。",
       "看主格对象是谁。",
       "看工具格是否表示施事。"
     ],
@@ -153,9 +153,9 @@ const SENTENCE_PATTERNS = [
   },
   {
     "id": "pat_infinitive_purpose",
-    "title": "不定式表示目的",
+    "title": "inf.表示目的",
     "level": "必学",
-    "formula": "宾语 + 不定式 + 主语 + 来/去等动词",
+    "formula": "宾语 + inf. + 主语 + 来/去等动词",
     "function": "表达“为了做某事而来/去/努力”。",
     "signals": [
       "-tuṃ / -ituṃ / -etuṃ",
@@ -166,13 +166,13 @@ const SENTENCE_PATTERNS = [
         "pali": "Dhammaṃ sotuṃ āgacchati.",
         "literal": "法 / 为了听 / 来。",
         "natural": "为听法而来。",
-        "note": "sotuṃ 是不定式，表示目的。"
+        "note": "sotuṃ 是inf.，表示目的。"
       },
       {
         "pali": "Dānaṃ dātuṃ upāsako āgacchati.",
         "literal": "布施 / 为了给 / 优婆塞 / 来。",
         "natural": "优婆塞为布施而来。",
-        "note": "dātuṃ 是不定式。"
+        "note": "dātuṃ 是inf.。"
       }
     ],
     "steps": [
@@ -180,13 +180,13 @@ const SENTENCE_PATTERNS = [
       "判断它是否表示目的。",
       "找主句限定动词。"
     ],
-    "trap": "不定式不是主句限定动词，不带完整人称数。"
+    "trap": "inf.不是主句限定动词，不带完整人称数。"
   },
   {
     "id": "pat_gerund_prior",
-    "title": "连续体表示先行动作",
+    "title": "ger.表示先行动作",
     "level": "必学",
-    "formula": "宾语 + 连续体 + 主语 + 限定动词",
+    "formula": "宾语 + ger. + 主语 + 限定动词",
     "function": "表达“做完某事之后，再做另一件事”。",
     "signals": [
       "-tvā / -itvā / -ya",
@@ -197,27 +197,27 @@ const SENTENCE_PATTERNS = [
         "pali": "Dhammaṃ sutvā bhikkhu pasīdati.",
         "literal": "法 / 听闻之后 / 比丘 / 生信。",
         "natural": "比丘听闻法后生信。",
-        "note": "sutvā 是连续体，表示先行动作。"
+        "note": "sutvā 是ger.，表示先行动作。"
       },
       {
         "pali": "Dānaṃ datvā upāsako gacchati.",
         "literal": "布施 / 给了之后 / 优婆塞 / 离去。",
         "natural": "优婆塞布施后离去。",
-        "note": "datvā 是连续体。"
+        "note": "datvā 是ger.。"
       }
     ],
     "steps": [
-      "先识别连续体。",
+      "先识别ger.。",
       "判断它表示的动作是否先发生。",
       "再找主句限定动词。"
     ],
-    "trap": "连续体不能单独承担完整谓语功能。"
+    "trap": "ger.不能单独承担完整谓语功能。"
   },
   {
     "id": "pat_present_participle",
-    "title": "现在分词 + 名词",
+    "title": "pr.p. + 名词",
     "level": "选学",
-    "formula": "现在分词 + 被修饰名词 + 限定动词",
+    "formula": "pr.p. + 被修饰名词 + 限定动词",
     "function": "表达“正在……的某人/某物”。",
     "signals": [
       "-nta / -anto / -antī 等",
@@ -236,13 +236,13 @@ const SENTENCE_PATTERNS = [
       "找它修饰的名词。",
       "再找真正的限定动词。"
     ],
-    "trap": "不要把现在分词直接当成“他做某事”的限定动词。"
+    "trap": "不要把pr.p.直接当成“他做某事”的限定动词。"
   },
   {
-    "id": "pat_fpp_obligation",
-    "title": "将来被动分词表示应作",
+    "id": "pat_f.p.p._obligation",
+    "title": "f.p.p.表示应作",
     "level": "选学",
-    "formula": "主语 + 将来被动分词",
+    "formula": "主语 + f.p.p.",
     "function": "表达“应当被……、必须……、可被……”。",
     "signals": [
       "-tabba / -anīya 等",
@@ -253,7 +253,7 @@ const SENTENCE_PATTERNS = [
         "pali": "Maggo bhāvetabbo.",
         "literal": "道 / 应被修习。",
         "natural": "道应被修习。",
-        "note": "bhāvetabbo 是将来被动分词。"
+        "note": "bhāvetabbo 是f.p.p.。"
       },
       {
         "pali": "Samudayo pahātabbo.",
@@ -267,7 +267,7 @@ const SENTENCE_PATTERNS = [
       "判断主语是什么。",
       "翻译成“应被/应当”。"
     ],
-    "trap": "不要把将来被动分词当成普通将来时。"
+    "trap": "不要把f.p.p.当成普通将来时。"
   },
   {
     "id": "pat_na_negation",

@@ -259,7 +259,7 @@ const BUDDHIST_BACKGROUND_DATA = {
       "category": "修道与实践",
       "level": "必学",
       "basic": "可指道路，也可指通向解脱的修行道路，如八支圣道。",
-      "reading_tip": "maggo bhāvetabbo 中 maggo 是主语，bhāvetabbo 是将来被动分词。",
+      "reading_tip": "maggo bhāvetabbo 中 maggo 是主语，bhāvetabbo 是f.p.p.。",
       "example": "Maggo bhāvetabbo.",
       "related": [
         "ariyasacca",

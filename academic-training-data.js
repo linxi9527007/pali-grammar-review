@@ -38,19 +38,19 @@ const ACADEMIC_TRAINING_DATA = {
         "source": "Evaṃ me sutaṃ.",
         "literal": "如是，被我，听闻。",
         "natural": "如是我闻。",
-        "grammar": "sutaṃ 是过去分词；整句属于佛典开头公式。",
+        "grammar": "sutaṃ 是p.p.；整句属于佛典开头公式。",
         "type": "佛典开头公式",
-        "research_note": "可作佛典叙事框架研究材料，不宜只作为普通过去分词例句。"
+        "research_note": "可作佛典叙事框架研究材料，不宜只作为普通p.p.例句。"
       }
     },
     {
       "id": "avoid_translation_only",
-      "title": "为什么不能只看中文译文",
+      "title": "为什么不能只观察中文译文",
       "level": "必学",
       "goal": "建立原文优先意识。",
       "steps": [
-        "先看巴利原文的词形。",
-        "再看汉译是否保留了结构信息。",
+        "先观察巴利原文的词形。",
+        "再观察汉译是否保留了结构信息。",
         "必要时参考英译，但不把英译当原文。",
         "当译文不同，要回到巴利词形和上下文判断。",
         "研究结论必须说明依据来自原文、译文还是词典。"
@@ -231,10 +231,10 @@ const ACADEMIC_TRAINING_DATA = {
     ],
     "example": {
       "source": "Buddhena dhammo desito.",
-      "word_form": "Buddhena：工具格单数；dhammo：主格单数；desito：过去分词。",
-      "syntax": "Buddhena 表施事，dhammo 是被说明对象，desito 作谓语性过去分词。",
+      "word_form": "Buddhena：sg.ins；dhammo：sg.nom；desito：p.p.。",
+      "syntax": "Buddhena 表施事，dhammo 是被说明对象，desito 作谓语性p.p.。",
       "semantic": "语义结构为“法由佛所说”。",
-      "type": "工具格施事 + 过去分词结构。",
+      "type": "工具格施事 + p.p.结构。",
       "translation": "顺译为“法由佛所说”。",
       "pitfall": "不要把 Buddhena 只理解为普通工具；在此结构中它表示施事。",
       "research_value": "可用于说明工具格在分词结构中的施事功能。"
@@ -322,7 +322,7 @@ const ACADEMIC_TRAINING_DATA = {
   ],
   "pitfalls": [
     {
-      "title": "只看中文译文，不看巴利原文",
+      "title": "只观察中文译文，不看巴利原文",
       "fix": "所有语法和词义判断都应回到巴利词形。"
     },
     {
@@ -347,7 +347,7 @@ const ACADEMIC_TRAINING_DATA = {
     },
     {
       "title": "用现代汉语概念反推巴利语含义",
-      "fix": "先看巴利原文及其语境，再选择中文表达。"
+      "fix": "先观察巴利原文及其语境，再选择中文表达。"
     },
     {
       "title": "忽略公式句和固定表达",

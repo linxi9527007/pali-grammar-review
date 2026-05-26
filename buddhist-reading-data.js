@@ -7,7 +7,7 @@ const BUDDHIST_READING_PATTERNS = [
     "formula": "evaṃ + me + sutaṃ",
     "literal": "如是 / 被我 / 听闻。",
     "natural": "如是我闻。",
-    "structure": "佛典开头常见公式。evaṃ 表“如是”，me 可理解为“由我/于我”，sutaṃ 是过去分词“已听闻”。",
+    "structure": "佛典开头常见公式。evaṃ 表“如是”，me 可理解为“由我/于我”，sutaṃ 是p.p.“已听闻”。",
     "keywords": [
       {
         "word": "evaṃ",
@@ -19,12 +19,12 @@ const BUDDHIST_READING_PATTERNS = [
       },
       {
         "word": "sutaṃ",
-        "note": "已听闻，过去分词"
+        "note": "已听闻，p.p."
       }
     ],
     "warning": "这是佛典固定开头公式，初学者先整体识别，不必过度机械拆解。",
     "related_grammar": [
-      "过去分词",
+      "p.p.",
       "佛典公式句",
       "句子分析"
     ]
@@ -94,7 +94,7 @@ const BUDDHIST_READING_PATTERNS = [
     "warning": "kho、pana 不宜每次机械翻译，阅读时可先识别其叙事推进功能。",
     "related_grammar": [
       "工具格",
-      "不变词",
+      "ind.",
       "语序"
     ]
   },
@@ -119,7 +119,7 @@ const BUDDHIST_READING_PATTERNS = [
     ],
     "warning": "不要把 kho 当作必须译出的实义词；它常服务于语气和叙事风格。",
     "related_grammar": [
-      "不变词",
+      "ind.",
       "句法与阅读"
     ]
   },
