@@ -1,12 +1,12 @@
 {
-  "name": "Pali Grammar Review 20.4",
+  "name": "Pali Grammar Review 20.6",
   "short_name": "巴利语语法",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f3f4f6",
   "theme_color": "#111827",
-  "description": "首页布局精简版：不减少内容，优化首页显示顺序，移除首页首屏大面积搜索区，突出学习路径、三层入口、复习管理。",
+  "description": "功能保护与语法说明规范版：功能完整优先，只能在不删功能的前提下优化速度；语法说明中名词等给出性，必要时给出数格；动词给出词根。",
   "icons": [
     {
       "src": "icon-192.png",

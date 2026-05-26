@@ -14,11 +14,11 @@
 </head>
 <body>
   <div class="box">
-    <h1>清理旧缓存并进入 20.4</h1>
+    <h1>清理旧缓存并进入 20.6</h1>
     <p>如果按钮没反应、返回没反应，通常是旧版脚本或 Service Worker 缓存导致的。</p>
     <p id="status" class="muted">处理中……</p>
     <button onclick="reset()">重新清理</button>
-    <a href="./index.html?v=20.4&ts=manual">直接进入新版</a>
+    <a href="./index.html?v=20.6&ts=manual">直接进入新版</a>
   </div>
   <script>
     async function reset(){
@@ -32,8 +32,8 @@
           const keys=await caches.keys();
           await Promise.all(keys.map(k=>caches.delete(k)));
         }
-        status.textContent='缓存已清理，正在进入 20.4 首页布局精简版……';
-        setTimeout(()=>location.replace('./index.html?v=20.4&ts='+Date.now()),700);
+        status.textContent='缓存已清理，正在进入 20.6 功能保护与语法说明规范版……';
+        setTimeout(()=>location.replace('./index.html?v=20.6&ts='+Date.now()),700);
       }catch(e){
         status.textContent='自动清理失败，请手动 Ctrl+F5。'+e;
       }

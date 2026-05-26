@@ -4332,7 +4332,7 @@ input, select, textarea, button{
 }
 
 
-/* 20.3 page navigation and back-to-top */
+/* 20.2 page navigation and back-to-top */
 .page-nav-bar-202{
   display:flex;
   flex-wrap:wrap;
@@ -4371,48 +4371,5 @@ input, select, textarea, button{
     right:12px;
     bottom:12px;
     padding:9px 12px;
-  }
-}
-
-
-/* 20.3 performance-clean additions */
-.hero-subnav button{white-space:nowrap}
-@media(max-width:760px){
-  .hero-subnav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
-  .hero-subnav span{display:none}
-}
-
-
-/* 20.4 homepage layout refinement */
-.home-clean-card > h2:first-child{
-  margin-bottom:6px;
-}
-.home-today-compact{
-  margin-top:16px;
-  margin-bottom:18px;
-}
-.home-path-clean{
-  margin-top:12px;
-  margin-bottom:24px;
-}
-.home-search-note{
-  margin-top:18px;
-  padding:12px 14px;
-  border:1px solid #e5e7eb;
-  border-radius:16px;
-  background:#f8fafc;
-  color:#334155;
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  align-items:center;
-}
-@media(max-width:760px){
-  .home-search-note{
-    display:block;
-  }
-  .home-search-note strong{
-    display:block;
-    margin-bottom:4px;
   }
 }
