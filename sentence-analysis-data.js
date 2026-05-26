@@ -8,19 +8,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Buddho",
-        "grammar": "m.sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "佛"
       },
       {
         "form": "dhammaṃ",
-        "grammar": "m.sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "法"
       },
       {
         "form": "deseti",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "说、开示"
       }
@@ -34,12 +34,12 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "主宾动"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
@@ -55,19 +55,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Bhikkhu",
-        "grammar": "m.sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "比丘"
       },
       {
         "form": "dhammaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "法"
       },
       {
         "form": "suṇāti",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "听"
       }
@@ -81,12 +81,12 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "主宾动"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
@@ -102,19 +102,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Ahaṃ",
-        "grammar": "第一人称代词sg.nom",
+        "grammar": "pron.1sg.nom（代词·第一人称单数·主格）",
         "role": "主语",
         "meaning": "我"
       },
       {
         "form": "Buddhaṃ",
-        "grammar": "m.sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "佛"
       },
       {
         "form": "vandāmi",
-        "grammar": "prs.indic.act.1sg",
+        "grammar": "prs.indic.act.1sg（现在时·陈述·主动·第一人称单数）",
         "role": "限定动词",
         "meaning": "礼敬"
       }
@@ -128,12 +128,12 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "主宾动"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
@@ -149,19 +149,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Te",
-        "grammar": "指示/人称代词主格复数",
+        "grammar": "pron.m.pl.nom（代词·阳性·复数·主格）",
         "role": "主语",
         "meaning": "他们"
       },
       {
         "form": "dhammaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "法"
       },
       {
         "form": "suṇanti",
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "听"
       }
@@ -175,12 +175,12 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "主宾动"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
@@ -196,19 +196,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Bhikkhu",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "比丘"
       },
       {
         "form": "vihāre",
-        "grammar": "-a尾阳性/中性sg.loc",
+        "grammar": "m.sg.loc（阳性·单数·处格）",
         "role": "地点状语",
         "meaning": "在寺院中"
       },
       {
         "form": "vasati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "住"
       }
@@ -223,13 +223,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "格位",
       "处格"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "核心格位是哪一个？",
+      "这个格位在句中表示什么功能？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练格位在句中的功能判断。",
@@ -245,19 +244,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Buddhassa",
-        "grammar": "-a尾阳性sg.gen",
+        "grammar": "m.sg.gen（阳性·单数·属格）",
         "role": "所属限定",
         "meaning": "佛的"
       },
       {
         "form": "dhammo",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "法"
       },
       {
         "form": "gambhīro",
-        "grammar": "形容词阳性sg.nom",
+        "grammar": "adj.m.sg.nom（形容词·阳性·单数·主格）",
         "role": "表语/修饰",
         "meaning": "甚深的"
       }
@@ -272,13 +271,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "格位",
       "属格"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "核心格位是哪一个？",
+      "这个格位在句中表示什么功能？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练格位在句中的功能判断。",
@@ -294,19 +292,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Buddhena",
-        "grammar": "-a尾阳性sg.ins",
+        "grammar": "m.sg.ins（阳性·单数·工具格）",
         "role": "施事",
         "meaning": "由佛"
       },
       {
         "form": "dhammo",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "法"
       },
       {
         "form": "desito",
-        "grammar": "p.p.阳性sg.nom",
+        "grammar": "p.p.m.sg.nom（过去分词·阳性·单数·主格）",
         "role": "谓语性分词",
         "meaning": "已说/被说"
       }
@@ -324,12 +322,10 @@ const SENTENCE_ANALYSIS_DATA = [
     ],
     "analysis_level": "中级解析：格位或动词形式需要结合句法判断。",
     "self_check": [
+      "核心格位是哪一个？",
+      "这个格位在句中表示什么功能？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练分词修饰名词或表示状态。",
@@ -345,19 +341,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Gāmā",
-        "grammar": "-a尾名词从格单数",
+        "grammar": "m.sg.abl（阳性·单数·从格）",
         "role": "来源",
         "meaning": "从村庄"
       },
       {
         "form": "bhikkhu",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "比丘"
       },
       {
         "form": "āgacchati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "来"
       }
@@ -371,13 +367,12 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "格位"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "核心格位是哪一个？",
+      "这个格位在句中表示什么功能？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练格位在句中的功能判断。",
@@ -393,25 +388,25 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "So",
-        "grammar": "指示代词sg.nom",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
         "role": "主语",
         "meaning": "他"
       },
       {
         "form": "dhammaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "inf.的宾语",
         "meaning": "法"
       },
       {
         "form": "sotuṃ",
-        "grammar": "inf.",
+        "grammar": "inf.（不定式）",
         "role": "目的",
         "meaning": "为了听"
       },
       {
         "form": "āgacchati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "来"
       }
@@ -425,13 +420,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "inf./ger.",
       "inf."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "非限定动词是哪一个？",
+      "它表示目的还是先行动作？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练inf.在句中表示目的或动作内容。",
@@ -447,25 +441,25 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Dhammaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "sutvā 的宾语",
         "meaning": "法"
       },
       {
         "form": "sutvā",
-        "grammar": "ger./独立式",
+        "grammar": "ger.（连续体）",
         "role": "先行动作",
         "meaning": "听闻之后"
       },
       {
         "form": "bhikkhu",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "比丘"
       },
       {
         "form": "pasīdati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "生信、净信"
       }
@@ -479,13 +473,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "inf./ger.",
       "ger."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "非限定动词是哪一个？",
+      "它表示目的还是先行动作？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练ger.表示先行动作或伴随动作。",
@@ -501,25 +494,25 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Ahaṃ",
-        "grammar": "第一人称代词sg.nom",
+        "grammar": "pron.1sg.nom（代词·第一人称单数·主格）",
         "role": "主语",
         "meaning": "我"
       },
       {
         "form": "cetiyaṃ",
-        "grammar": "sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "vandituṃ 的宾语",
         "meaning": "塔庙"
       },
       {
         "form": "vandituṃ",
-        "grammar": "inf.",
+        "grammar": "inf.（不定式）",
         "role": "目的",
         "meaning": "为了礼拜"
       },
       {
         "form": "gacchāmi",
-        "grammar": "prs.indic.act.1sg",
+        "grammar": "prs.indic.act.1sg（现在时·陈述·主动·第一人称单数）",
         "role": "限定动词",
         "meaning": "去"
       }
@@ -534,13 +527,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "inf./ger.",
       "inf."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "非限定动词是哪一个？",
+      "它表示目的还是先行动作？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练inf.在句中表示目的或动作内容。",
@@ -556,25 +548,25 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Pattaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "ādāya 的宾语",
         "meaning": "钵"
       },
       {
         "form": "ādāya",
-        "grammar": "-ya 类ger.",
+        "grammar": "ger.（连续体）",
         "role": "伴随/先行动作",
         "meaning": "拿着、拿取之后"
       },
       {
         "form": "bhikkhu",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "比丘"
       },
       {
         "form": "gacchati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "走"
       }
@@ -588,13 +580,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "inf./ger.",
       "ger."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "非限定动词是哪一个？",
+      "它表示目的还是先行动作？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练ger.表示先行动作或伴随动作。",
@@ -610,19 +601,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Gacchanto",
-        "grammar": "pr.p.阳性sg.nom",
+        "grammar": "pr.p.act.m.sg.nom（现在主动分词·阳性·单数·主格）",
         "role": "修饰 puriso",
         "meaning": "正在走的"
       },
       {
         "form": "puriso",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "人、男子"
       },
       {
         "form": "passati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "看见"
       }
@@ -636,13 +627,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "分词",
       "pr.p."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "分词是哪一个？",
+      "它修饰谁？",
+      "它的性、数、格是否与被修饰词一致？",
+      "限定动词是什么？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练分词修饰名词或表示状态。",
@@ -658,19 +648,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Gacchantī",
-        "grammar": "pr.p.阴性sg.nom",
+        "grammar": "pr.p.act.f.sg.nom（现在主动分词·阴性·单数·主格）",
         "role": "修饰 itthī",
         "meaning": "正在走的"
       },
       {
         "form": "itthī",
-        "grammar": "阴性sg.nom",
+        "grammar": "f.sg.nom（阴性·单数·主格）",
         "role": "主语",
         "meaning": "女人"
       },
       {
         "form": "āgacchati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "来"
       }
@@ -685,13 +675,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "分词",
       "pr.p."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "分词是哪一个？",
+      "它修饰谁？",
+      "它的性、数、格是否与被修饰词一致？",
+      "限定动词是什么？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练分词修饰名词或表示状态。",
@@ -707,25 +696,25 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Kataṃ",
-        "grammar": "p.p.中性主格/sg.acc",
+        "grammar": "p.p.n.sg.nom/acc（过去分词·中性·单数·主格/宾格）",
         "role": "修饰 kammaṃ",
         "meaning": "已作的"
       },
       {
         "form": "kammaṃ",
-        "grammar": "中性sg.nom",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
         "role": "主语",
         "meaning": "业"
       },
       {
         "form": "na",
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "普通否定",
         "meaning": "不"
       },
       {
         "form": "nassati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "消失、毁坏"
       }
@@ -741,14 +730,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "p.p.",
       "na/mā"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "分词是哪一个？",
+      "它修饰谁？",
+      "它的性、数、格是否与被修饰词一致？",
+      "限定动词是什么？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练分词修饰名词或表示状态。",
@@ -764,13 +751,13 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Karaṇīyaṃ",
-        "grammar": "f.p.p.中性单数",
+        "grammar": "f.p.p.n.sg.nom（将来被动分词·中性·单数·主格）",
         "role": "谓语性成分/修饰",
         "meaning": "应作的"
       },
       {
         "form": "kusalaṃ",
-        "grammar": "中性主格/sg.acc",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
         "role": "所说明对象",
         "meaning": "善、善法"
       }
@@ -783,13 +770,12 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "分词"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "分词是哪一个？",
+      "它修饰谁？",
+      "它的性、数、格是否与被修饰词一致？",
+      "限定动词是什么？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
@@ -798,20 +784,20 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s017",
-    "level": "五级：ind.与关联句",
+    "level": "五级：不变词与关联句",
     "sentence": "Na gacchati.",
     "translation": "他不去。",
     "structure": "否定词 + 限定动词",
     "tokens": [
       {
         "form": "Na",
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "普通否定",
         "meaning": "不"
       },
       {
         "form": "gacchati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "去"
       }
@@ -825,13 +811,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "ind./关联句",
       "na/mā"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "否定词是哪一个？",
+      "na 是否是否定陈述？mā 是否用于禁止？",
+      "被否定的动词是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "结构专项",
     "training_goal": "训练ind.、否定、并列、选择或关联结构。",
@@ -840,20 +825,20 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s018",
-    "level": "五级：ind.与关联句",
+    "level": "五级：不变词与关联句",
     "sentence": "Mā gaccha.",
     "translation": "不要去。",
     "structure": "禁止否定 + 命令形式",
     "tokens": [
       {
         "form": "Mā",
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "禁止否定",
         "meaning": "不要、勿"
       },
       {
         "form": "gaccha",
-        "grammar": "命令语气第二人称单数",
+        "grammar": "imp.act.2sg（命令·主动·第二人称单数）",
         "role": "限定动词",
         "meaning": "去"
       }
@@ -868,13 +853,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "ind./关联句",
       "na/mā"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "否定词是哪一个？",
+      "na 是否是否定陈述？mā 是否用于禁止？",
+      "被否定的动词是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "结构专项",
     "training_goal": "训练ind.、否定、并列、选择或关联结构。",
@@ -883,44 +867,44 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s019",
-    "level": "五级：ind.与关联句",
+    "level": "五级：不变词与关联句",
     "sentence": "Buddho ca dhammo ca saṅgho ca.",
     "translation": "佛、法、僧。",
     "structure": "A ca B ca C ca 并列结构",
     "tokens": [
       {
         "form": "Buddho",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "并列项",
         "meaning": "佛"
       },
       {
         "form": "ca",
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "并列连接",
         "meaning": "和"
       },
       {
         "form": "dhammo",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "并列项",
         "meaning": "法"
       },
       {
         "form": "ca",
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "并列连接",
         "meaning": "和"
       },
       {
         "form": "saṅgho",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "并列项",
         "meaning": "僧"
       },
       {
         "form": "ca",
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "并列连接",
         "meaning": "和"
       }
@@ -934,13 +918,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "ind./关联句",
       "ca/vā"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "结构专项",
     "training_goal": "训练ind.、否定、并列、选择或关联结构。",
@@ -949,38 +932,38 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s020",
-    "level": "五级：ind.与关联句",
+    "level": "五级：不变词与关联句",
     "sentence": "Gāme vā araññe vā vasati.",
     "translation": "他住在村中或林中。",
     "structure": "A vā B vā 选择结构 + 动词",
     "tokens": [
       {
         "form": "Gāme",
-        "grammar": "sg.loc",
+        "grammar": "m.sg.loc（阳性·单数·处格）",
         "role": "地点一",
         "meaning": "在村中"
       },
       {
         "form": "vā",
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "选择连接",
         "meaning": "或"
       },
       {
         "form": "araññe",
-        "grammar": "sg.loc",
+        "grammar": "n.sg.loc（中性·单数·处格）",
         "role": "地点二",
         "meaning": "在林中"
       },
       {
         "form": "vā",
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "选择连接",
         "meaning": "或"
       },
       {
         "form": "vasati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "住"
       }
@@ -996,14 +979,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "处格",
       "ca/vā"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "核心格位是哪一个？",
+      "这个格位在句中表示什么功能？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "结构专项",
     "training_goal": "训练格位在句中的功能判断。",
@@ -1012,44 +993,44 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s021",
-    "level": "五级：ind.与关联句",
+    "level": "五级：不变词与关联句",
     "sentence": "Yo dhammaṃ passati, so maṃ passati.",
     "translation": "见法者，即见我。",
     "structure": "关系代词从句 + 指示代词主句",
     "tokens": [
       {
         "form": "Yo",
-        "grammar": "关系代词阳性sg.nom",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
         "role": "关系从句主语",
         "meaning": "凡……者"
       },
       {
         "form": "dhammaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "法"
       },
       {
         "form": "passati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "关系从句动词",
         "meaning": "看见"
       },
       {
         "form": "so",
-        "grammar": "指示代词阳性sg.nom",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
         "role": "主句主语",
         "meaning": "他/那人"
       },
       {
         "form": "maṃ",
-        "grammar": "第一人称代词sg.acc",
+        "grammar": "pron.1sg.acc（代词·第一人称单数·宾格）",
         "role": "宾语",
         "meaning": "我"
       },
       {
         "form": "passati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "主句动词",
         "meaning": "看见"
       }
@@ -1063,13 +1044,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "ind./关联句",
       "yo...so"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "关系词是什么？",
+      "对应的指示词是什么？",
+      "主句和从句分别是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "结构专项",
     "training_goal": "训练ind.、否定、并列、选择或关联结构。",
@@ -1078,38 +1058,38 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s022",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "So dhammaṃ sotuṃ vihāraṃ gacchati.",
     "translation": "他为听法而去寺院。",
     "structure": "主语 + 宾语 + inf.目的 + 去向宾格 + 限定动词",
     "tokens": [
       {
         "form": "So",
-        "grammar": "指示代词sg.nom",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
         "role": "主语",
         "meaning": "他"
       },
       {
         "form": "dhammaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "sotuṃ 的宾语",
         "meaning": "法"
       },
       {
         "form": "sotuṃ",
-        "grammar": "inf.",
+        "grammar": "inf.（不定式）",
         "role": "目的",
         "meaning": "为了听"
       },
       {
         "form": "vihāraṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "去向",
         "meaning": "寺院"
       },
       {
         "form": "gacchati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "去"
       }
@@ -1125,53 +1105,52 @@ const SENTENCE_ANALYSIS_DATA = [
       "宾格/去向",
       "inf."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "非限定动词是哪一个？",
+      "它表示目的还是先行动作？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练inf.在句中表示目的或动作内容。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 22,
     "priority_rank": 4
   },
   {
     "id": "s023",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Bhikkhu pattaṃ ādāya gāmaṃ gacchati.",
     "translation": "比丘拿着钵去村庄。",
     "structure": "主语 + 宾语 + ger. + 去向宾格 + 限定动词",
     "tokens": [
       {
         "form": "Bhikkhu",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "比丘"
       },
       {
         "form": "pattaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "ādāya 的宾语",
         "meaning": "钵"
       },
       {
         "form": "ādāya",
-        "grammar": "ger.",
+        "grammar": "ger.（连续体）",
         "role": "伴随动作",
         "meaning": "拿着、带着"
       },
       {
         "form": "gāmaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "去向",
         "meaning": "村庄"
       },
       {
         "form": "gacchati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "去"
       }
@@ -1187,47 +1166,46 @@ const SENTENCE_ANALYSIS_DATA = [
       "宾格/去向",
       "ger."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "非限定动词是哪一个？",
+      "它表示目的还是先行动作？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练ger.表示先行动作或伴随动作。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 23,
     "priority_rank": 4
   },
   {
     "id": "s024",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Sabbe sattā sukhitā hontu.",
     "translation": "愿一切众生安乐。",
     "structure": "形容词 + 主语 + 表语 + 愿望/命令动词",
     "tokens": [
       {
         "form": "Sabbe",
-        "grammar": "形容词/代词阳性复数主格",
+        "grammar": "adj.m.pl.nom（形容词·阳性·复数·主格）",
         "role": "修饰 sattā",
         "meaning": "一切"
       },
       {
         "form": "sattā",
-        "grammar": "阳性复数主格",
+        "grammar": "m.pl.nom（阳性·复数·主格）",
         "role": "主语",
         "meaning": "众生"
       },
       {
         "form": "sukhitā",
-        "grammar": "形容词阳性复数主格",
+        "grammar": "adj.m.pl.nom（形容词·阳性·复数·主格）",
         "role": "表语/状态",
         "meaning": "安乐的"
       },
       {
         "form": "hontu",
-        "grammar": "命令/愿望语气第三人称复数",
+        "grammar": "imp.act.3pl（命令·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "愿……成为"
       }
@@ -1241,40 +1219,40 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "综合分析"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 24,
     "priority_rank": 4
   },
   {
     "id": "s025",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Mā pāpaṃ karotha.",
     "translation": "你们不要作恶。",
     "structure": "禁止否定 + 宾语 + 命令动词",
     "tokens": [
       {
         "form": "Mā",
-        "grammar": "禁止否定词",
+        "grammar": "ind.（不变词）",
         "role": "禁止",
         "meaning": "不要"
       },
       {
         "form": "pāpaṃ",
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "宾语",
         "meaning": "恶"
       },
       {
         "form": "karotha",
-        "grammar": "命令语气第二人称复数",
+        "grammar": "imp.act.2pl（命令·主动·第二人称复数）",
         "role": "限定动词",
         "meaning": "你们做"
       }
@@ -1289,47 +1267,46 @@ const SENTENCE_ANALYSIS_DATA = [
       "综合分析",
       "na/mā"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "否定词是哪一个？",
+      "na 是否是否定陈述？mā 是否用于禁止？",
+      "被否定的动词是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 25,
     "priority_rank": 4
   },
   {
     "id": "s026",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Buddhassa sāvako dhammaṃ suṇāti.",
     "translation": "佛的弟子听法。",
     "structure": "属格限定 + 主语 + 宾语 + 限定动词",
     "tokens": [
       {
         "form": "Buddhassa",
-        "grammar": "sg.gen",
+        "grammar": "m.sg.gen（阳性·单数·属格）",
         "role": "限定 sāvako",
         "meaning": "佛的"
       },
       {
         "form": "sāvako",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "弟子"
       },
       {
         "form": "dhammaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "法"
       },
       {
         "form": "suṇāti",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "听"
       }
@@ -1344,59 +1321,58 @@ const SENTENCE_ANALYSIS_DATA = [
       "综合分析",
       "属格"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练格位在句中的功能判断。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 26,
     "priority_rank": 4
   },
   {
     "id": "s027",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Yadā paññā uppajjati, tadā moho pahīyati.",
     "translation": "当智慧生起时，那时愚痴被舍断。",
     "structure": "时间关联从句 + 主句",
     "tokens": [
       {
         "form": "Yadā",
-        "grammar": "关系副词",
+        "grammar": "ind.（不变词）",
         "role": "时间关联标记",
         "meaning": "当……时"
       },
       {
         "form": "paññā",
-        "grammar": "阴性sg.nom",
+        "grammar": "f.sg.nom（阴性·单数·主格）",
         "role": "从句主语",
         "meaning": "智慧"
       },
       {
         "form": "uppajjati",
-        "grammar": "现在时第三人称单数",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "从句动词",
         "meaning": "生起"
       },
       {
         "form": "tadā",
-        "grammar": "指示副词",
+        "grammar": "ind.（不变词）",
         "role": "主句时间呼应",
         "meaning": "那时"
       },
       {
         "form": "moho",
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主句主语",
         "meaning": "愚痴"
       },
       {
         "form": "pahīyati",
-        "grammar": "被动/中性意义动词形式",
+        "grammar": "prs.indic.pass.3sg（现在时·陈述·被动·第三人称单数）",
         "role": "主句动词",
         "meaning": "被舍断、消退"
       }
@@ -1415,18 +1391,17 @@ const SENTENCE_ANALYSIS_DATA = [
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 27,
     "priority_rank": 4
   },
   {
     "id": "s028",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Natthi me saraṇaṃ aññaṃ.",
     "translation": "我没有其他皈依处。",
     "structure": "否定存在 + 与我相关 + 主语/对象 + 修饰语",
@@ -1439,19 +1414,19 @@ const SENTENCE_ANALYSIS_DATA = [
       },
       {
         "form": "me",
-        "grammar": "第一人称代词属格/与格",
+        "grammar": "pron.1sg.gen/dat（代词·第一人称单数·属格/与格）",
         "role": "与我相关",
         "meaning": "我的/对我而言"
       },
       {
         "form": "saraṇaṃ",
-        "grammar": "中性主格/sg.acc",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
         "role": "存在对象",
         "meaning": "皈依处"
       },
       {
         "form": "aññaṃ",
-        "grammar": "形容词中性单数",
+        "grammar": "adj.n.sg.nom/acc（形容词·中性·单数·主格/宾格）",
         "role": "修饰 saraṇaṃ",
         "meaning": "其他的"
       }
@@ -1465,64 +1440,64 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "综合分析"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 28,
     "priority_rank": 4
   },
   {
     "id": "s029",
-    "level": "六级：综合短句分析",
+    "level": "六级：佛典公式句",
     "sentence": "Ye dhammā hetuppabhavā, tesaṃ hetuṃ tathāgato āha.",
     "translation": "诸法从因生，如来说其因。",
     "structure": "关系结构 + 指示结构",
     "tokens": [
       {
         "form": "Ye",
-        "grammar": "关系代词复数主格",
+        "grammar": "pron.m.pl.nom（代词·阳性·复数·主格）",
         "role": "关系从句标记",
         "meaning": "凡……诸"
       },
       {
         "form": "dhammā",
-        "grammar": "阳性复数主格",
+        "grammar": "m.pl.nom（阳性·复数·主格）",
         "role": "关系从句主语",
         "meaning": "诸法"
       },
       {
         "form": "hetuppabhavā",
-        "grammar": "复合形容词复数主格",
+        "grammar": "adj.m.pl.nom（形容词·阳性·复数·主格）",
         "role": "修饰 dhammā",
         "meaning": "从因生的"
       },
       {
         "form": "tesaṃ",
-        "grammar": "指示代词属格复数",
+        "grammar": "pron.pl.gen（代词·复数·属格）",
         "role": "指代 ye dhammā",
         "meaning": "它们的"
       },
       {
         "form": "hetuṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "因"
       },
       {
         "form": "tathāgato",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "如来"
       },
       {
         "form": "āha",
-        "grammar": "过去/完成类动词形式",
+        "grammar": "aor.indic.act.3sg（不定过去·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "说"
       }
@@ -1539,48 +1514,46 @@ const SENTENCE_ANALYSIS_DATA = [
       "佛典公式句",
       "sandhi/复合词"
     ],
-    "analysis_level": "进阶解析：涉及佛典公式、sandhi、复合词或特殊词形，建议结合原文继续学习。",
+    "analysis_level": "进阶解析：涉及公式句、连音、复合结构或综合判断。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "是否涉及佛典固定句式、sandhi 或复合词？",
-      "整句应该怎样翻译？"
+      "关系词是什么？",
+      "对应的指示词是什么？",
+      "主句和从句分别是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "进阶选练",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "训练佛典公式句的整体识别与核心词形分析。",
     "recommended_order": 29,
     "priority_rank": 5
   },
   {
     "id": "s030",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Attā hi attano nātho.",
     "translation": "自己确实是自己的依怙。",
     "structure": "主语 + 强调词 + 属格限定 + 表语",
     "tokens": [
       {
         "form": "Attā",
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "自己"
       },
       {
         "form": "hi",
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "强调/解释",
         "meaning": "确实、因为"
       },
       {
         "form": "attano",
-        "grammar": "反身代词属格/与格",
+        "grammar": "pron.gen/dat（代词·属格/与格）",
         "role": "所属限定",
         "meaning": "自己的"
       },
       {
         "form": "nātho",
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "表语",
         "meaning": "依怙、保护者"
       }
@@ -1595,16 +1568,15 @@ const SENTENCE_ANALYSIS_DATA = [
       "综合分析",
       "属格"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练格位在句中的功能判断。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 30,
     "priority_rank": 4
   },
@@ -1617,19 +1589,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Dārako",
-        "grammar": "m.sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "男孩"
       },
       {
         "form": "phalaṃ",
-        "grammar": "-a尾n.sg.acc",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
         "role": "宾语",
         "meaning": "水果"
       },
       {
         "form": "khādati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "吃"
       }
@@ -1643,12 +1615,12 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "主宾动"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
@@ -1664,19 +1636,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Upāsako",
-        "grammar": "m.sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "优婆塞、居士"
       },
       {
         "form": "dānaṃ",
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "宾语",
         "meaning": "布施、施物"
       },
       {
         "form": "deti",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "给、施"
       }
@@ -1690,12 +1662,12 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "主宾动"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
@@ -1711,19 +1683,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Itthī",
-        "grammar": "f.sg.nom",
+        "grammar": "f.sg.nom（阴性·单数·主格）",
         "role": "主语",
         "meaning": "女人"
       },
       {
         "form": "udakaṃ",
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "宾语",
         "meaning": "水"
       },
       {
         "form": "pivati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "喝"
       }
@@ -1737,12 +1709,12 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "主宾动"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
@@ -1758,19 +1730,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Purisā",
-        "grammar": "-a尾阳性名词主格复数",
+        "grammar": "m.pl.nom（阳性·复数·主格）",
         "role": "主语",
         "meaning": "男人们"
       },
       {
         "form": "nagaraṃ",
-        "grammar": "sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "去向",
         "meaning": "城市"
       },
       {
         "form": "gacchanti",
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "去"
       }
@@ -1785,12 +1757,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "主宾动",
       "宾格/去向"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
@@ -1806,19 +1778,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Ahaṃ",
-        "grammar": "第一人称代词sg.nom",
+        "grammar": "pron.1sg.nom（代词·第一人称单数·主格）",
         "role": "主语",
         "meaning": "我"
       },
       {
         "form": "dhammaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "法"
       },
       {
         "form": "suṇāmi",
-        "grammar": "prs.indic.act.1sg",
+        "grammar": "prs.indic.act.1sg（现在时·陈述·主动·第一人称单数）",
         "role": "限定动词",
         "meaning": "听"
       }
@@ -1832,12 +1804,12 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "主宾动"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
@@ -1853,19 +1825,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Dārakā",
-        "grammar": "-a尾阳性名词主格复数",
+        "grammar": "m.pl.nom（阳性·复数·主格）",
         "role": "主语",
         "meaning": "男孩们"
       },
       {
         "form": "magge",
-        "grammar": "-a尾名词sg.loc",
+        "grammar": "m.sg.loc（阳性·单数·处格）",
         "role": "地点状语",
         "meaning": "在路上"
       },
       {
         "form": "kīḷanti",
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "玩耍"
       }
@@ -1880,13 +1852,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "格位",
       "处格"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "核心格位是哪一个？",
+      "这个格位在句中表示什么功能？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练格位在句中的功能判断。",
@@ -1902,19 +1873,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Bhikkhū",
-        "grammar": "-u尾阳性名词主格复数",
+        "grammar": "m.pl.nom（阳性·复数·主格）",
         "role": "主语",
         "meaning": "比丘们"
       },
       {
         "form": "ārāme",
-        "grammar": "-a尾名词sg.loc",
+        "grammar": "m.sg.loc（阳性·单数·处格）",
         "role": "地点",
         "meaning": "在园林、寺院中"
       },
       {
         "form": "vasanti",
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "住"
       }
@@ -1929,13 +1900,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "格位",
       "处格"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "核心格位是哪一个？",
+      "这个格位在句中表示什么功能？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练格位在句中的功能判断。",
@@ -1951,19 +1921,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Rājā",
-        "grammar": "m.sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "国王"
       },
       {
         "form": "nagare",
-        "grammar": "sg.loc",
+        "grammar": "m.sg.loc（阳性·单数·处格）",
         "role": "地点",
         "meaning": "在城中"
       },
       {
         "form": "vasati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "住"
       }
@@ -1978,13 +1948,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "格位",
       "处格"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "核心格位是哪一个？",
+      "这个格位在句中表示什么功能？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练格位在句中的功能判断。",
@@ -2000,19 +1969,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Bhikkhussa",
-        "grammar": "-u尾阳性名词与格/sg.gen",
+        "grammar": "m.sg.gen/dat（阳性·单数·属格/与格）",
         "role": "持有者",
         "meaning": "对比丘而言 / 比丘的"
       },
       {
         "form": "patto",
-        "grammar": "m.sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "存在对象",
         "meaning": "钵"
       },
       {
         "form": "atthi",
-        "grammar": "√as 第三人称单数",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "存在动词",
         "meaning": "有、存在"
       }
@@ -2027,13 +1996,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "格位",
       "属格"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "核心格位是哪一个？",
+      "这个格位在句中表示什么功能？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练格位在句中的功能判断。",
@@ -2049,19 +2017,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Cakkhunā",
-        "grammar": "-u尾中性名词sg.ins",
+        "grammar": "n.sg.ins（中性·单数·工具格）",
         "role": "工具",
         "meaning": "以眼、用眼"
       },
       {
         "form": "rūpaṃ",
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "宾语",
         "meaning": "色、形色"
       },
       {
         "form": "passati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "看见"
       }
@@ -2076,13 +2044,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "格位",
       "工具格"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "核心格位是哪一个？",
+      "这个格位在句中表示什么功能？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练格位在句中的功能判断。",
@@ -2098,19 +2065,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Sotena",
-        "grammar": "sg.ins",
+        "grammar": "n.sg.ins（中性·单数·工具格）",
         "role": "工具",
         "meaning": "以耳"
       },
       {
         "form": "saddaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "声音"
       },
       {
         "form": "suṇāti",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "听"
       }
@@ -2125,13 +2092,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "格位",
       "工具格"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "核心格位是哪一个？",
+      "这个格位在句中表示什么功能？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练格位在句中的功能判断。",
@@ -2147,19 +2113,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Gahapatissa",
-        "grammar": "-i尾阳性名词与格/sg.gen",
+        "grammar": "m.sg.gen/dat（阳性·单数·属格/与格）",
         "role": "持有者",
         "meaning": "居士的 / 对居士而言"
       },
       {
         "form": "gharaṃ",
-        "grammar": "中性sg.nom",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
         "role": "存在对象",
         "meaning": "房子"
       },
       {
         "form": "atthi",
-        "grammar": "存在动词第三人称单数",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "有、存在"
       }
@@ -2175,13 +2141,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "属格",
       "宾格/去向"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "核心格位是哪一个？",
+      "这个格位在句中表示什么功能？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "基础必练",
     "training_goal": "训练格位在句中的功能判断。",
@@ -2197,25 +2162,25 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Dānaṃ",
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "dātuṃ 的宾语",
         "meaning": "施物、布施"
       },
       {
         "form": "dātuṃ",
-        "grammar": "inf.",
+        "grammar": "inf.（不定式）",
         "role": "目的",
         "meaning": "为了给、为了布施"
       },
       {
         "form": "upāsako",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "优婆塞"
       },
       {
         "form": "āgacchati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "来"
       }
@@ -2229,13 +2194,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "inf./ger.",
       "inf."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "非限定动词是哪一个？",
+      "它表示目的还是先行动作？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练inf.在句中表示目的或动作内容。",
@@ -2251,25 +2215,25 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Dānaṃ",
-        "grammar": "sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "datvā 的宾语",
         "meaning": "施物、布施"
       },
       {
         "form": "datvā",
-        "grammar": "ger./独立式",
+        "grammar": "ger.（连续体）",
         "role": "先行动作",
         "meaning": "给了之后、布施之后"
       },
       {
         "form": "upāsako",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "优婆塞"
       },
       {
         "form": "gacchati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "去、离去"
       }
@@ -2283,13 +2247,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "inf./ger.",
       "ger."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "非限定动词是哪一个？",
+      "它表示目的还是先行动作？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练ger.表示先行动作或伴随动作。",
@@ -2305,19 +2268,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Saccaṃ",
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "bhāsituṃ 的宾语",
         "meaning": "真实、真话"
       },
       {
         "form": "bhāsituṃ",
-        "grammar": "inf.",
+        "grammar": "inf.（不定式）",
         "role": "动作内容",
         "meaning": "说"
       },
       {
         "form": "vaṭṭati",
-        "grammar": "现在时第三人称单数",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "谓语",
         "meaning": "适宜、应当"
       }
@@ -2331,13 +2294,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "inf./ger.",
       "inf."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "非限定动词是哪一个？",
+      "它表示目的还是先行动作？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练inf.在句中表示目的或动作内容。",
@@ -2353,25 +2315,25 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Gharaṃ",
-        "grammar": "sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "去向",
         "meaning": "家、房屋"
       },
       {
         "form": "gantvā",
-        "grammar": "ger.",
+        "grammar": "ger.（连续体）",
         "role": "先行动作",
         "meaning": "去了之后"
       },
       {
         "form": "so",
-        "grammar": "指示代词sg.nom",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
         "role": "主语",
         "meaning": "他"
       },
       {
         "form": "sayati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "睡、躺"
       }
@@ -2387,14 +2349,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "ger.",
       "yo...so"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "关系词是什么？",
+      "对应的指示词是什么？",
+      "主句和从句分别是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练ger.表示先行动作或伴随动作。",
@@ -2410,25 +2370,25 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Nisīditvā",
-        "grammar": "ger./独立式",
+        "grammar": "ger.（连续体）",
         "role": "先行动作",
         "meaning": "坐下之后"
       },
       {
         "form": "bhikkhu",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "比丘"
       },
       {
         "form": "dhammaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "法"
       },
       {
         "form": "suṇāti",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "听"
       }
@@ -2442,13 +2402,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "inf./ger.",
       "ger."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "非限定动词是哪一个？",
+      "它表示目的还是先行动作？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练ger.表示先行动作或伴随动作。",
@@ -2464,19 +2423,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Uṭṭhahitvā",
-        "grammar": "ger./独立式",
+        "grammar": "ger.（连续体）",
         "role": "先行动作",
         "meaning": "起身之后"
       },
       {
         "form": "so",
-        "grammar": "指示代词sg.nom",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
         "role": "主语",
         "meaning": "他"
       },
       {
         "form": "gacchati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "去"
       }
@@ -2491,14 +2450,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "ger.",
       "yo...so"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "关系词是什么？",
+      "对应的指示词是什么？",
+      "主句和从句分别是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练ger.表示先行动作或伴随动作。",
@@ -2514,19 +2471,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Āgacchanto",
-        "grammar": "pr.p.阳性sg.nom",
+        "grammar": "pr.p.act.m.sg.nom（现在主动分词·阳性·单数·主格）",
         "role": "修饰 dārako",
         "meaning": "正在来的"
       },
       {
         "form": "dārako",
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "男孩"
       },
       {
         "form": "hasati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "笑"
       }
@@ -2540,13 +2497,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "分词",
       "pr.p."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "分词是哪一个？",
+      "它修饰谁？",
+      "它的性、数、格是否与被修饰词一致？",
+      "限定动词是什么？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练分词修饰名词或表示状态。",
@@ -2562,19 +2518,19 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Passantā",
-        "grammar": "pr.p.阳性主格复数",
+        "grammar": "pr.p.act.m.pl.nom（现在主动分词·阳性·复数·主格）",
         "role": "修饰 purisā",
         "meaning": "正在看的"
       },
       {
         "form": "purisā",
-        "grammar": "阳性主格复数",
+        "grammar": "m.pl.nom（阳性·复数·主格）",
         "role": "主语",
         "meaning": "男人们"
       },
       {
         "form": "tiṭṭhanti",
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "站立"
       }
@@ -2589,13 +2545,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "分词",
       "pr.p."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "分词是哪一个？",
+      "它修饰谁？",
+      "它的性、数、格是否与被修饰词一致？",
+      "限定动词是什么？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练分词修饰名词或表示状态。",
@@ -2611,25 +2566,25 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Dinnaṃ",
-        "grammar": "p.p.中性sg.nom",
+        "grammar": "p.p.n.sg.nom（过去分词·中性·单数·主格）",
         "role": "修饰 dānaṃ",
         "meaning": "已给的、已施的"
       },
       {
         "form": "dānaṃ",
-        "grammar": "中性sg.nom",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "主语",
         "meaning": "布施、施物"
       },
       {
         "form": "mahapphalaṃ",
-        "grammar": "中性sg.nom形容词/复合词",
+        "grammar": "adj.n.sg.nom（形容词·中性·单数·主格）",
         "role": "表语",
         "meaning": "有大果的"
       },
       {
         "form": "hoti",
-        "grammar": "√as/bhū 类现在时第三人称单数",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "是、成为"
       }
@@ -2645,14 +2600,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "p.p.",
       "sandhi/复合词"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "是否涉及佛典固定句式、sandhi 或复合词？",
-      "整句应该怎样翻译？"
+      "分词是哪一个？",
+      "它修饰谁？",
+      "它的性、数、格是否与被修饰词一致？",
+      "限定动词是什么？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练分词修饰名词或表示状态。",
@@ -2668,25 +2621,25 @@ const SENTENCE_ANALYSIS_DATA = [
     "tokens": [
       {
         "form": "Nisinno",
-        "grammar": "p.p./状态分词阳性sg.nom",
+        "grammar": "p.p.m.sg.nom（过去分词·阳性·单数·主格）",
         "role": "修饰 bhikkhu",
         "meaning": "已坐下的、坐着的"
       },
       {
         "form": "bhikkhu",
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "比丘"
       },
       {
         "form": "dhammaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "法"
       },
       {
         "form": "suṇāti",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "听"
       }
@@ -2701,13 +2654,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "分词",
       "p.p."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "分词是哪一个？",
+      "它修饰谁？",
+      "它的性、数、格是否与被修饰词一致？",
+      "限定动词是什么？"
     ],
     "practice_priority": "重点提高",
     "training_goal": "训练分词修饰名词或表示状态。",
@@ -2716,26 +2668,26 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s053",
-    "level": "五级：ind.与关联句",
+    "level": "五级：不变词与关联句",
     "sentence": "Pāpaṃ na karoti.",
     "translation": "他不作恶。",
     "structure": "宾语 + 普通否定 + 限定动词",
     "tokens": [
       {
         "form": "Pāpaṃ",
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "宾语",
         "meaning": "恶"
       },
       {
         "form": "na",
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "普通否定",
         "meaning": "不"
       },
       {
         "form": "karoti",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "做"
       }
@@ -2750,13 +2702,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "ind./关联句",
       "na/mā"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "否定词是哪一个？",
+      "na 是否是否定陈述？mā 是否用于禁止？",
+      "被否定的动词是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "结构专项",
     "training_goal": "训练ind.、否定、并列、选择或关联结构。",
@@ -2765,26 +2716,26 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s054",
-    "level": "五级：ind.与关联句",
+    "level": "五级：不变词与关联句",
     "sentence": "Mā musā bhaṇa.",
     "translation": "不要说假话。",
     "structure": "禁止否定 + ind./副词 + 命令动词",
     "tokens": [
       {
         "form": "Mā",
-        "grammar": "禁止否定词",
+        "grammar": "ind.（不变词）",
         "role": "禁止",
         "meaning": "不要"
       },
       {
         "form": "musā",
-        "grammar": "ind./副词",
+        "grammar": "ind.（不变词）",
         "role": "方式",
         "meaning": "虚妄地、假"
       },
       {
         "form": "bhaṇa",
-        "grammar": "命令语气第二人称单数",
+        "grammar": "imp.act.2sg（命令·主动·第二人称单数）",
         "role": "限定动词",
         "meaning": "说"
       }
@@ -2799,13 +2750,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "ind./关联句",
       "na/mā"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "否定词是哪一个？",
+      "na 是否是否定陈述？mā 是否用于禁止？",
+      "被否定的动词是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "结构专项",
     "training_goal": "训练ind.、否定、并列、选择或关联结构。",
@@ -2814,32 +2764,32 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s055",
-    "level": "五级：ind.与关联句",
+    "level": "五级：不变词与关联句",
     "sentence": "Dhammo ca vinayo ca.",
     "translation": "法与律。",
     "structure": "A ca B ca 并列结构",
     "tokens": [
       {
         "form": "Dhammo",
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "并列项",
         "meaning": "法"
       },
       {
         "form": "ca",
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "并列连接",
         "meaning": "和"
       },
       {
         "form": "vinayo",
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "并列项",
         "meaning": "律"
       },
       {
         "form": "ca",
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "并列连接",
         "meaning": "和"
       }
@@ -2853,13 +2803,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "ind./关联句",
       "ca/vā"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "结构专项",
     "training_goal": "训练ind.、否定、并列、选择或关联结构。",
@@ -2868,26 +2817,26 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s056",
-    "level": "五级：ind.与关联句",
+    "level": "五级：不变词与关联句",
     "sentence": "Evaṃ me sutaṃ.",
     "translation": "如是我闻。",
     "structure": "方式副词 + 代词 + p.p.",
     "tokens": [
       {
         "form": "Evaṃ",
-        "grammar": "ind./副词",
+        "grammar": "ind.（不变词）",
         "role": "方式",
         "meaning": "这样、如是"
       },
       {
         "form": "me",
-        "grammar": "第一人称代词属格/与格",
+        "grammar": "pron.1sg.gen/dat（代词·第一人称单数·属格/与格）",
         "role": "与我相关",
         "meaning": "我、我的、为我所"
       },
       {
         "form": "sutaṃ",
-        "grammar": "p.p.中性单数",
+        "grammar": "p.p.n.sg.nom/acc（过去分词·中性·单数·主格/宾格）",
         "role": "谓语性分词",
         "meaning": "已听闻的"
       }
@@ -2903,15 +2852,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "p.p.",
       "佛典公式句"
     ],
-    "analysis_level": "进阶解析：涉及佛典公式、sandhi、复合词或特殊词形，建议结合原文继续学习。",
+    "analysis_level": "进阶解析：涉及公式句、连音、复合结构或综合判断。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "是否涉及佛典固定句式、sandhi 或复合词？",
-      "整句应该怎样翻译？"
+      "这是不是佛典公式句？",
+      "先整体识别哪一段？",
+      "再逐词分析哪些核心词形？",
+      "整句如何翻译？"
     ],
     "practice_priority": "结构专项",
     "training_goal": "训练分词修饰名词或表示状态。",
@@ -2920,20 +2866,20 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s057",
-    "level": "五级：ind.与关联句",
+    "level": "五级：不变词与关联句",
     "sentence": "Kiṃ karosi?",
     "translation": "你做什么？",
     "structure": "疑问代词 + 第二人称动词",
     "tokens": [
       {
         "form": "Kiṃ",
-        "grammar": "疑问代词中性sg.acc",
+        "grammar": "pron.n.sg.acc（代词·中性·单数·宾格）",
         "role": "宾语/疑问对象",
         "meaning": "什么"
       },
       {
         "form": "karosi",
-        "grammar": "prs.indic.act.2sg",
+        "grammar": "prs.indic.act.2sg（现在时·陈述·主动·第二人称单数）",
         "role": "限定动词",
         "meaning": "你做"
       }
@@ -2947,13 +2893,12 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "ind./关联句"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "结构专项",
     "training_goal": "训练ind.、否定、并列、选择或关联结构。",
@@ -2962,20 +2907,20 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s058",
-    "level": "五级：ind.与关联句",
+    "level": "五级：不变词与关联句",
     "sentence": "Kahaṃ gacchasi?",
     "translation": "你去哪里？",
     "structure": "疑问副词 + 第二人称动词",
     "tokens": [
       {
         "form": "Kahaṃ",
-        "grammar": "疑问副词",
+        "grammar": "ind.（不变词）",
         "role": "地点疑问",
         "meaning": "哪里"
       },
       {
         "form": "gacchasi",
-        "grammar": "prs.indic.act.2sg",
+        "grammar": "prs.indic.act.2sg（现在时·陈述·主动·第二人称单数）",
         "role": "限定动词",
         "meaning": "你去"
       }
@@ -2988,13 +2933,12 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "ind./关联句"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "结构专项",
     "training_goal": "训练ind.、否定、并列、选择或关联结构。",
@@ -3003,32 +2947,32 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s059",
-    "level": "五级：ind.与关联句",
+    "level": "五级：不变词与关联句",
     "sentence": "Yathā vadati, tathā karoti.",
     "translation": "他怎样说，就怎样做。",
     "structure": "方式关联从句 + 主句",
     "tokens": [
       {
         "form": "Yathā",
-        "grammar": "关系副词",
+        "grammar": "ind.（不变词）",
         "role": "方式关联",
         "meaning": "如、怎样"
       },
       {
         "form": "vadati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "从句动词",
         "meaning": "说"
       },
       {
         "form": "tathā",
-        "grammar": "指示副词",
+        "grammar": "ind.（不变词）",
         "role": "方式呼应",
         "meaning": "那样"
       },
       {
         "form": "karoti",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "主句动词",
         "meaning": "做"
       }
@@ -3042,13 +2986,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "ind./关联句",
       "关联副词"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "结构专项",
     "training_goal": "训练ind.、否定、并列、选择或关联结构。",
@@ -3057,32 +3000,32 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s060",
-    "level": "五级：ind.与关联句",
+    "level": "五级：不变词与关联句",
     "sentence": "Yāva jīvati, tāva sikkhati.",
     "translation": "只要活着，就学习。",
     "structure": "范围/时间关联从句 + 主句",
     "tokens": [
       {
         "form": "Yāva",
-        "grammar": "关系副词",
+        "grammar": "ind.（不变词）",
         "role": "范围/时间关联",
         "meaning": "只要、直到"
       },
       {
         "form": "jīvati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "从句动词",
         "meaning": "活着"
       },
       {
         "form": "tāva",
-        "grammar": "指示副词",
+        "grammar": "ind.（不变词）",
         "role": "范围/时间呼应",
         "meaning": "就、那么久"
       },
       {
         "form": "sikkhati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "主句动词",
         "meaning": "学习"
       }
@@ -3096,13 +3039,12 @@ const SENTENCE_ANALYSIS_DATA = [
       "ind./关联句",
       "关联副词"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "结构专项",
     "training_goal": "训练ind.、否定、并列、选择或关联结构。",
@@ -3111,44 +3053,44 @@ const SENTENCE_ANALYSIS_DATA = [
   },
   {
     "id": "s061",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Yo pāpaṃ karoti, so dukkhaṃ vindati.",
     "translation": "作恶者遭受痛苦。",
     "structure": "关系从句 + 指示主句",
     "tokens": [
       {
         "form": "Yo",
-        "grammar": "关系代词阳性sg.nom",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
         "role": "关系从句主语",
         "meaning": "凡……者"
       },
       {
         "form": "pāpaṃ",
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "宾语",
         "meaning": "恶"
       },
       {
         "form": "karoti",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "从句动词",
         "meaning": "做"
       },
       {
         "form": "so",
-        "grammar": "指示代词阳性sg.nom",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
         "role": "主句主语",
         "meaning": "他"
       },
       {
         "form": "dukkhaṃ",
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "宾语",
         "meaning": "苦"
       },
       {
         "form": "vindati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "主句动词",
         "meaning": "遭遇、获得"
       }
@@ -3163,53 +3105,52 @@ const SENTENCE_ANALYSIS_DATA = [
       "综合分析",
       "yo...so"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "关系词是什么？",
+      "对应的指示词是什么？",
+      "主句和从句分别是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 61,
     "priority_rank": 4
   },
   {
     "id": "s062",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Ye dhammaṃ suṇanti, te pasīdanti.",
     "translation": "听法的人们生信。",
     "structure": "复数关系从句 + 复数指示主句",
     "tokens": [
       {
         "form": "Ye",
-        "grammar": "关系代词复数主格",
+        "grammar": "pron.m.pl.nom（代词·阳性·复数·主格）",
         "role": "关系从句主语",
         "meaning": "凡……者们"
       },
       {
         "form": "dhammaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "法"
       },
       {
         "form": "suṇanti",
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "从句动词",
         "meaning": "听"
       },
       {
         "form": "te",
-        "grammar": "指示代词复数主格",
+        "grammar": "pron.m.pl.nom（代词·阳性·复数·主格）",
         "role": "主句主语",
         "meaning": "他们"
       },
       {
         "form": "pasīdanti",
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "主句动词",
         "meaning": "生信、净信"
       }
@@ -3224,59 +3165,58 @@ const SENTENCE_ANALYSIS_DATA = [
       "综合分析",
       "yo...so"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "关系词是什么？",
+      "对应的指示词是什么？",
+      "主句和从句分别是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 62,
     "priority_rank": 4
   },
   {
     "id": "s063",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Yattha bhikkhū vasanti, tattha dhammo desīyati.",
     "translation": "比丘们住在哪里，法就在那里被宣说。",
     "structure": "地点关联从句 + 主句",
     "tokens": [
       {
         "form": "Yattha",
-        "grammar": "关系副词",
+        "grammar": "ind.（不变词）",
         "role": "地点关联",
         "meaning": "在哪里"
       },
       {
         "form": "bhikkhū",
-        "grammar": "主格复数",
+        "grammar": "m.pl.nom/acc（阳性·复数·主格/宾格）",
         "role": "从句主语",
         "meaning": "比丘们"
       },
       {
         "form": "vasanti",
-        "grammar": "现在时第三人称复数",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "从句动词",
         "meaning": "住"
       },
       {
         "form": "tattha",
-        "grammar": "指示副词",
+        "grammar": "ind.（不变词）",
         "role": "地点呼应",
         "meaning": "在那里"
       },
       {
         "form": "dhammo",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主句主语",
         "meaning": "法"
       },
       {
         "form": "desīyati",
-        "grammar": "被动式现在时第三人称单数",
+        "grammar": "prs.indic.pass.3sg（现在时·陈述·被动·第三人称单数）",
         "role": "主句动词",
         "meaning": "被宣说"
       }
@@ -3295,43 +3235,42 @@ const SENTENCE_ANALYSIS_DATA = [
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 63,
     "priority_rank": 4
   },
   {
     "id": "s064",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Bhikkhu piṇḍāya gāmaṃ pavisati.",
     "translation": "比丘为了托钵进入村庄。",
     "structure": "主语 + 与格目的 + 去向宾格 + 限定动词",
     "tokens": [
       {
         "form": "Bhikkhu",
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "比丘"
       },
       {
         "form": "piṇḍāya",
-        "grammar": "与格/目的用法",
+        "grammar": "m.sg.dat（阳性·单数·与格）",
         "role": "目的",
         "meaning": "为了食物、为了托钵"
       },
       {
         "form": "gāmaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "去向",
         "meaning": "村庄"
       },
       {
         "form": "pavisati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "进入"
       }
@@ -3351,43 +3290,42 @@ const SENTENCE_ANALYSIS_DATA = [
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练格位在句中的功能判断。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 64,
     "priority_rank": 4
   },
   {
     "id": "s065",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Pāṇe na hanituṃ sikkhati.",
     "translation": "他学习不杀生。",
     "structure": "宾语 + 否定 + inf. + 限定动词",
     "tokens": [
       {
         "form": "Pāṇe",
-        "grammar": "阳性宾格复数",
+        "grammar": "m.pl.acc（阳性·复数·宾格）",
         "role": "hanituṃ 的宾语",
         "meaning": "生命、众生"
       },
       {
         "form": "na",
-        "grammar": "普通否定词",
+        "grammar": "ind.（不变词）",
         "role": "否定inf.动作",
         "meaning": "不"
       },
       {
         "form": "hanituṃ",
-        "grammar": "inf.",
+        "grammar": "inf.（不定式）",
         "role": "学习内容",
         "meaning": "杀害"
       },
       {
         "form": "sikkhati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "学习、训练"
       }
@@ -3403,42 +3341,40 @@ const SENTENCE_ANALYSIS_DATA = [
       "inf.",
       "na/mā"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "否定词是哪一个？",
+      "na 是否是否定陈述？mā 是否用于禁止？",
+      "被否定的动词是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练inf.在句中表示目的或动作内容。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 65,
     "priority_rank": 4
   },
   {
     "id": "s066",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Paññāya dukkhaṃ passati.",
     "translation": "他以智慧见苦。",
     "structure": "工具格 + 宾语 + 限定动词",
     "tokens": [
       {
         "form": "Paññāya",
-        "grammar": "-ā尾阴性sg.ins",
+        "grammar": "f.sg.ins（阴性·单数·工具格）",
         "role": "工具/凭借",
         "meaning": "以智慧"
       },
       {
         "form": "dukkhaṃ",
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "宾语",
         "meaning": "苦"
       },
       {
         "form": "passati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "看见、观见"
       }
@@ -3455,33 +3391,32 @@ const SENTENCE_ANALYSIS_DATA = [
     ],
     "analysis_level": "中级解析：格位或动词形式需要结合句法判断。",
     "self_check": [
+      "核心格位是哪一个？",
+      "这个格位在句中表示什么功能？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练格位在句中的功能判断。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 66,
     "priority_rank": 4
   },
   {
     "id": "s067",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Sukhāya paṭipajjati.",
     "translation": "他为了安乐而修行/行道。",
     "structure": "与格目的 + 限定动词",
     "tokens": [
       {
         "form": "Sukhāya",
-        "grammar": "与格单数",
+        "grammar": "f.sg.dat（阴性·单数·与格）",
         "role": "目的",
         "meaning": "为了安乐"
       },
       {
         "form": "paṭipajjati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "实践、行道"
       }
@@ -3494,52 +3429,52 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "综合分析"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 67,
     "priority_rank": 4
   },
   {
     "id": "s068",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Sīlaṃ rakkhanto bhikkhu sukhaṃ labhati.",
     "translation": "守护戒的比丘获得安乐。",
     "structure": "宾语 + pr.p. + 主语 + 宾语 + 动词",
     "tokens": [
       {
         "form": "Sīlaṃ",
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "rakkhanto 的宾语",
         "meaning": "戒"
       },
       {
         "form": "rakkhanto",
-        "grammar": "pr.p.阳性sg.nom",
+        "grammar": "pr.p.act.m.sg.nom（现在主动分词·阳性·单数·主格）",
         "role": "修饰 bhikkhu",
         "meaning": "守护着的"
       },
       {
         "form": "bhikkhu",
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "比丘"
       },
       {
         "form": "sukhaṃ",
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "labhati 的宾语",
         "meaning": "安乐"
       },
       {
         "form": "labhati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "获得"
       }
@@ -3554,47 +3489,46 @@ const SENTENCE_ANALYSIS_DATA = [
       "综合分析",
       "pr.p."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练分词修饰名词或表示状态。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 68,
     "priority_rank": 4
   },
   {
     "id": "s069",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Dhammaṃ sutvā paññā uppajjati.",
     "translation": "听闻法后，智慧生起。",
     "structure": "宾语 + ger. + 主语 + 限定动词",
     "tokens": [
       {
         "form": "Dhammaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "sutvā 的宾语",
         "meaning": "法"
       },
       {
         "form": "sutvā",
-        "grammar": "ger.",
+        "grammar": "ger.（连续体）",
         "role": "先行动作",
         "meaning": "听闻之后"
       },
       {
         "form": "paññā",
-        "grammar": "阴性sg.nom",
+        "grammar": "f.sg.nom（阴性·单数·主格）",
         "role": "主语",
         "meaning": "智慧"
       },
       {
         "form": "uppajjati",
-        "grammar": "现在时第三人称单数",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "生起"
       }
@@ -3609,47 +3543,46 @@ const SENTENCE_ANALYSIS_DATA = [
       "综合分析",
       "ger."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "非限定动词是哪一个？",
+      "它表示目的还是先行动作？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练ger.表示先行动作或伴随动作。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 69,
     "priority_rank": 4
   },
   {
     "id": "s070",
-    "level": "六级：综合短句分析",
+    "level": "八级：进阶原典句",
     "sentence": "Dukkhaṃ ñatvā ariyasāvako virajjati.",
     "translation": "知道苦后，圣弟子离染。",
     "structure": "宾语 + ger. + 主语 + 限定动词",
     "tokens": [
       {
         "form": "Dukkhaṃ",
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
         "role": "ñatvā 的宾语",
         "meaning": "苦"
       },
       {
         "form": "ñatvā",
-        "grammar": "ger.",
+        "grammar": "ger.（连续体）",
         "role": "先行动作",
         "meaning": "知道之后"
       },
       {
         "form": "ariyasāvako",
-        "grammar": "阳性sg.nom复合词",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "圣弟子"
       },
       {
         "form": "virajjati",
-        "grammar": "现在时第三人称单数",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "离染、厌离"
       }
@@ -3665,42 +3598,40 @@ const SENTENCE_ANALYSIS_DATA = [
       "ger.",
       "sandhi/复合词"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "连音/合写形式在哪里？",
+      "可以还原成什么？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "是否涉及佛典固定句式、sandhi 或复合词？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "进阶选练",
-    "training_goal": "训练ger.表示先行动作或伴随动作。",
+    "training_goal": "训练含连音、合写或原典固定表达的进阶分析。",
     "recommended_order": 70,
     "priority_rank": 5
   },
   {
     "id": "s071",
-    "level": "六级：综合短句分析",
+    "level": "八级：进阶原典句",
     "sentence": "Dukkhaṃ ariyasaccaṃ pariññeyyaṃ.",
     "translation": "苦圣谛应被遍知。",
     "structure": "主语 + f.p.p.",
     "tokens": [
       {
         "form": "Dukkhaṃ",
-        "grammar": "中性sg.nom",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
         "role": "修饰/构成 ariyasaccaṃ",
         "meaning": "苦"
       },
       {
         "form": "ariyasaccaṃ",
-        "grammar": "中性sg.nom",
+        "grammar": "n.sg.nom（中性·单数·主格）",
         "role": "主语",
         "meaning": "圣谛"
       },
       {
         "form": "pariññeyyaṃ",
-        "grammar": "f.p.p.中性sg.nom",
+        "grammar": "f.p.p.n.sg.nom（将来被动分词·中性·单数·主格）",
         "role": "谓语性成分",
         "meaning": "应被遍知"
       }
@@ -3715,36 +3646,34 @@ const SENTENCE_ANALYSIS_DATA = [
       "f.p.p.",
       "sandhi/复合词"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
+      "连音/合写形式在哪里？",
+      "可以还原成什么？",
       "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "是否涉及佛典固定句式、sandhi 或复合词？",
-      "整句应该怎样翻译？"
+      "整句如何翻译？"
     ],
     "practice_priority": "进阶选练",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "训练含连音、合写或原典固定表达的进阶分析。",
     "recommended_order": 71,
     "priority_rank": 5
   },
   {
     "id": "s072",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Samudayo pahātabbo.",
     "translation": "集应被舍断。",
     "structure": "主语 + f.p.p.",
     "tokens": [
       {
         "form": "Samudayo",
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "集、苦因"
       },
       {
         "form": "pahātabbo",
-        "grammar": "f.p.p.阳性sg.nom",
+        "grammar": "f.p.p.m.sg.nom（将来被动分词·阳性·单数·主格）",
         "role": "谓语性成分",
         "meaning": "应被舍断"
       }
@@ -3758,35 +3687,34 @@ const SENTENCE_ANALYSIS_DATA = [
       "综合分析",
       "f.p.p."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 72,
     "priority_rank": 4
   },
   {
     "id": "s073",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Nirodho sacchikātabbo.",
     "translation": "灭应被作证。",
     "structure": "主语 + f.p.p.",
     "tokens": [
       {
         "form": "Nirodho",
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "灭"
       },
       {
         "form": "sacchikātabbo",
-        "grammar": "f.p.p.阳性sg.nom",
+        "grammar": "f.p.p.m.sg.nom（将来被动分词·阳性·单数·主格）",
         "role": "谓语性成分",
         "meaning": "应被作证、应亲证"
       }
@@ -3800,35 +3728,34 @@ const SENTENCE_ANALYSIS_DATA = [
       "综合分析",
       "f.p.p."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 73,
     "priority_rank": 4
   },
   {
     "id": "s074",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Maggo bhāvetabbo.",
     "translation": "道应被修习。",
     "structure": "主语 + f.p.p.",
     "tokens": [
       {
         "form": "Maggo",
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "道"
       },
       {
         "form": "bhāvetabbo",
-        "grammar": "f.p.p.阳性sg.nom",
+        "grammar": "f.p.p.m.sg.nom（将来被动分词·阳性·单数·主格）",
         "role": "谓语性成分",
         "meaning": "应被修习"
       }
@@ -3842,41 +3769,40 @@ const SENTENCE_ANALYSIS_DATA = [
       "综合分析",
       "f.p.p."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 74,
     "priority_rank": 4
   },
   {
     "id": "s075",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Tisso sikkhā sikkhitabbā.",
     "translation": "三学应被学习。",
     "structure": "数词/形容词 + 主语 + f.p.p.",
     "tokens": [
       {
         "form": "Tisso",
-        "grammar": "阴性复数主格",
+        "grammar": "num.f.pl.nom（数词·阴性·复数·主格）",
         "role": "修饰 sikkhā",
         "meaning": "三"
       },
       {
         "form": "sikkhā",
-        "grammar": "阴性复数主格",
+        "grammar": "f.pl.nom（阴性·复数·主格）",
         "role": "主语",
         "meaning": "学、训练"
       },
       {
         "form": "sikkhitabbā",
-        "grammar": "f.p.p.阴性复数主格",
+        "grammar": "f.p.p.f.pl.nom（将来被动分词·阴性·复数·主格）",
         "role": "谓语性成分",
         "meaning": "应被学习"
       }
@@ -3891,47 +3817,46 @@ const SENTENCE_ANALYSIS_DATA = [
       "综合分析",
       "f.p.p."
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有inf.、ger.或分词？它们的作用是什么？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 75,
     "priority_rank": 4
   },
   {
     "id": "s076",
-    "level": "六级：综合短句分析",
+    "level": "七级：综合短句分析",
     "sentence": "Dve bhikkhū dhammaṃ sākacchanti.",
     "translation": "两位比丘讨论法。",
     "structure": "数词 + 复数主语 + 宾语 + 限定动词",
     "tokens": [
       {
         "form": "Dve",
-        "grammar": "数词",
+        "grammar": "num.（数词）",
         "role": "修饰 bhikkhū",
         "meaning": "二、两"
       },
       {
         "form": "bhikkhū",
-        "grammar": "阳性主格复数",
+        "grammar": "m.pl.nom/acc（阳性·复数·主格/宾格）",
         "role": "主语",
         "meaning": "比丘们"
       },
       {
         "form": "dhammaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "法"
       },
       {
         "form": "sākacchanti",
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "讨论"
       }
@@ -3945,52 +3870,52 @@ const SENTENCE_ANALYSIS_DATA = [
     "tags": [
       "综合分析"
     ],
-    "analysis_level": "基础确定：用于训练核心句法，解析较稳定。",
+    "analysis_level": "基础解析：适合训练当前层级的核心句法。",
     "self_check": [
       "限定动词是什么？",
       "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "整句应该怎样翻译？"
+      "宾语或补足成分是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "综合运用动词、格位、非限定动词和结构信号分析短句。",
     "recommended_order": 76,
     "priority_rank": 4
   },
   {
     "id": "s077",
-    "level": "六级：综合短句分析",
+    "level": "六级：佛典公式句",
     "sentence": "Ekaṃ samayaṃ Bhagavā Sāvatthiyaṃ viharati.",
     "translation": "一时，世尊住在舍卫城。",
     "structure": "时间宾格 + 主语 + 处格地点 + 限定动词",
     "tokens": [
       {
         "form": "Ekaṃ",
-        "grammar": "数词/形容词sg.acc",
+        "grammar": "adj.n.sg.acc（形容词·中性·单数·宾格）",
         "role": "修饰 samayaṃ",
         "meaning": "一"
       },
       {
         "form": "samayaṃ",
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "时间状语",
         "meaning": "时候"
       },
       {
         "form": "Bhagavā",
-        "grammar": "-vant 类名词sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "世尊"
       },
       {
         "form": "Sāvatthiyaṃ",
-        "grammar": "sg.loc",
+        "grammar": "f.sg.loc（阴性·单数·处格）",
         "role": "地点",
         "meaning": "在舍卫城"
       },
       {
         "form": "viharati",
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "住、住止"
       }
@@ -4006,42 +3931,40 @@ const SENTENCE_ANALYSIS_DATA = [
       "处格",
       "佛典公式句"
     ],
-    "analysis_level": "进阶解析：涉及佛典公式、sandhi、复合词或特殊词形，建议结合原文继续学习。",
+    "analysis_level": "进阶解析：涉及公式句、连音、复合结构或综合判断。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "是否涉及佛典固定句式、sandhi 或复合词？",
-      "整句应该怎样翻译？"
+      "这是不是佛典公式句？",
+      "先整体识别哪一段？",
+      "再逐词分析哪些核心词形？",
+      "整句如何翻译？"
     ],
     "practice_priority": "进阶选练",
-    "training_goal": "训练格位在句中的功能判断。",
+    "training_goal": "训练佛典公式句的整体识别与核心词形分析。",
     "recommended_order": 77,
     "priority_rank": 5
   },
   {
     "id": "s078",
-    "level": "六级：综合短句分析",
+    "level": "六级：佛典公式句",
     "sentence": "Bhagavā bhikkhū āmantesi.",
     "translation": "世尊告诸比丘。",
     "structure": "主语 + 宾语复数 + 过去动词",
     "tokens": [
       {
         "form": "Bhagavā",
-        "grammar": "-vant 类sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "世尊"
       },
       {
         "form": "bhikkhū",
-        "grammar": "阳性宾格复数",
+        "grammar": "m.pl.nom/acc（阳性·复数·主格/宾格）",
         "role": "宾语",
         "meaning": "比丘们"
       },
       {
         "form": "āmantesi",
-        "grammar": "过去时/不定过去式第三人称单数",
+        "grammar": "aor.indic.act.3sg（不定过去·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "告、呼唤"
       }
@@ -4056,59 +3979,58 @@ const SENTENCE_ANALYSIS_DATA = [
       "综合分析",
       "佛典公式句"
     ],
-    "analysis_level": "进阶解析：涉及佛典公式、sandhi、复合词或特殊词形，建议结合原文继续学习。",
+    "analysis_level": "进阶解析：涉及公式句、连音、复合结构或综合判断。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "是否涉及佛典固定句式、sandhi 或复合词？",
-      "整句应该怎样翻译？"
+      "这是不是佛典公式句？",
+      "先整体识别哪一段？",
+      "再逐词分析哪些核心词形？",
+      "整句如何翻译？"
     ],
     "practice_priority": "进阶选练",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "训练佛典公式句的整体识别与核心词形分析。",
     "recommended_order": 78,
     "priority_rank": 5
   },
   {
     "id": "s079",
-    "level": "六级：综合短句分析",
+    "level": "六级：佛典公式句",
     "sentence": "Bhaddante ti te bhikkhū Bhagavato paccassosuṃ.",
     "translation": "那些比丘回答世尊说：“尊者。”",
     "structure": "引语 + ti + 主语 + 与格/属格对象 + 过去动词",
     "tokens": [
       {
         "form": "Bhaddante",
-        "grammar": "呼格/尊称形式",
+        "grammar": "voc.（呼格）",
         "role": "引语内容",
         "meaning": "尊者"
       },
       {
         "form": "ti",
-        "grammar": "引语标记",
+        "grammar": "ind.（不变词）",
         "role": "标记前面的引语",
         "meaning": "如此说"
       },
       {
         "form": "te",
-        "grammar": "指示代词主格复数",
+        "grammar": "pron.m.pl.nom（代词·阳性·复数·主格）",
         "role": "主语",
         "meaning": "那些"
       },
       {
         "form": "bhikkhū",
-        "grammar": "主格复数",
+        "grammar": "m.pl.nom/acc（阳性·复数·主格/宾格）",
         "role": "主语核心",
         "meaning": "比丘们"
       },
       {
         "form": "Bhagavato",
-        "grammar": "属格/与格单数",
+        "grammar": "m.sg.gen/dat（阳性·单数·属格/与格）",
         "role": "回答对象",
         "meaning": "对世尊"
       },
       {
         "form": "paccassosuṃ",
-        "grammar": "过去动词第三人称复数",
+        "grammar": "aor.indic.act.3pl（不定过去·陈述·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "回答"
       }
@@ -4125,36 +4047,34 @@ const SENTENCE_ANALYSIS_DATA = [
       "iti/ti",
       "yo...so"
     ],
-    "analysis_level": "进阶解析：涉及佛典公式、sandhi、复合词或特殊词形，建议结合原文继续学习。",
+    "analysis_level": "进阶解析：涉及公式句、连音、复合结构或综合判断。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "有没有处格、工具格、属格、与格或从格？",
-      "有没有ind.或关联结构？它连接或标记哪一部分？",
-      "整句应该怎样翻译？"
+      "关系词是什么？",
+      "对应的指示词是什么？",
+      "主句和从句分别是什么？",
+      "整句如何翻译？"
     ],
     "practice_priority": "综合挑战",
-    "training_goal": "训练格位在句中的功能判断。",
+    "training_goal": "训练佛典公式句的整体识别与核心词形分析。",
     "recommended_order": 79,
     "priority_rank": 4
   },
   {
     "id": "s080",
-    "level": "六级：综合短句分析",
+    "level": "六级：佛典公式句",
     "sentence": "Bhagavā etadavoca.",
     "translation": "世尊这样说。",
     "structure": "主语 + 复合过去动词",
     "tokens": [
       {
         "form": "Bhagavā",
-        "grammar": "-vant 类sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "世尊"
       },
       {
         "form": "etadavoca",
-        "grammar": "etaṃ + avoca 的合成/连读形式",
+        "grammar": "etaṃ + avoca",
         "role": "限定动词短语",
         "meaning": "这样说"
       }
@@ -4170,17 +4090,736 @@ const SENTENCE_ANALYSIS_DATA = [
       "佛典公式句",
       "sandhi/复合词"
     ],
-    "analysis_level": "进阶解析：涉及佛典公式、sandhi、复合词或特殊词形，建议结合原文继续学习。",
+    "analysis_level": "进阶解析：涉及公式句、连音、复合结构或综合判断。",
     "self_check": [
-      "限定动词是什么？",
-      "主语是谁？",
-      "有没有宾语或去向宾格？",
-      "是否涉及佛典固定句式、sandhi 或复合词？",
-      "整句应该怎样翻译？"
+      "这是不是佛典公式句？",
+      "先整体识别哪一段？",
+      "再逐词分析哪些核心词形？",
+      "整句如何翻译？"
     ],
     "practice_priority": "进阶选练",
-    "training_goal": "训练基础句法分析：找动词、找主语、找宾语。",
+    "training_goal": "训练佛典公式句的整体识别与核心词形分析。",
     "recommended_order": 80,
+    "priority_rank": 5
+  },
+  {
+    "id": "s081",
+    "level": "七级：综合短句分析",
+    "sentence": "Yo dhammaṃ suṇāti, so pasīdati.",
+    "translation": "谁听法，谁就生信。",
+    "structure": "关系从句 yo... + 主句 so...",
+    "tokens": [
+      {
+        "form": "Yo",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
+        "role": "关系代词/从句主语",
+        "meaning": "谁；凡是……者"
+      },
+      {
+        "form": "dhammaṃ",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
+        "role": "宾语",
+        "meaning": "法"
+      },
+      {
+        "form": "suṇāti",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
+        "role": "从句限定动词",
+        "meaning": "听"
+      },
+      {
+        "form": "so",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
+        "role": "主句主语/对应指示词",
+        "meaning": "他；那个人"
+      },
+      {
+        "form": "pasīdati",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
+        "role": "主句限定动词",
+        "meaning": "生信；欢喜"
+      }
+    ],
+    "tip": "先把 yo 引导的从句看成条件/关系部分，再找 so 对应的主句。",
+    "related": [
+      "关系结构",
+      "yo...so",
+      "综合分析"
+    ],
+    "source_type": "教学补充句",
+    "tags": [
+      "关系结构",
+      "yo...so",
+      "综合分析"
+    ],
+    "analysis_level": "补充解析：用于覆盖现有句库中的结构缺口。",
+    "self_check": [
+      "关系词是什么？",
+      "对应的指示词是什么？",
+      "主句和从句分别是什么？",
+      "整句如何翻译？"
+    ],
+    "practice_priority": "进阶选练",
+    "training_goal": "训练 yo...so 关系结构。",
+    "recommended_order": 81,
+    "priority_rank": 4
+  },
+  {
+    "id": "s082",
+    "level": "七级：综合短句分析",
+    "sentence": "Yo pāpaṃ karoti, so dukkhaṃ vindati.",
+    "translation": "谁作恶，谁就受苦。",
+    "structure": "关系从句 yo... + 主句 so...",
+    "tokens": [
+      {
+        "form": "Yo",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
+        "role": "关系代词/从句主语",
+        "meaning": "谁；凡是……者"
+      },
+      {
+        "form": "pāpaṃ",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
+        "role": "从句宾语",
+        "meaning": "恶；恶业"
+      },
+      {
+        "form": "karoti",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
+        "role": "从句限定动词",
+        "meaning": "做"
+      },
+      {
+        "form": "so",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
+        "role": "主句主语/对应指示词",
+        "meaning": "他；那个人"
+      },
+      {
+        "form": "dukkhaṃ",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
+        "role": "主句宾语",
+        "meaning": "苦"
+      },
+      {
+        "form": "vindati",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
+        "role": "主句限定动词",
+        "meaning": "经历；感受"
+      }
+    ],
+    "tip": "不要只按词序看，要先配对 yo 与 so。",
+    "related": [
+      "关系结构",
+      "yo...so",
+      "业果表达"
+    ],
+    "source_type": "教学补充句",
+    "tags": [
+      "关系结构",
+      "yo...so",
+      "业果表达"
+    ],
+    "analysis_level": "补充解析：用于覆盖现有句库中的结构缺口。",
+    "self_check": [
+      "关系词是什么？",
+      "对应的指示词是什么？",
+      "主句和从句分别是什么？",
+      "整句如何翻译？"
+    ],
+    "practice_priority": "进阶选练",
+    "training_goal": "加强 yo...so 与因果表达的综合分析。",
+    "recommended_order": 82,
+    "priority_rank": 4
+  },
+  {
+    "id": "s083",
+    "level": "四级：分词结构",
+    "sentence": "Dhammaṃ sutvā pasanno bhikkhu nisīdati.",
+    "translation": "听法之后生信的比丘坐下。",
+    "structure": "ger. + p.p. + 主语 + 限定动词",
+    "tokens": [
+      {
+        "form": "Dhammaṃ",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
+        "role": "ger. 的宾语",
+        "meaning": "法"
+      },
+      {
+        "form": "sutvā",
+        "grammar": "ger.（连续体）",
+        "role": "连续体/先行动作",
+        "meaning": "听后"
+      },
+      {
+        "form": "pasanno",
+        "grammar": "p.p.m.sg.nom（过去分词·阳性·单数·主格）",
+        "role": "分词/修饰 bhikkhu",
+        "meaning": "生信的；欢喜的"
+      },
+      {
+        "form": "bhikkhu",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
+        "role": "主语",
+        "meaning": "比丘"
+      },
+      {
+        "form": "nisīdati",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
+        "role": "限定动词",
+        "meaning": "坐下"
+      }
+    ],
+    "tip": "先识别 sutvā 表先行动作，再观察 pasanno 与 bhikkhu 的性数格一致。",
+    "related": [
+      "分词结构",
+      "ger.",
+      "p.p."
+    ],
+    "source_type": "教学补充句",
+    "tags": [
+      "分词结构",
+      "ger.",
+      "p.p."
+    ],
+    "analysis_level": "补充解析：用于覆盖现有句库中的结构缺口。",
+    "self_check": [
+      "分词是哪一个？",
+      "它修饰谁？",
+      "它的性、数、格是否与被修饰词一致？",
+      "限定动词是什么？"
+    ],
+    "practice_priority": "基础必练",
+    "training_goal": "训练连续体与过去分词在同一句中的配合。",
+    "recommended_order": 83,
+    "priority_rank": 4
+  },
+  {
+    "id": "s084",
+    "level": "四级：分词结构",
+    "sentence": "Dhammaṃ suṇanto bhikkhu pasīdati.",
+    "translation": "正在听法的比丘生信。",
+    "structure": "pr.p. + 主语 + 限定动词",
+    "tokens": [
+      {
+        "form": "Dhammaṃ",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
+        "role": "分词的宾语",
+        "meaning": "法"
+      },
+      {
+        "form": "suṇanto",
+        "grammar": "pr.p.act.m.sg.nom（现在主动分词·阳性·单数·主格）",
+        "role": "现在主动分词/修饰 bhikkhu",
+        "meaning": "正在听的"
+      },
+      {
+        "form": "bhikkhu",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
+        "role": "主语",
+        "meaning": "比丘"
+      },
+      {
+        "form": "pasīdati",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
+        "role": "限定动词",
+        "meaning": "生信"
+      }
+    ],
+    "tip": "suṇanto 不是限定动词，它修饰 bhikkhu；真正的限定动词是 pasīdati。",
+    "related": [
+      "分词结构",
+      "pr.p.act.",
+      "限定动词"
+    ],
+    "source_type": "教学补充句",
+    "tags": [
+      "分词结构",
+      "pr.p.act.",
+      "限定动词"
+    ],
+    "analysis_level": "补充解析：用于覆盖现有句库中的结构缺口。",
+    "self_check": [
+      "分词是哪一个？",
+      "它修饰谁？",
+      "它的性、数、格是否与被修饰词一致？",
+      "限定动词是什么？"
+    ],
+    "practice_priority": "基础必练",
+    "training_goal": "训练现在分词与限定动词的区分。",
+    "recommended_order": 84,
+    "priority_rank": 4
+  },
+  {
+    "id": "s085",
+    "level": "五级：不变词与关联句",
+    "sentence": "Dhammaṃ suṇātha ti Bhagavā avoca.",
+    "translation": "世尊说：“你们听法。”",
+    "structure": "引语 + ti + 说话者 + 说话动词",
+    "tokens": [
+      {
+        "form": "Dhammaṃ",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
+        "role": "引语中宾语",
+        "meaning": "法"
+      },
+      {
+        "form": "suṇātha",
+        "grammar": "imp.act.2pl（命令·主动·第二人称复数）",
+        "role": "引语中命令动词",
+        "meaning": "你们听"
+      },
+      {
+        "form": "ti",
+        "grammar": "ind.（不变词）",
+        "role": "引语标记",
+        "meaning": "如此；引语结束标记"
+      },
+      {
+        "form": "Bhagavā",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
+        "role": "说话者/主语",
+        "meaning": "世尊"
+      },
+      {
+        "form": "avoca",
+        "grammar": "aor.indic.act.3sg（不定过去·陈述·主动·第三人称单数）",
+        "role": "说话动词",
+        "meaning": "说了"
+      }
+    ],
+    "tip": "这里 ti 是独立引语标记，不是 gacchati 这类动词中的 -ti 词尾。",
+    "related": [
+      "iti/ti",
+      "引语结构",
+      "ind."
+    ],
+    "source_type": "佛典风格教学句",
+    "tags": [
+      "iti/ti",
+      "引语结构",
+      "ind."
+    ],
+    "analysis_level": "补充解析：用于覆盖现有句库中的结构缺口。",
+    "self_check": [
+      "引语边界在哪里？",
+      "iti/ti 标记了哪句话？",
+      "说话动词是什么？",
+      "整句如何翻译？"
+    ],
+    "practice_priority": "进阶选练",
+    "training_goal": "训练 ti 引语标记与动词词尾 -ti 的区分。",
+    "recommended_order": 85,
+    "priority_rank": 4
+  },
+  {
+    "id": "s086",
+    "level": "五级：不变词与关联句",
+    "sentence": "Evaṃ ti so vadati.",
+    "translation": "他这样说。",
+    "structure": "副词 + ti + 主语 + 说话动词",
+    "tokens": [
+      {
+        "form": "Evaṃ",
+        "grammar": "ind.（不变词）",
+        "role": "引语内容/方式副词",
+        "meaning": "这样；如是"
+      },
+      {
+        "form": "ti",
+        "grammar": "ind.（不变词）",
+        "role": "引语标记",
+        "meaning": "如此"
+      },
+      {
+        "form": "so",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
+        "role": "主语",
+        "meaning": "他"
+      },
+      {
+        "form": "vadati",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
+        "role": "限定动词",
+        "meaning": "说"
+      }
+    ],
+    "tip": "ti 要作为独立小品词处理；不要和动词词尾混淆。",
+    "related": [
+      "iti/ti",
+      "引语结构",
+      "ind."
+    ],
+    "source_type": "教学补充句",
+    "tags": [
+      "iti/ti",
+      "引语结构",
+      "ind."
+    ],
+    "analysis_level": "补充解析：用于覆盖现有句库中的结构缺口。",
+    "self_check": [
+      "引语边界在哪里？",
+      "iti/ti 标记了哪句话？",
+      "说话动词是什么？",
+      "整句如何翻译？"
+    ],
+    "practice_priority": "进阶选练",
+    "training_goal": "补充短引语结构。",
+    "recommended_order": 86,
+    "priority_rank": 4
+  },
+  {
+    "id": "s087",
+    "level": "五级：不变词与关联句",
+    "sentence": "Bhikkhu na gacchati.",
+    "translation": "比丘不去。",
+    "structure": "主语 + na + 陈述动词",
+    "tokens": [
+      {
+        "form": "Bhikkhu",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
+        "role": "主语",
+        "meaning": "比丘"
+      },
+      {
+        "form": "na",
+        "grammar": "ind.（不变词）",
+        "role": "否定词",
+        "meaning": "不"
+      },
+      {
+        "form": "gacchati",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
+        "role": "被否定的限定动词",
+        "meaning": "去"
+      }
+    ],
+    "tip": "na 通常是否定陈述；这里是否定 gacchati。",
+    "related": [
+      "否定句",
+      "na",
+      "ind."
+    ],
+    "source_type": "教学补充句",
+    "tags": [
+      "否定句",
+      "na",
+      "ind."
+    ],
+    "analysis_level": "补充解析：用于覆盖现有句库中的结构缺口。",
+    "self_check": [
+      "否定词是哪一个？",
+      "na 是否是否定陈述？mā 是否用于禁止？",
+      "被否定的动词是什么？",
+      "整句如何翻译？"
+    ],
+    "practice_priority": "基础必练",
+    "training_goal": "训练 na 的陈述否定。",
+    "recommended_order": 87,
+    "priority_rank": 4
+  },
+  {
+    "id": "s088",
+    "level": "五级：不变词与关联句",
+    "sentence": "Mā pāpaṃ karotha.",
+    "translation": "你们不要作恶。",
+    "structure": "mā + 命令/禁止表达",
+    "tokens": [
+      {
+        "form": "Mā",
+        "grammar": "ind.（不变词）",
+        "role": "禁止否定词",
+        "meaning": "不要"
+      },
+      {
+        "form": "pāpaṃ",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
+        "role": "宾语",
+        "meaning": "恶；恶业"
+      },
+      {
+        "form": "karotha",
+        "grammar": "imp.act.2pl（命令·主动·第二人称复数）",
+        "role": "被禁止的命令式动词",
+        "meaning": "你们做"
+      }
+    ],
+    "tip": "mā 常用于禁止或劝止，不要和普通陈述否定 na 混为一类。",
+    "related": [
+      "否定句",
+      "mā",
+      "命令语气"
+    ],
+    "source_type": "教学补充句",
+    "tags": [
+      "否定句",
+      "mā",
+      "命令语气"
+    ],
+    "analysis_level": "补充解析：用于覆盖现有句库中的结构缺口。",
+    "self_check": [
+      "否定词是哪一个？",
+      "na 是否是否定陈述？mā 是否用于禁止？",
+      "被否定的动词是什么？",
+      "整句如何翻译？"
+    ],
+    "practice_priority": "基础必练",
+    "training_goal": "训练 mā 与 na 的功能差别。",
+    "recommended_order": 88,
+    "priority_rank": 4
+  },
+  {
+    "id": "s089",
+    "level": "六级：佛典公式句",
+    "sentence": "Evaṃ me sutaṃ: ekaṃ samayaṃ Bhagavā Sāvatthiyaṃ viharati.",
+    "translation": "如是我闻：一时，世尊住在舍卫城。",
+    "structure": "佛典开头公式 + 时间宾格 + 主语 + 地点处格 + 限定动词",
+    "tokens": [
+      {
+        "form": "Evaṃ",
+        "grammar": "ind.（不变词）",
+        "role": "佛典开头公式成分",
+        "meaning": "如是"
+      },
+      {
+        "form": "me",
+        "grammar": "pron.1sg.gen/dat（代词·第一人称单数·属格/与格）",
+        "role": "代词/公式成分",
+        "meaning": "我；于我"
+      },
+      {
+        "form": "sutaṃ",
+        "grammar": "p.p.n.sg.nom/acc（过去分词·中性·单数·主格/宾格）",
+        "role": "过去分词/公式成分",
+        "meaning": "已听闻"
+      },
+      {
+        "form": "Ekaṃ",
+        "grammar": "adj.n.sg.acc（形容词·中性·单数·宾格）",
+        "role": "时间表达修饰语",
+        "meaning": "一个"
+      },
+      {
+        "form": "samayaṃ",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
+        "role": "时间宾格",
+        "meaning": "时候"
+      },
+      {
+        "form": "Bhagavā",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
+        "role": "主语",
+        "meaning": "世尊"
+      },
+      {
+        "form": "Sāvatthiyaṃ",
+        "grammar": "f.sg.loc（阴性·单数·处格）",
+        "role": "地点处格",
+        "meaning": "在舍卫城"
+      },
+      {
+        "form": "viharati",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
+        "role": "限定动词",
+        "meaning": "住；停留"
+      }
+    ],
+    "tip": "先整体识别 Evaṃ me sutaṃ 和 ekaṃ samayaṃ，再逐词分析主语、地点和动词。",
+    "related": [
+      "佛典公式句",
+      "时间宾格",
+      "处格"
+    ],
+    "source_type": "佛典开头公式",
+    "tags": [
+      "佛典公式句",
+      "时间宾格",
+      "处格"
+    ],
+    "analysis_level": "补充解析：用于覆盖现有句库中的结构缺口。",
+    "self_check": [
+      "这是不是佛典公式句？",
+      "先整体识别哪一段？",
+      "再逐词分析哪些核心词形？",
+      "整句如何翻译？"
+    ],
+    "practice_priority": "进阶选练",
+    "training_goal": "训练佛典长句的分层分析。",
+    "recommended_order": 89,
+    "priority_rank": 4
+  },
+  {
+    "id": "s090",
+    "level": "六级：佛典公式句",
+    "sentence": "Atha kho Bhagavā bhikkhū āmantesi.",
+    "translation": "于是，世尊召唤诸比丘。",
+    "structure": "叙事小品词 + 主语 + 宾语 + 过去动词",
+    "tokens": [
+      {
+        "form": "Atha",
+        "grammar": "ind.（不变词）",
+        "role": "叙事推进词",
+        "meaning": "于是；然后"
+      },
+      {
+        "form": "kho",
+        "grammar": "ind.（不变词）",
+        "role": "语气小品词",
+        "meaning": "确实；常不硬译"
+      },
+      {
+        "form": "Bhagavā",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
+        "role": "主语",
+        "meaning": "世尊"
+      },
+      {
+        "form": "bhikkhū",
+        "grammar": "m.pl.nom/acc（阳性·复数·主格/宾格）",
+        "role": "宾语",
+        "meaning": "诸比丘"
+      },
+      {
+        "form": "āmantesi",
+        "grammar": "aor.indic.act.3sg（不定过去·陈述·主动·第三人称单数）",
+        "role": "限定动词",
+        "meaning": "召唤；告知"
+      }
+    ],
+    "tip": "Atha kho 可整体看作佛典叙事推进信号，再分析主语、宾语和动词。",
+    "related": [
+      "佛典公式句",
+      "叙事推进",
+      "不定过去"
+    ],
+    "source_type": "佛典常见叙事句",
+    "tags": [
+      "佛典公式句",
+      "叙事推进",
+      "不定过去"
+    ],
+    "analysis_level": "补充解析：用于覆盖现有句库中的结构缺口。",
+    "self_check": [
+      "这是不是佛典公式句？",
+      "先整体识别哪一段？",
+      "再逐词分析哪些核心词形？",
+      "整句如何翻译？"
+    ],
+    "practice_priority": "进阶选练",
+    "training_goal": "训练佛典叙事句的分层分析。",
+    "recommended_order": 90,
+    "priority_rank": 4
+  },
+  {
+    "id": "s091",
+    "level": "八级：进阶原典句",
+    "sentence": "Tepi dhammaṃ suṇanti.",
+    "translation": "他们也听法。",
+    "structure": "sandhi：te + api → tepi",
+    "tokens": [
+      {
+        "form": "Tepi",
+        "grammar": "te + api",
+        "role": "连音/合写形式",
+        "meaning": "他们也"
+      },
+      {
+        "form": "dhammaṃ",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
+        "role": "宾语",
+        "meaning": "法"
+      },
+      {
+        "form": "suṇanti",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
+        "role": "限定动词",
+        "meaning": "听"
+      }
+    ],
+    "tip": "Tepi 可还原为 te + api；不要把 tepi 当成完全陌生的新词。",
+    "related": [
+      "sandhi",
+      "连音",
+      "api"
+    ],
+    "source_type": "sandhi 教学句",
+    "tags": [
+      "sandhi",
+      "连音",
+      "api"
+    ],
+    "analysis_level": "补充解析：用于覆盖现有句库中的结构缺口。",
+    "self_check": [
+      "连音/合写形式在哪里？",
+      "可以还原成什么？",
+      "限定动词是什么？",
+      "整句如何翻译？"
+    ],
+    "practice_priority": "进阶选练",
+    "training_goal": "训练真实句子中的 te + api 连音。",
+    "recommended_order": 91,
+    "priority_rank": 5
+  },
+  {
+    "id": "s092",
+    "level": "八级：进阶原典句",
+    "sentence": "Buddho ceva dhammo ca saraṇaṃ.",
+    "translation": "佛和法都是皈依处。",
+    "structure": "sandhi：ca + eva → ceva",
+    "tokens": [
+      {
+        "form": "Buddho",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
+        "role": "并列主语",
+        "meaning": "佛"
+      },
+      {
+        "form": "ceva",
+        "grammar": "ca + eva",
+        "role": "连音/合写形式",
+        "meaning": "和；正是"
+      },
+      {
+        "form": "dhammo",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
+        "role": "并列主语",
+        "meaning": "法"
+      },
+      {
+        "form": "ca",
+        "grammar": "ind.（不变词）",
+        "role": "并列小品词",
+        "meaning": "和"
+      },
+      {
+        "form": "saraṇaṃ",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
+        "role": "表语/补足语",
+        "meaning": "皈依处"
+      }
+    ],
+    "tip": "ceva 可还原为 ca + eva；先还原连音，再看并列结构。",
+    "related": [
+      "sandhi",
+      "连音",
+      "ca/eva"
+    ],
+    "source_type": "sandhi 教学句",
+    "tags": [
+      "sandhi",
+      "连音",
+      "ca/eva"
+    ],
+    "analysis_level": "补充解析：用于覆盖现有句库中的结构缺口。",
+    "self_check": [
+      "连音/合写形式在哪里？",
+      "可以还原成什么？",
+      "限定动词是什么？",
+      "整句如何翻译？"
+    ],
+    "practice_priority": "进阶选练",
+    "training_goal": "训练 ca + eva 在短句中的识别。",
+    "recommended_order": 92,
     "priority_rank": 5
   }
 ];

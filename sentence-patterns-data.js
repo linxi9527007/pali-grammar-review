@@ -4,7 +4,7 @@ const SENTENCE_PATTERNS = [
     "title": "主语 + 宾语 + 限定动词",
     "level": "必学",
     "formula": "主格名词 + 宾格名词 + 限定动词",
-    "function": "表达“谁对什么做什么”。这是最基础的巴利语短句分析模板。",
+    "function": "表达“谁对什么做什么”。这是最基础的巴利语短句原文记录模板。",
     "signals": [
       "主格常作主语",
       "宾格常作宾语",
@@ -127,13 +127,13 @@ const SENTENCE_PATTERNS = [
   },
   {
     "id": "pat_instrumental_pp",
-    "title": "工具格 + p.p.结构",
+    "title": "工具格 + p.p.（过去分词）结构",
     "level": "选学",
-    "formula": "工具格施事 + 主格对象 + p.p.",
+    "formula": "工具格施事 + 主格对象 + p.p.（过去分词）",
     "function": "表达“某物由某人所做/所说/所见”。",
     "signals": [
       "工具格 -ena 等",
-      "p.p. -ta / -ita 等",
+      "p.p.（过去分词） -ta / -ita 等",
       "主格对象与分词一致"
     ],
     "examples": [
@@ -153,9 +153,9 @@ const SENTENCE_PATTERNS = [
   },
   {
     "id": "pat_infinitive_purpose",
-    "title": "inf.表示目的",
+    "title": "inf.（不定式）表示目的",
     "level": "必学",
-    "formula": "宾语 + inf. + 主语 + 来/去等动词",
+    "formula": "宾语 + inf.（不定式） + 主语 + 来/去等动词",
     "function": "表达“为了做某事而来/去/努力”。",
     "signals": [
       "-tuṃ / -ituṃ / -etuṃ",
@@ -180,13 +180,13 @@ const SENTENCE_PATTERNS = [
       "判断它是否表示目的。",
       "找主句限定动词。"
     ],
-    "trap": "inf.不是主句限定动词，不带完整人称数。"
+    "trap": "inf.（不定式）不是主句限定动词，不带完整人称数。"
   },
   {
     "id": "pat_gerund_prior",
-    "title": "ger.表示先行动作",
+    "title": "ger.（连续体）表示先行动作",
     "level": "必学",
-    "formula": "宾语 + ger. + 主语 + 限定动词",
+    "formula": "宾语 + ger.（连续体） + 主语 + 限定动词",
     "function": "表达“做完某事之后，再做另一件事”。",
     "signals": [
       "-tvā / -itvā / -ya",
@@ -211,13 +211,13 @@ const SENTENCE_PATTERNS = [
       "判断它表示的动作是否先发生。",
       "再找主句限定动词。"
     ],
-    "trap": "ger.不能单独承担完整谓语功能。"
+    "trap": "ger.（连续体）不能单独承担完整谓语功能。"
   },
   {
     "id": "pat_present_participle",
-    "title": "pr.p. + 名词",
+    "title": "pr.p.（现在分词） + 名词",
     "level": "选学",
-    "formula": "pr.p. + 被修饰名词 + 限定动词",
+    "formula": "pr.p.（现在分词） + 被修饰名词 + 限定动词",
     "function": "表达“正在……的某人/某物”。",
     "signals": [
       "-nta / -anto / -antī 等",
@@ -239,10 +239,10 @@ const SENTENCE_PATTERNS = [
     "trap": "不要把pr.p.直接当成“他做某事”的限定动词。"
   },
   {
-    "id": "pat_f.p.p._obligation",
-    "title": "f.p.p.表示应作",
+    "id": "pat_f.p.p.（过去分词）_obligation",
+    "title": "f.p.p.（过去分词）表示应作",
     "level": "选学",
-    "formula": "主语 + f.p.p.",
+    "formula": "主语 + f.p.p.（过去分词）",
     "function": "表达“应当被……、必须……、可被……”。",
     "signals": [
       "-tabba / -anīya 等",
@@ -253,7 +253,7 @@ const SENTENCE_PATTERNS = [
         "pali": "Maggo bhāvetabbo.",
         "literal": "道 / 应被修习。",
         "natural": "道应被修习。",
-        "note": "bhāvetabbo 是f.p.p.。"
+        "note": "bhāvetabbo 是f.p.p.（过去分词）。"
       },
       {
         "pali": "Samudayo pahātabbo.",
@@ -267,7 +267,7 @@ const SENTENCE_PATTERNS = [
       "判断主语是什么。",
       "翻译成“应被/应当”。"
     ],
-    "trap": "不要把f.p.p.当成普通将来时。"
+    "trap": "不要把f.p.p.（过去分词）当成普通将来时。"
   },
   {
     "id": "pat_na_negation",
@@ -339,7 +339,7 @@ const SENTENCE_PATTERNS = [
     ],
     "steps": [
       "找到 ca 前面的并列项。",
-      "把 A ca B ca 顺译为 A 和 B。",
+      "把 A ca B ca 翻译为 A 和 B。",
       "注意 ca 常后置。"
     ],
     "trap": "不要按汉语“和”的位置找 ca。"
@@ -364,7 +364,7 @@ const SENTENCE_PATTERNS = [
     ],
     "steps": [
       "找到 vā 前面的选择项。",
-      "顺译为“或者”。",
+      "翻译为“或者”。",
       "和 ca 并列区分。"
     ],
     "trap": "vā 表选择，ca 表并列。"

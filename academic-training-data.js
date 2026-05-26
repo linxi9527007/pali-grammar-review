@@ -1,135 +1,115 @@
 const ACADEMIC_TRAINING_DATA = {
   "method": [
     {
-      "id": "read_sentence_as_material",
-      "title": "如何把一句佛典原文变成研究材料",
+      "id": "sentence_to_material",
+      "title": "如何把一句原文变成阅读材料",
       "level": "必学",
-      "goal": "从“看懂大意”推进到“可记录、可引用、可分析”。",
+      "goal": "把“看懂一句话”转化为可记录、可引用、可分析的材料。",
       "steps": [
-        "记录巴利原文，不只记录中文译文。",
-        "做直译，保留词序和语法结构。",
-        "做顺译，使中文表达自然。",
-        "标注语法点，如时间宾格、处格地点、限定动词、引语结构。",
-        "判断阅读类型，如佛典开头公式、叙事推进、教义定义句。",
-        "写研究提醒，说明此句为什么值得注意或容易误判。"
+        "先保存巴利原文，不只保存中文翻译。",
+        "写出翻译，再标出关键词形和句法结构。",
+        "记录材料位置，如 DN 1、MN 10 或 SuttaCentral 链接。",
+        "说明这句话属于公式句、定义句、引语句还是叙事句。",
+        "最后写一句阅读提醒：它为什么值得记录，容易被怎样误读。"
       ],
       "example": {
         "source": "Ekaṃ samayaṃ Bhagavā Sāvatthiyaṃ viharati.",
         "literal": "一个时候，世尊，在舍卫城，住。",
         "natural": "一时，世尊住在舍卫城。",
-        "grammar": "Ekaṃ samayaṃ 是时间宾格；Sāvatthiyaṃ 是处格地点；viharati 是限定动词。",
+        "grammar": "Ekaṃ samayaṃ 为时间宾格；Sāvatthiyaṃ 为处格；viharati 为限定动词。",
         "type": "佛典开头公式",
-        "research_note": "不宜把 ekaṃ samayaṃ 当普通宾语处理，应作为佛典开头时间结构记录。"
+        "research_note": "引用时应记录经号或平台出处，不宜只写“某经中说”。"
       }
     },
     {
-      "id": "formula_vs_free_sentence",
-      "title": "如何判断公式句和普通句",
+      "id": "from_word_to_context",
+      "title": "如何从一个词进入上下文",
       "level": "必学",
-      "goal": "避免把固定表达完全按普通造句机械拆解。",
+      "goal": "避免只背词典义，训练“词形—搭配—语境”的分析路径。",
       "steps": [
-        "看是否在佛典中反复出现。",
-        "看是否承担固定篇章功能，如开头、转折、说话、总结。",
-        "看是否有传统固定译法，如“如是我闻”“一时”。",
-        "先整体识别，再分析关键词。",
-        "记录为“公式句/半公式句/普通句”。"
+        "先还原词典形，如 dhammaṃ → dhamma。",
+        "记录语法信息，如 m.sg.acc（阳性·单数·宾格）。",
+        "观察搭配词，如 deseti、suṇāti、vinaya。",
+        "判断当前语境义，如教法、现象、规则或法义。",
+        "把判断理由写出来，不只写一个中文义项。"
       ],
       "example": {
-        "source": "Evaṃ me sutaṃ.",
-        "literal": "如是，被我，听闻。",
-        "natural": "如是我闻。",
-        "grammar": "sutaṃ 是p.p.；整句属于佛典开头公式。",
-        "type": "佛典开头公式",
-        "research_note": "可作佛典叙事框架研究材料，不宜只作为普通p.p.例句。"
-      }
-    },
-    {
-      "id": "avoid_translation_only",
-      "title": "为什么不能只观察中文译文",
-      "level": "必学",
-      "goal": "建立原文优先意识。",
-      "steps": [
-        "先观察巴利原文的词形。",
-        "再观察汉译是否保留了结构信息。",
-        "必要时参考英译，但不把英译当原文。",
-        "当译文不同，要回到巴利词形和上下文判断。",
-        "研究结论必须说明依据来自原文、译文还是词典。"
-      ],
-      "example": {
-        "source": "Dhamma",
-        "literal": "法；教法；现象；事物等。",
-        "natural": "需按语境翻译。",
-        "grammar": "词义判断不能脱离搭配和句法环境。",
-        "type": "词义研究提醒",
-        "research_note": "dhamma 不总是同一个中文义项；应记录搭配和上下文。"
+        "source": "Buddho dhammaṃ deseti.",
+        "literal": "佛 / 法 / 开示。",
+        "natural": "佛说法。",
+        "grammar": "dhammaṃ < dhamma, m.sg.acc（阳性·单数·宾格）；deseti < √dis, prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）。",
+        "type": "主宾动基础句",
+        "research_note": "此处 dhammaṃ 更宜理解为教法，而不是泛指一切现象。"
       }
     }
   ],
   "citation": {
     "principles": [
       {
-        "title": "原文、译文、注释要分清",
-        "content": "记录材料时必须区分巴利原文、现代译文、传统注释、网页说明。不要把注释或现代说明当作佛典正文。"
+        "title": "引用先写清文本层级",
+        "content": "引用巴利语三藏时，至少说明部类或经号，例如 DN 1、MN 10、SN 56.11、AN 3.65、Dhp 1；正式写作中还可补充使用的平台、版本或页码。"
       },
       {
-        "title": "引用要说明版本或平台",
-        "content": "同一经文在 SuttaCentral、PTS、CSCD、Chaṭṭha Saṅgāyana 等体系中编号或分段可能不同。研究记录中应写明来源。"
+        "title": "原文、翻译和分析分开记录",
+        "content": "原文用于核查词形，翻译用于表达意义，语法分析用于说明判断依据；三者不要混在同一栏。"
       },
       {
-        "title": "避免二手转引",
-        "content": "能查原文时不要只转引别人论文里的译文或片段。至少应回到巴利原文核对关键词。"
+        "title": "不要只引用中文译文",
+        "content": "做语法或词义观察时，应保存巴利原文和位置；中文译文可以辅助理解，但不能替代原文证据。"
       },
       {
-        "title": "教学造句不能当原典例证",
-        "content": "本站许多句子是教学句或佛典风格句，适合学语法；写论文时不能直接当作真实佛典材料，除非明确标注为教学例句。"
+        "title": "三藏结构放在佛典背景知识中学习",
+        "content": "三藏总览、经藏五部、常用略号适合放入“佛典阅读背景知识—三藏结构与略号”；引用格式和材料记录模板放在本页“引用规范”。"
       }
     ],
     "citation_examples": [
       {
         "format": "DN 1",
-        "meaning": "长部第1经。"
+        "meaning": "Dīgha Nikāya 第 1 经。"
       },
       {
         "format": "MN 10",
-        "meaning": "中部第10经。"
+        "meaning": "Majjhima Nikāya 第 10 经。"
       },
       {
         "format": "SN 56.11",
-        "meaning": "相应部，第56相应，第11经。"
+        "meaning": "Saṃyutta Nikāya 第 56 相应第 11 经。"
       },
       {
         "format": "AN 3.65",
-        "meaning": "增支部，三集，第65经。"
+        "meaning": "Aṅguttara Nikāya 三集第 65 经。"
       },
       {
         "format": "Dhp 1",
-        "meaning": "法句第1偈。"
+        "meaning": "Dhammapada 第 1 颂。"
+      },
+      {
+        "format": "Vin I 1",
+        "meaning": "Vinaya Piṭaka，PTS 第 I 卷第 1 页；若使用在线版，应同时记录平台或链接。"
       }
     ],
     "record_template": [
-      "巴利原文：",
-      "来源/编号：",
-      "版本/平台：",
-      "汉译或英译：",
-      "关键词：",
-      "语法点：",
-      "上下文说明：",
-      "研究用途："
+      "原文：",
+      "位置：如 DN 1 / MN 10 / SN 56.11 / AN 3.65 / Dhp 1",
+      "使用版本或平台：",
+      "翻译：",
+      "关键词形：",
+      "语法结构：",
+      "语境义判断：",
+      "阅读提醒："
     ]
   },
   "vocabulary": [
     {
-      "id": "dhamma_study",
+      "id": "dhamma_context",
       "word": "dhamma",
-      "title": "dhamma 词义研究示范",
-      "core_warning": "dhamma 不能每次都机械译为“法”。它可能表示教法、真理、现象、事物、规则等。",
+      "title": "dhamma 词义观察示范",
+      "core_warning": "dhamma 不能每次机械译为“法”，要看词形、搭配和语境。",
       "steps": [
-        "先查词典形 dhamma。",
-        "收集不同词形，如 dhammo、dhammaṃ、dhammassa、dhammā。",
-        "记录搭配，如 dhammaṃ deseti、sabbe dhammā、dhamma-vinaya。",
-        "比较汉译和英译。",
-        "按语境区分教法义、现象义、规则义等。",
-        "写出判断理由，而不是只列词典义。"
+        "收集 dhamma 的不同词形，如 dhammo、dhammaṃ、dhammā。",
+        "记录搭配，如 dhammaṃ deseti、dhammaṃ suṇāti、dhamma-vinaya。",
+        "区分教法义、现象义、规则义等。",
+        "说明判断依据。"
       ],
       "sample_records": [
         {
@@ -138,7 +118,7 @@ const ACADEMIC_TRAINING_DATA = {
         },
         {
           "pali": "Sabbe dhammā anattā.",
-          "use": "dhammā 为复数，语境中指诸法/一切法。"
+          "use": "dhammā 为复数，常指诸法。"
         },
         {
           "pali": "Dhammo ca vinayo ca.",
@@ -147,211 +127,136 @@ const ACADEMIC_TRAINING_DATA = {
       ]
     },
     {
-      "id": "dukkha_study",
-      "word": "dukkha",
-      "title": "dukkha 词义研究示范",
-      "core_warning": "dukkha 不只是日常痛苦，也可表示不圆满、不安稳、逼迫性。",
+      "id": "sangha_context",
+      "word": "saṅgha",
+      "title": "saṅgha 语境义研究示范",
+      "core_warning": "Saṅgha 可指僧团、圣弟子僧或三宝之一，不能脱离上下文。",
       "steps": [
-        "判断是否出现在四圣谛语境。",
-        "看它是名词、形容词，还是复合词的一部分。",
-        "比较 suffering、unsatisfactoriness 等英译。",
-        "记录与 samudaya、nirodha、magga 的关系。",
-        "避免只用现代汉语“痛苦”覆盖全部语境。"
+        "先判断是否与 Buddha、Dhamma 并列。",
+        "再观察是否指具体僧团行动、礼敬对象或制度背景。",
+        "记录词形，如 saṅgho、saṅghaṃ、saṅghassa。",
+        "比较译文中的“僧”“僧伽”“僧团”等处理。"
       ],
       "sample_records": [
         {
-          "pali": "Idaṃ dukkhaṃ ariyasaccaṃ.",
-          "use": "四圣谛中的核心术语。"
+          "pali": "Buddhaṃ saraṇaṃ gacchāmi.",
+          "use": "三皈依公式的一部分。"
         },
         {
-          "pali": "Sabbe saṅkhārā dukkhā.",
-          "use": "与诸行相关，指有为法的不圆满性。"
-        }
-      ]
-    },
-    {
-      "id": "kamma_study",
-      "word": "kamma",
-      "title": "kamma 词义研究示范",
-      "core_warning": "kamma 基本义是行为，研究时要区分行为、业、业果关联等不同语境。",
-      "steps": [
-        "判断 kamma 是主语还是宾语。",
-        "看是否与 vipāka、cetanā 等词相关。",
-        "区分日常行为义和教义术语义。",
-        "记录动词搭配，如 karoti、vipaccati。",
-        "不要把后世复杂业论全部倒推到每个原文例句。"
-      ],
-      "sample_records": [
-        {
-          "pali": "Kammaṃ vipaccati.",
-          "use": "kammaṃ 可作中性主格，表示业成熟。"
+          "pali": "Saṅghaṃ saraṇaṃ gacchāmi.",
+          "use": "Saṅghaṃ 为宾格，指皈依对象。"
         },
         {
-          "pali": "Pāpaṃ kammaṃ karoti.",
-          "use": "kammaṃ 作行为/业，受 karoti 支配。"
+          "pali": "bhikkhusaṅgha",
+          "use": "复合词中可指比丘僧团。"
         }
       ]
     }
   ],
   "analysis_template": {
-    "title": "语法—句法—语义学术分析模板",
+    "title": "原文记录模板",
     "fields": [
       {
         "name": "原文",
-        "tip": "保留巴利原文，不只写译文。"
+        "tip": "保存巴利原文。"
       },
       {
-        "name": "词形分析",
-        "tip": "标注格、数、性、人称、时态、分词等。"
+        "name": "位置",
+        "tip": "写明 DN/MN/SN/AN/Dhp/Vin 等引用位置，或记录在线链接。"
       },
       {
-        "name": "句法功能",
-        "tip": "说明主语、宾语、状语、修饰语、谓语等功能。"
+        "name": "翻译",
+        "tip": "写自然中文翻译；必要时另存直译。"
       },
       {
-        "name": "语义角色",
-        "tip": "说明施事、受事、工具、处所、目的、来源等。"
+        "name": "关键词形",
+        "tip": "写词形、词典形和语法标注。"
       },
       {
-        "name": "结构类型",
-        "tip": "判断是普通句、公式句、引语结构、关系结构、教义定义句等。"
+        "name": "句法结构",
+        "tip": "说明主语、宾语、限定动词、非限定动词和重要格位。"
       },
       {
-        "name": "翻译选择",
-        "tip": "说明为什么这样顺译。"
+        "name": "语境义",
+        "tip": "说明关键词在本句中的具体意义。"
       },
       {
-        "name": "可能误判",
-        "tip": "列出最容易误判的地方。"
-      },
-      {
-        "name": "研究价值",
-        "tip": "说明它能支持什么语言或文献观察。"
+        "name": "阅读提醒",
+        "tip": "记录容易误判的地方或后续可比较的材料。"
       }
     ],
     "example": {
-      "source": "Buddhena dhammo desito.",
-      "word_form": "Buddhena：sg.ins；dhammo：sg.nom；desito：p.p.。",
-      "syntax": "Buddhena 表施事，dhammo 是被说明对象，desito 作谓语性p.p.。",
-      "semantic": "语义结构为“法由佛所说”。",
-      "type": "工具格施事 + p.p.结构。",
-      "translation": "顺译为“法由佛所说”。",
-      "pitfall": "不要把 Buddhena 只理解为普通工具；在此结构中它表示施事。",
-      "research_value": "可用于说明工具格在分词结构中的施事功能。"
+      "source": "Dhammaṃ suṇāti.",
+      "word_form": "dhammaṃ < dhamma, m.sg.acc（阳性·单数·宾格）；suṇāti < √su, prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）。",
+      "syntax": "dhammaṃ 为宾语；suṇāti 为限定动词。",
+      "semantic": "dhammaṃ 在此处可理解为教法。",
+      "type": "主宾动基础句。",
+      "translation": "听法。",
+      "pitfall": "不能只看到 dhamma 就机械写“法”，应结合动词和语境判断。",
+      "research_value": "可作为 dhamma 教法义的基础例句。"
     }
   },
   "research_tasks": [
     {
+      "id": "task_citation",
+      "title": "任务1：规范记录 3 条原文材料",
+      "level": "入门",
+      "goal": "训练原文、位置、翻译和语法说明分栏记录。",
+      "steps": [
+        "从句子分析或佛典阅读句式中选 3 条句子。",
+        "为每条补上位置或来源说明。",
+        "写出翻译和关键词形。",
+        "写一句阅读提醒。"
+      ],
+      "output": "提交表格：原文｜位置｜翻译｜关键词形｜阅读提醒。"
+    },
+    {
       "id": "task_dhamma",
-      "title": "任务1：收集 5 个含 dhamma 的句子",
+      "title": "任务2：收集 5 个含 dhamma 的句子",
       "level": "入门",
       "goal": "训练词义区分和上下文记录。",
       "steps": [
-        "从本站句子、SuttaCentral 或教材中找 5 个含 dhamma 的句子。",
         "记录词形，如 dhammaṃ、dhammo、dhammā。",
-        "判断每例中 dhamma 的语境义。",
-        "写出判断依据。"
+        "判断语境义。",
+        "记录搭配词。",
+        "写出判断理由。"
       ],
-      "output": "提交一张表：原文｜词形｜语境义｜搭配词｜判断理由。"
-    },
-    {
-      "id": "task_ti",
-      "title": "任务2：找 3 个含 iti / ti 的句子",
-      "level": "入门",
-      "goal": "训练引语结构识别。",
-      "steps": [
-        "找 3 个含 ti 或 iti 的例句。",
-        "标出 ti 前面的引语内容。",
-        "判断主句说话动词或回答动词。",
-        "说明 ti 的作用。"
-      ],
-      "output": "提交：原文｜引语内容｜主句动词｜结构说明。"
-    },
-    {
-      "id": "task_opening",
-      "title": "任务3：比较 3 个佛典开头公式",
-      "level": "入门",
-      "goal": "训练佛典篇章结构识别。",
-      "steps": [
-        "找 3 条含 Evaṃ me sutaṃ 或 Ekaṃ samayaṃ 的开头句。",
-        "标出时间、地点、人物、动词。",
-        "比较是否出现不同地点或不同人物组合。",
-        "说明哪些部分属于公式结构。"
-      ],
-      "output": "提交：原文｜时间｜地点｜人物｜动词｜公式结构说明。"
-    },
-    {
-      "id": "task_locative",
-      "title": "任务4：收集 5 个处格地点结构",
-      "level": "入门",
-      "goal": "训练处格地点识别。",
-      "steps": [
-        "找 5 个含处格地点的句子。",
-        "标出处格词形。",
-        "说明它与哪个动词相关。",
-        "判断是否表示地点、时间或范围。"
-      ],
-      "output": "提交：原文｜处格词｜相关动词｜功能判断。"
-    },
-    {
-      "id": "task_na_ma",
-      "title": "任务5：比较 na 和 mā",
-      "level": "入门",
-      "goal": "训练否定结构辨析。",
-      "steps": [
-        "找 3 个 na 的句子和 3 个 mā 的句子。",
-        "判断 na 是否为普通否定。",
-        "判断 mā 是否为禁止或劝止。",
-        "比较二者在语气上的差异。"
-      ],
-      "output": "提交：原文｜否定词｜否定对象｜语气功能。"
+      "output": "提交表格：原文｜词形｜语境义｜搭配词｜判断理由。"
     },
     {
       "id": "task_formula",
-      "title": "任务6：记录 3 个佛典公式句",
+      "title": "任务3：整理 3 类佛典公式句",
       "level": "进阶",
-      "goal": "训练公式句识别和非机械翻译意识。",
+      "goal": "训练公式句识别和篇章功能说明。",
       "steps": [
-        "找 3 个反复出现的佛典公式句。",
-        "写出直译和顺译。",
-        "说明它在篇章中的功能。",
-        "指出为什么不能完全机械直译。"
+        "选择开头公式、叙事推进、引语结构各 1 类。",
+        "记录原文形式。",
+        "写出翻译和功能。",
+        "说明为什么不宜完全按普通句机械拆解。"
       ],
-      "output": "提交：原文｜直译｜顺译｜篇章功能｜研究提醒。"
+      "output": "提交表格：公式句｜翻译｜篇章功能｜分析提醒。"
     }
   ],
   "pitfalls": [
     {
-      "title": "只观察中文译文，不看巴利原文",
-      "fix": "所有语法和词义判断都应回到巴利词形。"
+      "title": "只保存翻译，不保存原文",
+      "fix": "每条材料必须保存巴利原文，否则无法复核词形和语法判断。"
     },
     {
-      "title": "只查一个词典就下结论",
-      "fix": "重要术语应至少比较一个巴英词典、一个汉译或课堂材料。"
+      "title": "只写经名，不写具体位置",
+      "fix": "至少写到 DN 1、MN 10、SN 56.11、AN 3.65、Dhp 1 这类可定位格式。"
     },
     {
-      "title": "把教学句当作原典例证",
-      "fix": "教学句只能说明语法，论文材料必须来自明确原典。"
+      "title": "把词典义直接当语境义",
+      "fix": "词典义只是范围，具体义项要由句法和上下文判断。"
     },
     {
-      "title": "把词典义直接套进所有语境",
-      "fix": "词义必须结合搭配、句法和上下文判断。"
+      "title": "把公式句完全当普通句分析",
+      "fix": "佛典开头、叙事推进和引语句要先识别篇章功能。"
     },
     {
-      "title": "不区分正文、注释、现代说明",
-      "fix": "记录材料时要明确文本层级。"
-    },
-    {
-      "title": "不说明引用版本或平台",
-      "fix": "至少记录来源平台、经号/编号和检索日期。"
-    },
-    {
-      "title": "用现代汉语概念反推巴利语含义",
-      "fix": "先观察巴利原文及其语境，再选择中文表达。"
-    },
-    {
-      "title": "忽略公式句和固定表达",
-      "fix": "佛典开头、说话、回答、总结等公式句应单独标注。"
+      "title": "把阅读小任务做成资料堆积",
+      "fix": "每条材料都要写判断理由，不能只复制原文和译文。"
     }
   ]
 };

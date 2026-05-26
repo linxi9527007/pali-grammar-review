@@ -3912,3 +3912,409 @@ input:focus,select:focus,textarea:focus{
   .vocab-table-181>div:nth-child(3n+1){background:#f1f5f9;font-weight:900}
   .vocab-table-181>div:nth-last-child(-n+3){border-bottom:1px solid #e5e7eb}
 }
+
+
+/* 18.3 vocabulary policy fix */
+.lesson-vocab-box-183{
+  margin:14px 0;
+  padding:14px;
+  border:1px solid rgba(37,99,235,.18);
+  background:#f8fbff;
+  border-radius:16px;
+}
+.vocab-table-183 .vocab-section-row{
+  grid-column:1 / -1;
+  background:#eef6ff;
+  color:#1d4ed8;
+  font-weight:900;
+  border-right:0;
+}
+@media(max-width:700px){
+  .vocab-table-183 .vocab-section-row{display:block!important}
+}
+
+
+/* 18.4 global vocabulary audit */
+.lesson-vocab-box-184{
+  margin:14px 0;
+  padding:14px;
+  border:1px solid rgba(37,99,235,.18);
+  background:#f8fbff;
+  border-radius:16px;
+}
+.vocab-table-184 .vocab-section-row{
+  grid-column:1 / -1;
+  background:#eef6ff;
+  color:#1d4ed8;
+  font-weight:900;
+  border-right:0;
+}
+@media(max-width:700px){
+  .vocab-table-184 .vocab-section-row{display:block!important}
+}
+
+
+/* 18.5 term link policy */
+.lesson-term-box-185{
+  margin:12px 0 14px;
+  padding:12px 14px;
+  border:1px solid rgba(37,99,235,.18);
+  background:#f8fbff;
+  border-radius:16px;
+  line-height:1.8;
+}
+.term-chip-185{
+  display:inline-flex;
+  width:auto;
+  min-height:0;
+  margin:4px 6px 4px 0;
+  padding:4px 9px;
+  border:1px solid rgba(37,99,235,.25);
+  border-radius:999px;
+  background:#eef6ff;
+  color:#1d4ed8;
+  font-size:14px;
+  font-weight:800;
+  cursor:pointer;
+}
+.term-once-link-185{
+  display:inline;
+  width:auto;
+  min-height:0;
+  padding:0 2px;
+  margin:0;
+  border:0;
+  border-radius:5px;
+  background:#eef6ff;
+  color:#1d4ed8;
+  font:inherit;
+  font-weight:800;
+  cursor:pointer;
+  vertical-align:baseline;
+}
+.term-once-link-185:hover{
+  background:#dbeafe;
+  text-decoration:underline;
+}
+.term-popover-185{
+  position:fixed;
+  z-index:9000;
+  max-width:min(430px,88vw);
+  padding:14px 15px;
+  border-radius:18px;
+  background:#fff;
+  color:#0f172a;
+  box-shadow:0 18px 45px rgba(15,23,42,.28);
+  border:1px solid rgba(148,163,184,.32);
+  line-height:1.68;
+}
+.term-popover-185 h3{margin:0 0 6px;font-size:18px}
+.term-popover-185 p{margin:5px 0}
+.term-popover-185 .term-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.term-popover-185 button{min-height:36px;padding:7px 12px;font-size:14px}
+table .term-once-link-185,
+table .term-once-link-172,
+#lessonTable .term-once-link-185,
+#lessonTable .term-once-link-172,
+.example .term-once-link-185,
+.example .term-once-link-172,
+.example-card .term-once-link-185,
+.example-card .term-once-link-172,
+.example-box .term-once-link-185,
+.example-box .term-once-link-172,
+.pali .term-once-link-185,
+.pali .term-once-link-172,
+.translation-layer .term-once-link-185,
+.translation-layer .term-once-link-172,
+.lesson-vocab-box-181 .term-once-link-185,
+.lesson-vocab-box-183 .term-once-link-185,
+.lesson-vocab-box-184 .term-once-link-185,
+.lesson-vocab-box-185 .term-once-link-185,
+.vocab-table-181 .term-once-link-185,
+.vocab-table-183 .term-once-link-185,
+.vocab-table-184 .term-once-link-185,
+.vocab-table-185 .term-once-link-185,
+table .ipa-hover,
+#lessonTable .ipa-hover,
+.example .ipa-hover,
+.example-card .ipa-hover,
+.example-box .ipa-hover,
+.pali .ipa-hover,
+.translation-layer .ipa-hover,
+.vocab-table-181 .ipa-hover,
+.vocab-table-183 .ipa-hover,
+.vocab-table-184 .ipa-hover,
+.vocab-table-185 .ipa-hover{
+  color:inherit!important;
+  background:transparent!important;
+  border-bottom:0!important;
+  text-decoration:none!important;
+  pointer-events:none!important;
+  cursor:text!important;
+}
+@media(max-width:760px){
+  .term-popover-185{
+    left:12px!important;
+    right:12px!important;
+    bottom:14px!important;
+    top:auto!important;
+    max-width:none;
+  }
+}
+
+
+/* 18.6 IPA display: show only phonetic transcription, no visible label */
+.ipa, .ipa-inline, .ipa-text, .term-popover-185 .muted{
+  font-size:.88em;
+  color:#64748b;
+  font-weight:500;
+}
+.term-popover-185 p:has(.muted){
+  margin-top:2px;
+}
+
+
+/* 18.7 term and vocabulary experience refinement */
+.term-popover-187{
+  max-width:min(390px,88vw);
+}
+.term-popover-187 .term-en-line{
+  margin:2px 0 6px;
+  color:#334155;
+}
+.ipa-only{
+  font-size:.9em;
+  color:#64748b;
+  font-weight:500;
+}
+.vocab-lookup-panel-187{
+  margin-top:12px;
+  padding:10px 12px;
+  border:1px dashed rgba(37,99,235,.28);
+  border-radius:14px;
+  background:#ffffff;
+}
+.vocab-lookup-panel-187 summary{
+  cursor:pointer;
+  color:#1d4ed8;
+  font-weight:900;
+}
+.lookup-chip-row-187{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:8px 0;
+}
+.lookup-chip-187{
+  width:auto;
+  min-height:0;
+  margin:0;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#eef6ff;
+  color:#1d4ed8;
+  font-size:14px;
+}
+
+
+/* 18.8 grammar note only */
+.example-analysis-181,
+.example-analysis-187,
+.example-analysis-188{
+  display:none!important;
+}
+.grammar-note-188,
+.grammar-annotation-188{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  overflow-wrap:anywhere;
+}
+.grammar-note-188{
+  margin-top:8px;
+  padding:8px 10px;
+  border-radius:12px;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+}
+
+
+/* 19.0 global sync + bilingual grammar notes */
+.example-analysis-181,
+.example-analysis-187,
+.example-analysis-188{
+  display:none!important;
+}
+.grammar-note-190,
+.grammar-annotation-190{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  overflow-wrap:anywhere;
+}
+.grammar-note-190{
+  margin-top:8px;
+  padding:8px 10px;
+  border-radius:12px;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+}
+.abbrev-help-190{
+  margin:10px 0 14px;
+  padding:10px 12px;
+  border-radius:14px;
+  background:#fff;
+  border:1px dashed rgba(37,99,235,.3);
+}
+.abbrev-help-190 summary{
+  cursor:pointer;
+  font-weight:900;
+  color:#1d4ed8;
+}
+.abbrev-grid-190{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+  gap:6px;
+  margin-top:8px;
+  font-size:14px;
+  color:#334155;
+}
+
+
+/* 19.2 sentence analysis optimization */
+.sentence-lookup-panel-192{
+  margin-top:12px;
+  padding:10px 12px;
+  border:1px dashed rgba(37,99,235,.28);
+  border-radius:14px;
+  background:#fff;
+}
+.sentence-lookup-panel-192 summary{
+  cursor:pointer;
+  font-weight:900;
+  color:#1d4ed8;
+}
+.sentence-lookup-row-192{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:8px;
+}
+.sentence-level-guide-192{
+  margin-top:12px;
+  padding:10px 12px;
+  border-radius:14px;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  color:#334155;
+}
+.token-table td{
+  overflow-wrap:anywhere;
+}
+
+
+/* 19.3 academic training and Tipitaka integration */
+.citation-examples-193 pre{
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:10px;
+}
+.academic-placement-note-193{
+  margin:0 0 14px;
+}
+
+
+/* 19.9 mobile layout and staged answers */
+html, body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+*, *::before, *::after{
+  box-sizing:border-box;
+}
+img, svg, canvas, video{
+  max-width:100%;
+  height:auto;
+}
+.view, main, .card, .qa-full-card, .sentence-card, .example, .example-card, .example-box{
+  max-width:100%;
+}
+table, .qa-table, .token-table{
+  width:100%;
+  max-width:100%;
+  table-layout:fixed;
+  border-collapse:collapse;
+}
+th, td{
+  overflow-wrap:anywhere;
+  word-break:break-word;
+  white-space:normal;
+}
+pre, code{
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+}
+input, select, textarea, button{
+  max-width:100%;
+}
+.sentence-step-chip{
+  display:inline-flex;
+  width:auto;
+  margin:4px 0 8px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:#eef6ff;
+  color:#1d4ed8;
+  font-weight:900;
+  font-size:14px;
+}
+.button-row.four-buttons{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+@media(max-width:760px){
+  body{
+    min-width:0;
+  }
+  .card, .qa-full-card, .sentence-card{
+    padding-left:14px;
+    padding-right:14px;
+    border-radius:18px;
+  }
+  .home-grid,
+  .practice-grid,
+  .layer-grid,
+  .button-row.three-buttons,
+  .button-row.four-buttons{
+    grid-template-columns:1fr!important;
+  }
+  .button-row{
+    gap:8px;
+  }
+  button, .home-btn{
+    min-height:44px;
+    white-space:normal;
+  }
+  .token-table,
+  .qa-table{
+    font-size:14px;
+  }
+  .token-table td,
+  .token-table th,
+  .qa-table td,
+  .qa-table th{
+    padding:8px 6px;
+  }
+  .sentence-main{
+    overflow-wrap:anywhere;
+    word-break:break-word;
+  }
+  .term-popover-185,
+  .term-popover-187{
+    left:12px!important;
+    right:12px!important;
+    bottom:14px!important;
+    top:auto!important;
+    max-width:none!important;
+  }
+}

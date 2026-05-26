@@ -1,12 +1,12 @@
 {
-  "name": "Pali Grammar Review 18.2",
+  "name": "Pali Grammar Review 20.0",
   "short_name": "巴利语语法",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f3f4f6",
   "theme_color": "#111827",
-  "description": "细节核查修正版：统一小写语法缩略语，补充本节单词、术语库分类和例句分析辅助。",
+  "description": "稳定测试版：全站命名、语法标注、术语字段、移动端显示和隐藏答案体验终检。",
   "icons": [
     {
       "src": "icon-192.png",

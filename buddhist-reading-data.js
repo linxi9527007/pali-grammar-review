@@ -19,12 +19,12 @@ const BUDDHIST_READING_PATTERNS = [
       },
       {
         "word": "sutaṃ",
-        "note": "已听闻，p.p."
+        "note": "已听闻，p.p.（过去分词）"
       }
     ],
     "warning": "这是佛典固定开头公式，初学者先整体识别，不必过度机械拆解。",
     "related_grammar": [
-      "p.p.",
+      "p.p.（过去分词）",
       "佛典公式句",
       "句子分析"
     ]
@@ -307,7 +307,7 @@ const BUDDHIST_READING_PATTERNS = [
         "note": "尊者，称呼语"
       }
     ],
-    "warning": "这是回答公式，翻译时可顺译为“是的，尊者”。",
+    "warning": "这是回答公式，翻译时可翻译为“是的，尊者”。",
     "related_grammar": [
       "呼格",
       "引语结构"
@@ -425,7 +425,7 @@ const BUDDHIST_READING_PATTERNS = [
         "note": "圣谛，复合词"
       }
     ],
-    "warning": "这类教义定义句可能省略系词，中文顺译时可补“是”。",
+    "warning": "这类教义定义句可能省略系词，中文翻译时可补“是”。",
     "related_grammar": [
       "复合词",
       "中性名词",

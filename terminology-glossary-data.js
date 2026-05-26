@@ -184,7 +184,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "格与名词系统",
+    "cat": "词类与词形",
     "en": "declension",
     "ipa": "/dɪˈklenʃən/",
     "cn": "变格；格变化",
@@ -221,7 +221,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": true
   },
   {
-    "cat": "形态学",
+    "cat": "词类与词形",
     "en": "stem",
     "ipa": "/stem/",
     "cn": "词干",
@@ -248,7 +248,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": true
   },
   {
-    "cat": "形态学",
+    "cat": "词类与词形",
     "en": "suffix",
     "ipa": "/ˈsʌfɪks/",
     "cn": "后缀；词尾",
@@ -258,7 +258,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "动词与词形",
+    "cat": "动词系统",
     "en": "verb",
     "ipa": "/vɝːb/",
     "cn": "动词",
@@ -268,7 +268,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "动词与词形",
+    "cat": "动词系统",
     "en": "finite verb",
     "ipa": "/ˈfaɪnaɪt vɝːb/",
     "cn": "限定动词",
@@ -278,7 +278,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "形态学",
+    "cat": "词类与词形",
     "en": "root",
     "ipa": "/ruːt/",
     "cn": "词根",
@@ -379,7 +379,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "动词与词形",
+    "cat": "动词系统",
     "en": "aorist",
     "ipa": "/ˈeɪərɪst/",
     "cn": "过去时；不定过去时",
@@ -486,7 +486,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "动词与词形",
+    "cat": "非限定动词",
     "en": "participle",
     "ipa": "/ˈpɑːrtɪsɪpəl/",
     "cn": "分词",
@@ -496,7 +496,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "语法缩略语：非限定动词",
+    "cat": "语法缩略语",
     "en": "present participle",
     "ipa": "/ˈprezənt ˈpɑːrtɪsɪpəl/",
     "cn": "pr.p.",
@@ -505,7 +505,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "表示进行中的或相关的动作状态。"
   },
   {
-    "cat": "语法缩略语：非限定动词",
+    "cat": "语法缩略语",
     "en": "past participle",
     "ipa": "/pæst ˈpɑːrtɪsɪpəl/",
     "cn": "p.p.",
@@ -514,7 +514,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "过去分词。"
   },
   {
-    "cat": "语法缩略语：非限定动词",
+    "cat": "语法缩略语",
     "en": "future passive participle",
     "ipa": "/ˈfjuːtʃər ˈpæsɪv ˈpɑːrtɪsɪpəl/",
     "cn": "f.p.p.",
@@ -523,7 +523,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "表示应当被做、可被做等意义。"
   },
   {
-    "cat": "动词与词形",
+    "cat": "词类与词形",
     "en": "gerund",
     "ipa": "/ˈdʒerənd/",
     "cn": "ger.；动名词式",
@@ -543,7 +543,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "语法缩略语：非限定动词",
+    "cat": "语法缩略语",
     "en": "infinitive",
     "ipa": "/ɪnˈfɪnətɪv/",
     "cn": "inf.",
@@ -552,7 +552,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "常表示目的、趋向或补足意义。"
   },
   {
-    "cat": "语言学基础概念",
+    "cat": "句法分析",
     "en": "syntax",
     "ipa": "/ˈsɪntæks/",
     "cn": "句法学",
@@ -579,7 +579,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": true
   },
   {
-    "cat": "句法与结构",
+    "cat": "句法分析",
     "en": "subject",
     "ipa": "/ˈsʌbdʒekt/",
     "cn": "主语",
@@ -589,7 +589,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "句法与结构",
+    "cat": "句法分析",
     "en": "object",
     "ipa": "/ˈɑːbdʒekt/",
     "cn": "宾语",
@@ -599,7 +599,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "句法与结构",
+    "cat": "句法分析",
     "en": "predicate",
     "ipa": "/ˈpredɪkət/",
     "cn": "谓语",
@@ -659,7 +659,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "语法缩略语：词类与词形",
+    "cat": "语法缩略语",
     "en": "indeclinable",
     "ipa": "/ˌɪndɪˈklaɪnəbəl/",
     "cn": "ind.",
@@ -668,7 +668,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "不随性、数、格或人称变化的词。"
   },
   {
-    "cat": "句法与结构",
+    "cat": "动词系统",
     "en": "particle",
     "ipa": "/ˈpɑːrtɪkəl/",
     "cn": "小品词；语气词",
@@ -688,7 +688,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "句法与结构",
+    "cat": "音系与转写",
     "en": "sandhi",
     "ipa": "/ˈsʌndɪ/",
     "cn": "连音；连读",
@@ -708,7 +708,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "文本与研究",
+    "cat": "佛典阅读术语",
     "en": "canonical text",
     "ipa": "/kəˈnɑːnɪkəl tekst/",
     "cn": "经典文本；正典文本",
@@ -761,14 +761,14 @@ const TERMINOLOGY_GLOSSARY = [
     "cat": "文本与研究",
     "en": "free translation",
     "ipa": "/friː trænzˈleɪʃən/",
-    "cn": "意译；顺译",
+    "cn": "意译；翻译",
     "pali": "义译",
     "note": "使目标语表达自然，但可能弱化原文结构。",
     "simple_explanation": "使目标语表达自然，但可能弱化原文结构。",
     "needs_contrast": false
   },
   {
-    "cat": "文本与研究",
+    "cat": "学术阅读术语",
     "en": "philology",
     "ipa": "/fɪˈlɑːlədʒi/",
     "cn": "文献学；语文学",
@@ -798,7 +798,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "文本与研究",
+    "cat": "佛典阅读术语",
     "en": "citation",
     "ipa": "/saɪˈteɪʃən/",
     "cn": "引用；引文",
@@ -862,7 +862,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": true
   },
   {
-    "cat": "动词系统",
+    "cat": "格与名词系统",
     "en": "number",
     "ipa": "/ˈnʌmbər/",
     "cn": "数",
@@ -959,7 +959,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "语言学基础概念",
+    "cat": "佛典阅读术语",
     "en": "grammar",
     "ipa": "/ˈɡræmər/",
     "cn": "语法",
@@ -1006,7 +1006,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "语言学基础概念",
+    "cat": "音系与转写",
     "en": "phonology",
     "ipa": "/fəˈnɑːlədʒi/",
     "cn": "音系学",
@@ -1063,7 +1063,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": false
   },
   {
-    "cat": "形态学",
+    "cat": "词类与词形",
     "en": "inflection",
     "ipa": "/ɪnˈflekʃən/",
     "cn": "屈折",
@@ -1090,7 +1090,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": true
   },
   {
-    "cat": "语言学基础概念",
+    "cat": "佛典阅读术语",
     "en": "grammatical category",
     "ipa": "/ɡrəˈmætɪkəl ˈkætəɡɔːri/",
     "cn": "语法范畴",
@@ -1112,7 +1112,7 @@ const TERMINOLOGY_GLOSSARY = [
     "needs_contrast": true
   },
   {
-    "cat": "语法缩略语：性数格",
+    "cat": "语法缩略语",
     "en": "masculine",
     "ipa": "/ˈmæskjəlɪn/",
     "cn": "m.",
@@ -1121,7 +1121,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "阳性标记。"
   },
   {
-    "cat": "语法缩略语：性数格",
+    "cat": "语法缩略语",
     "en": "feminine",
     "ipa": "/ˈfemənɪn/",
     "cn": "f.",
@@ -1130,7 +1130,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "阴性标记。"
   },
   {
-    "cat": "语法缩略语：性数格",
+    "cat": "语法缩略语",
     "en": "neuter",
     "ipa": "/ˈnuːtər/",
     "cn": "n.",
@@ -1139,7 +1139,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "中性标记。"
   },
   {
-    "cat": "语法缩略语：性数格",
+    "cat": "语法缩略语",
     "en": "singular",
     "ipa": "/ˈsɪŋɡjələr/",
     "cn": "sg.",
@@ -1148,7 +1148,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "单数标记。"
   },
   {
-    "cat": "语法缩略语：性数格",
+    "cat": "语法缩略语",
     "en": "plural",
     "ipa": "/ˈplʊrəl/",
     "cn": "pl.",
@@ -1157,7 +1157,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "复数标记。"
   },
   {
-    "cat": "语法缩略语：性数格",
+    "cat": "语法缩略语",
     "en": "nominative",
     "ipa": "/ˈnɑːmɪnətɪv/",
     "cn": "nom.",
@@ -1166,7 +1166,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "常作主语或表语。"
   },
   {
-    "cat": "语法缩略语：性数格",
+    "cat": "语法缩略语",
     "en": "accusative",
     "ipa": "/əˈkjuːzətɪv/",
     "cn": "acc.",
@@ -1175,7 +1175,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "常作动作对象，也可表方向或时间范围。"
   },
   {
-    "cat": "语法缩略语：性数格",
+    "cat": "语法缩略语",
     "en": "instrumental",
     "ipa": "/ˌɪnstrəˈmentəl/",
     "cn": "ins.",
@@ -1184,7 +1184,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "表示工具、方式、伴随等。"
   },
   {
-    "cat": "语法缩略语：性数格",
+    "cat": "语法缩略语",
     "en": "dative",
     "ipa": "/ˈdeɪtɪv/",
     "cn": "dat.",
@@ -1193,7 +1193,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "表示给予对象、目的或利益对象。"
   },
   {
-    "cat": "语法缩略语：性数格",
+    "cat": "语法缩略语",
     "en": "ablative",
     "ipa": "/ˈæblətɪv/",
     "cn": "abl.",
@@ -1202,7 +1202,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "表示来源、分离、原因等。"
   },
   {
-    "cat": "语法缩略语：性数格",
+    "cat": "语法缩略语",
     "en": "genitive",
     "ipa": "/ˈdʒenətɪv/",
     "cn": "gen.",
@@ -1211,7 +1211,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "表示所属、关系等。"
   },
   {
-    "cat": "语法缩略语：性数格",
+    "cat": "语法缩略语",
     "en": "locative",
     "ipa": "/ˈlɑːkətɪv/",
     "cn": "loc.",
@@ -1220,7 +1220,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "表示地点、范围或处所。"
   },
   {
-    "cat": "语法缩略语：性数格",
+    "cat": "语法缩略语",
     "en": "vocative",
     "ipa": "/ˈvɑːkətɪv/",
     "cn": "voc.",
@@ -1229,7 +1229,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "用于称呼。"
   },
   {
-    "cat": "语法缩略语：动词范畴",
+    "cat": "语法缩略语",
     "en": "present",
     "ipa": "/ˈprezənt/",
     "cn": "prs.",
@@ -1238,7 +1238,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "动词时态标记。"
   },
   {
-    "cat": "语法缩略语：动词范畴",
+    "cat": "语法缩略语",
     "en": "future",
     "ipa": "/ˈfjuːtʃər/",
     "cn": "fut.",
@@ -1247,7 +1247,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "动词时态标记。"
   },
   {
-    "cat": "语法缩略语：动词范畴",
+    "cat": "语法缩略语",
     "en": "aorist",
     "ipa": "/ˈeɪərɪst/",
     "cn": "aor.",
@@ -1256,7 +1256,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "过去类动词形式之一。"
   },
   {
-    "cat": "语法缩略语：动词范畴",
+    "cat": "语法缩略语",
     "en": "indicative",
     "ipa": "/ɪnˈdɪkətɪv/",
     "cn": "indic.",
@@ -1265,7 +1265,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "用于陈述事实或动作。"
   },
   {
-    "cat": "语法缩略语：动词范畴",
+    "cat": "语法缩略语",
     "en": "imperative",
     "ipa": "/ɪmˈperətɪv/",
     "cn": "imp.",
@@ -1274,7 +1274,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "用于命令、请求等。"
   },
   {
-    "cat": "语法缩略语：动词范畴",
+    "cat": "语法缩略语",
     "en": "optative",
     "ipa": "/ˈɑːptətɪv/",
     "cn": "opt.",
@@ -1283,7 +1283,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "用于愿望、可能、劝请等。"
   },
   {
-    "cat": "语法缩略语：动词范畴",
+    "cat": "语法缩略语",
     "en": "active",
     "ipa": "/ˈæktɪv/",
     "cn": "act.",
@@ -1292,7 +1292,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "动作由主语发出。"
   },
   {
-    "cat": "语法缩略语：动词范畴",
+    "cat": "语法缩略语",
     "en": "middle",
     "ipa": "/ˈmɪdəl/",
     "cn": "mid.",
@@ -1301,7 +1301,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "中间语态形式；入门阶段先识别形式，不机械翻译。"
   },
   {
-    "cat": "语法缩略语：动词范畴",
+    "cat": "语法缩略语",
     "en": "passive",
     "ipa": "/ˈpæsɪv/",
     "cn": "pass.",
@@ -1310,7 +1310,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "主语承受动作。"
   },
   {
-    "cat": "语法缩略语：词类与词形",
+    "cat": "语法缩略语",
     "en": "pronoun",
     "ipa": "/ˈproʊnaʊn/",
     "cn": "pron.",
@@ -1319,7 +1319,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "代替名词或指示人事物的词。"
   },
   {
-    "cat": "语法缩略语：词类与词形",
+    "cat": "语法缩略语",
     "en": "adjective",
     "ipa": "/ˈædʒɪktɪv/",
     "cn": "adj.",
@@ -1328,7 +1328,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "修饰名词的词。"
   },
   {
-    "cat": "语法缩略语：非限定动词",
+    "cat": "语法缩略语",
     "en": "gerund",
     "ipa": "/ˈdʒerənd/",
     "cn": "ger.",
@@ -1337,7 +1337,7 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "常表示先行动作或伴随动作。"
   },
   {
-    "cat": "语法缩略语：非限定动词",
+    "cat": "语法缩略语",
     "en": "present active participle",
     "ipa": "/ˈprezənt ˈæktɪv ˈpɑːrtɪsɪpəl/",
     "cn": "pr.p.act.",
@@ -1346,12 +1346,112 @@ const TERMINOLOGY_GLOSSARY = [
     "simple_explanation": "现在主动分词。"
   },
   {
-    "cat": "语法缩略语：非限定动词",
+    "cat": "语法缩略语",
     "en": "present middle participle",
     "ipa": "/ˈprezənt ˈmɪdəl ˈpɑːrtɪsɪpəl/",
     "cn": "pr.p.mid.",
     "pali": "现在中间语态分词",
     "note": "例：labhamāno < √labh, pr.p.mid., m.sg.nom。",
     "simple_explanation": "现在中间语态分词。"
+  },
+  {
+    "cat": "佛典阅读术语",
+    "en": "five aggregates",
+    "ipa": "/faɪv ˈæɡrɪɡəts/",
+    "cn": "五蕴",
+    "pali": "pañcakkhandha",
+    "note": "色、受、想、行、识五类身心经验。",
+    "simple_explanation": "色、受、想、行、识五类身心经验。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "佛典阅读术语",
+    "en": "sense base",
+    "ipa": "/sens beɪs/",
+    "cn": "十二处",
+    "pali": "āyatana",
+    "note": "眼耳鼻舌身意与色声香味触法。",
+    "simple_explanation": "眼耳鼻舌身意与色声香味触法。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "佛典阅读术语",
+    "en": "element",
+    "ipa": "/ˈelɪmənt/",
+    "cn": "十八界",
+    "pali": "dhātu",
+    "note": "十二处加六识构成的经验分析框架。",
+    "simple_explanation": "十二处加六识构成的经验分析框架。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "佛典阅读术语",
+    "en": "Four Noble Truths",
+    "ipa": "/fɔːr ˈnoʊbəl truːθs/",
+    "cn": "四圣谛",
+    "pali": "cattāri ariyasaccāni",
+    "note": "苦、集、灭、道四个核心教义框架。",
+    "simple_explanation": "苦、集、灭、道四个核心教义框架。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "佛典阅读术语",
+    "en": "Noble Eightfold Path",
+    "ipa": "/ˈnoʊbəl ˈeɪtfəʊld pæθ/",
+    "cn": "八正道",
+    "pali": "ariyo aṭṭhaṅgiko maggo",
+    "note": "从正见到正定的八支修道结构。",
+    "simple_explanation": "从正见到正定的八支修道结构。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "佛典阅读术语",
+    "en": "three characteristics",
+    "ipa": "/θriː ˌkærəktəˈrɪstɪks/",
+    "cn": "三相；三法印",
+    "pali": "tilakkhaṇa",
+    "note": "无常、苦、无我。",
+    "simple_explanation": "无常、苦、无我。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "佛典阅读术语",
+    "en": "foundation of mindfulness",
+    "ipa": "/faʊnˈdeɪʃən əv ˈmaɪndfəlnəs/",
+    "cn": "四念处",
+    "pali": "satipaṭṭhāna",
+    "note": "身、受、心、法四类观照对象。",
+    "simple_explanation": "身、受、心、法四类观照对象。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "佛典阅读术语",
+    "en": "divine abode",
+    "ipa": "/dɪˈvaɪn əˈboʊd/",
+    "cn": "四无量心；四梵住",
+    "pali": "brahmavihāra",
+    "note": "慈、悲、喜、舍。",
+    "simple_explanation": "慈、悲、喜、舍。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "佛典阅读术语",
+    "en": "factor of awakening",
+    "ipa": "/ˈfæktər əv əˈweɪkənɪŋ/",
+    "cn": "七觉支",
+    "pali": "bojjhaṅga",
+    "note": "觉悟相关的七类修道因素。",
+    "simple_explanation": "觉悟相关的七类修道因素。",
+    "needs_contrast": false
+  },
+  {
+    "cat": "佛典阅读术语",
+    "en": "clinging",
+    "ipa": "/ˈklɪŋɪŋ/",
+    "cn": "取；执取",
+    "pali": "upādāna",
+    "note": "缘起链条中的执取、依附。",
+    "simple_explanation": "缘起链条中的执取、依附。",
+    "needs_contrast": false
   }
 ];

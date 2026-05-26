@@ -3,12 +3,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Buddho",
     "analyses": [
       {
-        "grammar": "m.sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "佛"
       },
       {
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "并列项",
         "meaning": "佛"
       }
@@ -30,22 +30,22 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "dhammaṃ",
     "analyses": [
       {
-        "grammar": "m.sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "法"
       },
       {
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "法"
       },
       {
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "inf.的宾语",
         "meaning": "法"
       },
       {
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "sotuṃ 的宾语",
         "meaning": "法"
       }
@@ -72,7 +72,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "deseti",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "说、开示"
       }
@@ -89,12 +89,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Bhikkhu",
     "analyses": [
       {
-        "grammar": "m.sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "比丘"
       },
       {
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "比丘"
       }
@@ -121,7 +121,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "suṇāti",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "听"
       }
@@ -148,7 +148,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Ahaṃ",
     "analyses": [
       {
-        "grammar": "第一人称代词sg.nom",
+        "grammar": "pron.1sg.nom（代词·第一人称单数·主格）",
         "role": "主语",
         "meaning": "我"
       }
@@ -175,7 +175,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Buddhaṃ",
     "analyses": [
       {
-        "grammar": "m.sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "佛"
       }
@@ -192,7 +192,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "vandāmi",
     "analyses": [
       {
-        "grammar": "prs.indic.act.1sg",
+        "grammar": "prs.indic.act.1sg（现在时·陈述·主动·第一人称单数）",
         "role": "限定动词",
         "meaning": "礼敬"
       }
@@ -209,7 +209,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Te",
     "analyses": [
       {
-        "grammar": "指示/人称代词主格复数",
+        "grammar": "pron.m.pl.nom（代词·阳性·复数·主格）",
         "role": "主语",
         "meaning": "他们"
       }
@@ -226,12 +226,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "suṇanti",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "听"
       },
       {
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "从句动词",
         "meaning": "听"
       }
@@ -253,7 +253,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "vihāre",
     "analyses": [
       {
-        "grammar": "-a尾阳性/中性sg.loc",
+        "grammar": "m.sg.loc（阳性·单数·处格）",
         "role": "地点状语",
         "meaning": "在寺院中"
       }
@@ -270,7 +270,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "vasati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "住"
       }
@@ -297,12 +297,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Buddhassa",
     "analyses": [
       {
-        "grammar": "-a尾阳性sg.gen",
+        "grammar": "m.sg.gen（阳性·单数·属格）",
         "role": "所属限定",
         "meaning": "佛的"
       },
       {
-        "grammar": "sg.gen",
+        "grammar": "m.sg.gen（阳性·单数·属格）",
         "role": "限定 sāvako",
         "meaning": "佛的"
       }
@@ -324,17 +324,17 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "dhammo",
     "analyses": [
       {
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "法"
       },
       {
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "并列项",
         "meaning": "法"
       },
       {
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主句主语",
         "meaning": "法"
       }
@@ -361,7 +361,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "gambhīro",
     "analyses": [
       {
-        "grammar": "形容词阳性sg.nom",
+        "grammar": "adj.m.sg.nom（形容词·阳性·单数·主格）",
         "role": "表语/修饰",
         "meaning": "甚深的"
       }
@@ -378,7 +378,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Buddhena",
     "analyses": [
       {
-        "grammar": "-a尾阳性sg.ins",
+        "grammar": "m.sg.ins（阳性·单数·工具格）",
         "role": "施事",
         "meaning": "由佛"
       }
@@ -395,7 +395,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "desito",
     "analyses": [
       {
-        "grammar": "p.p.阳性sg.nom",
+        "grammar": "p.p.m.sg.nom（过去分词·阳性·单数·主格）",
         "role": "谓语性分词",
         "meaning": "已说/被说"
       }
@@ -412,7 +412,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Gāmā",
     "analyses": [
       {
-        "grammar": "-a尾名词从格单数",
+        "grammar": "m.sg.abl（阳性·单数·从格）",
         "role": "来源",
         "meaning": "从村庄"
       }
@@ -429,12 +429,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "bhikkhu",
     "analyses": [
       {
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "比丘"
       },
       {
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "比丘"
       }
@@ -461,7 +461,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "āgacchati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "来"
       }
@@ -488,7 +488,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "So",
     "analyses": [
       {
-        "grammar": "指示代词sg.nom",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
         "role": "主语",
         "meaning": "他"
       }
@@ -510,7 +510,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "sotuṃ",
     "analyses": [
       {
-        "grammar": "inf.",
+        "grammar": "inf.（不定式）",
         "role": "目的",
         "meaning": "为了听"
       }
@@ -532,7 +532,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Dhammaṃ",
     "analyses": [
       {
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "sutvā 的宾语",
         "meaning": "法"
       }
@@ -554,12 +554,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "sutvā",
     "analyses": [
       {
-        "grammar": "ger./独立式",
+        "grammar": "ger.（连续体）",
         "role": "先行动作",
         "meaning": "听闻之后"
       },
       {
-        "grammar": "ger.",
+        "grammar": "ger.（连续体）",
         "role": "先行动作",
         "meaning": "听闻之后"
       }
@@ -581,7 +581,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "pasīdati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "生信、净信"
       }
@@ -598,7 +598,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "cetiyaṃ",
     "analyses": [
       {
-        "grammar": "sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "vandituṃ 的宾语",
         "meaning": "塔庙"
       }
@@ -615,7 +615,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "vandituṃ",
     "analyses": [
       {
-        "grammar": "inf.",
+        "grammar": "inf.（不定式）",
         "role": "目的",
         "meaning": "为了礼拜"
       }
@@ -632,7 +632,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "gacchāmi",
     "analyses": [
       {
-        "grammar": "prs.indic.act.1sg",
+        "grammar": "prs.indic.act.1sg（现在时·陈述·主动·第一人称单数）",
         "role": "限定动词",
         "meaning": "去"
       }
@@ -649,7 +649,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Pattaṃ",
     "analyses": [
       {
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "ādāya 的宾语",
         "meaning": "钵"
       }
@@ -666,12 +666,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "ādāya",
     "analyses": [
       {
-        "grammar": "-ya 类ger.",
+        "grammar": "ger.（连续体）",
         "role": "伴随/先行动作",
         "meaning": "拿着、拿取之后"
       },
       {
-        "grammar": "ger.",
+        "grammar": "ger.（连续体）",
         "role": "伴随动作",
         "meaning": "拿着、带着"
       }
@@ -693,17 +693,17 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "gacchati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "走"
       },
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "去"
       },
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "去、离去"
       }
@@ -730,7 +730,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Gacchanto",
     "analyses": [
       {
-        "grammar": "pr.p.阳性sg.nom",
+        "grammar": "pr.p.act.m.sg.nom（现在主动分词·阳性·单数·主格）",
         "role": "修饰 puriso",
         "meaning": "正在走的"
       }
@@ -747,7 +747,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "puriso",
     "analyses": [
       {
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "人、男子"
       }
@@ -764,22 +764,22 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "passati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "看见"
       },
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "关系从句动词",
         "meaning": "看见"
       },
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "主句动词",
         "meaning": "看见"
       },
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "看见、观见"
       }
@@ -806,7 +806,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Gacchantī",
     "analyses": [
       {
-        "grammar": "pr.p.阴性sg.nom",
+        "grammar": "pr.p.act.f.sg.nom（现在主动分词·阴性·单数·主格）",
         "role": "修饰 itthī",
         "meaning": "正在走的"
       }
@@ -823,7 +823,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "itthī",
     "analyses": [
       {
-        "grammar": "阴性sg.nom",
+        "grammar": "f.sg.nom（阴性·单数·主格）",
         "role": "主语",
         "meaning": "女人"
       }
@@ -840,7 +840,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Kataṃ",
     "analyses": [
       {
-        "grammar": "p.p.中性主格/sg.acc",
+        "grammar": "p.p.n.sg.nom/acc（过去分词·中性·单数·主格/宾格）",
         "role": "修饰 kammaṃ",
         "meaning": "已作的"
       }
@@ -857,7 +857,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "kammaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.nom",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
         "role": "主语",
         "meaning": "业"
       }
@@ -874,12 +874,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "na",
     "analyses": [
       {
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "普通否定",
         "meaning": "不"
       },
       {
-        "grammar": "普通否定词",
+        "grammar": "ind.（不变词）",
         "role": "否定inf.动作",
         "meaning": "不"
       }
@@ -906,7 +906,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "nassati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "消失、毁坏"
       }
@@ -923,7 +923,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Karaṇīyaṃ",
     "analyses": [
       {
-        "grammar": "f.p.p.中性单数",
+        "grammar": "f.p.p.n.sg.nom（将来被动分词·中性·单数·主格）",
         "role": "谓语性成分/修饰",
         "meaning": "应作的"
       }
@@ -940,7 +940,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "kusalaṃ",
     "analyses": [
       {
-        "grammar": "中性主格/sg.acc",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
         "role": "所说明对象",
         "meaning": "善、善法"
       }
@@ -957,7 +957,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Na",
     "analyses": [
       {
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "普通否定",
         "meaning": "不"
       }
@@ -974,12 +974,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Mā",
     "analyses": [
       {
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "禁止否定",
         "meaning": "不要、勿"
       },
       {
-        "grammar": "禁止否定词",
+        "grammar": "ind.（不变词）",
         "role": "禁止",
         "meaning": "不要"
       }
@@ -1006,7 +1006,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "gaccha",
     "analyses": [
       {
-        "grammar": "命令语气第二人称单数",
+        "grammar": "imp.act.2sg（命令·主动·第二人称单数）",
         "role": "限定动词",
         "meaning": "去"
       }
@@ -1023,7 +1023,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "ca",
     "analyses": [
       {
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "并列连接",
         "meaning": "和"
       }
@@ -1045,7 +1045,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "saṅgho",
     "analyses": [
       {
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "并列项",
         "meaning": "僧"
       }
@@ -1062,7 +1062,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Gāme",
     "analyses": [
       {
-        "grammar": "sg.loc",
+        "grammar": "m.sg.loc（阳性·单数·处格）",
         "role": "地点一",
         "meaning": "在村中"
       }
@@ -1079,7 +1079,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "vā",
     "analyses": [
       {
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "选择连接",
         "meaning": "或"
       }
@@ -1096,7 +1096,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "araññe",
     "analyses": [
       {
-        "grammar": "sg.loc",
+        "grammar": "n.sg.loc（中性·单数·处格）",
         "role": "地点二",
         "meaning": "在林中"
       }
@@ -1113,7 +1113,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Yo",
     "analyses": [
       {
-        "grammar": "关系代词阳性sg.nom",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
         "role": "关系从句主语",
         "meaning": "凡……者"
       }
@@ -1135,17 +1135,17 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "so",
     "analyses": [
       {
-        "grammar": "指示代词阳性sg.nom",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
         "role": "主句主语",
         "meaning": "他/那人"
       },
       {
-        "grammar": "指示代词sg.nom",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
         "role": "主语",
         "meaning": "他"
       },
       {
-        "grammar": "指示代词阳性sg.nom",
+        "grammar": "pron.m.sg.nom（代词·阳性·单数·主格）",
         "role": "主句主语",
         "meaning": "他"
       }
@@ -1172,7 +1172,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "maṃ",
     "analyses": [
       {
-        "grammar": "第一人称代词sg.acc",
+        "grammar": "pron.1sg.acc（代词·第一人称单数·宾格）",
         "role": "宾语",
         "meaning": "我"
       }
@@ -1189,7 +1189,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "vihāraṃ",
     "analyses": [
       {
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "去向",
         "meaning": "寺院"
       }
@@ -1206,7 +1206,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "pattaṃ",
     "analyses": [
       {
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "ādāya 的宾语",
         "meaning": "钵"
       }
@@ -1223,7 +1223,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "gāmaṃ",
     "analyses": [
       {
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "去向",
         "meaning": "村庄"
       }
@@ -1245,7 +1245,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Sabbe",
     "analyses": [
       {
-        "grammar": "形容词/代词阳性复数主格",
+        "grammar": "adj.m.pl.nom（形容词·阳性·复数·主格）",
         "role": "修饰 sattā",
         "meaning": "一切"
       }
@@ -1262,7 +1262,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "sattā",
     "analyses": [
       {
-        "grammar": "阳性复数主格",
+        "grammar": "m.pl.nom（阳性·复数·主格）",
         "role": "主语",
         "meaning": "众生"
       }
@@ -1279,7 +1279,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "sukhitā",
     "analyses": [
       {
-        "grammar": "形容词阳性复数主格",
+        "grammar": "adj.m.pl.nom（形容词·阳性·复数·主格）",
         "role": "表语/状态",
         "meaning": "安乐的"
       }
@@ -1296,7 +1296,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "hontu",
     "analyses": [
       {
-        "grammar": "命令/愿望语气第三人称复数",
+        "grammar": "imp.act.3pl（命令·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "愿……成为"
       }
@@ -1313,7 +1313,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "pāpaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "宾语",
         "meaning": "恶"
       }
@@ -1335,7 +1335,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "karotha",
     "analyses": [
       {
-        "grammar": "命令语气第二人称复数",
+        "grammar": "imp.act.2pl（命令·主动·第二人称复数）",
         "role": "限定动词",
         "meaning": "你们做"
       }
@@ -1352,7 +1352,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "sāvako",
     "analyses": [
       {
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "弟子"
       }
@@ -1369,7 +1369,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Yadā",
     "analyses": [
       {
-        "grammar": "关系副词",
+        "grammar": "ind.（不变词）",
         "role": "时间关联标记",
         "meaning": "当……时"
       }
@@ -1386,12 +1386,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "paññā",
     "analyses": [
       {
-        "grammar": "阴性sg.nom",
+        "grammar": "f.sg.nom（阴性·单数·主格）",
         "role": "从句主语",
         "meaning": "智慧"
       },
       {
-        "grammar": "阴性sg.nom",
+        "grammar": "f.sg.nom（阴性·单数·主格）",
         "role": "主语",
         "meaning": "智慧"
       }
@@ -1413,12 +1413,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "uppajjati",
     "analyses": [
       {
-        "grammar": "现在时第三人称单数",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "从句动词",
         "meaning": "生起"
       },
       {
-        "grammar": "现在时第三人称单数",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "生起"
       }
@@ -1440,7 +1440,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "tadā",
     "analyses": [
       {
-        "grammar": "指示副词",
+        "grammar": "ind.（不变词）",
         "role": "主句时间呼应",
         "meaning": "那时"
       }
@@ -1457,7 +1457,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "moho",
     "analyses": [
       {
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主句主语",
         "meaning": "愚痴"
       }
@@ -1474,7 +1474,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "pahīyati",
     "analyses": [
       {
-        "grammar": "被动/中性意义动词形式",
+        "grammar": "prs.indic.pass.3sg（现在时·陈述·被动·第三人称单数）",
         "role": "主句动词",
         "meaning": "被舍断、消退"
       }
@@ -1508,12 +1508,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "me",
     "analyses": [
       {
-        "grammar": "第一人称代词属格/与格",
+        "grammar": "pron.1sg.gen/dat（代词·第一人称单数·属格/与格）",
         "role": "与我相关",
         "meaning": "我的/对我而言"
       },
       {
-        "grammar": "第一人称代词属格/与格",
+        "grammar": "pron.1sg.gen/dat（代词·第一人称单数·属格/与格）",
         "role": "与我相关",
         "meaning": "我、我的、为我所"
       }
@@ -1535,7 +1535,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "saraṇaṃ",
     "analyses": [
       {
-        "grammar": "中性主格/sg.acc",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
         "role": "存在对象",
         "meaning": "皈依处"
       }
@@ -1552,7 +1552,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "aññaṃ",
     "analyses": [
       {
-        "grammar": "形容词中性单数",
+        "grammar": "adj.n.sg.nom/acc（形容词·中性·单数·主格/宾格）",
         "role": "修饰 saraṇaṃ",
         "meaning": "其他的"
       }
@@ -1569,12 +1569,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Ye",
     "analyses": [
       {
-        "grammar": "关系代词复数主格",
+        "grammar": "pron.m.pl.nom（代词·阳性·复数·主格）",
         "role": "关系从句标记",
         "meaning": "凡……诸"
       },
       {
-        "grammar": "关系代词复数主格",
+        "grammar": "pron.m.pl.nom（代词·阳性·复数·主格）",
         "role": "关系从句主语",
         "meaning": "凡……者们"
       }
@@ -1596,7 +1596,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "dhammā",
     "analyses": [
       {
-        "grammar": "阳性复数主格",
+        "grammar": "m.pl.nom（阳性·复数·主格）",
         "role": "关系从句主语",
         "meaning": "诸法"
       }
@@ -1613,7 +1613,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "hetuppabhavā",
     "analyses": [
       {
-        "grammar": "复合形容词复数主格",
+        "grammar": "adj.m.pl.nom（形容词·阳性·复数·主格）",
         "role": "修饰 dhammā",
         "meaning": "从因生的"
       }
@@ -1630,7 +1630,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "tesaṃ",
     "analyses": [
       {
-        "grammar": "指示代词属格复数",
+        "grammar": "pron.pl.gen（代词·复数·属格）",
         "role": "指代 ye dhammā",
         "meaning": "它们的"
       }
@@ -1647,7 +1647,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "hetuṃ",
     "analyses": [
       {
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "因"
       }
@@ -1664,7 +1664,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "tathāgato",
     "analyses": [
       {
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "如来"
       }
@@ -1681,7 +1681,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "āha",
     "analyses": [
       {
-        "grammar": "过去/完成类动词形式",
+        "grammar": "aor.indic.act.3sg（不定过去·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "说"
       }
@@ -1698,7 +1698,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Attā",
     "analyses": [
       {
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "自己"
       }
@@ -1715,7 +1715,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "hi",
     "analyses": [
       {
-        "grammar": "ind.",
+        "grammar": "ind.（不变词）",
         "role": "强调/解释",
         "meaning": "确实、因为"
       }
@@ -1732,7 +1732,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "attano",
     "analyses": [
       {
-        "grammar": "反身代词属格/与格",
+        "grammar": "pron.gen/dat（代词·属格/与格）",
         "role": "所属限定",
         "meaning": "自己的"
       }
@@ -1749,7 +1749,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "nātho",
     "analyses": [
       {
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "表语",
         "meaning": "依怙、保护者"
       }
@@ -1766,7 +1766,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Dārako",
     "analyses": [
       {
-        "grammar": "m.sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "男孩"
       }
@@ -1783,7 +1783,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "phalaṃ",
     "analyses": [
       {
-        "grammar": "-a尾n.sg.acc",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
         "role": "宾语",
         "meaning": "水果"
       }
@@ -1800,7 +1800,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "khādati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "吃"
       }
@@ -1817,7 +1817,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Upāsako",
     "analyses": [
       {
-        "grammar": "m.sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "优婆塞、居士"
       }
@@ -1834,12 +1834,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "dānaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "宾语",
         "meaning": "布施、施物"
       },
       {
-        "grammar": "中性sg.nom",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "主语",
         "meaning": "布施、施物"
       }
@@ -1861,7 +1861,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "deti",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "给、施"
       }
@@ -1878,7 +1878,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Itthī",
     "analyses": [
       {
-        "grammar": "f.sg.nom",
+        "grammar": "f.sg.nom（阴性·单数·主格）",
         "role": "主语",
         "meaning": "女人"
       }
@@ -1895,7 +1895,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "udakaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "宾语",
         "meaning": "水"
       }
@@ -1912,7 +1912,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "pivati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "喝"
       }
@@ -1929,7 +1929,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Purisā",
     "analyses": [
       {
-        "grammar": "-a尾阳性名词主格复数",
+        "grammar": "m.pl.nom（阳性·复数·主格）",
         "role": "主语",
         "meaning": "男人们"
       }
@@ -1946,7 +1946,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "nagaraṃ",
     "analyses": [
       {
-        "grammar": "sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "去向",
         "meaning": "城市"
       }
@@ -1963,7 +1963,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "gacchanti",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "去"
       }
@@ -1980,7 +1980,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "suṇāmi",
     "analyses": [
       {
-        "grammar": "prs.indic.act.1sg",
+        "grammar": "prs.indic.act.1sg（现在时·陈述·主动·第一人称单数）",
         "role": "限定动词",
         "meaning": "听"
       }
@@ -1997,7 +1997,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Dārakā",
     "analyses": [
       {
-        "grammar": "-a尾阳性名词主格复数",
+        "grammar": "m.pl.nom（阳性·复数·主格）",
         "role": "主语",
         "meaning": "男孩们"
       }
@@ -2014,7 +2014,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "magge",
     "analyses": [
       {
-        "grammar": "-a尾名词sg.loc",
+        "grammar": "m.sg.loc（阳性·单数·处格）",
         "role": "地点状语",
         "meaning": "在路上"
       }
@@ -2031,7 +2031,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "kīḷanti",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "玩耍"
       }
@@ -2048,7 +2048,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Bhikkhū",
     "analyses": [
       {
-        "grammar": "-u尾阳性名词主格复数",
+        "grammar": "m.pl.nom（阳性·复数·主格）",
         "role": "主语",
         "meaning": "比丘们"
       }
@@ -2065,7 +2065,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "ārāme",
     "analyses": [
       {
-        "grammar": "-a尾名词sg.loc",
+        "grammar": "m.sg.loc（阳性·单数·处格）",
         "role": "地点",
         "meaning": "在园林、寺院中"
       }
@@ -2082,12 +2082,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "vasanti",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "住"
       },
       {
-        "grammar": "现在时第三人称复数",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "从句动词",
         "meaning": "住"
       }
@@ -2109,7 +2109,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Rājā",
     "analyses": [
       {
-        "grammar": "m.sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "国王"
       }
@@ -2126,7 +2126,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "nagare",
     "analyses": [
       {
-        "grammar": "sg.loc",
+        "grammar": "m.sg.loc（阳性·单数·处格）",
         "role": "地点",
         "meaning": "在城中"
       }
@@ -2143,7 +2143,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Bhikkhussa",
     "analyses": [
       {
-        "grammar": "-u尾阳性名词与格/sg.gen",
+        "grammar": "m.sg.gen/dat（阳性·单数·属格/与格）",
         "role": "持有者",
         "meaning": "对比丘而言 / 比丘的"
       }
@@ -2160,7 +2160,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "patto",
     "analyses": [
       {
-        "grammar": "m.sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "存在对象",
         "meaning": "钵"
       }
@@ -2177,12 +2177,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "atthi",
     "analyses": [
       {
-        "grammar": "√as 第三人称单数",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "存在动词",
         "meaning": "有、存在"
       },
       {
-        "grammar": "存在动词第三人称单数",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "有、存在"
       }
@@ -2204,7 +2204,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Cakkhunā",
     "analyses": [
       {
-        "grammar": "-u尾中性名词sg.ins",
+        "grammar": "n.sg.ins（中性·单数·工具格）",
         "role": "工具",
         "meaning": "以眼、用眼"
       }
@@ -2221,7 +2221,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "rūpaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "宾语",
         "meaning": "色、形色"
       }
@@ -2238,7 +2238,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Sotena",
     "analyses": [
       {
-        "grammar": "sg.ins",
+        "grammar": "n.sg.ins（中性·单数·工具格）",
         "role": "工具",
         "meaning": "以耳"
       }
@@ -2255,7 +2255,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "saddaṃ",
     "analyses": [
       {
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "宾语",
         "meaning": "声音"
       }
@@ -2272,7 +2272,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Gahapatissa",
     "analyses": [
       {
-        "grammar": "-i尾阳性名词与格/sg.gen",
+        "grammar": "m.sg.gen/dat（阳性·单数·属格/与格）",
         "role": "持有者",
         "meaning": "居士的 / 对居士而言"
       }
@@ -2289,7 +2289,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "gharaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.nom",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
         "role": "存在对象",
         "meaning": "房子"
       }
@@ -2306,12 +2306,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Dānaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "dātuṃ 的宾语",
         "meaning": "施物、布施"
       },
       {
-        "grammar": "sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "datvā 的宾语",
         "meaning": "施物、布施"
       }
@@ -2333,7 +2333,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "dātuṃ",
     "analyses": [
       {
-        "grammar": "inf.",
+        "grammar": "inf.（不定式）",
         "role": "目的",
         "meaning": "为了给、为了布施"
       }
@@ -2350,7 +2350,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "upāsako",
     "analyses": [
       {
-        "grammar": "sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "优婆塞"
       }
@@ -2372,7 +2372,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "datvā",
     "analyses": [
       {
-        "grammar": "ger./独立式",
+        "grammar": "ger.（连续体）",
         "role": "先行动作",
         "meaning": "给了之后、布施之后"
       }
@@ -2389,7 +2389,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Saccaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "bhāsituṃ 的宾语",
         "meaning": "真实、真话"
       }
@@ -2406,7 +2406,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "bhāsituṃ",
     "analyses": [
       {
-        "grammar": "inf.",
+        "grammar": "inf.（不定式）",
         "role": "动作内容",
         "meaning": "说"
       }
@@ -2423,7 +2423,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "vaṭṭati",
     "analyses": [
       {
-        "grammar": "现在时第三人称单数",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "谓语",
         "meaning": "适宜、应当"
       }
@@ -2440,7 +2440,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Gharaṃ",
     "analyses": [
       {
-        "grammar": "sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "去向",
         "meaning": "家、房屋"
       }
@@ -2457,7 +2457,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "gantvā",
     "analyses": [
       {
-        "grammar": "ger.",
+        "grammar": "ger.（连续体）",
         "role": "先行动作",
         "meaning": "去了之后"
       }
@@ -2474,7 +2474,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "sayati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "睡、躺"
       }
@@ -2491,7 +2491,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Nisīditvā",
     "analyses": [
       {
-        "grammar": "ger./独立式",
+        "grammar": "ger.（连续体）",
         "role": "先行动作",
         "meaning": "坐下之后"
       }
@@ -2508,7 +2508,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Uṭṭhahitvā",
     "analyses": [
       {
-        "grammar": "ger./独立式",
+        "grammar": "ger.（连续体）",
         "role": "先行动作",
         "meaning": "起身之后"
       }
@@ -2525,7 +2525,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Āgacchanto",
     "analyses": [
       {
-        "grammar": "pr.p.阳性sg.nom",
+        "grammar": "pr.p.act.m.sg.nom（现在主动分词·阳性·单数·主格）",
         "role": "修饰 dārako",
         "meaning": "正在来的"
       }
@@ -2542,7 +2542,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "dārako",
     "analyses": [
       {
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "男孩"
       }
@@ -2559,7 +2559,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "hasati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "笑"
       }
@@ -2576,7 +2576,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Passantā",
     "analyses": [
       {
-        "grammar": "pr.p.阳性主格复数",
+        "grammar": "pr.p.act.m.pl.nom（现在主动分词·阳性·复数·主格）",
         "role": "修饰 purisā",
         "meaning": "正在看的"
       }
@@ -2593,7 +2593,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "purisā",
     "analyses": [
       {
-        "grammar": "阳性主格复数",
+        "grammar": "m.pl.nom（阳性·复数·主格）",
         "role": "主语",
         "meaning": "男人们"
       }
@@ -2610,7 +2610,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "tiṭṭhanti",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "站立"
       }
@@ -2627,7 +2627,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Dinnaṃ",
     "analyses": [
       {
-        "grammar": "p.p.中性sg.nom",
+        "grammar": "p.p.n.sg.nom（过去分词·中性·单数·主格）",
         "role": "修饰 dānaṃ",
         "meaning": "已给的、已施的"
       }
@@ -2644,7 +2644,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "mahapphalaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.nom形容词/复合词",
+        "grammar": "adj.n.sg.nom（形容词·中性·单数·主格）",
         "role": "表语",
         "meaning": "有大果的"
       }
@@ -2661,7 +2661,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "hoti",
     "analyses": [
       {
-        "grammar": "√as/bhū 类现在时第三人称单数",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "是、成为"
       }
@@ -2678,7 +2678,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Nisinno",
     "analyses": [
       {
-        "grammar": "p.p./状态分词阳性sg.nom",
+        "grammar": "p.p.m.sg.nom（过去分词·阳性·单数·主格）",
         "role": "修饰 bhikkhu",
         "meaning": "已坐下的、坐着的"
       }
@@ -2695,7 +2695,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Pāpaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "宾语",
         "meaning": "恶"
       }
@@ -2712,17 +2712,17 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "karoti",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "做"
       },
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "主句动词",
         "meaning": "做"
       },
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "从句动词",
         "meaning": "做"
       }
@@ -2749,7 +2749,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "musā",
     "analyses": [
       {
-        "grammar": "ind./副词",
+        "grammar": "ind.（不变词）",
         "role": "方式",
         "meaning": "虚妄地、假"
       }
@@ -2766,7 +2766,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "bhaṇa",
     "analyses": [
       {
-        "grammar": "命令语气第二人称单数",
+        "grammar": "imp.act.2sg（命令·主动·第二人称单数）",
         "role": "限定动词",
         "meaning": "说"
       }
@@ -2783,7 +2783,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Dhammo",
     "analyses": [
       {
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "并列项",
         "meaning": "法"
       }
@@ -2800,7 +2800,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "vinayo",
     "analyses": [
       {
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "并列项",
         "meaning": "律"
       }
@@ -2817,7 +2817,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Evaṃ",
     "analyses": [
       {
-        "grammar": "ind./副词",
+        "grammar": "ind.（不变词）",
         "role": "方式",
         "meaning": "这样、如是"
       }
@@ -2834,7 +2834,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "sutaṃ",
     "analyses": [
       {
-        "grammar": "p.p.中性单数",
+        "grammar": "p.p.n.sg.nom/acc（过去分词·中性·单数·主格/宾格）",
         "role": "谓语性分词",
         "meaning": "已听闻的"
       }
@@ -2851,7 +2851,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Kiṃ",
     "analyses": [
       {
-        "grammar": "疑问代词中性sg.acc",
+        "grammar": "pron.n.sg.acc（代词·中性·单数·宾格）",
         "role": "宾语/疑问对象",
         "meaning": "什么"
       }
@@ -2868,7 +2868,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "karosi",
     "analyses": [
       {
-        "grammar": "prs.indic.act.2sg",
+        "grammar": "prs.indic.act.2sg（现在时·陈述·主动·第二人称单数）",
         "role": "限定动词",
         "meaning": "你做"
       }
@@ -2885,7 +2885,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Kahaṃ",
     "analyses": [
       {
-        "grammar": "疑问副词",
+        "grammar": "ind.（不变词）",
         "role": "地点疑问",
         "meaning": "哪里"
       }
@@ -2902,7 +2902,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "gacchasi",
     "analyses": [
       {
-        "grammar": "prs.indic.act.2sg",
+        "grammar": "prs.indic.act.2sg（现在时·陈述·主动·第二人称单数）",
         "role": "限定动词",
         "meaning": "你去"
       }
@@ -2919,7 +2919,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Yathā",
     "analyses": [
       {
-        "grammar": "关系副词",
+        "grammar": "ind.（不变词）",
         "role": "方式关联",
         "meaning": "如、怎样"
       }
@@ -2936,7 +2936,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "vadati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "从句动词",
         "meaning": "说"
       }
@@ -2953,7 +2953,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "tathā",
     "analyses": [
       {
-        "grammar": "指示副词",
+        "grammar": "ind.（不变词）",
         "role": "方式呼应",
         "meaning": "那样"
       }
@@ -2970,7 +2970,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Yāva",
     "analyses": [
       {
-        "grammar": "关系副词",
+        "grammar": "ind.（不变词）",
         "role": "范围/时间关联",
         "meaning": "只要、直到"
       }
@@ -2987,7 +2987,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "jīvati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "从句动词",
         "meaning": "活着"
       }
@@ -3004,7 +3004,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "tāva",
     "analyses": [
       {
-        "grammar": "指示副词",
+        "grammar": "ind.（不变词）",
         "role": "范围/时间呼应",
         "meaning": "就、那么久"
       }
@@ -3021,12 +3021,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "sikkhati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "主句动词",
         "meaning": "学习"
       },
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "学习、训练"
       }
@@ -3048,7 +3048,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "dukkhaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "宾语",
         "meaning": "苦"
       }
@@ -3070,7 +3070,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "vindati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "主句动词",
         "meaning": "遭遇、获得"
       }
@@ -3087,12 +3087,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "te",
     "analyses": [
       {
-        "grammar": "指示代词复数主格",
+        "grammar": "pron.m.pl.nom（代词·阳性·复数·主格）",
         "role": "主句主语",
         "meaning": "他们"
       },
       {
-        "grammar": "指示代词主格复数",
+        "grammar": "pron.m.pl.nom（代词·阳性·复数·主格）",
         "role": "主语",
         "meaning": "那些"
       }
@@ -3114,7 +3114,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "pasīdanti",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "主句动词",
         "meaning": "生信、净信"
       }
@@ -3131,7 +3131,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Yattha",
     "analyses": [
       {
-        "grammar": "关系副词",
+        "grammar": "ind.（不变词）",
         "role": "地点关联",
         "meaning": "在哪里"
       }
@@ -3148,22 +3148,22 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "bhikkhū",
     "analyses": [
       {
-        "grammar": "主格复数",
+        "grammar": "m.pl.nom/acc（阳性·复数·主格/宾格）",
         "role": "从句主语",
         "meaning": "比丘们"
       },
       {
-        "grammar": "阳性主格复数",
+        "grammar": "m.pl.nom/acc（阳性·复数·主格/宾格）",
         "role": "主语",
         "meaning": "比丘们"
       },
       {
-        "grammar": "阳性宾格复数",
+        "grammar": "m.pl.nom/acc（阳性·复数·主格/宾格）",
         "role": "宾语",
         "meaning": "比丘们"
       },
       {
-        "grammar": "主格复数",
+        "grammar": "m.pl.nom/acc（阳性·复数·主格/宾格）",
         "role": "主语核心",
         "meaning": "比丘们"
       }
@@ -3190,7 +3190,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "tattha",
     "analyses": [
       {
-        "grammar": "指示副词",
+        "grammar": "ind.（不变词）",
         "role": "地点呼应",
         "meaning": "在那里"
       }
@@ -3207,7 +3207,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "desīyati",
     "analyses": [
       {
-        "grammar": "被动式现在时第三人称单数",
+        "grammar": "prs.indic.pass.3sg（现在时·陈述·被动·第三人称单数）",
         "role": "主句动词",
         "meaning": "被宣说"
       }
@@ -3224,7 +3224,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "piṇḍāya",
     "analyses": [
       {
-        "grammar": "与格/目的用法",
+        "grammar": "m.sg.dat（阳性·单数·与格）",
         "role": "目的",
         "meaning": "为了食物、为了托钵"
       }
@@ -3241,7 +3241,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "pavisati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "进入"
       }
@@ -3258,7 +3258,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Pāṇe",
     "analyses": [
       {
-        "grammar": "阳性宾格复数",
+        "grammar": "m.pl.acc（阳性·复数·宾格）",
         "role": "hanituṃ 的宾语",
         "meaning": "生命、众生"
       }
@@ -3275,7 +3275,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "hanituṃ",
     "analyses": [
       {
-        "grammar": "inf.",
+        "grammar": "inf.（不定式）",
         "role": "学习内容",
         "meaning": "杀害"
       }
@@ -3292,7 +3292,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Paññāya",
     "analyses": [
       {
-        "grammar": "-ā尾阴性sg.ins",
+        "grammar": "f.sg.ins（阴性·单数·工具格）",
         "role": "工具/凭借",
         "meaning": "以智慧"
       }
@@ -3309,7 +3309,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Sukhāya",
     "analyses": [
       {
-        "grammar": "与格单数",
+        "grammar": "f.sg.dat（阴性·单数·与格）",
         "role": "目的",
         "meaning": "为了安乐"
       }
@@ -3326,7 +3326,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "paṭipajjati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "实践、行道"
       }
@@ -3343,7 +3343,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Sīlaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "rakkhanto 的宾语",
         "meaning": "戒"
       }
@@ -3360,7 +3360,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "rakkhanto",
     "analyses": [
       {
-        "grammar": "pr.p.阳性sg.nom",
+        "grammar": "pr.p.act.m.sg.nom（现在主动分词·阳性·单数·主格）",
         "role": "修饰 bhikkhu",
         "meaning": "守护着的"
       }
@@ -3377,7 +3377,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "sukhaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.acc（中性·单数·宾格）",
         "role": "labhati 的宾语",
         "meaning": "安乐"
       }
@@ -3394,7 +3394,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "labhati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "获得"
       }
@@ -3411,12 +3411,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Dukkhaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.acc",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
         "role": "ñatvā 的宾语",
         "meaning": "苦"
       },
       {
-        "grammar": "中性sg.nom",
+        "grammar": "n.sg.nom/acc（中性·单数·主格/宾格）",
         "role": "修饰/构成 ariyasaccaṃ",
         "meaning": "苦"
       }
@@ -3438,7 +3438,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "ñatvā",
     "analyses": [
       {
-        "grammar": "ger.",
+        "grammar": "ger.（连续体）",
         "role": "先行动作",
         "meaning": "知道之后"
       }
@@ -3455,7 +3455,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "ariyasāvako",
     "analyses": [
       {
-        "grammar": "阳性sg.nom复合词",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "圣弟子"
       }
@@ -3472,7 +3472,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "virajjati",
     "analyses": [
       {
-        "grammar": "现在时第三人称单数",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "离染、厌离"
       }
@@ -3489,7 +3489,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "ariyasaccaṃ",
     "analyses": [
       {
-        "grammar": "中性sg.nom",
+        "grammar": "n.sg.nom（中性·单数·主格）",
         "role": "主语",
         "meaning": "圣谛"
       }
@@ -3506,7 +3506,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "pariññeyyaṃ",
     "analyses": [
       {
-        "grammar": "f.p.p.中性sg.nom",
+        "grammar": "f.p.p.n.sg.nom（将来被动分词·中性·单数·主格）",
         "role": "谓语性成分",
         "meaning": "应被遍知"
       }
@@ -3523,7 +3523,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Samudayo",
     "analyses": [
       {
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "集、苦因"
       }
@@ -3540,7 +3540,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "pahātabbo",
     "analyses": [
       {
-        "grammar": "f.p.p.阳性sg.nom",
+        "grammar": "f.p.p.m.sg.nom（将来被动分词·阳性·单数·主格）",
         "role": "谓语性成分",
         "meaning": "应被舍断"
       }
@@ -3557,7 +3557,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Nirodho",
     "analyses": [
       {
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "灭"
       }
@@ -3574,7 +3574,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "sacchikātabbo",
     "analyses": [
       {
-        "grammar": "f.p.p.阳性sg.nom",
+        "grammar": "f.p.p.m.sg.nom（将来被动分词·阳性·单数·主格）",
         "role": "谓语性成分",
         "meaning": "应被作证、应亲证"
       }
@@ -3591,7 +3591,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Maggo",
     "analyses": [
       {
-        "grammar": "阳性sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "道"
       }
@@ -3608,7 +3608,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "bhāvetabbo",
     "analyses": [
       {
-        "grammar": "f.p.p.阳性sg.nom",
+        "grammar": "f.p.p.m.sg.nom（将来被动分词·阳性·单数·主格）",
         "role": "谓语性成分",
         "meaning": "应被修习"
       }
@@ -3625,7 +3625,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Tisso",
     "analyses": [
       {
-        "grammar": "阴性复数主格",
+        "grammar": "num.f.pl.nom（数词·阴性·复数·主格）",
         "role": "修饰 sikkhā",
         "meaning": "三"
       }
@@ -3642,7 +3642,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "sikkhā",
     "analyses": [
       {
-        "grammar": "阴性复数主格",
+        "grammar": "f.pl.nom（阴性·复数·主格）",
         "role": "主语",
         "meaning": "学、训练"
       }
@@ -3659,7 +3659,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "sikkhitabbā",
     "analyses": [
       {
-        "grammar": "f.p.p.阴性复数主格",
+        "grammar": "f.p.p.f.pl.nom（将来被动分词·阴性·复数·主格）",
         "role": "谓语性成分",
         "meaning": "应被学习"
       }
@@ -3676,7 +3676,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Dve",
     "analyses": [
       {
-        "grammar": "数词",
+        "grammar": "num.（数词）",
         "role": "修饰 bhikkhū",
         "meaning": "二、两"
       }
@@ -3693,7 +3693,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "sākacchanti",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3pl",
+        "grammar": "prs.indic.act.3pl（现在时·陈述·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "讨论"
       }
@@ -3710,7 +3710,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Ekaṃ",
     "analyses": [
       {
-        "grammar": "数词/形容词sg.acc",
+        "grammar": "adj.n.sg.acc（形容词·中性·单数·宾格）",
         "role": "修饰 samayaṃ",
         "meaning": "一"
       }
@@ -3727,7 +3727,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "samayaṃ",
     "analyses": [
       {
-        "grammar": "sg.acc",
+        "grammar": "m.sg.acc（阳性·单数·宾格）",
         "role": "时间状语",
         "meaning": "时候"
       }
@@ -3744,12 +3744,12 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Bhagavā",
     "analyses": [
       {
-        "grammar": "-vant 类名词sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "世尊"
       },
       {
-        "grammar": "-vant 类sg.nom",
+        "grammar": "m.sg.nom（阳性·单数·主格）",
         "role": "主语",
         "meaning": "世尊"
       }
@@ -3776,7 +3776,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Sāvatthiyaṃ",
     "analyses": [
       {
-        "grammar": "sg.loc",
+        "grammar": "f.sg.loc（阴性·单数·处格）",
         "role": "地点",
         "meaning": "在舍卫城"
       }
@@ -3793,7 +3793,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "viharati",
     "analyses": [
       {
-        "grammar": "prs.indic.act.3sg",
+        "grammar": "prs.indic.act.3sg（现在时·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "住、住止"
       }
@@ -3810,7 +3810,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "āmantesi",
     "analyses": [
       {
-        "grammar": "过去时/不定过去式第三人称单数",
+        "grammar": "aor.indic.act.3sg（不定过去·陈述·主动·第三人称单数）",
         "role": "限定动词",
         "meaning": "告、呼唤"
       }
@@ -3827,7 +3827,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Bhaddante",
     "analyses": [
       {
-        "grammar": "呼格/尊称形式",
+        "grammar": "voc.（呼格）",
         "role": "引语内容",
         "meaning": "尊者"
       }
@@ -3844,7 +3844,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "ti",
     "analyses": [
       {
-        "grammar": "引语标记",
+        "grammar": "ind.（不变词）",
         "role": "标记前面的引语",
         "meaning": "如此说"
       }
@@ -3861,7 +3861,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Bhagavato",
     "analyses": [
       {
-        "grammar": "属格/与格单数",
+        "grammar": "m.sg.gen/dat（阳性·单数·属格/与格）",
         "role": "回答对象",
         "meaning": "对世尊"
       }
@@ -3878,7 +3878,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "paccassosuṃ",
     "analyses": [
       {
-        "grammar": "过去动词第三人称复数",
+        "grammar": "aor.indic.act.3pl（不定过去·陈述·主动·第三人称复数）",
         "role": "限定动词",
         "meaning": "回答"
       }
@@ -3895,7 +3895,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "etadavoca",
     "analyses": [
       {
-        "grammar": "etaṃ + avoca 的合成/连读形式",
+        "grammar": "etaṃ + avoca",
         "role": "限定动词短语",
         "meaning": "这样说"
       }
@@ -3912,7 +3912,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "dhamma",
     "analyses": [
       {
-        "grammar": "词典形：-a尾阳性名词",
+        "grammar": "m.（阳性）",
         "role": "可依词尾变化为主格、宾格、属格等",
         "meaning": "法；教法；事物"
       }
@@ -3929,7 +3929,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "Buddha",
     "analyses": [
       {
-        "grammar": "词典形：-a尾阳性名词",
+        "grammar": "m.（阳性）",
         "role": "可依词尾变化为主格、宾格、属格等",
         "meaning": "佛；觉者"
       }
@@ -3946,7 +3946,7 @@ const TOKEN_ANALYSIS_DATA = {
     "form": "saṅgha",
     "analyses": [
       {
-        "grammar": "词典形：-a尾阳性名词",
+        "grammar": "m.（阳性）",
         "role": "可依词尾变化为主格、宾格、属格等",
         "meaning": "僧伽；僧团"
       }

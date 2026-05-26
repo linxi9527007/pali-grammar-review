@@ -1,10 +1,10 @@
 const CONFUSION_PAIRS = [
   {
     "id": "infinitive_gerund",
-    "title": "inf. vs ger.",
-    "a": "inf.",
-    "b": "ger.",
-    "core": "inf.多表示目的或动作内容；ger.多表示先行动作或伴随动作。",
+    "title": "inf.（不定式） vs ger.（连续体）",
+    "a": "inf.（不定式）",
+    "b": "ger.（连续体）",
+    "core": "inf.（不定式）多表示目的或动作内容；ger.（连续体）多表示先行动作或伴随动作。",
     "a_cue": "-tuṃ / -ituṃ / -etuṃ；常可译为“为了……”",
     "b_cue": "-tvā / -itvā / -ya；常可译为“……之后”",
     "examples": [
@@ -106,10 +106,10 @@ const CONFUSION_PAIRS = [
   },
   {
     "id": "present_participle_finite",
-    "title": "pr.p. vs 限定动词",
-    "a": "pr.p.",
+    "title": "pr.p.（现在分词） vs 限定动词",
+    "a": "pr.p.（现在分词）",
     "b": "限定动词",
-    "core": "pr.p.像形容词一样修饰名词；限定动词承担句子谓语核心。",
+    "core": "pr.p.（现在分词）像形容词一样修饰名词；限定动词承担句子谓语核心。",
     "a_cue": "-nta / -anto / -antī 等；常译“正在……的”。",
     "b_cue": "-ti / -anti / -mi / -si 等；带人称数信息。",
     "examples": [
@@ -122,11 +122,11 @@ const CONFUSION_PAIRS = [
     "tip": "句子分析时先找限定动词，再观察分词修饰谁。"
   },
   {
-    "id": "past_participle_f.p.p.",
-    "title": "p.p. vs f.p.p.",
-    "a": "p.p.",
-    "b": "f.p.p.",
-    "core": "p.p.多表示已完成、结果状态或被动；f.p.p.多表示应当、必须、可被。",
+    "id": "past_participle_f.p.p.（过去分词）",
+    "title": "p.p.（过去分词） vs f.p.p.（过去分词）",
+    "a": "p.p.（过去分词）",
+    "b": "f.p.p.（过去分词）",
+    "core": "p.p.（过去分词）多表示已完成、结果状态或被动；f.p.p.（过去分词）多表示应当、必须、可被。",
     "a_cue": "-ta / -ita 等常见。",
     "b_cue": "-tabba / -anīya 等常见。",
     "examples": [
@@ -138,7 +138,7 @@ const CONFUSION_PAIRS = [
       {
         "pali": "Maggo bhāvetabbo.",
         "cn": "道应被修习。",
-        "note": "bhāvetabbo 是f.p.p.。"
+        "note": "bhāvetabbo 是f.p.p.（过去分词）。"
       }
     ],
     "tip": "看到 -tabba 不要译成普通将来时。"

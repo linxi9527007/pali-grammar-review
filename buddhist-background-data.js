@@ -416,143 +416,296 @@ const BUDDHIST_BACKGROUND_DATA = {
         "Dhamma",
         "Saṅgha"
       ]
+    },
+    {
+      "id": "khandha_pancakkhandha",
+      "pali": "khandha / pañcakkhandha",
+      "cn": "蕴；五蕴",
+      "en": "aggregate; five aggregates",
+      "category": "教义结构",
+      "level": "必学",
+      "basic": "五蕴是对身心经验的五类分析：色、受、想、行、识。",
+      "reading_tip": "遇到 khandha 时，不要直接理解为普通“堆积”，佛典语境中常是对经验构成的分析框架。",
+      "example": "Rūpaṃ, vedanā, saññā, saṅkhārā, viññāṇaṃ.",
+      "related": [
+        "dukkha",
+        "anicca",
+        "anattā"
+      ]
+    },
+    {
+      "id": "ayatana",
+      "pali": "āyatana",
+      "cn": "处；十二处",
+      "en": "sense base",
+      "category": "教义结构",
+      "level": "选学",
+      "basic": "十二处指六内处和六外处，即眼耳鼻舌身意与色声香味触法。",
+      "reading_tip": "āyatana 常用于说明认知经验的发生条件，读经时要注意它是否与触、受、识等词连用。",
+      "example": "cakkhu, rūpa, sota, sadda ...",
+      "related": [
+        "dhātu",
+        "phassa",
+        "vedanā"
+      ]
+    },
+    {
+      "id": "dhatu",
+      "pali": "dhātu",
+      "cn": "界；十八界",
+      "en": "element",
+      "category": "教义结构",
+      "level": "选学",
+      "basic": "十八界是在十二处基础上加入六识，用来分析认识活动的构成。",
+      "reading_tip": "dhātu 不一定是现代意义的“元素”，在佛典中常是分类框架。",
+      "example": "cakkhu-dhātu, rūpa-dhātu, cakkhuviññāṇa-dhātu.",
+      "related": [
+        "āyatana",
+        "viññāṇa"
+      ]
+    },
+    {
+      "id": "cattari_ariyasaccani",
+      "pali": "cattāri ariyasaccāni",
+      "cn": "四圣谛",
+      "en": "Four Noble Truths",
+      "category": "核心教义",
+      "level": "必学",
+      "basic": "四圣谛是苦、集、灭、道，是佛典中最核心的教义框架之一。",
+      "reading_tip": "读到 ariyasacca 时，要留意它是单说“圣谛”，还是具体列举四圣谛。",
+      "example": "dukkhaṃ ariyasaccaṃ ...",
+      "related": [
+        "dukkha",
+        "taṇhā",
+        "nibbāna",
+        "magga"
+      ]
+    },
+    {
+      "id": "ariyo_atthangiko_maggo",
+      "pali": "ariyo aṭṭhaṅgiko maggo",
+      "cn": "八正道",
+      "en": "Noble Eightfold Path",
+      "category": "修道体系",
+      "level": "必学",
+      "basic": "八正道是正见、正思惟、正语、正业、正命、正精进、正念、正定。",
+      "reading_tip": "magga 有时只是“道路”，在四圣谛和修道语境中常指解脱之道。",
+      "example": "sammādiṭṭhi, sammāsaṅkappa ...",
+      "related": [
+        "magga",
+        "sīla",
+        "samādhi",
+        "paññā"
+      ]
+    },
+    {
+      "id": "tilakkhana",
+      "pali": "tilakkhaṇa",
+      "cn": "三相；三法印",
+      "en": "three characteristics",
+      "category": "核心教义",
+      "level": "必学",
+      "basic": "三相通常指无常、苦、无我，是理解诸法性质的重要框架。",
+      "reading_tip": "三相常与五蕴、诸法、观修语境连用，读经时要注意它说明的是经验性质。",
+      "example": "anicca, dukkha, anattā.",
+      "related": [
+        "anicca",
+        "dukkha",
+        "anattā"
+      ]
+    },
+    {
+      "id": "satipatthana",
+      "pali": "satipaṭṭhāna",
+      "cn": "念处；四念处",
+      "en": "foundation of mindfulness",
+      "category": "修道体系",
+      "level": "选学",
+      "basic": "四念处是身、受、心、法四类观照对象。",
+      "reading_tip": "satipaṭṭhāna 中的 sati 是“念/正念”，不要只按现代口语“想念”理解。",
+      "example": "kāye kāyānupassī viharati.",
+      "related": [
+        "sati",
+        "kāya",
+        "vedanā",
+        "citta",
+        "dhamma"
+      ]
+    },
+    {
+      "id": "brahmavihara",
+      "pali": "brahmavihāra",
+      "cn": "梵住；四无量心",
+      "en": "divine abode; sublime state",
+      "category": "修道体系",
+      "level": "选学",
+      "basic": "四梵住通常指慈、悲、喜、舍。",
+      "reading_tip": "遇到 mettā、karuṇā、muditā、upekkhā 时，可联系四梵住框架理解。",
+      "example": "mettā, karuṇā, muditā, upekkhā.",
+      "related": [
+        "mettā",
+        "karuṇā",
+        "upekkhā"
+      ]
+    },
+    {
+      "id": "bojjhanga",
+      "pali": "bojjhaṅga",
+      "cn": "觉支；七觉支",
+      "en": "factor of awakening",
+      "category": "修道体系",
+      "level": "进阶",
+      "basic": "七觉支是念、择法、精进、喜、轻安、定、舍。",
+      "reading_tip": "bojjhaṅga 属于修道分类，初学阶段只需知道它是觉悟相关的七类因素。",
+      "example": "sati-sambojjhaṅga ... upekkhā-sambojjhaṅga.",
+      "related": [
+        "sati",
+        "samādhi",
+        "upekkhā"
+      ]
+    },
+    {
+      "id": "upadana",
+      "pali": "upādāna",
+      "cn": "取；执取",
+      "en": "clinging",
+      "category": "核心教义",
+      "level": "选学",
+      "basic": "upādāna 常译为取或执取，是缘起链条中的重要环节。",
+      "reading_tip": "不要把 upādāna 只理解为普通“拿取”，在教义语境中常指执取、依附。",
+      "example": "taṇhāpaccayā upādānaṃ.",
+      "related": [
+        "taṇhā",
+        "paṭiccasamuppāda",
+        "dukkha"
+      ]
     }
   ],
   "canon_structure": [
     {
-      "id": "tipitaka",
-      "title": "Tipiṭaka 三藏",
+      "id": "tipitaka_overview",
+      "title": "Tipiṭaka 三藏总览",
       "type": "总结构",
-      "explanation": "Tipiṭaka 意为“三藏”，通常指律藏、经藏、论藏三大部分。",
+      "explanation": "巴利语三藏是上座部佛教保存的巴利语经典总集，入门阶段先记住“律藏、经藏、论藏”三大部分即可。",
       "items": [
+        {
+          "abbr": "Tipiṭaka",
+          "name": "三藏",
+          "note": "巴利语佛典总集；字面义为“三个篮子/三部藏”。"
+        },
         {
           "abbr": "Vinaya Piṭaka",
           "name": "律藏",
-          "note": "戒律、僧团制度和相关叙事。"
+          "note": "以戒律、僧团制度和相关因缘叙事为核心。"
         },
         {
           "abbr": "Sutta Piṭaka",
           "name": "经藏",
-          "note": "佛陀及弟子说法为主。"
+          "note": "以佛陀及弟子说法、对话和教义阐释为核心。"
         },
         {
           "abbr": "Abhidhamma Piṭaka",
           "name": "论藏",
-          "note": "较系统化的法相分析。"
+          "note": "以系统化法相分类和教义分析为核心。"
         }
       ]
     },
     {
-      "id": "nikaya",
+      "id": "sutta_pitaka_five_nikayas",
       "title": "Sutta Piṭaka 经藏五部",
       "type": "经藏结构",
-      "explanation": "巴利经藏常按五部 Nikāya 组织。学习阅读时最常见的是 DN、MN、SN、AN、KN。",
+      "explanation": "经藏通常分为五部；入门阶段只需知道各部的基本性质和常用略号。",
       "items": [
         {
-          "abbr": "DN",
-          "name": "Dīgha Nikāya 长部",
-          "note": "较长篇幅的经。"
+          "abbr": "DN / Dīgha Nikāya",
+          "name": "长部",
+          "note": "以较长篇幅经典为主。"
         },
         {
-          "abbr": "MN",
-          "name": "Majjhima Nikāya 中部",
-          "note": "中等篇幅的经。"
+          "abbr": "MN / Majjhima Nikāya",
+          "name": "中部",
+          "note": "以中等篇幅经典为主。"
         },
         {
-          "abbr": "SN",
-          "name": "Saṃyutta Nikāya 相应部",
-          "note": "按主题相应组织。"
+          "abbr": "SN / Saṃyutta Nikāya",
+          "name": "相应部",
+          "note": "按主题或人物相应编排。"
         },
         {
-          "abbr": "AN",
-          "name": "Aṅguttara Nikāya 增支部",
-          "note": "按数字增一组织。"
+          "abbr": "AN / Aṅguttara Nikāya",
+          "name": "增支部",
+          "note": "按数字法门递增编排。"
         },
         {
-          "abbr": "KN",
-          "name": "Khuddaka Nikāya 小部",
-          "note": "集合多种短篇、偈颂、故事等文本。"
+          "abbr": "KN / Khuddaka Nikāya",
+          "name": "小部",
+          "note": "包含多种体裁与篇幅的经典集合，如 Dhammapada。"
         }
       ]
     },
     {
-      "id": "khuddaka",
-      "title": "小部常见略号",
-      "type": "略号",
-      "explanation": "小部 Khuddaka Nikāya 内部包含许多常见文本。初学者先认识最常见略号即可。",
+      "id": "khuddaka_examples",
+      "title": "Khuddaka Nikāya 小部常见书名",
+      "type": "小部例子",
+      "explanation": "小部内部作品较多，入门阶段只需先认识常见略号。",
       "items": [
         {
-          "abbr": "Dhp",
-          "name": "Dhammapada 法句",
-          "note": "偈颂集，引用极常见。"
+          "abbr": "Dhp / Dhammapada",
+          "name": "法句",
+          "note": "偈颂体经典，常按颂号引用。"
         },
         {
-          "abbr": "Ud",
-          "name": "Udāna 自说",
-          "note": "自说经。"
+          "abbr": "Ud / Udāna",
+          "name": "自说",
+          "note": "以佛陀感兴而说的语句为主。"
         },
         {
-          "abbr": "Iti",
-          "name": "Itivuttaka 如是语",
-          "note": "常见短经集。"
+          "abbr": "It / Itivuttaka",
+          "name": "如是语",
+          "note": "以“如是说”形式保存的短经集合。"
         },
         {
-          "abbr": "Snp",
-          "name": "Suttanipāta 经集",
-          "note": "古老偈颂和散文材料。"
-        },
-        {
-          "abbr": "Thag",
-          "name": "Theragāthā 长老偈",
-          "note": "长老偈颂。"
-        },
-        {
-          "abbr": "Thig",
-          "name": "Therīgāthā 长老尼偈",
-          "note": "长老尼偈颂。"
-        },
-        {
-          "abbr": "Jā",
-          "name": "Jātaka 本生",
-          "note": "本生故事。"
+          "abbr": "Sn / Suttanipāta",
+          "name": "经集",
+          "note": "包含较早层次和偈颂材料，常按经或偈引用。"
         }
       ]
     },
     {
-      "id": "vinaya",
-      "title": "律藏常见术语",
-      "type": "律藏",
-      "explanation": "阅读律藏时会遇到戒类、篇章和僧团制度术语。这里先给最基础导航。",
+      "id": "citation_quick_guide",
+      "title": "巴利三藏引用速查",
+      "type": "引用说明",
+      "explanation": "学习阶段优先使用通行略号定位；正式论文中再根据所用版本补充页码、段号或链接。",
       "items": [
         {
-          "abbr": "Vin",
-          "name": "Vinaya 律藏",
-          "note": "律藏总称。"
+          "abbr": "DN 1",
+          "name": "长部第 1 经",
+          "note": "DN 表 Dīgha Nikāya，经号在后。"
         },
         {
-          "abbr": "Pārājika",
-          "name": "波罗夷",
-          "note": "重大戒类。"
+          "abbr": "MN 10",
+          "name": "中部第 10 经",
+          "note": "MN 表 Majjhima Nikāya。"
         },
         {
-          "abbr": "Saṅghādisesa",
-          "name": "僧残",
-          "note": "需僧团处理的戒类。"
+          "abbr": "SN 56.11",
+          "name": "相应部第 56 相应第 11 经",
+          "note": "SN 常用“相应号.经号”形式。"
         },
         {
-          "abbr": "Pācittiya",
-          "name": "波逸提",
-          "note": "戒类之一。"
+          "abbr": "AN 3.65",
+          "name": "增支部三集第 65 经",
+          "note": "AN 常用“集数.经号”形式。"
         },
         {
-          "abbr": "Mahāvagga",
-          "name": "大品",
-          "note": "律藏篇章。"
+          "abbr": "Dhp 1",
+          "name": "法句第 1 颂",
+          "note": "Dhp 常按颂号引用。"
         },
         {
-          "abbr": "Cullavagga",
-          "name": "小品",
-          "note": "律藏篇章。"
+          "abbr": "Vin I 1",
+          "name": "律藏 PTS I:1",
+          "note": "传统学术写作中 Vin 后可接 PTS 卷页；在线资料应补平台或链接。"
         }
       ]
     }
@@ -607,32 +760,37 @@ const BUDDHIST_BACKGROUND_DATA = {
       "term": "vibhaṅga",
       "cn": "分别；解析",
       "note": "常见于论述或戒条解析结构。"
+    },
+    {
+      "term": "piṭaka",
+      "cn": "藏",
+      "note": "三藏的一级结构，如 Vinaya Piṭaka、Sutta Piṭaka、Abhidhamma Piṭaka。"
     }
   ],
   "citation_examples": [
     {
       "ref": "DN 1",
-      "meaning": "长部第1经。"
+      "meaning": "Dīgha Nikāya 第 1 经，常译“长部第1经”。"
     },
     {
       "ref": "MN 10",
-      "meaning": "中部第10经。"
+      "meaning": "Majjhima Nikāya 第 10 经，常译“中部第10经”。"
     },
     {
       "ref": "SN 56.11",
-      "meaning": "相应部，第56相应，第11经。"
+      "meaning": "Saṃyutta Nikāya 第 56 相应第 11 经。"
     },
     {
       "ref": "AN 3.65",
-      "meaning": "增支部，三集，第65经。"
+      "meaning": "Aṅguttara Nikāya 三集第 65 经。"
     },
     {
       "ref": "Dhp 1",
-      "meaning": "法句第1偈。"
+      "meaning": "Dhammapada 第 1 颂。"
     },
     {
-      "ref": "Snp 1.1",
-      "meaning": "经集第1品第1经，具体编号体系可能因平台略有差异。"
+      "ref": "Vin I 1",
+      "meaning": "Vinaya Piṭaka，PTS 第 I 卷第 1 页；使用在线版时应补平台或链接。"
     }
   ],
   "sutta_flow": [

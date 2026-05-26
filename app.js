@@ -1,5 +1,5 @@
-const VERSION="18.2";
-let GRAMMAR=[],currentModule='',currentLesson=null,currentFilter='全部',lastView='homeView',cardItems=[],cardIndex=0,exerciseItems=[],exerciseIndex=0,selectedChoice='',exerciseStats={total:0,right:0,wrong:0};const WRONG_KEY='pali_grammar_wrong_exercises_v1',STATUS_KEY='pali_grammar_lesson_status_v2';const MODULE_ORDER=['入门与发音','动词系统','名词变格','代词与形容词','分词与非限定动词','ind.与常用句式','句法与阅读','其他'];const TRAINING_PRESETS=[['case','格位识别专项','集中练习主格、宾格、工具格、处格、属格等。'],['verb','动词变位专项','集中练习现在时、将来时、过去时、命令语气等。'],['nonfinite','非限定动词专项','集中练习inf.、ger.、分词。'],['particles','ind.与句型专项','集中练习 na、mā、ca、vā、eva、iti 等。'],['reading','阅读分析专项','集中练习短句中的主语、宾语、动词和格位。'],['input','输入生成专项','只练需要手动输入答案的题目。']];function $(id){return document.getElementById(id)}function show(id){const el=$(id); if(el) el.classList.remove('hidden')}function hide(id){const el=$(id); if(el) el.classList.add('hidden')}function switchView(id){document.querySelectorAll('.view').forEach(v=>v.classList.add('hidden'));show(id);window.scrollTo({top:0,behavior:'smooth'})}function norm(t){return String(t||'').trim().replace(/\s+/g,' ').toLowerCase()}function strip(t){const m={ā:'a',ī:'i',ū:'u',ṅ:'n',ñ:'n',ṭ:'t',ḍ:'d',ṇ:'n',ḷ:'l',ṃ:'m',ṁ:'m'};return String(t||'').replace(/[āīūṅñṭḍṇḷṃṁ]/g,ch=>m[ch]||ch)}function ok(u,e){u=norm(u);e=norm(e);if(u===e)return true;let lu=strip(u),le=strip(e);if(lu===le)return true;return e.split(/\s*\/\s*|；|;|，|,|、/).some(x=>u===norm(x)||lu===strip(norm(x)))}function getW(){try{return JSON.parse(localStorage.getItem(WRONG_KEY))||{}}catch{return {}}}function saveW(r){localStorage.setItem(WRONG_KEY,JSON.stringify(r));stats()}function getS(){try{return JSON.parse(localStorage.getItem(STATUS_KEY))||{}}catch{return {}}}function saveS(s){localStorage.setItem(STATUS_KEY,JSON.stringify(s));stats()}function lstat(id){return getS()[id]||'未学'}function setLStat(id,s){let x=getS();x[id]=s;saveS(x);statusBtns();renderModules();if(currentModule)renderLessonList(currentModule)}function scls(s){return s==='已掌握'?'mastered':s==='学习中'?'learning':s==='需复习'?'review':''}function lessons(m){return m==='全部模块'?GRAMMAR:GRAMMAR.filter(x=>x.module===m)}function stats(){let total=GRAMMAR.reduce((a,l)=>a+(l.exercises||[]).length,0),s=getS(),master=GRAMMAR.filter(l=>s[l.id]==='已掌握').length;if($('totalLessons'))$('totalLessons').textContent=GRAMMAR.length;if($('totalExercises'))$('totalExercises').textContent=total;if($('masteredCount'))$('masteredCount').textContent=master;if($('wrongCount'))$('wrongCount').textContent=Object.keys(getW()).length}function progress(ls){let m=ls.filter(l=>lstat(l.id)==='已掌握').length,p=ls.length?Math.round(m/ls.length*100):0;return `<div class="progress-wrap"><div class="progress-bar" style="width:${p}%"></div></div><p class="muted">掌握进度：${m}/${ls.length}（${p}%）</p>`}function cardHTML(l){let s=lstat(l.id),n=(l.exercises||[]).length;return `<h3>${l.lesson_number||l.id}. ${l.title}</h3><div class="lesson-badges"><span class="badge ${scls(s)}">${s}</span><span class="badge">${l.category||''}</span><span class="badge">${n}题</span></div><p>${l.summary||''}</p>`}function renderModules(){let grid=$('moduleGrid');grid.innerHTML='';MODULE_ORDER.forEach(m=>{let ls=lessons(m);if(!ls.length)return;let d=document.createElement('div');d.className='module-card';d.innerHTML=`<h3>${m}</h3><p class="muted">${ls.length} 个语法点</p>${progress(ls)}`;d.onclick=()=>openModule(m);grid.appendChild(d)})}function renderLessonList(m){currentModule=m;let all=lessons(m),ls=all.filter(l=>currentFilter==='全部'||lstat(l.id)===currentFilter);$('moduleTitle').textContent=m;$('moduleSubtitle').textContent=`${all.length} 个语法点`;$('lessonList').innerHTML=ls.length?'':'<p class="muted">当前筛选下没有语法点。</p>';ls.forEach(l=>{let d=document.createElement('div');d.className='lesson-item';d.innerHTML=cardHTML(l);d.onclick=()=>openLesson(l.id);$('lessonList').appendChild(d)})}function openModule(m){lastView='lessonListView';currentFilter='全部';document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter==='全部'));renderLessonList(m);switchView('lessonListView')}function statusBtns(){if(!currentLesson)return;let s=lstat(currentLesson.id);document.querySelectorAll('.status-btn').forEach(b=>b.classList.toggle('active',b.dataset.status===s))}function openLesson(id){currentLesson=GRAMMAR.find(x=>x.id===id);if(!currentLesson)return;$('lessonModule').textContent=currentLesson.module||'';$('lessonTitle').textContent=currentLesson.title;$('lessonMeta').textContent=`${currentLesson.category||''}｜${currentLesson.difficulty||currentLesson.level||''}`;$('lessonSummary').textContent=currentLesson.summary||'';document.querySelectorAll('.high-risk-box,.content-tier-box,.minimal-mastery-box,.misjudge-box,.lesson-guide-box,.linked-confusion-box,.linked-pattern-box,.linked-buddhist-box,.linked-background-box,.linked-academic-box,.linked-term-box').forEach(x=>x.remove());let polish=contentPolishHTML(currentLesson)+linkedConfusionHTML(currentLesson)+linkedPatternHTML(currentLesson)+linkedBuddhistReadingHTML(currentLesson)+linkedBuddhistBackgroundHTML(currentLesson)+linkedAcademicTrainingHTML(currentLesson)+linkedTerminologyHTML(currentLesson)+lessonStudyGuideHTML(currentLesson);if(currentLesson.high_risk_note){polish+=`<div class="high-risk-box"><strong>进阶/需复核提示：</strong>${currentLesson.high_risk_note}<br><button class="feedback-mini-btn" onclick="copyCurrentLessonFeedback()">反馈本课问题</button></div>`}$('lessonSummary').insertAdjacentHTML('afterend',polish);let e=$('lessonExplanation');e.innerHTML='';(currentLesson.explanation||[]).forEach(x=>{let li=document.createElement('li');li.textContent=x;e.appendChild(li)});let mb=$('mistakeBlock'),ml=$('lessonMistakes');if(ml){ml.innerHTML='';if(currentLesson.common_mistakes&&currentLesson.common_mistakes.length){currentLesson.common_mistakes.forEach(x=>{let li=document.createElement('li');li.textContent=x;ml.appendChild(li)});show('mistakeBlock')}else hide('mistakeBlock')}let t=$('lessonTable');t.innerHTML='';(currentLesson.table||[]).forEach(r=>{let tr=document.createElement('tr');r.forEach(c=>{let td=document.createElement('td');td.textContent=c;tr.appendChild(td)});t.appendChild(tr)});let ex=$('lessonExamples');ex.innerHTML='';(currentLesson.examples||[]).forEach(a=>{let d=document.createElement('div');d.className='example';d.innerHTML=exampleHTML(a);ex.appendChild(d)});statusBtns();switchView('lessonView')}function allEx(m){return lessons(m).flatMap(l=>(l.exercises||[]).map(ex=>({...ex,lesson_id:l.id,lesson_title:l.title,module:l.module,category:l.category})))}function shuffle(a){return [...a].sort(()=>Math.random()-.5)}function startCards(cs){cardItems=cs||[];cardIndex=0;if(!cardItems.length)return alert('当前没有卡片。');show('cardPanel');hide('exercisePanel');renderCard()}function renderCard(){let c=cardItems[cardIndex];$('cardProgress').textContent=`卡片 ${cardIndex+1}/${cardItems.length}`;$('cardQuestion').textContent=c.q;$('cardAnswer').textContent=c.a;hide('cardAnswer');show('cardBeforeButtons');hide('cardAfterButtons')}function nextCard(){if(++cardIndex>=cardItems.length){alert('卡片复习完成。');hide('cardPanel')}else renderCard()}function startExercises(items,title='练习'){exerciseItems=items||[];exerciseIndex=0;selectedChoice='';exerciseStats={total:0,right:0,wrong:0};if(!exerciseItems.length)return alert('当前没有练习题。');show('exercisePanel');hide('cardPanel');$('exerciseModeTitle').textContent=title;renderExercise()}function renderExercise(){let ex=exerciseItems[exerciseIndex];selectedChoice='';$('exerciseProgress').textContent=`题目 ${exerciseIndex+1}/${exerciseItems.length}｜正确 ${exerciseStats.right}｜错误 ${exerciseStats.wrong}`;$('exerciseLessonLabel').textContent=`${ex.module||''}｜${ex.lesson_title||''}`;$('exerciseQuestion').textContent=ex.question;$('exerciseFeedback').innerHTML='';$('exerciseFeedback').className='answer-box hidden';hide('nextExerciseBtn');show('submitExerciseBtn');let opts=$('exerciseOptions'),inp=$('exerciseInput');opts.innerHTML='';inp.value='';if(ex.type==='choice'){hide('exerciseInput');hide('paliKeyboard');(ex.options||[]).forEach(o=>{let b=document.createElement('button');b.className='option-btn';b.textContent=o;b.onclick=()=>{selectedChoice=o;document.querySelectorAll('.option-btn').forEach(x=>x.classList.remove('selected'));b.classList.add('selected')};opts.appendChild(b)})}else{show('exerciseInput');show('paliKeyboard')}}function submitExercise(){let ex=exerciseItems[exerciseIndex],ua='';if(ex.type==='choice'){ua=selectedChoice;if(!ua)return alert('请先选择一个答案。')}else{ua=$('exerciseInput').value;if(!ua.trim())return alert('请先输入答案。')}let good=ok(ua,ex.answer);exerciseStats.total++;let w=getW();if(good){exerciseStats.right++;delete w[ex.id]}else{exerciseStats.wrong++;w[ex.id]={...ex,wrong_at:new Date().toISOString()}}saveW(w);$('exerciseFeedback').innerHTML=`<strong>${good?'回答正确 ✅':'回答错误 ❌'}</strong><p>你的答案：${ua}</p><p>标准答案：${ex.answer}</p><p>${ex.explanation||''}</p>`;$('exerciseFeedback').classList.remove('hidden');if(!good)$('exerciseFeedback').classList.add('incorrect');show('nextExerciseBtn');hide('submitExerciseBtn')}function nextEx(){if(++exerciseIndex>=exerciseItems.length){alert(`本轮练习完成：正确 ${exerciseStats.right}，错误 ${exerciseStats.wrong}`);hide('exercisePanel');renderWrong();stats()}else renderExercise()}function renderSelect(){let s=$('exerciseModuleSelect');s.innerHTML='<option value="全部模块">全部模块</option>';MODULE_ORDER.forEach(m=>{if(GRAMMAR.some(x=>x.module===m)){let o=document.createElement('option');o.value=m;o.textContent=m;s.appendChild(o)}})}function renderWrong(){let items=Object.values(getW()),box=$('wrongList');box.innerHTML=items.length?'':'<p class="muted">目前没有错题。</p>';items.forEach(it=>{let d=document.createElement('div');d.className='wrong-item';d.innerHTML=`<strong>${it.question}</strong><p class="muted">${it.module||''}｜${it.lesson_title||''}</p><p>答案：${it.answer}</p>`;box.appendChild(d)})}function search(q){let box=$('searchResults');q=String(q||'').trim().toLowerCase();box.innerHTML=q?'':'<p class="muted">输入关键词后显示搜索结果。</p>';if(!q)return;let res=GRAMMAR.filter(l=>[l.title,l.category,l.module,l.summary,...(l.explanation||[]),...(l.examples||[]).flatMap(e=>[e.pali,e.cn,e.note]),...(l.cards||[]).flatMap(c=>[c.q,c.a])].join(' ').toLowerCase().includes(q));if(!res.length){box.innerHTML='<p class="muted">没有找到相关语法点。</p>';return}res.forEach(l=>{let d=document.createElement('div');d.className='lesson-item';d.innerHTML=cardHTML(l);d.onclick=()=>{lastView='searchView';openLesson(l.id)};box.appendChild(d)})}function train(key){let all=GRAMMAR.flatMap(l=>(l.exercises||[]).map(ex=>({...ex,lesson_id:l.id,lesson_title:l.title,module:l.module,category:l.category})));let f=all;if(key==='input')f=all.filter(e=>e.type==='input');else if(key==='reading')f=all.filter(e=>e.lesson_id===75||e.category==='阅读训练');else if(key==='case')f=all.filter(e=>/格|主格|宾格|工具格|处格|属格|与格|从格|呼格/.test(e.question+e.explanation));else if(key==='verb')f=all.filter(e=>/动词|现在时|将来时|过去|命令|祈愿|条件式|使役|被动|人称|词尾/.test(e.question+e.explanation));else if(key==='nonfinite')f=all.filter(e=>/inf.|ger.|分词|gantvā|gantuṃ|katvā|kātuṃ|sutvā/.test(e.question+e.explanation));else if(key==='particles')f=all.filter(e=>/ind.|na|mā|ca|vā|eva|iti|ti|关联|引语|否定|并列|选择/.test(e.question+e.explanation));return f}function renderTraining(){let grid=$('trainingGrid');grid.innerHTML='';TRAINING_PRESETS.forEach(p=>{let count=train(p[0]).length,d=document.createElement('div');d.className='training-card';d.innerHTML=`<h3>${p[1]}</h3><p class="muted">${p[2]}</p><p class="muted">${count} 道题</p><button class="primary">开始专项训练</button>`;d.onclick=()=>startExercises(shuffle(train(p[0])).slice(0,20),p[1]);grid.appendChild(d)})}
+const VERSION="20.0";
+let GRAMMAR=[],currentModule='',currentLesson=null,currentFilter='全部',lastView='homeView',cardItems=[],cardIndex=0,exerciseItems=[],exerciseIndex=0,selectedChoice='',exerciseStats={total:0,right:0,wrong:0};const WRONG_KEY='pali_grammar_wrong_exercises_v1',STATUS_KEY='pali_grammar_lesson_status_v2';const MODULE_ORDER=['使用说明','入门与发音','动词系统','名词变格','代词与形容词','分词与非限定动词','不变词与常用句式','句法与阅读','其他'];const TRAINING_PRESETS=[['case','格位识别专项','集中练习主格、宾格、工具格、处格、属格等。'],['verb','动词变位专项','集中练习现在时、将来时、过去时、命令语气等。'],['nonfinite','非限定动词专项','集中练习inf.、ger.、分词。'],['particles','ind.与句型专项','集中练习 na、mā、ca、vā、eva、iti 等。'],['reading','阅读分析专项','集中练习短句中的主语、宾语、动词和格位。'],['input','输入生成专项','只练需要手动输入答案的题目。']];function $(id){return document.getElementById(id)}function show(id){const el=$(id); if(el) el.classList.remove('hidden')}function hide(id){const el=$(id); if(el) el.classList.add('hidden')}function switchView(id){document.querySelectorAll('.view').forEach(v=>v.classList.add('hidden'));show(id);window.scrollTo({top:0,behavior:'smooth'})}function norm(t){return String(t||'').trim().replace(/\s+/g,' ').toLowerCase()}function strip(t){const m={ā:'a',ī:'i',ū:'u',ṅ:'n',ñ:'n',ṭ:'t',ḍ:'d',ṇ:'n',ḷ:'l',ṃ:'m',ṁ:'m'};return String(t||'').replace(/[āīūṅñṭḍṇḷṃṁ]/g,ch=>m[ch]||ch)}function ok(u,e){u=norm(u);e=norm(e);if(u===e)return true;let lu=strip(u),le=strip(e);if(lu===le)return true;return e.split(/\s*\/\s*|；|;|，|,|、/).some(x=>u===norm(x)||lu===strip(norm(x)))}function getW(){try{return JSON.parse(localStorage.getItem(WRONG_KEY))||{}}catch{return {}}}function saveW(r){localStorage.setItem(WRONG_KEY,JSON.stringify(r));stats()}function getS(){try{return JSON.parse(localStorage.getItem(STATUS_KEY))||{}}catch{return {}}}function saveS(s){localStorage.setItem(STATUS_KEY,JSON.stringify(s));stats()}function lstat(id){return getS()[id]||'未学'}function setLStat(id,s){let x=getS();x[id]=s;saveS(x);statusBtns();renderModules();if(currentModule)renderLessonList(currentModule)}function scls(s){return s==='已掌握'?'mastered':s==='学习中'?'learning':s==='需复习'?'review':''}function lessons(m){return m==='全部模块'?GRAMMAR:GRAMMAR.filter(x=>x.module===m)}function stats(){let total=GRAMMAR.reduce((a,l)=>a+(l.exercises||[]).length,0),s=getS(),master=GRAMMAR.filter(l=>s[l.id]==='已掌握').length;if($('totalLessons'))$('totalLessons').textContent=GRAMMAR.length;if($('totalExercises'))$('totalExercises').textContent=total;if($('masteredCount'))$('masteredCount').textContent=master;if($('wrongCount'))$('wrongCount').textContent=Object.keys(getW()).length}function progress(ls){let m=ls.filter(l=>lstat(l.id)==='已掌握').length,p=ls.length?Math.round(m/ls.length*100):0;return `<div class="progress-wrap"><div class="progress-bar" style="width:${p}%"></div></div><p class="muted">掌握进度：${m}/${ls.length}（${p}%）</p>`}function cardHTML(l){let s=lstat(l.id),n=(l.exercises||[]).length;return `<h3>${l.lesson_number||l.id}. ${l.title}</h3><div class="lesson-badges"><span class="badge ${scls(s)}">${s}</span><span class="badge">${l.category||''}</span><span class="badge">${n}题</span></div><p>${l.summary||''}</p>`}function renderModules(){let grid=$('moduleGrid');grid.innerHTML='';MODULE_ORDER.forEach(m=>{let ls=lessons(m);if(!ls.length)return;let d=document.createElement('div');d.className='module-card';d.innerHTML=`<h3>${m}</h3><p class="muted">${ls.length} 个语法点</p>${progress(ls)}`;d.onclick=()=>openModule(m);grid.appendChild(d)})}function renderLessonList(m){currentModule=m;let all=lessons(m),ls=all.filter(l=>currentFilter==='全部'||lstat(l.id)===currentFilter);$('moduleTitle').textContent=m;$('moduleSubtitle').textContent=`${all.length} 个语法点`;$('lessonList').innerHTML=ls.length?'':'<p class="muted">当前筛选下没有语法点。</p>';ls.forEach(l=>{let d=document.createElement('div');d.className='lesson-item';d.innerHTML=cardHTML(l);d.onclick=()=>openLesson(l.id);$('lessonList').appendChild(d)})}function openModule(m){lastView='lessonListView';currentFilter='全部';document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter==='全部'));renderLessonList(m);switchView('lessonListView')}function statusBtns(){if(!currentLesson)return;let s=lstat(currentLesson.id);document.querySelectorAll('.status-btn').forEach(b=>b.classList.toggle('active',b.dataset.status===s))}function openLesson(id){currentLesson=GRAMMAR.find(x=>x.id===id);if(!currentLesson)return;$('lessonModule').textContent=currentLesson.module||'';$('lessonTitle').textContent=currentLesson.title;$('lessonMeta').textContent=`${currentLesson.category||''}｜${currentLesson.difficulty||currentLesson.level||''}`;$('lessonSummary').textContent=currentLesson.summary||'';document.querySelectorAll('.high-risk-box,.content-tier-box,.minimal-mastery-box,.misjudge-box,.lesson-guide-box,.linked-confusion-box,.linked-pattern-box,.linked-buddhist-box,.linked-background-box,.linked-academic-box,.linked-term-box').forEach(x=>x.remove());let polish=contentPolishHTML(currentLesson)+linkedConfusionHTML(currentLesson)+linkedPatternHTML(currentLesson)+linkedBuddhistReadingHTML(currentLesson)+linkedBuddhistBackgroundHTML(currentLesson)+linkedAcademicTrainingHTML(currentLesson)+linkedTerminologyHTML(currentLesson)+lessonStudyGuideHTML(currentLesson);if(currentLesson.high_risk_note){polish+=`<div class="high-risk-box"><strong>进阶/需复核提示：</strong>${currentLesson.high_risk_note}<br><button class="feedback-mini-btn" onclick="copyCurrentLessonFeedback()">反馈本课问题</button></div>`}$('lessonSummary').insertAdjacentHTML('afterend',polish);let e=$('lessonExplanation');e.innerHTML='';(currentLesson.explanation||[]).forEach(x=>{let li=document.createElement('li');li.textContent=x;e.appendChild(li)});let mb=$('mistakeBlock'),ml=$('lessonMistakes');if(ml){ml.innerHTML='';if(currentLesson.common_mistakes&&currentLesson.common_mistakes.length){currentLesson.common_mistakes.forEach(x=>{let li=document.createElement('li');li.textContent=x;ml.appendChild(li)});show('mistakeBlock')}else hide('mistakeBlock')}let t=$('lessonTable');t.innerHTML='';(currentLesson.table||[]).forEach(r=>{let tr=document.createElement('tr');r.forEach(c=>{let td=document.createElement('td');td.textContent=c;tr.appendChild(td)});t.appendChild(tr)});let ex=$('lessonExamples');ex.innerHTML='';(currentLesson.examples||[]).forEach(a=>{let d=document.createElement('div');d.className='example';d.innerHTML=exampleHTML(a);ex.appendChild(d)});statusBtns();switchView('lessonView')}function allEx(m){return lessons(m).flatMap(l=>(l.exercises||[]).map(ex=>({...ex,lesson_id:l.id,lesson_title:l.title,module:l.module,category:l.category})))}function shuffle(a){return [...a].sort(()=>Math.random()-.5)}function startCards(cs){cardItems=cs||[];cardIndex=0;if(!cardItems.length)return alert('当前没有卡片。');show('cardPanel');hide('exercisePanel');renderCard()}function renderCard(){let c=cardItems[cardIndex];$('cardProgress').textContent=`卡片 ${cardIndex+1}/${cardItems.length}`;$('cardQuestion').textContent=c.q;$('cardAnswer').textContent=c.a;hide('cardAnswer');show('cardBeforeButtons');hide('cardAfterButtons')}function nextCard(){if(++cardIndex>=cardItems.length){alert('卡片复习完成。');hide('cardPanel')}else renderCard()}function startExercises(items,title='练习'){exerciseItems=items||[];exerciseIndex=0;selectedChoice='';exerciseStats={total:0,right:0,wrong:0};if(!exerciseItems.length)return alert('当前没有练习题。');show('exercisePanel');hide('cardPanel');$('exerciseModeTitle').textContent=title;renderExercise()}function renderExercise(){let ex=exerciseItems[exerciseIndex];selectedChoice='';$('exerciseProgress').textContent=`题目 ${exerciseIndex+1}/${exerciseItems.length}｜正确 ${exerciseStats.right}｜错误 ${exerciseStats.wrong}`;$('exerciseLessonLabel').textContent=`${ex.module||''}｜${ex.lesson_title||''}`;$('exerciseQuestion').textContent=ex.question;$('exerciseFeedback').innerHTML='';$('exerciseFeedback').className='answer-box hidden';hide('nextExerciseBtn');show('submitExerciseBtn');let opts=$('exerciseOptions'),inp=$('exerciseInput');opts.innerHTML='';inp.value='';if(ex.type==='choice'){hide('exerciseInput');hide('paliKeyboard');(ex.options||[]).forEach(o=>{let b=document.createElement('button');b.className='option-btn';b.textContent=o;b.onclick=()=>{selectedChoice=o;document.querySelectorAll('.option-btn').forEach(x=>x.classList.remove('selected'));b.classList.add('selected')};opts.appendChild(b)})}else{show('exerciseInput');show('paliKeyboard')}}function submitExercise(){let ex=exerciseItems[exerciseIndex],ua='';if(ex.type==='choice'){ua=selectedChoice;if(!ua)return alert('请先选择一个答案。')}else{ua=$('exerciseInput').value;if(!ua.trim())return alert('请先输入答案。')}let good=ok(ua,ex.answer);exerciseStats.total++;let w=getW();if(good){exerciseStats.right++;delete w[ex.id]}else{exerciseStats.wrong++;w[ex.id]={...ex,wrong_at:new Date().toISOString()}}saveW(w);$('exerciseFeedback').innerHTML=`<strong>${good?'回答正确 ✅':'回答错误 ❌'}</strong><p>你的答案：${ua}</p><p>标准答案：${ex.answer}</p><p>${ex.explanation||''}</p>`;$('exerciseFeedback').classList.remove('hidden');if(!good)$('exerciseFeedback').classList.add('incorrect');show('nextExerciseBtn');hide('submitExerciseBtn')}function nextEx(){if(++exerciseIndex>=exerciseItems.length){alert(`本轮练习完成：正确 ${exerciseStats.right}，错误 ${exerciseStats.wrong}`);hide('exercisePanel');renderWrong();stats()}else renderExercise()}function renderSelect(){let s=$('exerciseModuleSelect');s.innerHTML='<option value="全部模块">全部模块</option>';MODULE_ORDER.forEach(m=>{if(GRAMMAR.some(x=>x.module===m)){let o=document.createElement('option');o.value=m;o.textContent=m;s.appendChild(o)}})}function renderWrong(){let items=Object.values(getW()),box=$('wrongList');box.innerHTML=items.length?'':'<p class="muted">目前没有错题。</p>';items.forEach(it=>{let d=document.createElement('div');d.className='wrong-item';d.innerHTML=`<strong>${it.question}</strong><p class="muted">${it.module||''}｜${it.lesson_title||''}</p><p>答案：${it.answer}</p>`;box.appendChild(d)})}function search(q){let box=$('searchResults');q=String(q||'').trim().toLowerCase();box.innerHTML=q?'':'<p class="muted">输入关键词后显示搜索结果。</p>';if(!q)return;let res=GRAMMAR.filter(l=>[l.title,l.category,l.module,l.summary,...(l.explanation||[]),...(l.examples||[]).flatMap(e=>[e.pali,e.cn,e.note]),...(l.cards||[]).flatMap(c=>[c.q,c.a])].join(' ').toLowerCase().includes(q));if(!res.length){box.innerHTML='<p class="muted">没有找到相关语法点。</p>';return}res.forEach(l=>{let d=document.createElement('div');d.className='lesson-item';d.innerHTML=cardHTML(l);d.onclick=()=>{lastView='searchView';openLesson(l.id)};box.appendChild(d)})}function train(key){let all=GRAMMAR.flatMap(l=>(l.exercises||[]).map(ex=>({...ex,lesson_id:l.id,lesson_title:l.title,module:l.module,category:l.category})));let f=all;if(key==='input')f=all.filter(e=>e.type==='input');else if(key==='reading')f=all.filter(e=>e.lesson_id===75||e.category==='阅读训练');else if(key==='case')f=all.filter(e=>/格|主格|宾格|工具格|处格|属格|与格|从格|呼格/.test(e.question+e.explanation));else if(key==='verb')f=all.filter(e=>/动词|现在时|将来时|过去|命令|祈愿|条件式|使役|被动|人称|词尾/.test(e.question+e.explanation));else if(key==='nonfinite')f=all.filter(e=>/inf.|ger.|分词|gantvā|gantuṃ|katvā|kātuṃ|sutvā/.test(e.question+e.explanation));else if(key==='particles')f=all.filter(e=>/ind.|na|mā|ca|vā|eva|iti|ti|关联|引语|否定|并列|选择/.test(e.question+e.explanation));return f}function renderTraining(){let grid=$('trainingGrid');grid.innerHTML='';TRAINING_PRESETS.forEach(p=>{let count=train(p[0]).length,d=document.createElement('div');d.className='training-card';d.innerHTML=`<h3>${p[1]}</h3><p class="muted">${p[2]}</p><p class="muted">${count} 道题</p><button class="primary">开始专项强化</button>`;d.onclick=()=>startExercises(shuffle(train(p[0])).slice(0,20),p[1]);grid.appendChild(d)})}
 
 
 
@@ -146,15 +146,19 @@ function renderSentenceCard(mode="question"){
   const item=currentSentence();
   if(!item){box.innerHTML='<p class="muted">当前筛选下没有句子，请更换筛选条件。</p>';return}
   const tagHTML=(item.tags||[]).map(t=>`<span class="tag-chip">${t}</span>`).join("");
-  let html=`<p class="pill">${item.level}</p><p class="sentence-main">${item.sentence}</p>${sentenceStatusChipHTML(item)}<span class="source-chip">${item.source_type||"教学句"}</span><span class="source-chip">${item.practice_priority||"综合挑战"}</span><div>${tagHTML}</div><div class="training-goal-box"><strong>训练目标：</strong>${item.training_goal||"训练句子分析能力。"}</div>${sentenceRouteAdvice(item)}`;
+  const stepMap={question:"第 1 步：先看原文",translation:"第 2 步：核对翻译",hint:"第 3 步：查看提示",analysis:"第 4 步：完整分析"};
+  let html=`<p class="pill">${item.level}</p><p class="sentence-step-chip">${stepMap[mode]||stepMap.question}</p><p class="sentence-main">${item.sentence}</p>${sentenceStatusChipHTML(item)}<span class="source-chip">${item.source_type||"教学句"}</span><span class="source-chip">${item.practice_priority||"综合挑战"}</span><div>${tagHTML}</div><div class="training-goal-box"><strong>训练目标：</strong>${item.training_goal||"训练句子分析能力。"}</div>${sentenceRouteAdvice(item)}`;
   if(mode==="question"){
-    html+=`<p class="sentence-translation">先自己分析，不要急着看答案。</p><ol class="self-check-list">${(item.self_check||[]).map(q=>`<li>${q}</li>`).join("")}</ol><div class="analysis-tip"><strong>练习提示：</strong>按“找动词—找主语—找宾语—看格位—看结构信号”的顺序分析。</div>`;
+    html+=`<div class="analysis-tip"><strong>练习顺序：</strong>先不要看翻译，自己判断限定动词、主语、宾语或格位。</div><ol class="self-check-list">${(item.self_check||[]).map(q=>`<li>${q}</li>`).join("")}</ol>`;
+  }
+  if(mode==="translation"){
+    html+=`<p class="sentence-translation"><strong>翻译：</strong>${item.translation}</p><div class="analysis-tip"><strong>下一步：</strong>对照翻译，重新判断哪些词承担主语、宾语、处所、工具或引语功能。</div><ol class="self-check-list">${(item.self_check||[]).map(q=>`<li>${q}</li>`).join("")}</ol>`;
   }
   if(mode==="hint"){
-    html+=`<p class="sentence-translation">提示：${item.translation}</p><h3>句法结构提示</h3><p>${item.structure}</p><ol class="self-check-list">${(item.self_check||[]).map(q=>`<li>${q}</li>`).join("")}</ol><div class="analysis-tip"><strong>易错提醒：</strong>${item.tip}</div>`;
+    html+=`<p class="sentence-translation"><strong>翻译：</strong>${item.translation}</p><h3>句法结构提示</h3><p>${item.structure}</p><ol class="self-check-list">${(item.self_check||[]).map(q=>`<li>${q}</li>`).join("")}</ol><div class="analysis-tip"><strong>易错提醒：</strong>${item.tip}</div>`;
   }
   if(mode==="analysis"){
-    html+=`<p class="sentence-translation">${item.translation}</p><h3>句法结构</h3><p>${item.structure}</p><h3>逐词分析</h3><table class="token-table"><tr><td>词形</td><td>语法说明</td><td>句中功能</td><td>意义</td><td>查词</td></tr>`;
+    html+=`<p class="sentence-translation"><strong>翻译：</strong>${item.translation}</p><h3>句法结构</h3><p>${item.structure}</p><h3>逐词分析</h3><table class="token-table"><tr><td>词形</td><td>语法说明</td><td>句中功能</td><td>意义</td><td>查词</td></tr>`;
     item.tokens.forEach(t=>{html+=`<tr><td><strong>${t.form}</strong></td><td>${t.grammar}</td><td>${t.role}</td><td>${t.meaning}</td><td><button class="token-lookup-btn" data-token-lookup="${t.form}">查词</button><button class="token-analyze-btn" data-token-analyze="${t.form}">分析</button></td></tr>`});
     html+=`</table><div class="analysis-tip"><strong>易错提醒：</strong>${item.tip}</div><div class="confidence-box"><strong>解析级别：</strong>${item.analysis_level||"教学解析"}</div><div class="analysis-related"><strong>相关语法点：</strong><br>${(item.related||[]).map(relatedLessonButtonHTML).join("")}</div>`;
   }
@@ -724,7 +728,7 @@ const TRIAL_TASK_KEY="pali_trial_tasks_v1";
 const TRIAL_TASKS=[
   ["route","完成零基础路线第1步","进入“零基础路线”，打开“认识字母与转写”。"],
   ["lesson","学习1个语法点","打开任意一个语法点，阅读学习目标、说明、例子和易错点。"],
-  ["exercise","完成10道练习","进入“练习中心”，完成一组10题练习。"],
+  ["exercise","完成10道练习","进入“课程练习”，完成一组10题练习。"],
   ["sentence","分析3个句子","进入“句子分析”，至少完成3个句子的“先自测—提示—完整分析”。"],
   ["lookup","查1个巴利语单词","进入“查巴利语单词”，输入并复制一个词，再打开巴利字典。"],
   ["token","分析1个词形","在查词页输入 dhammaṃ / Buddhassa / sutvā 等，点击“词形分析”。"],
@@ -811,7 +815,7 @@ function exampleHTML(a){
   if(a.literal_cn||a.natural_cn||a.grammar_note){
     html+=`<div class="translation-layer">`;
     if(a.literal_cn)html+=`<p><strong>直译：</strong>${a.literal_cn}</p>`;
-    if(a.natural_cn)html+=`<p><strong>顺译：</strong>${a.natural_cn}</p>`;
+    if(a.natural_cn)html+=`<p><strong>翻译：</strong>${a.natural_cn}</p>`;
     if(a.grammar_note)html+=`<p><strong>语法说明：</strong>${a.grammar_note}</p>`;
     html+=`</div>`;
   }else{
@@ -932,7 +936,7 @@ function renderSentencePatterns(){
         <div class="analysis-example">
           <strong>${e.pali}</strong><br>
           <span><strong>直译：</strong>${e.literal}</span><br>
-          <span><strong>顺译：</strong>${e.natural}</span><br>
+          <span><strong>翻译：</strong>${e.natural}</span><br>
           <span class="muted">${e.note}</span>
         </div>`).join("")}</div>
       <div class="module-warning"><strong>易错提醒：</strong>${p.trap}</div>
@@ -992,7 +996,7 @@ function renderBuddhistReading(){
       <p><strong>结构公式：</strong>${p.formula}</p>
       <div class="translation-layer">
         <p><strong>直译：</strong>${p.literal}</p>
-        <p><strong>顺译：</strong>${p.natural}</p>
+        <p><strong>翻译：</strong>${p.natural}</p>
         <p><strong>结构说明：</strong>${p.structure}</p>
       </div>
       <div class="keyword-list"><strong>关键词：</strong><br>${(p.keywords||[]).map(k=>`<span class="keyword-chip">${k.word}：${k.note}</span>`).join("")}</div>
@@ -1141,7 +1145,7 @@ function renderAcademicTraining(tab){
   document.querySelectorAll(".academic-tab").forEach(btn=>btn.classList.toggle("primary", btn.dataset.academicTab===tabNow));
 
   if(tabNow==="method"){
-    box.innerHTML=`<h3>文献阅读方法</h3><p class="muted">重点不是“看懂大意”，而是把原文处理成可研究材料。</p>
+    box.innerHTML=`<h3>原文阅读方法</h3><p class="muted">重点不是“看懂大意”，而是把原文处理成可阅读材料。</p>
     <div class="academic-list">${(data.method||[]).map(m=>`
       <div class="academic-card">
         <span class="pattern-level ${m.level==='必学'?'tier-required':'tier-optional'}">${m.level}</span>
@@ -1152,10 +1156,10 @@ function renderAcademicTraining(tab){
           <strong>示例记录</strong>
           <p><strong>原文：</strong>${m.example.source}</p>
           <p><strong>直译：</strong>${m.example.literal}</p>
-          <p><strong>顺译：</strong>${m.example.natural}</p>
+          <p><strong>翻译：</strong>${m.example.natural}</p>
           <p><strong>语法点：</strong>${m.example.grammar}</p>
           <p><strong>阅读类型：</strong>${m.example.type}</p>
-          <p><strong>研究提醒：</strong>${m.example.research_note}</p>
+          <p><strong>阅读提醒：</strong>${m.example.research_note}</p>
         </div>
       </div>`).join("")}</div>`;
   }
@@ -1177,7 +1181,7 @@ function renderAcademicTraining(tab){
   }
 
   if(tabNow==="vocabulary"){
-    box.innerHTML=`<h3>巴利词汇研究入门</h3><p class="muted">一个词的研究不能只靠词典义，要观察词形、搭配和上下文。</p>
+    box.innerHTML=`<h3>巴利词义观察入门</h3><p class="muted">一个词的研究不能只靠词典义，要观察词形、搭配和上下文。</p>
     <div class="academic-list">${(data.vocabulary||[]).map(v=>`
       <div class="academic-card">
         <h3>${v.title}</h3>
@@ -1192,7 +1196,7 @@ function renderAcademicTraining(tab){
     box.innerHTML=`<h3>${t.title}</h3>
     <div class="academic-card">
       <table><tr><td>项目</td><td>说明</td></tr>${(t.fields||[]).map(f=>`<tr><td><strong>${f.name}</strong></td><td>${f.tip}</td></tr>`).join("")}</table>
-      <button class="secondary" onclick="copyAcademicTemplate('analysis')">复制分析模板</button>
+      <button class="secondary" onclick="copyAcademicTemplate('analysis')">复制原文记录模板</button>
     </div>
     <div class="academic-card">
       <h3>示例分析</h3>
@@ -1203,12 +1207,12 @@ function renderAcademicTraining(tab){
       <p><strong>结构类型：</strong>${t.example.type}</p>
       <p><strong>翻译选择：</strong>${t.example.translation}</p>
       <p><strong>可能误判：</strong>${t.example.pitfall}</p>
-      <p><strong>研究价值：</strong>${t.example.research_value}</p>
+      <p><strong>阅读价值：</strong>${t.example.research_value}</p>
     </div>`;
   }
 
   if(tabNow==="tasks"){
-    box.innerHTML=`<h3>小型研究任务</h3><p class="muted">任务型训练用于把语言学习推进到研究能力训练。</p>
+    box.innerHTML=`<h3>小型阅读任务</h3><p class="muted">任务型训练用于把语言学习推进到阅读能力训练。</p>
     <div class="academic-list">${(data.research_tasks||[]).map(t=>`
       <div class="academic-card">
         <span class="pattern-level ${t.level==='入门'?'tier-required':'tier-advanced'}">${t.level}</span>
@@ -1220,7 +1224,7 @@ function renderAcademicTraining(tab){
   }
 
   if(tabNow==="pitfalls"){
-    box.innerHTML=`<h3>学术研究常见误区</h3>
+    box.innerHTML=`<h3>阅读与引用常见误区</h3>
     <div class="academic-list">${(data.pitfalls||[]).map((p,i)=>`
       <div class="academic-card">
         <h3>${i+1}. ${p.title}</h3>
@@ -1246,10 +1250,10 @@ async function copyAcademicTemplate(kind){
 function linkedAcademicTrainingHTML(lesson){
   if(!lesson||!lesson.linked_academic_training||!lesson.linked_academic_training.length)return "";
   const scope=[lesson.title,lesson.module,lesson.category,lesson.summary].join(" ");
-  const relevant=["学术","研究","原典","引用规范","引用格式","词汇研究","研究材料"].some(k=>scope.includes(k));
+  const relevant=["学术","研究","原典","引用规范","引用格式","词义观察","阅读材料"].some(k=>scope.includes(k));
   if(!relevant)return "";
-  const labels={method:"文献阅读方法",citation:"原典引用规范",vocabulary:"巴利词汇研究",analysis:"学术分析模板",tasks:"小型研究任务",pitfalls:"学术误区"};
-  return `<div class="linked-academic-box"><strong>相关学术阅读训练：</strong><br>${lesson.linked_academic_training.map(k=>`<button class="academic-link-btn" data-academic-open="${k}">${labels[k]||k}</button>`).join("")}</div>`;
+  const labels={method:"原文阅读方法",citation:"原典引用规范",vocabulary:"巴利词义观察",analysis:"学术原文记录模板",tasks:"小型阅读任务",pitfalls:"阅读误区"};
+  return `<div class="linked-academic-box"><strong>相关佛典阅读：</strong><br>${lesson.linked_academic_training.map(k=>`<button class="academic-link-btn" data-academic-open="${k}">${labels[k]||k}</button>`).join("")}</div>`;
 }
 function bindAcademicButtons(){
   document.querySelectorAll("[data-academic-open]").forEach(btn=>{
@@ -1324,7 +1328,7 @@ function bindTermButtons(){
 }
 
 async function init(){
-  GRAMMAR=await (await fetch('grammar.json?v=18.2',{cache:'no-store'})).json();
+  GRAMMAR=await (await fetch('grammar.json?v=20.0',{cache:'no-store'})).json();
   renderModules();renderSelect();renderWrong();search('');renderTraining();stats();
 
   if(typeof renderSentenceLevels==="function")renderSentenceLevels();
@@ -1390,6 +1394,7 @@ async function init(){
   if($('sentencePrioritySelect'))$('sentencePrioritySelect').onchange=renderSentenceSelect;
   if($('sentenceStatusSelect'))$('sentenceStatusSelect').onchange=renderSentenceSelect;
   if($('sentenceSelect'))$('sentenceSelect').onchange=()=>renderSentenceCard('question');
+  if($('showSentenceTranslationBtn'))$('showSentenceTranslationBtn').onclick=()=>renderSentenceCard('translation');
   if($('showSentenceHintBtn'))$('showSentenceHintBtn').onclick=()=>renderSentenceCard('hint');
   if($('showSentenceAnalysisBtn'))$('showSentenceAnalysisBtn').onclick=()=>renderSentenceCard('analysis');
   if($('nextSentenceBtn'))$('nextSentenceBtn').onclick=nextSentence;
@@ -1442,7 +1447,7 @@ async function forceClearAllCaches(){
       const keys=await caches.keys();
       await Promise.all(keys.map(k=>caches.delete(k)));
     }
-    location.href='./index.html?v=18.2&cache=cleared&ts='+Date.now();
+    location.href='./index.html?v=20.0&cache=cleared&ts='+Date.now();
   }catch(e){
     alert('缓存清理失败，请手动 Ctrl+F5。'+e);
   }
@@ -1520,17 +1525,30 @@ async function forceClearAllCaches(){
   function fullExample(e){return `<div class="qa-example"><div class="pali">${esc(e.pali||e.source||'')}</div><div>${esc(e.cn||e.natural||e.natural_cn||e.meaning||'')}</div><div class="muted">${esc(e.note||e.grammar_note||e.use||'')}</div></div>`;}
 
   function renderConfusions(){const data=arr('CONFUSION_PAIRS'),q=(byId('confusionSearchInput')?.value||'').trim().toLowerCase(),box=(byId('confusionPairsList')||byId('confusionPairList'));if(!box)return;optionize(byId('confusionCategorySelect'),['全部',...new Set(data.map(x=>(x.title||'').split(' vs ')[0]||'其他'))]);const cat=byId('confusionCategorySelect')?.value||'全部';const items=data.filter(x=>(cat==='全部'||(x.title||'').startsWith(cat))&&textHas(x,q));box.innerHTML=items.length?items.map(x=>`<div class="qa-full-card"><h3>${esc(x.title)}</h3><p><strong>核心区别：</strong>${esc(x.core)}</p><table class="qa-table"><tr><th>${esc(x.a)}</th><td>${esc(x.a_cue)}</td></tr><tr><th>${esc(x.b)}</th><td>${esc(x.b_cue)}</td></tr></table>${(x.examples||[]).map(fullExample).join('')}<p><strong>提醒：</strong>${esc(x.tip)}</p></div>`).join(''):'<p class="muted">没有找到相关内容。</p>';}
-  function renderPatterns(){const data=arr('SENTENCE_PATTERNS'),q=(byId('patternSearchInput')?.value||'').trim().toLowerCase(),level=byId('patternLevelSelect')?.value||'全部',box=byId('sentencePatternList');if(!box)return;const items=data.filter(x=>(level==='全部'||x.level===level)&&textHas(x,q));box.innerHTML=items.length?items.map(x=>`<div class="qa-full-card"><h3>${esc(x.title)}</h3><p class="qa-meta">${esc(x.level)}｜${esc(x.formula)}</p><p><strong>功能：</strong>${esc(x.function)}</p><p><strong>信号：</strong>${(x.signals||[]).map(esc).join('；')}</p><p><strong>步骤：</strong>${(x.steps||[]).map(esc).join(' → ')}</p>${(x.examples||[]).map(e=>`<div class="qa-example"><div class="pali">${esc(e.pali)}</div><div><strong>直译：</strong>${esc(e.literal||'')}</div><div><strong>顺译：</strong>${esc(e.natural||'')}</div><div class="muted">${esc(e.note||'')}</div></div>`).join('')}<p><strong>易错：</strong>${esc(x.trap||'')}</p></div>`).join(''):'<p class="muted">没有找到相关句型。</p>';}
+  function renderPatterns(){const data=arr('SENTENCE_PATTERNS'),q=(byId('patternSearchInput')?.value||'').trim().toLowerCase(),level=byId('patternLevelSelect')?.value||'全部',box=byId('sentencePatternList');if(!box)return;const items=data.filter(x=>(level==='全部'||x.level===level)&&textHas(x,q));box.innerHTML=items.length?items.map(x=>`<div class="qa-full-card"><h3>${esc(x.title)}</h3><p class="qa-meta">${esc(x.level)}｜${esc(x.formula)}</p><p><strong>功能：</strong>${esc(x.function)}</p><p><strong>信号：</strong>${(x.signals||[]).map(esc).join('；')}</p><p><strong>步骤：</strong>${(x.steps||[]).map(esc).join(' → ')}</p>${(x.examples||[]).map(e=>`<div class="qa-example"><div class="pali">${esc(e.pali)}</div><div><strong>直译：</strong>${esc(e.literal||'')}</div><div><strong>翻译：</strong>${esc(e.natural||'')}</div><div class="muted">${esc(e.note||'')}</div></div>`).join('')}<p><strong>易错：</strong>${esc(x.trap||'')}</p></div>`).join(''):'<p class="muted">没有找到相关句型。</p>';}
 
   /* Linguistics tips: all content classified by category */
   function renderTips(){const data=arr('LINGUISTICS_TIPS'),q=(byId('linguisticsSearchInput')?.value||'').trim().toLowerCase(),box=(byId('linguisticsTipsList')||byId('linguisticsTipList'));if(!box)return;const cats=['全部',...new Set(data.map(x=>x.category||'其他'))];optionize(byId('linguisticsCategorySelect'),cats);const cat=byId('linguisticsCategorySelect')?.value||'全部';let items=data.filter(x=>(cat==='全部'||x.category===cat)&&textHas(x,q));if(!items.length){box.innerHTML='<p class="muted">没有找到相关内容。</p>';return;}const grouped={};items.forEach(x=>{const c=x.category||'其他';(grouped[c]||(grouped[c]=[])).push(x);});box.innerHTML=Object.entries(grouped).map(([c,rows])=>`<h3 class="qa-section-title">${esc(c)}</h3>${rows.map(x=>`<div class="qa-full-card"><h3>${esc(x.title)}</h3><p class="qa-meta">关键词：${(x.keywords||[]).map(esc).join('、')}</p><p>${esc(x.summary)}</p><div class="qa-example">${esc(x.example||'')}</div><p><strong>相关内容：</strong>${(x.related||[]).map(esc).join('、')}</p></div>`).join('')}`).join('');}
-  function renderBuddhistReadingFull(){const data=arr('BUDDHIST_READING_PATTERNS'),q=(byId('buddhistReadingSearchInput')?.value||'').trim().toLowerCase(),box=byId('buddhistReadingList');if(!box)return;optionize(byId('buddhistReadingCategorySelect'),['全部',...new Set(data.map(x=>x.category).filter(Boolean))]);const cat=byId('buddhistReadingCategorySelect')?.value||'全部',level=byId('buddhistReadingLevelSelect')?.value||'全部';const items=data.filter(x=>(cat==='全部'||x.category===cat)&&(level==='全部'||x.level===level)&&textHas(x,q));box.innerHTML=items.length?items.map(x=>`<div class="qa-full-card"><h3>${esc(x.title)}</h3><p class="qa-meta">${esc(x.category)}｜${esc(x.level)}｜${esc(x.formula)}</p><p><strong>直译：</strong>${esc(x.literal)}</p><p><strong>顺译：</strong>${esc(x.natural)}</p><p><strong>结构：</strong>${esc(x.structure)}</p><table class="qa-table"><tr><th>关键词</th><th>说明</th></tr>${(x.keywords||[]).map(k=>`<tr><td>${esc(k.word)}</td><td>${esc(k.note)}</td></tr>`).join('')}</table><p><strong>提醒：</strong>${esc(x.warning)}</p></div>`).join(''):'<p class="muted">没有找到相关佛典句式。</p>';}
+  function renderBuddhistReadingFull(){const data=arr('BUDDHIST_READING_PATTERNS'),q=(byId('buddhistReadingSearchInput')?.value||'').trim().toLowerCase(),box=byId('buddhistReadingList');if(!box)return;optionize(byId('buddhistReadingCategorySelect'),['全部',...new Set(data.map(x=>x.category).filter(Boolean))]);const cat=byId('buddhistReadingCategorySelect')?.value||'全部',level=byId('buddhistReadingLevelSelect')?.value||'全部';const items=data.filter(x=>(cat==='全部'||x.category===cat)&&(level==='全部'||x.level===level)&&textHas(x,q));box.innerHTML=items.length?items.map(x=>`<div class="qa-full-card"><h3>${esc(x.title)}</h3><p class="qa-meta">${esc(x.category)}｜${esc(x.level)}｜${esc(x.formula)}</p><p><strong>直译：</strong>${esc(x.literal)}</p><p><strong>翻译：</strong>${esc(x.natural)}</p><p><strong>结构：</strong>${esc(x.structure)}</p><table class="qa-table"><tr><th>关键词</th><th>说明</th></tr>${(x.keywords||[]).map(k=>`<tr><td>${esc(k.word)}</td><td>${esc(k.note)}</td></tr>`).join('')}</table><p><strong>提醒：</strong>${esc(x.warning)}</p></div>`).join(''):'<p class="muted">没有找到相关佛典句式。</p>';}
 
   /* Terminology: hide IPA visually, use title hover, allow phrase wrapping */
-  function renderTerms(){const data=arr('TERMINOLOGY_GLOSSARY'),q=(byId('termSearchInput')?.value||'').trim().toLowerCase(),box=byId('termGlossaryList');if(!box)return;optionize(byId('termCategorySelect'),['全部',...new Set(data.map(x=>x.cat).filter(Boolean))]);const cat=byId('termCategorySelect')?.value||'全部';const items=data.filter(x=>(cat==='全部'||x.cat===cat)&&textHas(x,q));box.innerHTML=items.length?`<div class="term-count">共显示 <strong>${items.length}</strong> 条术语。英文术语下方虚线表示可悬浮查观察 IPA。</div><div class="term-table-wrap"><table class="term-table"><thead><tr><th>英文术语</th><th>中文</th><th>巴利 / 传统术语</th><th>类别</th><th>说明</th></tr></thead><tbody>${items.map(t=>`<tr><td class="term-en-cell"><span class="term-en-hover" title="IPA: ${esc(t.ipa)}">${esc(t.en)}</span></td><td class="term-cn-cell">${esc(t.cn)}</td><td>${esc(t.pali)}</td><td><span class="term-cat">${esc(t.cat)}</span></td><td>${esc(t.note)}</td></tr>`).join('')}</tbody></table></div>`:'<p class="muted">没有找到相关术语。</p>';}
+  function renderTerms(){const data=arr('TERMINOLOGY_GLOSSARY'),q=(byId('termSearchInput')?.value||'').trim().toLowerCase(),box=byId('termGlossaryList');if(!box)return;optionize(byId('termCategorySelect'),['全部',...new Set(data.map(x=>x.cat).filter(Boolean))]);const cat=byId('termCategorySelect')?.value||'全部';const items=data.filter(x=>(cat==='全部'||x.cat===cat)&&textHas(x,q));box.innerHTML=items.length?`<div class="term-count">共显示 <strong>${items.length}</strong> 条术语。英文术语下方虚线表示可悬浮查观察 IPA。</div><div class="term-table-wrap"><table class="term-table"><thead><tr><th>英文术语</th><th>中文</th><th>巴利 / 传统术语</th><th>类别</th><th>说明</th></tr></thead><tbody>${items.map(t=>`<tr><td class="term-en-cell"><span class="term-en-hover" title=" ${esc(t.ipa)}">${esc(t.en)}</span></td><td class="term-cn-cell">${esc(t.cn)}</td><td>${esc(t.pali)}</td><td><span class="term-cat">${esc(t.cat)}</span></td><td>${esc(t.note)}</td></tr>`).join('')}</tbody></table></div>`:'<p class="muted">没有找到相关术语。</p>';}
 
-  function renderBackground(){const data=obj('BUDDHIST_BACKGROUND_DATA'),q=(byId('backgroundSearchInput')?.value||'').trim().toLowerCase(),box=byId('buddhistBackgroundContent');if(!box)return;optionize(byId('backgroundCategorySelect'),['全部','佛学概念','三藏结构与略号','章节术语','引用格式','佛经篇章结构']);const cat=byId('backgroundCategorySelect')?.value||'全部';const parts=[];function ok(section,x){return (cat==='全部'||cat===section)&&textHas(x,q);}if(cat==='全部'||cat==='佛学概念'){const items=(data.concepts||[]).filter(x=>ok('佛学概念',x));if(items.length)parts.push(`<h3 class="qa-section-title">佛学概念</h3>`+items.map(x=>`<div class="qa-full-card"><h3>${esc(x.pali)}｜${esc(x.cn)}</h3><p class="qa-meta">${esc(x.category)}｜${esc(x.level)}｜${esc(x.en)}</p><p><strong>基础解释：</strong>${esc(x.basic)}</p><p><strong>阅读提醒：</strong>${esc(x.reading_tip)}</p><p><strong>例子：</strong>${esc(x.example)}</p></div>`).join(''));}if(cat==='全部'||cat==='三藏结构与略号'){const items=(data.canon_structure||[]).filter(x=>ok('三藏结构与略号',x));if(items.length)parts.push(`<h3 class="qa-section-title">三藏结构与略号</h3>`+items.map(x=>`<div class="qa-full-card"><h3>${esc(x.title)}</h3><p>${esc(x.explanation)}</p><table class="qa-table"><tr><th>略号/术语</th><th>名称</th><th>说明</th></tr>${(x.items||[]).map(i=>`<tr><td>${esc(i.abbr)}</td><td>${esc(i.name)}</td><td>${esc(i.note)}</td></tr>`).join('')}</table></div>`).join(''));}if(cat==='全部'||cat==='章节术语'){const items=(data.reference_terms||[]).filter(x=>ok('章节术语',x));if(items.length)parts.push(`<h3 class="qa-section-title">章节术语</h3><table class="qa-table"><tr><th>术语</th><th>常见汉译</th><th>说明</th></tr>${items.map(x=>`<tr><td>${esc(x.term)}</td><td>${esc(x.cn)}</td><td>${esc(x.note)}</td></tr>`).join('')}</table>`);}if(cat==='全部'||cat==='引用格式'){const items=(data.citation_examples||[]).filter(x=>ok('引用格式',x));if(items.length)parts.push(`<h3 class="qa-section-title">引用格式</h3><table class="qa-table"><tr><th>格式</th><th>含义</th></tr>${items.map(x=>`<tr><td>${esc(x.ref)}</td><td>${esc(x.meaning)}</td></tr>`).join('')}</table>`);}if(cat==='全部'||cat==='佛经篇章结构'){const items=(data.sutta_flow||[]).filter(x=>ok('佛经篇章结构',x));if(items.length)parts.push(`<h3 class="qa-section-title">佛经篇章结构</h3>`+items.map(x=>`<div class="qa-full-card"><h3>${esc(x.stage)}</h3><p><strong>常见表达：</strong>${(x.patterns||[]).map(esc).join('；')}</p><p>${esc(x.purpose)}</p></div>`).join(''));}box.innerHTML=parts.join('')||'<p class="muted">没有找到相关背景知识。</p>';}
-  function renderAcademic(){const data=obj('ACADEMIC_TRAINING_DATA'),q=(byId('academicSearchInput')?.value||'').trim().toLowerCase(),box=byId('academicTrainingContent');if(!box)return;optionize(byId('academicCategorySelect'),['全部','阅读方法','引用规范','词汇研究','分析模板','研究任务','学术误区']);const cat=byId('academicCategorySelect')?.value||'全部';const parts=[];function ok(section,x){return (cat==='全部'||cat===section)&&textHas(x,q);}if(cat==='全部'||cat==='阅读方法'){const items=(data.method||[]).filter(x=>ok('阅读方法',x));if(items.length)parts.push(`<h3 class="qa-section-title">阅读方法</h3>`+items.map(x=>`<div class="qa-full-card"><h3>${esc(x.title)}</h3><p class="qa-meta">${esc(x.level)}｜${esc(x.goal)}</p><ol>${(x.steps||[]).map(s=>`<li>${esc(s)}</li>`).join('')}</ol></div>`).join(''));}if(cat==='全部'||cat==='引用规范'){const c=data.citation||{};if(ok('引用规范',c))parts.push(`<h3 class="qa-section-title">引用规范</h3>${(c.principles||[]).map(p=>`<div class="qa-full-card"><h3>${esc(p.title)}</h3><p>${esc(p.content)}</p></div>`).join('')}`);}if(cat==='全部'||cat==='词汇研究'){const items=(data.vocabulary||[]).filter(x=>ok('词汇研究',x));if(items.length)parts.push(`<h3 class="qa-section-title">词汇研究</h3>`+items.map(x=>`<div class="qa-full-card"><h3>${esc(x.title)}</h3><p>${esc(x.core_warning)}</p><ol>${(x.steps||[]).map(s=>`<li>${esc(s)}</li>`).join('')}</ol></div>`).join(''));}if(cat==='全部'||cat==='研究任务'){const items=(data.research_tasks||[]).filter(x=>ok('研究任务',x));if(items.length)parts.push(`<h3 class="qa-section-title">研究任务</h3>`+items.map(x=>`<div class="qa-full-card"><h3>${esc(x.title)}</h3><p class="qa-meta">${esc(x.level)}｜${esc(x.goal)}</p><ol>${(x.steps||[]).map(s=>`<li>${esc(s)}</li>`).join('')}</ol><p><strong>提交形式：</strong>${esc(x.output)}</p></div>`).join(''));}if(cat==='全部'||cat==='分析模板'){const t=data.analysis_template||{};if(ok('分析模板',t))parts.push(`<h3 class="qa-section-title">分析模板</h3><div class="qa-full-card"><h3>${esc(t.title)}</h3><table class="qa-table">${(t.fields||[]).map(f=>`<tr><th>${esc(f.name)}</th><td>${esc(f.tip)}</td></tr>`).join('')}</table></div>`);}if(cat==='全部'||cat==='学术误区'){const items=(data.pitfalls||[]).filter(x=>ok('学术误区',x));if(items.length)parts.push(`<h3 class="qa-section-title">学术误区</h3>`+items.map((x,i)=>`<div class="qa-full-card"><h3>${i+1}. ${esc(x.title)}</h3><p>${esc(x.fix)}</p></div>`).join(''));}box.innerHTML=parts.join('')||'<p class="muted">没有找到相关学术训练内容。</p>';}
+  function renderBackground(){const data=obj('BUDDHIST_BACKGROUND_DATA'),q=(byId('backgroundSearchInput')?.value||'').trim().toLowerCase(),box=byId('buddhistBackgroundContent');if(!box)return;optionize(byId('backgroundCategorySelect'),['全部','三藏结构与略号','佛学概念','章节术语','引用格式','佛经篇章结构']);const cat=byId('backgroundCategorySelect')?.value||'全部';const parts=[];function ok(section,x){return (cat==='全部'||cat===section)&&textHas(x,q);}
+  if(cat==='全部'||cat==='三藏结构与略号'){const items=(data.canon_structure||[]).filter(x=>ok('三藏结构与略号',x));if(items.length)parts.push(`<h3 class="qa-section-title">三藏结构与略号</h3>`+items.map(x=>`<div class="qa-full-card"><h3>${esc(x.title)}</h3><p>${esc(x.explanation)}</p><table class="qa-table"><tr><th>略号/术语</th><th>名称</th><th>说明</th></tr>${(x.items||[]).map(i=>`<tr><td>${esc(i.abbr)}</td><td>${esc(i.name)}</td><td>${esc(i.note)}</td></tr>`).join('')}</table></div>`).join(''));}
+  if(cat==='全部'||cat==='佛学概念'){const items=(data.concepts||[]).filter(x=>ok('佛学概念',x));if(items.length)parts.push(`<h3 class="qa-section-title">佛学概念</h3>`+items.map(x=>`<div class="qa-full-card"><h3>${esc(x.pali)}｜${esc(x.cn)}</h3><p class="qa-meta">${esc(x.category)}｜${esc(x.level)}｜${esc(x.en)}</p><p><strong>基础解释：</strong>${esc(x.basic)}</p><p><strong>阅读提醒：</strong>${esc(x.reading_tip)}</p><p><strong>例子：</strong>${esc(x.example)}</p></div>`).join(''));}
+  if(cat==='全部'||cat==='章节术语'){const items=(data.reference_terms||[]).filter(x=>ok('章节术语',x));if(items.length)parts.push(`<h3 class="qa-section-title">章节术语</h3><table class="qa-table"><tr><th>术语</th><th>常见汉译</th><th>说明</th></tr>${items.map(x=>`<tr><td>${esc(x.term)}</td><td>${esc(x.cn)}</td><td>${esc(x.note)}</td></tr>`).join('')}</table>`);}
+  if(cat==='全部'||cat==='引用格式'){const items=(data.citation_examples||[]).filter(x=>ok('引用格式',x));if(items.length)parts.push(`<h3 class="qa-section-title">引用格式</h3><table class="qa-table"><tr><th>格式</th><th>含义</th></tr>${items.map(x=>`<tr><td>${esc(x.ref)}</td><td>${esc(x.meaning)}</td></tr>`).join('')}</table>`);}
+  if(cat==='全部'||cat==='佛经篇章结构'){const items=(data.sutta_flow||[]).filter(x=>ok('佛经篇章结构',x));if(items.length)parts.push(`<h3 class="qa-section-title">佛经篇章结构</h3>`+items.map(x=>`<div class="qa-full-card"><h3>${esc(x.stage)}</h3><p><strong>常见表达：</strong>${(x.patterns||[]).map(esc).join('；')}</p><p>${esc(x.purpose)}</p></div>`).join(''));}
+  box.innerHTML=parts.join('')||'<p class="muted">没有找到相关背景知识。</p>';}
+  function renderAcademic(){const data=obj('ACADEMIC_TRAINING_DATA'),q=(byId('academicSearchInput')?.value||'').trim().toLowerCase(),box=byId('academicTrainingContent');if(!box)return;optionize(byId('academicCategorySelect'),['全部','阅读方法','词义观察','原文记录模板','引用规范','阅读小任务','阅读误区']);const cat=byId('academicCategorySelect')?.value||'全部';const parts=[];function ok(section,x){return (cat==='全部'||cat===section)&&textHas(x,q);}
+  if(cat==='全部'||cat==='阅读方法'){const items=(data.method||[]).filter(x=>ok('阅读方法',x));if(items.length)parts.push(`<h3 class="qa-section-title">阅读方法</h3>`+items.map(x=>`<div class="qa-full-card"><h3>${esc(x.title)}</h3><p class="qa-meta">${esc(x.level)}｜${esc(x.goal)}</p><ol>${(x.steps||[]).map(s=>`<li>${esc(s)}</li>`).join('')}</ol></div>`).join(''));}
+  if(cat==='全部'||cat==='词义观察'){const items=(data.vocabulary||[]).filter(x=>ok('词义观察',x));if(items.length)parts.push(`<h3 class="qa-section-title">词义观察</h3>`+items.map(x=>`<div class="qa-full-card"><h3>${esc(x.title)}</h3><p>${esc(x.core_warning)}</p><ol>${(x.steps||[]).map(s=>`<li>${esc(s)}</li>`).join('')}</ol></div>`).join(''));}
+  if(cat==='全部'||cat==='原文记录模板'){const t=data.analysis_template||{};if(ok('原文记录模板',t))parts.push(`<h3 class="qa-section-title">原文记录模板</h3><div class="qa-full-card"><h3>${esc(t.title)}</h3><table class="qa-table">${(t.fields||[]).map(f=>`<tr><th>${esc(f.name)}</th><td>${esc(f.tip)}</td></tr>`).join('')}</table></div>`);}
+  if(cat==='全部'||cat==='引用规范'){const c=data.citation||{};if(ok('引用规范',c))parts.push(`<h3 class="qa-section-title">引用规范</h3>${(c.principles||[]).map(p=>`<div class="qa-full-card"><h3>${esc(p.title)}</h3><p>${esc(p.content)}</p></div>`).join('')}`);}
+  if(cat==='全部'||cat==='阅读小任务'){const items=(data.research_tasks||[]).filter(x=>ok('阅读小任务',x));if(items.length)parts.push(`<h3 class="qa-section-title">阅读小任务</h3>`+items.map(x=>`<div class="qa-full-card"><h3>${esc(x.title)}</h3><p class="qa-meta">${esc(x.level)}｜${esc(x.goal)}</p><ol>${(x.steps||[]).map(s=>`<li>${esc(s)}</li>`).join('')}</ol><p><strong>提交形式：</strong>${esc(x.output)}</p></div>`).join(''));}
+  if(cat==='全部'||cat==='阅读误区'){const items=(data.pitfalls||[]).filter(x=>ok('阅读误区',x));if(items.length)parts.push(`<h3 class="qa-section-title">阅读误区</h3>`+items.map((x,i)=>`<div class="qa-full-card"><h3>${i+1}. ${esc(x.title)}</h3><p>${esc(x.fix)}</p></div>`).join(''));}
+  box.innerHTML=parts.join('')||'<p class="muted">没有找到相关佛典阅读内容。</p>';}
   function renderDict(){call('renderDictionarySites');call('renderLookupHistory');}
   function openDict(){let url='https://dictionary.sutta.org/';const sites=arr('PALI_DICTIONARY_SITES');if(sites.length)url=(sites.find(x=>x.id==='sutta')||sites[0]).url||url;window.open(url,'_blank','noopener');}
 
@@ -1540,7 +1558,7 @@ async function forceClearAllCaches(){
   function clipAround(text, terms, n=180){text=String(text||'').replace(/\s+/g,' ').trim();if(!text)return '';const lower=text.toLowerCase();let pos=-1;for(const t of terms){const p=lower.indexOf(t);if(p>=0){pos=p;break;}}if(pos<0)return text.length>n?text.slice(0,n)+'…':text;const start=Math.max(0,pos-Math.floor(n/3));const end=Math.min(text.length,start+n);return(start>0?'…':'')+text.slice(start,end)+(end<text.length?'…':'');}
   function highlight(s,terms){let out=esc(s);terms.filter(Boolean).slice(0,5).forEach(t=>{const safe=t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');try{out=out.replace(new RegExp(safe,'gi'),m=>`<mark>${m}</mark>`);}catch(e){}});return out;}
   function result(type,title,summary,target,query,id,meta,sourceObj){const full=rawText(sourceObj);return{type,title:title||'',summary:summary||'',target,query:query||'',id:id??'',meta:meta||'',fullText:full,text:norm([type,title,summary,target,query,id,meta,full].join(' '))};}
-  function buildGlobalIndexFull(){const out=[];grammarList().forEach(l=>out.push(result('语法点',`${l.lesson_number||''}. ${l.title||''}`,l.summary||'','lesson',l.title||'',l.id,`${l.module||''}｜${l.category||''}｜${l.difficulty||l.level||''}`,l)));arr('SENTENCE_ANALYSIS_DATA').forEach(s=>out.push(result('句子分析',s.sentence||'',`${s.translation||''}｜${s.structure||''}`,'sentenceAnalysis',s.sentence||'',s.id,`${s.level||''}｜${s.practice_priority||''}`,s)));arr('CONFUSION_PAIRS').forEach(x=>out.push(result('易混概念',x.title||'',x.core||'','confusionPairs',x.title||'',x.id,`${x.a||''} / ${x.b||''}`,x)));arr('SENTENCE_PATTERNS').forEach(x=>out.push(result('句型模板',x.title||'',`${x.formula||''}｜${x.function||''}`,'sentencePatterns',x.title||'',x.id,x.level||'',x)));arr('LINGUISTICS_TIPS').forEach(x=>out.push(result('语言学小贴士',x.title||'',x.summary||'','linguisticsTips',x.title||'',x.id,x.category||'',x)));arr('BUDDHIST_READING_PATTERNS').forEach(x=>out.push(result('佛典阅读句式',x.title||'',`${x.natural||''}｜${x.structure||''}`,'buddhistReading',x.title||'',x.id,`${x.category||''}｜${x.level||''}`,x)));const bg=obj('BUDDHIST_BACKGROUND_DATA');Object.entries(bg).forEach(([section,val])=>{if(Array.isArray(val))val.forEach((x,i)=>out.push(result('佛典背景',x.title||x.pali||x.term||x.ref||x.stage||`背景知识 ${i+1}`,x.basic||x.explanation||x.note||x.meaning||x.purpose||'','buddhistBackground',x.title||x.pali||x.term||x.ref||x.stage||section,x.id||x.term||x.ref||i,section,x)));else if(val&&typeof val==='object')out.push(result('佛典背景',val.title||section,val.summary||val.explanation||'','buddhistBackground',section,section,section,val));});const ac=obj('ACADEMIC_TRAINING_DATA');Object.entries(ac).forEach(([section,val])=>{if(Array.isArray(val))val.forEach((x,i)=>out.push(result('学术阅读训练',x.title||`学术训练 ${i+1}`,x.goal||x.core_warning||x.fix||x.output||'','academicTraining',x.title||section,x.id||i,section,x)));else if(val&&typeof val==='object')out.push(result('学术阅读训练',val.title||section,val.summary||val.goal||'','academicTraining',val.title||section,section,section,val));});arr('TERMINOLOGY_GLOSSARY').forEach(x=>out.push(result('术语表',x.en||x.cn||'',`${x.ipa||''}｜${x.cn||''}｜${x.pali||''}｜${x.note||''}`,'terminologyGlossary',x.en||x.cn||x.pali||'',x.en||x.cn,x.cat||'',x)));arr('LEARNING_ROUTES').forEach(x=>out.push(result('学习路线',x.title||'',x.desc||'','learningRoute',x.title||'',x.id,'路线',x)));arr('PALI_DICTIONARY_SITES').forEach(x=>out.push(result('查词网站',x.name||'',`${x.langs||''}｜${x.best_for||''}｜${x.note||''}`,'dictionaryLookup',x.name||'',x.id,'词典',x)));return out;}
+  function buildGlobalIndexFull(){const out=[];grammarList().forEach(l=>out.push(result('语法点',`${l.lesson_number||''}. ${l.title||''}`,l.summary||'','lesson',l.title||'',l.id,`${l.module||''}｜${l.category||''}｜${l.difficulty||l.level||''}`,l)));arr('SENTENCE_ANALYSIS_DATA').forEach(s=>out.push(result('句子分析',s.sentence||'',`${s.translation||''}｜${s.structure||''}`,'sentenceAnalysis',s.sentence||'',s.id,`${s.level||''}｜${s.practice_priority||''}`,s)));arr('CONFUSION_PAIRS').forEach(x=>out.push(result('易混概念',x.title||'',x.core||'','confusionPairs',x.title||'',x.id,`${x.a||''} / ${x.b||''}`,x)));arr('SENTENCE_PATTERNS').forEach(x=>out.push(result('句型模板',x.title||'',`${x.formula||''}｜${x.function||''}`,'sentencePatterns',x.title||'',x.id,x.level||'',x)));arr('LINGUISTICS_TIPS').forEach(x=>out.push(result('语言学小贴士',x.title||'',x.summary||'','linguisticsTips',x.title||'',x.id,x.category||'',x)));arr('BUDDHIST_READING_PATTERNS').forEach(x=>out.push(result('佛典阅读句式',x.title||'',`${x.natural||''}｜${x.structure||''}`,'buddhistReading',x.title||'',x.id,`${x.category||''}｜${x.level||''}`,x)));const bg=obj('BUDDHIST_BACKGROUND_DATA');Object.entries(bg).forEach(([section,val])=>{if(Array.isArray(val))val.forEach((x,i)=>out.push(result('佛典背景',x.title||x.pali||x.term||x.ref||x.stage||`背景知识 ${i+1}`,x.basic||x.explanation||x.note||x.meaning||x.purpose||'','buddhistBackground',x.title||x.pali||x.term||x.ref||x.stage||section,x.id||x.term||x.ref||i,section,x)));else if(val&&typeof val==='object')out.push(result('佛典背景',val.title||section,val.summary||val.explanation||'','buddhistBackground',section,section,section,val));});const ac=obj('ACADEMIC_TRAINING_DATA');Object.entries(ac).forEach(([section,val])=>{if(Array.isArray(val))val.forEach((x,i)=>out.push(result('佛典阅读',x.title||`佛典阅读 ${i+1}`,x.goal||x.core_warning||x.fix||x.output||'','academicTraining',x.title||section,x.id||i,section,x)));else if(val&&typeof val==='object')out.push(result('佛典阅读',val.title||section,val.summary||val.goal||'','academicTraining',val.title||section,section,section,val));});arr('TERMINOLOGY_GLOSSARY').forEach(x=>out.push(result('术语表',x.en||x.cn||'',`${x.ipa||''}｜${x.cn||''}｜${x.pali||''}｜${x.note||''}`,'terminologyGlossary',x.en||x.cn||x.pali||'',x.en||x.cn,x.cat||'',x)));arr('LEARNING_ROUTES').forEach(x=>out.push(result('学习路线',x.title||'',x.desc||'','learningRoute',x.title||'',x.id,'路线',x)));arr('PALI_DICTIONARY_SITES').forEach(x=>out.push(result('查词网站',x.name||'',`${x.langs||''}｜${x.best_for||''}｜${x.note||''}`,'dictionaryLookup',x.name||'',x.id,'词典',x)));return out;}
   function renderGlobalSearchFull(){const box=byId('globalSiteSearchResults'),input=byId('globalSiteSearchInput');if(!box||!input)return;const q=input.value.trim().toLowerCase();if(!q){box.innerHTML='<div class="global-search-empty">输入关键词后显示全站结果。支持搜索正文、例子、说明、练习、术语和数据内容。</div>';return;}const terms=q.split(/\s+/).filter(Boolean);const rows=buildGlobalIndexFull().map(r=>{let score=0;terms.forEach(t=>{if(norm(r.title).includes(t))score+=5;if(norm(r.meta).includes(t))score+=2;if(norm(r.summary).includes(t))score+=3;if(r.text.includes(t))score+=1;});return{...r,score};}).filter(r=>r.score>0).sort((a,b)=>b.score-a.score||a.type.localeCompare(b.type)).slice(0,50);if(!rows.length){box.innerHTML='<div class="global-search-empty">没有找到相关内容。</div>';return;}box.innerHTML=rows.map(r=>{const snippet=clipAround([r.summary,r.fullText].join(' '),terms,200);return`<div class="global-result-card"><div class="global-result-meta"><span class="global-result-tag">${esc(r.type)}</span><span class="global-result-tag">${esc(r.meta||'')}</span></div><h3>${highlight(r.title,terms)}</h3><p>${highlight(snippet,terms)}</p><div class="global-result-source">检索范围：完整内容文本</div><button type="button" data-global-target="${esc(r.target)}" data-global-query="${esc(r.query||'')}" data-global-id="${esc(r.id||'')}">打开结果</button></div>`;}).join('');}
   function setValue(id,value){const el=byId(id);if(el){el.value=value;el.dispatchEvent(new Event('input',{bubbles:true}));}}
   function openGlobalResult(target,query,id){if(target==='lesson'){openLessonHard(id);return;}const actionMap={sentenceAnalysis:'sentenceAnalysis',confusionPairs:'confusionPairs',sentencePatterns:'sentencePatterns',linguisticsTips:'linguisticsTips',buddhistReading:'buddhistReading',buddhistBackground:'buddhistBackground',academicTraining:'academicTraining',terminologyGlossary:'terminologyGlossary',learningRoute:'learningRoute',dictionaryLookup:'dictionaryLookup'};const act=actionMap[target];if(act){route(act);setTimeout(()=>{if(target==='sentenceAnalysis')setValue('sentenceSearchInput',query);if(target==='confusionPairs')setValue('confusionSearchInput',query);if(target==='sentencePatterns')setValue('patternSearchInput',query);if(target==='linguisticsTips')setValue('linguisticsSearchInput',query);if(target==='buddhistReading')setValue('buddhistReadingSearchInput',query);if(target==='buddhistBackground')setValue('backgroundSearchInput',query);if(target==='academicTraining')setValue('academicSearchInput',query);if(target==='terminologyGlossary')setValue('termSearchInput',query);if(target==='dictionaryLookup')setValue('paliLookupInput',query);},80);}}
@@ -1552,7 +1570,7 @@ async function forceClearAllCaches(){
   document.addEventListener('input',function(e){const id=e.target.id;if(id==='searchInput')renderGrammarSearch();if(id==='sentenceSearchInput'){sentenceIndex=0;renderSentenceSelect();}if(id==='confusionSearchInput')renderConfusions();if(id==='patternSearchInput')renderPatterns();if(id==='linguisticsSearchInput')renderTips();if(id==='buddhistReadingSearchInput')renderBuddhistReadingFull();if(id==='backgroundSearchInput')renderBackground();if(id==='academicSearchInput')renderAcademic();if(id==='termSearchInput')renderTerms();if(id==='globalSiteSearchInput')renderGlobalSearchFull();},true);
   document.addEventListener('change',function(e){const id=e.target.id;if(['sentenceLevelSelect','sentencePrioritySelect','sentenceTagSelect','sentenceSourceSelect','sentenceStatusSelect'].includes(id)){sentenceIndex=0;renderSentenceSelect();}if(id==='sentenceSelect'){sentenceIndex=parseInt(e.target.value||'0');renderSentenceSelect();}if(id==='confusionCategorySelect')renderConfusions();if(id==='patternLevelSelect')renderPatterns();if(id==='linguisticsCategorySelect')renderTips();if(id==='buddhistReadingCategorySelect'||id==='buddhistReadingLevelSelect')renderBuddhistReadingFull();if(id==='backgroundCategorySelect')renderBackground();if(id==='academicCategorySelect')renderAcademic();if(id==='termCategorySelect')renderTerms();},true);
 
-  window.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('button').forEach(b=>{if(!b.type)b.type='button';});const badge=document.querySelector('.visual-version-badge');if(badge)badge.textContent='Pāli Learning Lab · 18.2 细节核查修正版';updateLessonNav();renderGlobalSearchFull();});
+  window.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('button').forEach(b=>{if(!b.type)b.type='button';});const badge=document.querySelector('.visual-version-badge');if(badge)badge.textContent='Pāli Learning Lab · 20.0 稳定测试版';updateLessonNav();renderGlobalSearchFull();});
   window.__paliQA={route,openLessonHard,jumpLesson,updateLessonNav,renderTips,renderTerms,renderGlobalSearchFull,buildGlobalIndexFull};
 })();
 
@@ -1992,7 +2010,7 @@ async function forceClearAllCaches(){
 
   window.addEventListener('DOMContentLoaded',function(){
     const badge=document.querySelector('.visual-version-badge');
-    if(badge)badge.textContent='Pāli Learning Lab · 18.2 细节核查修正版';
+    if(badge)badge.textContent='Pāli Learning Lab · 20.0 稳定测试版';
     if(!byId('learningRouteView')?.classList.contains('hidden'))renderLearningRoutesFinal('zero');
   });
 
@@ -2083,7 +2101,7 @@ async function forceClearAllCaches(){
   },true);
   window.addEventListener('DOMContentLoaded',function(){
     const badge=document.querySelector('.visual-version-badge');
-    if(badge)badge.textContent='Pāli Learning Lab · 18.2 细节核查修正版';
+    if(badge)badge.textContent='Pāli Learning Lab · 20.0 稳定测试版';
     setup();
   });
   document.addEventListener('click',function(e){
@@ -2641,7 +2659,7 @@ async function forceClearAllCaches(){
   window.addEventListener('DOMContentLoaded',function(){
     patchViewFunctions143();
     const badge=document.querySelector('.visual-version-badge');
-    if(badge)badge.textContent='Pāli Learning Lab · 18.2 细节核查修正版';
+    if(badge)badge.textContent='Pāli Learning Lab · 20.0 稳定测试版';
     setTimeout(annotateCurrentLesson143,200);
   });
   document.addEventListener('click',function(){setTimeout(annotateCurrentLesson143,160);},true);
@@ -2771,7 +2789,7 @@ async function forceClearAllCaches(){
   }, true);
   window.addEventListener('DOMContentLoaded', function(){
     const badge=document.querySelector('.visual-version-badge');
-    if(badge) badge.textContent='Pāli Learning Lab · 18.2 细节核查修正版';
+    if(badge) badge.textContent='Pāli Learning Lab · 20.0 稳定测试版';
     syncBottomNav144();
   });
   setInterval(function(){
@@ -2956,7 +2974,7 @@ async function forceClearAllCaches(){
       if(seg.wrapped){
         const span=document.createElement("span");
         span.className="ipa-hover phrase";
-        span.title="IPA: "+seg.ipa;
+        span.title=" "+seg.ipa;
         span.textContent=seg.text;
         frag.appendChild(span);
       }else{
@@ -2968,7 +2986,7 @@ async function forceClearAllCaches(){
           if(ipa){
             const span=document.createElement("span");
             span.className="ipa-hover";
-            span.title="IPA: "+ipa;
+            span.title=" "+ipa;
             span.textContent=m[0];
             frag.appendChild(span);
           }else{
@@ -3004,7 +3022,7 @@ async function forceClearAllCaches(){
   }
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
     setTimeout(annotateVisibleIPA145,200);
   });
   document.addEventListener("click",function(){setTimeout(annotateVisibleIPA145,220);},true);
@@ -3068,7 +3086,7 @@ async function forceClearAllCaches(){
   },true);
   window.addEventListener('DOMContentLoaded',function(){
     const badge=document.querySelector('.visual-version-badge');
-    if(badge) badge.textContent='Pāli Learning Lab · 18.2 细节核查修正版';
+    if(badge) badge.textContent='Pāli Learning Lab · 20.0 稳定测试版';
     setup146();
   });
   document.addEventListener('click',function(e){
@@ -3256,7 +3274,7 @@ async function forceClearAllCaches(){
         const span=document.createElement("span");
         span.className="ipa-hover";
         span.dataset.ipa=ipa;
-        span.title="IPA: "+ipa;
+        span.title=" "+ipa;
         span.textContent=m[0];
         frag.appendChild(span);
       }else{
@@ -3273,7 +3291,7 @@ async function forceClearAllCaches(){
     root.querySelectorAll(".ipa-hover").forEach(el=>{
       if(!el.dataset.ipa){
         const title=el.getAttribute("title")||"";
-        const m=title.match(/IPA:\s*(.+)$/);
+        const m=title.match(/\s*(.+)$/);
         if(m) el.dataset.ipa=m[1].trim();
       }
     });
@@ -3292,12 +3310,12 @@ async function forceClearAllCaches(){
     document.querySelectorAll(".view:not(.hidden), .visual-version-badge, .hero-subnav").forEach(annotate149);
   }
   function showIPAPopover149(target, clientX, clientY){
-    const ipa=target.dataset.ipa || (target.title||"").replace(/^IPA:\s*/,"");
+    const ipa=target.dataset.ipa || (target.title||"").replace(/^\s*/,"");
     if(!ipa) return;
     document.querySelectorAll(".ipa-touch-popover").forEach(x=>x.remove());
     const pop=document.createElement("div");
     pop.className="ipa-touch-popover";
-    pop.innerHTML="<strong>"+target.textContent+"</strong><div>IPA: "+ipa+"</div><div class='ipa-pop-note'>点击页面其他位置关闭</div>";
+    pop.innerHTML="<strong>"+target.textContent+"</strong><div> "+ipa+"</div><div class='ipa-pop-note'>点击页面其他位置关闭</div>";
     document.body.appendChild(pop);
     const rect=target.getBoundingClientRect();
     const x=clientX || rect.left + rect.width/2;
@@ -3322,7 +3340,7 @@ async function forceClearAllCaches(){
   },true);
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
     setTimeout(annotateVisible149,350);
   });
   document.addEventListener("click",function(){setTimeout(annotateVisible149,260);},true);
@@ -3647,7 +3665,7 @@ async function forceClearAllCaches(){
   },true);
   window.addEventListener('DOMContentLoaded',function(){
     const badge=document.querySelector('.visual-version-badge');
-    if(badge)badge.textContent='Pāli Learning Lab · 18.2 细节核查修正版';
+    if(badge)badge.textContent='Pāli Learning Lab · 20.0 稳定测试版';
     setTimeout(annotateVisible155,450);
   });
   document.addEventListener('click',function(){setTimeout(annotateVisible155,260);},true);
@@ -3747,7 +3765,7 @@ async function forceClearAllCaches(){
   }, true);
   window.addEventListener('DOMContentLoaded', function(){
     const badge=document.querySelector('.visual-version-badge');
-    if(badge) badge.textContent='Pāli Learning Lab · 18.2 细节核查修正版';
+    if(badge) badge.textContent='Pāli Learning Lab · 20.0 稳定测试版';
     setTimeout(()=>{decorateTermButtons156(); addLessonGlossaryBox156();}, 500);
   });
   window.__termGlossary156={findGlossary156,openGlossary156,decorateTermButtons156,addLessonGlossaryBox156};
@@ -3824,7 +3842,7 @@ async function forceClearAllCaches(){
   },true);
   function run158(){
     const badge=document.querySelector('.visual-version-badge');
-    if(badge)badge.textContent='Pāli Learning Lab · 18.2 细节核查修正版';
+    if(badge)badge.textContent='Pāli Learning Lab · 20.0 稳定测试版';
     const card=document.querySelector('#lessonView:not(.hidden) .card');
     if(card){card.dataset.glossaryTerms158='';annotateGlossaryTerms158(card);}
   }
@@ -3839,7 +3857,7 @@ async function forceClearAllCaches(){
 (function(){
   window.addEventListener('DOMContentLoaded',function(){
     const badge=document.querySelector('.visual-version-badge');
-    if(badge) badge.textContent='Pāli Learning Lab · 18.2 细节核查修正版';
+    if(badge) badge.textContent='Pāli Learning Lab · 20.0 稳定测试版';
   });
 })();
 
@@ -3848,7 +3866,7 @@ async function forceClearAllCaches(){
 (function(){
   window.addEventListener('DOMContentLoaded',function(){
     const badge=document.querySelector('.visual-version-badge');
-    if(badge) badge.textContent='Pāli Learning Lab · 18.2 细节核查修正版';
+    if(badge) badge.textContent='Pāli Learning Lab · 20.0 稳定测试版';
   });
 })();
 
@@ -3927,7 +3945,7 @@ async function forceClearAllCaches(){
   }
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
     setTimeout(renderLayeredExercises161,300);
   });
   window.__layeredPractice161={renderLayeredExercises161,startLayeredPractice161};
@@ -3975,7 +3993,7 @@ async function forceClearAllCaches(){
   }
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
     setTimeout(renderLectureSupplement162,350);
   });
   window.__lectureSupplement162={renderLectureSupplement162};
@@ -4033,7 +4051,7 @@ async function forceClearAllCaches(){
   }
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
     setTimeout(()=>{try{renderTerminologyGlossary163()}catch(e){}},400);
   });
   window.__terminologyEnhanced163={renderTerminologyGlossary163};
@@ -4089,7 +4107,7 @@ async function forceClearAllCaches(){
   }
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
     setTimeout(renderGroupedExamples164,400);
   });
   window.__exampleGranularity164={renderGroupedExamples164};
@@ -4164,7 +4182,7 @@ async function forceClearAllCaches(){
   }
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
     setTimeout(renderRefinedExamples165,450);
   });
   window.__examplePriority165={renderRefinedExamples165};
@@ -4197,7 +4215,7 @@ async function forceClearAllCaches(){
   }
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
     setTimeout(cleanupIntegratedWording166,500);
   });
   window.__integratedWording166={cleanupIntegratedWording166};
@@ -4287,7 +4305,7 @@ async function forceClearAllCaches(){
   }
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
     setTimeout(renderMoreExamples167,650);
   });
   window.__moreExamples167={renderMoreExamples167};
@@ -4358,7 +4376,7 @@ async function forceClearAllCaches(){
   }
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
     setTimeout(cleanupConcise168,750);
   });
   window.__conciseWording168={cleanupConcise168};
@@ -4370,7 +4388,7 @@ async function forceClearAllCaches(){
   function cleanupKeyPointBox169(){
     document.querySelectorAll(".lecture-brief-box").forEach(x=>x.remove());
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
   }
   if(typeof openLesson==="function" && !window.__mergeKeyPoints169){
     const oldOpenLesson=openLesson;
@@ -4549,7 +4567,7 @@ async function forceClearAllCaches(){
     movePractice170();
     cleanupLessonLayoutText170();
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
   }
   if(typeof openLesson==="function" && !window.__integratedLessonLayout170){
     const oldOpenLesson=openLesson;
@@ -4571,7 +4589,7 @@ async function forceClearAllCaches(){
 (function(){
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
   });
 })();
 
@@ -4580,7 +4598,7 @@ async function forceClearAllCaches(){
 (function(){
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
   });
 })();
 
@@ -4589,7 +4607,7 @@ async function forceClearAllCaches(){
 (function(){
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
   });
 })();
 
@@ -4629,7 +4647,7 @@ async function forceClearAllCaches(){
     renderLessonSummary174();
     improveFeedbackDisplay174();
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
   }
   if(typeof openLesson==="function" && !window.__courseLoop174){
     const oldOpenLesson=openLesson;
@@ -4670,7 +4688,7 @@ async function forceClearAllCaches(){
     document.querySelectorAll("#mistakeBlock h3").forEach(h=>h.textContent="易错点");
     document.querySelectorAll(".concept-mistake-subtitle").forEach(x=>x.textContent="概念误判");
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
   }
   if(typeof openLesson==="function" && !window.__mergeMisjudge175){
     const oldOpenLesson=openLesson;
@@ -4874,7 +4892,7 @@ async function forceClearAllCaches(){
   });
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
     setTimeout(enablePaliLookupLinks176,1500);
     setTimeout(renderReturnButton176,600);
   });
@@ -4891,7 +4909,7 @@ async function forceClearAllCaches(){
       el.classList.add("inline-lookup-link");
     });
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
   }
   if(typeof openLesson==="function" && !window.__lookupDisplay177){
     const oldOpenLesson=openLesson;
@@ -4921,7 +4939,7 @@ async function forceClearAllCaches(){
       }
     });
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
   }
   if(typeof openLesson==="function" && !window.__wordOnlyLookup178){
     const oldOpenLesson=openLesson;
@@ -4969,7 +4987,7 @@ async function forceClearAllCaches(){
       }
     }
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
   }
   if(typeof openLesson==="function" && !window.__learningTargets179){
     const oldOpenLesson=openLesson;
@@ -4991,7 +5009,7 @@ async function forceClearAllCaches(){
 (function(){
   window.addEventListener("DOMContentLoaded",function(){
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
   });
 })();
 
@@ -5019,12 +5037,12 @@ async function forceClearAllCaches(){
       .replace(/ADJ\./g,"adj.")
       .replace(/med\.pr\.p\./g,"pr.p.mid.")
       .replace(/fpp\.|FPP/g,"f.p.p.")
-      .replace(/只看/g,"只观察")
-      .replace(/先看/g,"先观察")
-      .replace(/再看/g,"再观察")
-      .replace(/要看/g,"要观察")
+      .replace(/只观察/g,"只观察")
+      .replace(/先观察/g,"先观察")
+      .replace(/再观察/g,"再观察")
+      .replace(/要观察/g,"要观察")
       .replace(/([A-Za-zāīūṅñṭḍṇḷṃĀĪŪṄÑṬḌṆḶṂ]+ṃ?)\s*看\s*([^。；;，,\n]+)/g,"$1 重点观察 $2")
-      .replace(/看(?=\s*[A-Za-zāīūṅñṭḍṇḷṃĀĪŪṄÑṬḌṆḶṂ√\-\(\)])/g,"观察");
+      .replace(/观察(?=\s*[A-Za-zāīūṅñṭḍṇḷṃĀĪŪṄÑṬḌṆḶṂ√\-\(\)])/g,"观察");
   }
   function cleanupVisible181(root){
     root=root||document;
@@ -5032,7 +5050,7 @@ async function forceClearAllCaches(){
       acceptNode(node){
         const p=node.parentElement;
         if(!p || p.closest("script,style,input,textarea,select"))return NodeFilter.FILTER_REJECT;
-        return /(PRS|FUT|AOR|PTCP|ABS|INF|NT\.|PRON|ADJ|med\.pr\.p|fpp|FPP| 看 |只看|先看|再看|要看)/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        return /(PRS|FUT|AOR|PTCP|ABS|INF|NT\.|PRON|ADJ|med\.pr\.p|fpp|FPP| 看 |只观察|先观察|再观察|要观察)/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
       }
     });
     const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
@@ -5104,35 +5122,17 @@ async function forceClearAllCaches(){
       </div>`;
     holder.insertAdjacentElement("afterend",box);
   }
-  function addExampleAnalysisToggle181(){
-    if(typeof currentLesson==="undefined" || !currentLesson) return;
-    const examples = currentLesson.examples || [];
-    const cards=[...document.querySelectorAll(".example,.example-card,.example-box")];
-    cards.forEach((card,i)=>{
-      if(card.querySelector(".example-analysis-181")) return;
-      const e=examples[i];
-      if(!e || !e.pali) return;
-      const words=extractPaliWords181(e.pali).map(w=>{
-        const v=commonVocab181[w] || commonVocab181[w.toLowerCase()] || vocabFromToken181(w);
-        return v ? `${w} < ${normalize181(v[0])}` : "";
-      }).filter(Boolean).slice(0,5);
-      if(!words.length) return;
-      const det=document.createElement("details");
-      det.className="example-analysis-181";
-      det.innerHTML=`<summary>展开例句简析</summary><div>${words.map(x=>`<p>${esc181(x)}</p>`).join("")}</div>`;
-      card.appendChild(det);
-    });
-  }
+  function addExampleAnalysisToggle181(){return;}
   let applying181=false;
   function apply181(){
     if(applying181) return;
     applying181=true;
     try{
     const badge=document.querySelector(".visual-version-badge");
-    if(badge) badge.textContent="Pāli Learning Lab · 18.2 细节核查修正版";
+    if(badge) badge.textContent="Pāli Learning Lab · 20.0 稳定测试版";
     cleanupVisible181(document);
     buildLessonVocabulary181();
-    addExampleAnalysisToggle181();
+    
     }finally{
       setTimeout(()=>{applying181=false;},0);
     }
@@ -5143,4 +5143,1624 @@ async function forceClearAllCaches(){
   const mo181=new MutationObserver(()=>{if(!applying181)setTimeout(apply181,60);});
   window.addEventListener("DOMContentLoaded",()=>{if(document.body)mo181.observe(document.body,{childList:true,subtree:true});});
   window.__pali181={apply181,normalize181};
+})();
+
+
+/* ===== Pali Grammar 18.3: lesson vocabulary list policy fix ===== */
+(function(){
+  const VERSION_LABEL_183 = "Pāli Learning Lab · 20.0 稳定测试版";
+
+  function esc183(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+
+  function normalize183(s){
+    return String(s||"")
+      .replace(/只观察/g,"只观察")
+      .replace(/先观察/g,"先观察")
+      .replace(/再观察/g,"再观察")
+      .replace(/要观察/g,"要观察")
+      .replace(/([A-Za-zāīūṅñṭḍṇḷṃĀĪŪṄÑṬḌṆḶṂ]+ṃ?)\s*看\s*([^。；;，,\n]+)/g,"$1 重点观察 $2")
+      .replace(/观察(?=\s*[A-Za-zāīūṅñṭḍṇḷṃĀĪŪṄÑṬḌṆḶṂ√\-\(\)])/g,"观察");
+  }
+
+  // 词汇表只显示“基本词条”，不把同一动词的所有变位形式都列出来。
+  // 规则：动词只列第三人称单数词典形/代表形 + 词根 + 基本义。
+  //      名词列词干/基本形 + 性 + 基本义。
+  //      代词、不变词单独列到对应分类，且不从动词词尾误切出 ti。
+  const LEXICON183 = {
+    "gacchati": {cat:"动词", form:"gacchati", info:"√gam", meaning:"去",
+      variants:["gacchati","gacchanti","gacchasi","gacchatha","gacchāmi","gacchāma","gaccheyya","gacchissati","gamissati","gantuṃ","gantvā","gata","gacchanto"]},
+    "deseti": {cat:"动词", form:"deseti", info:"√dis", meaning:"说；开示", variants:["deseti"]},
+    "suṇāti": {cat:"动词", form:"suṇāti", info:"√su", meaning:"听", variants:["suṇāti","suṇanti","sotuṃ","sutvā"]},
+    "vandati": {cat:"动词", form:"vandati", info:"√vand", meaning:"礼敬", variants:["vandati","vandāmi"]},
+    "bhavati": {cat:"动词", form:"bhavati", info:"√bhū", meaning:"成为；存在", variants:["bhavati","bhavanti"]},
+    "karoti": {cat:"动词", form:"karoti", info:"√kar", meaning:"做", variants:["karoti","karonti","katvā","kata","karaṇīyaṃ","kattabbaṃ"]},
+    "labhati": {cat:"动词", form:"labhati", info:"√labh", meaning:"得到", variants:["labhati","labhate","labhante","labhamāno"]},
+    "atthi": {cat:"动词", form:"atthi", info:"√as", meaning:"有；存在", variants:["atthi","santi","natthi","asi","attha","asmi","amhi","asma","amha"]},
+    "nisīdati": {cat:"动词", form:"nisīdati", info:"√sad", meaning:"坐下", variants:["nisīdati","nisīdi"]},
+
+    "Buddha": {cat:"名词", form:"Buddha", info:"m.", meaning:"佛", variants:["Buddha","Buddho","Buddhaṃ"]},
+    "Dhamma": {cat:"名词", form:"Dhamma", info:"m.", meaning:"法；教法", variants:["Dhamma","Dhammo","Dhammaṃ","dhamma","dhammo","dhammaṃ"]},
+    "Saṅgha": {cat:"名词", form:"Saṅgha", info:"m.", meaning:"僧团", variants:["Saṅgha","Saṅgho","Saṅghaṃ","saṅgha","saṅgho","saṅghaṃ"]},
+    "saraṇa": {cat:"名词", form:"saraṇa", info:"n.", meaning:"皈依处", variants:["saraṇa","saraṇaṃ"]},
+    "phala": {cat:"名词", form:"phala", info:"n.", meaning:"果", variants:["phala","phalaṃ","phalāni"]},
+    "kamma": {cat:"名词", form:"kamma", info:"n.", meaning:"业", variants:["kamma","kammaṃ"]},
+    "bhikkhu": {cat:"名词", form:"bhikkhu", info:"m.", meaning:"比丘", variants:["Bhikkhu","bhikkhu"]},
+    "vihāra": {cat:"名词", form:"vihāra", info:"m.", meaning:"寺院", variants:["vihāra","vihāre"]},
+    "gāma": {cat:"名词", form:"gāma", info:"m.", meaning:"村庄", variants:["gāma","gāmaṃ"]},
+
+    "ahaṃ": {cat:"代词", form:"ahaṃ", info:"pron.1sg.nom", meaning:"我", variants:["ahaṃ","Ahaṃ"]},
+    "tvaṃ": {cat:"代词", form:"tvaṃ", info:"pron.2sg.nom", meaning:"你", variants:["tvaṃ"]},
+    "so": {cat:"代词", form:"so", info:"pron.m.sg.nom", meaning:"他；那个", variants:["so","So"]},
+    "te": {cat:"代词", form:"te", info:"pron.m.pl.nom", meaning:"他们；那些", variants:["te","Te"]},
+
+    "ca": {cat:"不变词", form:"ca", info:"ind.", meaning:"和；也", variants:["ca"]},
+    "eva": {cat:"不变词", form:"eva", info:"ind.", meaning:"正是；即", variants:["eva","ceva"]},
+    "iti": {cat:"不变词", form:"iti", info:"ind.", meaning:"如此；引语标记", variants:["iti","itipi"]},
+    "api": {cat:"不变词", form:"api", info:"ind.", meaning:"也；甚至", variants:["api"]},
+    "na": {cat:"不变词", form:"na", info:"ind.", meaning:"不", variants:["na","natthi"]},
+    "mā": {cat:"不变词", form:"mā", info:"ind.", meaning:"不要；勿", variants:["mā"]},
+    "kho": {cat:"不变词", form:"kho", info:"ind.", meaning:"语气小品词", variants:["kho"]},
+    "pana": {cat:"不变词", form:"pana", info:"ind.", meaning:"又；而", variants:["pana"]}
+  };
+
+  const VARIANT_INDEX183 = {};
+  Object.values(LEXICON183).forEach(entry=>{
+    (entry.variants||[entry.form]).forEach(v=>VARIANT_INDEX183[v.toLowerCase()] = entry);
+    VARIANT_INDEX183[entry.form.toLowerCase()] = entry;
+  });
+
+  function extractWords183(text){
+    const found = [];
+    const seen = new Set();
+    const re = /[A-ZĀĪŪṄÑṬḌṆḶA-Za-zāīūṅñṭḍṇḷṃ]+(?:ṃ|ṁ)?/g;
+    let m;
+    while((m=re.exec(String(text||"")))){
+      const w = m[0];
+      const low = w.toLowerCase();
+      // 不把动词词尾 ti / anti / mi 等误当成独立单词。
+      if(["ti","anti","mi","ma","si","tha","ṃ","m"].includes(low)) continue;
+      if(w.length < 2) continue;
+      if(/^(Pali|Grammar|Review|Learning|Lab|Version|Sandhi)$/i.test(w)) continue;
+      if(!seen.has(w)){seen.add(w); found.push(w);}
+    }
+    return found;
+  }
+
+  function collectLessonText183(){
+    if(typeof currentLesson==="undefined" || !currentLesson) return "";
+    let text = "";
+    (currentLesson.examples||[]).forEach(e=>{text += " " + (e.pali||"") + " " + (e.cn||"");});
+    (currentLesson.exercises||[]).slice(0,10).forEach(e=>{text += " " + (e.question||"") + " " + (e.answer||"");});
+    (currentLesson.table||[]).forEach(row=>{ if(Array.isArray(row)) text += " " + row.join(" "); });
+    return text;
+  }
+
+  function entryFor183(word){
+    return VARIANT_INDEX183[String(word||"").toLowerCase()] || null;
+  }
+
+  function buildLessonVocabulary183(){
+    if(typeof currentLesson==="undefined" || !currentLesson) return;
+    document.querySelectorAll(".lesson-vocab-box-181,.lesson-vocab-box-183").forEach(x=>x.remove());
+    const holder = document.getElementById("lessonSummary");
+    if(!holder) return;
+
+    const entries = new Map();
+    extractWords183(collectLessonText183()).forEach(w=>{
+      const entry = entryFor183(w);
+      if(entry) entries.set(entry.form, entry);
+    });
+
+    const order = {"动词":1,"名词":2,"代词":3,"形容词":4,"不变词":5};
+    const rows = [...entries.values()]
+      .sort((a,b)=>(order[a.cat]||9)-(order[b.cat]||9) || a.form.localeCompare(b.form))
+      .slice(0,14);
+
+    if(!rows.length) return;
+    const grouped = {};
+    rows.forEach(r=>{(grouped[r.cat] ||= []).push(r);});
+
+    const htmlRows = Object.entries(grouped).map(([cat,items])=>`
+      <div class="vocab-section-row">${esc183(cat)}</div>
+      ${items.map(r=>`<div class="vocab-form">${esc183(r.form)}</div><div>${esc183(r.info)}</div><div>${esc183(r.meaning)}</div>`).join("")}
+    `).join("");
+
+    const box = document.createElement("section");
+    box.className = "lesson-vocab-box-183";
+    box.innerHTML = `<h3>本节单词</h3><p class="muted">动词只列第三人称单数代表形；名词列基本词形。先动词，后名词。</p>
+      <div class="vocab-table-181 vocab-table-183">
+        <div class="vocab-head">词形</div><div class="vocab-head">语法信息</div><div class="vocab-head">基本义</div>
+        ${htmlRows}
+      </div>`;
+    holder.insertAdjacentElement("afterend", box);
+  }
+
+  function fixVisible183(root){
+    root = root || document;
+    const badge = document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent = VERSION_LABEL_183;
+
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        const p = node.parentElement;
+        if(!p || p.closest("script,style,input,textarea,select")) return NodeFilter.FILTER_REJECT;
+        return /( 看 |只观察|先观察|再观察|要观察)/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n=>{ const v=normalize183(n.nodeValue); if(v!==n.nodeValue)n.nodeValue=v; });
+  }
+
+  function apply183(){
+    fixVisible183(document);
+    buildLessonVocabulary183();
+  }
+
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(apply183,260);setTimeout(apply183,1000);});
+  document.addEventListener("click",()=>setTimeout(apply183,120),true);
+  document.addEventListener("change",()=>setTimeout(apply183,120),true);
+  const mo183 = new MutationObserver(()=>setTimeout(apply183,80));
+  window.addEventListener("DOMContentLoaded",()=>{if(document.body)mo183.observe(document.body,{childList:true,subtree:true});});
+  window.__pali183 = {apply183, buildLessonVocabulary183};
+})();
+
+
+/* ===== Pali Grammar 18.4: global lesson vocabulary audit ===== */
+(function(){
+  const VERSION_LABEL_184 = "Pāli Learning Lab · 20.0 稳定测试版";
+
+  function esc184(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+
+  function normalize184(s){
+    return String(s||"")
+      .replace(/只观察/g,"只观察")
+      .replace(/先观察/g,"先观察")
+      .replace(/再观察/g,"再观察")
+      .replace(/要观察/g,"要观察")
+      .replace(/([A-Za-zāīūṅñṭḍṇḷṃĀĪŪṄÑṬḌṆḶṂ]+ṃ?)\s*看\s*([^。；;，,\n]+)/g,"$1 重点观察 $2")
+      .replace(/观察(?=\s*[A-Za-zāīūṅñṭḍṇḷṃĀĪŪṄÑṬḌṆḶṂ√\-\(\)])/g,"观察");
+  }
+
+  // 全章节单词表规则：
+  // 1. 动词只列词典代表形，通常采用第三人称单数现在时；给词根和基本义。
+  // 2. 名词列基本词形/词干，给性和基本义；不列所有变格形式。
+  // 3. 代词、形容词、不变词单独分组。
+  // 4. 不把动词词尾 ti、anti、mi、si、tha、ma 等误切成单词。
+  // 5. 独立 iti 可入不变词；ti 默认不入本节单词，避免误把词尾 -ti 当引语标记。
+  const LEXICON184 = [
+    // verbs
+    ["动词","gacchati","√gam","去",["gacchati","gacchanti","gacchasi","gacchatha","gacchāmi","gacchāma","gaccheyya","gaccheyyaṃ","gaccheyyuṃ","gacchissati","gamissati","gantuṃ","gantvā","gata","gacchanto","gacchantī","agacchi","agamāsi","agamiṃsu","agami"]],
+    ["动词","deseti","√dis","说；开示",["deseti","desenti","desesi"]],
+    ["动词","suṇāti","√su","听",["suṇāti","suṇanti","suṇāmi","sotuṃ","sutvā","sutaṃ","suta"]],
+    ["动词","vandati","√vand","礼敬",["vandati","vandanti","vandāmi"]],
+    ["动词","bhavati","√bhū","成为；存在",["bhavati","bhavanti","bhaveyya","bhavissati","hoti","honti","ahosi"]],
+    ["动词","karoti","√kar","做",["karoti","karonti","karomi","karotha","karīyati","kātuṃ","katvā","kata","kataṃ","karaṇīyaṃ","kattabbaṃ"]],
+    ["动词","labhati","√labh","得到",["labhati","labhanti","labhate","labhante","labhamāno"]],
+    ["动词","atthi","√as","有；存在",["atthi","santi","natthi","asi","attha","asmi","amhi","asma","amha"]],
+    ["动词","nisīdati","√sad","坐下",["nisīdati","nisīdi","nisīdanti"]],
+    ["动词","vasati","√vas","住",["vasati","vasanti"]],
+    ["动词","viharati","√har","住；停留",["viharati","viharanti"]],
+    ["动词","āgacchati","√gam","来",["āgacchati","āgacchanti","āgacchāmi","āgantuṃ"]],
+    ["动词","passati","√dis/pass","看见；理解",["passati","passanti","passāmi"]],
+    ["动词","vadati","√vad","说",["vadati","vadanti","avoca","etadavoca"]],
+    ["动词","dadāti","√dā","给",["dadāti","dadanti","deti","denti"]],
+    ["动词","pavisati","√vis","进入",["pavisati","pavisanti","pavisitvā"]],
+    ["动词","pacati","√pac","煮",["pacati","pacanti","pacāmi"]],
+    ["动词","pivati","√pā","喝",["pivati","pivanti"]],
+    ["动词","pasīdati","√sad / pasīd-","生信；欢喜",["pasīdati","pasīdanti"]],
+
+    // nouns
+    ["名词","Buddha","m.","佛",["Buddha","Buddho","Buddhaṃ","Buddhassa","Buddhena","Buddhe"]],
+    ["名词","Dhamma","m.","法；教法",["Dhamma","Dhammo","Dhammaṃ","Dhammassa","Dhammena","dhamma","dhammo","dhammaṃ","dhammassa","dhammena"]],
+    ["名词","Saṅgha","m.","僧团",["Saṅgha","Saṅgho","Saṅghaṃ","Saṅghassa","saṅgha","saṅgho","saṅghaṃ"]],
+    ["名词","saraṇa","n.","皈依处",["saraṇa","saraṇaṃ"]],
+    ["名词","bhikkhu","m.","比丘",["bhikkhu","Bhikkhu","bhikkhū","bhikkhuṃ","bhikkhussa"]],
+    ["名词","phala","n.","果",["phala","phalaṃ","phalāni"]],
+    ["名词","kamma","n.","业",["kamma","kammaṃ","kammassa"]],
+    ["名词","purisa","m.","人；男子",["purisa","puriso","purisaṃ","purisassa"]],
+    ["名词","deva","m.","天；天神",["deva","devo","devaṃ","devā"]],
+    ["名词","rukkha","m.","树",["rukkha","rukkho","rukkhaṃ","rukkhe"]],
+    ["名词","vihāra","m.","寺院",["vihāra","vihāro","vihāraṃ","vihāre"]],
+    ["名词","gāma","m.","村庄",["gāma","gāmo","gāmaṃ","gāme"]],
+    ["名词","patta","m.","钵",["patta","pattaṃ"]],
+    ["名词","paññā","f.","智慧",["paññā","paññaṃ","paññāya"]],
+    ["名词","sāvaka","m.","弟子；声闻",["sāvaka","sāvako","sāvakaṃ","sāvakassa"]],
+    ["名词","samaya","m.","时候；时间",["samaya","samayaṃ","samayena"]],
+    ["名词","Sāvatthī","f.","舍卫城",["Sāvatthī","Sāvatthiyaṃ"]],
+    ["名词","Bhagavā","m.","世尊",["Bhagavā","Bhagavantaṃ","Bhagavato"]],
+    ["名词","Tathāgata","m.","如来",["Tathāgata","Tathāgato","Tathāgataṃ"]],
+    ["名词","citta","n.","心",["citta","cittaṃ"]],
+    ["名词","sīla","n.","戒；德行",["sīla","sīlaṃ"]],
+    ["名词","dāna","n.","布施",["dāna","dānaṃ"]],
+
+    // pronouns/adjectives
+    ["代词","ahaṃ","pron.1sg.nom","我",["ahaṃ","Ahaṃ"]],
+    ["代词","tvaṃ","pron.2sg.nom","你",["tvaṃ"]],
+    ["代词","so","pron.m.sg.nom","他；那个",["so","So"]],
+    ["代词","te","pron.m.pl.nom","他们；那些",["te","Te"]],
+    ["代词","ta","pron.","他/它；那个",["ta","taṃ","tassa","tena","tasmiṃ"]],
+    ["代词","yo","pron.","谁；哪个；关系代词",["yo","yaṃ","yassa","yena","ye"]],
+    ["代词","me","pron.","我；我的；于我",["me","mayā","mama","maṃ"]],
+    ["形容词","sabba","adj.","一切；所有",["sabba","sabbe","sabbaṃ","sabbā"]],
+
+    // indeclinables
+    ["不变词","ca","ind.","和；也",["ca"]],
+    ["不变词","vā","ind.","或者",["vā"]],
+    ["不变词","eva","ind.","正是；即",["eva","ceva"]],
+    ["不变词","iti","ind.","如此；引语标记",["iti","itipi"]],
+    ["不变词","api","ind.","也；甚至",["api"]],
+    ["不变词","na","ind.","不",["na"]],
+    ["不变词","mā","ind.","不要；勿",["mā"]],
+    ["不变词","kho","ind.","语气小品词",["kho"]],
+    ["不变词","pana","ind.","又；而",["pana"]],
+    ["不变词","atha","ind.","于是；然后",["atha","Atha"]],
+    ["不变词","evaṃ","ind.","如是；这样",["evaṃ","Evaṃ"]],
+    ["不变词","tadā","ind.","那时",["tadā"]],
+    ["不变词","yadā","ind.","当……时",["yadā"]]
+  ];
+
+  const VARIANT184 = {};
+  LEXICON184.forEach(([cat,form,info,meaning,variants])=>{
+    const entry = {cat, form, info, meaning};
+    (variants || [form]).forEach(v => VARIANT184[String(v).toLowerCase()] = entry);
+    VARIANT184[String(form).toLowerCase()] = entry;
+  });
+
+  const SUFFIX_BLACKLIST184 = new Set([
+    "ti","anti","mi","ma","si","tha","tuṃ","ṃ","m","sg","pl","nom","acc","ins","dat","abl","gen","loc","voc",
+    "m","f","n","ind","indic","ger","inf","pr","p","act","mid","pass"
+  ]);
+
+  function extractWords184(text){
+    const found = [];
+    const seen = new Set();
+    const re = /[A-ZĀĪŪṄÑṬḌṆḶA-Za-zāīūṅñṭḍṇḷṃ]+(?:ṃ|ṁ)?/g;
+    let m;
+    while((m = re.exec(String(text||"")))){
+      const w = m[0];
+      const low = w.toLowerCase();
+      if(SUFFIX_BLACKLIST184.has(low)) continue;
+      if(w.length < 2) continue;
+      if(/^(Pali|Grammar|Review|Learning|Lab|Version|Sandhi|Lesson|Digital|Dictionary|English)$/i.test(w)) continue;
+      if(!seen.has(w)){seen.add(w); found.push(w);}
+    }
+    return found;
+  }
+
+  function collectLessonText184(){
+    if(typeof currentLesson === "undefined" || !currentLesson) return "";
+    let text = "";
+    (currentLesson.examples || []).forEach(e => { text += " " + (e.pali||"") + " " + (e.cn||""); });
+    (currentLesson.exercises || []).slice(0,12).forEach(e => { text += " " + (e.question||"") + " " + (e.answer||""); });
+    (currentLesson.table || []).forEach(row => { if(Array.isArray(row)) text += " " + row.join(" "); });
+    return text;
+  }
+
+  function buildLessonVocabulary184(){
+    if(typeof currentLesson === "undefined" || !currentLesson) return;
+    document.querySelectorAll(".lesson-vocab-box-181,.lesson-vocab-box-183,.lesson-vocab-box-184").forEach(x => x.remove());
+
+    const holder = document.getElementById("lessonSummary");
+    if(!holder) return;
+
+    const entryMap = new Map();
+    extractWords184(collectLessonText184()).forEach(w => {
+      const entry = VARIANT184[String(w).toLowerCase()];
+      if(entry) entryMap.set(entry.form, entry);
+    });
+
+    const order = {"动词":1, "名词":2, "代词":3, "形容词":4, "不变词":5};
+    const rows = [...entryMap.values()]
+      .sort((a,b) => (order[a.cat]||9) - (order[b.cat]||9) || a.form.localeCompare(b.form))
+      .slice(0, 18);
+
+    if(!rows.length) return;
+
+    const grouped = {};
+    rows.forEach(r => (grouped[r.cat] ||= []).push(r));
+
+    const body = Object.entries(grouped).map(([cat,items]) => `
+      <div class="vocab-section-row">${esc184(cat)}</div>
+      ${items.map(r => `<div class="vocab-form">${esc184(r.form)}</div><div>${esc184(r.info)}</div><div>${esc184(r.meaning)}</div>`).join("")}
+    `).join("");
+
+    const box = document.createElement("section");
+    box.className = "lesson-vocab-box-184";
+    box.innerHTML = `<h3>本节单词</h3>
+      <p class="muted">动词只列第三人称单数代表形；名词列基本词形。按词类分组，先动词，后名词。</p>
+      <div class="vocab-table-181 vocab-table-184">
+        <div class="vocab-head">词形</div><div class="vocab-head">语法信息</div><div class="vocab-head">基本义</div>
+        ${body}
+      </div>`;
+    holder.insertAdjacentElement("afterend", box);
+  }
+
+  function fixVisible184(root){
+    root = root || document;
+    const badge = document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent = VERSION_LABEL_184;
+
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        const p = node.parentElement;
+        if(!p || p.closest("script,style,input,textarea,select")) return NodeFilter.FILTER_REJECT;
+        return /( 看 |只观察|先观察|再观察|要观察)/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n => {
+      const v = normalize184(n.nodeValue);
+      if(v !== n.nodeValue) n.nodeValue = v;
+    });
+  }
+
+  function apply184(){
+    fixVisible184(document);
+    buildLessonVocabulary184();
+  }
+
+  window.addEventListener("DOMContentLoaded", () => { setTimeout(apply184, 280); setTimeout(apply184, 1100); });
+  document.addEventListener("click", () => setTimeout(apply184, 120), true);
+  document.addEventListener("change", () => setTimeout(apply184, 120), true);
+
+  const mo184 = new MutationObserver(() => setTimeout(apply184, 90));
+  window.addEventListener("DOMContentLoaded", () => { if(document.body) mo184.observe(document.body, {childList:true, subtree:true}); });
+
+  window.__pali184 = {apply184, buildLessonVocabulary184};
+})();
+
+
+/* ===== Pali Grammar 18.5: term link policy finalization ===== */
+(function(){
+  const VERSION_LABEL_185 = "Pāli Learning Lab · 20.0 稳定测试版";
+
+  const TERM_EXTRA_185 = [
+    "主语","宾语","谓语","格位","主格","宾格","工具格","与格","从格","属格","处格","呼格",
+    "动词","限定动词","非限定动词","词根","词干","词尾","人称","单数","复数","时态","语气","语态",
+    "主动语态","中间语态","被动语态","名词","代词","形容词","不变词","不定式","连续体","分词",
+    "现在分词","过去分词","将来被动分词","连音","音变","长元音","短元音","鼻音","句法","形态学"
+  ];
+
+  function esc185(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+
+  function termCandidates185(){
+    const out = [];
+    try{
+      (window.TERMINOLOGY_GLOSSARY || []).forEach(item=>{
+        String(item.cn || "").split(/[；;、，,\/]/).forEach(t=>{
+          t=t.trim();
+          if(t && t.length>=2 && !/^[a-z]+\.$/i.test(t)) out.push(t);
+        });
+      });
+    }catch(e){}
+    TERM_EXTRA_185.forEach(t=>out.push(t));
+    return [...new Set(out)].sort((a,b)=>b.length-a.length);
+  }
+
+  function findTerm185(term){
+    const q = String(term||"").trim();
+    try{
+      return (window.TERMINOLOGY_GLOSSARY || []).find(item=>{
+        const cnList = String(item.cn||"").split(/[；;、，,\/]/).map(x=>x.trim());
+        return cnList.includes(q) || String(item.en||"").toLowerCase()===q.toLowerCase();
+      }) || null;
+    }catch(e){return null;}
+  }
+
+  function unwrap185(el){
+    if(!el || !el.parentNode) return;
+    el.parentNode.replaceChild(document.createTextNode(el.textContent || ""), el);
+  }
+
+  function removeLinksInCleanZones185(root){
+    root = root || document;
+    const zones = root.querySelectorAll([
+      "table",
+      "#lessonTable",
+      ".example",
+      ".example-card",
+      ".example-box",
+      ".pali",
+      ".translation-layer",
+      ".lesson-vocab-box-181",
+      ".lesson-vocab-box-183",
+      ".lesson-vocab-box-184",
+      ".lesson-vocab-box-185",
+      ".vocab-table-181",
+      ".vocab-table-183",
+      ".vocab-table-184",
+      ".vocab-table-185"
+    ].join(","));
+    zones.forEach(zone=>{
+      zone.querySelectorAll("a.term-once-link-185,button.term-once-link-185,.term-once-link-185,a.term-once-link-172,button.term-once-link-172,.term-once-link-172,.term-direct-link,.concept-inline-link,.concept-extra-link,.ipa-hover").forEach(unwrap185);
+    });
+  }
+
+  function rawLessonText185(root){
+    if(!root) return "";
+    const clone = root.cloneNode(true);
+    clone.querySelectorAll([
+      "table",
+      "#lessonTable",
+      ".example",
+      ".example-card",
+      ".example-box",
+      ".pali",
+      ".translation-layer",
+      ".lesson-vocab-box-181",
+      ".lesson-vocab-box-183",
+      ".lesson-vocab-box-184",
+      ".lesson-vocab-box-185",
+      ".lesson-term-box-185",
+      ".lesson-nav-row",
+      ".lesson-bottom-nav",
+      "button",
+      "a",
+      "input",
+      "select",
+      "textarea",
+      "script",
+      "style"
+    ].join(",")).forEach(x=>x.remove());
+    return clone.textContent || "";
+  }
+
+  function buildTermBox185(root, terms){
+    if(!root) return;
+    root.querySelectorAll(".lesson-term-box-185").forEach(x=>x.remove());
+    const summary = document.getElementById("lessonSummary");
+    if(!summary || !terms.length) return;
+    const box = document.createElement("section");
+    box.className = "lesson-term-box-185";
+    box.innerHTML = `<strong>本节术语：</strong> ${terms.slice(0,16).map(t=>`<button type="button" class="term-chip-185" data-term-card-185="${esc185(t)}">${esc185(t)}</button>`).join("")}`;
+    summary.insertAdjacentElement("afterend", box);
+  }
+
+  function annotateOnce185(root, terms){
+    if(!root || !terms.length) return;
+    const used = new Set();
+    const re = new RegExp(terms.map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|"), "g");
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        const p = node.parentElement;
+        if(!p || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        if(p.closest([
+          "table",
+          "#lessonTable",
+          ".example",
+          ".example-card",
+          ".example-box",
+          ".pali",
+          ".translation-layer",
+          ".lesson-vocab-box-181",
+          ".lesson-vocab-box-183",
+          ".lesson-vocab-box-184",
+          ".lesson-vocab-box-185",
+          ".lesson-term-box-185",
+          ".term-popover-185",
+          ".lesson-nav-row",
+          ".lesson-bottom-nav",
+          "button",
+          "a",
+          "input",
+          "select",
+          "textarea",
+          "script",
+          "style"
+        ].join(","))) return NodeFilter.FILTER_REJECT;
+        re.lastIndex = 0;
+        return re.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+
+    nodes.forEach(node=>{
+      const text = node.nodeValue;
+      re.lastIndex = 0;
+      let last = 0, m;
+      const frag = document.createDocumentFragment();
+      while((m = re.exec(text))){
+        const term = m[0];
+        if(m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+        if(!used.has(term)){
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "term-once-link-185";
+          btn.dataset.termCard185 = term;
+          btn.textContent = term;
+          btn.title = "查看术语解释：" + term;
+          frag.appendChild(btn);
+          used.add(term);
+        }else{
+          frag.appendChild(document.createTextNode(term));
+        }
+        last = m.index + term.length;
+      }
+      if(last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
+  function showTerm185(term, anchor){
+    document.querySelectorAll(".term-popover-185").forEach(x=>x.remove());
+    const item = findTerm185(term);
+    const card = document.createElement("div");
+    card.className = "term-popover-185";
+    const cn = item?.cn || term;
+    const en = item?.en || "";
+    const ipa = item?.ipa || "";
+    const pali = item?.pali || "";
+    const cat = item?.cat || "";
+    const note = item?.simple_explanation || item?.note || "暂无详细解释，可进入术语库继续查看。";
+    card.innerHTML = `
+      <h3>${esc185(term)}</h3>
+      ${cat ? `<p><strong>分类：</strong>${esc185(cat)}</p>` : ""}
+      ${en ? `<p><strong>英文：</strong>${esc185(en)}${ipa ? ` <span class="muted">${esc185(ipa)}</span>` : ""}</p>` : ""}
+      ${cn && cn!==term ? `<p><strong>中文：</strong>${esc185(cn)}</p>` : ""}
+      ${pali ? `<p><strong>巴利/传统术语：</strong>${esc185(pali)}</p>` : ""}
+      <p>${esc185(note)}</p>
+      <div class="term-actions"><button class="primary small" data-open-glossary-185="${esc185(term)}">进入术语库</button><button class="secondary small" data-close-term-popover-185="1">关闭</button></div>`;
+    document.body.appendChild(card);
+    const rect = anchor?.getBoundingClientRect?.() || {left:window.innerWidth/2, bottom:window.innerHeight/2, width:0};
+    const width = card.offsetWidth, height = card.offsetHeight;
+    let left = Math.min(Math.max(12, rect.left + rect.width/2 - width/2), window.innerWidth - width - 12);
+    let top = Math.min(Math.max(12, rect.bottom + 10), window.innerHeight - height - 12);
+    card.style.left = left + "px";
+    card.style.top = top + "px";
+  }
+
+  function openGlossary185(term){
+    document.querySelectorAll(".term-popover-185").forEach(x=>x.remove());
+    if(typeof switchView === "function") switchView("terminologyGlossaryView");
+    if(typeof renderTermCategories === "function") renderTermCategories();
+    const input = document.getElementById("termSearchInput");
+    const sel = document.getElementById("termCategorySelect");
+    if(input) input.value = term;
+    if(sel) sel.value = "全部";
+    if(typeof renderTerminologyGlossary === "function") renderTerminologyGlossary();
+    setTimeout(()=>{
+      const first = document.querySelector("#termGlossaryList details.term-card");
+      if(first){ first.open = true; first.scrollIntoView({behavior:"smooth", block:"start"}); }
+    },80);
+  }
+
+  function apply185(){
+    const badge = document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent = VERSION_LABEL_185;
+    const root = document.querySelector("#lessonView:not(.hidden) .card");
+    removeLinksInCleanZones185(document);
+    if(!root) return;
+    root.querySelectorAll(".term-once-link-185").forEach(unwrap185);
+    const text = rawLessonText185(root);
+    const terms = termCandidates185().filter(t=>text.includes(t));
+    buildTermBox185(root, terms);
+    annotateOnce185(root, terms);
+    removeLinksInCleanZones185(root);
+  }
+
+  document.addEventListener("click", function(e){
+    const btn = e.target.closest("[data-term-card-185]");
+    if(btn){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      showTerm185(btn.dataset.termCard185, btn);
+      return;
+    }
+    const open = e.target.closest("[data-open-glossary-185]");
+    if(open){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      openGlossary185(open.dataset.openGlossary185);
+      return;
+    }
+    if(e.target.closest("[data-close-term-popover-185]")){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      document.querySelectorAll(".term-popover-185").forEach(x=>x.remove());
+      return;
+    }
+    if(!e.target.closest(".term-popover-185")){
+      document.querySelectorAll(".term-popover-185").forEach(x=>x.remove());
+    }
+    setTimeout(apply185,130);
+  }, true);
+
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(apply185,300);setTimeout(apply185,1200);});
+  document.addEventListener("change",()=>setTimeout(apply185,130),true);
+  const mo185 = new MutationObserver(()=>setTimeout(apply185,100));
+  window.addEventListener("DOMContentLoaded",()=>{ if(document.body) mo185.observe(document.body,{childList:true,subtree:true}); });
+  window.__pali185 = {apply185, removeLinksInCleanZones185};
+})();
+
+
+/* ===== Pali Grammar 18.6: IPA display without label ===== */
+(function(){
+  const VERSION_LABEL_186 = "Pāli Learning Lab · 20.0 稳定测试版";
+
+  function cleanIpaLabel186(root){
+    root = root || document;
+    const badge = document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent = VERSION_LABEL_186;
+
+    // Remove visible labels like "" / "" / "" before actual phonetic strings.
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        const p = node.parentElement;
+        if(!p || p.closest("script,style,input,textarea,select")) return NodeFilter.FILTER_REJECT;
+        return /(IPA|ipa|音标)\s*[：:]/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n => {
+      n.nodeValue = n.nodeValue.replace(/\bIPA\s*[：:]\s*/g, "")
+                               .replace(/\bipa\s*[：:]\s*/g, "")
+                               .replace(/音标\s*[：:]\s*/g, "");
+    });
+
+    // In glossary and popovers, if a row starts with “IPA” in a strong label, remove the label but keep the phonetic value.
+    root.querySelectorAll("strong").forEach(s => {
+      const t = (s.textContent || "").trim();
+      if(/^IPA[：:]?$|^ipa[：:]?$|^音标[：:]?$/.test(t)){
+        s.remove();
+      }
+    });
+  }
+
+  // If older glossary renderers generate labels, post-clean them after every render/navigation.
+  window.addEventListener("DOMContentLoaded", () => { setTimeout(()=>cleanIpaLabel186(document), 300); setTimeout(()=>cleanIpaLabel186(document), 1200); });
+  document.addEventListener("click", () => setTimeout(()=>cleanIpaLabel186(document), 140), true);
+  document.addEventListener("change", () => setTimeout(()=>cleanIpaLabel186(document), 140), true);
+  const mo186 = new MutationObserver(() => setTimeout(()=>cleanIpaLabel186(document), 80));
+  window.addEventListener("DOMContentLoaded", () => { if(document.body) mo186.observe(document.body,{childList:true,subtree:true}); });
+
+  window.__pali186 = {cleanIpaLabel186};
+})();
+
+
+/* ===== Pali Grammar 18.7: term and vocabulary experience refinement ===== */
+(function(){
+  const VERSION_LABEL_187 = "Pāli Learning Lab · 20.0 稳定测试版";
+  const CATEGORY_ORDER_187 = [
+    "全部",
+    "音系与转写",
+    "词类与词形",
+    "格与名词系统",
+    "动词系统",
+    "非限定动词",
+    "句法分析",
+    "佛典阅读术语",
+    "学术阅读术语",
+    "语法缩略语",
+    "基础语法术语"
+  ];
+
+  function esc187(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+
+  function findTerm187(term){
+    const q = String(term||"").trim();
+    try{
+      return (window.TERMINOLOGY_GLOSSARY || []).find(item=>{
+        const cnList = String(item.cn||"").split(/[；;、，,\/]/).map(x=>x.trim());
+        return cnList.includes(q) || String(item.en||"").toLowerCase()===q.toLowerCase();
+      }) || null;
+    }catch(e){return null;}
+  }
+
+  function shortExplain187(item){
+    const text = String(item?.simple_explanation || item?.note || "暂无详细解释，可进入术语库继续查看。").trim();
+    // Keep only the first two short clauses/sentences for popup readability.
+    const parts = text.split(/(?<=[。.!?？；;])/).filter(Boolean);
+    let out = (parts.slice(0,2).join("") || text).trim();
+    if(out.length > 90) out = out.slice(0,90) + "……";
+    return out;
+  }
+
+  function extractExample187(item){
+    const text = String(item?.note || item?.simple_explanation || "");
+    const m = text.match(/例[：:]?\s*([^。；;\n]+)/);
+    return m ? m[1].trim() : "";
+  }
+
+  function rewriteTermPopovers187(root){
+    root = root || document;
+    root.querySelectorAll(".term-popover-185,.term-popover-187").forEach(card=>{
+      if(card.dataset.refined187 === "1") return;
+      const h = card.querySelector("h3");
+      const term = h ? h.textContent.trim() : "";
+      if(!term) return;
+      const item = findTerm187(term);
+      if(!item) return;
+      const en = item.en || "";
+      const ipa = item.ipa || "";
+      const pali = item.pali || "";
+      const example = extractExample187(item);
+      card.classList.add("term-popover-187");
+      card.dataset.refined187 = "1";
+      card.innerHTML = `
+        <h3>${esc187(term)}</h3>
+        ${en ? `<p class="term-en-line">${esc187(en)}${ipa ? ` <span class="ipa-only">${esc187(ipa)}</span>` : ""}</p>` : ""}
+        ${pali ? `<p><strong>巴利/传统术语：</strong>${esc187(pali)}</p>` : ""}
+        <p>${esc187(shortExplain187(item))}</p>
+        ${example ? `<p><strong>例：</strong>${esc187(example)}</p>` : ""}
+        <div class="term-actions">
+          <button class="primary small" data-open-glossary-185="${esc187(term)}">进入术语库</button>
+          <button class="secondary small" data-close-term-popover-185="1">关闭</button>
+        </div>`;
+    });
+  }
+
+  function normalizeCategoryOptions187(){
+    const sel = document.getElementById("termCategorySelect");
+    if(!sel || sel.dataset.normalized187 === "1") return;
+    const existing = [...sel.options].map(o=>o.value || o.textContent.trim()).filter(Boolean);
+    const merged = [...new Set([...CATEGORY_ORDER_187, ...existing])];
+    sel.innerHTML = merged.map(v=>`<option value="${esc187(v)}">${esc187(v)}</option>`).join("");
+    sel.dataset.normalized187 = "1";
+  }
+
+  // 本节词汇查词：统一入口，不让本节单词表每个词都变蓝。
+  function addVocabLookupPanel187(){
+    const boxes = document.querySelectorAll(".lesson-vocab-box-181,.lesson-vocab-box-183,.lesson-vocab-box-184,.lesson-vocab-box-185");
+    boxes.forEach(box=>{
+      if(box.querySelector(".vocab-lookup-panel-187")) return;
+      const forms = [...box.querySelectorAll(".vocab-form")]
+        .map(x=>x.textContent.trim())
+        .filter(Boolean)
+        .slice(0,12);
+      if(!forms.length) return;
+      const details = document.createElement("details");
+      details.className = "vocab-lookup-panel-187";
+      details.innerHTML = `<summary>本节词汇查词</summary>
+        <p class="muted">需要查词时再展开。普通单词表保持干净，不逐词加链接。</p>
+        <div class="lookup-chip-row-187">
+          ${forms.map(f=>`<button type="button" class="lookup-chip-187" data-copy-vocab-187="${esc187(f)}">${esc187(f)}</button>`).join("")}
+        </div>
+        <p class="muted">点击词形可复制；再到“查词”页面或外部词典检索。</p>`;
+      box.appendChild(details);
+    });
+  }
+
+  function apply187(){
+    const badge = document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent = VERSION_LABEL_187;
+    rewriteTermPopovers187(document);
+    normalizeCategoryOptions187();
+    addVocabLookupPanel187();
+  }
+
+  document.addEventListener("click", function(e){
+    const chip = e.target.closest("[data-copy-vocab-187]");
+    if(chip){
+      e.preventDefault();
+      e.stopPropagation();
+      const word = chip.dataset.copyVocab187;
+      navigator.clipboard?.writeText(word).then(()=>{
+        chip.textContent = "已复制：" + word;
+        setTimeout(()=>{chip.textContent = word;}, 900);
+      }).catch(()=>{
+        chip.textContent = word;
+      });
+      return;
+    }
+    setTimeout(apply187, 120);
+  }, true);
+
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(apply187,320);setTimeout(apply187,1300);});
+  document.addEventListener("change",()=>setTimeout(apply187,120),true);
+  const mo187 = new MutationObserver(()=>setTimeout(apply187,100));
+  window.addEventListener("DOMContentLoaded",()=>{ if(document.body) mo187.observe(document.body,{childList:true,subtree:true}); });
+
+  window.__pali187 = {apply187, rewriteTermPopovers187, addVocabLookupPanel187};
+})();
+
+
+/* ===== Pali Grammar 18.8: grammar note only, no duplicate example analysis ===== */
+(function(){
+  const VERSION_LABEL_188 = "Pāli Learning Lab · 20.0 稳定测试版";
+
+  const ANNOT188 = {
+    "Buddho":"Buddho < Buddha, m.sg.nom",
+    "Buddhaṃ":"Buddhaṃ < Buddha, m.sg.acc",
+    "Dhammo":"Dhammo < Dhamma, m.sg.nom",
+    "Dhammaṃ":"Dhammaṃ < Dhamma, m.sg.acc",
+    "dhammaṃ":"dhammaṃ < dhamma, m.sg.acc",
+    "Saṅgho":"Saṅgho < Saṅgha, m.sg.nom",
+    "Saṅghaṃ":"Saṅghaṃ < Saṅgha, m.sg.acc",
+    "saraṇaṃ":"saraṇaṃ < saraṇa, n.sg.acc",
+    "gacchāmi":"gacchāmi < √gam, gaccha-, prs.indic.act.1sg",
+    "gacchati":"gacchati < √gam, gaccha-, prs.indic.act.3sg",
+    "gacchanti":"gacchanti < √gam, gaccha-, prs.indic.act.3pl",
+    "gacchasi":"gacchasi < √gam, gaccha-, prs.indic.act.2sg",
+    "gacchatha":"gacchatha < √gam, gaccha-, prs.indic.act.2pl",
+    "gacchāma":"gacchāma < √gam, gaccha-, prs.indic.act.1pl",
+    "atthi":"atthi < √as, prs.indic.act.3sg",
+    "santi":"santi < √as, prs.indic.act.3pl",
+    "natthi":"natthi < na + atthi",
+    "Bhikkhu":"Bhikkhu < bhikkhu, m.sg.nom",
+    "bhikkhu":"bhikkhu < bhikkhu, m.sg.nom",
+    "deseti":"deseti < √dis, dese-, prs.indic.act.3sg",
+    "suṇāti":"suṇāti < √su, suṇā-, prs.indic.act.3sg",
+    "vandāmi":"vandāmi < √vand, vandā-, prs.indic.act.1sg",
+    "gantuṃ":"gantuṃ < √gam, inf.",
+    "gantvā":"gantvā < √gam, ger.",
+    "sutvā":"sutvā < √su, ger.",
+    "kataṃ":"kataṃ < √kar, p.p., n.sg.nom/acc",
+    "gata":"gata < √gam, p.p.",
+    "gacchanto":"gacchanto < √gam, pr.p.act., m.sg.nom",
+    "labhamāno":"labhamāno < √labh, pr.p.mid., m.sg.nom",
+    "karaṇīyaṃ":"karaṇīyaṃ < √kar, f.p.p., n.sg.nom/acc",
+    "ca":"ca < ca, ind.",
+    "eva":"eva < eva, ind.",
+    "iti":"iti < iti, ind.",
+    "api":"api < api, ind.",
+    "na":"na < na, ind.",
+    "so":"so < ta, pron.m.sg.nom",
+    "So":"So < ta, pron.m.sg.nom",
+    "te":"te < ta, pron.m.pl.nom",
+    "Te":"Te < ta, pron.m.pl.nom",
+    "ahaṃ":"ahaṃ < ahaṃ, pron.1sg.nom",
+    "Ahaṃ":"Ahaṃ < ahaṃ, pron.1sg.nom"
+  };
+
+  function esc188(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+  function words188(text){return String(text||"").match(/[A-ZĀĪŪṄÑṬḌṆḶA-Za-zāīūṅñṭḍṇḷṃ]+(?:ṃ|ṁ)?/g)||[];}
+  function annotation188(pali){
+    const seen=new Set(), out=[];
+    words188(pali).forEach(w=>{
+      if(ANNOT188[w] && !seen.has(w)){out.push(ANNOT188[w]);seen.add(w);}
+    });
+    return out.join("；");
+  }
+
+  function removeExampleAnalysis188(root){
+    root=root||document;
+    root.querySelectorAll(".example-analysis-181,.example-analysis-187,.example-analysis-188,details").forEach(el=>{
+      const txt=(el.textContent||"");
+      if(/标注分析|展开标注|标注分析/.test(txt)) el.remove();
+    });
+    [...root.querySelectorAll("*")].forEach(el=>{
+      if((el.textContent||"").trim()==="展开标注分析" || (el.textContent||"").trim()==="标注分析") el.remove();
+    });
+  }
+
+  function refineGrammarNotes188(){
+    if(typeof currentLesson==="undefined" || !currentLesson) return;
+    const examples = currentLesson.examples || [];
+    const boxes = [...document.querySelectorAll(".example,.example-card,.example-box")];
+    boxes.forEach((box,i)=>{
+      const ex = examples[i];
+      if(!ex || !ex.pali) return;
+      const ann = annotation188(ex.pali);
+      if(!ann) return;
+      let labelNode = [...box.querySelectorAll("strong,b,.label,.muted")].find(x=>/语法说明|说明|解析/.test(x.textContent||""));
+      // 找到原“语法说明/说明”区域，替换为标注式；找不到则追加。
+      let target = null;
+      if(labelNode){
+        target = labelNode.closest("p,div,li") || labelNode.parentElement;
+      }
+      if(target){
+        target.innerHTML = `<strong>语法说明：</strong><span class="grammar-annotation-188">${esc188(ann)}</span>`;
+      }else if(!box.querySelector(".grammar-annotation-188")){
+        const p=document.createElement("p");
+        p.className="grammar-note-188";
+        p.innerHTML=`<strong>语法说明：</strong><span class="grammar-annotation-188">${esc188(ann)}</span>`;
+        box.appendChild(p);
+      }
+    });
+  }
+
+  function apply188(){
+    const badge=document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent=VERSION_LABEL_188;
+    removeExampleAnalysis188(document);
+    refineGrammarNotes188();
+  }
+
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(apply188,320);setTimeout(apply188,1200);});
+  document.addEventListener("click",()=>setTimeout(apply188,140),true);
+  document.addEventListener("change",()=>setTimeout(apply188,140),true);
+  const mo188=new MutationObserver(()=>setTimeout(apply188,100));
+  window.addEventListener("DOMContentLoaded",()=>{if(document.body)mo188.observe(document.body,{childList:true,subtree:true});});
+  window.__pali188={apply188,removeExampleAnalysis188,refineGrammarNotes188};
+})();
+
+
+/* ===== Pali Grammar 18.9: root label cleanup ===== */
+(function(){
+  const VERSION_LABEL_189 = "Pāli Learning Lab · 20.0 稳定测试版";
+  function cleanRootLabels189(root){
+    root = root || document;
+    const badge = document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent = VERSION_LABEL_189;
+    const pairs = [
+      ["√dis"+"/"+"des","√dis"],
+      ["√sad"+" / "+"nisīd-","√sad"],
+      ["√gam"+" / "+"ā-gam","√gam"],
+      ["√vis"+" / "+"pavis-","√vis"],
+      ["√har"+" / "+"vihar-","√har"]
+    ];
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        const p = node.parentElement;
+        if(!p || p.closest("script,style,input,textarea,select")) return NodeFilter.FILTER_REJECT;
+        return pairs.some(([a])=>node.nodeValue.includes(a)) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n=>{
+      let v = n.nodeValue;
+      pairs.forEach(([a,b])=>{v = v.split(a).join(b);});
+      n.nodeValue = v;
+    });
+  }
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(()=>cleanRootLabels189(document),300);setTimeout(()=>cleanRootLabels189(document),1200);});
+  document.addEventListener("click",()=>setTimeout(()=>cleanRootLabels189(document),120),true);
+  document.addEventListener("change",()=>setTimeout(()=>cleanRootLabels189(document),120),true);
+  const mo189 = new MutationObserver(()=>setTimeout(()=>cleanRootLabels189(document),100));
+  window.addEventListener("DOMContentLoaded",()=>{if(document.body)mo189.observe(document.body,{childList:true,subtree:true});});
+})();
+
+
+/* ===== Pali Grammar 19.0: global sync + bilingual grammar notes ===== */
+(function(){
+  const VERSION_LABEL_190 = "Pāli Learning Lab · 20.0 稳定测试版";
+
+  const CN190 = {
+    "m.":"阳性","f.":"阴性","n.":"中性",
+    "sg":"单数","pl":"复数",
+    "nom":"主格","acc":"宾格","ins":"工具格","dat":"与格","abl":"从格","gen":"属格","loc":"处格","voc":"呼格",
+    "prs":"现在时","fut":"将来时","aor":"不定过去","pst":"过去类","perf":"完成式",
+    "indic":"陈述","imp":"命令","opt":"祈愿/可能","cond":"条件式",
+    "act":"主动","mid":"中间语态","pass":"被动",
+    "1sg":"第一人称单数","2sg":"第二人称单数","3sg":"第三人称单数",
+    "1pl":"第一人称复数","2pl":"第二人称复数","3pl":"第三人称复数",
+    "pron":"代词","adj":"形容词","ind.":"不变词",
+    "inf.":"不定式","ger.":"连续体",
+    "pr.p.act.":"现在主动分词","pr.p.mid.":"现在中间语态分词","pr.p.":"现在分词",
+    "p.p.":"过去分词","f.p.p.":"将来被动分词"
+  };
+
+  const ANNOT190 = {
+    "Buddho":"Buddho < Buddha, m.sg.nom",
+    "Buddhaṃ":"Buddhaṃ < Buddha, m.sg.acc",
+    "Dhammo":"Dhammo < Dhamma, m.sg.nom",
+    "Dhammaṃ":"Dhammaṃ < Dhamma, m.sg.acc",
+    "dhammaṃ":"dhammaṃ < dhamma, m.sg.acc",
+    "Saṅgho":"Saṅgho < Saṅgha, m.sg.nom",
+    "Saṅghaṃ":"Saṅghaṃ < Saṅgha, m.sg.acc",
+    "saraṇaṃ":"saraṇaṃ < saraṇa, n.sg.acc",
+    "gacchāmi":"gacchāmi < √gam, gaccha-, prs.indic.act.1sg",
+    "gacchati":"gacchati < √gam, gaccha-, prs.indic.act.3sg",
+    "gacchanti":"gacchanti < √gam, gaccha-, prs.indic.act.3pl",
+    "gacchasi":"gacchasi < √gam, gaccha-, prs.indic.act.2sg",
+    "gacchatha":"gacchatha < √gam, gaccha-, prs.indic.act.2pl",
+    "gacchāma":"gacchāma < √gam, gaccha-, prs.indic.act.1pl",
+    "atthi":"atthi < √as, prs.indic.act.3sg",
+    "santi":"santi < √as, prs.indic.act.3pl",
+    "natthi":"natthi < na + atthi",
+    "Bhikkhu":"Bhikkhu < bhikkhu, m.sg.nom",
+    "bhikkhu":"bhikkhu < bhikkhu, m.sg.nom",
+    "deseti":"deseti < √dis, dese-, prs.indic.act.3sg",
+    "suṇāti":"suṇāti < √su, suṇā-, prs.indic.act.3sg",
+    "vandāmi":"vandāmi < √vand, vandā-, prs.indic.act.1sg",
+    "gantuṃ":"gantuṃ < √gam, inf.",
+    "gantvā":"gantvā < √gam, ger.",
+    "sutvā":"sutvā < √su, ger.",
+    "kataṃ":"kataṃ < √kar, p.p., n.sg.nom/acc",
+    "gata":"gata < √gam, p.p.",
+    "gacchanto":"gacchanto < √gam, pr.p.act., m.sg.nom",
+    "labhamāno":"labhamāno < √labh, pr.p.mid., m.sg.nom",
+    "karaṇīyaṃ":"karaṇīyaṃ < √kar, f.p.p., n.sg.nom/acc",
+    "ca":"ca < ca, ind.",
+    "eva":"eva < eva, ind.",
+    "iti":"iti < iti, ind.",
+    "api":"api < api, ind.",
+    "na":"na < na, ind.",
+    "so":"so < ta, pron.m.sg.nom",
+    "So":"So < ta, pron.m.sg.nom",
+    "te":"te < ta, pron.m.pl.nom",
+    "Te":"Te < ta, pron.m.pl.nom",
+    "ahaṃ":"ahaṃ < ahaṃ, pron.1sg.nom",
+    "Ahaṃ":"Ahaṃ < ahaṃ, pron.1sg.nom"
+  };
+
+  function esc190(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+
+  function expand190(tag){
+    tag = String(tag||"").trim().replace(/,$/,"");
+    if(CN190[tag]) return CN190[tag];
+    let raw = tag.split(".").filter(Boolean);
+    let out = [];
+    raw.forEach(p=>{
+      if(p==="m"||p==="f"||p==="n") out.push(CN190[p+"."]||p);
+      else if(p.includes("/")) out.push(p.split("/").map(x=>CN190[x]||x).join("/"));
+      else out.push(CN190[p]||p);
+    });
+    return out.join("·");
+  }
+
+  function bilingual190(line){
+    if(!line || /（[^）]+）/.test(line)) return line;
+    const m = String(line).match(/,\s*([^,，；;]+)$/);
+    if(!m) return line;
+    const tag = m[1].trim();
+    if(!/(m\.|f\.|n\.|sg|pl|nom|acc|ins|dat|abl|gen|loc|voc|prs|fut|aor|indic|act|mid|pass|inf\.|ger\.|pr\.p|p\.p|f\.p\.p|ind\.|pron|adj|[123]sg|[123]pl)/.test(tag)) return line;
+    const cn = expand190(tag);
+    return cn && cn !== tag ? line + "（" + cn + "）" : line;
+  }
+
+  function words190(text){
+    return String(text||"").match(/[A-ZĀĪŪṄÑṬḌṆḶA-Za-zāīūṅñṭḍṇḷṃ]+(?:ṃ|ṁ)?/g)||[];
+  }
+
+  function annotation190(pali){
+    const seen = new Set(), out = [];
+    words190(pali).forEach(w=>{
+      if(ANNOT190[w] && !seen.has(w)){
+        out.push(bilingual190(ANNOT190[w]));
+        seen.add(w);
+      }
+    });
+    return out.join("；");
+  }
+
+  function removeDuplicateAnalysis190(root){
+    root = root || document;
+    root.querySelectorAll(".example-analysis-181,.example-analysis-187,.example-analysis-188,details").forEach(el=>{
+      const t = el.textContent || "";
+      if(/重复分析|重复分析|展开分析|标注分析/.test(t)) el.remove();
+    });
+  }
+
+  function cleanLabels190(root){
+    root = root || document;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        const p = node.parentElement;
+        if(!p || p.closest("script,style,input,textarea,select")) return NodeFilter.FILTER_REJECT;
+        return /翻译|√dis\/des|√sad \/ nisīd-|√gam \/ ā-gam|√vis \/ pavis-|√har \/ vihar-/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n=>{
+      n.nodeValue = n.nodeValue
+        .replace(/翻译/g,"翻译")
+        .replace(/√dis\/des/g,"√dis")
+        .replace(/√sad \/ nisīd-/g,"√sad")
+        .replace(/√gam \/ ā-gam/g,"√gam")
+        .replace(/√vis \/ pavis-/g,"√vis")
+        .replace(/√har \/ vihar-/g,"√har");
+    });
+  }
+
+  function refineGrammarNotes190(){
+    if(typeof currentLesson === "undefined" || !currentLesson) return;
+    const examples = currentLesson.examples || [];
+    const boxes = [...document.querySelectorAll(".example,.example-card,.example-box")];
+    boxes.forEach((box,i)=>{
+      const ex = examples[i];
+      if(!ex || !ex.pali) return;
+      const ann = annotation190(ex.pali);
+      if(!ann) return;
+
+      let target = [...box.querySelectorAll("p,div,li")].find(el=>/语法说明|说明|解析/.test(el.textContent||""));
+      if(target){
+        target.innerHTML = `<strong>语法说明：</strong><span class="grammar-annotation-190">${esc190(ann)}</span>`;
+      }else if(!box.querySelector(".grammar-annotation-190")){
+        const p = document.createElement("p");
+        p.className = "grammar-note-190";
+        p.innerHTML = `<strong>语法说明：</strong><span class="grammar-annotation-190">${esc190(ann)}</span>`;
+        box.appendChild(p);
+      }
+    });
+  }
+
+  function addAbbrevHelp190(){
+    if(!document.querySelector("#lessonView:not(.hidden)") || document.querySelector(".abbrev-help-190")) return;
+    const summary = document.getElementById("lessonSummary");
+    if(!summary) return;
+    const details = document.createElement("details");
+    details.className = "abbrev-help-190";
+    details.innerHTML = `<summary>标注缩略说明</summary>
+      <div class="abbrev-grid-190">
+        <span>m. 阳性</span><span>f. 阴性</span><span>n. 中性</span>
+        <span>sg. 单数</span><span>pl. 复数</span>
+        <span>nom 主格</span><span>acc 宾格</span><span>gen 属格</span><span>loc 处格</span>
+        <span>prs 现在时</span><span>indic 陈述</span><span>act 主动</span><span>mid 中间语态</span><span>pass 被动</span>
+        <span>inf. 不定式</span><span>ger. 连续体</span><span>ind. 不变词</span>
+      </div>`;
+    summary.insertAdjacentElement("afterend", details);
+  }
+
+  function apply190(){
+    const badge = document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent = VERSION_LABEL_190;
+    removeDuplicateAnalysis190(document);
+    cleanLabels190(document);
+    refineGrammarNotes190();
+    addAbbrevHelp190();
+  }
+
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(apply190,320);setTimeout(apply190,1300);});
+  document.addEventListener("click",()=>setTimeout(apply190,140),true);
+  document.addEventListener("change",()=>setTimeout(apply190,140),true);
+  const mo190 = new MutationObserver(()=>setTimeout(apply190,110));
+  window.addEventListener("DOMContentLoaded",()=>{ if(document.body) mo190.observe(document.body,{childList:true,subtree:true}); });
+
+  window.__pali190 = {apply190, annotation190};
+})();
+
+
+/* ===== Pali Grammar 19.1: usage cleanup ===== */
+(function(){
+  const VERSION_LABEL_191 = "Pāli Learning Lab · 20.0 稳定测试版";
+  const REMOVED_USAGE_IDS_191 = new Set([102,104,105,106,113,117]);
+  const USAGE_IDS_191 = new Set([99,103,107,108,112,114]);
+
+  function cleanupUsage191(){
+    const badge = document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent = VERSION_LABEL_191;
+
+    try{
+      if(Array.isArray(window.GRAMMAR)){
+        window.GRAMMAR = window.GRAMMAR.filter(l => !REMOVED_USAGE_IDS_191.has(Number(l.id)));
+        window.GRAMMAR.forEach(l=>{
+          if(USAGE_IDS_191.has(Number(l.id)) || l.category === "学习说明"){
+            l.module = "使用说明";
+            l.category = "使用说明";
+          }
+          if(typeof l.title === "string"){
+            l.title = l.title.replace(/使用说明/g,"使用说明")
+                             .replace(/网站学习路径/g,"使用说明")
+                             .replace(/易混概念对照：/g,"使用说明：易混概念对照")
+                             .replace(/核心句型模板：/g,"使用说明：核心句型模板");
+          }
+        });
+      }
+    }catch(e){}
+
+    if(!document.body) return;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        const p = node.parentElement;
+        if(!p || p.closest("script,style,input,textarea,select")) return NodeFilter.FILTER_REJECT;
+        return /使用说明|使用说明|使用任务|学习阶段说明|按学习阶段逐步掌握/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n=>{
+      n.nodeValue = n.nodeValue
+        .replace(/使用说明/g,"使用说明")
+        .replace(/使用说明/g,"使用说明")
+        .replace(/使用任务/g,"")
+        .replace(/按学习阶段逐步掌握/g,"按学习阶段逐步掌握")
+        .replace(/学习阶段说明/g,"")
+        .replace(/按学习阶段逐步掌握/g,"按学习阶段逐步掌握");
+    });
+  }
+
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(cleanupUsage191,260);setTimeout(cleanupUsage191,1100);});
+  document.addEventListener("click",()=>setTimeout(cleanupUsage191,130),true);
+  document.addEventListener("change",()=>setTimeout(cleanupUsage191,130),true);
+  const mo191 = new MutationObserver(()=>setTimeout(cleanupUsage191,100));
+  window.addEventListener("DOMContentLoaded",()=>{ if(document.body) mo191.observe(document.body,{childList:true,subtree:true}); });
+})();
+
+
+/* ===== Pali Grammar 19.2: sentence analysis optimization ===== */
+(function(){
+  const VERSION_LABEL_192 = "Pāli Learning Lab · 20.0 稳定测试版";
+
+  const CN192 = {
+    m:"阳性", f:"阴性", n:"中性", sg:"单数", pl:"复数",
+    nom:"主格", acc:"宾格", ins:"工具格", dat:"与格", abl:"从格", gen:"属格", loc:"处格", voc:"呼格",
+    prs:"现在时", fut:"将来时", aor:"不定过去", pst:"过去类", perf:"完成式",
+    indic:"陈述", imp:"命令", opt:"祈愿/可能", cond:"条件式",
+    act:"主动", mid:"中间语态", pass:"被动",
+    "1sg":"第一人称单数", "2sg":"第二人称单数", "3sg":"第三人称单数",
+    "1pl":"第一人称复数", "2pl":"第二人称复数", "3pl":"第三人称复数",
+    pron:"代词", adj:"形容词", ind:"不变词", inf:"不定式", ger:"连续体",
+    "pr.p.act":"现在主动分词", "pr.p.mid":"现在中间语态分词", "pr.p":"现在分词",
+    "p.p":"过去分词", "f.p.p":"将来被动分词"
+  };
+
+  function esc192(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+  function expandGrammar192(g){
+    const raw = String(g||"").trim();
+    if(!raw || /（.*）/.test(raw) || raw.includes("+") || /类|合写|连音|复合|词尾|尊称|数词/.test(raw)) return raw;
+    const pieces = raw.split(".").filter(Boolean);
+    if(!pieces.length) return raw;
+    const out = pieces.map(p=>p.includes("/") ? p.split("/").map(x=>CN192[x]||x).join("/") : (CN192[p]||p)).join("·");
+    return out && out !== raw ? `${raw}（${out}）` : raw;
+  }
+
+  function unifySentenceDisplay192(){
+    const badge=document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent=VERSION_LABEL_192;
+
+    const card=document.getElementById("sentenceAnalysisCard");
+    if(!card) return;
+
+    // Convert grammar cells to bilingual labels when the data has not already been updated.
+    card.querySelectorAll(".token-table tr").forEach((tr,i)=>{
+      const cells=tr.querySelectorAll("td");
+      if(i===0){
+        if(cells.length>=5){
+          cells[4].remove();
+          cells[0].textContent="词形";
+          cells[1].textContent="语法说明";
+          cells[2].textContent="句中功能";
+          cells[3].textContent="意义";
+        }
+        return;
+      }
+      if(cells.length>=4){
+        cells[1].textContent=expandGrammar192(cells[1].textContent);
+      }
+      // Remove per-token lookup/analyze column to keep table clean.
+      if(cells.length>=5) cells[4].remove();
+    });
+
+    // Add one unified lookup panel under the table instead of per-token links.
+    const table=card.querySelector(".token-table");
+    if(table && !card.querySelector(".sentence-lookup-panel-192")){
+      const forms=[...table.querySelectorAll("tr:not(:first-child) td:first-child")].map(td=>td.textContent.trim()).filter(Boolean);
+      if(forms.length){
+        const details=document.createElement("details");
+        details.className="sentence-lookup-panel-192";
+        details.innerHTML=`<summary>本句词汇查词</summary>
+          <p class="muted">表格保持干净；需要查词时展开，点击词形复制。</p>
+          <div class="sentence-lookup-row-192">${forms.map(f=>`<button type="button" class="lookup-chip-187" data-copy-vocab-187="${esc192(f)}">${esc192(f)}</button>`).join("")}</div>`;
+        table.insertAdjacentElement("afterend",details);
+      }
+    }
+
+    // Add a light level guidance block, once per card.
+    if(!card.querySelector(".sentence-level-guide-192")){
+      const level=card.querySelector(".pill")?.textContent||"";
+      let msg="按当前层级目标练习，不提前要求后面内容。";
+      if(level.includes("佛典公式")) msg="先整体识别公式句，再分析核心词形。";
+      else if(level.includes("综合")) msg="综合运用动词、格位、非限定动词和结构信号。";
+      else if(level.includes("进阶")) msg="遇到连音、合写或固定表达时，先还原结构，再分析词形。";
+      const div=document.createElement("div");
+      div.className="sentence-level-guide-192";
+      div.innerHTML=`<strong>分层提醒：</strong>${esc192(msg)}`;
+      card.appendChild(div);
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(unifySentenceDisplay192,320);setTimeout(unifySentenceDisplay192,1200);});
+  document.addEventListener("click",()=>setTimeout(unifySentenceDisplay192,140),true);
+  document.addEventListener("change",()=>setTimeout(unifySentenceDisplay192,140),true);
+  const mo192=new MutationObserver(()=>setTimeout(unifySentenceDisplay192,100));
+  window.addEventListener("DOMContentLoaded",()=>{if(document.body)mo192.observe(document.body,{childList:true,subtree:true});});
+  window.__pali192={unifySentenceDisplay192, expandGrammar192};
+})();
+
+
+/* ===== Pali Grammar 19.3: academic training and Tipitaka integration ===== */
+(function(){
+  const VERSION_LABEL_193 = "Pāli Learning Lab · 20.0 稳定测试版";
+
+  function applyAcademic193(){
+    const badge=document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent=VERSION_LABEL_193;
+
+    const acBox=document.getElementById("academicTrainingContent");
+    const cat=document.getElementById("academicCategorySelect")?.value || "";
+    const data=window.ACADEMIC_TRAINING_DATA || {};
+    if(acBox && (cat==="全部" || cat==="引用规范") && data.citation && !acBox.querySelector(".citation-examples-193")){
+      const examples=data.citation.citation_examples || [];
+      const tpl=data.citation.record_template || [];
+      const block=document.createElement("div");
+      block.className="qa-full-card citation-examples-193";
+      block.innerHTML=`<h3>常见引用格式</h3>
+        <table class="qa-table"><tr><th>格式</th><th>含义</th></tr>${examples.map(e=>`<tr><td><strong>${e.format}</strong></td><td>${e.meaning}</td></tr>`).join("")}</table>
+        <h3>材料记录模板</h3>
+        <pre>${tpl.join("\n")}</pre>`;
+      const title=[...acBox.querySelectorAll(".qa-section-title")].find(x=>x.textContent.includes("引用规范"));
+      if(title){
+        let insertAfter=title;
+        while(insertAfter.nextElementSibling && insertAfter.nextElementSibling.classList.contains("qa-full-card")){
+          insertAfter=insertAfter.nextElementSibling;
+        }
+        insertAfter.insertAdjacentElement("afterend", block);
+      }else{
+        acBox.appendChild(block);
+      }
+    }
+
+    // Clarify placement in academic view.
+    if(acBox && !acBox.querySelector(".academic-placement-note-193")){
+      const note=document.createElement("div");
+      note.className="module-warning academic-placement-note-193";
+      note.innerHTML="<strong>学习位置：</strong>三藏层级介绍放在“佛典阅读背景知识—三藏结构与略号”；本页重点训练引用规范、材料记录和小型阅读任务。";
+      acBox.prepend(note);
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(applyAcademic193,300);setTimeout(applyAcademic193,1200);});
+  document.addEventListener("click",()=>setTimeout(applyAcademic193,140),true);
+  document.addEventListener("change",()=>setTimeout(applyAcademic193,140),true);
+  const mo193=new MutationObserver(()=>setTimeout(applyAcademic193,100));
+  window.addEventListener("DOMContentLoaded",()=>{if(document.body)mo193.observe(document.body,{childList:true,subtree:true});});
+  window.__pali193={applyAcademic193};
+})();
+
+
+/* ===== Pali Grammar 19.4: Buddhist Reading naming ===== */
+(function(){
+  const VERSION_LABEL_194 = "Pāli Learning Lab · 20.0 稳定测试版";
+
+  function applyBuddhistReadingName194(){
+    const badge=document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent=VERSION_LABEL_194;
+
+    const walker=document.createTreeWalker(document.body || document, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        const p=node.parentElement;
+        if(!p || p.closest("script,style,input,textarea,select")) return NodeFilter.FILTER_REJECT;
+        return /佛典阅读|佛典阅读|佛典阅读|阅读小任务|阅读误区|词义观察|原文记录模板|阅读提醒|阅读材料/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n=>{
+      n.nodeValue=n.nodeValue
+        .replace(/佛典阅读/g,"佛典阅读")
+        .replace(/佛典阅读/g,"佛典阅读")
+        .replace(/佛典阅读/g,"佛典阅读")
+        .replace(/阅读小任务/g,"阅读小任务")
+        .replace(/阅读误区/g,"阅读误区")
+        .replace(/词义观察/g,"词义观察")
+        .replace(/原文记录模板/g,"原文记录模板")
+        .replace(/阅读提醒/g,"阅读提醒")
+        .replace(/阅读材料/g,"阅读材料");
+    });
+  }
+
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(applyBuddhistReadingName194,300);setTimeout(applyBuddhistReadingName194,1200);});
+  document.addEventListener("click",()=>setTimeout(applyBuddhistReadingName194,140),true);
+  document.addEventListener("change",()=>setTimeout(applyBuddhistReadingName194,140),true);
+  const mo194=new MutationObserver(()=>setTimeout(applyBuddhistReadingName194,100));
+  window.addEventListener("DOMContentLoaded",()=>{if(document.body)mo194.observe(document.body,{childList:true,subtree:true});});
+})();
+
+
+/* ===== Pali Grammar 19.5: global annotation audit cleanup ===== */
+(function(){
+  const VERSION_LABEL_195 = "Pāli Learning Lab · 20.0 稳定测试版";
+
+  function cleanAnnotation195(root){
+    root = root || document;
+    const badge = document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent = VERSION_LABEL_195;
+
+    const replacements = [
+      [/形容词阳性sg\.nom/g, "adj.m.sg.nom（形容词·阳性·单数·主格）"],
+      [/-u尾中性名词sg\.ins/g, "n.sg.ins（中性·单数·工具格）"],
+      [/-i尾阳性名词与格\/sg\.gen/g, "m.sg.dat/gen（阳性·单数·与格/属格）"]
+    ];
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        const p = node.parentElement;
+        if(!p || p.closest("script,style,input,textarea,select")) return NodeFilter.FILTER_REJECT;
+        return replacements.some(([r])=>r.test(node.nodeValue)) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n=>{
+      let v=n.nodeValue;
+      replacements.forEach(([r, repl])=>{ v=v.replace(r, repl); });
+      n.nodeValue=v;
+    });
+  }
+
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(()=>cleanAnnotation195(document),300);setTimeout(()=>cleanAnnotation195(document),1200);});
+  document.addEventListener("click",()=>setTimeout(()=>cleanAnnotation195(document),140),true);
+  document.addEventListener("change",()=>setTimeout(()=>cleanAnnotation195(document),140),true);
+  const mo195 = new MutationObserver(()=>setTimeout(()=>cleanAnnotation195(document),100));
+  window.addEventListener("DOMContentLoaded",()=>{ if(document.body) mo195.observe(document.body,{childList:true,subtree:true}); });
+})();
+
+
+/* ===== Pali Grammar 19.6: layer naming and order cleanup ===== */
+(function(){
+  const VERSION_LABEL_196 = "Pāli Learning Lab · 20.0 稳定测试版";
+  function apply196(){
+    const badge=document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent=VERSION_LABEL_196;
+    if(!document.body)return;
+    const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode(node){
+        const p=node.parentElement;
+        if(!p||p.closest("script,style,input,textarea,select"))return NodeFilter.FILTER_REJECT;
+        return /词义观察|小型阅读任务/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+    nodes.forEach(n=>{
+      n.nodeValue=n.nodeValue
+        .replace(/词义观察/g,"词义观察")
+        .replace(/小型阅读任务/g,"小型阅读任务");
+    });
+  }
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(apply196,300);setTimeout(apply196,1200);});
+  document.addEventListener("click",()=>setTimeout(apply196,140),true);
+  document.addEventListener("change",()=>setTimeout(apply196,140),true);
+  const mo196=new MutationObserver(()=>setTimeout(apply196,100));
+  window.addEventListener("DOMContentLoaded",()=>{if(document.body)mo196.observe(document.body,{childList:true,subtree:true});});
+})();
+
+
+/* ===== Pali Grammar 19.7: distinguish sentence analysis and sentence patterns ===== */
+(function(){
+  const VERSION_LABEL_197 = "Pāli Learning Lab · 20.0 稳定测试版";
+
+  function apply197(){
+    const badge=document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent=VERSION_LABEL_197;
+    if(!document.body)return;
+
+    const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode(node){
+        const p=node.parentElement;
+        if(!p||p.closest("script,style,input,textarea,select"))return NodeFilter.FILTER_REJECT;
+        return /ind\.与常用句式|ind\. 与常用句式|ind\.与关联句|句型模板(?!速查)|句子分析(?!训练)/.test(node.nodeValue)
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+    nodes.forEach(n=>{
+      let v=n.nodeValue
+        .replace(/ind\. ?与常用句式/g,"不变词与常用句式")
+        .replace(/ind\. ?与关联句/g,"不变词与关联句");
+      if(v.trim()==="句子分析") v="句子分析训练";
+      if(v.trim()==="句型模板") v="句型模板速查";
+      n.nodeValue=v;
+    });
+
+    // Add short distinction note to the language ability layer if missing.
+    const languageLayer=document.getElementById("homeLanguageLayer");
+    if(languageLayer && !document.querySelector(".sentence-pattern-distinction-197")){
+      const note=document.createElement("p");
+      note.className="muted home-tip sentence-pattern-distinction-197";
+      note.textContent="句型模板用于快速认识常见结构；句子分析训练用于把模板应用到具体句子。二者不重复，前者偏速查，后者偏训练。";
+      const grid=languageLayer.parentElement?.querySelector(".practice-grid");
+      if(grid) grid.insertAdjacentElement("afterend",note);
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(apply197,300);setTimeout(apply197,1200);});
+  document.addEventListener("click",()=>setTimeout(apply197,140),true);
+  document.addEventListener("change",()=>setTimeout(apply197,140),true);
+  const mo197=new MutationObserver(()=>setTimeout(apply197,100));
+  window.addEventListener("DOMContentLoaded",()=>{if(document.body)mo197.observe(document.body,{childList:true,subtree:true});});
+})();
+
+
+/* ===== Pali Grammar 19.8: practice naming and Buddhist terms ===== */
+(function(){
+  const VERSION_LABEL_198 = "Pāli Learning Lab · 20.0 稳定测试版";
+
+  function apply198(){
+    const badge=document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent=VERSION_LABEL_198;
+    if(!document.body)return;
+
+    const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode(node){
+        const p=node.parentElement;
+        if(!p||p.closest("script,style,input,textarea,select"))return NodeFilter.FILTER_REJECT;
+        return /课程练习|专项强化/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+    nodes.forEach(n=>{
+      n.nodeValue=n.nodeValue
+        .replace(/课程练习/g,"课程练习")
+        .replace(/专项强化/g,"专项强化");
+    });
+
+    const languageLayer=document.getElementById("homeLanguageLayer");
+    if(languageLayer && !document.querySelector(".practice-distinction-198")){
+      const note=document.createElement("p");
+      note.className="muted home-tip practice-distinction-198";
+      note.textContent="课程练习跟着章节走，适合学完一节后随学随测；专项强化按能力点集中训练，适合查漏补缺。";
+      const grid=languageLayer.parentElement?.querySelector(".practice-grid");
+      if(grid) grid.insertAdjacentElement("afterend",note);
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(apply198,300);setTimeout(apply198,1200);});
+  document.addEventListener("click",()=>setTimeout(apply198,140),true);
+  document.addEventListener("change",()=>setTimeout(apply198,140),true);
+  const mo198=new MutationObserver(()=>setTimeout(apply198,100));
+  window.addEventListener("DOMContentLoaded",()=>{if(document.body)mo198.observe(document.body,{childList:true,subtree:true});});
+})();
+
+
+/* ===== Pali Grammar 19.9: mobile layout and staged answers ===== */
+(function(){
+  const VERSION_LABEL_199 = "Pāli Learning Lab · 20.0 稳定测试版";
+
+  function apply199(){
+    const badge=document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent=VERSION_LABEL_199;
+
+    // If an older cached index lacks the translation button, insert it.
+    const hintBtn=document.getElementById("showSentenceHintBtn");
+    if(hintBtn && !document.getElementById("showSentenceTranslationBtn")){
+      const btn=document.createElement("button");
+      btn.id="showSentenceTranslationBtn";
+      btn.className="secondary";
+      btn.textContent="显示翻译";
+      btn.onclick=()=>{ if(typeof renderSentenceCard==="function") renderSentenceCard("translation"); };
+      hintBtn.insertAdjacentElement("beforebegin", btn);
+      const row=hintBtn.closest(".button-row");
+      if(row) row.classList.add("four-buttons");
+    }
+
+    // Keep old token lookup buttons out of narrow screens after 19.2 unified lookup panel.
+    document.querySelectorAll(".token-table tr").forEach((tr,i)=>{
+      const cells=tr.querySelectorAll("td");
+      if(i===0 && cells.length>=5){cells[4].remove();}
+      if(i>0 && cells.length>=5){cells[4].remove();}
+    });
+  }
+
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(apply199,300);setTimeout(apply199,1200);});
+  document.addEventListener("click",()=>setTimeout(apply199,140),true);
+  document.addEventListener("change",()=>setTimeout(apply199,140),true);
+  const mo199=new MutationObserver(()=>setTimeout(apply199,100));
+  window.addEventListener("DOMContentLoaded",()=>{if(document.body)mo199.observe(document.body,{childList:true,subtree:true});});
+})();
+
+
+/* ===== Pali Grammar 20.0: stable test final guard ===== */
+(function(){
+  const VERSION_LABEL_200 = "Pāli Learning Lab · 20.0 稳定测试版";
+
+  function applyStableGuard200(){
+    const badge=document.querySelector(".visual-version-badge");
+    if(badge) badge.textContent=VERSION_LABEL_200;
+    if(!document.body)return;
+
+    const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode(node){
+        const p=node.parentElement;
+        if(!p||p.closest("script,style,input,textarea,select"))return NodeFilter.FILTER_REJECT;
+        return /课程练习|专项强化|基础入门—语言能力—佛典阅读|第一层：基础入门|佛典阅读|佛典阅读|翻译|ind\.与常用句式|√dis\/des|p·p/.test(node.nodeValue)
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+    nodes.forEach(n=>{
+      n.nodeValue=n.nodeValue
+        .replace(/课程练习/g,"课程练习")
+        .replace(/专项强化/g,"专项强化")
+        .replace(/基础入门—语言能力—佛典阅读/g,"基础入门—语言能力—佛典阅读")
+        .replace(/第一层：基础入门/g,"第一层：基础入门")
+        .replace(/佛典阅读|佛典阅读/g,"佛典阅读")
+        .replace(/翻译/g,"翻译")
+        .replace(/ind\.与常用句式/g,"不变词与常用句式")
+        .replace(/√dis\/des/g,"√dis")
+        .replace(/p·p/g,"过去分词");
+    });
+
+    // Stable-test hint in cache-reset page is handled by version label; no UI noise on homepage.
+  }
+
+  window.addEventListener("DOMContentLoaded",()=>{setTimeout(applyStableGuard200,300);setTimeout(applyStableGuard200,1200);});
+  document.addEventListener("click",()=>setTimeout(applyStableGuard200,140),true);
+  document.addEventListener("change",()=>setTimeout(applyStableGuard200,140),true);
+  const mo200=new MutationObserver(()=>setTimeout(applyStableGuard200,100));
+  window.addEventListener("DOMContentLoaded",()=>{if(document.body)mo200.observe(document.body,{childList:true,subtree:true});});
 })();
