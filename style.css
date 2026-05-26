@@ -4472,3 +4472,135 @@ input, select, textarea, button{
     width:auto;
   }
 }
+
+
+/* 20.19 core lesson terminology first links only */
+.term-first-link-2019{
+  border:0;
+  background:transparent;
+  color:#1d4ed8;
+  border-bottom:1px dotted currentColor;
+  padding:0 1px;
+  font:inherit;
+  cursor:pointer;
+}
+.term-first-link-2019:hover{
+  background:#eff6ff;
+  border-radius:4px;
+}
+.term-popover-2019{
+  position:fixed;
+  z-index:10000;
+  width:min(320px, calc(100vw - 24px));
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  box-shadow:0 18px 40px rgba(15,23,42,.18);
+  padding:14px;
+  color:#0f172a;
+}
+.term-popover-2019 h3{
+  margin:0 28px 6px 0;
+}
+.term-popover-close-2019{
+  position:absolute;
+  right:10px;
+  top:8px;
+  border:0;
+  background:transparent;
+  font-size:20px;
+  cursor:pointer;
+}
+@media(max-width:760px){
+  .term-popover-2019{
+    left:12px!important;
+    right:12px!important;
+    bottom:14px!important;
+    top:auto!important;
+    width:auto;
+  }
+}
+
+
+/* 20.21 loading feedback */
+.global-loading-box-2021{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:18px;
+  z-index:12000;
+  display:flex;
+  justify-content:center;
+  pointer-events:none;
+}
+.global-loading-box-2021.hidden{
+  display:none;
+}
+.global-loading-card-2021{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:min(420px, calc(100vw - 28px));
+  background:rgba(15,23,42,.94);
+  color:#fff;
+  border-radius:18px;
+  padding:12px 16px;
+  box-shadow:0 18px 40px rgba(15,23,42,.28);
+  backdrop-filter:blur(10px);
+}
+.global-loading-card-2021 p{
+  margin:2px 0 0;
+  color:#dbeafe;
+  font-size:.92rem;
+}
+.global-loading-spinner-2021{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  border:3px solid rgba(255,255,255,.35);
+  border-top-color:#fff;
+  animation:loading-spin-2021 .85s linear infinite;
+  flex:0 0 auto;
+}
+@keyframes loading-spin-2021{
+  to{transform:rotate(360deg);}
+}
+@media(max-width:760px){
+  .global-loading-box-2021{
+    bottom:12px;
+  }
+  .global-loading-card-2021{
+    width:calc(100vw - 24px);
+    border-radius:16px;
+    padding:11px 13px;
+  }
+}
+
+
+/* 20.26 grammar labels vs core concepts */
+.grammar-label-box-2026{
+  margin:12px 0 14px;
+  padding:12px 14px;
+  border:1px solid rgba(15,118,110,.18);
+  background:#f0fdfa;
+  border-radius:16px;
+  line-height:1.8;
+}
+.grammar-label-chip-2026{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  width:auto;
+  min-height:0;
+  margin:4px 6px 4px 0;
+  padding:4px 9px;
+  border:1px solid rgba(15,118,110,.24);
+  border-radius:999px;
+  background:#ccfbf1;
+  color:#115e59;
+  font-size:14px;
+}
+.grammar-label-chip-2026 b{
+  font-family:"Charis SIL","Doulos SIL","Noto Sans","Times New Roman",serif;
+  color:#134e4a;
+}
